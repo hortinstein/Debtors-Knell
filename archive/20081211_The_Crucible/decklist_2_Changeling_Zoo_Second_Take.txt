@@ -1,0 +1,13 @@
+10 Mountain
+9 Swamp
+4 Terramorphic Expanse
+4 Fire-Belly Changeling
+4 Ghostly Changeling
+1 Moonglove Changeling
+4 Skeletal Changeling
+4 Taurean Mauler
+4 Blightning
+4 Crucible of Fire
+4 Incinerate
+4 Magma Spray
+4 Puncture Blast

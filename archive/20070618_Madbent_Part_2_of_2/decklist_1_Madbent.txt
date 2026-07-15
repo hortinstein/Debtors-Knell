@@ -1,0 +1,20 @@
+4 Fiery Temper
+7 Mountain
+4 Phyrexian Arena
+10 Swamp
+3 Call to the Netherworld
+4 Deepcavern Imp
+4 Gathan Raiders
+3 Keldon Megaliths
+4 Mindlash Sliver
+3 Phyrexian Totem
+4 Rakdos Guildmage
+3 Reckless Wurm
+3 Smallpox
+4 Tresserhorn Sinks
+
+Sideboard
+4 Blood Moon
+4 Pyroclasm
+3 Shadow Guildmage
+4 Yixlid Jailer

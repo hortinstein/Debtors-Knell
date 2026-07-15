@@ -1,0 +1,17 @@
+1 Boros Garrison
+8 Forest
+1 Gruul Turf
+2 Mountain
+8 Plains
+2 Selesnya Sanctuary
+4 Auratog
+4 Mesa Enchantress
+4 Verduran Enchantress
+2 Aspect of Mongoose
+4 Faith's Fetters
+3 Moldervine Cloak
+3 Retether
+3 Spirit Loop
+3 Stormbind
+4 Temporal Isolation
+4 Utopia Sprawl

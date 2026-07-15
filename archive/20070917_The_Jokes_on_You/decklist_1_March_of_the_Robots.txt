@@ -1,0 +1,23 @@
+1 Academy Ruins
+3 Desert
+3 Forest
+3 Island
+3 Mountain
+3 Plains
+3 Swamp
+3 Tolaria West
+2 Urza's Factory
+4 Steel Golem
+1 Triskelavus
+1 Azorius Signet
+2 Chimeric Staff
+1 Dimir Signet
+4 Icy Manipulator
+1 Izzet Signet
+3 Legacy Weapon
+4 March of the Machines
+4 Mind Stone
+3 Sculpting Steel
+4 Serrated Arrows
+1 Simic Signet
+3 Spectral Searchlight

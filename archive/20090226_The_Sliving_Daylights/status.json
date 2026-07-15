@@ -1,0 +1,10 @@
+{
+  "title": "The Sliving Daylights",
+  "folder": "20090226_The_Sliving_Daylights",
+  "slug": "mtg/daily/boab/27",
+  "date": "20090226",
+  "author": "Jacob Van Lunen",
+  "url": "https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtg/daily/boab/27",
+  "status": "PARTIAL",
+  "notes": " Screenshot failed: Page.goto: net::ERR_TIMED_OUT at https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtg/daily/boab/27\nCall log:\n  - navigating to \"https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtg/daily/boab/27\", waiting until \"networkidle\"\n; deck 1: no sideboard found; SCREENSHOT_MISSING;"
+}

@@ -1,0 +1,20 @@
+4 Coastal Tower
+1 Dromar's Cavern
+7 Island
+3 Plains
+4 Salt Marsh
+7 Swamp
+4 Dromar's Charm
+4 Exclude
+4 Fact or Fiction
+4 Lobotomy
+3 Probe
+4 Recoil
+2 Yawgmoth's Agenda
+2 Aura Blast
+3 Collective Restraint
+4 Gainsay
+1 Plains
+1 Repulse
+2 Rout
+2 Voice of All

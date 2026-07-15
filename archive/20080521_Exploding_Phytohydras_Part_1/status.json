@@ -1,0 +1,10 @@
+{
+  "title": "Exploding Phytohydras! (Part 1)",
+  "folder": "20080521_Exploding_Phytohydras_Part_1",
+  "slug": "mtgcom/daily/bb165",
+  "date": "20080521",
+  "author": "Ben Bleiweiss",
+  "url": "https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb165",
+  "status": "FAILED",
+  "notes": " Screenshot failed: Page.goto: Timeout 60000ms exceeded.\nCall log:\n  - navigating to \"https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb165\", waiting until \"networkidle\"\n; No div.deck structure found on page; SCREENSHOT_MISSING;"
+}

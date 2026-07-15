@@ -1,0 +1,16 @@
+3 Barren Moor
+3 Forgotten Cave
+6 Mountain
+4 Plains
+2 Secluded Steppe
+6 Swamp
+4 Blade Sliver
+4 Crypt Sliver
+4 Essence Sliver
+4 Hunter Sliver
+4 Magma Sliver
+4 Spectral Sliver
+4 Toxin Sliver
+2 Ward Sliver
+2 Shock
+4 Volcanic Hammer

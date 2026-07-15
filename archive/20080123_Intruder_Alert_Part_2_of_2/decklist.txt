@@ -1,0 +1,19 @@
+4 Forbidden Orchard
+14 Forest
+5 Island
+3 Boreal Druid
+4 Essence Warden
+4 Imperious Perfect
+4 Llanowar Elves
+3 Merfolk Looter
+4 Wren's Run Vanquisher
+4 Intruder Alarm
+4 Remand
+4 Sprout Swarm
+3 Utopia Sprawl
+
+Sideboard
+3 Blasting Station
+4 Compost
+4 Krosan Grip
+4 Tormod's Crypt

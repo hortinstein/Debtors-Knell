@@ -1,0 +1,21 @@
+Grand Spree version 2.0:
+Land:
+4 Great Furnace
+6 Island
+4 Izzet Boilerworks
+5 Mountain
+4 Seat of the Synod
+
+Creatures:
+3 Hearth Kami
+4 Neurok Transmuter
+
+Spells:
+4 Guardian Idol
+4 Izzet Signet
+3 March of the Machines
+4 Mycosynth Lattice
+4 Shattering Spree
+3 Shrapnel Blast
+4 Thirst for Knowledge
+4 Thoughtcast

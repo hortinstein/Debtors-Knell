@@ -1,0 +1,18 @@
+4 Island
+4 Izzet Boilerworks
+4 Mountain
+4 Urza's Mine
+4 Urza's Power Plant
+4 Urza's Tower
+4 Aeon Chronicler
+1 Jaya Ballard, Task Mage
+1 Riftwing Cloudskate
+1 Shard Phoenix
+4 Compulsive Research
+4 Conflagrate
+1 Invoke the Firemind
+4 Izzet Signet
+4 Mana Leak
+4 Pyroclasm
+4 Repeal
+4 Rune Snag

@@ -1,0 +1,20 @@
+1 Forest
+1 Gruul Turf
+12 Island
+1 Izzet Boilerworks
+1 Mountain
+2 Simic Growth Chamber
+4 Terramorphic Expanse
+3 Body Double
+3 Coiling Oracle
+3 Intet, the Dreamer
+4 Looter il-Kor
+3 Niv-Mizzet, the Firemind
+3 Simic Sky Swallower
+1 Tidespout Tyrant
+3 Careful Consideration
+4 Compulsive Research
+1 Confiscate
+3 Evacuation
+3 Gruul Signet
+4 Prismatic Lens

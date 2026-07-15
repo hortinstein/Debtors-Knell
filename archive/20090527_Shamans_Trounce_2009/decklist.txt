@@ -1,0 +1,19 @@
+7 Forest
+9 Mountain
+4 Terramorphic Expanse
+4 Bosk Banneret
+4 Elvish Visionary
+4 Flamekin Harbinger
+4 Leaf-Crowned Elder
+4 Rage Forger
+4 Wolf-Skull Shaman
+4 Colossal Might
+4 Firewild Borderpost
+4 Flame Javelin
+4 Incinerate
+
+Sideboard
+4 Vithian Renegade
+4 Magma Spray
+4 Guttural Response
+3 Vithian Stinger

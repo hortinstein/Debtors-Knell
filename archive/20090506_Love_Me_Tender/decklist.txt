@@ -1,0 +1,19 @@
+5 Forest
+1 Island
+2 Mountain
+2 Plains
+3 Swamp
+4 Vivid Grove
+4 Bloom Tender
+4 Kitchen Finks
+3 Rhox War Monk
+4 Diabolic Tutor
+4 Fieldmist Borderpost
+2 Firewild Borderpost
+3 Jund Charm
+4 Lavalanche
+1 Mistvein Borderpost
+4 Umbral Mantle
+4 Veinfire Borderpost
+4 Violent Outburst
+2 Wildfield Borderpost

@@ -1,0 +1,15 @@
+11 Swamp
+11 Forest
+2 Svogthos, the Restless Tomb
+
+4 Golgari Guildmage
+4 Sakura-Tribe Elder
+4 Shinen of Life's Roar
+4 Civic Wayfinder
+4 Mortipede
+2 Nezumi Graverobber
+
+4 Moldervine Cloak
+4 Putrefy
+4 Vigor Mortis
+2 Gaze of the Gorgon

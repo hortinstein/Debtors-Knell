@@ -1,0 +1,10 @@
+{
+  "title": "Topical Blend #2a - Celebrating Larry",
+  "folder": "20060313_Topical_Blend_2a_-_Celebrating_Larry",
+  "slug": "mtgcom/daily/jm143",
+  "date": "20060313",
+  "author": "Jay Moldenhauer-Salazar",
+  "url": "https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/jm143",
+  "status": "FAILED",
+  "notes": " Screenshot failed: Page.goto: net::ERR_TIMED_OUT at https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/jm143\nCall log:\n  - navigating to \"https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/jm143\", waiting until \"networkidle\"\n; No div.deck structure found on page; SCREENSHOT_MISSING;"
+}

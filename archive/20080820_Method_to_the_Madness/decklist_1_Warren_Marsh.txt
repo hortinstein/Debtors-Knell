@@ -1,0 +1,15 @@
+7 Forest
+5 Island
+4 Shivan Oasis
+4 Shivan Reef
+4 Yavimaya Coast
+3 Exclude
+3 Fire // Ice
+3 Prophetic Bolt
+4 Repulse
+4 Disrupt
+1 Exclude
+1 Flametongue Kavu
+4 Gainsay
+2 Jade Leech
+3 Tranquility

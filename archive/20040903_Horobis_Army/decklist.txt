@@ -1,0 +1,10 @@
+13 Plains
+11 Swamp
+4 Auriok Bladewarden
+4 Leonin Battlemage
+4 Master Decoy
+4 Samite Healer
+4 Savannah Lions
+4 Blinding Beam
+4 Night's Whisper
+4 Stand Firm

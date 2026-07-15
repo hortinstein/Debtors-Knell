@@ -1,0 +1,82 @@
+1 Azorius Chancery
+1 Boros Garrison
+1 Dimir Aqueduct
+1 Forest
+1 Golgari Rot Farm
+1 Gruul Turf
+1 Island
+1 Izzet Boilerworks
+1 Mountain
+1 Orzhov Basilica
+1 Plains
+1 Rakdos Carnarium
+1 Selesnya Sanctuary
+1 Simic Growth Chamber
+1 Snow-Covered Forest
+1 Snow-Covered Island
+1 Snow-Covered Mountain
+1 Snow-Covered Plains
+1 Snow-Covered Swamp
+1 Swamp
+1 Azorius Guildmage
+1 Azorius Herald
+1 Blizzard Specter
+1 Boros Guildmage
+1 Carven Caryatid
+1 Civic Wayfinder
+1 Court Hussar
+1 Crypt Champion
+1 Dimir Guildmage
+1 Gelectrode
+1 Golgari Guildmage
+1 Gruul Guildmage
+1 Gruul Scrapper
+1 Indrik Stomphowler
+1 Izzet Chronarch
+1 Izzet Guildmage
+1 Keening Banshee
+1 Ogre Savant
+1 Orzhov Guildmage
+1 Patagia Viper
+1 Plaxmanta
+1 Rakdos Guildmage
+1 Revenant Patriarch
+1 Selesnya Guildmage
+1 Shrieking Grotesque
+1 Simic Guildmage
+1 Squealing Devil
+1 Stalking Yeti
+1 Steamcore Weird
+1 Tin Street Hooligan
+1 Trygon Predator
+1 Vedalken Dismisser
+1 Boros Fury-Shield
+1 Cloudstone Curio
+1 Compulsive Research
+1 Condemn
+1 Dryad's Caress
+1 Electrolyze
+1 Faith's Fetters
+1 Farseek
+1 Flash Conscription
+1 Hit // Run
+1 Induce Paranoia
+1 Into the North
+1 Last Gasp
+1 Lightning Helix
+1 Mark of Eviction
+1 Mortify
+1 Pure // Simple
+1 Putrefy
+1 Recollect
+1 Ribbons of Night
+1 Rise // Fall
+1 Rolling Spoil
+1 Savage Twister
+1 Seed Spark
+1 Spectral Searchlight
+1 Supply // Demand
+1 Terrarion
+1 Trial // Error
+1 Vigor Mortis
+1 Wrecking Ball

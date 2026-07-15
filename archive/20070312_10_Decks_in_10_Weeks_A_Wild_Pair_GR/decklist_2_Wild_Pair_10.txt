@@ -1,0 +1,20 @@
+7 Forest
+1 Golgari Brownscale
+4 Kird Ape
+4 Llanowar Elves
+3 Moldervine Cloak
+9 Mountain
+3 Pendelhaven
+4 Verduran Enchantress
+2 Aspect of Mongoose
+1 Loaming Shaman
+1 Magus of the Library
+4 Scryb Ranger
+3 Seal of Primordium
+1 Sulfur Elemental
+4 Terramorphic Expanse
+1 Triskelavus
+4 Utopia Sprawl
+4 Wild Pair
+
+Sideboard

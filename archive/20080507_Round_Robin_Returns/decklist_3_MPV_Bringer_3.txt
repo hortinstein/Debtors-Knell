@@ -1,0 +1,26 @@
+1 Academy Ruins
+3 Coastal Tower
+4 Island
+4 Seat of the Synod
+4 Urza's Mine
+4 Urza's Power Plant
+4 Urza's Tower
+1 Bosh, Iron Golem
+1 Bringer of the Black Dawn
+1 Bringer of the Blue Dawn
+3 Bringer of the White Dawn
+4 Composite Golem
+4 Hapless Researcher
+1 Sundering Titan
+1 Boros Signet
+1 Darksteel Ingot
+4 Deathrender
+4 Fabricate
+1 Golgari Signet
+1 Gruul Signet
+1 Legacy Weapon
+1 Mindslaver
+1 Orzhov Signet
+1 Rakdos Signet
+1 Selesnya Signet
+4 Thirst for Knowledge

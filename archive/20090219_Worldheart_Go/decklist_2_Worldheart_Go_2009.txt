@@ -1,0 +1,27 @@
+1 Forest
+4 Island
+1 Mountain
+4 Plains
+1 Swamp
+4 Terramorphic Expanse
+2 Vivid Crag
+4 Vivid Creek
+1 Vivid Marsh
+4 Vivid Meadow
+4 Mulldrifter
+4 Plumeveil
+2 Worldheart Phoenix
+3 Austere Command
+3 Broken Ambitions
+4 Condemn
+2 Courier's Capsule
+4 Esper Charm
+2 Martial Coup
+2 Terror
+4 Volcanic Fallout
+
+Sideboard
+3 Kiss of the Amesha
+4 Bottle Gnomes
+4 Negate
+4 Sedraxis Specter

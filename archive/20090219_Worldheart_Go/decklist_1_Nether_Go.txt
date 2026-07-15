@@ -1,0 +1,25 @@
+12 Island
+4 Salt Marsh
+2 Swamp
+4 Underground River
+4 Accumulated Knowledge
+4 Counterspell
+1 Dominate
+4 Fact or Fiction
+3 Foil
+1 Massacre
+4 Opt
+2 Power Sink
+2 Probe
+3 Recoil
+1 Tsabo's Decree
+1 Tsabo's Web
+4 Undermine
+1 Vampiric Tutor
+2 Cremate
+2 Disrupt
+3 Millstone
+2 Misdirection
+3 Perish
+1 Rebel Informer
+2 Tsabo's Decree

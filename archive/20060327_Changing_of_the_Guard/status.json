@@ -1,0 +1,10 @@
+{
+  "title": "Changing of the Guard",
+  "folder": "20060327_Changing_of_the_Guard",
+  "slug": "mtgcom/daily/jm145",
+  "date": "20060327",
+  "author": "Scott Johns",
+  "url": "https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/jm145",
+  "status": "NO_DECKLIST",
+  "notes": "Screenshot failed: Page.goto: Timeout 60000ms exceeded.\nCall log:\n  - navigating to \"https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/jm145\", waiting until \"networkidle\"\n; No div.deck structure found on page;"
+}

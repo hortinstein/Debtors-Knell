@@ -1,0 +1,21 @@
+12 Mountain
+12 Swamp
+4 Ravenous Rats
+4 Hearth Kami
+3 Hill Giant
+2 Gravedigger
+2 Highway Robber
+2 Anarchist
+1 Drudge Skeletons
+1 Dancing Scimitar
+1 Magnivore
+1 Nekrataal
+1 Phyrexian Gargantua
+4 Volcanic Hammer
+2 Stone Rain
+2 Demolish
+2 Zombify
+1 Raise Dead
+1 Blaze
+1 Consume Spirit
+1 Wildfire

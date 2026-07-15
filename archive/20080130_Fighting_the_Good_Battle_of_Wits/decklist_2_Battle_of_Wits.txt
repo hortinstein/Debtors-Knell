@@ -1,0 +1,66 @@
+4 Barren Moor
+4 Dimir Aqueduct
+40 Island
+4 Lonely Sandbar
+40 Swamp
+4 Terramorphic Expanse
+4 Dimir House Guard
+4 Dimir Infiltrator
+4 Drift of Phantasms
+1 Gravedigger
+4 Looter il-Kor
+4 Mulldrifter
+3 Nekrataal
+1 Nezumi Graverobber
+4 Nightscape Familiar
+4 Sage of Epityr
+1 Scrivener
+1 Shriekmaw
+3 Thieving Magpie
+4 Thought Courier
+1 Withered Wretch
+4 Azorius Signet
+4 Battle of Wits
+1 Boomerang
+4 Brainspoil
+1 Cancel
+4 Chromatic Star
+4 Clutch of the Undercity
+1 Coffin Purge
+4 Compulsive Research
+1 Cremate
+1 Darkblast
+1 Death Denied
+1 Deathmark
+4 Diabolic Tutor
+4 Dimir Signet
+4 Dizzy Spell
+1 Echoing Decay
+1 Echoing Truth
+1 Eradicate
+3 Golgari Signet
+1 Grim Harvest
+1 Hideous Laughter
+1 Infest
+4 Izzet Signet
+4 Last Gasp
+1 Mind Sludge
+1 Mnemonic Nexus
+4 Muddle the Mixture
+4 Mystical Teachings
+1 Nightmare Void
+4 Prismatic Lens
+1 Probe
+4 Rakdos Signet
+1 Rancid Earth
+1 Rend Flesh
+3 Repeal
+1 Ribbons of Night
+4 Simic Signet
+4 Sleight of Hand
+1 Strangling Soot
+4 Sudden Death
+1 Terror
+4 Think Twice
+1 Wash Out
+1 Wipe Away

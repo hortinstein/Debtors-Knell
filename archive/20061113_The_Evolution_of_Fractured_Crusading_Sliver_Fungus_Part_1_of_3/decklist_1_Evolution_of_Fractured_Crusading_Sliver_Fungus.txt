@@ -1,0 +1,87 @@
+1 Dreadship Reef
+21 Forest
+1 Gemstone Mine
+12 Island
+17 Mountain
+1 Pendelhaven
+31 Plains
+10 Swamp
+2 Terramorphic Expanse
+3 Benalish Cavalry
+3 Bonesplitter Sliver
+2 Brass Gnat
+2 Cavalry Master
+1 Celestial Crusader
+1 Clockwork Hydra
+1 Cloudchaser Kestrel
+2 Coal Stoker
+2 D'Avenant Healer
+3 Deathspore Thallid
+1 Deep-Sea Kraken
+2 Errant Doomsayers
+1 Errant Ephemeron
+2 Foriysian Interceptor
+1 Fungus Sliver
+2 Fury Sliver
+4 Gemhide Sliver
+2 Giant Oyster
+1 Gustcloak Cavalier
+1 Harmonic Sliver
+2 Herd Gnarr
+1 Icatian Crier
+3 Icatian Javelineers
+1 Ivory Giant
+1 Jhoira's Timebug
+2 Keldon Halberdier
+3 Knight of the Holy Nimbus
+2 Might Sliver
+2 Outrider en-Kor
+1 Pardic Dragon
+2 Pendelhaven Elder
+1 Pentarch Paladin
+1 Pulmonic Sliver
+3 Quilled Sliver
+3 Riftwing Cloudskate
+1 Sage of Epityr
+2 Savage Thallid
+3 Sidewinder Sliver
+2 Spined Sliver
+2 Sporesower Thallid
+2 Thallid
+3 Thallid Germinator
+3 Thallid Shell-Dweller
+1 Thelon of Havenwood
+2 Two-Headed Sliver
+2 Venser's Sliver
+3 Viscerid Deepwalker
+3 Watcher Sliver
+1 Wormwood Dryad
+2 Zhalfirin Commander
+1 Assassinate
+1 Avoid Fate
+1 Careful Consideration
+3 Claws of Gix
+2 Clockspinning
+1 Divine Congregation
+1 Dread Return
+3 Empty the Warrens
+2 Fallen Ideal
+1 Feebleness
+1 Fortify
+3 Gaze of Justice
+4 Grapeshot
+1 Ground Rift
+2 Ignite Memories
+1 Krosan Grip
+1 Might of Old Krosa
+1 Molder
+1 Rift Bolt
+1 Sarpadian Empires, Vol. VII
+1 Serrated Arrows
+2 Spirit Loop
+2 Sprout
+4 Strength in Numbers
+2 Sudden Death
+2 Thunder Totem
+1 Verdant Embrace
+1 Whispers of the Muse

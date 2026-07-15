@@ -1,0 +1,21 @@
+1 Forest
+9 Island
+8 Mountain
+2 Simic Growth Chamber
+4 Terramorphic Expanse
+4 Consuming Vortex
+3 Deep Analysis
+4 Glacial Ray
+1 Horobi's Whisper
+2 Ire of Kaminari
+4 Lightning Bolt
+4 Peer Through Depths
+4 Psychic Puppetry
+4 Reach Through Mists
+4 Sift Through Sands
+2 Vital Surge
+3 Ancient Grudge
+4 Echoing Truth
+2 Hurly-Burly
+4 Mana Leak
+2 Vital Surge

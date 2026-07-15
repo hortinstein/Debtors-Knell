@@ -1,0 +1,38 @@
+55 Island
+55 Swamp
+3 Crystal Seer
+3 Descendant of Soramaro
+4 Dimir House Guard
+3 Lurking Informant
+4 Nekrataal
+3 Ninja of the Deep Hours
+3 Sage Aven
+3 Thieving Magpie
+4 Thought Courier
+4 Azorius Signet
+4 Battle of Wits
+4 Brainspoil
+4 Clutch of the Undercity
+4 Compulsive Research
+4 Consult the Necrosages
+4 Counsel of the Soratami
+3 Dark Banishing
+4 Diabolic Tutor
+4 Dimir Signet
+4 Fellwar Stone
+4 Golgari Signet
+4 Ideas Unbound
+4 Izzet Signet
+4 Last Gasp
+1 Mnemonic Nexus
+4 Orzhov Signet
+4 Rakdos Signet
+4 Rend Flesh
+4 Sift
+4 Sift Through Sands
+4 Simic Signet
+4 Sleight of Hand
+4 Spectral Searchlight
+4 Terrarion
+4 Train of Thought
+4 Vision Skeins

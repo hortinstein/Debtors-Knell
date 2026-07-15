@@ -1,0 +1,10 @@
+{
+  "title": "BoaB Unplugged: Budget Cards To Think About, Part 1",
+  "folder": "20080416_BoaB_Unplugged_Budget_Cards_To_Think_About_Part_1",
+  "slug": "mtgcom/daily/bb160",
+  "date": "20080416",
+  "author": "Ben Bleiweiss",
+  "url": "https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb160",
+  "status": "FAILED",
+  "notes": " Screenshot failed: Page.goto: net::ERR_TIMED_OUT at https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb160\nCall log:\n  - navigating to \"https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb160\", waiting until \"networkidle\"\n; No div.deck structure found on page; SCREENSHOT_MISSING;"
+}

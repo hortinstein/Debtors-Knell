@@ -1,0 +1,20 @@
+4 Fiery Temper
+7 Mountain
+4 Persecute
+4 Shadow Guildmage
+10 Swamp
+2 Undertaker
+4 Deepcavern Imp
+4 Gathan Raiders
+3 Keldon Megaliths
+4 Rakdos Guildmage
+3 Reckless Wurm
+4 Rift Bolt
+3 Smallpox
+4 Tresserhorn Sinks
+
+Sideboard
+4 Blood Moon
+4 Pyroclasm
+3 Greater Gargadon
+4 Yixlid Jailer

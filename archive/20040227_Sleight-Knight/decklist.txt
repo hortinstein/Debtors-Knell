@@ -1,0 +1,12 @@
+8 Island
+15 Plains
+4 Coast Watcher
+4 Silver Knight
+4 Spiketail Hatchling
+4 White Knight
+4 Bonesplitter
+2 Karma
+4 Mana Leak
+4 Mask of Memory
+4 Mind Bend
+3 Worship

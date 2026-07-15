@@ -1,0 +1,21 @@
+3 Bottled Cloister
+3 Loxodon Warhammer
+11 Mountain
+3 Seal of Fire
+4 Shadow Guildmage
+10 Swamp
+2 Void
+3 Crypt Champion
+4 Jagged Poppet
+2 Jaya Ballard, Task Mage
+4 Phyrexian Totem
+4 Rakdos Guildmage
+4 Rakdos Signet
+3 Rift Bolt
+
+Sideboard
+4 Blood Moon
+1 Bottled Cloister
+3 Seal of Doom
+4 Hit/Run
+3 Sudden Shock

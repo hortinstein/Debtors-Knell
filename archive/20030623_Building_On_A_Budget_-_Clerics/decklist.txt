@@ -1,0 +1,14 @@
+11 Plains
+12 Swamp
+4 Battlefield Medic
+4 Benevolent Bodyguard
+4 Cabal Archon
+2 Daunting Defender
+2 Doomed Necromancer
+2 Master Apothecary
+2 Nomad Mythmaker
+3 Teroh's Faithful
+4 Vile Deacon
+4 Withered Wretch
+3 Pariah
+3 Unquestioned Authority

@@ -1,0 +1,48 @@
+4 Frost Marsh
+53 Island
+53 Swamp
+4 Dimir House Guard
+4 Dimir Infiltrator
+4 Drift of Phantasms
+4 Nekrataal
+1 Nezumi Graverobber
+3 Ninja of the Deep Hours
+1 Soratami Cloudskater
+3 Thieving Magpie
+4 Thought Courier
+4 Azorius Signet
+4 Battle of Wits
+1 Befoul
+2 Boomerang
+4 Brainspoil
+4 Clutch of the Undercity
+4 Coldsteel Heart
+4 Compulsive Research
+4 Consult the Necrosages
+4 Counsel of the Soratami
+3 Dark Banishing
+1 Death Denied
+4 Diabolic Tutor
+4 Dimir Signet
+1 Distress
+1 Eradicate
+1 Execute
+4 Fellwar Stone
+4 Golgari Signet
+1 Grim Harvest
+1 Hideous Laughter
+4 Ideas Unbound
+4 Izzet Signet
+4 Last Gasp
+1 Mnemonic Nexus
+4 Muddle the Mixture
+1 Nightmare Void
+4 Perilous Research
+1 Quash
+4 Rakdos Signet
+4 Rend Flesh
+4 Sift
+4 Simic Signet
+1 Slay
+4 Sleight of Hand
+1 Train of Thought

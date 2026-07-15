@@ -1,0 +1,10 @@
+{
+  "title": "Rats Without Honor",
+  "folder": "20050107_Rats_Without_Honor",
+  "slug": "mtgcom/daily/nh48",
+  "date": "20050107",
+  "author": "Nate Heiss",
+  "url": "https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/nh48",
+  "status": "PARTIAL",
+  "notes": " Screenshot failed: Page.goto: net::ERR_TIMED_OUT at https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/nh48\nCall log:\n  - navigating to \"https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/nh48\", waiting until \"networkidle\"\n; deck 1: no sideboard found; SCREENSHOT_MISSING;"
+}

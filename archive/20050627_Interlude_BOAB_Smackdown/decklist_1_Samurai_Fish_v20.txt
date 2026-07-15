@@ -1,0 +1,17 @@
+1  Eiganjo Castle
+1  Minamo, School at Water's Edge
+12  Plains
+8  Island
+
+4  Samurai of the Pale Curtain
+4  Kitsune Blademaster
+3  Kami of Ancient Law
+3  Konda's Hatamoto
+3  Sensei Golden-Tail
+3  Soratami Cloudskater
+3  Nagao, Bound by Honor
+
+4  Echoing Truth
+4  Mana Leak
+4  Test of Faith
+3  Call to Glory

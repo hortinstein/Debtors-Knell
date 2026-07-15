@@ -1,0 +1,16 @@
+12 Forest
+6 Island
+2 Mountain
+2 Plains
+1 Swamp
+4 Etched Oracle
+4 Sakura-Tribe Elder
+4 Sylvok Explorer
+4 Clearwater Goblet
+4 Echoing Truth
+3 Honden of Cleansing Fire
+3 Honden of Infinite Rage
+2 Honden of Life's Web
+2 Honden of Night's Reach
+3 Honden of Seeing Winds
+4 Kodama's Reach

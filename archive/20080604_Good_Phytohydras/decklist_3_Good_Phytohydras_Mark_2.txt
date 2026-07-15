@@ -1,0 +1,15 @@
+8 Forest
+8 Mountain
+6 Swamp
+3 Goblin Sharpshooter
+3 Greater Gargadon
+4 Mogg War Marshal
+4 Sakura-Tribe Elder
+4 Sprouting Phytohydra
+4 Aether Flash
+2 Bitter Ordeal
+4 Diabolic Tutor
+2 Golgari Signet
+3 Gruul Signet
+3 Kodama's Reach
+2 Rakdos Signet

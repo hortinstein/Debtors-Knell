@@ -1,0 +1,24 @@
+3 Forest
+8 Island
+4 Simic Growth Chamber
+4 Terramorphic Expanse
+4 Brainstorm
+4 Dawn's Reflection
+4 Deep Analysis
+4 Fertile Ground
+2 Grapeshot
+4 Ideas Unbound
+3 Moment's Peace
+4 Peer Through Depths
+4 Ponder
+4 Psychic Puppetry
+4 Reach Through Mists
+
+Sideboard
+2 Echoing Truth
+1 Flaring Pain
+4 Gigadrowse
+1 Moment's Peace
+4 Muddle the Mixture
+1 Eye of Nowhere
+2 Counterspell

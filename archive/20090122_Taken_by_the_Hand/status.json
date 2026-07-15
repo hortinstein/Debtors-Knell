@@ -1,0 +1,10 @@
+{
+  "title": "Taken by the Hand",
+  "folder": "20090122_Taken_by_the_Hand",
+  "slug": "mtg/daily/boab/22",
+  "date": "20090122",
+  "author": "Jacob Van Lunen",
+  "url": "https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtg/daily/boab/22",
+  "status": "PARTIAL",
+  "notes": " Screenshot failed: Page.goto: net::ERR_TIMED_OUT at https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtg/daily/boab/22\nCall log:\n  - navigating to \"https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtg/daily/boab/22\", waiting until \"networkidle\"\n; deck 1: no sideboard found; deck 2: no sideboard found; SCREENSHOT_MISSING;"
+}

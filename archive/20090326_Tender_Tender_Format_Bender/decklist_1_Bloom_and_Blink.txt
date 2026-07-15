@@ -1,0 +1,18 @@
+5 Forest
+6 Island
+2 Plains
+4 Seaside Citadel
+3 Vivid Creek
+1 Vivid Grove
+3 Vivid Meadow
+4 Bloom Tender
+2 Glen Elendra Archmage
+4 Mistmeadow Witch
+4 Mulldrifter
+3 Reveillark
+3 Seedborn Muse
+3 Sower of Temptation
+4 Mind Stone
+4 Negate
+3 Path to Exile
+2 Remove Soul

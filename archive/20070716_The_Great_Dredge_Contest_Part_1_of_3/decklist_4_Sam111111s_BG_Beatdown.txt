@@ -1,0 +1,12 @@
+10 Forest
+11 Swamp
+3 Golgari Grave-Troll
+4 Nether Traitor
+4 Plagued Rusalka
+4 Stinkweed Imp
+4 Tombstalker
+4 Wall of Roots
+4 Darkblast
+4 Moldervine Cloak
+4 Mwonvuli Acid-Moss
+4 Search for Tomorrow

@@ -1,0 +1,5 @@
+10 Forest
+10 Island
+10 Mountain
+10 Plains
+20 Swamp

@@ -1,0 +1,10 @@
+{
+  "title": "Weird Puzzle",
+  "folder": "20040507_Weird_Puzzle",
+  "slug": "mtgcom/daily/nh13",
+  "date": "20040507",
+  "author": "Nate Heiss",
+  "url": "https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/nh13",
+  "status": "PARTIAL",
+  "notes": " Screenshot failed: Page.goto: net::ERR_TIMED_OUT at https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/nh13\nCall log:\n  - navigating to \"https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/nh13\", waiting until \"networkidle\"\n; deck 1: no sideboard found; SCREENSHOT_MISSING;"
+}

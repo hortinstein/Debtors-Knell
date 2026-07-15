@@ -1,0 +1,10 @@
+{
+  "title": "Interlude: BOAB Smackdown!",
+  "folder": "20050627_Interlude_BOAB_Smackdown",
+  "slug": "mtgcom/daily/jm106",
+  "date": "20050627",
+  "author": "Jay Moldenhauer-Salazar",
+  "url": "https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/jm106",
+  "status": "OK",
+  "notes": "Screenshot failed: Page.goto: net::ERR_TIMED_OUT at https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/jm106\nCall log:\n  - navigating to \"https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/jm106\", waiting until \"networkidle\"\n;"
+}

@@ -1,0 +1,54 @@
+4 Battle of Wits
+2 Boomerang
+4 Brainspoil
+4 Clutch of the Undercity
+4 Compulsive Research
+4 Consult the Necrosages
+4 Counsel of the Soratami
+1 Crystal Seer
+3 Dark Banishing
+4 Diabolic Tutor
+4 Dimir Aqueduct
+4 Dimir House Guard
+4 Dimir Infiltrator
+4 Dimir Signet
+4 Drift of Phantasms
+1 Execute
+4 Golgari Signet
+1 Gravedigger
+43 Island
+4 Izzet Signet
+4 Last Gasp
+1 Mnemonic Nexus
+4 Muddle the Mixture
+4 Nekrataal
+1 Nightmare Void
+1 Ribbons of Night
+4 Sift
+1 Slay
+4 Sleight of Hand
+43 Swamp
+3 Thieving Magpie
+4 Thought Courier
+1 Train of Thought
+1 Treasure Trove
+4 Azorius Signet
+4 Chromatic Star
+4 Coldsteel Heart
+4 Frost Marsh
+1 Grim Harvest
+4 Looter il-Kor
+4 Mystical Teachings
+4 Perilous Research
+4 Prismatic Lens
+4 Rakdos Signet
+4 Sage of Epityr
+4 Simic Signet
+1 Strangling Soot
+4 Sudden Death
+1 Tendrils of Corruption
+4 Terramorphic Expanse
+4 Think Twice
+1 Wipe Away
+
+Sideboard

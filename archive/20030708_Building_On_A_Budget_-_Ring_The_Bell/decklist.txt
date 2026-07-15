@@ -1,0 +1,15 @@
+2 Grand Coliseum
+4 Island
+7 Mountain
+9 Swamp
+3 Aphetto Runecaster
+3 Carrion Feeder
+3 Chromeshell Crab
+4 Putrid Raptor
+3 Riptide Survivor
+4 Skinthinner
+4 Skirk Alarmist
+3 Skirk Marauder
+4 Zombie Cutthroat
+4 Dream Chisel
+3 Smother

@@ -1,0 +1,12 @@
+4 Coastal Tower
+10 Island
+10 Plains
+4 Absorb
+4 Exclude
+4 Fact or Fiction
+4 Repulse
+2 Aura Blast
+3 Crusading Knight
+4 Disrupt
+3 Gainsay
+3 Pure Reflection

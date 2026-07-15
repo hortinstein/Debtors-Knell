@@ -1,0 +1,11 @@
+12 Forest
+12 Plains
+4 Cloudgoat Ranger
+4 Devoted Druid
+4 Heritage Druid
+4 Mirror Entity
+4 Treefolk Harbinger
+3 Ajani Goldmane
+1 Crib Swap
+4 Hunting Triad
+4 Spectral Procession

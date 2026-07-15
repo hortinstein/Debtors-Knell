@@ -1,0 +1,14 @@
+8 Island
+12 Mountain
+2 Terramorphic Expanse
+3 Aethersnipe
+4 Flamekin Harbinger
+2 Hostility
+3 Incandescent Soulstoke
+4 Mulldrifter
+4 Smokebraider
+4 Delay
+2 Disintegrate
+4 Incinerate
+4 Rift Bolt
+4 Rune Snag

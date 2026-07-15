@@ -1,0 +1,11 @@
+10 Mountain
+14 Swamp
+4 Army Ants
+3 Avalanche Riders
+4 Blind Creeper
+4 Jackal Pup
+4 Mogg Fanatic
+4 Shadow Guildmage
+3 Befoul
+4 Desolation
+2 Terminate

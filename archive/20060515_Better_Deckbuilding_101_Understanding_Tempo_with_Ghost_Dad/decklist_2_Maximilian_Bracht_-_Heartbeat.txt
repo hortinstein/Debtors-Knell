@@ -1,0 +1,22 @@
+10 Forest
+10 Island
+1 Mountain
+1 Swamp
+1 Boomerang
+1 Compulsive Research
+4 Early Harvest
+4 Heartbeat of Spring
+1 Invoke the Firemind
+4 Kodama's Reach
+4 Muddle the Mixture
+1 Recollect
+4 Remand
+4 Sensei's Divining Top
+1 Weird Harvest
+3 Iwamori of the Open Fist
+1 Keiga, the Tide Star
+2 Meloku the Clouded Mirror
+1 Pyroclasm
+3 Savage Twister
+1 Umezawa's Jitte
+4 Vinelasher Kudzu

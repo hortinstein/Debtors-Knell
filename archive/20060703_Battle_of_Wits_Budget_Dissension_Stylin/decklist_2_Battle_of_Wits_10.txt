@@ -1,0 +1,31 @@
+64 Island
+60 Swamp
+4 Dimir House Guard
+4 Thought Courier
+4 Azorius Signet
+4 Battle of Wits
+4 Boros Signet
+4 Brainspoil
+4 Clutch of the Undercity
+4 Compulsive Research
+4 Consult the Necrosages
+4 Counsel of the Soratami
+4 Diabolic Tutor
+4 Dimir Signet
+4 Fellwar Stone
+4 Golgari Signet
+4 Gruul Signet
+4 Honor-Worn Shaku
+4 Ideas Unbound
+4 Izzet Signet
+4 Orzhov Signet
+4 Rakdos Signet
+4 Reach Through Mists
+4 Selesnya Signet
+4 Sift
+4 Sift Through Sands
+4 Simic Signet
+4 Spectral Searchlight
+4 Terrarion
+4 Train of Thought
+4 Vision Skeins

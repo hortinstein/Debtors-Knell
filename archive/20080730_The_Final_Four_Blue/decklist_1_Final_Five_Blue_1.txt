@@ -1,0 +1,36 @@
+25 Island
+1 Aboshan, Cephalid Emperor
+1 Arcanis the Omnipotent
+1 Cytoplast Manipulator
+1 Denizen of the Deep
+1 Grozoth
+1 Ixidor, Reality Sculptor
+1 Maelstrom Djinn
+1 Magus of the Future
+1 Myojin of Seeing Winds
+1 Novijen Sages
+1 Riptide Mangler
+1 Shapesharer
+1 Sprite Noble
+1 The Unspeakable
+1 Tidal Kraken
+1 Breaking Wave
+1 Copy Enchantment
+1 Crystal Spray
+1 Deflection
+1 Delusions of Mediocrity
+1 Dire Undercurrents
+1 Disrupting Shoal
+1 Fathom Trawl
+1 Govern the Guildless
+1 Hatching Plans
+1 Leyline of Singularity
+1 Memory Plunder
+1 Mind Bend
+1 Mist of Stagnation
+1 Moonlace
+1 Planar Overlay
+1 Shadow of Doubt
+1 Temporal Cascade
+1 Thought Reflection
+1 Trade Secrets

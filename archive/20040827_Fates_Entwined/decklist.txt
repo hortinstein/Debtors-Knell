@@ -1,0 +1,12 @@
+12 Island
+10 Swamp
+3 Steel Wall
+4 Blackmail
+4 Coercion
+4 Condescend
+4 Dark Banishing
+4 Mana Leak
+4 Serum Visions
+4 Shared Fate
+4 Terror
+3 Thirst for Knowledge

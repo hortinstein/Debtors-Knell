@@ -1,0 +1,16 @@
+4 Barren Moor
+4 Forest
+9 Swamp
+3 Temple of the False God
+3 Tranquil Thicket
+4 Elvish Aberration
+2 Elvish Soultiller
+3 Smokespew Invoker
+3 Stonewood Invoker
+4 Twisted Abomination
+4 Wirewood Guardian
+3 Withered Wretch
+3 Cruel Revival
+4 Decree of Pain
+4 Infest
+3 Patriarch's Bidding
