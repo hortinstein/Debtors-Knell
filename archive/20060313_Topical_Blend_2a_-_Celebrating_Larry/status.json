@@ -5,6 +5,6 @@
   "date": "20060313",
   "author": "Jay Moldenhauer-Salazar",
   "url": "https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/jm143",
-  "status": "FAILED",
-  "notes": " Screenshot failed: Page.goto: net::ERR_TIMED_OUT at https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/jm143\nCall log:\n  - navigating to \"https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/jm143\", waiting until \"networkidle\"\n; No div.deck structure found on page; SCREENSHOT_MISSING;"
+  "status": "NO_DECKLIST",
+  "notes": "Screenshot failed: Page.goto: net::ERR_TIMED_OUT at https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/jm143\nCall log:\n  - navigating to \"https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/jm143\", waiting until \"networkidle\"\n; No div.deck structure found on page;"
 }

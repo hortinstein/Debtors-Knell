@@ -6,5 +6,5 @@
   "author": "Ben Bleiweiss",
   "url": "https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb84",
   "status": "PARTIAL",
-  "notes": " Screenshot failed: Page.goto: Timeout 60000ms exceeded.\nCall log:\n  - navigating to \"https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb84\", waiting until \"networkidle\"\n; deck 1: no sideboard found; deck 2: no sideboard found; deck 3: no sideboard found; deck 4: no sideboard found; deck 5: no sideboard found; SCREENSHOT_MISSING;"
+  "notes": "Screenshot failed: Page.goto: Timeout 60000ms exceeded.\nCall log:\n  - navigating to \"https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb84\", waiting until \"networkidle\"\n; deck 1: no sideboard found; deck 2: no sideboard found; deck 3: no sideboard found; deck 4: no sideboard found; deck 5: no sideboard found;"
 }

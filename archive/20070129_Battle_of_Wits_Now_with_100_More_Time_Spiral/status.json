@@ -6,5 +6,5 @@
   "author": "Ben Bleiweiss",
   "url": "https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb97",
   "status": "OK",
-  "notes": " Screenshot failed: Page.goto: Timeout 60000ms exceeded.\nCall log:\n  - navigating to \"https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb97\", waiting until \"networkidle\"\n; SCREENSHOT_MISSING;"
+  "notes": "Screenshot failed: Page.goto: Timeout 60000ms exceeded.\nCall log:\n  - navigating to \"https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb97\", waiting until \"networkidle\"\n;"
 }

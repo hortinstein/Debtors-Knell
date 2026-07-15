@@ -6,5 +6,5 @@
   "author": "Nate Heiss",
   "url": "https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/nh29",
   "status": "PARTIAL",
-  "notes": " Screenshot failed: Page.goto: Timeout 60000ms exceeded.\nCall log:\n  - navigating to \"https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/nh29\", waiting until \"networkidle\"\n; deck 1: no sideboard found; SCREENSHOT_MISSING;"
+  "notes": "Screenshot failed: Page.goto: Timeout 60000ms exceeded.\nCall log:\n  - navigating to \"https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/nh29\", waiting until \"networkidle\"\n; deck 1: no sideboard found;"
 }
