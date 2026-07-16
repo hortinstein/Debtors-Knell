@@ -18,11 +18,11 @@
   <span class="archetype-filter-label">Filter by color:</span>
   {% for c in color_list %}
   <button type="button" class="mana-pip-btn" data-color="{{ c }}" title="{{ c }}" aria-label="{{ c }}">
-    <span class="mana-pip mana-{{ c|lower }}">{{ c }}</span>
+    <img class="mana-pip" src="https://svgs.scryfall.io/card-symbols/{{ c }}.svg" alt="{{ c }}">
   </button>
   {% endfor %}
   <button type="button" class="mana-pip-btn" data-color="C" title="Colorless" aria-label="Colorless">
-    <span class="mana-pip mana-c">C</span>
+    <img class="mana-pip" src="https://svgs.scryfall.io/card-symbols/C.svg" alt="C">
   </button>
   <button type="button" class="archetype-chip archetype-clear" id="color-clear">Clear</button>
 </div>
@@ -60,9 +60,9 @@
       </td>
       <td class="col-colors">
         {% if a.colors %}
-          {% for c in a.colors %}<span class="mana-pip mana-{{ c|lower }}" title="{{ c }}">{{ c }}</span>{% endfor %}
+          {% for c in a.colors %}<img class="mana-pip" src="https://svgs.scryfall.io/card-symbols/{{ c }}.svg" alt="{{ c }}" title="{{ c }}">{% endfor %}
         {% elif a.has_decklist %}
-          <span class="mana-pip mana-c" title="Colorless">C</span>
+          <img class="mana-pip" src="https://svgs.scryfall.io/card-symbols/C.svg" alt="C" title="Colorless">
         {% endif %}
       </td>
       {% if a.has_decklist %}

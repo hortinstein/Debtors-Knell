@@ -153,30 +153,21 @@ main {
   line-height: 0;
 }
 
-.mana-pip-btn .mana-pip { box-shadow: 0 0 0 1px var(--border); }
+.mana-pip-btn .mana-pip { box-shadow: 0 0 0 1px var(--border); border-radius: 50%; }
 .mana-pip-btn:hover .mana-pip { box-shadow: 0 0 0 2px var(--accent-2); }
-.mana-pip-btn.active .mana-pip { box-shadow: 0 0 0 2px var(--accent); transform: scale(1.08); }
+.mana-pip-btn.active .mana-pip { box-shadow: 0 0 0 2px var(--accent); transform: scale(1.12); }
 
+/* Official Magic: the Gathering mana symbols, hotlinked from Scryfall's
+   symbology set (https://svgs.scryfall.io/card-symbols/<W|U|B|R|G|C>.svg). */
 .mana-pip {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.35em;
-  height: 1.35em;
+  display: inline-block;
+  width: 1.3em;
+  height: 1.3em;
+  vertical-align: -0.22em;
   border-radius: 50%;
-  font-size: 0.72rem;
-  font-weight: 700;
-  font-family: Georgia, "Times New Roman", serif;
-  line-height: 1;
   margin: 0 0.06em;
+  transition: transform 0.1s;
 }
-
-.mana-w { background: #f8f6d8; color: #7a6a1a; }
-.mana-u { background: #aae0fa; color: #0e4f7a; }
-.mana-b { background: #8a8580; color: #f5f2ea; }
-.mana-r { background: #f9aa8f; color: #8a1f0a; }
-.mana-g { background: #9bd0a7; color: #14532b; }
-.mana-c { background: #d8d3c6; color: #4a4438; }
 
 .col-colors { white-space: nowrap; }
 
