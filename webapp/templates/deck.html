@@ -3,6 +3,16 @@
 {% block content %}
 <p class="back-link"><a href="{{ url_for('index') }}">&larr; back to all articles</a></p>
 
+{% if has_screenshot %}
+<figure class="screenshot-frame">
+  <img class="screenshot-thumb"
+       src="{{ url_for('screenshot', folder=article.folder) }}"
+       data-full="{{ url_for('screenshot', folder=article.folder) }}"
+       alt="Original archived page screenshot for {{ article.title }}">
+  <figcaption>Original archived page &mdash; click to expand</figcaption>
+</figure>
+{% endif %}
+
 <article class="article-body">
 {{ article_html|safe }}
 </article>
@@ -33,4 +43,7 @@
   <p class="muted">No decklist for this article (trading / strategy piece).</p>
 </section>
 {% endif %}
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='lightbox.js') }}"></script>
 {% endblock %}

@@ -136,6 +136,70 @@ main {
   margin-bottom: 2rem;
 }
 
+.screenshot-frame {
+  margin: 0 0 1.5rem;
+  text-align: center;
+}
+
+.screenshot-thumb {
+  max-width: 320px;
+  max-height: 420px;
+  width: auto;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  cursor: zoom-in;
+  transition: box-shadow 0.15s;
+}
+
+.screenshot-thumb:hover {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+}
+
+.screenshot-frame figcaption {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-top: 0.4rem;
+}
+
+#lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0,0,0,0.82);
+  padding: 3rem 1.5rem;
+  overflow: auto;
+  text-align: center;
+}
+
+#lightbox-overlay.open { display: block; }
+
+body.lightbox-locked { overflow: hidden; }
+
+#lightbox-img {
+  max-width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+  cursor: zoom-out;
+}
+
+#lightbox-close {
+  position: fixed;
+  top: 1rem;
+  right: 1.5rem;
+  z-index: 2001;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+}
+
+#lightbox-close:hover { color: #f0b877; }
+
 .article-body h1 { margin-top: 0; color: var(--accent); }
 .article-body h5, .article-body h6 { color: var(--accent-2); }
 .article-body a { color: var(--link); }

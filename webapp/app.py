@@ -19,7 +19,7 @@ import os
 import re
 
 import markdown
-from flask import Flask, abort, render_template
+from flask import Flask, abort, render_template, send_from_directory
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ARCHIVE_DIR = os.path.join(REPO_ROOT, "archive")
@@ -174,6 +174,18 @@ def index():
     )
 
 
+@app.route("/screenshot/<folder>")
+def screenshot(folder):
+    # Validate against the known folder list (not just os.path checks) so a
+    # crafted folder value can't be used to walk outside archive/.
+    if get_article_by_folder(folder) is None:
+        abort(404)
+    folder_path = os.path.join(ARCHIVE_DIR, folder)
+    if not os.path.exists(os.path.join(folder_path, "screenshot.png")):
+        abort(404)
+    return send_from_directory(folder_path, "screenshot.png")
+
+
 @app.route("/deck/<folder>")
 def deck_detail(folder):
     article = get_article_by_folder(folder)
@@ -181,6 +193,7 @@ def deck_detail(folder):
         abort(404)
 
     folder_path = os.path.join(ARCHIVE_DIR, folder)
+    has_screenshot = os.path.exists(os.path.join(folder_path, "screenshot.png"))
     article_md_path = os.path.join(folder_path, "article.md")
     article_html = ""
     if os.path.exists(article_md_path):
@@ -216,6 +229,7 @@ def deck_detail(folder):
         decks=decks,
         grand_usd=grand_usd,
         grand_tix=grand_tix,
+        has_screenshot=has_screenshot,
     )
 
 
