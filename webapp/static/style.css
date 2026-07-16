@@ -222,6 +222,16 @@ main {
 .col-date { white-space: nowrap; font-size: 0.85rem; color: var(--muted); }
 .col-title a { color: var(--link); font-weight: 600; text-decoration: none; }
 .col-title a:hover { text-decoration: underline; }
+.col-title-inner { display: flex; align-items: flex-start; gap: 0.6rem; }
+.deck-thumb {
+  flex: none;
+  width: 64px;
+  height: 46px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--row-alt);
+}
 .col-author { font-size: 0.78rem; color: var(--muted); font-weight: normal; }
 .col-desc { font-size: 0.88rem; color: #444; max-width: 34em; }
 .col-num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }

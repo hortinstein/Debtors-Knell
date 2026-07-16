@@ -51,8 +51,15 @@
         data-colors="{{ a.colors|join(',') if a.colors else 'C' }}">
       <td class="col-date">{{ a.date_str or a.ymd }}</td>
       <td class="col-title">
-        <a href="{{ url_for('deck_detail', folder=a.folder) }}">{{ a.title }}</a>
-        {% if a.author %}<div class="col-author">by {{ a.author }}</div>{% endif %}
+        <div class="col-title-inner">
+          {% if a.thumbnail %}
+          <img class="deck-thumb" src="{{ a.thumbnail }}" alt="" loading="lazy">
+          {% endif %}
+          <div>
+            <a href="{{ url_for('deck_detail', folder=a.folder) }}">{{ a.title }}</a>
+            {% if a.author %}<div class="col-author">by {{ a.author }}</div>{% endif %}
+          </div>
+        </div>
       </td>
       <td class="col-desc">{{ a.description if a.description else "(no description available)" }}</td>
       <td class="col-tags">
