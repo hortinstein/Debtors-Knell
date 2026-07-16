@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Building on a Budget Archive{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="site-header">
+  <a class="site-title" href="{{ url_for('index') }}">Building on a Budget &mdash; Archive</a>
+  <span class="site-sub">317 Magic: the Gathering deckbuilding articles, 2003&ndash;2009</span>
+</header>
+<main>
+{% block content %}{% endblock %}
+</main>
+<footer class="site-footer">
+  <p>Archived from Wizards of the Coast's "Building on a Budget" column via the Wayback Machine.
+     Card prices sourced from Scryfall (physical USD market price &amp; MTGO tix price).</p>
+</footer>
+<script src="{{ url_for('static', filename='card-preview.js') }}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

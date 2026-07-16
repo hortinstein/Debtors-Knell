@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}{{ article.title }} &mdash; Building on a Budget Archive{% endblock %}
+{% block content %}
+<p class="back-link"><a href="{{ url_for('index') }}">&larr; back to all articles</a></p>
+
+<article class="article-body">
+{{ article_html|safe }}
+</article>
+
+{% if decks %}
+<section class="decklists">
+  <h2>Priced Decklist{{ "s" if decks|length > 1 else "" }}</h2>
+
+  {% if decks|length > 1 %}
+  <div class="combined-total">
+    <strong>Combined total across {{ decks|length }} decks:</strong>
+    ${{ "%.2f"|format(grand_usd) }} physical &middot; {{ "%.2f"|format(grand_tix) }} tix digital
+  </div>
+  {% endif %}
+
+  {% for d in decks %}
+  <div class="deck-block">
+    <h3>{{ d.label }}</h3>
+    <p class="deck-source">Source: <code>{{ d.filename[:-10] }}.txt</code></p>
+    <div class="priced-table">
+      {{ d.html|safe }}
+    </div>
+  </div>
+  {% endfor %}
+</section>
+{% else %}
+<section class="decklists">
+  <p class="muted">No decklist for this article (trading / strategy piece).</p>
+</section>
+{% endif %}
+{% endblock %}

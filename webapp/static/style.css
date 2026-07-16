@@ -1,0 +1,220 @@
+:root {
+  --bg: #faf9f6;
+  --fg: #232323;
+  --muted: #6b6b6b;
+  --accent: #7a3b12;
+  --accent-2: #9c5518;
+  --border: #ddd6c9;
+  --row-alt: #f2efe7;
+  --link: #8a4413;
+  --card-bg: #fff;
+  --header-bg: #2c1c10;
+  --header-fg: #f5efe4;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Iowan Old Style", "Palatino Linotype", Georgia, "Times New Roman", serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.5;
+}
+
+.site-header {
+  background: var(--header-bg);
+  color: var(--header-fg);
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.site-title {
+  color: var(--header-fg);
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.site-sub {
+  color: #cbb89a;
+  font-size: 0.85rem;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.25rem 1.25rem 3rem;
+}
+
+.site-footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.8rem;
+  padding: 1.5rem 1rem 2.5rem;
+}
+
+/* ---------- index page ---------- */
+
+.index-summary {
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+  font-size: 0.92rem;
+}
+
+.deck-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card-bg);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.deck-table th, .deck-table td {
+  padding: 0.55rem 0.7rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+
+.deck-table thead th {
+  background: var(--header-bg);
+  color: var(--header-fg);
+  position: sticky;
+  top: 0;
+  font-weight: 600;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+.deck-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.deck-table th.sortable:hover {
+  background: var(--accent-2);
+}
+
+.deck-table th.sortable::after {
+  content: "\2195";
+  opacity: 0.5;
+  margin-left: 0.3em;
+  font-size: 0.8em;
+}
+
+.deck-table th.sort-asc::after { content: "\2191"; opacity: 1; }
+.deck-table th.sort-desc::after { content: "\2193"; opacity: 1; }
+
+.deck-table tbody tr:nth-child(even) { background: var(--row-alt); }
+
+.deck-row { transition: background 0.1s; }
+.deck-row:hover { background: #ecdfc9; cursor: pointer; }
+
+.col-date { white-space: nowrap; font-size: 0.85rem; color: var(--muted); }
+.col-title a { color: var(--link); font-weight: 600; text-decoration: none; }
+.col-title a:hover { text-decoration: underline; }
+.col-author { font-size: 0.78rem; color: var(--muted); font-weight: normal; }
+.col-desc { font-size: 0.88rem; color: #444; max-width: 34em; }
+.col-num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.col-num.muted { color: var(--muted); font-style: italic; font-size: 0.85rem; text-align: center; }
+
+/* ---------- deck detail page ---------- */
+
+.back-link { margin-bottom: 0.5rem; }
+.back-link a { color: var(--link); text-decoration: none; }
+.back-link a:hover { text-decoration: underline; }
+
+.article-body {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.article-body h1 { margin-top: 0; color: var(--accent); }
+.article-body h5, .article-body h6 { color: var(--accent-2); }
+.article-body a { color: var(--link); }
+.article-body hr { border: none; border-top: 1px solid var(--border); margin: 1.2rem 0; }
+
+.decklists h2 { color: var(--accent); }
+
+.combined-total {
+  background: #f4ead6;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.deck-block {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.deck-block h3 { margin-top: 0; color: var(--accent-2); }
+.deck-source { color: var(--muted); font-size: 0.85rem; margin-top: -0.5rem; }
+
+.priced-table { overflow-x: auto; }
+
+.priced-table table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.92rem;
+  margin-bottom: 0.6rem;
+}
+
+.priced-table th, .priced-table td {
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.6rem;
+}
+
+.priced-table th {
+  background: var(--row-alt);
+  text-align: left;
+}
+
+.priced-table td:first-child, .priced-table th:first-child { text-align: right; }
+.priced-table a { color: var(--link); }
+
+.priced-table sub { color: var(--muted); }
+
+.muted { color: var(--muted); }
+
+/* ---------- card hover preview ---------- */
+
+#card-preview {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+  width: 244px;
+  height: auto;
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1712;
+    --fg: #ece5d8;
+    --muted: #a89a86;
+    --accent: #e0a15c;
+    --accent-2: #d99248;
+    --border: #4a3d2e;
+    --row-alt: #241d16;
+    --link: #f0b877;
+    --card-bg: #241d16;
+    --header-bg: #120d09;
+    --header-fg: #f0e6d6;
+  }
+  .deck-row:hover { background: #33291b; }
+  .combined-total { background: #2c2418; }
+}

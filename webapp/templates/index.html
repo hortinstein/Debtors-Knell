@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Building on a Budget Archive{% endblock %}
+{% block content %}
+<section class="index-summary">
+  <p>{{ total_count }} articles archived &middot; {{ with_decklist_count }} with priced decklists
+     &middot; {{ total_count - with_decklist_count }} non-deck / trading articles</p>
+</section>
+
+<table class="deck-table" id="deck-table">
+  <thead>
+    <tr>
+      <th class="sortable" data-key="date" data-type="text">Date</th>
+      <th class="sortable" data-key="title" data-type="text">Title</th>
+      <th>Description</th>
+      <th class="sortable" data-key="usd" data-type="num">Physical ($)</th>
+      <th class="sortable" data-key="tix" data-type="num">Digital (tix)</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for a in articles %}
+    <tr class="deck-row"
+        data-href="{{ url_for('deck_detail', folder=a.folder) }}"
+        data-date="{{ a.ymd }}"
+        data-title="{{ a.title|lower }}"
+        data-usd="{{ a.usd_total }}"
+        data-tix="{{ a.tix_total }}">
+      <td class="col-date">{{ a.date_str or a.ymd }}</td>
+      <td class="col-title">
+        <a href="{{ url_for('deck_detail', folder=a.folder) }}">{{ a.title }}</a>
+        {% if a.author %}<div class="col-author">by {{ a.author }}</div>{% endif %}
+      </td>
+      <td class="col-desc">{{ a.description if a.description else "(no description available)" }}</td>
+      {% if a.has_decklist %}
+      <td class="col-num">${{ "%.2f"|format(a.usd_total) }}</td>
+      <td class="col-num">{{ "%.2f"|format(a.tix_total) }} tix</td>
+      {% else %}
+      <td class="col-num muted" colspan="2">no decklist</td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='table-sort.js') }}"></script>
+{% endblock %}
