@@ -375,6 +375,29 @@ body.lightbox-locked { overflow: hidden; }
 
 .pool-selected-count { color: var(--muted); font-size: 0.88rem; }
 
+.pool-link-btn {
+  font-family: inherit;
+  font-size: 0.82rem;
+  background: none;
+  border: none;
+  color: var(--link);
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+.pool-link-btn:hover { color: var(--accent); }
+
+.pool-mode-toggle {
+  display: inline-flex;
+  gap: 0.9rem;
+  font-size: 0.85rem;
+  color: var(--fg);
+  margin-left: auto;
+}
+.pool-mode-toggle label { display: inline-flex; align-items: center; gap: 0.3rem; cursor: pointer; }
+
+.pool-mode-note { font-size: 0.85rem; margin: 0 0 0.5rem; max-width: 46em; }
+
 .pool-build-btn {
   font-family: inherit;
   font-size: 0.9rem;

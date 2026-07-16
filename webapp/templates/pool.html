@@ -5,15 +5,20 @@
   <h1>Card Pool Builder</h1>
   <p class="muted">
     Pick any decks below and build one combined shopping list of every card
-    needed to assemble all of them at once (quantities are summed across
-    decks, not shared between them).
+    needed to assemble them.
   </p>
 </section>
 
 <form method="get" action="{{ url_for('card_pool') }}" id="pool-form">
   <div class="pool-controls">
     <input type="search" id="pool-filter" placeholder="Filter by title or author&hellip;" autocomplete="off">
+    <button type="button" id="pool-select-all" class="pool-link-btn">Select all</button>
+    <button type="button" id="pool-select-none" class="pool-link-btn">Clear</button>
     <span class="pool-selected-count"><span id="pool-count">{{ selected_ids|length }}</span> deck{{ "s" if selected_ids|length != 1 else "" }} selected</span>
+    <span class="pool-mode-toggle" role="group" aria-label="Pool mode">
+      <label><input type="radio" name="mode" value="sum" {{ "checked" if pool_mode != "shared" else "" }}> Build all at once</label>
+      <label><input type="radio" name="mode" value="shared" {{ "checked" if pool_mode == "shared" else "" }}> Share cards between decks</label>
+    </span>
     <button type="submit" class="pool-build-btn">Build pool</button>
   </div>
 
@@ -47,11 +52,21 @@
 {% if pool_rows is not none %}
 <section class="pool-results">
   <h2>Combined shopping list &mdash; {{ selected_decks|length }} deck{{ "s" if selected_decks|length != 1 else "" }}</h2>
+  <p class="muted pool-mode-note">
+    {% if pool_mode == "shared" %}
+      Shared-pool mode: quantities are the <em>most</em> any single selected deck needs of a
+      card, on the assumption you only build one deck at a time and reshuffle the same cards
+      into the next one.
+    {% else %}
+      Build-all-at-once mode: quantities are <em>summed</em> across every selected deck, on the
+      assumption you want them all assembled simultaneously with no cards shared between them.
+    {% endif %}
+  </p>
   <p class="combined-total">
-    <strong>Grand total to build all selected decks:</strong>
-    ${{ "%.2f"|format(pool_usd_total) }} physical &middot; {{ "%.2f"|format(pool_tix_total) }} tix digital
+    <strong>Grand total:</strong>
+    ${{ pool_usd_total|money }} physical &middot; {{ pool_tix_total|money }} tix digital
     &middot;
-    <a class="download-link" href="{{ url_for('pool_download', deck=selected_decks|map(attribute='id')|list) }}" download>
+    <a class="download-link" href="{{ url_for('pool_download', deck=selected_decks|map(attribute='id')|list, mode=pool_mode) }}" download>
       &#8681; Download shopping list (.txt)
     </a>
   </p>
