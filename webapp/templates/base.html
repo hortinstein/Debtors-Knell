@@ -10,6 +10,10 @@
 <header class="site-header">
   <a class="site-title" href="{{ url_for('index') }}">Building on a Budget &mdash; Archive</a>
   <span class="site-sub">317 Magic: the Gathering deckbuilding articles, 2003&ndash;2009</span>
+  <nav class="site-nav">
+    <a href="{{ url_for('card_pool') }}">Card Pool</a>
+    <a href="{{ url_for('stats') }}">Stats</a>
+  </nav>
 </header>
 <main>
 {% block content %}{% endblock %}

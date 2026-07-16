@@ -3,6 +3,13 @@
 {% block content %}
 <p class="back-link"><a href="{{ url_for('index') }}">&larr; back to all articles</a></p>
 
+{% if article.archetypes %}
+<div class="archetype-summary">
+  {% for tag in article.archetypes %}<span class="tag-chip">{{ tag }}</span>{% endfor %}
+  {% if article.description %}<p class="archetype-description">{{ article.description }}</p>{% endif %}
+</div>
+{% endif %}
+
 {% if has_screenshot %}
 <figure class="screenshot-frame">
   <img class="screenshot-thumb"
@@ -38,6 +45,28 @@
         &#8681; Download for MTGO import
       </a>
     </p>
+
+    {% if d.history.tix or d.history.usd %}
+    <div class="price-chart">
+      <div class="price-chart-header">
+        <span class="price-chart-title">Price history</span>
+        <div class="price-chart-toggle" role="group" aria-label="Currency">
+          <button type="button" class="toggle-btn active" data-series="tix">Digital (tix)</button>
+          <button type="button" class="toggle-btn" data-series="usd">Physical ($)</button>
+        </div>
+      </div>
+      <div class="price-chart-canvas-wrap">
+        <canvas class="price-chart-canvas"></canvas>
+        <div class="price-chart-tooltip">
+          <div class="pc-tt-value"></div>
+          <div class="pc-tt-date"></div>
+        </div>
+      </div>
+      <p class="price-chart-note"></p>
+      <script type="application/json" class="price-chart-data">{{ d.history|tojson }}</script>
+    </div>
+    {% endif %}
+
     <div class="priced-table">
       {{ d.html|safe }}
     </div>
@@ -52,4 +81,5 @@
 {% endblock %}
 {% block scripts %}
 <script src="{{ url_for('static', filename='lightbox.js') }}"></script>
+<script src="{{ url_for('static', filename='price-chart.js') }}"></script>
 {% endblock %}

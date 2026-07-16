@@ -6,12 +6,21 @@
      &middot; {{ total_count - with_decklist_count }} non-deck / trading articles</p>
 </section>
 
+<div class="archetype-filter" id="archetype-filter" role="group" aria-label="Filter by archetype">
+  <span class="archetype-filter-label">Filter by archetype:</span>
+  {% for tag in archetype_list %}
+  <button type="button" class="archetype-chip" data-archetype="{{ tag }}">{{ tag }}</button>
+  {% endfor %}
+  <button type="button" class="archetype-chip archetype-clear" id="archetype-clear">Clear</button>
+</div>
+
 <table class="deck-table" id="deck-table">
   <thead>
     <tr>
       <th class="sortable" data-key="date" data-type="text">Date</th>
       <th class="sortable" data-key="title" data-type="text">Title</th>
       <th>Description</th>
+      <th>Archetypes</th>
       <th class="sortable" data-key="usd" data-type="num">Physical ($)</th>
       <th class="sortable" data-key="tix" data-type="num">Digital (tix)</th>
     </tr>
@@ -23,13 +32,17 @@
         data-date="{{ a.ymd }}"
         data-title="{{ a.title|lower }}"
         data-usd="{{ a.usd_total }}"
-        data-tix="{{ a.tix_total }}">
+        data-tix="{{ a.tix_total }}"
+        data-archetypes="{{ a.archetypes|join(',') }}">
       <td class="col-date">{{ a.date_str or a.ymd }}</td>
       <td class="col-title">
         <a href="{{ url_for('deck_detail', folder=a.folder) }}">{{ a.title }}</a>
         {% if a.author %}<div class="col-author">by {{ a.author }}</div>{% endif %}
       </td>
       <td class="col-desc">{{ a.description if a.description else "(no description available)" }}</td>
+      <td class="col-tags">
+        {% for tag in a.archetypes %}<span class="tag-chip">{{ tag }}</span>{% endfor %}
+      </td>
       {% if a.has_decklist %}
       <td class="col-num">${{ "%.2f"|format(a.usd_total) }}</td>
       <td class="col-num">{{ "%.2f"|format(a.tix_total) }} tix</td>
@@ -43,4 +56,5 @@
 {% endblock %}
 {% block scripts %}
 <script src="{{ url_for('static', filename='table-sort.js') }}"></script>
+<script src="{{ url_for('static', filename='archetype-filter.js') }}"></script>
 {% endblock %}
