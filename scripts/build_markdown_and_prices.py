@@ -67,18 +67,27 @@ NON_CARD_LAYOUTS = {
 # Scryfall bulk data
 # ---------------------------------------------------------------------------
 
+SCRYFALL_HEADERS = {
+    # Scryfall rejects requests carrying an HTTP library's default User-Agent
+    # (e.g. bare "python-requests/x.y") with a 400 generic_user_agent error;
+    # identify this tool explicitly per Scryfall API etiquette.
+    "User-Agent": "DebtorsKnellArchiveBot/1.0 (+https://github.com/; building-on-a-budget archive pricing script)",
+    "Accept": "application/json",
+}
+
+
 def _download_bulk(bulk_type, dest_path, refresh=False):
     os.makedirs(CACHE_DIR, exist_ok=True)
     if os.path.exists(dest_path) and not refresh:
         return dest_path
     print("Fetching Scryfall bulk-data manifest...", flush=True)
-    r = requests.get("https://api.scryfall.com/bulk-data", timeout=30)
+    r = requests.get("https://api.scryfall.com/bulk-data", timeout=30, headers=SCRYFALL_HEADERS)
     r.raise_for_status()
     manifest = r.json()
     entry = next(item for item in manifest["data"] if item["type"] == bulk_type)
     url = entry["download_uri"]
     print(f"Downloading {bulk_type} bulk file ({entry['size']/1e6:.1f} MB) from {url}", flush=True)
-    with requests.get(url, stream=True, timeout=180) as resp:
+    with requests.get(url, stream=True, timeout=180, headers=SCRYFALL_HEADERS) as resp:
         resp.raise_for_status()
         tmp_path = dest_path + ".tmp"
         with open(tmp_path, "wb") as f:
@@ -100,34 +109,51 @@ def ensure_default_bulk_data(refresh=False):
 def build_min_price_index(default_bulk_path):
     """Stream default_cards (every printing of every card) without holding
     the whole ~550MB / 500k-object file in memory, and keep only the cheapest
-    USD price seen per card name (and per split-card face name). This lets a
-    budget-deck card that happens to be priceless on its oracle_cards
-    "representative" printing (e.g. an MTGO-only Masters Edition reprint)
-    still get a real, usable market price from some other printing."""
+    USD price seen per card name (and per split-card face name), plus the
+    cheapest MTGO tix price seen per card name (Scryfall's `prices.tix`,
+    sourced from Cardhoarder). This lets a budget-deck card that happens to
+    be priceless on its oracle_cards "representative" printing (e.g. an
+    MTGO-only Masters Edition reprint) still get a real, usable market price
+    -- physical or digital -- from some other printing."""
     best = {}
+    best_tix = {}
     with open(default_bulk_path, "rb") as f:
         for card in ijson.items(f, "item"):
             name = card.get("name")
             if not name or card.get("layout") in NON_CARD_LAYOUTS:
                 continue
             prices = card.get("prices") or {}
-            usd = prices.get("usd")
-            if usd is None:
-                continue
-            try:
-                usd = float(usd)
-            except (TypeError, ValueError):
-                continue
             uri = (card.get("scryfall_uri") or "").split("?")[0]
             names = [name]
             if " // " in name:
                 names.extend(p.strip() for p in name.split(" // ") if p.strip())
-            for n in names:
-                k = norm_key(n)
-                cur = best.get(k)
-                if cur is None or usd < cur[0]:
-                    best[k] = (usd, uri)
-    return best
+
+            usd = prices.get("usd")
+            if usd is not None:
+                try:
+                    usd = float(usd)
+                except (TypeError, ValueError):
+                    usd = None
+            if usd is not None:
+                for n in names:
+                    k = norm_key(n)
+                    cur = best.get(k)
+                    if cur is None or usd < cur[0]:
+                        best[k] = (usd, uri)
+
+            tix = prices.get("tix")
+            if tix is not None:
+                try:
+                    tix = float(tix)
+                except (TypeError, ValueError):
+                    tix = None
+            if tix is not None:
+                for n in names:
+                    k = norm_key(n)
+                    cur = best_tix.get(k)
+                    if cur is None or tix < cur[0]:
+                        best_tix[k] = (tix, uri)
+    return best, best_tix
 
 
 def strip_accents(s):
@@ -157,10 +183,11 @@ def norm_key_noaccent_nopunct(s):
 
 
 class CardIndex:
-    def __init__(self, bulk_path, min_price_index=None):
+    def __init__(self, bulk_path, min_price_index=None, min_tix_index=None):
         with open(bulk_path, encoding="utf-8") as f:
             data = json.load(f)
         self.min_price_index = min_price_index or {}
+        self.min_tix_index = min_tix_index or {}
         self.by_exact = {}
         self.by_noapos = {}
         self.by_stripped = {}
@@ -197,6 +224,23 @@ class CardIndex:
             if cheapest:
                 usd, uri = cheapest[0], cheapest[1]
         return usd, uri
+
+    def tix_price(self, card):
+        """Return the MTGO tix price for a card, or None (never printed on
+        Magic Online, or otherwise unpriced -- common for cards from before
+        MTGO existed, or casual-only cards)."""
+        prices = card.get("prices", {}) or {}
+        tix = prices.get("tix")
+        if tix is None and self.min_tix_index:
+            cheapest = self.min_tix_index.get(norm_key(card.get("name", "")))
+            if cheapest:
+                tix = cheapest[0]
+        if tix is None:
+            return None
+        try:
+            return float(tix)
+        except (TypeError, ValueError):
+            return None
 
     def lookup(self, raw_name):
         """Return (card_or_None, method_str)."""
@@ -261,9 +305,10 @@ def parse_decklist_txt(path):
 
 
 def price_cards(cards, index, unmatched_log, folder, source_file):
-    """cards: list of (qty, name). Returns list of dicts + subtotal."""
+    """cards: list of (qty, name). Returns list of dicts + (usd_subtotal, tix_subtotal)."""
     rows = []
     subtotal = 0.0
+    tix_subtotal = 0.0
     for qty, name in cards:
         key = norm_key(name)
         if key in BASIC_LANDS:
@@ -273,6 +318,7 @@ def price_cards(cards, index, unmatched_log, folder, source_file):
             ext = 0.0
             rows.append({
                 "qty": qty, "name": name, "unit": unit, "ext": ext,
+                "unit_tix": 0.0, "ext_tix": 0.0,
                 "uri": uri, "note": "basic land (nominal $0)",
             })
             continue
@@ -282,15 +328,24 @@ def price_cards(cards, index, unmatched_log, folder, source_file):
             uri = f"https://scryfall.com/search?q={requests.utils.quote('!\"' + name + '\"')}"
             rows.append({
                 "qty": qty, "name": name, "unit": None, "ext": None,
+                "unit_tix": None, "ext_tix": None,
                 "uri": uri, "note": "N/A (unmatched)",
             })
             unmatched_log.append(f"{folder}\t{source_file}\t{qty}\t{name}")
             continue
 
         usd, uri = index.price_and_uri(card)
+        tix = index.tix_price(card)
+        unit_tix = ext_tix = None
+        if tix is not None:
+            unit_tix = tix
+            ext_tix = tix * qty
+            tix_subtotal += ext_tix
+
         if usd is None:
             rows.append({
                 "qty": qty, "name": name, "unit": None, "ext": None,
+                "unit_tix": unit_tix, "ext_tix": ext_tix,
                 "uri": uri, "note": f"N/A (no USD price on Scryfall, matched via {method})",
             })
             unmatched_log.append(f"{folder}\t{source_file}\t{qty}\t{name}\t(matched={card.get('name')} but no price)")
@@ -300,37 +355,52 @@ def price_cards(cards, index, unmatched_log, folder, source_file):
         ext = unit * qty
         subtotal += ext
         note = "" if method == "exact" else f"matched via {method} -> {card.get('name')}"
-        rows.append({"qty": qty, "name": name, "unit": unit, "ext": ext, "uri": uri, "note": note})
-    return rows, subtotal
+        rows.append({
+            "qty": qty, "name": name, "unit": unit, "ext": ext,
+            "unit_tix": unit_tix, "ext_tix": ext_tix,
+            "uri": uri, "note": note,
+        })
+    return rows, subtotal, tix_subtotal
 
 
-def render_priced_md(deck_title, maindeck_rows, main_subtotal, sb_rows, sb_subtotal, source_txt):
+def render_priced_md(deck_title, maindeck_rows, main_subtotal, main_tix_subtotal,
+                      sb_rows, sb_subtotal, sb_tix_subtotal, source_txt):
     lines = []
     lines.append(f"# Priced Decklist: {deck_title}\n")
-    lines.append(f"*Source: `{source_txt}` | Prices: Scryfall bulk data (oracle_cards, USD market price)*\n")
+    lines.append(
+        f"*Source: `{source_txt}` | Prices: Scryfall bulk data (oracle_cards, "
+        f"USD market price + MTGO tix price)*\n"
+    )
 
-    def render_section(title, rows, subtotal):
+    def render_section(title, rows, subtotal, tix_subtotal):
         out = [f"## {title}\n"]
-        out.append("| Qty | Card | Unit Price | Extended | Scryfall |")
-        out.append("|---:|---|---:|---:|---|")
+        out.append("| Qty | Card | Unit Price | Extended | Tix | Extended (tix) | Scryfall |")
+        out.append("|---:|---|---:|---:|---:|---:|---|")
         for r in rows:
             unit_s = f"${r['unit']:.2f}" if r["unit"] is not None else "N/A"
             ext_s = f"${r['ext']:.2f}" if r["ext"] is not None else "N/A"
+            unit_tix_s = f"{r['unit_tix']:.2f}" if r.get("unit_tix") is not None else "N/A"
+            ext_tix_s = f"{r['ext_tix']:.2f}" if r.get("ext_tix") is not None else "N/A"
             link = f"[link]({r['uri']})" if r["uri"] else ""
             name_cell = r["name"]
             if r["note"]:
                 name_cell += f" <sub>({r['note']})</sub>"
-            out.append(f"| {r['qty']} | {name_cell} | {unit_s} | {ext_s} | {link} |")
-        out.append(f"\n**{title} total: ${subtotal:.2f}**\n")
+            out.append(
+                f"| {r['qty']} | {name_cell} | {unit_s} | {ext_s} | "
+                f"{unit_tix_s} | {ext_tix_s} | {link} |"
+            )
+        out.append(f"\n**{title} total: ${subtotal:.2f}** | **{tix_subtotal:.2f} tix**\n")
         return "\n".join(out)
 
     if maindeck_rows:
-        lines.append(render_section("Main Deck", maindeck_rows, main_subtotal))
+        lines.append(render_section("Main Deck", maindeck_rows, main_subtotal, main_tix_subtotal))
     if sb_rows:
-        lines.append(render_section("Sideboard", sb_rows, sb_subtotal))
+        lines.append(render_section("Sideboard", sb_rows, sb_subtotal, sb_tix_subtotal))
 
     grand = main_subtotal + sb_subtotal
+    grand_tix = main_tix_subtotal + sb_tix_subtotal
     lines.append(f"\n---\n\n**Grand total: ${grand:.2f}**\n")
+    lines.append(f"\n**Grand total (digital): {grand_tix:.2f} tix**\n")
     return "\n".join(lines) + "\n"
 
 
@@ -342,10 +412,13 @@ def build_priced_decklists(folder_path, folder_name, index, unmatched_log, force
         if os.path.exists(out_path) and not force:
             continue
         maindeck, sideboard = parse_decklist_txt(txt_path)
-        main_rows, main_sub = price_cards(maindeck, index, unmatched_log, folder_name, base)
-        sb_rows, sb_sub = price_cards(sideboard, index, unmatched_log, folder_name, base)
+        main_rows, main_sub, main_tix_sub = price_cards(maindeck, index, unmatched_log, folder_name, base)
+        sb_rows, sb_sub, sb_tix_sub = price_cards(sideboard, index, unmatched_log, folder_name, base)
         title = base[:-4]
-        content = render_priced_md(title, main_rows, main_sub, sb_rows, sb_sub, base)
+        content = render_priced_md(
+            title, main_rows, main_sub, main_tix_sub,
+            sb_rows, sb_sub, sb_tix_sub, base,
+        )
         with open(out_path, "w", encoding="utf-8") as f:
             f.write(content)
         count += 1
@@ -808,18 +881,20 @@ def main():
     if not args.skip_price:
         bulk_path = ensure_bulk_data(refresh=args.refresh_bulk)
         min_price_index = None
+        min_tix_index = None
         if not args.skip_min_price:
             if HAVE_IJSON:
                 default_bulk_path = ensure_default_bulk_data(refresh=args.refresh_bulk)
                 print("Streaming default_cards for cheapest-printing prices...", flush=True)
-                min_price_index = build_min_price_index(default_bulk_path)
+                min_price_index, min_tix_index = build_min_price_index(default_bulk_path)
                 print(f"Indexed cheapest USD price for {len(min_price_index)} card names.", flush=True)
+                print(f"Indexed cheapest tix price for {len(min_tix_index)} card names.", flush=True)
             else:
                 print("ijson not installed; skipping cheapest-printing price fill "
                       "(pip install ijson to enable). Some cards may show N/A "
                       "even though cheaper paper printings exist.", flush=True)
         print("Loading Scryfall card index...", flush=True)
-        index = CardIndex(bulk_path, min_price_index=min_price_index)
+        index = CardIndex(bulk_path, min_price_index=min_price_index, min_tix_index=min_tix_index)
         print(f"Loaded {len(index.all_names)} card names.", flush=True)
 
     md_created = 0

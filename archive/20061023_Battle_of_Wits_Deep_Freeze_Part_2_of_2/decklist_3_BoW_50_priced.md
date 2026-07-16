@@ -1,69 +1,72 @@
 # Priced Decklist: decklist_3_BoW_50
 
-*Source: `decklist_3_BoW_50.txt` | Prices: Scryfall bulk data (oracle_cards, USD market price)*
+*Source: `decklist_3_BoW_50.txt` | Prices: Scryfall bulk data (oracle_cards, USD market price + MTGO tix price)*
 
 ## Main Deck
 
-| Qty | Card | Unit Price | Extended | Scryfall |
-|---:|---|---:|---:|---|
-| 4 | Frost Marsh | $0.76 | $3.04 | [link](https://scryfall.com/card/csp/146/frost-marsh) |
-| 50 | Island <sub>(basic land (nominal $0))</sub> | $0.00 | $0.00 | [link](https://scryfall.com/card/msh/289/island) |
-| 50 | Swamp <sub>(basic land (nominal $0))</sub> | $0.00 | $0.00 | [link](https://scryfall.com/card/msh/291/swamp) |
-| 1 | Crystal Seer | $0.04 | $0.04 | [link](https://scryfall.com/card/gpt/23/crystal-seer) |
-| 4 | Dimir House Guard | $0.07 | $0.28 | [link](https://scryfall.com/card/rvr/73/dimir-house-guard) |
-| 4 | Dimir Infiltrator | $0.63 | $2.52 | [link](https://scryfall.com/card/pca/86/dimir-infiltrator) |
-| 4 | Drift of Phantasms | $0.29 | $1.16 | [link](https://scryfall.com/card/rvr/42/drift-of-phantasms) |
-| 1 | Gravedigger | $0.25 | $0.25 | [link](https://scryfall.com/card/m20/103/gravedigger) |
-| 4 | Nekrataal | $0.17 | $0.68 | [link](https://scryfall.com/card/ema/99/nekrataal) |
-| 1 | Nezumi Graverobber | $0.49 | $0.49 | [link](https://scryfall.com/card/cm2/71/nezumi-graverobber-nighteyes-the-desecrator) |
-| 3 | Ninja of the Deep Hours | $2.04 | $6.12 | [link](https://scryfall.com/card/c18/95/ninja-of-the-deep-hours) |
-| 1 | Soratami Cloudskater | $0.21 | $0.21 | [link](https://scryfall.com/card/chk/86/soratami-cloudskater) |
-| 3 | Thieving Magpie | $0.19 | $0.57 | [link](https://scryfall.com/card/dmr/68/thieving-magpie) |
-| 4 | Thought Courier | $0.29 | $1.16 | [link](https://scryfall.com/card/9ed/104/thought-courier) |
-| 4 | Azorius Signet | $0.23 | $0.92 | [link](https://scryfall.com/card/tdc/312/azorius-signet) |
-| 4 | Battle of Wits | $0.21 | $0.84 | [link](https://scryfall.com/card/m13/44/battle-of-wits) |
-| 1 | Befoul | $0.12 | $0.12 | [link](https://scryfall.com/card/chk/102/befoul) |
-| 2 | Boomerang | $0.08 | $0.16 | [link](https://scryfall.com/card/5ed/75/boomerang) |
-| 4 | Brainspoil | $0.18 | $0.72 | [link](https://scryfall.com/card/rav/78/brainspoil) |
-| 4 | Clutch of the Undercity | $0.28 | $1.12 | [link](https://scryfall.com/card/rav/197/clutch-of-the-undercity) |
-| 4 | Coldsteel Heart | $2.11 | $8.44 | [link](https://scryfall.com/card/2x2/301/coldsteel-heart) |
-| 4 | Compulsive Research | $0.28 | $1.12 | [link](https://scryfall.com/card/tdc/147/compulsive-research) |
-| 4 | Consult the Necrosages | $0.19 | $0.76 | [link](https://scryfall.com/card/rav/199/consult-the-necrosages) |
-| 4 | Counsel of the Soratami | $0.21 | $0.84 | [link](https://scryfall.com/card/10e/76/counsel-of-the-soratami) |
-| 3 | Dark Banishing | $0.05 | $0.15 | [link](https://scryfall.com/card/8ed/123/dark-banishing) |
-| 1 | Death Denied | $0.26 | $0.26 | [link](https://scryfall.com/card/uma/92/death-denied) |
-| 4 | Diabolic Tutor | $2.12 | $8.48 | [link](https://scryfall.com/card/cma/54/diabolic-tutor) |
-| 4 | Dimir Signet | $1.24 | $4.96 | [link](https://scryfall.com/card/clu/221/dimir-signet) |
-| 1 | Distress | $0.19 | $0.19 | [link](https://scryfall.com/card/m12/94/distress) |
-| 1 | Eradicate | $0.42 | $0.42 | [link](https://scryfall.com/card/bok/65/eradicate) |
-| 1 | Execute | $0.10 | $0.10 | [link](https://scryfall.com/card/9ed/128/execute) |
-| 1 | Exile into Darkness | $0.15 | $0.15 | [link](https://scryfall.com/card/sok/67/exile-into-darkness) |
-| 4 | Golgari Signet | $0.32 | $1.28 | [link](https://scryfall.com/card/dsc/246/golgari-signet) |
-| 1 | Grim Harvest | $0.12 | $0.12 | [link](https://scryfall.com/card/csp/58/grim-harvest) |
-| 1 | Hideous Laughter | $0.19 | $0.19 | [link](https://scryfall.com/card/chk/115/hideous-laughter) |
-| 4 | Ideas Unbound | $0.51 | $2.04 | [link](https://scryfall.com/card/sok/40/ideas-unbound) |
-| 4 | Izzet Signet | $0.36 | $1.44 | [link](https://scryfall.com/card/tdc/320/izzet-signet) |
-| 4 | Last Gasp | $0.18 | $0.72 | [link](https://scryfall.com/card/sos/86/last-gasp) |
-| 1 | Mnemonic Nexus | $0.22 | $0.22 | [link](https://scryfall.com/card/rav/59/mnemonic-nexus) |
-| 4 | Muddle the Mixture | $2.44 | $9.76 | [link](https://scryfall.com/card/rvr/50/muddle-the-mixture) |
-| 1 | Nightmare Void | $0.09 | $0.09 | [link](https://scryfall.com/card/ddj/73/nightmare-void) |
-| 4 | Perilous Research | $0.72 | $2.88 | [link](https://scryfall.com/card/mma/58/perilous-research) |
-| 1 | Petals of Insight | $0.23 | $0.23 | [link](https://scryfall.com/card/mma/60/petals-of-insight) |
-| 1 | Quash | $0.09 | $0.09 | [link](https://scryfall.com/card/bok/47/quash) |
-| 4 | Rakdos Signet | $2.97 | $11.88 | [link](https://scryfall.com/card/dsc/250/rakdos-signet) |
-| 4 | Rend Flesh | $0.12 | $0.48 | [link](https://scryfall.com/card/chk/140/rend-flesh) |
-| 1 | Ribbons of Night | $0.17 | $0.17 | [link](https://scryfall.com/card/clu/120/ribbons-of-night) |
-| 4 | Sift | $0.13 | $0.52 | [link](https://scryfall.com/card/2xm/69/sift) |
-| 4 | Simic Signet | $0.37 | $1.48 | [link](https://scryfall.com/card/dsc/252/simic-signet) |
-| 1 | Slay | $0.15 | $0.15 | [link](https://scryfall.com/card/dde/25/slay) |
-| 4 | Sleight of Hand | $0.31 | $1.24 | [link](https://scryfall.com/card/woe/67/sleight-of-hand) |
-| 1 | Train of Thought | $0.08 | $0.08 | [link](https://scryfall.com/card/ddj/19/train-of-thought) |
-| 1 | Treasure Trove | $0.22 | $0.22 | [link](https://scryfall.com/card/9ed/110/treasure-trove) |
+| Qty | Card | Unit Price | Extended | Tix | Extended (tix) | Scryfall |
+|---:|---|---:|---:|---:|---:|---|
+| 4 | Frost Marsh | $0.76 | $3.04 | 0.03 | 0.12 | [link](https://scryfall.com/card/csp/146/frost-marsh) |
+| 50 | Island <sub>(basic land (nominal $0))</sub> | $0.00 | $0.00 | 0.00 | 0.00 | [link](https://scryfall.com/card/msh/289/island) |
+| 50 | Swamp <sub>(basic land (nominal $0))</sub> | $0.00 | $0.00 | 0.00 | 0.00 | [link](https://scryfall.com/card/msh/291/swamp) |
+| 1 | Crystal Seer | $0.04 | $0.04 | 0.03 | 0.03 | [link](https://scryfall.com/card/gpt/23/crystal-seer) |
+| 4 | Dimir House Guard | $0.07 | $0.28 | 0.04 | 0.16 | [link](https://scryfall.com/card/rvr/73/dimir-house-guard) |
+| 4 | Dimir Infiltrator | $0.63 | $2.52 | 0.03 | 0.12 | [link](https://scryfall.com/card/pca/86/dimir-infiltrator) |
+| 4 | Drift of Phantasms | $0.29 | $1.16 | 0.05 | 0.20 | [link](https://scryfall.com/card/rvr/42/drift-of-phantasms) |
+| 1 | Gravedigger | $0.25 | $0.25 | 0.05 | 0.05 | [link](https://scryfall.com/card/m20/103/gravedigger) |
+| 4 | Nekrataal | $0.17 | $0.68 | 0.09 | 0.36 | [link](https://scryfall.com/card/ema/99/nekrataal) |
+| 1 | Nezumi Graverobber | $0.49 | $0.49 | 0.03 | 0.03 | [link](https://scryfall.com/card/cm2/71/nezumi-graverobber-nighteyes-the-desecrator) |
+| 3 | Ninja of the Deep Hours | $2.04 | $6.12 | 6.73 | 20.19 | [link](https://scryfall.com/card/c18/95/ninja-of-the-deep-hours) |
+| 1 | Soratami Cloudskater | $0.21 | $0.21 | 0.03 | 0.03 | [link](https://scryfall.com/card/chk/86/soratami-cloudskater) |
+| 3 | Thieving Magpie | $0.19 | $0.57 | 0.04 | 0.12 | [link](https://scryfall.com/card/dmr/68/thieving-magpie) |
+| 4 | Thought Courier | $0.29 | $1.16 | 0.04 | 0.16 | [link](https://scryfall.com/card/9ed/104/thought-courier) |
+| 4 | Azorius Signet | $0.23 | $0.92 | 0.12 | 0.48 | [link](https://scryfall.com/card/tdc/312/azorius-signet) |
+| 4 | Battle of Wits | $0.21 | $0.84 | 0.02 | 0.08 | [link](https://scryfall.com/card/m13/44/battle-of-wits) |
+| 1 | Befoul | $0.12 | $0.12 | 0.03 | 0.03 | [link](https://scryfall.com/card/chk/102/befoul) |
+| 2 | Boomerang | $0.08 | $0.16 | 0.10 | 0.20 | [link](https://scryfall.com/card/5ed/75/boomerang) |
+| 4 | Brainspoil | $0.18 | $0.72 | 0.03 | 0.12 | [link](https://scryfall.com/card/rav/78/brainspoil) |
+| 4 | Clutch of the Undercity | $0.28 | $1.12 | 0.03 | 0.12 | [link](https://scryfall.com/card/rav/197/clutch-of-the-undercity) |
+| 4 | Coldsteel Heart | $2.11 | $8.44 | 0.04 | 0.16 | [link](https://scryfall.com/card/2x2/301/coldsteel-heart) |
+| 4 | Compulsive Research | $0.28 | $1.12 | 0.21 | 0.84 | [link](https://scryfall.com/card/tdc/147/compulsive-research) |
+| 4 | Consult the Necrosages | $0.19 | $0.76 | 0.03 | 0.12 | [link](https://scryfall.com/card/rav/199/consult-the-necrosages) |
+| 4 | Counsel of the Soratami | $0.21 | $0.84 | 0.03 | 0.12 | [link](https://scryfall.com/card/10e/76/counsel-of-the-soratami) |
+| 3 | Dark Banishing | $0.05 | $0.15 | 0.06 | 0.18 | [link](https://scryfall.com/card/8ed/123/dark-banishing) |
+| 1 | Death Denied | $0.26 | $0.26 | 0.04 | 0.04 | [link](https://scryfall.com/card/uma/92/death-denied) |
+| 4 | Diabolic Tutor | $2.12 | $8.48 | 0.03 | 0.12 | [link](https://scryfall.com/card/cma/54/diabolic-tutor) |
+| 4 | Dimir Signet | $1.24 | $4.96 | 0.01 | 0.04 | [link](https://scryfall.com/card/clu/221/dimir-signet) |
+| 1 | Distress | $0.19 | $0.19 | 0.03 | 0.03 | [link](https://scryfall.com/card/m12/94/distress) |
+| 1 | Eradicate | $0.42 | $0.42 | 0.03 | 0.03 | [link](https://scryfall.com/card/bok/65/eradicate) |
+| 1 | Execute | $0.10 | $0.10 | 0.03 | 0.03 | [link](https://scryfall.com/card/9ed/128/execute) |
+| 1 | Exile into Darkness | $0.15 | $0.15 | 0.03 | 0.03 | [link](https://scryfall.com/card/sok/67/exile-into-darkness) |
+| 4 | Golgari Signet | $0.32 | $1.28 | 0.09 | 0.36 | [link](https://scryfall.com/card/dsc/246/golgari-signet) |
+| 1 | Grim Harvest | $0.12 | $0.12 | 0.03 | 0.03 | [link](https://scryfall.com/card/csp/58/grim-harvest) |
+| 1 | Hideous Laughter | $0.19 | $0.19 | 0.03 | 0.03 | [link](https://scryfall.com/card/chk/115/hideous-laughter) |
+| 4 | Ideas Unbound | $0.51 | $2.04 | 0.03 | 0.12 | [link](https://scryfall.com/card/sok/40/ideas-unbound) |
+| 4 | Izzet Signet | $0.36 | $1.44 | 0.16 | 0.64 | [link](https://scryfall.com/card/tdc/320/izzet-signet) |
+| 4 | Last Gasp | $0.18 | $0.72 | 0.03 | 0.12 | [link](https://scryfall.com/card/sos/86/last-gasp) |
+| 1 | Mnemonic Nexus | $0.22 | $0.22 | 0.03 | 0.03 | [link](https://scryfall.com/card/rav/59/mnemonic-nexus) |
+| 4 | Muddle the Mixture | $2.44 | $9.76 | 0.04 | 0.16 | [link](https://scryfall.com/card/rvr/50/muddle-the-mixture) |
+| 1 | Nightmare Void | $0.09 | $0.09 | 0.04 | 0.04 | [link](https://scryfall.com/card/ddj/73/nightmare-void) |
+| 4 | Perilous Research | $0.72 | $2.88 | 0.03 | 0.12 | [link](https://scryfall.com/card/mma/58/perilous-research) |
+| 1 | Petals of Insight | $0.23 | $0.23 | 0.03 | 0.03 | [link](https://scryfall.com/card/mma/60/petals-of-insight) |
+| 1 | Quash | $0.09 | $0.09 | 0.03 | 0.03 | [link](https://scryfall.com/card/bok/47/quash) |
+| 4 | Rakdos Signet | $2.97 | $11.88 | 0.07 | 0.28 | [link](https://scryfall.com/card/dsc/250/rakdos-signet) |
+| 4 | Rend Flesh | $0.12 | $0.48 | 0.03 | 0.12 | [link](https://scryfall.com/card/chk/140/rend-flesh) |
+| 1 | Ribbons of Night | $0.17 | $0.17 | 0.02 | 0.02 | [link](https://scryfall.com/card/clu/120/ribbons-of-night) |
+| 4 | Sift | $0.13 | $0.52 | 0.03 | 0.12 | [link](https://scryfall.com/card/2xm/69/sift) |
+| 4 | Simic Signet | $0.37 | $1.48 | 0.05 | 0.20 | [link](https://scryfall.com/card/dsc/252/simic-signet) |
+| 1 | Slay | $0.15 | $0.15 | 0.09 | 0.09 | [link](https://scryfall.com/card/dde/25/slay) |
+| 4 | Sleight of Hand | $0.31 | $1.24 | 0.03 | 0.12 | [link](https://scryfall.com/card/woe/67/sleight-of-hand) |
+| 1 | Train of Thought | $0.08 | $0.08 | 0.24 | 0.24 | [link](https://scryfall.com/card/ddj/19/train-of-thought) |
+| 1 | Treasure Trove | $0.22 | $0.22 | 0.03 | 0.03 | [link](https://scryfall.com/card/9ed/110/treasure-trove) |
 
-**Main Deck total: $81.55**
+**Main Deck total: $81.55** | **27.27 tix**
 
 
 ---
 
 **Grand total: $81.55**
+
+
+**Grand total (digital): 27.27 tix**
 
