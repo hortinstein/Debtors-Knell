@@ -1,0 +1,242 @@
+# Interlude: The Budget Golgari
+
+**Author:** Jay Moldenhauer-Salazar  
+**Date:** February 20, 2006  
+**Original URL (Wayback Machine):** <https://web.archive.org/web/20090601202842/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/jm140>
+
+---
+
+For those of you familiar with Building On A Budget over the past few months, I'm guessing you already understand the premise of this article. For those who are new to the column, here's the drill: I've written [Budget Selesnya](https://web.archive.org/web/20090603041231/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/jm127) and [Budget Dimir](https://web.archive.org/web/20090603041231/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/jm134) articles, each of which discusses the staples a deckbuilder needs to make budget decks with these guilds in mind. Today my focus is The Golgari, and my goal is to explore what tools budget Golgari decks have open to them. Sit back, enjoy, and let your deckbuilding imagination wander free...
+
+##### Building With The Golgari
+
+Unlike the time I wrote the previous two guild articles, Standard now includes *Guildpact*. This means that the sets I'll be contemplating are *9th Edition*, *Champions of Kamigawa*, *Betrayers of Kamigawa*, *Saviors of Kamigawa*, *Ravnica: City of Guilds*, and *Guildpact*. With so many cards available, the sheer volume of possible deck ideas in Black, Green, and Black/Green are dizzying. Rather than try to cover them all, I'll focus instead on those decks that embody the ideals of The Golgari guild. This is a bit of semantic distinction, but work with me here.
+
+What are the Golgari ideals? Well, [Mark](https://web.archive.org/web/20090603041231/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/mr199) and [Aaron](https://web.archive.org/web/20090603041231/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/af90) discussed them a bit. So did [Rei Nakazawa](https://web.archive.org/web/20090603041231/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/feature/283), who said:
+
+> *The Golgari preach that death is part of the natural cycle, which seems like a harmless and logical belief. However, they take it one step further, actually embracing death, and encouraging it to enhance and strengthen life. So their guildmaster, the elvish shaman Savra, doesn't mind letting loose virulent plagues. After all, all they're doing is speeding up the natural cycle so that Ravnica can be reborn after death into something better. It's not so much death itself that they like, but the rebuilding that comes afterwards.*
+>
+> *Of course, Golgari necromancy is some of the most potent ever seen. They don't even believe that their creations are anything hideous or unnatural. Their favored pets are not only undead, but natural forces of death and decay, like fungi, insects, and saprolings. And they have a lot to work with, for Ravnica is teeming with ghosts and zombies in unusual numbers. Whether that's the Golgari's doing is something they never divulge.*
+
+Life and death. Virulent plagues. Necromancy. Fungi. Gorgons. These are the pedestal upon which the Golgari - and any deck based upon them - rest. One corollary here is that most Golgari decks use the graveyard as a resource. The dredge mechanic is the most obvious manifestation of this, but so are Vigor Mortis, Necromantic Thirst, Woodwraith Strangler, and the other *Ravnica* cards clearly tied to the Golgari.
+
+Consider today a survey course in Golgari-based deck ideas. It won't be comprehensive, and the decklists in the article are only examples. The point here is to get your creative juices flowing and point out which cards are likely to show up in a wide variety of decks. My hope is that after today you feel motivated and equipped to begin tinkering with your own Golgari decklists, even if your format of choice isn't Standard.
+
+##### Golgari Beatdown
+
+I'll start with **Magic's** most basic deck strategy: Beatdown, also known as aggro. As I said in my previous articles, “if you build aggro decks then you want to have cheap, efficient threats. Your goal is to count to twenty damage as quickly as possible. You don't plan for the late-game because you don't anticipate a late-game existing. Pure beatdown decks are about WHAM! WHAM! WHAM! until all that's left of your opponent is a smoldering crater.”
+
+Keep in mind that any guild is going to be able to put together a competent beatdown strategy. All you need are a few efficient creatures, a way to get blockers out of the way (or avoid them altogether), and, ideally, a way to disrupt your opponent without slowing your own attack. The creepy Elves of the Golgari are still Elves, so they feel right at home with an aggro strategy. Here are some of the cards that will show up in quite a few Golgari beatdown decklists:
+
+**Staple Commons**
+
+Beatdown decks often think in terms of what they're hoping to accomplish in the first five or six turns, which should be all they need to end the game. So, what are budget Golgari mages going to do on the first turn? Well, their best two options are Elves of Deep Shadow and Llanowar Elves, two creatures that can power out a three-cost creature or start their own attack on the next turn. Some decks will be heavily Green and use Llanowar Elves. Others will be more balanced in their colors and use Elves of Deep Shadow. Still others will use both.
+
+Shambling Shell
+
+A lot more options exist on the second turn. Sakura-Tribe Elder isn't efficient (meaning that its power is less than its total cost), but it's [possibly the best common in Standard today](https://web.archive.org/web/20090603041231/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/jm99). Other good two-mana creatures include the elusive Nezumi Cutthroat, Zodiac Monkey, and Silhana Ledgewalker, along with the ever-deadly Wicked Akuba. Distress is available to take out an opponent's key defense before it's cast, and Last Gasp is there to remove early blockers. Giant Growth, while not technically two mana, can be used as early as the second turn to speed up the race to twenty damage or keep an early attacker alive.
+
+On the third turn (or second with an Elf), Golgari beatdown decks have Shambling Shell, one of *Ravnica's* most potent dredge cards. The Shell can speed up an offense, keep creatures alive, and is an efficient, recurring threat all on its own. Takenuma Bleeder is beefier, and its self-inflicted damage should never be relevant for a true aggro deck. Finally, some decks will use Dark Banishing, although it's often going to be trumped by Last Gasp and Putrefy as Golgari's creature removal of choice.
+
+As commons go, the only card above three mana that I think has the possibility of showing up in multiple decks is Golgari Rotwurm. It's an impressive 5/4 on its own, and its ability will often give a beatdown deck those last few points of damage it needs to win the game.
+
+Are these the only commons you'll use in a Golgari beatdown deck? Probably not. But this list is a good starting point since these cards will often form the nucleus of any aggro strategy in Black and Green.
+
+**Staple Uncommons**
+
+As solid as the commons are, it's a small handful of uncommons that make Golgari beatdown decks truly intimidating. The scariest of the bunch is Moldervine Cloak, an aura that makes even Sakura-Tribe Elder a game-finishing fattie. Although the Cloak can be countered or Naturalized for a turn, it's a creature-enhancer that will almost always find its way onto your creatures eventually. Witness [my own recent love](https://web.archive.org/web/20090603041231/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/jm137) of Moldervine Cloak coupled with Shinen of Life's Roar. Suffice it to say, I think Moldervine Cloak is the single most important card to dedicated Golgari aggro.
+
+Plagued Rusalka
+
+The Cloak is not the most ubiquitous, however. Putrefy is ridiculously good removal for any Black/Green deck and is arguably the single most sought-after uncommon in *Ravnica*. Not only will it kill all targetable creatures dead, it is also a solution to cards like Umezawa's Jitte, Icy Manipulator, Umezawa's Jitte, Spectral Searchlight, Umezawa's Jitte, Loxodon Warhammer, Umezawa's Jitte, Sunforger, and Umezawa's Jitte.
+
+Don't overlook the yummy uncommon beatdown creatures available to the Golgari, either. Golgari Guildmage is not only a Grizzly Bears in efficiency (and something you can almost always cast using basic land), but both of its abilities become relevant against opponents who happen to survive your initial onslaught. The same goes for Nezumi Graverobber, a creature that can be a 4/2 attacker on the third turn and something that can cripple opponents who rely on the graveyard as a resource. Hand of Cruelty has less reliable of a casting cost, but it is intimidating in combat and immune to pesky White removal like Faith's Fetters and Devouring Light.
+
+Two *Guildpact* creatures deserve some look in Golgari beatdown. The first is Plagued Rusalka, a card that seems Golgari even by its flavor text. Before the Rusalka, Golgari aggro had only Elves, Bile Urchin, and Festering Goblin as viable first-turn creatures. While mana-Elves are still important, Plagued Rusalka trumps both the Urchin and Goblin as aggressive options because of its superior ability to control opposing creatures. Likewise, Dryad Sophisticate is likely unblockable a lot more often in today's Standard than either Nezumi Cutthroat or Zodiac Monkey and thus a better Moldervine Cloak target.
+
+**Budget Rares**
+
+Might of Oaks
+
+Forget your Vinelasher Kudzu, Umezawa's Jitte, Gleancrawler, Iwamori of the Open Fist, Dark Confidant, Phyrexian Arena, and Hypnotic Specter. These cards are powerful, sure, but they don't inhibit you from making a Golgari beatdown deck. Here are three “cheap” rares that will win their fair share of games without the hefty pricetag...
+
+Remember how I noted that a lot of Golgari followers are Elves? I think this fact warrants Elvish Champion getting a nod. The Champion helps out not only Llanowar Elves and Elves of Deep Shadow, but also Golgari Guildmage, Silhana Ledgewalker, Civic Wayfinder, Viridian Shaman, and Elvish Warrior. Add a few support cards, stir, and I think a Golgari beatdown deck has no trouble bending itself to a major Elvish theme.
+
+Mindslicer is a card I mentioned in my House Dimir article, but it's even better with the Golgari. If you're using enough dredge, the discard shouldn't matter at all while you get yourself a very disruptive 4/3 your opponent must handle or die.
+
+Finally, a card I've always loved is Might of Oaks. Golgari aggro decks have a lot of unblockability built in, so a surprise Might can win a lot of games. In fact, Might of Oaks has me intrigued enough to include it as my only rare in the decklist below. Essentially, my beatdown deck started with the premise that a third-turn Moldervine Cloak should always follow a second-turn creature. Evasion became so commonplace that Might of Oaks fit right in. I've updated the decklist for *Guildpact*, dropping Nezumi Cutthroat and Zodiac Monkey for Plagued Rusalka and Dryad Sophisticate.
+
+**Dead Oaks**
+
+- 11 Forest
+- 11 Swamp
+  *(22 lands)*
+
+- 4 Dryad Sophisticate
+- 4 Golgari Guildmage
+- 4 Nezumi Graverobber
+- 4 Plagued Rusalka
+- 4 Sakura-Tribe Elder
+- 4 Shambling Shell
+  *(24 creatures)*
+
+- 4 Last Gasp
+- 2 Might of Oaks
+- 4 Moldervine Cloak
+- 4 Putrefy
+  *(14 other spells)*
+
+*(Full decklist with sideboard: `decklist_1_Dead_Oaks.txt`; priced breakdown: `decklist_1_Dead_Oaks_priced.md`)*
+
+##### Golgari Control
+
+Now that we've delved into smash-your-face beatdown, let's turn the strategic table upside-down. There's used gum there, as well as control decks. As I've said twice before, “Generally speaking, if you make a control deck then you want to have answers for all of your opponent's questions. Drop a creature? Get rid of it. Drop lots of creatures? Get rid of them all. Try this? No. Try that? Sorry. Control decks spend the early and middle parts of the game surviving an opponent's initial onslaught, then they start rolling. In general, the longer the game goes the more it's to the control player's advantage. Control decks use very few win conditions, but usually can ensure that those few conditions will in fact win the game.”
+
+Golgari control decks are distinctive in their graveyard focus. Every slow, grind-it-out Golgari deck I've seen wins by sheer recursive stubbornness. Gone are the board-clearing effects in White and Red, along with the countermagic in Blue. Golgari control decks win because, eventually, their opponents run out of options while their own options proliferate. Their kind of war - the kind they will most often dominate - is a war of attrition.
+
+**Staple Commons**
+
+Most control decks care about three things: 1) mana development, 2) survival, and 3) ways to humiliate an opponent, slowly. None of the cards in that last category are common, but plenty show up in the first two. In terms of mana development, the Golgari are blessed with all of Green's best options: Elves of Deep Shadow, Llanowar Elves, Civic Wayfinder, Wood Elves, Kodama's Reach, Sakura-Tribe Elder, and Silhana Starfletcher. This is a similar list to what beatdown decks use, except for the land-thinning goodness of Kodama's Reach (a terrific tool for slower decks, to be sure), two creatures that are only potent when recycled several times: Civic Wayfinder and Wood Elves, and the defensive-minded Silhana Starfletcher.
+
+In the “survival” category of cards, there is the ever-solid Last Gasp and Stinkweed Imp (a card I waxed lovingly over [last week](https://web.archive.org/web/20090603041231/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/jm139)), along with non-creature removal like Naturalize and Wear Away. Cremate can keep opposing graveyard-happy decks at bay while smoothing your own draws, and Shambling Shell is almost as good as Sakura-Tribe Elder as a Golgari chump-blocker.
+
+As with the beatdown decks, this isn't a list of all commons Golgari control decks will use. Look at a dozen decklists, though, and you're likely to see these cards appear in deck after deck. The reason is that they have wide utility in slower, graveyard-focused decks, despite the specific strategy you're using to win the game.
+
+**Staple Uncommons**
+
+Putrefy
+
+With uncommons, Golgari control decks leave mana development behind and instead focus on survival and humiliation. For removal, there is again Putrefy at the head of the class. I have a hard time imagining a Golgari deck of any strategy without Putrefy in it, to be honest. Often complementing Putrefy in Golgari control will be the recursive Darkblast and the weenie-stopping Hideous Laughter. Both of these cards are going to show up in sideboards as often as maindeck, and both are terrific ways to stop an opponent's strategy cold. Speaking of stopping an opponent's strategy, Nightmare Void is a solid tool against slower decks to ensure that nothing bomb-tastic hits the table. The Void is Golgari control's best survival tool against other control decks.
+
+For slow humiliation, Golgari decks have graveyard recursion. This can take several forms. Nezumi Graverobber is perhaps the best and most reliable, able to recycle cards like Sakura-Tribe Elder, Bottle Gnomes, as well as fatties from any graveyard, as well as obliterate an opponent's graveyard. Golgari Guildmage is similar in recursive goodness, with the added ability to make your own creatures huge if given enough time. Vigor Mortis and Recollect are point-reanimation spells that can allow you to restock when both you and your opponent have run out of options. Finally, Golgari Thug is a sort of reusable Gravedigger in the right deck. All of these cards push slow Golgari decks into outlasting an opponent long after both players have reached “topdeck mode.” They also get better with the Golgari's signature mechanic dredge by pushing more reanimation targets into your graveyard.
+
+Three more uncommons deserve some mention for Golgari control. The first is Sensei's Divining Top, which should be in pretty much every control deck in Standard while it's legal and is particularly good given all of Green's shuffle effects. The second card is Carven Caryatid, which sets up a nice defense and is a good reanimation target because of its comes-into-play ability. Black/Green isn't often great at drawing cards, especially without access to Phyrexian Arena and Dark Confidant, so the Caryatid is a nice boon. Finally, there is Svogthos, the Restless Tomb. For slower Golgari decks, Svogthos is often going to be a huge, uncounterable, Wrath of God-proof, game-ending, uh... Plant.
+
+**Budget Rares**
+
+I'm surprised to find a bunch of potential budget rares for Golgari control decks. I mean, they may not be Grave-Shell Scarab, Birds of Paradise, Kokusho, the Evening Star, Vulturous Zombie, Plague Boiler, Greater Good, Kodama of the North Tree, Golgari Grave-Troll, Arashi, the Sky Asunder, Nezumi Shortfang, Gleancrawler, Kagemaro, First to Suffer, Cranial Extraction, or Ink-Eyes, Servant of Oni, but they can be both powerful and fun in the right deck. Below are three ideas to ponder.
+
+Necroplasm
+
+The most obvious rares in the budget bin are Necroplasm and Savra, Queen of the Golgari. Why obvious? Well, first because they happen to have the Golgari symbol stamped on them. Necroplasm not only has the Golgari signature mechanic of dredge, but it's a good, repeatable way to handle smaller creatures and token armies. Savra needs a deck built around her to be truly effective, but given the self-sacrificing tendencies of Shambling Shell, Golgari Guildmage, Nantuko Husk, and Dimir House Guard (who can also transmute to find Savra), your deck doesn't have to bend too far to take full advantage of her abilities.
+
+The third rare that seems custom built to hang out with Golgari hoards is Mortivore. When the game has reached its later stages and you've been dredging consistently, Mortivore can be positively enormous. Besides, if it somehow happens to die (which is unlikely given that is has regeneration), any good Golgari deck is going to have several ways to return it to play. Mortivore makes a nice dance partner with Svogthos as the “big finishers” for a Golgari control deck.
+
+Putting all of these ideas together, I made the below deck. It's a bit non-traditional as far as Golgari control decks go. I tried to focus on classic control elements, which had me dropping a bunch of potentially-aggressive creatures like Shambling Shell. What resulted is a deck designed first and foremost to abuse Nezumi Graverobber as fully as possible. Sisters of Stone Death was originally there for style points more than anything, but she's proved to be a wonderful addition to the deck.
+
+**Slow Roller**
+
+- 11 Forest
+- 2 Svogthos, the Restless Tomb
+- 10 Swamp
+  *(23 lands)*
+
+- 3 Bottle Gnomes
+- 4 Nezumi Graverobber
+- 4 Sakura-Tribe Elder
+- 1 Sisters of Stone Death
+- 4 Stinkweed Imp
+  *(16 creatures)*
+
+- 3 Darkblast
+- 4 Kodama's Reach
+- 3 Nightmare Void
+- 4 Putrefy
+- 4 Recollect
+- 3 Sensei's Divining Top
+  *(21 other spells)*
+
+*(Full decklist with sideboard: `decklist_2_Slow_Roller.txt`; priced breakdown: `decklist_2_Slow_Roller_priced.md`)*
+
+##### Other Golgari Deck Ideas
+
+Okay, so I've discussed some often-used cards for Magic's most tried and true strategies: The fast-minded beatdown deck and the slow-minded control deck. Clearly there is a lot of deckbuilding ground between these two ends of a spectrum, including what some people classically call midgame decks and aggro-control decks. In addition, there are decks that don't fall along the linear “fast-slow” continuum at all, like combo decks. The truth is, deckbuilders sometimes set out to make a true aggro or control deck, but often their inspiration comes from a single card, a two-card combo, a theme, or a mechanic. I'm clearly not going to be able to cover all of these ideas in one article, but here are a few disparate concepts to spark your creativity. If you have other off-the-wall Golgari deck ideas, feel free to post them on the Message Boards.
+
+*Fattie Reanimator*
+
+Um... duh? If the entire guild is focused on the cycle of life and death, with most of its key elements revolving around using the graveyard as a resource, it doesn't take a huge stretch of imagination to think about a deck that looks to dump the biggest creatures possible into the graveyard in order to reanimate them and “cheat” their mana costs. Vigor Mortis and Zombify are going to be the foundation of any fattie reanimator deck in Black and Green. The question is how to make such a deck on a budget, since most huge fatties are rare, and some of the best targets - like Kokusho, the Evening Star and Verdant Force - can be expensive to obtain.
+
+Ayumi, the Last Visitor
+
+Personally, I think you've got two options to make a budget fattie reanimator deck work. The first option is to focus on less-expensive fatties like the aforementioned Sisters of Stone Death and, for example, Ayumi, the Last Visitor. A second option is to look at the non-rare fatties like Body of Jukai, Scaled Wurm, and Enormous Baloth. Both can lead to fun decks, so experiment with these options to find what you enjoy the best.
+
+*Spirits*
+
+One of the things that's cool about the *Ravnica* Block of cards is that the designers intentionally put in a lot of Spirits to interact well with the *Kamigawa* Block. This means that old standbys like Thief of Hope and Hana Kami can live alongside Carven Caryatid, Plagued Rusalka, and Keening Banshee. Don't forget *9th Edition*, too, which offers Dancing Scimitar, Seedborn Muse, and Will-o'-the-Wisp. Throw in some dredge to get maximal use out of soulshift (two mechanics with a great deal of synergy), and something interesting is bound to happen.
+
+*Zombies*
+
+Yes, the Golgari aggro sect likes Elvish Champion. Don't you think, though, that another faction is pretty enamored with Lord of the Undead? I mean, there's Shambling Shell, Golgari Rotwurm, Helldozer, and Carrion Howler, to name a few. If you own any Vulturous Zombies, they're obviously terrific for a Zombie deck. Given all of the Golgari's high-powered support cards like Putrefy, Vigor Mortis, and Svogthos, Green makes a mighty tasty second color for your typical Mono-Black (yawwwwn...) Zombie deck.
+
+*Golgari Germination*
+
+Since my first *Ravnica* booster draft, I thought that Golgari Germination had potential. Recently, I ran into a deck online that used Golgari Germination alongside Nantuko Husk as a pseudo combo deck. I saw him with four other creatures on the table, which he sacrificed (+2/+2 for each, making it a 10/10), then sacrificed the tokens (18/18), then played Gravedigger to sacrifice it and the resulting token (22/22), then did the same with the reanimated creature (26/26). That's a big Husk. You can effectively control the board with Plagued Rusalka and the same sort of interactions. Which is all to say that Golgari Germination is sitting there, waiting for a flash of evil genius. Go on. Be the genius.
+
+*Lure*
+
+[See Moldermort](https://web.archive.org/web/20090603041231/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/jm137). Man, I love Lure decks.
+
+*Woodwraith Corrupter*
+
+Woodwraith Corrupter
+
+I remember back in the Urza days (I feel like I need to say this in my grumpy old-man voice), when deckbuilders dreamed of animating a land with Verdant Touch and then Eradicating it. Ever since then, I've always thought of Black/Green as having a sort of twisted love-hate relationship with land, and the Golgari guild's numerous Plant Zombies only cement this belief for me. Imagine my delight, then, when I realized that Woodwraith Corrupter has emerged as a bargain-bin *Ravnica* rare. The Eradicate trick won't work with the Corrupter, unfortunately, and it can only target Forests. Still, there's always Earth Surge in *Guildpact*, or Life from the Loam and Groundskeeper to make your own land an unstoppable force. More straightforward is simply putting a forest of Forests on the table via Sakura-Tribe Elder, Kodama's Reach, Farseek, Rampant Growth, etc. for the Corrupter to spawn Elemental Horrors. Maybe Dark Heart of the Wood can stop by to join in the fun, too, especially if you're traveling the Groundskeeper, Azusa, Lost but Seeking route.
+
+*Auras*
+
+One of the subthemes in *Ravnica* that hasn't gotten much attention is the focus on Auras generally and Enchant Creature cards specifically. I love this subtheme, and previously considered it mostly the domain of the Selesnya Conclave thanks to cards like Auratouched Mage, Three Dreams, and Bramble Elemental. It seems to me, though, that Dowsing Shaman has all of the important Golgari ideals firmly embedded in its Centaur skull. Bramble Elemental still works for such a deck, as does Moldervine Cloak, Fists of Ironwood, Gatherer of Graces, Necromancer's Magemark, Strands of Undeath, and Beastmaster's Magemark. Here's an untested draft of a deck that I'll try out next week once *Guildpact* is available online:
+
+**Golgari Magemark**
+
+- 16 Forest
+- 2 Svogthos, the Restless Tomb
+- 4 Swamp
+  *(22 lands)*
+
+- 2 Bramble Elemental
+- 2 Dowsing Shaman
+- 4 Gatherer of Graces
+- 4 Sakura-Tribe Elder
+- 4 Verduran Enchantress
+- 4 Yavimaya Enchantress
+  *(20 creatures)*
+
+- 4 Fists of Ironwood
+- 4 Moldervine Cloak
+- 4 Necromancer's Magemark
+- 4 Putrefy
+- 2 Recollect
+  *(18 other spells)*
+
+*(Full decklist with sideboard: `decklist_3_Golgari_Magemark.txt`; priced breakdown: `decklist_3_Golgari_Magemark_priced.md`)*
+
+*Fun With Colors*
+
+Lastly, I think it's important to remind everyone that you can build a Golgari deck without necessarily building a Black/Green deck. After all, I've seen plenty of Mono-Green Gaze of the Gorgon decks since my Moldermort evolution, and I can easily imagine a Mono-Black deck that relies heavily on dredge to fuel Mortivore. With the arrival of Guildpact, splashing a third color into a Golgari deck has gotten easier. Just as I don't think every Black/Green deck in **Magic's** history can be considered a Golgari deck, I don't see why Golgari decks should always limit themselves to Black and Green. (Well, okay... I see one reason: Putrefy.)
+
+A couple of wrap-up notes:
+
+##### Spare-Time Note
+
+I'm glad everyone seems to have liked my odd spare-time creations last week, and I've received inspired e-mails in about equal measure across the three decks. I put in a lot of play hours into those decks, so it was fun to spend a day writing about them.
+
+One idea from *Guildpact* that I didn't properly pursue is adding Leyline of Singularity to my Night Phantom deck. This is a great card to be coupled with Hunted Phantasm (or any Hunted creature outside of the Lammasu, frankly), so it certainly deserves a good, hard look if you want to update my deck for *Guildpact*. In fact, I'm not entirely sure that Black is necessary in a budget Phantasm-Singularity deck at all, which opens the door for a Mono-Blue deck or a second support color (Pyroclasm, anyone?). These are fun thoughts to pursue, especially if (like me), you're unnaturally fascinated by *Ravnica's* Hunted critters.
+
+##### The Last Chalupa Note
+
+I'm not waiting for *Guildpact* (which hits online next Monday, meaning that I wouldn't be able to start another series until March 6th) to get started on my next deckbuilding series. The reason? Well, I have some tough news.
+
+Remember two weeks ago when I announced my new Director position at Taco Bell? As you can imagine, this new job has me and my family revaluating all of the rhythms of our weeks. What I've come to realize is that I now have time for either “Building On A Budget” or names and flavor text writing, but not both. It's a cost of my career continuing to skyrocket, but it's definitely a cost. After a lot of agonizing over which to drop and conversations with both Scott Johns and Matt Cavotta, I've decided that I can handle the sporadic time commitment of being a creative writer a lot more than the weekly demands of a column.
+
+So. I'm embarking on my last three-week preconstructed evolution (yes, I'm doing a precon... It's my last hurrah, man!) before fading into **Magic's** background. This time, though, there's a twist: *You can choose any preconstructed deck available online.*
+
+Listed below is every preconstructed deck I haven't yet touched (with the exception of Dimir Intrigues and Golgari Deathcreep, which would be too-familiar ground). I'll also list the format for which I'll be making the deck. Think carefully and pick a winner, so I can go out on a high note. Also, I should mention that *Guildpact* cards are fair game for me to add into the deck starting on the 6th of March.
+
+Which will be the basis for Jay's last deck series? Charge of the Boros (Standard) Critical Mass (Standard) Soratami's Wisdom (Standard) Truth Seekers (Standard) Spiritcraft (Standard) Kami Reborn (Standard) Snake's Path (Standard) Spiritbane (Standard) Army of Justice (Standard) Custom Creatures (Standard) Lofty Heights (Standard) Special Forces (Online Extended) Stampede (Online Extended) Sunburst (Online Extended) Master Blaster (Online Extended) Mind Swarm (Online Extended) Swarm and Slam (Online Extended) Transference (Online Extended) Bait and Bludgeon (Online Extended) Little Bashers (Online Extended) Sacrificial Bam (Online Extended) Wicked Big (Online Extended) Goblin Mob (Online Extended) Max Attax (Online Extended) Pulverize (Online Extended) Storm Surge (Online Extended) Elvish Rage (Online Extended) Morph Mayhem (Online Extended) Sliver Shivers (Online Extended) Zombies Unleashed (Online Extended) Bait and Switch (Online Extended) Celestial Assault (Online Extended) Devastation (Online Extended) Ivory Doom (Online Extended) Air Razers (Online Extended) Inundation (Online Extended) Painflow (Online Extended) Spectral Slam (Online Extended) Grave Danger (Online Extended) Insanity (Online Extended) Sacrilege (Online Extended) Waking Nightmares (Online Extended) Liftoff (Online Extended) Pressure Cooker (Online Extended) One-Two Punch (Online Extended) Trounce-O-Matic (Online Extended) Burial (Online Extended) Pandemonium (Online Extended) Swoop (Online Extended) Whirlpool (Online Extended) Barrage (Online Extended) Comeback (Online Extended) Domain (Online Extended) Scout (Online Extended) Expulsion (Online Extended) Heavy Hitters (Online Extended) Life Boost (Online Extended) Sky Slam (Online Extended) Speed Scorch (Online Extended) Armada (Online Extended) Bomber (Online Extended) Decay (Online Extended) Infestation (Online Extended) Way Wild (Online Extended) Burning Sky (Online Classic) Jungle Jam (Online Classic) Night Terrors (Online Classic) Ride Like The Wind (Online Classic) | Which will be the basis for Jay's last deck series? | Charge of the Boros (Standard) Critical Mass (Standard) Soratami's Wisdom (Standard) Truth Seekers (Standard) Spiritcraft (Standard) Kami Reborn (Standard) Snake's Path (Standard) Spiritbane (Standard) Army of Justice (Standard) Custom Creatures (Standard) Lofty Heights (Standard) Special Forces (Online Extended) Stampede (Online Extended) Sunburst (Online Extended) Master Blaster (Online Extended) Mind Swarm (Online Extended) Swarm and Slam (Online Extended) Transference (Online Extended) Bait and Bludgeon (Online Extended) Little Bashers (Online Extended) Sacrificial Bam (Online Extended) Wicked Big (Online Extended) Goblin Mob (Online Extended) Max Attax (Online Extended) Pulverize (Online Extended) Storm Surge (Online Extended) Elvish Rage (Online Extended) Morph Mayhem (Online Extended) Sliver Shivers (Online Extended) Zombies Unleashed (Online Extended) Bait and Switch (Online Extended) Celestial Assault (Online Extended) Devastation (Online Extended) Ivory Doom (Online Extended) Air Razers (Online Extended) Inundation (Online Extended) Painflow (Online Extended) Spectral Slam (Online Extended) Grave Danger (Online Extended) Insanity (Online Extended) Sacrilege (Online Extended) Waking Nightmares (Online Extended) Liftoff (Online Extended) Pressure Cooker (Online Extended) One-Two Punch (Online Extended) Trounce-O-Matic (Online Extended) Burial (Online Extended) Pandemonium (Online Extended) Swoop (Online Extended) Whirlpool (Online Extended) Barrage (Online Extended) Comeback (Online Extended) Domain (Online Extended) Scout (Online Extended) Expulsion (Online Extended) Heavy Hitters (Online Extended) Life Boost (Online Extended) Sky Slam (Online Extended) Speed Scorch (Online Extended) Armada (Online Extended) Bomber (Online Extended) Decay (Online Extended) Infestation (Online Extended) Way Wild (Online Extended) Burning Sky (Online Classic) Jungle Jam (Online Classic) Night Terrors (Online Classic) Ride Like The Wind (Online Classic) | Charge of the Boros (Standard) Critical Mass (Standard) Soratami's Wisdom (Standard) Truth Seekers (Standard) Spiritcraft (Standard) Kami Reborn (Standard) Snake's Path (Standard) Spiritbane (Standard) Army of Justice (Standard) Custom Creatures (Standard) Lofty Heights (Standard) Special Forces (Online Extended) Stampede (Online Extended) Sunburst (Online Extended) Master Blaster (Online Extended) Mind Swarm (Online Extended) Swarm and Slam (Online Extended) Transference (Online Extended) Bait and Bludgeon (Online Extended) Little Bashers (Online Extended) Sacrificial Bam (Online Extended) Wicked Big (Online Extended) Goblin Mob (Online Extended) Max Attax (Online Extended) Pulverize (Online Extended) Storm Surge (Online Extended) Elvish Rage (Online Extended) Morph Mayhem (Online Extended) Sliver Shivers (Online Extended) Zombies Unleashed (Online Extended) Bait and Switch (Online Extended) Celestial Assault (Online Extended) Devastation (Online Extended) Ivory Doom (Online Extended) Air Razers (Online Extended) Inundation (Online Extended) Painflow (Online Extended) Spectral Slam (Online Extended) Grave Danger (Online Extended) Insanity (Online Extended) Sacrilege (Online Extended) Waking Nightmares (Online Extended) Liftoff (Online Extended) Pressure Cooker (Online Extended) One-Two Punch (Online Extended) Trounce-O-Matic (Online Extended) Burial (Online Extended) Pandemonium (Online Extended) Swoop (Online Extended) Whirlpool (Online Extended) Barrage (Online Extended) Comeback (Online Extended) Domain (Online Extended) Scout (Online Extended) Expulsion (Online Extended) Heavy Hitters (Online Extended) Life Boost (Online Extended) Sky Slam (Online Extended) Speed Scorch (Online Extended) Armada (Online Extended) Bomber (Online Extended) Decay (Online Extended) Infestation (Online Extended) Way Wild (Online Extended) Burning Sky (Online Classic) Jungle Jam (Online Classic) Night Terrors (Online Classic) Ride Like The Wind (Online Classic)
+Which will be the basis for Jay's last deck series?
+Charge of the Boros (Standard) Critical Mass (Standard) Soratami's Wisdom (Standard) Truth Seekers (Standard) Spiritcraft (Standard) Kami Reborn (Standard) Snake's Path (Standard) Spiritbane (Standard) Army of Justice (Standard) Custom Creatures (Standard) Lofty Heights (Standard) Special Forces (Online Extended) Stampede (Online Extended) Sunburst (Online Extended) Master Blaster (Online Extended) Mind Swarm (Online Extended) Swarm and Slam (Online Extended) Transference (Online Extended) Bait and Bludgeon (Online Extended) Little Bashers (Online Extended) Sacrificial Bam (Online Extended) Wicked Big (Online Extended) Goblin Mob (Online Extended) Max Attax (Online Extended) Pulverize (Online Extended) Storm Surge (Online Extended) Elvish Rage (Online Extended) Morph Mayhem (Online Extended) Sliver Shivers (Online Extended) Zombies Unleashed (Online Extended) Bait and Switch (Online Extended) Celestial Assault (Online Extended) Devastation (Online Extended) Ivory Doom (Online Extended) Air Razers (Online Extended) Inundation (Online Extended) Painflow (Online Extended) Spectral Slam (Online Extended) Grave Danger (Online Extended) Insanity (Online Extended) Sacrilege (Online Extended) Waking Nightmares (Online Extended) Liftoff (Online Extended) Pressure Cooker (Online Extended) One-Two Punch (Online Extended) Trounce-O-Matic (Online Extended) Burial (Online Extended) Pandemonium (Online Extended) Swoop (Online Extended) Whirlpool (Online Extended) Barrage (Online Extended) Comeback (Online Extended) Domain (Online Extended) Scout (Online Extended) Expulsion (Online Extended) Heavy Hitters (Online Extended) Life Boost (Online Extended) Sky Slam (Online Extended) Speed Scorch (Online Extended) Armada (Online Extended) Bomber (Online Extended) Decay (Online Extended) Infestation (Online Extended) Way Wild (Online Extended) Burning Sky (Online Classic) Jungle Jam (Online Classic) Night Terrors (Online Classic) Ride Like The Wind (Online Classic) | Charge of the Boros (Standard) Critical Mass (Standard) Soratami's Wisdom (Standard) Truth Seekers (Standard) Spiritcraft (Standard) Kami Reborn (Standard) Snake's Path (Standard) Spiritbane (Standard) Army of Justice (Standard) Custom Creatures (Standard) Lofty Heights (Standard) Special Forces (Online Extended) Stampede (Online Extended) Sunburst (Online Extended) Master Blaster (Online Extended) Mind Swarm (Online Extended) Swarm and Slam (Online Extended) Transference (Online Extended) Bait and Bludgeon (Online Extended) Little Bashers (Online Extended) Sacrificial Bam (Online Extended) Wicked Big (Online Extended) Goblin Mob (Online Extended) Max Attax (Online Extended) Pulverize (Online Extended) Storm Surge (Online Extended) Elvish Rage (Online Extended) Morph Mayhem (Online Extended) Sliver Shivers (Online Extended) Zombies Unleashed (Online Extended) Bait and Switch (Online Extended) Celestial Assault (Online Extended) Devastation (Online Extended) Ivory Doom (Online Extended) Air Razers (Online Extended) Inundation (Online Extended) Painflow (Online Extended) Spectral Slam (Online Extended) Grave Danger (Online Extended) Insanity (Online Extended) Sacrilege (Online Extended) Waking Nightmares (Online Extended) Liftoff (Online Extended) Pressure Cooker (Online Extended) One-Two Punch (Online Extended) Trounce-O-Matic (Online Extended) Burial (Online Extended) Pandemonium (Online Extended) Swoop (Online Extended) Whirlpool (Online Extended) Barrage (Online Extended) Comeback (Online Extended) Domain (Online Extended) Scout (Online Extended) Expulsion (Online Extended) Heavy Hitters (Online Extended) Life Boost (Online Extended) Sky Slam (Online Extended) Speed Scorch (Online Extended) Armada (Online Extended) Bomber (Online Extended) Decay (Online Extended) Infestation (Online Extended) Way Wild (Online Extended) Burning Sky (Online Classic) Jungle Jam (Online Classic) Night Terrors (Online Classic) Ride Like The Wind (Online Classic)
+Charge of the Boros (Standard) Critical Mass (Standard) Soratami's Wisdom (Standard) Truth Seekers (Standard) Spiritcraft (Standard) Kami Reborn (Standard) Snake's Path (Standard) Spiritbane (Standard) Army of Justice (Standard) Custom Creatures (Standard) Lofty Heights (Standard) Special Forces (Online Extended) Stampede (Online Extended) Sunburst (Online Extended) Master Blaster (Online Extended) Mind Swarm (Online Extended) Swarm and Slam (Online Extended) Transference (Online Extended) Bait and Bludgeon (Online Extended) Little Bashers (Online Extended) Sacrificial Bam (Online Extended) Wicked Big (Online Extended) Goblin Mob (Online Extended) Max Attax (Online Extended) Pulverize (Online Extended) Storm Surge (Online Extended) Elvish Rage (Online Extended) Morph Mayhem (Online Extended) Sliver Shivers (Online Extended) Zombies Unleashed (Online Extended) Bait and Switch (Online Extended) Celestial Assault (Online Extended) Devastation (Online Extended) Ivory Doom (Online Extended) Air Razers (Online Extended) Inundation (Online Extended) Painflow (Online Extended) Spectral Slam (Online Extended) Grave Danger (Online Extended) Insanity (Online Extended) Sacrilege (Online Extended) Waking Nightmares (Online Extended) Liftoff (Online Extended) Pressure Cooker (Online Extended) One-Two Punch (Online Extended) Trounce-O-Matic (Online Extended) Burial (Online Extended) Pandemonium (Online Extended) Swoop (Online Extended) Whirlpool (Online Extended) Barrage (Online Extended) Comeback (Online Extended) Domain (Online Extended) Scout (Online Extended) Expulsion (Online Extended) Heavy Hitters (Online Extended) Life Boost (Online Extended) Sky Slam (Online Extended) Speed Scorch (Online Extended) Armada (Online Extended) Bomber (Online Extended) Decay (Online Extended) Infestation (Online Extended) Way Wild (Online Extended) Burning Sky (Online Classic) Jungle Jam (Online Classic) Night Terrors (Online Classic) Ride Like The Wind (Online Classic)
+
+Think hard and have fun,
+
+-jms
