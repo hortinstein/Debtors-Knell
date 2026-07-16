@@ -49,47 +49,47 @@ So sneaky are those men of the secret sword! Well, there goes my surprise! Tip #
 
 Ok, well, since they have our attention let's talk about Ninja. Ninja are true masters. I can't tell you how excited I am to not only see Ninja in **Magic**, but to see how incredibly awesome they are. At first, the mechanic seems like a cool flavorful way of portraying these shadowy assassins, but after having played them for a while I can attest that this mechanic is truly powerful!
 
-Ophidian, meet Ninja of the Deep Hours. Owned.
-Mindstab Thrull, meet the Okiba-Gang Shinobi. Savaged.
-Terror, meet Throat Slitter.
+Ophidian, meet [Ninja of the Deep Hours](https://scryfall.com/card/c18/95/ninja-of-the-deep-hours). Owned.
+Mindstab Thrull, meet the [Okiba-Gang Shinobi](https://scryfall.com/card/pca/35/okiba-gang-shinobi). Savaged.
+[Terror](https://scryfall.com/card/dmr/103/terror), meet [Throat Slitter](https://scryfall.com/card/pca/37/throat-slitter).
 
 …Hey, isn't that the rat that trained the turtles how to fight?
 
 Then we have the legendary Ninja…Higure and Ink-Eyes, both of which are quite powerful in any matchup. Higure is especially underrated, since he can help you get off your super saboteur triggers from your Ninja. I think everyone already knows how Ink-Eyes operates.
 
-Walker of Secret Ways
+[![Walker of Secret Ways](https://api.scryfall.com/cards/pca/27?format=image&version=normal)](https://scryfall.com/card/pca/27/walker-of-secret-ways)
 
-Ninja are not only good at appearing out of nowhere, but they can also disappear into thin air via Walker of Secret Ways! This girl lets you do some truly ridiculous tricks during your attack step. Anyone with a bit of imagination can think of some rather powerful ‘damage on the stack' tricks, but it gets cooler than that.
+Ninja are not only good at appearing out of nowhere, but they can also disappear into thin air via [Walker of Secret Ways](https://scryfall.com/card/pca/27/walker-of-secret-ways)! This girl lets you do some truly ridiculous tricks during your attack step. Anyone with a bit of imagination can think of some rather powerful ‘damage on the stack' tricks, but it gets cooler than that.
 
 For instance, let's say you are attacking with:
 
-Ninja of the Deep Hours
+[Ninja of the Deep Hours](https://scryfall.com/card/c18/95/ninja-of-the-deep-hours)
 
-Throat Slitter
+[Throat Slitter](https://scryfall.com/card/pca/37/throat-slitter)
 
-Ravenous Rats
+[Ravenous Rats](https://scryfall.com/card/gvl/37/ravenous-rats)
 
-Trinket Mage
+[Trinket Mage](https://scryfall.com/card/ddu/41/trinket-mage)
 
 Your opponent blocks the two Ninja with Fat GuysTM.
 
-After blocks are declared, you ninjutsu out the Walker, returning the Ravenous Rats. You then pay {1}{U} to return the Throat Slitter, then ninjutsu it back out, returning the Trinket Mage. If you have 4 extra mana on top of that, (unlikely, but possible) you could also bring back the Ninja of the Deep Hours, and swap out the Walker of Secret Ways for it.
+After blocks are declared, you ninjutsu out the Walker, returning the [Ravenous Rats](https://scryfall.com/card/gvl/37/ravenous-rats). You then pay {1}{U} to return the [Throat Slitter](https://scryfall.com/card/pca/37/throat-slitter), then ninjutsu it back out, returning the [Trinket Mage](https://scryfall.com/card/ddu/41/trinket-mage). If you have 4 extra mana on top of that, (unlikely, but possible) you could also bring back the [Ninja of the Deep Hours](https://scryfall.com/card/c18/95/ninja-of-the-deep-hours), and swap out the [Walker of Secret Ways](https://scryfall.com/card/pca/27/walker-of-secret-ways) for it.
 
 Ninja Attack!
 
-Those Ninja are a slippery bunch. Notice how you now can Ravenous Rats your opponent again, and go Trinket Mage up a new toy, like, say, Shuriken? Oh Shuriken, let me do a happy dance when my Ninja throws you! *Happy Dance*
+Those Ninja are a slippery bunch. Notice how you now can [Ravenous Rats](https://scryfall.com/card/gvl/37/ravenous-rats) your opponent again, and go [Trinket Mage](https://scryfall.com/card/ddu/41/trinket-mage) up a new toy, like, say, [Shuriken](https://scryfall.com/card/bok/160/shuriken)? Oh [Shuriken](https://scryfall.com/card/bok/160/shuriken), let me do a happy dance when my Ninja throws you! *Happy Dance*
 
-The Trinket Mage can also fetch you a Blinding Powder (no Ninja arsenal is complete without one) or an Aether Spellbomb, to help force through your guys. Phantom Wings is actually one of your best tools for getting your Ninja past those pesky blockers. You can either give your Ninja flying or use the Phantom Wings as a bounce spell by putting it on your opponent's creature. There is also the happy side effect of letting you do some crazy tricks like you would with Walker of Secret Ways even if they have flying blockers.
+The [Trinket Mage](https://scryfall.com/card/ddu/41/trinket-mage) can also fetch you a [Blinding Powder](https://scryfall.com/card/bok/153/blinding-powder) (no Ninja arsenal is complete without one) or an [Aether Spellbomb](https://scryfall.com/card/jmp/456/aether-spellbomb), to help force through your guys. [Phantom Wings](https://scryfall.com/card/bok/46/phantom-wings) is actually one of your best tools for getting your Ninja past those pesky blockers. You can either give your Ninja flying or use the [Phantom Wings](https://scryfall.com/card/bok/46/phantom-wings) as a bounce spell by putting it on your opponent's creature. There is also the happy side effect of letting you do some crazy tricks like you would with [Walker of Secret Ways](https://scryfall.com/card/pca/27/walker-of-secret-ways) even if they have flying blockers.
 
 ##### Tips on Playing the Deck
 
 - Whenever possible, strike with ninjutsu!
 - Try to reuse your creatures with comes-into-play effects by bouncing them with ninjutsu.
 - It is really good to ninjutsu Higure out, but it's ok to just hard-cast Ink-Eyes. This is because getting the initial hit in with Higure sets you up for some huge tempo advantage the following turn. Ink-Eyes is more of a fighter, and you almost prefer that she engages in combat.
-- If you find yourself unable to get around a blocker, look for a Minamo Sightbender or a Phantom Wings to help you get the process rolling.
+- If you find yourself unable to get around a blocker, look for a [Minamo Sightbender](https://scryfall.com/card/ddi/5/minamo-sightbender) or a [Phantom Wings](https://scryfall.com/card/bok/46/phantom-wings) to help you get the process rolling.
 - Don't be afraid to attack with your Sightbender…and then turn it into a Ninja!
-- It is usually correct to fetch up a Shuriken with Trinket Mage, but Aether Spellbomb and Blinding Powder can also help force through some attackers.
-- Try to Okiba-Gang Shinobi your opponent at the earliest opportunity, to ensure you hit three cards.
+- It is usually correct to fetch up a [Shuriken](https://scryfall.com/card/bok/160/shuriken) with [Trinket Mage](https://scryfall.com/card/ddu/41/trinket-mage), but [Aether Spellbomb](https://scryfall.com/card/jmp/456/aether-spellbomb) and [Blinding Powder](https://scryfall.com/card/bok/153/blinding-powder) can also help force through some attackers.
+- Try to [Okiba-Gang Shinobi](https://scryfall.com/card/pca/35/okiba-gang-shinobi) your opponent at the earliest opportunity, to ensure you hit three cards.
 
 ##### Adding Money to the Deck
 
@@ -129,7 +129,7 @@ Well, there are my votes. To all those that I didn’t vote for, don’t feel ba
 
 ##### Signing Off
 
-Well folks…that is the end of my Building on a Budget days. I will now part with a small word of advice for the economically minded player out there: Just remember that even though you are building on a budget, it doesn't mean you should be afraid to compete with more expensive decks. If anything, look at it as a challenge. See how often you can win with limited resources. It is all upside when they are playing with Moxes, Birds and Wraths while you are fighting the good fight with Raging Goblin. As long as you are able to enjoy your experiences, it is time well spent. Thirty tickets plus a little time equals many smiles. Smiles are the real key to winning.
+Well folks…that is the end of my Building on a Budget days. I will now part with a small word of advice for the economically minded player out there: Just remember that even though you are building on a budget, it doesn't mean you should be afraid to compete with more expensive decks. If anything, look at it as a challenge. See how often you can win with limited resources. It is all upside when they are playing with Moxes, Birds and Wraths while you are fighting the good fight with [Raging Goblin](https://scryfall.com/card/m10/153/raging-goblin). As long as you are able to enjoy your experiences, it is time well spent. Thirty tickets plus a little time equals many smiles. Smiles are the real key to winning.
 
 Until next time…Thanks for reading!
 

@@ -30,31 +30,31 @@ Yes, they may seem a lot like the *Invasion* "comes into play tapped" lands. In 
 
 The Borderposts have color. This may not seem too important, but it has a lot of relevance in *Shards* block. Your Bloodhall Ooze will get bigger if it finds a Veinfire Borderpost or Firewild Borderpost when it checks during your upkeep. You can drop Cliffrunner Behemoth and swing with a hasty 5-power Beast without ever having to over-commit to the board.
 
-Perhaps the most exciting application of the Borderposts is their interaction with Bloom Tender. Think about it:
+Perhaps the most exciting application of the Borderposts is their interaction with [Bloom Tender](https://scryfall.com/card/ecl/166/bloom-tender). Think about it:
 
-Turn one: Forest, Veinfire Borderpost
- Turn two: Replay the Forest, Bloom Tender
- Turn three: Fieldmist Borderpost, replay the Forest, Mind Shatter opponent for 4.
+Turn one: [Forest](https://scryfall.com/card/msh/295/forest), Veinfire Borderpost
+ Turn two: Replay the [Forest](https://scryfall.com/card/msh/295/forest), [Bloom Tender](https://scryfall.com/card/ecl/166/bloom-tender)
+ Turn three: Fieldmist Borderpost, replay the [Forest](https://scryfall.com/card/msh/295/forest), [Mind Shatter](https://scryfall.com/card/mm3/77/mind-shatter) opponent for 4.
 
-This deck is any Johnny/Timmy's dream. We can make infinite mana with an Umbral Mantle and use our Bloom Tender to do pretty absurd things. This is a deck I'd like to build once we have the whole spoiler available. I'll throw together a sample list for now to whet your appetites. I'll start by explaining the card choices.
+This deck is any Johnny/Timmy's dream. We can make infinite mana with an [Umbral Mantle](https://scryfall.com/card/shm/267/umbral-mantle) and use our [Bloom Tender](https://scryfall.com/card/ecl/166/bloom-tender) to do pretty absurd things. This is a deck I'd like to build once we have the whole spoiler available. I'll throw together a sample list for now to whet your appetites. I'll start by explaining the card choices.
 
-**Bloom Tender:** The Elf Druid is what makes this deck tick. We can produce infinite mana or attack for infinite damage quite easily.
+**[Bloom Tender](https://scryfall.com/card/ecl/166/bloom-tender):** The Elf Druid is what makes this deck tick. We can produce infinite mana or attack for infinite damage quite easily.
 
-**Umbral Mantle:** A great combo with our Bloom Tender. This can enable turn three kills with reasonable regularity. Turn-one land, play a Borderpost for its alternate cost. Turn-two Bloom Tender. Turn-three Umbral Mantle, tap and untap Bloom Tender infinite times, attack for infinite damage. If your opponent has a pesky blocker to deal with the problem we can just use a Soul's Fire to deal infinite damage directly to his or her face.
+**[Umbral Mantle](https://scryfall.com/card/shm/267/umbral-mantle):** A great combo with our [Bloom Tender](https://scryfall.com/card/ecl/166/bloom-tender). This can enable turn three kills with reasonable regularity. Turn-one land, play a Borderpost for its alternate cost. Turn-two [Bloom Tender](https://scryfall.com/card/ecl/166/bloom-tender). Turn-three [Umbral Mantle](https://scryfall.com/card/shm/267/umbral-mantle), tap and untap [Bloom Tender](https://scryfall.com/card/ecl/166/bloom-tender) infinite times, attack for infinite damage. If your opponent has a pesky blocker to deal with the problem we can just use a [Soul's Fire](https://scryfall.com/card/cmr/200/souls-fire) to deal infinite damage directly to his or her face.
 
-**The Borderposts:** These really make the deck a realistic strategy. We can use them to fix our mana and to do very powerful things with our Bloom Tender.
+**The Borderposts:** These really make the deck a realistic strategy. We can use them to fix our mana and to do very powerful things with our [Bloom Tender](https://scryfall.com/card/ecl/166/bloom-tender).
 
-**Crimson Wisps:** Giving Bloom Tender haste will probably result in a lot of surprise wins.
+**[Crimson Wisps](https://scryfall.com/card/shm/88/crimson-wisps):** Giving [Bloom Tender](https://scryfall.com/card/ecl/166/bloom-tender) haste will probably result in a lot of surprise wins.
 
-**Mind Shatter:** I want to do something exciting with all the mana I can produce so quickly. Mind Shatter is one of the most exciting things we can do.
+**[Mind Shatter](https://scryfall.com/card/mm3/77/mind-shatter):** I want to do something exciting with all the mana I can produce so quickly. [Mind Shatter](https://scryfall.com/card/mm3/77/mind-shatter) is one of the most exciting things we can do.
 
-**Mind Spring:** Drawing my whole deck seems like a good way to win games.
+**[Mind Spring](https://scryfall.com/card/blb/389/mind-spring):** Drawing my whole deck seems like a good way to win games.
 
-**Elvish Harbinger:** Where's my Bloom Tender?
+**[Elvish Harbinger](https://scryfall.com/card/evg/4/elvish-harbinger):** Where's my [Bloom Tender](https://scryfall.com/card/ecl/166/bloom-tender)?
 
-**Merfolk Looter:** I want to sift through my library and put together a big turn with my Bloom Tender. This makes that very possible.
+**[Merfolk Looter](https://scryfall.com/card/afc/86/merfolk-looter):** I want to sift through my library and put together a big turn with my [Bloom Tender](https://scryfall.com/card/ecl/166/bloom-tender). This makes that very possible.
 
-**Firespout & Volcanic Fallout:** I need to survive long enough to play my combo, Firespout and Volcanic Fallout let me do that.
+**[Firespout](https://scryfall.com/card/clu/190/firespout) & [Volcanic Fallout](https://scryfall.com/card/cmr/418/volcanic-fallout):** I need to survive long enough to play my combo, [Firespout](https://scryfall.com/card/clu/190/firespout) and [Volcanic Fallout](https://scryfall.com/card/cmr/418/volcanic-fallout) let me do that.
 
 Once we put the deck together it will look something like this:
 
@@ -82,9 +82,9 @@ Once we put the deck together it will look something like this:
 
 The deck seems like it would be a great choice casual players everywhere. I'll look at the deck again in a few weeks and hopefully make it into something that can win some
 
-Bloom Tender is definitely the most flashy application I could think of for Standard, but what really got me excited was adding these in the Master Transmuter deck I built a few weeks back.
+[Bloom Tender](https://scryfall.com/card/ecl/166/bloom-tender) is definitely the most flashy application I could think of for Standard, but what really got me excited was adding these in the [Master Transmuter](https://scryfall.com/card/2xm/58/master-transmuter) deck I built a few weeks back.
 
-Let's take a look at the Master Transmuter deck:
+Let's take a look at the [Master Transmuter](https://scryfall.com/card/2xm/58/master-transmuter) deck:
 
 **Transmutation**
 
@@ -115,7 +115,7 @@ Let's take a look at the Master Transmuter deck:
 
 *(Full decklist with sideboard: `decklist_2_Transmutation.txt`; priced breakdown: `decklist_2_Transmutation_priced.md`)*
 
-I love this deck with every cell in my body. I still find myself burning the midnight oil playing it in the casual room on **Magic Online**. I've had some problems with this deck in the past, though. One of the most frustrating situations is having an active Master Transmuter with nothing to bounce except the Master herself. The Borderposts solve that problem beautifully.
+I love this deck with every cell in my body. I still find myself burning the midnight oil playing it in the casual room on **Magic Online**. I've had some problems with this deck in the past, though. One of the most frustrating situations is having an active [Master Transmuter](https://scryfall.com/card/2xm/58/master-transmuter) with nothing to bounce except the Master herself. The Borderposts solve that problem beautifully.
 
 We can simply add Borderposts in place of some lands and the deck runs a lot better. An updated list would look like this:
 
@@ -151,7 +151,7 @@ Speaking of the Prerelease. That time is approaching once again. I've always lov
 
 I had the pleasure of spellslinging at the Philadelphia prerelease for *Conflux*. Unfortunately, I can't do it for *Alara Reborn*. I've worked it out so I can be slinging some new cards at my local shop, though. If you are making your way out to Philadelphia you can play against my good friend Gerard Fabiano. If you beat him you even get a pack of *Alara Reborn*. I urge all of you to make your way to any prerelease nearby and open up some new product, it's one of the most exciting times to be a magic player. It's definitely worth finding the time to be a part of it.
 
-Next week I'm going to give you the first of a two-part column on a deck that was brought to my attention by Bill Stark of the Starkington Post. Over the next few weeks I'd like to hear your new deck ideas. With new cards being announced every day it shouldn't be hard to brew up new and exciting archetypes. Whether it's a tighter list for my Bloom Tender deck or an entirely new deck built around Dragon Broodmother, I always look forward to your emails when a new set is being previewed.
+Next week I'm going to give you the first of a two-part column on a deck that was brought to my attention by Bill Stark of the Starkington Post. Over the next few weeks I'd like to hear your new deck ideas. With new cards being announced every day it shouldn't be hard to brew up new and exciting archetypes. Whether it's a tighter list for my [Bloom Tender](https://scryfall.com/card/ecl/166/bloom-tender) deck or an entirely new deck built around Dragon Broodmother, I always look forward to your emails when a new set is being previewed.
 
 Happy brewing!
 

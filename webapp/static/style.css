@@ -134,6 +134,52 @@ main {
 
 .col-tags { max-width: 12em; }
 
+/* ---------- mana-color pips ---------- */
+
+.color-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.9rem;
+}
+
+.mana-pip-btn {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 999px;
+  line-height: 0;
+}
+
+.mana-pip-btn .mana-pip { box-shadow: 0 0 0 1px var(--border); }
+.mana-pip-btn:hover .mana-pip { box-shadow: 0 0 0 2px var(--accent-2); }
+.mana-pip-btn.active .mana-pip { box-shadow: 0 0 0 2px var(--accent); transform: scale(1.08); }
+
+.mana-pip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.35em;
+  height: 1.35em;
+  border-radius: 50%;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1;
+  margin: 0 0.06em;
+}
+
+.mana-w { background: #f8f6d8; color: #7a6a1a; }
+.mana-u { background: #aae0fa; color: #0e4f7a; }
+.mana-b { background: #8a8580; color: #f5f2ea; }
+.mana-r { background: #f9aa8f; color: #8a1f0a; }
+.mana-g { background: #9bd0a7; color: #14532b; }
+.mana-c { background: #d8d3c6; color: #4a4438; }
+
+.col-colors { white-space: nowrap; }
+
 .deck-table {
   width: 100%;
   border-collapse: collapse;
@@ -286,6 +332,17 @@ body.lightbox-locked { overflow: hidden; }
 .article-body h5, .article-body h6 { color: var(--accent-2); }
 .article-body a { color: var(--link); }
 .article-body hr { border: none; border-top: 1px solid var(--border); margin: 1.2rem 0; }
+
+.article-body p img {
+  display: block;
+  width: 160px;
+  max-width: 100%;
+  height: auto;
+  margin: 0.4rem 0 0.8rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+}
 
 .decklists h2 { color: var(--accent); }
 

@@ -20,13 +20,13 @@ Goblin
 
 Crazed Goblin – Goblin Warrior.
 
-How did those two types get together on that crazy goblin? The world will never know. I have looked at Crazed Goblin in the past and thought to myself, “Why would I ever play this over a 1/1 for {R} Goblin with a positive ability?”
+How did those two types get together on that crazy goblin? The world will never know. I have looked at [Crazed Goblin](https://scryfall.com/card/dst/56/crazed-goblin) in the past and thought to myself, “Why would I ever play this over a 1/1 for {R} Goblin with a positive ability?”
 
-Yet, I found the little guy attacking his way into my deck. Maybe it is because he is crazy, maybe because he's cute…but no matter what anyone may think, Crazed Goblin is a Warrior. The warrior deck is very tight on cards, and it wants as many warriors as possible to help fuel this card:
+Yet, I found the little guy attacking his way into my deck. Maybe it is because he is crazy, maybe because he's cute…but no matter what anyone may think, [Crazed Goblin](https://scryfall.com/card/dst/56/crazed-goblin) is a Warrior. The warrior deck is very tight on cards, and it wants as many warriors as possible to help fuel this card:
 
-Sosuke, Son of Seshiro
+[![Sosuke, Son of Seshiro](https://api.scryfall.com/cards/chk/244?format=image&version=normal)](https://scryfall.com/card/chk/244/sosuke-son-of-seshiro)
 
-The Warriors have a lord! I guess Sosuke fell on the violent side of the snake family tree. I was tempted to make the Tribal deck about Snakes, but Warriors were too cool to pass up. With a guy like this, you will want lots of cheap warriors that will all get the basilisk ability. All a sudden, your cute Crazed Goblin becomes a threat!
+The Warriors have a lord! I guess Sosuke fell on the violent side of the snake family tree. I was tempted to make the Tribal deck about Snakes, but Warriors were too cool to pass up. With a guy like this, you will want lots of cheap warriors that will all get the basilisk ability. All a sudden, your cute [Crazed Goblin](https://scryfall.com/card/dst/56/crazed-goblin) becomes a threat!
 
 Here is the deck in its entirety:
 
@@ -52,25 +52,25 @@ Here is the deck in its entirety:
 
 *(Full decklist with sideboard: `decklist.txt`; priced breakdown: `decklist_priced.md`)*
 
-Your plan with this deck is to curve out, hopefully topping it off with the Legendary bad boy himself. You have eight 1-drops and eight 2-drops, so your curve is certainly capable of this. Usually you would want more in both of those slots, like 10-12, but the available warriors are slim…I mean we are already using Crazed Goblin here!
+Your plan with this deck is to curve out, hopefully topping it off with the Legendary bad boy himself. You have eight 1-drops and eight 2-drops, so your curve is certainly capable of this. Usually you would want more in both of those slots, like 10-12, but the available warriors are slim…I mean we are already using [Crazed Goblin](https://scryfall.com/card/dst/56/crazed-goblin) here!
 
-In order to help you in tough combat situations, I have included 3 cards that can break through – Glacial Ray, Kodama's Might, and Matsu-Tribe Decoy. The Might and the Ray obviously have a bit of synergy together, and I recommend waiting until you can splice until casting them when possible, but sometimes the Crazed Goblin just refuses to wait.
+In order to help you in tough combat situations, I have included 3 cards that can break through – [Glacial Ray](https://scryfall.com/card/mma/115/glacial-ray), [Kodama's Might](https://scryfall.com/card/chk/224/kodamas-might), and [Matsu-Tribe Decoy](https://scryfall.com/card/chk/227/matsu-tribe-decoy). The Might and the Ray obviously have a bit of synergy together, and I recommend waiting until you can splice until casting them when possible, but sometimes the [Crazed Goblin](https://scryfall.com/card/dst/56/crazed-goblin) just refuses to wait.
 
-The Matsu-Tribe Decoy is really awesome once you get the Son into play. You can lure two creatures into blocking him and deal 1 damage to each (he will have the extra power at this point). Then, while the Decoy will be sacrificed (proper flavor), the triggered ability will kill both of those creatures.
+The [Matsu-Tribe Decoy](https://scryfall.com/card/chk/227/matsu-tribe-decoy) is really awesome once you get the Son into play. You can lure two creatures into blocking him and deal 1 damage to each (he will have the extra power at this point). Then, while the Decoy will be sacrificed (proper flavor), the triggered ability will kill both of those creatures.
 
 While I didn't want to make this a snake deck in particular, I wanted to use Sosuke to his full effect. The answer was to include many Snake warriors such as the Decoy, the Ranger, and the Reaver. This lets you get a pump effect and the 'Warrior' effect in one package…and with the Reaver you can even regenerate and keep swinging!
 
 ##### Tips on Playing the Deck
 
-- People will likely not block your Akki Avalanchers, especially once Sosuke comes out. Later in the game, you will certainly want to convert your lands into extra damage.
-- You can often finish off your opponents with Glacial Rays. Simply splice one Ray onto the other, and then cast the second one for a total of 6 points of finisher damage.
+- People will likely not block your [Akki Avalanchers](https://scryfall.com/card/chk/151/akki-avalanchers), especially once Sosuke comes out. Later in the game, you will certainly want to convert your lands into extra damage.
+- You can often finish off your opponents with [Glacial Ray](https://scryfall.com/card/mma/115/glacial-ray)s. Simply splice one Ray onto the other, and then cast the second one for a total of 6 points of finisher damage.
 - Be careful with your Decoy. Even if you force one small thing to block, they are still allowed to block with extra stuff to make sure the Decoy bites the dust.
 - Use the Snake ability on the Decoy to your advantage. Sometimes you will cast him on turn 3, and it can be really good to just force a block on turn 4 to get a nasty blocker out of the way for two turns.
-- Most of your creatures are good at saying 'don't block me with a bigger creature' but people will be happy to trade creatures on even terms with them – point in case, Orochi Ranger. Keep this in mind when attacking.
+- Most of your creatures are good at saying 'don't block me with a bigger creature' but people will be happy to trade creatures on even terms with them – point in case, [Orochi Ranger](https://scryfall.com/card/chk/235/orochi-ranger). Keep this in mind when attacking.
 
 ##### Adding Money to the Deck
 
-Zo-Zu the Punisher would be great to add to this deck, since it helps fill a hole in the curve. You will need to change the mana base around a bit to support him though. You can also go a different route with equipment and artifacts, Krark-Clan Grunt, and Vulshok Battlemaster. While this is decent, you won't be able to use Sosuke to his full effect, and I personally feel he is the glue that binds the deck together. Soulblast might also be worth taking a look at. Oh, and Birds of Paradise. Always Birds of Paradise! Have I ever mentioned Birds of Paradise?
+[Zo-Zu the Punisher](https://scryfall.com/card/dds/41/zo-zu-the-punisher) would be great to add to this deck, since it helps fill a hole in the curve. You will need to change the mana base around a bit to support him though. You can also go a different route with equipment and artifacts, Krark-Clan Grunt, and [Vulshok Battlemaster](https://scryfall.com/card/mrd/110/vulshok-battlemaster). While this is decent, you won't be able to use Sosuke to his full effect, and I personally feel he is the glue that binds the deck together. Soulblast might also be worth taking a look at. Oh, and [Birds of Paradise](https://scryfall.com/card/msc/170/birds-of-paradise). Always [Birds of Paradise](https://scryfall.com/card/msc/170/birds-of-paradise)! Have I ever mentioned [Birds of Paradise](https://scryfall.com/card/msc/170/birds-of-paradise)?
 
 Overall this deck is decent for casual play, and could probably beat a few competitive people just because of the aggressive nature of the deck. Still, it is a deck with 0 rares and few uncommons, so with that in mind it performs rather well.
 

@@ -60,46 +60,46 @@ Gleancrawler | Mythic Proportions | Silvos, Rogue Elemental
 
 Here's what I ended up with!
 
-10: Biomantic Mastery (x2)
- 15: Budoka Gardener
- 29: Emperor Crocodile
- 33: Erhnam Djinn
- 37: Force of Savagery
- 47: Glissa Sunseeker
- 57: Immaculate Magistrate
- 60: Isao, Enlightened Bushi
- 68: Kodama of the Center Tree
- 77: Loaming Shaman
- 79: Magus of the Candelabra
- 82: Maro
- 92: Nantuko Cultivator
- 97: Nature's Will
- 98: Nourishing Shoal
- 101: Patron of the Orochi
- 104: Plated Slagwurm
- 128: Sekki, Seasons' Guide
- 129: Seshiro the Anointed
- 135: Silvos, Rogue Elemental
- 137: Spectral Force
- 139: Spike Tiller
- 141: Stone-Tongue Basilisk
- 150: Thorn Elemental
- 155: Tornado Elemental
- 156: Tribal Forcemage
- 159: Upwelling
- 161: Utopia Tree (x2)
- 164: Verdant Force
- 171: Wild Pair (x2)
- 174: Wort, the Raidmother
- 176: Wurmcalling
+10: [Biomantic Mastery](https://scryfall.com/card/c15/239/biomantic-mastery) (x2)
+ 15: [Budoka Gardener](https://scryfall.com/card/c18/134/budoka-gardener-dokai-weaver-of-life)
+ 29: [Emperor Crocodile](https://scryfall.com/card/ema/165/emperor-crocodile)
+ 33: [Erhnam Djinn](https://scryfall.com/card/mb2/133/erhnam-djinn)
+ 37: [Force of Savagery](https://scryfall.com/card/fut/126/force-of-savagery)
+ 47: [Glissa Sunseeker](https://scryfall.com/card/mrd/120/glissa-sunseeker)
+ 57: [Immaculate Magistrate](https://scryfall.com/card/cmr/234/immaculate-magistrate)
+ 60: [Isao, Enlightened Bushi](https://scryfall.com/card/bok/129/isao-enlightened-bushi)
+ 68: [Kodama of the Center Tree](https://scryfall.com/card/bok/131/kodama-of-the-center-tree)
+ 77: [Loaming Shaman](https://scryfall.com/card/rvr/149/loaming-shaman)
+ 79: [Magus of the Candelabra](https://scryfall.com/card/bbd/206/magus-of-the-candelabra)
+ 82: [Maro](https://scryfall.com/card/9ed/254/maro)
+ 92: [Nantuko Cultivator](https://scryfall.com/card/otc/198/nantuko-cultivator)
+ 97: [Nature's Will](https://scryfall.com/card/chk/230/natures-will)
+ 98: [Nourishing Shoal](https://scryfall.com/card/uma/175/nourishing-shoal)
+ 101: [Patron of the Orochi](https://scryfall.com/card/bok/138/patron-of-the-orochi)
+ 104: [Plated Slagwurm](https://scryfall.com/card/gvl/12/plated-slagwurm)
+ 128: [Sekki, Seasons' Guide](https://scryfall.com/card/sok/148/sekki-seasons-guide)
+ 129: [Seshiro the Anointed](https://scryfall.com/card/chk/241/seshiro-the-anointed)
+ 135: [Silvos, Rogue Elemental](https://scryfall.com/card/ema/186/silvos-rogue-elemental)
+ 137: [Spectral Force](https://scryfall.com/card/tsp/217/spectral-force)
+ 139: [Spike Tiller](https://scryfall.com/card/tsp/218/spike-tiller)
+ 141: [Stone-Tongue Basilisk](https://scryfall.com/card/ody/276/stone-tongue-basilisk)
+ 150: [Thorn Elemental](https://scryfall.com/card/dom/185/thorn-elemental)
+ 155: [Tornado Elemental](https://scryfall.com/card/cma/159/tornado-elemental)
+ 156: [Tribal Forcemage](https://scryfall.com/card/lgn/142/tribal-forcemage)
+ 159: [Upwelling](https://scryfall.com/card/10e/306/upwelling)
+ 161: [Utopia Tree](https://scryfall.com/card/9ed/277/utopia-tree) (x2)
+ 164: [Verdant Force](https://scryfall.com/card/dom/187/verdant-force)
+ 171: [Wild Pair](https://scryfall.com/card/cn2/196/wild-pair) (x2)
+ 174: [Wort, the Raidmother](https://scryfall.com/card/c20/234/wort-the-raidmother)
+ 176: [Wurmcalling](https://scryfall.com/card/tsp/234/wurmcalling)
 
 Since I want the maximum exposure for the rares in this deck, I re-rolled the three duplicate rolls.
 
 Three Rerolls:
 
-45: Gleancrawler
- 114: Rhox
- 145: Symbiotic Wurm
+45: [Gleancrawler](https://scryfall.com/card/ddj/64/gleancrawler)
+ 114: [Rhox](https://scryfall.com/card/10e/291/rhox)
+ 145: [Symbiotic Wurm](https://scryfall.com/card/cmd/174/symbiotic-wurm)
 
 **The Final Three Green 1**
 
@@ -147,19 +147,19 @@ Three Rerolls:
 
 *(Full decklist with sideboard: `decklist_1_The_Final_Three_Green_1.txt`; priced breakdown: `decklist_1_The_Final_Three_Green_1_priced.md`)*
 
-**Game 1: tefus (Tunnel Vision / Living End)**
+**Game 1: tefus (Tunnel Vision / [Living End](https://scryfall.com/card/tsr/121/living-end))**
 
-I get down Utopia Tree, Wort, the Raidmother, and Stone-Tongue Basilisk against tefus's double Coiling Oracle. He plays Wrath of God, and then plays Tunnel Vision on himself, naming Living End. Unfortunately for him, the Living End in his deck is the 4th from the bottom card, and he mills away both of his Clockspinnings. I drop Rhox and Spike Tiller, make two of my lands 3/3 creatures, and kill him within two turns.
+I get down [Utopia Tree](https://scryfall.com/card/9ed/277/utopia-tree), [Wort, the Raidmother](https://scryfall.com/card/c20/234/wort-the-raidmother), and [Stone-Tongue Basilisk](https://scryfall.com/card/ody/276/stone-tongue-basilisk) against tefus's double [Coiling Oracle](https://scryfall.com/card/rvr/172/coiling-oracle). He plays [Wrath of God](https://scryfall.com/card/cmm/70/wrath-of-god), and then plays Tunnel Vision on himself, naming [Living End](https://scryfall.com/card/tsr/121/living-end). Unfortunately for him, the [Living End](https://scryfall.com/card/tsr/121/living-end) in his deck is the 4th from the bottom card, and he mills away both of his [Clockspinning](https://scryfall.com/card/tsp/53/clockspinning)s. I drop [Rhox](https://scryfall.com/card/10e/291/rhox) and [Spike Tiller](https://scryfall.com/card/tsp/218/spike-tiller), make two of my lands 3/3 creatures, and kill him within two turns.
 
 Record: 1-0
 
-Sekki, Seasons' Guide
+[![Sekki, Seasons' Guide](https://api.scryfall.com/cards/sok/148?format=image&version=normal)](https://scryfall.com/card/sok/148/sekki-seasons-guide)
 
-Keys to the game: After he cast Wrath, I left up mana for Spike Tiller, so I could make him kill his own lands if he Wrathed again. Bad Tunnel Vision!
+Keys to the game: After he cast Wrath, I left up mana for [Spike Tiller](https://scryfall.com/card/tsp/218/spike-tiller), so I could make him kill his own lands if he Wrathed again. Bad Tunnel Vision!
 
 **Game 2: Chadskee (Black-Green Elves)**
 
-We go back and forth on creatures for a while, with Chadskee dropping some smaller elves (plus a Moonglove Winnower), and me using Immaculate Magistrate to pump my midrange guys. I get down Nature's Will plus Upwelling, allowing me to store up a truly massive amount of mana for Nourishing Shoal, keeping me from ever having a chance of dying. I finally drop Sekki, Seasons' Guide, which gets around his deathtouch creatures (since it prevents damage to itself), and combos great with Immaculate Magistrate (which can make sure it keeps coming back). He eventually dies to a horde of 1/1 Spirits plus Sekki itself.
+We go back and forth on creatures for a while, with Chadskee dropping some smaller elves (plus a Moonglove Winnower), and me using [Immaculate Magistrate](https://scryfall.com/card/cmr/234/immaculate-magistrate) to pump my midrange guys. I get down [Nature's Will](https://scryfall.com/card/chk/230/natures-will) plus [Upwelling](https://scryfall.com/card/10e/306/upwelling), allowing me to store up a truly massive amount of mana for [Nourishing Shoal](https://scryfall.com/card/uma/175/nourishing-shoal), keeping me from ever having a chance of dying. I finally drop [Sekki, Seasons' Guide](https://scryfall.com/card/sok/148/sekki-seasons-guide), which gets around his deathtouch creatures (since it prevents damage to itself), and combos great with [Immaculate Magistrate](https://scryfall.com/card/cmr/234/immaculate-magistrate) (which can make sure it keeps coming back). He eventually dies to a horde of 1/1 Spirits plus Sekki itself.
 
 Record: 2-0
 
@@ -175,11 +175,11 @@ I wish we'd been able to play this out, ya know?
 
 Record: 3-0
 
-Keys to the game: After the game, Endless_cochroaches says that he had multiple Viridian Longbows that he never drew. He'd need to get two in one turn to slip it past Glissa, at the cost of eight mana: one to play the first, three to equip it (I destroy it in response), one more to play the second, and three more to equip it.
+Keys to the game: After the game, Endless_cochroaches says that he had multiple [Viridian Longbow](https://scryfall.com/card/afc/221/viridian-longbow)s that he never drew. He'd need to get two in one turn to slip it past Glissa, at the cost of eight mana: one to play the first, three to equip it (I destroy it in response), one more to play the second, and three more to equip it.
 
 **Out:** 
-Kodama of the Center Tree, Wort, the Raidmother, Magus of the Candelabra, Force of Savagery, Utopia Tree
-**In:** 3x Devoted Druid, 2x Kamahl, Fist of Krosa
+[Kodama of the Center Tree](https://scryfall.com/card/bok/131/kodama-of-the-center-tree), [Wort, the Raidmother](https://scryfall.com/card/c20/234/wort-the-raidmother), [Magus of the Candelabra](https://scryfall.com/card/bbd/206/magus-of-the-candelabra), [Force of Savagery](https://scryfall.com/card/fut/126/force-of-savagery), [Utopia Tree](https://scryfall.com/card/9ed/277/utopia-tree)
+**In:** 3x [Devoted Druid](https://scryfall.com/card/ecc/104/devoted-druid), 2x [Kamahl, Fist of Krosa](https://scryfall.com/card/dmr/166/kamahl-fist-of-krosa)
 
 **The Final Three Green 2**
 
@@ -226,22 +226,22 @@ Kodama of the Center Tree, Wort, the Raidmother, Magus of the Candelabra, Force 
 
 **Game 4: yiorgosv (Selesnya)**
 
-I get stalled on three mana for a little bit, and have to trade Isao, Enlightened Bushi with Selesnya Guildmage when offered the trade, without enough mana up to regenerate. He drops Safehold Elite and Watchwolf, backed with Mutavault. I put down Immaculate Magistrate and then Emperor Croc, hoping to stave off his attack. He gets down Wilt-Leaf Cavaliers, and then enchants them with Shield of the Oversoul. Even though I get Rhox and Nature's Will in the next couple of turns (ensuring I can double my mana each turn), I can't outrace his 6/7 flyer.
+I get stalled on three mana for a little bit, and have to trade [Isao, Enlightened Bushi](https://scryfall.com/card/bok/129/isao-enlightened-bushi) with [Selesnya Guildmage](https://scryfall.com/card/clu/207/selesnya-guildmage) when offered the trade, without enough mana up to regenerate. He drops [Safehold Elite](https://scryfall.com/card/uma/220/safehold-elite) and [Watchwolf](https://scryfall.com/card/a25/220/watchwolf), backed with Mutavault. I put down [Immaculate Magistrate](https://scryfall.com/card/cmr/234/immaculate-magistrate) and then Emperor Croc, hoping to stave off his attack. He gets down Wilt-Leaf Cavaliers, and then enchants them with Shield of the Oversoul. Even though I get [Rhox](https://scryfall.com/card/10e/291/rhox) and [Nature's Will](https://scryfall.com/card/chk/230/natures-will) in the next couple of turns (ensuring I can double my mana each turn), I can't outrace his 6/7 flyer.
 
 Record: 3-1
 
-Keys to the game: I had no way to deal with an enchantment, which is very much "not green" (green should easily deal with both enchantments and artifacts). The question is: which enchantment destruction spell would I want to add to this deck? Signs point towards something like Indrik Stomphowler, to keep up the theme of midrange to huge fatties that has been doing well so far.
+Keys to the game: I had no way to deal with an enchantment, which is very much "not green" (green should easily deal with both enchantments and artifacts). The question is: which enchantment destruction spell would I want to add to this deck? Signs point towards something like [Indrik Stomphowler](https://scryfall.com/card/ncc/297/indrik-stomphowler), to keep up the theme of midrange to huge fatties that has been doing well so far.
 
 **Game 5: sennin_pl (Zombies)**
 
-Nourishing Shoal
+[![Nourishing Shoal](https://api.scryfall.com/cards/uma/175?format=image&version=normal)](https://scryfall.com/card/uma/175/nourishing-shoal)
 
-Sennin_pl starts the game early with Carrion Feeder and Festering Goblin. My first play is on turn five, when I get down a 1/1 Wurmcalling token (with buyback). He sacrifices his Festering Goblin, swings for two, and cycles Gempalm Polluter. I drop a second Wurmcalling token the following turn (2/2), and he answers with Lord of the Undead. I continue dropping creatures, the first two of which are met with Dark Banishing, but I finally get to stick Spectral Force (great against mono-black!) and Kamahl, Fist of Krosa, against Undead Warchief and Soulless One. Finally, sennin_pl goes all in for the attack, as I am tapped out, and he has lethal damage on the board even through my blockers. As I put damage on the stack... I pitch Patron of the Orochi from my hand to gain 8 life from Nourishing Shoal, setting sennin_pl back quite a few turns of development!
+Sennin_pl starts the game early with [Carrion Feeder](https://scryfall.com/card/mh1/81/carrion-feeder) and [Festering Goblin](https://scryfall.com/card/dmr/85/festering-goblin). My first play is on turn five, when I get down a 1/1 [Wurmcalling](https://scryfall.com/card/tsp/234/wurmcalling) token (with buyback). He sacrifices his [Festering Goblin](https://scryfall.com/card/dmr/85/festering-goblin), swings for two, and cycles [Gempalm Polluter](https://scryfall.com/card/lgn/70/gempalm-polluter). I drop a second [Wurmcalling](https://scryfall.com/card/tsp/234/wurmcalling) token the following turn (2/2), and he answers with Lord of the Undead. I continue dropping creatures, the first two of which are met with [Dark Banishing](https://scryfall.com/card/8ed/123/dark-banishing), but I finally get to stick [Spectral Force](https://scryfall.com/card/tsp/217/spectral-force) (great against mono-black!) and [Kamahl, Fist of Krosa](https://scryfall.com/card/dmr/166/kamahl-fist-of-krosa), against Undead Warchief and [Soulless One](https://scryfall.com/card/hop/41/soulless-one). Finally, sennin_pl goes all in for the attack, as I am tapped out, and he has lethal damage on the board even through my blockers. As I put damage on the stack... I pitch [Patron of the Orochi](https://scryfall.com/card/bok/138/patron-of-the-orochi) from my hand to gain 8 life from [Nourishing Shoal](https://scryfall.com/card/uma/175/nourishing-shoal), setting sennin_pl back quite a few turns of development!
 
-I then get down Spike Tiller and Stone-Tongue Basilisk, and sennin_pl starts rebuilding with another Lord of the Undead (bringing back the first), a Gravedigger, and Call to the Grave. I drop Plated Slagwurm, and then use Loaming Shaman to dump all of his zombie cards back into his library. I then start activating Kamahl on each of our turns, targeting his lands on his upkeep (so he has to sacrifice them to Call to the Grave) and targeting mine on my turn (so I can lose my least important resource). After a couple of turns of this, I finally hit seven cards in my graveyard for threshold, allowing me to swing with my entire team. That means Stone-Tongue Basilisk can kill all five opposing creatures in one fell swoop, while the rest of my creatures get +3/+3 thanks to Kamahl, finishing the game in a single turn!
+I then get down [Spike Tiller](https://scryfall.com/card/tsp/218/spike-tiller) and [Stone-Tongue Basilisk](https://scryfall.com/card/ody/276/stone-tongue-basilisk), and sennin_pl starts rebuilding with another Lord of the Undead (bringing back the first), a [Gravedigger](https://scryfall.com/card/m20/103/gravedigger), and Call to the Grave. I drop [Plated Slagwurm](https://scryfall.com/card/gvl/12/plated-slagwurm), and then use [Loaming Shaman](https://scryfall.com/card/rvr/149/loaming-shaman) to dump all of his zombie cards back into his library. I then start activating Kamahl on each of our turns, targeting his lands on his upkeep (so he has to sacrifice them to Call to the Grave) and targeting mine on my turn (so I can lose my least important resource). After a couple of turns of this, I finally hit seven cards in my graveyard for threshold, allowing me to swing with my entire team. That means [Stone-Tongue Basilisk](https://scryfall.com/card/ody/276/stone-tongue-basilisk) can kill all five opposing creatures in one fell swoop, while the rest of my creatures get +3/+3 thanks to Kamahl, finishing the game in a single turn!
 
 Record: 4-1
 
-Strangely enough, this deck has worked the absolute best (out of the gate) so far out of the three rare-centric decks! The assortment of large fatties (many of which have been good to have in different situations) has worked well, and I have the ability to just turn the game around by dropping huge creature after huge creature mid-to-late game. Do I want to focus on Nature's Will and creatures like Rhox and Thorn Elemental? Would it be better to have utility fat (Patron of the Orochi) or huge beaters (Plated Slagwurm)? Do I need more artifact and enchantment kill? Tune in next week to see the big finish to the evolution of the Final Three: Green deck, and the full evolution of the Final Two: Red deck! See you in 7!
+Strangely enough, this deck has worked the absolute best (out of the gate) so far out of the three rare-centric decks! The assortment of large fatties (many of which have been good to have in different situations) has worked well, and I have the ability to just turn the game around by dropping huge creature after huge creature mid-to-late game. Do I want to focus on [Nature's Will](https://scryfall.com/card/chk/230/natures-will) and creatures like [Rhox](https://scryfall.com/card/10e/291/rhox) and [Thorn Elemental](https://scryfall.com/card/dom/185/thorn-elemental)? Would it be better to have utility fat ([Patron of the Orochi](https://scryfall.com/card/bok/138/patron-of-the-orochi)) or huge beaters ([Plated Slagwurm](https://scryfall.com/card/gvl/12/plated-slagwurm))? Do I need more artifact and enchantment kill? Tune in next week to see the big finish to the evolution of the Final Three: Green deck, and the full evolution of the Final Two: Red deck! See you in 7!
 
 Ben

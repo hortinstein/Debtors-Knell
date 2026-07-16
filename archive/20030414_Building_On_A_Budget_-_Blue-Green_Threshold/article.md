@@ -47,46 +47,46 @@ This deck has great game versus Red-Green and Tog because of the interaction of 
 
 ##### Playing The Deck
 
-- Mulligan hands that don't have green *and* blue mana sources, unless you have blue and a way to draw more cards like Deep Analysis with Aquamoeba or Breakthrough.
-- It's almost always wrong to cast Wonder, no matter how right it seems.
-- Play the deck to keep your life total high and then start racing when you get Wonder in the graveyard.
-- Don't use your Circular Logics idly--you don't have many counters, so make them count!
+- Mulligan hands that don't have green *and* blue mana sources, unless you have blue and a way to draw more cards like [Deep Analysis](https://scryfall.com/card/msc/149/deep-analysis) with [Aquamoeba](https://scryfall.com/card/dmr/38/aquamoeba) or [Breakthrough](https://scryfall.com/card/2x2/41/breakthrough).
+- It's almost always wrong to cast [Wonder](https://scryfall.com/card/tdc/170/wonder), no matter how right it seems.
+- Play the deck to keep your life total high and then start racing when you get [Wonder](https://scryfall.com/card/tdc/170/wonder) in the graveyard.
+- Don't use your [Circular Logic](https://scryfall.com/card/dmr/42/circular-logic)s idly--you don't have many counters, so make them count!
 - Sometimes it is better to have your Rootwalla in the graveyard rather than in play.
-- Don't be afraid to bash for 3 with your Aquamoebas.
+- Don't be afraid to bash for 3 with your [Aquamoeba](https://scryfall.com/card/dmr/38/aquamoeba)s.
 
 ##### Sideboarding Suggestions
 
 This deck is reasonably matched versus most of the decks in the field, but here are some interesting cards that can catch your opponent by surprise.
 
-**Words of Wind vs. Psychatog**
+**[Words of Wind](https://scryfall.com/card/ons/122/words-of-wind) vs. Psychatog**
 
- Psychatog must work quickly versus Threshold, getting to Upheaval mana and using Psychatog to hold down the fort if there's no Wonder around. While it is risky, Words of Wind will guarantee that either Psychatog will not be around to block or that your opponent will not get to the crucial eight mana. You can only do this when you have a large enough board advantage (so it is situational), but it will cement your victory.
+ Psychatog must work quickly versus Threshold, getting to Upheaval mana and using [Psychatog](https://scryfall.com/card/ody/292/psychatog) to hold down the fort if there's no [Wonder](https://scryfall.com/card/tdc/170/wonder) around. While it is risky, [Words of Wind](https://scryfall.com/card/ons/122/words-of-wind) will guarantee that either Psychatog will not be around to block or that your opponent will not get to the crucial eight mana. You can only do this when you have a large enough board advantage (so it is situational), but it will cement your victory.
 
-Beast Attack
+[![Beast Attack](https://api.scryfall.com/cards/dds/43?format=image&version=normal)](https://scryfall.com/card/dds/43/beast-attack)
 
-**Beast Attack vs Psychatog**
+**[Beast Attack](https://scryfall.com/card/dds/43/beast-attack) vs Psychatog**
 
- Your opponent Upheavals, you float 5 and play Beast Attack. This is a simple and effective solution to the Upheaval problem.
+ Your opponent Upheavals, you float 5 and play [Beast Attack](https://scryfall.com/card/dds/43/beast-attack). This is a simple and effective solution to the Upheaval problem.
 
-**Quiet Speculation vs. Red-Green and Big Beasties**
+**[Quiet Speculation](https://scryfall.com/card/ema/68/quiet-speculation) vs. Red-Green and Big Beasties**
 
  A few extra 6/6's on your side never hurts in a creature war.
 
-**Aether Burst vs. Red-Green**
+**[Aether Burst](https://scryfall.com/card/ody/60/aether-burst) vs. Red-Green**
 
- This is good versus Elephant Guide, Call of the Herd, and any unwieldy Mongrels that get a little too large.
+ This is good versus [Elephant Guide](https://scryfall.com/card/ema/163/elephant-guide), Call of the Herd, and any unwieldy Mongrels that get a little too large.
 
-**Naturalize** 
+**[Naturalize](https://scryfall.com/card/m19/190/naturalize)** 
 
- Don't leave home without it! You will be sorry! There is any number or reasons to have Naturalize in your sideboard, but Ensnaring Bridge is a big one.
+ Don't leave home without it! You will be sorry! There is any number or reasons to have [Naturalize](https://scryfall.com/card/m19/190/naturalize) in your sideboard, but [Ensnaring Bridge](https://scryfall.com/card/2xm/253/ensnaring-bridge) is a big one.
 
-**Compost** 
+**[Compost](https://scryfall.com/card/7ed/235/compost)** 
 
-Compost is a great card versus any black deck, although I'm not actually a big fan.
+[Compost](https://scryfall.com/card/7ed/235/compost) is a great card versus any black deck, although I'm not actually a big fan.
 
-**Moment's Peace** 
+**[Moment's Peace](https://scryfall.com/card/ody/251/moments-peace)** 
 
- This is a great sideboard card for any deck that you would also put Quiet Speculation in against. Fog is very effective in a race.
+ This is a great sideboard card for any deck that you would also put [Quiet Speculation](https://scryfall.com/card/ema/68/quiet-speculation) in against. Fog is very effective in a race.
 
 **Phantom Centaur** 
 

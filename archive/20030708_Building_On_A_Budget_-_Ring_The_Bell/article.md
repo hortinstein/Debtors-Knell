@@ -47,10 +47,10 @@ I barely managed to show restraint while building this deck, but if you want to 
 
 ##### Tips On Playing The Deck
 
-- Carrion Feeder puts more of a curve in the deck while letting you make better use of creatures that have been turned face up with the Alarmist.
-- While a deck full of morph creatures might not seem to convey any sense of mana curve, never underestimate playing your creatures face up -- especially a turn two Skirk Marauder or Skinthinner.
-- There's an added incentive for emptying your hand, since Riptide Survivor will actually let you draw three cards with no drawback if you have none to discard first.
-- Remember, multiple Dream Chisels stack -- if you draw two, play one on turn two and another on turn three along with a facedown creature for {1}. The next turn you can drop the rest of your hand and then morph Riptide Survivor (hopefully).
+- [Carrion Feeder](https://scryfall.com/card/mh1/81/carrion-feeder) puts more of a curve in the deck while letting you make better use of creatures that have been turned face up with the Alarmist.
+- While a deck full of morph creatures might not seem to convey any sense of mana curve, never underestimate playing your creatures face up -- especially a turn two [Skirk Marauder](https://scryfall.com/card/arc/48/skirk-marauder) or [Skinthinner](https://scryfall.com/card/c19/129/skinthinner).
+- There's an added incentive for emptying your hand, since [Riptide Survivor](https://scryfall.com/card/c14/121/riptide-survivor) will actually let you draw three cards with no drawback if you have none to discard first.
+- Remember, multiple [Dream Chisel](https://scryfall.com/card/ons/308/dream-chisel)s stack -- if you draw two, play one on turn two and another on turn three along with a facedown creature for {1}. The next turn you can drop the rest of your hand and then morph Riptide Survivor (hopefully).
 - Have fun with your opponent. Many decisions involving your morph creatures will be entirely dependent on the reactions your opponent sees in your play style -- use that to your advantage. If there ever was a deck built for the old Jedi Mind-Trick, this is it.
 
 ##### Adding Money To The Deck

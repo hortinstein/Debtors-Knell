@@ -2,3 +2,8 @@ __pycache__/
 *.pyc
 scripts/cache/
 .claude/
+
+# Calculated per-deck price-history sidecars (scripts/build_price_history.py).
+# Rebuilt automatically on webapp startup and after every price-data fetch
+# (scripts/fetch_prices.py) -- not checked in.
+archive/*/decklist*_price_history.json

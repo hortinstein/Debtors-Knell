@@ -17,14 +17,36 @@ import glob
 import json
 import os
 import re
+import sys
 
 import markdown
 from flask import Flask, Response, abort, render_template, request, send_from_directory
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ARCHIVE_DIR = os.path.join(REPO_ROOT, "archive")
+SCRIPTS_DIR = os.path.join(REPO_ROOT, "scripts")
 MASTER_INDEX_PATH = os.path.join(REPO_ROOT, "scripts", "master_index.json")
 DECK_ARCHETYPES_PATH = os.path.join(REPO_ROOT, "scripts", "deck_archetypes.json")
+
+
+def _ensure_price_histories():
+    """decklist*_price_history.json sidecars are generated, gitignored files
+    (see scripts/build_price_history.py), not checked into the repo -- build
+    whatever's missing so a fresh checkout/deploy has them without a manual
+    step. They're rebuilt in full (force=True) whenever
+    scripts/fetch_prices.py pulls a new day of price data; this startup pass
+    only fills in gaps (force=False), so it's a no-op once that's happened."""
+    sys.path.insert(0, SCRIPTS_DIR)
+    try:
+        import build_price_history
+        written = build_price_history.build_price_histories(force=False, quiet=True)
+        if written:
+            print(f"[startup] built {written} missing deck price-history sidecar(s)", flush=True)
+    except Exception as e:
+        print(f"[startup] price-history build skipped: {e}", flush=True)
+
+
+_ensure_price_histories()
 
 # Fixed vocabulary, in the order shown in the index-page filter dropdown.
 ARCHETYPE_LIST = [
@@ -32,6 +54,13 @@ ARCHETYPE_LIST = [
     "Reanimator", "Tribal", "Stax/Prison", "Aristocrats", "Artifact", "Toolbox",
     "Lifegain", "Discard",
 ]
+
+# WUBRG order, used both for sorting a deck's color list and for the
+# filter-bar pip order on the index page.
+COLOR_ORDER = "WUBRG"
+BASIC_LAND_COLOR = {
+    "plains": "W", "island": "U", "swamp": "B", "mountain": "R", "forest": "G",
+}
 
 MD_EXTENSIONS = ["tables", "sane_lists", "nl2br"]
 
@@ -92,6 +121,25 @@ def parse_priced_card_rows(priced_md_path):
                 "ext_tix": None if m.group(6) == "N/A" else float(m.group(6)),
             })
     return rows
+
+
+def _colors_for_priced_files(priced_files):
+    """A deck's color identity, inferred from which colored basic lands it
+    runs (Island -> U, Forest -> G, ...). These budget-era decklists are
+    reliably basic-land-heavy -- title-checked against a sample (e.g.
+    "Blue-Green Threshold" runs Island+Forest, "Red-Green Burn" runs
+    Mountain+Forest) -- so this needs no external card-color data source.
+    Colorless-only decks (no colored basics) come back as []. Returns a
+    WUBRG-ordered list, unioned across every deck in a multi-deck article."""
+    colors = set()
+    for pf in priced_files:
+        for r in parse_priced_card_rows(pf):
+            if r["qty"] <= 0:
+                continue
+            c = BASIC_LAND_COLOR.get(r["name"].lower())
+            if c:
+                colors.add(c)
+    return sorted(colors, key=COLOR_ORDER.index)
 
 
 # ---------------------------------------------------------------------------
@@ -274,6 +322,7 @@ def _load_article_entry(meta):
         usd, tix = _parse_grand_totals(pf)
         usd_total += usd
         tix_total += tix
+    colors = _colors_for_priced_files(priced_files)
 
     return {
         "folder": folder,
@@ -283,6 +332,7 @@ def _load_article_entry(meta):
         "ymd": meta.get("ymd") or "",
         "description": description,
         "archetypes": archetypes,
+        "colors": colors,
         "has_decklist": has_decklist,
         "num_decks": len(priced_files),
         "usd_total": usd_total,
@@ -417,6 +467,7 @@ def index():
         total_count=len(articles),
         with_decklist_count=with_decklist,
         archetype_list=ARCHETYPE_LIST,
+        color_list=list(COLOR_ORDER),
     )
 
 

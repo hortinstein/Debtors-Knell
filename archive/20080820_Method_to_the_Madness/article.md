@@ -43,7 +43,7 @@ I was playing **Magic** again. So, naturally, I was reading all the tournament c
 
 *(Full decklist with sideboard: `decklist_1_Warren_Marsh.txt`; priced breakdown: `decklist_1_Warren_Marsh_priced.md`)*
 
-Twelve two-drops, ten cantrips, oh the card advantage! Over half the spells in this deck automatically 2-for-1 your opponent (Mystic Snake, Penumbra Bobcat, Flametongue Kavu, and Prophetic Bolt) The second I saw this deck, I knew wanted to sleeve it up and bring it to war.
+Twelve two-drops, ten cantrips, oh the card advantage! Over half the spells in this deck automatically 2-for-1 your opponent ([Mystic Snake](https://scryfall.com/card/a25/208/mystic-snake), [Penumbra Bobcat](https://scryfall.com/card/dmr/172/penumbra-bobcat), [Flametongue Kavu](https://scryfall.com/card/dmr/120/flametongue-kavu), and [Prophetic Bolt](https://scryfall.com/card/2x2/265/prophetic-bolt)) The second I saw this deck, I knew wanted to sleeve it up and bring it to war.
 
 ##### Step One
 
@@ -57,28 +57,30 @@ Just hear me out, folks.
 
 ##### Step Two
 
+[![Mystic Snake](https://api.scryfall.com/cards/a25/208?format=image&version=normal)](https://scryfall.com/card/a25/208/mystic-snake)
+
 Make a list of all the cards you can't borrow or find in your own collection.
 
 There were a lot of cards in Marsh's deck that I couldn't realistically get my hands on. I decided to jot down the cards from the main deck I didn't have:
 
-4 Shivan Reef
- 4 Yavimaya Coast
+4 [Shivan Reef](https://scryfall.com/card/soc/404/shivan-reef)
+ 4 [Yavimaya Coast](https://scryfall.com/card/soc/425/yavimaya-coast)
  4 Blurred Mongoose 
  4 Kavu Titan 
- 3 Prophetic Bolt 
- 4 Mystic Snake
+ 3 [Prophetic Bolt](https://scryfall.com/card/2x2/265/prophetic-bolt) 
+ 4 [Mystic Snake](https://scryfall.com/card/a25/208/mystic-snake)
 
 My brother and his friends had been buying lots of packs and drafting so I was confident I wouldn't have a problem finding the commons and uncommons I needed.
 
-You need to make sure that the deck doesn't completely function around one of the expensive rares. In this case, I came to understand that Mystic Snake was absurdly powerful in a deck with four Repulse and probably wasn't replaceable. Standard was different back then, and 2 toughness was the norm; Mystic Snake would often come down countering a spell, block and put damage on, then get Repulsed back to my hand for Ancestral Recall–like card advantage in the midgame. My brother and his friends had two excess Mystic Snakes they could give me, and I had to swallow my pride and spend six dollars at the local store to buy the other two.
+You need to make sure that the deck doesn't completely function around one of the expensive rares. In this case, I came to understand that [Mystic Snake](https://scryfall.com/card/a25/208/mystic-snake) was absurdly powerful in a deck with four [Repulse](https://scryfall.com/card/cn2/119/repulse) and probably wasn't replaceable. Standard was different back then, and 2 toughness was the norm; [Mystic Snake](https://scryfall.com/card/a25/208/mystic-snake) would often come down countering a spell, block and put damage on, then get [Repulse](https://scryfall.com/card/cn2/119/repulse)d back to my hand for Ancestral Recall–like card advantage in the midgame. My brother and his friends had two excess [Mystic Snake](https://scryfall.com/card/a25/208/mystic-snake)s they could give me, and I had to swallow my pride and spend six dollars at the local store to buy the other two.
 
 ##### Step Three
 
-For each card you can't acquire, make a list of playable and attainable cards that have similar or the same functions and don't disrupt the curve. Shivan Reef and Yavimaya Coast were definitely going to be the hardest cards to replace. Luckily I had an old play set of City of Brass, which had been reprinted in *Seventh Edition*. Four City of Brass and four Island seemed like a reasonable replacement. The old list had eight sources of red mana so it could splash Prophetic Bolt, Flametongue Kavu, and the Fire side of Fire // Ice. It had fifteen sources of green mana to support its two-drops, and it had thirteen sources of blue mana for its mid- to late-game card advantage and tempo spells. The new list had the exact same numbers. The mana was still great. It's important to look for these things when trying to build decks for value. See what lands you have access to in your collection and try to preserve the consistency of the mana base when building your budget version of a competitive deck.
+For each card you can't acquire, make a list of playable and attainable cards that have similar or the same functions and don't disrupt the curve. [Shivan Reef](https://scryfall.com/card/soc/404/shivan-reef) and [Yavimaya Coast](https://scryfall.com/card/soc/425/yavimaya-coast) were definitely going to be the hardest cards to replace. Luckily I had an old play set of [City of Brass](https://scryfall.com/card/tmc/62/city-of-brass), which had been reprinted in *Seventh Edition*. Four [City of Brass](https://scryfall.com/card/tmc/62/city-of-brass) and four [Island](https://scryfall.com/card/msh/289/island) seemed like a reasonable replacement. The old list had eight sources of red mana so it could splash [Prophetic Bolt](https://scryfall.com/card/2x2/265/prophetic-bolt), [Flametongue Kavu](https://scryfall.com/card/dmr/120/flametongue-kavu), and the Fire side of [Fire // Ice](https://scryfall.com/card/dmr/215/fire-ice). It had fifteen sources of green mana to support its two-drops, and it had thirteen sources of blue mana for its mid- to late-game card advantage and tempo spells. The new list had the exact same numbers. The mana was still great. It's important to look for these things when trying to build decks for value. See what lands you have access to in your collection and try to preserve the consistency of the mana base when building your budget version of a competitive deck.
 
-The next step was finding a replacement for the eight two-drops I needed to replace. I probably had about twenty Elvish Archers sitting in my desk in a pile of rares gathering dust. I figured those would do pretty well, so I threw four of them in. The other four were a bit harder to replace. I wanted to use Yavimaya Barbarian, but my deck's mana base really couldn't support him. I ended up deciding that a generic bear was probably good enough. I put in a playset of Nomadic Elf.
+The next step was finding a replacement for the eight two-drops I needed to replace. I probably had about twenty [Elvish Archers](https://scryfall.com/card/7ed/239/elvish-archers) sitting in my desk in a pile of rares gathering dust. I figured those would do pretty well, so I threw four of them in. The other four were a bit harder to replace. I wanted to use Yavimaya Barbarian, but my deck's mana base really couldn't support him. I ended up deciding that a generic bear was probably good enough. I put in a playset of [Nomadic Elf](https://scryfall.com/card/dde/38/nomadic-elf).
 
-Now I needed to replace to Prophetic Bolts, I decided that I wanted my replacement spells to at least cantrip or provide some type of card advantage, so I found a fourth Fire // Ice and two copies of Fact or Fiction.
+Now I needed to replace to [Prophetic Bolt](https://scryfall.com/card/2x2/265/prophetic-bolt)s, I decided that I wanted my replacement spells to at least cantrip or provide some type of card advantage, so I found a fourth [Fire // Ice](https://scryfall.com/card/dmr/215/fire-ice) and two copies of [Fact or Fiction](https://scryfall.com/card/cmm/91/fact-or-fiction).
 
 Now my main deck looked like this:
 
@@ -110,11 +112,11 @@ Now my main deck looked like this:
 
 Make adjustments as you see fit.
 
-After playing a handful of games with the deck, there were a few things I decided could change. I wanted more counters. *Invasion* block Constructed didn't really offer more counters, but *Seventh Edition* gave me the almighty Counterspell, I really wanted 4 Counterspells in the deck, but I needed to figure out what I could cut.
+After playing a handful of games with the deck, there were a few things I decided could change. I wanted more counters. *Invasion* block Constructed didn't really offer more counters, but *Seventh Edition* gave me the almighty [Counterspell](https://scryfall.com/card/dsc/114/counterspell), I really wanted 4 [Counterspell](https://scryfall.com/card/dsc/114/counterspell)s in the deck, but I needed to figure out what I could cut.
 
-Counterspell
+[![Counterspell](https://api.scryfall.com/cards/dsc/114?format=image&version=normal)](https://scryfall.com/card/dsc/114/counterspell)
 
-The deck really wanted to play a threat on turn two, but even with its reliance on a two drop twelve of them seemed like a pretty high number. History has shown that eight probably would have been fine, but I wasn't sure at the time so I decided I could go down to nine and I cut three of the nomadic elf. A card that was always okay, but never amazing, was Penumbra Bobcat. I knew I wanted to cut at least one of it. I now had a deck that looked like this.
+The deck really wanted to play a threat on turn two, but even with its reliance on a two drop twelve of them seemed like a pretty high number. History has shown that eight probably would have been fine, but I wasn't sure at the time so I decided I could go down to nine and I cut three of the nomadic elf. A card that was always okay, but never amazing, was [Penumbra Bobcat](https://scryfall.com/card/dmr/172/penumbra-bobcat). I knew I wanted to cut at least one of it. I now had a deck that looked like this.
 
 **Budget Green-Blue, Version 2**
 
@@ -141,7 +143,7 @@ The deck really wanted to play a threat on turn two, but even with its reliance 
 
 *(Full decklist with sideboard: `decklist_3_Budget_Green-Blue_Version_2.txt`; priced breakdown: `decklist_3_Budget_Green-Blue_Version_2_priced.md`)*
 
-I played some more games with the deck and it had improved dramatically. Unfortunately though, now that I had added Counterspell to the deck, I rarely wanted to tap out on my third turn for fear that someone might play something I had serious problems with, like Rising Waters. The cards that seemed especially bad here were the Bobcats. I decided to add another Fact or Fiction, but I didn't have access to a fourth so I threw in a pair of Force Spikes. Now the main deck looked like this:
+I played some more games with the deck and it had improved dramatically. Unfortunately though, now that I had added [Counterspell](https://scryfall.com/card/dsc/114/counterspell) to the deck, I rarely wanted to tap out on my third turn for fear that someone might play something I had serious problems with, like Rising Waters. The cards that seemed especially bad here were the Bobcats. I decided to add another [Fact or Fiction](https://scryfall.com/card/cmm/91/fact-or-fiction), but I didn't have access to a fourth so I threw in a pair of [Force Spike](https://scryfall.com/card/ddj/14/force-spike)s. Now the main deck looked like this:
 
 **Budget Green-Blue, Version 3**
 
@@ -168,7 +170,7 @@ I played some more games with the deck and it had improved dramatically. Unfortu
 
 *(Full decklist with sideboard: `decklist_4_Budget_Green-Blue_Version_3.txt`; priced breakdown: `decklist_4_Budget_Green-Blue_Version_3_priced.md`)*
 
-I really like playing one or two of a card like Force Spike. It makes timid players play around it at all stages of the game. Better yet, good players will play around it on a "big turn" (when an opponent plans to turn the tides with a complex series of plays that leave the board completely re-landscaped) which means you'll have one more turn before they go for the big turn-around.
+I really like playing one or two of a card like [Force Spike](https://scryfall.com/card/ddj/14/force-spike). It makes timid players play around it at all stages of the game. Better yet, good players will play around it on a "big turn" (when an opponent plans to turn the tides with a complex series of plays that leave the board completely re-landscaped) which means you'll have one more turn before they go for the big turn-around.
 
 ##### Step Five
 
@@ -176,17 +178,17 @@ Sleeve and smash!
 
 I needed to get a sideboard together for the tournament, and I think it looked something like this:
 
-Gainsay
+[![Gainsay](https://api.scryfall.com/cards/ths/49?format=image&version=normal)](https://scryfall.com/card/ths/49/gainsay)
 
-4 Gainsay
- 4 Disrupt
- 2 Force Spike (for when I was on the draw)
- 4 Tangle (for decks like Fires)
- 1 Flametongue Kavu
+4 [Gainsay](https://scryfall.com/card/ths/49/gainsay)
+ 4 [Disrupt](https://scryfall.com/card/inv/51/disrupt)
+ 2 [Force Spike](https://scryfall.com/card/ddj/14/force-spike) (for when I was on the draw)
+ 4 [Tangle](https://scryfall.com/card/wc01/jt213sb/tangle) (for decks like Fires)
+ 1 [Flametongue Kavu](https://scryfall.com/card/dmr/120/flametongue-kavu)
 
-I showed up to the tournament and everyone seemed to be playing some type of blue deck, so I audibled to main-deck Gainsays by taking out the Excludes and the Nomadic Elf. I ended up having a very awkward sideboard.
+I showed up to the tournament and everyone seemed to be playing some type of blue deck, so I audibled to main-deck [Gainsay](https://scryfall.com/card/ths/49/gainsay)s by taking out the [Exclude](https://scryfall.com/card/cmm/90/exclude)s and the [Nomadic Elf](https://scryfall.com/card/dde/38/nomadic-elf). I ended up having a very awkward sideboard.
 
-I played blue mage after blue mage and just trounced them with my maindeck Gainsays. People would get a bit frustrated playing against a deck with sideboard cards in the main. But I had outwitted the field; they became streamlined, so I found the outs.
+I played blue mage after blue mage and just trounced them with my maindeck [Gainsay](https://scryfall.com/card/ths/49/gainsay)s. People would get a bit frustrated playing against a deck with sideboard cards in the main. But I had outwitted the field; they became streamlined, so I found the outs.
 
 There's a valuable lesson to be learned here. You don't need a play set of Tarmogoyfs to be competitive; you need to know what people will be playing. Any powerhouse monstrosity of a deck has a poison that can be found in a cardboard box of stinkers.
 

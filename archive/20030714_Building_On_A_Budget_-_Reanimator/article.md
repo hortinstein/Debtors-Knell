@@ -38,15 +38,15 @@ Reanimator has been a staple in the Magic metagame from the beginning -- since t
 
 *(Full decklist with sideboard: `decklist.txt`; priced breakdown: `decklist_priced.md`)*
 
-While the deck concept is rather simple, you need to know certain things while playing it -- mainly which creature to get in any situation. In this regard it's much like the old Rec-Sur deck. When you cast Buried Alive, you have to know what you're playing against and what's best to dig up. Anger is always right, but the other two depend on the situation. Here are some guidelines:
+While the deck concept is rather simple, you need to know certain things while playing it -- mainly which creature to get in any situation. In this regard it's much like the old Rec-Sur deck. When you cast [Buried Alive](https://scryfall.com/card/mh3/273/buried-alive), you have to know what you're playing against and what's best to dig up. [Anger](https://scryfall.com/card/soc/235/anger) is always right, but the other two depend on the situation. Here are some guidelines:
 
 - Arcanis is what you get if you aren't in a dire situation. Drawing cards is like candy in this deck.
-- Phantom Nishoba is great if you're low on life or are playing against a super-aggressive deck like Red-Green or Goblins.
+- [Phantom Nishoba](https://scryfall.com/card/dmr/193/phantom-nishoba) is great if you're low on life or are playing against a super-aggressive deck like Red-Green or Goblins.
 - Visara is even better in the above situation if you have plenty of life.
-- Symbiotic Wurm is great if you think your opponent has Edict or Wrath.
-- Petradon is wonderful against Control and land-light opponents.
+- [Symbiotic Wurm](https://scryfall.com/card/cmd/174/symbiotic-wurm) is great if you think your opponent has Edict or Wrath.
+- [Petradon](https://scryfall.com/card/tor/108/petradon) is wonderful against Control and land-light opponents.
 
-In general, the game plays out by you casting an early Sickening Dreams or Last Rites and discarding some manner of fatness. When turn four rolls around, you bring said fatness back into play to smash said opponent. Got it? Mix in Buried Alive for flavor.
+In general, the game plays out by you casting an early [Sickening Dreams](https://scryfall.com/card/tor/83/sickening-dreams) or [Last Rites](https://scryfall.com/card/ody/146/last-rites) and discarding some manner of fatness. When turn four rolls around, you bring said fatness back into play to smash said opponent. Got it? Mix in [Buried Alive](https://scryfall.com/card/mh3/273/buried-alive) for flavor.
 
 The trick to winning with this deck is to not overcommit while not taking it too slow. There's a fine line between when you hold back and when you start swinging with Visara and start ignoring your opponent's creatures. Seeing that line is the hard part. The ultra-fatties aren't born to block, so fight with them!
 
@@ -56,9 +56,9 @@ If you have Anger in the graveyard, you may be better served by not casting Doom
 
 ##### Sideboarding
 
-**Silent Specter** 
+**[Silent Specter](https://scryfall.com/card/ons/169/silent-specter)** 
 
-Silent Specter with haste is a good way to start the day against control decks.
+[Silent Specter](https://scryfall.com/card/ons/169/silent-specter) with haste is a good way to start the day against control decks.
 
 **Guiltfeeder** 
 
@@ -66,19 +66,19 @@ Guiltfeeder is another anti-control card -- you can actually cast this one, too!
 
 **Ancestor's Chosen** 
 
-Ancestor's Chosen is a life-gaining machine that's good to board in versus the same decks Phantom Nishoba is good against. One of the two cards will win you the game.
+Ancestor's Chosen is a life-gaining machine that's good to board in versus the same decks [Phantom Nishoba](https://scryfall.com/card/dmr/193/phantom-nishoba) is good against. One of the two cards will win you the game.
 
 **Undead Gladiator** 
 
-Undead Gladiator is another anti-control card, but it's also nice because it is one of the few cards that has great synergy with Buried Alive without any help.
+Undead Gladiator is another anti-control card, but it's also nice because it is one of the few cards that has great synergy with [Buried Alive](https://scryfall.com/card/mh3/273/buried-alive) without any help.
 
 **Engineered Plague** 
 
  Yah, you know what to do with this one already.
 
-**Withered Wretch** 
+**[Withered Wretch](https://scryfall.com/card/hop/45/withered-wretch)** 
 
-Withered Wretch is just plain good against much of the field (not to mention against this deck). Use it to your advantage!
+[Withered Wretch](https://scryfall.com/card/hop/45/withered-wretch) is just plain good against much of the field (not to mention against this deck). Use it to your advantage!
 
 ##### Adding More Money To The Deck
 

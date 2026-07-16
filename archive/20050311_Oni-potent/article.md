@@ -29,11 +29,11 @@ Just look at him. Look at how he holds his puny owner between his fingertips.
 
 For the longest time, Juzam reigned supreme as the best Power/Toughness to casting cost ratio for Black. 5/5 for four mana is certainly a good deal. The drawback doesn't hurt either…too much.
 
-Juzam's little brother recently showed up on the **Magic** scene, but little Juzy is all grown up into Yukora, the Prisoner. Yukora is just like the ol' Djinn except for 2 important distinctions. First, it's a Legend. Second, its drawback is much harsher…or is it?
+Juzam's little brother recently showed up on the **Magic** scene, but little Juzy is all grown up into [Yukora, the Prisoner](https://scryfall.com/card/bok/90/yukora-the-prisoner). Yukora is just like the ol' Djinn except for 2 important distinctions. First, it's a Legend. Second, its drawback is much harsher…or is it?
 
 Oni are not like your average demons. They seem to have a fondness for Ogres, and vice versa. Why? The answer has something to do with what we call Ogres and Demons being interconnected in Japanese culture, and the **Magic** translation is that they work very well with each other. (I am sure if Brady Dommermuth reads this feeble explanation he will scorn me in the halls – one of the hazards to actually working in the Wizards buildings!)
 
-Either way, *Betrayers* made the Demon/Ogre deck truly vicious. Also, we find one powerful Ogre from *Mirrodin* block. With Affinity gone, Drooling Ogre can come out to play! It shouldn't be too much trouble keeping him, since you will have Talismans and Pyrite Spellbombs helping out.
+Either way, *Betrayers* made the Demon/Ogre deck truly vicious. Also, we find one powerful Ogre from *Mirrodin* block. With Affinity gone, [Drooling Ogre](https://scryfall.com/card/dst/58/drooling-ogre) can come out to play! It shouldn't be too much trouble keeping him, since you will have Talismans and [Pyrite Spellbomb](https://scryfall.com/card/2xm/283/pyrite-spellbomb)s helping out.
 
 Let's take a look at the decklist.
 
@@ -64,31 +64,31 @@ Let's take a look at the decklist.
 
 As you can see, this deck stays true to the Juzam spirit and tries to pay very little mana for very large men. The result? Early fat creatures without jumping through the hoops of playing with much mana acceleration.
 
-Want a 3/3 on turn 2? Try a Drooling Ogre or a Blind Creeper.
+Want a 3/3 on turn 2? Try a [Drooling Ogre](https://scryfall.com/card/dst/58/drooling-ogre) or a [Blind Creeper](https://scryfall.com/card/5dn/42/blind-creeper).
 
-Utility-fat on turn 3? Bloodthirsty Ogre and Ogre Marauder to the rescue!
+Utility-fat on turn 3? [Bloodthirsty Ogre](https://scryfall.com/card/chk/104/bloodthirsty-ogre) and [Ogre Marauder](https://scryfall.com/card/bok/75/ogre-marauder) to the rescue!
 
-Men of large stature on turn 4? Yukora, the Prisoner, Scourge of Numai, and Ogre Recluse are just itching to smash some face.
+Men of large stature on turn 4? [Yukora, the Prisoner](https://scryfall.com/card/bok/90/yukora-the-prisoner), [Scourge of Numai](https://scryfall.com/card/bok/80/scourge-of-numai), and [Ogre Recluse](https://scryfall.com/card/bok/113/ogre-recluse) are just itching to smash some face.
 
 This deck is extremely straightforward. Play large men. Swing with said men. Repeat until your opponent stops moving. Drool.
 
-There are six creature removal spells in the form of Pyrite Spellbomb and Eradicate. These will help clear the way for your big guys (in case something actually managed to get in the way). Why Eradicate? Because with this type of deck, you can afford the extra mana, and removing things from the game is useful more than you might think. Not to mention that it stops Eternal Witness shenanigans once and for all. The deck also has a few Mark of the Oni for flair and savagery. Control Magic is one of the most powerful effects in **Magic**, and since you will often satisfy the conditions of the Mark, is it quite useful.
+There are six creature removal spells in the form of [Pyrite Spellbomb](https://scryfall.com/card/2xm/283/pyrite-spellbomb) and [Eradicate](https://scryfall.com/card/bok/65/eradicate). These will help clear the way for your big guys (in case something actually managed to get in the way). Why [Eradicate](https://scryfall.com/card/bok/65/eradicate)? Because with this type of deck, you can afford the extra mana, and removing things from the game is useful more than you might think. Not to mention that it stops [Eternal Witness](https://scryfall.com/card/cmm/286/eternal-witness) shenanigans once and for all. The deck also has a few [Mark of the Oni](https://scryfall.com/card/bok/73/mark-of-the-oni) for flair and savagery. Control Magic is one of the most powerful effects in **Magic**, and since you will often satisfy the conditions of the Mark, is it quite useful.
 
-One of the hardest cards in the deck to play is the Bloodthirsty Ogre. This guy has the potential to be really powerful, but he takes a while to charge up, and is rather vulnerable to boot. I think the best way to play him is as an attacker, but instead of attacking into something like a 1/1, put a counter on him instead. In short, only be willing to trade him for a guy of equal stature; otherwise, invest in his creature killing ability. This ability combined with fat attackers is rather hard to overcome with men alone.
+One of the hardest cards in the deck to play is the [Bloodthirsty Ogre](https://scryfall.com/card/chk/104/bloodthirsty-ogre). This guy has the potential to be really powerful, but he takes a while to charge up, and is rather vulnerable to boot. I think the best way to play him is as an attacker, but instead of attacking into something like a 1/1, put a counter on him instead. In short, only be willing to trade him for a guy of equal stature; otherwise, invest in his creature killing ability. This ability combined with fat attackers is rather hard to overcome with men alone.
 
 ##### Tips on Playing the Deck
 
 - If you have a Talisman, sometimes it is better to go for the turn three 4 casting cost Demon, then drop a 3 mana guy along with a 2 mana guy the turn after. It is pretty good even if you have to suck up 2 points from the Scourge.
 - Remember that when you have the Prisoner, it is perfectly fine to play a bunch of Ogres since he won't harm them.
-- Keep the Pyrite Spellbombs and spare Talismans in your hand when they aren't otherwise needed, since they will be useful in stealing back your Drooling Ogres if they manage to get away.
+- Keep the [Pyrite Spellbomb](https://scryfall.com/card/2xm/283/pyrite-spellbomb)s and spare Talismans in your hand when they aren't otherwise needed, since they will be useful in stealing back your [Drooling Ogre](https://scryfall.com/card/dst/58/drooling-ogre)s if they manage to get away.
 - Try to force your opponent into 2-for-1 trades on blocking. This is often the only reasonable solution they will have to your fatties.
 - Keep plugging away. Although it might take a while, your enormous men will wear them down!
 - Don't over commit. There is usually no reason to play all your fatties out. Keep one or two in your hand when possible in case they have a mass removal spell.
-- Attack before casting your spells due to the tapping ability of Ogre Recluse.
+- Attack before casting your spells due to the tapping ability of [Ogre Recluse](https://scryfall.com/card/bok/113/ogre-recluse).
 
 ##### Adding Money to the Deck
 
-Chrome Mox has never been so needed by a deck other than White Weenie. If you are looking for acceleration in black, your options are limited. Even though your guys are plenty efficient on the turn they come out, they are always better a turn earlier! If you want more late game guys, Kokusho is always a likely candidate, and Cranial Extraction can always come in from the sideboard to help in certain annoying matchups. Shizo, Death's Storehouse and Shinka, the Bloodsoaked Keep can easily slip in and help with Yukora.
+Chrome Mox has never been so needed by a deck other than White Weenie. If you are looking for acceleration in black, your options are limited. Even though your guys are plenty efficient on the turn they come out, they are always better a turn earlier! If you want more late game guys, Kokusho is always a likely candidate, and [Cranial Extraction](https://scryfall.com/card/chk/105/cranial-extraction) can always come in from the sideboard to help in certain annoying matchups. [Shizo, Death's Storehouse](https://scryfall.com/card/dmc/233/shizo-deaths-storehouse) and [Shinka, the Bloodsoaked Keep](https://scryfall.com/card/chk/282/shinka-the-bloodsoaked-keep) can easily slip in and help with Yukora.
 
 Overall, this deck is straightforward and lets you play a game of **Magic** without thinking too much about complicated decisions. Just smash. Smash again. Play a demon. Eat a soul. It's all good here.
 

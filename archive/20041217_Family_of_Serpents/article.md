@@ -14,15 +14,15 @@ First, a puzzle. Once upon a time I wrote a puzzle along with each of my article
 
 **Question 1**: This is a rules conundrum, but it can happen!
 
-How can I cast Searing Wind with my Isochron Scepter?
+How can I cast Searing Wind with my [Isochron Scepter](https://scryfall.com/card/2xm/264/isochron-scepter)?
 
 **Question 2**: Ok, this is less of a rules conundrum, but when you see where the question came from I'm sure you'll smile the way I did:
 
-"Can my opponent do something that doesn't make sense, such as casting both Holy Strength and Unholy Strength on his Air Elemental?"
+"Can my opponent do something that doesn't make sense, such as casting both Holy Strength and [Unholy Strength](https://scryfall.com/card/dvd/47/unholy-strength) on his [Air Elemental](https://scryfall.com/card/m20/44/air-elemental)?"
 
 ##### A Family of Serpents
 
-*Champions of Kamigawa* has provided me with the opportunity to talk about a particularly cool tribe. As you all know, I am a sucker for tribal decks, so how could I pass up the opportunity to write about a Snake deck. Now, I don't completely understand how the Snake men of Kamigawa got to look so different than your regular ol' Tangle Asp, but I am sure that being from an entirely different plane has something to do with it.
+*Champions of Kamigawa* has provided me with the opportunity to talk about a particularly cool tribe. As you all know, I am a sucker for tribal decks, so how could I pass up the opportunity to write about a Snake deck. Now, I don't completely understand how the Snake men of Kamigawa got to look so different than your regular ol' [Tangle Asp](https://scryfall.com/card/5dn/94/tangle-asp), but I am sure that being from an entirely different plane has something to do with it.
 
 Back in the day, Snakes were about [poison](https://web.archive.org/web/20090603041013/http://gatherer.wizards.com/default.asp?term=poison&fields=|rules&format=allsets&color=all&output=summary&sort=name&first=1). 10 Poison counters and that's the game. These days they have all sorts of cool functions, none of which are poison related. (I guess some of the Orochi guys have a kind of slow venom that keeps things tapped for an extra turn, but that's a whole different ballgame.)
 
@@ -30,11 +30,11 @@ The one thing that these Snakes have is family. I had no idea that they were so 
 
 There are a few different options when building Snakes – I went for a Snake/Shaman blend so I could best utilize Sachi. The large amount of mana that she can generate when paired with other Shamans lets you cast whatever you want.
 
-Time of Need is another great card to use in this deck, since it allows you to fetch up more copies of any of your legendary creatures after they get killed. It also has the nice effect of letting you cut back on a few rares, like Seshiro. Speaking of Seshiro, he is quite the beating! +2/+2 is a gigantic bonus, plus his ability is simply devastating. Once you get a few members of this Snake family on the table things get ugly quickly.
+[Time of Need](https://scryfall.com/card/chk/247/time-of-need) is another great card to use in this deck, since it allows you to fetch up more copies of any of your legendary creatures after they get killed. It also has the nice effect of letting you cut back on a few rares, like Seshiro. Speaking of Seshiro, he is quite the beating! +2/+2 is a gigantic bonus, plus his ability is simply devastating. Once you get a few members of this Snake family on the table things get ugly quickly.
 
-I decided to include Orochi Eggwatchers and a couple of Konda's Banners in order to make lots of fodder snakes that will get pumped to large sizes. Your little 0/1 baby Snake could easily become a 4/5 with a little footwork (tailwork?).
+I decided to include [Orochi Eggwatcher](https://scryfall.com/card/chk/233/orochi-eggwatcher-shidako-broodmistress)s and a couple of [Konda's Banner](https://scryfall.com/card/chk/259/kondas-banner)s in order to make lots of fodder snakes that will get pumped to large sizes. Your little 0/1 baby Snake could easily become a 4/5 with a little footwork (tailwork?).
 
-The last touch was to add a few Fireballs to act as a mana outlet for Sachi and her merry band of Shamans.
+The last touch was to add a few [Fireball](https://scryfall.com/card/clb/175/fireball)s to act as a mana outlet for Sachi and her merry band of Shamans.
 
 Let's take a look at the decklist.
 
@@ -61,22 +61,22 @@ Let's take a look at the decklist.
 
 *(Full decklist with sideboard: `decklist.txt`; priced breakdown: `decklist_priced.md`)*
 
-This deck plays out by casting Snake after Snake starting on the second turn. Eventually you will cast one of your legends and things will go more easily. You will often have a choice of Tribe Elder, Time of Need, or Tangle Asp on the second turn. I would recommend using the Tribe Elder, then the Time of Need. It is best to save the asp for later when there is a dangerous creature that needs to be blocked.
+This deck plays out by casting Snake after Snake starting on the second turn. Eventually you will cast one of your legends and things will go more easily. You will often have a choice of Tribe Elder, [Time of Need](https://scryfall.com/card/chk/247/time-of-need), or [Tangle Asp](https://scryfall.com/card/5dn/94/tangle-asp) on the second turn. I would recommend using the Tribe Elder, then the [Time of Need](https://scryfall.com/card/chk/247/time-of-need). It is best to save the asp for later when there is a dangerous creature that needs to be blocked.
 
 Sometimes you will be in a position where you are unable to swing in with your Snake legends because they will trade with something on the other side of the table. Often it is best in such situations to just let the Eggwatcher start making little dudes that have gained some bonus from those legends. After a few turns, attacking will look a lot more favorable. If you have Seshiro out, it is fine to attack and trade some guys as long as one or two make it through and net you cards. This will allow you to continually replenish your ranks while keeping up the pressure on your opponent, even in the face of a large blocker.
 
-Orochi Ranger
+[![Orochi Ranger](https://api.scryfall.com/cards/chk/235?format=image&version=normal)](https://scryfall.com/card/chk/235/orochi-ranger)
 
 Tips on Playing the Deck
 
-- Use your Fireballs wisely. I really wanted to fit some more burn into the deck, and if you can't afford Banners, that is what I would recommend adding. It can be really annoying to be without removal.
-- Remember that the Orochi Ranger is also a Warrior, so it will gain the extra ability from Sosuke!
-- Keep in mind that you have several Shamans to use with Sachi, including Viridian Shaman, Sakura-Tribe Elder, and Orochi Eggwatcher.
+- Use your [Fireball](https://scryfall.com/card/clb/175/fireball)s wisely. I really wanted to fit some more burn into the deck, and if you can't afford Banners, that is what I would recommend adding. It can be really annoying to be without removal.
+- Remember that the [Orochi Ranger](https://scryfall.com/card/chk/235/orochi-ranger) is also a Warrior, so it will gain the extra ability from Sosuke!
+- Keep in mind that you have several Shamans to use with Sachi, including [Viridian Shaman](https://scryfall.com/card/ddu/25/viridian-shaman), [Sakura-Tribe Elder](https://scryfall.com/card/soc/285/sakura-tribe-elder), and [Orochi Eggwatcher](https://scryfall.com/card/chk/233/orochi-eggwatcher-shidako-broodmistress).
 - Try to be really aggressive – if you sit around for too long you will fall prey to more powerful cards. While Snakes are cool, they are no Goblins or Elves.
 
 ##### Adding Money to the Deck
 
-You could easily go with a full compliment of Seshiro. He is particularly amazing. Aside from that, you might want Viridian Zealot, since it has the Warrior trait for Sosuke. They would probably just replace Viridian Shamans though, so it is really up to which ability you think is more relevant. I would strongly recommend adding an Okina, Temple to the Grandfathers since there are no drawbacks and it will let your legends attack more often without fear of dying.
+You could easily go with a full compliment of Seshiro. He is particularly amazing. Aside from that, you might want Viridian Zealot, since it has the Warrior trait for Sosuke. They would probably just replace [Viridian Shaman](https://scryfall.com/card/ddu/25/viridian-shaman)s though, so it is really up to which ability you think is more relevant. I would strongly recommend adding an [Okina, Temple to the Grandfathers](https://scryfall.com/card/chk/280/okina-temple-to-the-grandfathers) since there are no drawbacks and it will let your legends attack more often without fear of dying.
 
 Until next time, "take zero".
 
@@ -89,7 +89,7 @@ Until next time, "take zero".
 
 **Answer 1**: Cringe.
 
-First, you must start with a Mirror Golem, an Isochron Scepter, and a March of the Machines in play, with a Searing Wind in your graveyard. Cast a Vesuvan Doppelganger, copying the Mirror Golem, Imprinting the Searing Wind on the Doppelganger. Then on your next upkeep, switch the Doppleganger to the animated Isochron Scepter, and you will be able to cast the Searing Wind from it!
+First, you must start with a Mirror Golem, an [Isochron Scepter](https://scryfall.com/card/2xm/264/isochron-scepter), and a [March of the Machines](https://scryfall.com/card/arc/6/march-of-the-machines) in play, with a Searing Wind in your graveyard. Cast a Vesuvan Doppelganger, copying the Mirror Golem, Imprinting the Searing Wind on the Doppelganger. Then on your next upkeep, switch the Doppleganger to the animated [Isochron Scepter](https://scryfall.com/card/2xm/264/isochron-scepter), and you will be able to cast the Searing Wind from it!
 
 **Answer 2**: Straight from the Alpha Rulebook, baby! And the answer?
 

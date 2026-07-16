@@ -22,7 +22,7 @@ The answer: 1 booster pack, **Magic**'s smallest single product.
 
 [Eventide Booster](https://web.archive.org/web/20090603041446/https://www.wizards.com/default.asp?x=magic/preview/evepack)
 
-Every **Magic** player initially starts from nothing. Today's column will be the day that Level 1 **Magic** Players test their wills, charging into battle armed with nothing but an *Eventide* booster pack. My opponent is my brother Daniel, who hasn't played **Magic** regularly since Lightning Bolt was legal in the format that wasn't even called Standard yet.
+Every **Magic** player initially starts from nothing. Today's column will be the day that Level 1 **Magic** Players test their wills, charging into battle armed with nothing but an *Eventide* booster pack. My opponent is my brother Daniel, who hasn't played **Magic** regularly since [Lightning Bolt](https://scryfall.com/card/msc/806/lightning-bolt) was legal in the format that wasn't even called Standard yet.
 
 Daniel Nagle, Level 1 Magic Player
 
@@ -31,9 +31,9 @@ Daniel Nagle, Level 1 Magic Player
 **Recipe: Pack War Deck**
 
  1 booster pack
- 3 of each basic land (3 Plains, 3 Island, 3 Swamp, 3 Mountain, 3 Forest)
+ 3 of each basic land (3 [Plains](https://scryfall.com/card/msc/866/plains), 3 [Island](https://scryfall.com/card/msh/289/island), 3 [Swamp](https://scryfall.com/card/msh/291/swamp), 3 [Mountain](https://scryfall.com/card/msc/858/mountain), 3 [Forest](https://scryfall.com/card/msh/295/forest))
 
-Pack War (also called "MiniMaster," as pioneered by Mark Rosewater and Henry Stern) is simply a booster pack plus some basic lands to create a deck. I use a configuration I've found best: three of each basic land gives you a prayer of playing {2}{R}{R}{R} and {2}{G}{G}{G} spells (Thunderblust, Phosphorescent Feast). A good additional rule is that lands have "Cycling C", similar to Secluded Steppe and Tranquil Thicket, which adds card flow, gambits of forfeiting your shot at CCC and CC cards, and decking greediness. For simplicity and to showcase the hybrid and retrace mechanics, we didn't use that rule—there are enough decisions in Pack War without adding a complex layer of powerful land cycling.
+Pack War (also called "MiniMaster," as pioneered by Mark Rosewater and Henry Stern) is simply a booster pack plus some basic lands to create a deck. I use a configuration I've found best: three of each basic land gives you a prayer of playing {2}{R}{R}{R} and {2}{G}{G}{G} spells (Thunderblust, Phosphorescent Feast). A good additional rule is that lands have "Cycling C", similar to [Secluded Steppe](https://scryfall.com/card/eoc/177/secluded-steppe) and [Tranquil Thicket](https://scryfall.com/card/dsc/318/tranquil-thicket), which adds card flow, gambits of forfeiting your shot at CCC and CC cards, and decking greediness. For simplicity and to showcase the hybrid and retrace mechanics, we didn't use that rule—there are enough decisions in Pack War without adding a complex layer of powerful land cycling.
 
 For variety's sake, we played three games of Pack War using a total of six *Eventide* booster packs. To maximize suspense, we don't look at our boosters as we shuffle our decks, which makes the discovery of your uncommons, rare, and perhaps foil all the more exhilarating!
 
@@ -43,7 +43,7 @@ My opening hand has Riverfall Mimic, Cinder Pyromancer, Desecrator Hage, and my 
 
 Daniel has a turn-two Duergar Assailant while I make my Riverfall Mimic, even though the Assailant bosses my unpumped 2/1 Mimic around. I have Cinder Pyromancer next turn, but he nukes it with Inside Out (!).
 
-Daniel has the most insane possible play next turn with Scourge of the Nobilis on his Duergar Assailant! The swing and pump ends with Daniel's 24 life to my 15 life. I attack back with a 3/1 haste Heartlash Cinder and Mimic, while Daniel adds both Bloodied Ghost and Nip Gwyllion to his team. I have a Shrewd Hatchling for a gang-blocking prayer, but I scoop to his Springjack Shepherd on turn seven, because the triple-Mountain requiring Thunderblust is never getting through six 0/1 Goat tokens.
+Daniel has the most insane possible play next turn with Scourge of the Nobilis on his Duergar Assailant! The swing and pump ends with Daniel's 24 life to my 15 life. I attack back with a 3/1 haste Heartlash Cinder and Mimic, while Daniel adds both Bloodied Ghost and Nip Gwyllion to his team. I have a Shrewd Hatchling for a gang-blocking prayer, but I scoop to his Springjack Shepherd on turn seven, because the triple-[Mountain](https://scryfall.com/card/msc/858/mountain) requiring Thunderblust is never getting through six 0/1 Goat tokens.
 
 Dan's Pack 1 Rugged Prairie Bloodied Ghost Springjack Shepherd Duergar Mine-Captain Duergar Assailant Scourge of the Nobilis Nip Gwyllion Inside Out Shell Skulkin Nettle Sentinel Grazing Kelpie Snakeform Antler Skulkin Soul Reap Odious Trow | Ken's Pack 1 Thunderblust Shrewd Hatchling Soot Imp Lingering Tormentor Heartlash Cinder Riverfall Mimic Desecrator Hag Cinder Pyromancer Wickerbough Elder Ballynock Trapper Jawbone Skulkin Merrow Levitator Trapjaw Kelpie Raven's Crime Monstrify
 
@@ -55,23 +55,23 @@ I'm first this game, and after two uneventful turns for either of us, I hit Dani
 
 Next I have Riverfall Mimic then a Cinder Pyromancer, but I refuse to trade my 2/1 Mimic for his 1/1 flying Spirit that's on defense. Daniel adds Ballynock Trapper and goes offense with his token.
 
-I topdeck the powerful Flickerwisp (uncommon), which ends his token's life, and my Mimic attacks. Daniel adds his rare, Glen Elendra Archmage, to aid his Trapper. Daniel taps my Mimic, so I decide to trade my 3/1 Flickerwisp for a persist counter on his Archmage. The Archmage won't stop the Trapjaw Kelpie I just topdecked, but it could counter potential bomb spells in my deck.
+I topdeck the powerful Flickerwisp (uncommon), which ends his token's life, and my Mimic attacks. Daniel adds his rare, [Glen Elendra Archmage](https://scryfall.com/card/uma/58/glen-elendra-archmage), to aid his Trapper. Daniel taps my Mimic, so I decide to trade my 3/1 Flickerwisp for a persist counter on his Archmage. The Archmage won't stop the Trapjaw Kelpie I just topdecked, but it could counter potential bomb spells in my deck.
 
 We go back and forth for a turn, wherein my Trapjaw Kelpie becomes the "trapped" creature, so I decide to trade my never-seems-to-activate Mimic to finish off the Archmage. Daniel, however, has Endure to save it.
 
-Daniel adds Wickerbough Elder and swings with his Archmage to put Daniel at 14 life to my 18 life. I continue to land flood with no retrace in sight, but draw a foil Smoldering Butcher (the game designer in me here thinks that there could be a "Foils are more awesome!" Pack War rule, like letting them cantrip or copy themselves once).
+Daniel adds [Wickerbough Elder](https://scryfall.com/card/ecc/118/wickerbough-elder) and swings with his Archmage to put Daniel at 14 life to my 18 life. I continue to land flood with no retrace in sight, but draw a foil Smoldering Butcher (the game designer in me here thinks that there could be a "Foils are more awesome!" Pack War rule, like letting them cantrip or copy themselves once).
 
-I drop the Smoldering Butcher knowing it's just going to move the Trapper from my Trapjaw Kelpie to the Butcher, but Daniel has a Puncture Blast (I prefer to call this card by its playtest name, "Witherbolt") to kill my Kelpie with no Persist.
+I drop the Smoldering Butcher knowing it's just going to move the Trapper from my Trapjaw Kelpie to the Butcher, but Daniel has a [Puncture Blast](https://scryfall.com/card/eve/60/puncture-blast) (I prefer to call this card by its playtest name, "Witherbolt") to kill my Kelpie with no Persist.
 
-I land-flood some more and draw Tilling Treefolk, yet another card that makes me wish I had a retrace card. My Cinder Pyromancer has pinged Daniel down to 10 life, but I'm only at 4 from the incessant 1/1 Glen Elendra Archmage and Wickerbough Elder. I finally topdeck a useful card in Soul Reap, but I quickly discover that Wickerbough Elder is green AND Glen Elendra Archmage can simply counter the Soul Reap. I hang on for another turn because I might draw my rare (which could be a bomb like Hallowed Burial), but I draw one of the three lands left in my library. My brother shows me the Duskdale Wurm he's been wanting to play all game.
+I land-flood some more and draw Tilling Treefolk, yet another card that makes me wish I had a retrace card. My Cinder Pyromancer has pinged Daniel down to 10 life, but I'm only at 4 from the incessant 1/1 [Glen Elendra Archmage](https://scryfall.com/card/uma/58/glen-elendra-archmage) and [Wickerbough Elder](https://scryfall.com/card/ecc/118/wickerbough-elder). I finally topdeck a useful card in Soul Reap, but I quickly discover that [Wickerbough Elder](https://scryfall.com/card/ecc/118/wickerbough-elder) is green AND [Glen Elendra Archmage](https://scryfall.com/card/uma/58/glen-elendra-archmage) can simply counter the Soul Reap. I hang on for another turn because I might draw my rare (which could be a bomb like [Hallowed Burial](https://scryfall.com/card/cn2/91/hallowed-burial)), but I draw one of the three lands left in my library. My brother shows me the Duskdale Wurm he's been wanting to play all game.
 
 Dan's Pack 2 Glen Elendra Archmage Endure Duskdale Wurm Sturdy Hatchling Smoldering Butcher Wickerbough Elder Ballynock Trapper Slippery Bogle Beckon Apparition Puncture Blast Desecrator Hag e Riverfall Mimic Oona's Grace Cinder Pyromancer Antler Skulkin | Ken's Pack 2 Helix Pinnacle Flickerwisp Moonhold Creakwood Ghoul Smoldering Butcher (foil) Trapjaw Kelpie Riverfall Mimic Tilling Treefolk Cinder Pyromancer Soul Reap Talara's Bane Scourge of the Nobilis Nightsky Mimic Aerie Ouphes Hobgoblin Dragoon
 
-HOLY COW, I could've used those Aerie Ouphes to kill Glen Elendra Archmage! I find my rare to be Helix Pinnacle, which I would've gotten up to maybe fifty counters that game. I show the card to Daniel, since I designed it, and he exclaims, "A hundred mana to win! Why not just use Fireball?" I told him, "Because it's five times more difficult to win with this card over Fireball. That's the whole point!"
+HOLY COW, I could've used those Aerie Ouphes to kill [Glen Elendra Archmage](https://scryfall.com/card/uma/58/glen-elendra-archmage)! I find my rare to be Helix Pinnacle, which I would've gotten up to maybe fifty counters that game. I show the card to Daniel, since I designed it, and he exclaims, "A hundred mana to win! Why not just use [Fireball](https://scryfall.com/card/clb/175/fireball)?" I told him, "Because it's five times more difficult to win with this card over [Fireball](https://scryfall.com/card/clb/175/fireball). That's the whole point!"
 
 ##### Game 3
 
-My opening hand has Beckon Apparition and a Puncture Blast. Daniel opens up with turn-one Nip Gwyllion, which hits me three times. Daniel plays Sturdy Hatchling which earns my precious "Witherbolt" and gives me a target for my Beckon Apparition.
+My opening hand has Beckon Apparition and a [Puncture Blast](https://scryfall.com/card/eve/60/puncture-blast). Daniel opens up with turn-one Nip Gwyllion, which hits me three times. Daniel plays Sturdy Hatchling which earns my precious "Witherbolt" and gives me a target for my Beckon Apparition.
 
 On turn five, I block his Nip Gwyllion with my 1/1 white and black Spirit token, to which Daniel drops an all-upside Canker Abomination (!).
 
@@ -79,13 +79,13 @@ Canker Abomination
 
 I take 6 damage from the Canker, then topdeck a timely Smoldering Butcher that will be happy to shrink the 6/6 down to a 2/2.
 
-Daniel attacks anyway, so I block; he didn't know Smoldering Butcher had wither because in the previous game he just tapped it every turn with Ballynock Trapper. I add a Kithkin Spellduster (not a combo with my Antler Skulkin), while Daniel adds a lonely Kithkin Zealot.
+Daniel attacks anyway, so I block; he didn't know Smoldering Butcher had wither because in the previous game he just tapped it every turn with Ballynock Trapper. I add a Kithkin Spellduster (not a combo with my Antler Skulkin), while Daniel adds a lonely [Kithkin Zealot](https://scryfall.com/card/eve/9/kithkin-zealot).
 
-I topdeck an absolutely monstrous Duskdale Wurm but lack the second Forest to play it. My Kithkin Spellduster gets in there a couple times to put the life totals at 13 for Daniel and 11 for me (ouch, Canker Abomination!). My next topdeck is Swirling Spriggan, who also demands a second Forest. Daniel flashes in a Trapjaw Kelpie that I choose to trade with my Antler Skulkin for a -1/-1 counter.
+I topdeck an absolutely monstrous Duskdale Wurm but lack the second [Forest](https://scryfall.com/card/msh/295/forest) to play it. My Kithkin Spellduster gets in there a couple times to put the life totals at 13 for Daniel and 11 for me (ouch, Canker Abomination!). My next topdeck is Swirling Spriggan, who also demands a second [Forest](https://scryfall.com/card/msh/295/forest). Daniel flashes in a Trapjaw Kelpie that I choose to trade with my Antler Skulkin for a -1/-1 counter.
 
-Next is the Forest I've been waiting for, and down comes Duskdale Wurm! "That's thing's huge!" Daniel exclaims. Daniel then plays his rare, Endless Horizons, which he has to read a couple times, then looks through his library only to realize he's already drawn the three Plains in his deck. "Well, that sucked," he replies, in preparation for my Duskdale Wurm attack.
+Next is the [Forest](https://scryfall.com/card/msh/295/forest) I've been waiting for, and down comes Duskdale Wurm! "That's thing's huge!" Daniel exclaims. Daniel then plays his rare, [Endless Horizons](https://scryfall.com/card/eve/4/endless-horizons), which he has to read a couple times, then looks through his library only to realize he's already drawn the three [Plains](https://scryfall.com/card/msc/866/plains) in his deck. "Well, that sucked," he replies, in preparation for my Duskdale Wurm attack.
 
-My next topdeck seals the game: Soul Snuffers. I play the Soul Snuffers first, then Hungry Spriggan, allowing my 6/6 Duskdale Wurm to crash over his 1/1 Trapjaw Kelpie, 1/1 Canker Abomination, and 0/2 Kithkin Zealot and win the game next turn.
+My next topdeck seals the game: Soul Snuffers. I play the Soul Snuffers first, then Hungry Spriggan, allowing my 6/6 Duskdale Wurm to crash over his 1/1 Trapjaw Kelpie, 1/1 Canker Abomination, and 0/2 [Kithkin Zealot](https://scryfall.com/card/eve/9/kithkin-zealot) and win the game next turn.
 
 Dan's Pack 3 Endless Horizons Canker Abomination Sturdy Hatchling Noxious Hatchling Kithkin Zealot (foil) Wickerbough Elder Tilling Treefolk Noggle Bridgebreaker Cinder Pyromancer Riverfall Mimic Desecrator Hag Puncture Bolt Ballynock Trapper Nip Gwyllion Trapjaw Kelpie Daniel pulled the "potential 6/6s for four mana" suite, with Noxious Hatchling and Canker Abomination growing in opposite directions. | Ken's Pack 3 Spitting Image Duskdale Wurm Swirling Spriggan Soul Snuffers Nucklavee (foil) Dream Thief Rendclaw Trow Smoldering Butcher Antler Skulkin Beckon Apparition Puncture Blast Kithkin Spellduster Gift of the Deity Oona's Grace What a completely sick booster pack for Pack War!
 
@@ -96,7 +96,7 @@ I'm sure everyone reading has played some kind of cooperative video game with a 
 Using our very natural gamer inclinations, Dan and I split the cards up like so:
 
 1. Dan first-picks the green cards, a large pile with two Duskdale Wurms (no love for Helix Pinnacle, though).
-2. I pick the white pile, a big pile with Endless Horizons.
+2. I pick the white pile, a big pile with [Endless Horizons](https://scryfall.com/card/eve/4/endless-horizons).
 3. Dan next takes the black cards, which include triple Smoldering Butcher and two Soul Reaps. This gives him the black-green hybrid cards by default.
 4. I take the red cards, snagging the red-white cards—including two Scourge of the Nobilis—for free.
 5. Dan takes the green-blue hybrid cards since he can play them in his black-green deck.

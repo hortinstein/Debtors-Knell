@@ -10,7 +10,7 @@ I went to the Tenth Anniversary tournament, and you know what I got? A Shivan Dr
 
 Thus, in honor of its triumphant reappearance, I will talk about a deck that does not include Shivan Dragon, yet pays homage to its brethren. I am talking about The Claw--a Block Constructed deck that YMG played in Venice with good results. Considering the *Onslaught* Block Constructed qualifier season lies before us, I figure you avid readers might want to take a chance and try out the qualifier scene with a decent and fun deck that can be built for less than thirty tickets.
 
-Note that a Standard-legal version of this deck may actually be a lot more fun, considering you can play Shivan Dragon and Two-Headed Dragon as well.
+Note that a Standard-legal version of this deck may actually be a lot more fun, considering you can play [Shivan Dragon](https://scryfall.com/card/ori/285/shivan-dragon) and Two-Headed Dragon as well.
 
 **Building on a Budget - The Claw**
 
@@ -34,13 +34,13 @@ Note that a Standard-legal version of this deck may actually be a lot more fun, 
 
 *(Full decklist with sideboard: `decklist.txt`; priced breakdown: `decklist_priced.md`)*
 
-The original version of this deck had 8 Beasts (4 Tuskers and 4 Baloths) and some Contested Cliffs to help hold down the fort. Since this is a budget article, the word "Baloth" without "Enormous" in front is a no-no.
+The original version of this deck had 8 Beasts (4 Tuskers and 4 Baloths) and some [Contested Cliffs](https://scryfall.com/card/c13/282/contested-cliffs) to help hold down the fort. Since this is a budget article, the word "Baloth" without "Enormous" in front is a no-no.
 
-Back to Dragons--The premise of this deck is to accelerate out a big, fat Kilnmouth Dragon and proceed to chomp on your opponent until you have need of a toothpick. The Kilnmouth is often 8/8 and sometimes 11/11. Statistically it's kind of hard to make it any bigger than that, but no matter, there is always a follow up Dragon on its way!
+Back to Dragons--The premise of this deck is to accelerate out a big, fat [Kilnmouth Dragon](https://scryfall.com/card/ddg/59/kilnmouth-dragon) and proceed to chomp on your opponent until you have need of a toothpick. The Kilnmouth is often 8/8 and sometimes 11/11. Statistically it's kind of hard to make it any bigger than that, but no matter, there is always a follow up Dragon on its way!
 
-There are many ways to get a fast dragon. Usually, a Kilnmouth will hit the table on turn five using Explosive Vegetation, Goblin Clearcutter, or Dragonspeaker Shaman, but sometimes appears earlier with an assist from Wirewood Elf. In general, Block Constructed is slow enough to allow you to do nothing but accelerate yourself for a while, and Slice and Dice and Shock are there to help keep you alive in the meantime.
+There are many ways to get a fast dragon. Usually, a Kilnmouth will hit the table on turn five using [Explosive Vegetation](https://scryfall.com/card/dsc/177/explosive-vegetation), [Goblin Clearcutter](https://scryfall.com/card/lgn/96/goblin-clearcutter), or [Dragonspeaker Shaman](https://scryfall.com/card/afc/330/dragonspeaker-shaman), but sometimes appears earlier with an assist from [Wirewood Elf](https://scryfall.com/card/ons/301/wirewood-elf). In general, Block Constructed is slow enough to allow you to do nothing but accelerate yourself for a while, and [Slice and Dice](https://scryfall.com/card/cmm/255/slice-and-dice) and [Shock](https://scryfall.com/card/msc/809/shock) are there to help keep you alive in the meantime.
 
-One difficult choice for this deck is Carbonize or Shock. Shock is better versus Goblins and Carbonize is better against Twisted Abominations (there are a lot of those out there, too). In general, the Twisted Abominations are too slow for Rorix or Kilnmouth, so Shock took the slots--Shocking a Goblin Warchief can really slow a Goblin deck down.
+One difficult choice for this deck is Carbonize or [Shock](https://scryfall.com/card/msc/809/shock). Shock is better versus Goblins and Carbonize is better against [Twisted Abomination](https://scryfall.com/card/cmm/194/twisted-abomination)s (there are a lot of those out there, too). In general, the Twisted Abominations are too slow for Rorix or Kilnmouth, so Shock took the slots--Shocking a [Goblin Warchief](https://scryfall.com/card/dom/130/goblin-warchief) can really slow a Goblin deck down.
 
 The thing that I really like about this deck is sometimes you get a draw that involves Rorix smashing in on turn four and an 8/8 Kilnmouth appearing on turn five.
 
@@ -52,7 +52,7 @@ If you can cast Rorix the turn before you cast Kilnmouth and you have one other 
 
 I would recommend Silklash Spider against anything that looks like it might have Akroma in it. Silklash is one of the few cards that can deal with her.
 
-Stabilizers or Naturalizes help against Slide, and you're going to need them--Slide is a rough matchup. I wouldn't worry so much about the Rift-only decks--it always seems like Astral Slide was the most annoying card in these decks. Also, your opponent may find it difficult to Rift out your Dragons.
+Stabilizers or [Naturalize](https://scryfall.com/card/m19/190/naturalize)s help against Slide, and you're going to need them--Slide is a rough matchup. I wouldn't worry so much about the Rift-only decks--it always seems like Astral Slide was the most annoying card in these decks. Also, your opponent may find it difficult to Rift out your Dragons.
 
 ##### Adding Money To The Deck
 

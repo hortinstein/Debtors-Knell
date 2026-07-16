@@ -6,7 +6,7 @@
 
 ---
 
-Daru Warchief
+[![Daru Warchief](https://api.scryfall.com/cards/scg/6?format=image&version=normal)](https://scryfall.com/card/scg/6/daru-warchief)
 
 Thanks to everyone who left feedback last week, I plan to do those polls regularly to help pick your brains. You will see the results of the first poll next weeks' article. Until then, I am going with the feedback that people directly emailed me. It looks like Soldiers was the tribe itching to be written about.
 
@@ -37,21 +37,21 @@ Soldiers are fast, but not the fastest. Soldiers are tricky, but again, not the 
 
 *(Full decklist with sideboard: `decklist.txt`; priced breakdown: `decklist_priced.md`)*
 
-The key cards in the deck are Deftblade Elite, Gempalm Avenger, and Shared Triumph. These cards let you keep attacking with all your creatures without fear of them getting wiped out. And, if a bigger creature blocks one, there's always Piety Charm to help keep your Soldiers alive while smashing through the opposing side.
+The key cards in the deck are [Deftblade Elite](https://scryfall.com/card/plst/LGN-12/deftblade-elite), [Gempalm Avenger](https://scryfall.com/card/ddo/9/gempalm-avenger), and [Shared Triumph](https://scryfall.com/card/ons/53/shared-triumph). These cards let you keep attacking with all your creatures without fear of them getting wiped out. And, if a bigger creature blocks one, there's always [Piety Charm](https://scryfall.com/card/ons/49/piety-charm) to help keep your Soldiers alive while smashing through the opposing side.
 
-Two of the more interesting cards in the deck are Stoic Champion and Catapult Squad. Stoic Champion, while seemingly innocent, can grow large with the help of the twelve cyclers in the deck. While this isn't an overwhelming amount, the Champ is a decent two-drop and will give your opponents pause when deciding whether to block. The Champ is very tricky, indeed -- with the help of a single Gempalm Avenger, Stoic Champion grows to a 5/5 first striker.
+Two of the more interesting cards in the deck are [Stoic Champion](https://scryfall.com/card/lgn/21/stoic-champion) and [Catapult Squad](https://scryfall.com/card/ons/11/catapult-squad). Stoic Champion, while seemingly innocent, can grow large with the help of the twelve cyclers in the deck. While this isn't an overwhelming amount, the Champ is a decent two-drop and will give your opponents pause when deciding whether to block. The Champ is very tricky, indeed -- with the help of a single [Gempalm Avenger](https://scryfall.com/card/ddo/9/gempalm-avenger), Stoic Champion grows to a 5/5 first striker.
 
-Catapult Squad gives this deck the ability to work itself out of a bad situation. If the game is going poorly for the home team, leave your creatures back to block. With a Catapult Squad on defense, it's unlikely that any attack will be successful, since you can block and shoot. Catapult Squad also has great synergy with Deftblade Elite -- simply provoke something with two toughness and shoot it before damage is dealt. As long as you have the Squad and even a freshly-cast Soldier back, your opponents will always be somewhat worried about blocking your attacking creatures. Remember, you just have to tap two soldiers; it doesn't have to be the Squad.
+[Catapult Squad](https://scryfall.com/card/ons/11/catapult-squad) gives this deck the ability to work itself out of a bad situation. If the game is going poorly for the home team, leave your creatures back to block. With a Catapult Squad on defense, it's unlikely that any attack will be successful, since you can block and shoot. Catapult Squad also has great synergy with [Deftblade Elite](https://scryfall.com/card/plst/LGN-12/deftblade-elite) -- simply provoke something with two toughness and shoot it before damage is dealt. As long as you have the Squad and even a freshly-cast Soldier back, your opponents will always be somewhat worried about blocking your attacking creatures. Remember, you just have to tap two soldiers; it doesn't have to be the Squad.
 
 ##### Tips On Playing The Deck
 
-Catapult Squad
+[![Catapult Squad](https://api.scryfall.com/cards/ons/11?format=image&version=normal)](https://scryfall.com/card/ons/11/catapult-squad)
 
 - White Weenie is an aggressive deck, but you can also pilot it like Control. If you're against a faster deck like Goblins, don't be afraid to play it slow and safe.
-- It's not always clear if you should attack with Catapult Squad or leave two Soldiers back to activate the Catapult. Often it's better to just attack with everyone. Assess the situation carefully before making this decision.
-- Deftblade Elite is an all-purpose removal spell. Use it to get more damage through, as well as wiping out your opponent's blockers with provoke and a pump spell. It also works well as a pseudo-regenerating blocker. Kai Budde may have been right when he said Deftblade Elite is the best one-drop in **Magic** (over Savannah Lions). Time will tell.
-- Don't forget that Gempalm Avenger and Noble Templar can also be cast -- especially with a Daru Warchief in play.
-- Gustcloak Runner is deceptively powerful with Catapult Squad. Teach your opponents to fear it!
+- It's not always clear if you should attack with [Catapult Squad](https://scryfall.com/card/ons/11/catapult-squad) or leave two Soldiers back to activate the Catapult. Often it's better to just attack with everyone. Assess the situation carefully before making this decision.
+- [Deftblade Elite](https://scryfall.com/card/plst/LGN-12/deftblade-elite) is an all-purpose removal spell. Use it to get more damage through, as well as wiping out your opponent's blockers with provoke and a pump spell. It also works well as a pseudo-regenerating blocker. Kai Budde may have been right when he said Deftblade Elite is the best one-drop in **Magic** (over [Savannah Lions](https://scryfall.com/card/fdn/146/savannah-lions)). Time will tell.
+- Don't forget that [Gempalm Avenger](https://scryfall.com/card/ddo/9/gempalm-avenger) and [Noble Templar](https://scryfall.com/card/a25/25/noble-templar) can also be cast -- especially with a [Daru Warchief](https://scryfall.com/card/scg/6/daru-warchief) in play.
+- [Gustcloak Runner](https://scryfall.com/card/ons/35/gustcloak-runner) is deceptively powerful with [Catapult Squad](https://scryfall.com/card/ons/11/catapult-squad). Teach your opponents to fear it!
 
 ##### Alternative Builds
 

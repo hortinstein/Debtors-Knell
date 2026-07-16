@@ -14,7 +14,7 @@ Welcome back to Building on a Budget! We're just about at the end of the 10 Deck
 
 First, the formalities:
 
-Out: 3 Aven Riftwatcher, 4 Boros Garrison, 4 Boros Signet, 4 Calciderm, 3 Jötun Grunt, 4 Lightning Helix, 8 Plains, 4 Stonecloaker, 3 Whitemane Lion
+Out: 3 [Aven Riftwatcher](https://scryfall.com/card/tsr/6/aven-riftwatcher), 4 [Boros Garrison](https://scryfall.com/card/clu/231/boros-garrison), 4 [Boros Signet](https://scryfall.com/card/tdc/314/boros-signet), 4 [Calciderm](https://scryfall.com/card/tsr/11/calciderm), 3 [Jötun Grunt](https://scryfall.com/card/cmd/16/j%C3%B6tun-grunt), 4 [Lightning Helix](https://scryfall.com/card/mkm/218/lightning-helix), 8 [Plains](https://scryfall.com/card/msc/866/plains), 4 [Stonecloaker](https://scryfall.com/card/tsr/45/stonecloaker), 3 [Whitemane Lion](https://scryfall.com/card/dmr/35/whitemane-lion)
 
 **Sheer Pandemonium No White**
 
@@ -35,58 +35,58 @@ Out: 3 Aven Riftwatcher, 4 Boros Garrison, 4 Boros Signet, 4 Calciderm, 3 Jötun
 
 Since this deck is going to center around the madness mechanic, we need to include two different types of cards: madness cards and madness enablers. All of the madness cards in *Time Spiral* and *Planar Chaos* have been black or red. They include:
 
-Big Game Hunter
+[Big Game Hunter](https://scryfall.com/card/tsr/102/big-game-hunter)
 
 Brain Gorgers
 
-Call to the Netherworld
+[Call to the Netherworld](https://scryfall.com/card/c19/108/call-to-the-netherworld)
 
 Dark Withering
 
-Fiery Temper
+[Fiery Temper](https://scryfall.com/card/inr/154/fiery-temper)
 
 Gorgon Recluse
 
-Muck Drubb
+[Muck Drubb](https://scryfall.com/card/tsr/126/muck-drubb)
 
-Nightshade Assassin
+[Nightshade Assassin](https://scryfall.com/card/tsr/128/nightshade-assassin)
 
-Reckless Wurm
+[Reckless Wurm](https://scryfall.com/card/tsr/181/reckless-wurm)
 
-Psychotic Episode
+[Psychotic Episode](https://scryfall.com/card/tsr/132/psychotic-episode)
 
 The first rule I came up with for this deck—I wouldn't play any madness card that I wouldn't be comfortable playing without being able to discard it. That's right—if I wouldn't play the card if it were missing the madness ability entirely, I wouldn't play the madness version. Why is this? Mainly, because there aren't a lot of good madness outlets in Standard right now, at least for red and black (I'll expound on this in the next section). This means that I run a good chance of having to hard-cast any given madness card over the course of a game. The main advantage of madness is that it reduces the mana cost of a card. If that card wasn't worth playing to begin with, why bother?
 
-This immediately eliminated Big Game Hunter, Brain Gorgers, Call to the Netherworld, Dark Withering, and Gorgon Recluse from contention. I wouldn't play a one-shot Intrepid Hero, Giant Cockroach, Raise Dead, a Dark Banishing/Seal of Doom that costs double the mana, or Thicket Basilisk in a regular deck. This left Fiery Temper, Muck Drubb, Nightshade Assassin, Reckless Wurm and Psychotic Episode. I have played Rift Bolt, see the Drubb as unique, love Nekrataal and Keening Banshee, am a huge fan of Arrogant Wurm, and wouldn't be above playing Coercion if Distress wasn't around.
+This immediately eliminated [Big Game Hunter](https://scryfall.com/card/tsr/102/big-game-hunter), Brain Gorgers, [Call to the Netherworld](https://scryfall.com/card/c19/108/call-to-the-netherworld), Dark Withering, and Gorgon Recluse from contention. I wouldn't play a one-shot Intrepid Hero, Giant Cockroach, [Raise Dead](https://scryfall.com/card/w17/18/raise-dead), a [Dark Banishing](https://scryfall.com/card/8ed/123/dark-banishing)/[Seal of Doom](https://scryfall.com/card/mm3/83/seal-of-doom) that costs double the mana, or Thicket Basilisk in a regular deck. This left [Fiery Temper](https://scryfall.com/card/inr/154/fiery-temper), [Muck Drubb](https://scryfall.com/card/tsr/126/muck-drubb), [Nightshade Assassin](https://scryfall.com/card/tsr/128/nightshade-assassin), [Reckless Wurm](https://scryfall.com/card/tsr/181/reckless-wurm) and [Psychotic Episode](https://scryfall.com/card/tsr/132/psychotic-episode). I have played [Rift Bolt](https://scryfall.com/card/2x2/122/rift-bolt), see the Drubb as unique, love [Nekrataal](https://scryfall.com/card/ema/99/nekrataal) and [Keening Banshee](https://scryfall.com/card/gvl/44/keening-banshee), am a huge fan of Arrogant Wurm, and wouldn't be above playing [Coercion](https://scryfall.com/card/8ed/122/coercion) if [Distress](https://scryfall.com/card/m12/94/distress) wasn't around.
 
 So now that I've gotten a pool of five different madness cards to choose from, I need to find ways to discard cards from my hand. The most advantageous madness enablers are ones which have an activation/other cost of discarding a card, so you can turn that disadvantage around to an advantage. Thankfully, there were plenty of these to be found in Standard right now. I culled down the list with the same rule that I made for selecting madness cards—I would not play any madness enablers that I wouldn't otherwise want to have in a deck.
 
-This left me with a decently-sized list of contenders, including Avatar of Discord, Conflagrate, Delirium Skeins, Demonic Collusion, Drekavac, Jaya Ballard, Kindle the Carnage, Lightning Axe, Mindless Automaton, Phantasmagorian, Rakdos Guildmage, Slate of Ancestry, Smallpox, Trespasser *il*-Vec, and Undertaker. I cut this list down further with more criterion:
+This left me with a decently-sized list of contenders, including Avatar of Discord, [Conflagrate](https://scryfall.com/card/tsr/160/conflagrate), [Delirium Skeins](https://scryfall.com/card/mm3/65/delirium-skeins), Demonic Collusion, [Drekavac](https://scryfall.com/card/dis/43/drekavac), Jaya Ballard, Kindle the Carnage, [Lightning Axe](https://scryfall.com/card/inr/162/lightning-axe), [Mindless Automaton](https://scryfall.com/card/eoc/142/mindless-automaton), [Phantasmagorian](https://scryfall.com/card/plc/77/phantasmagorian), [Rakdos Guildmage](https://scryfall.com/card/rvr/214/rakdos-guildmage), Slate of Ancestry, [Smallpox](https://scryfall.com/card/tsr/139/smallpox), Trespasser *il*-Vec, and [Undertaker](https://scryfall.com/card/tsb/53/undertaker). I cut this list down further with more criterion:
 
-1. The spell/effect that causes the discard can't cost more than three. I want to be able to play my madness cards using the madness cost reasonably early. If I buyback Demonic Collusion (five mana plus discarding two cards), I'd need to be at eight mana to Madness Reckless Wurm on that same turn. Why not just play Reckless Wurm to begin with at that point? Eliminated: Demonic Collusion, Rakdos Guildmage, Slate of Ancestry
+1. The spell/effect that causes the discard can't cost more than three. I want to be able to play my madness cards using the madness cost reasonably early. If I buyback Demonic Collusion (five mana plus discarding two cards), I'd need to be at eight mana to Madness [Reckless Wurm](https://scryfall.com/card/tsr/181/reckless-wurm) on that same turn. Why not just play [Reckless Wurm](https://scryfall.com/card/tsr/181/reckless-wurm) to begin with at that point? Eliminated: Demonic Collusion, [Rakdos Guildmage](https://scryfall.com/card/rvr/214/rakdos-guildmage), Slate of Ancestry
 2. No fragile creatures. By fragile, I mean Avatar of Discord and Trespasser *il*-Vec. Look, I've played hundreds of games for this column now. Every time I've faced down one of these guys, my opponent ended up with a dead creature, and (in the case of the Avatar) down two cards. I've seen these cards be bad on the other side of the table from me, and so I'm very disinclined to play with them.
 
-Jaya Ballard, Task Mage
+[![Jaya Ballard, Task Mage](https://api.scryfall.com/cards/tsr/172?format=image&version=normal)](https://scryfall.com/card/tsr/172/jaya-ballard-task-mage)
 
-This leaves Conflagrate, Delirium Skeins, Drekavac, Jaya Ballard, Task Mage, Lightning Axe, Mindless Automation, Phantasmagorian, Smallpox, and Undertaker as my choices for initial Madness outlets. You all know that I love Jaya Ballard, and Jaya is the most independently powerful card on this list—an Incinerate-a-turn machine that randomly hoses blue and randomly Infernos the board is a decent card.
+This leaves [Conflagrate](https://scryfall.com/card/tsr/160/conflagrate), [Delirium Skeins](https://scryfall.com/card/mm3/65/delirium-skeins), [Drekavac](https://scryfall.com/card/dis/43/drekavac), [Jaya Ballard, Task Mage](https://scryfall.com/card/tsr/172/jaya-ballard-task-mage), [Lightning Axe](https://scryfall.com/card/inr/162/lightning-axe), Mindless Automation, [Phantasmagorian](https://scryfall.com/card/plc/77/phantasmagorian), [Smallpox](https://scryfall.com/card/tsr/139/smallpox), and [Undertaker](https://scryfall.com/card/tsb/53/undertaker) as my choices for initial Madness outlets. You all know that I love Jaya Ballard, and Jaya is the most independently powerful card on this list—an Incinerate-a-turn machine that randomly hoses blue and randomly Infernos the board is a decent card.
 
-In: 3 Jaya Ballard, Task Mage
+In: 3 [Jaya Ballard, Task Mage](https://scryfall.com/card/tsr/172/jaya-ballard-task-mage)
 
-Sheer Pandemonium was an aggro deck through and through, and so to compliment the remains of that deck, I decide to go with burn and offense with this first build of B/R Madness. Fiery Temper and Reckless Wurm are the most offensively oriented of the remaining Madness cards, so I add four copies of each.
+Sheer [Pandemonium](https://scryfall.com/card/plst/TPR-149/pandemonium) was an aggro deck through and through, and so to compliment the remains of that deck, I decide to go with burn and offense with this first build of B/R Madness. [Fiery Temper](https://scryfall.com/card/inr/154/fiery-temper) and [Reckless Wurm](https://scryfall.com/card/tsr/181/reckless-wurm) are the most offensively oriented of the remaining Madness cards, so I add four copies of each.
 
-In: 4 Fiery Temper, 4 Reckless Wurm
+In: 4 [Fiery Temper](https://scryfall.com/card/inr/154/fiery-temper), 4 [Reckless Wurm](https://scryfall.com/card/tsr/181/reckless-wurm)
 
-I also want to try out Muck Drubb, so I put in a singleton copy. In addition, I throw in a singleton copy of Phantasmagorian (which might well be the hardest **Magic** card name to type in consistently, and made me want to disregard it just for the sake of having to type it over and over for this article! Phantasmagorian! Phantasmagorian!).
+I also want to try out [Muck Drubb](https://scryfall.com/card/tsr/126/muck-drubb), so I put in a singleton copy. In addition, I throw in a singleton copy of [Phantasmagorian](https://scryfall.com/card/plc/77/phantasmagorian) (which might well be the hardest **Magic** card name to type in consistently, and made me want to disregard it just for the sake of having to type it over and over for this article! [Phantasmagorian](https://scryfall.com/card/plc/77/phantasmagorian)! [Phantasmagorian](https://scryfall.com/card/plc/77/phantasmagorian)!).
 
-In: 1 Phantasmagorian, 1 Muck Drubb
+In: 1 [Phantasmagorian](https://scryfall.com/card/plc/77/phantasmagorian), 1 [Muck Drubb](https://scryfall.com/card/tsr/126/muck-drubb)
 
-For the last few slots of the deck, I decide to try out Smallpox. Smallpox combines well with Stingscourger (I can remove a smaller creature and then kill their big guy) and Keldon Marauders (they are going away anyhow, right), and provides me an outlet for madness. I also throw in the compliment of black lands to replace the white lands in the deck.
+For the last few slots of the deck, I decide to try out [Smallpox](https://scryfall.com/card/tsr/139/smallpox). [Smallpox](https://scryfall.com/card/tsr/139/smallpox) combines well with [Stingscourger](https://scryfall.com/card/tsr/192/stingscourger) (I can remove a smaller creature and then kill their big guy) and [Keldon Marauders](https://scryfall.com/card/ema/136/keldon-marauders) (they are going away anyhow, right), and provides me an outlet for madness. I also throw in the compliment of black lands to replace the white lands in the deck.
 
-In: 4 Smallpox, 4 Rakdos Carnarium, 8 Swamp.
+In: 4 [Smallpox](https://scryfall.com/card/tsr/139/smallpox), 4 [Rakdos Carnarium](https://scryfall.com/card/ecc/161/rakdos-carnarium), 8 [Swamp](https://scryfall.com/card/msh/291/swamp).
 
-This leaves me with seven slots left to build with. In previous builds I've run whatever signet is appropriate for the color combination. In this build, I'm going with my old favorite, Phyrexian Totem, in that slot. Phyrexian Totem works well with Smallpox (it doesn't get hit), and provides me a pretty big body to hit with. I also rotate Conflagrate back into the deck—it was last seen in week 3 (Aeon in Flux). It acts as early removal, and then as a late madness outlet.
+This leaves me with seven slots left to build with. In previous builds I've run whatever signet is appropriate for the color combination. In this build, I'm going with my old favorite, [Phyrexian Totem](https://scryfall.com/card/dde/20/phyrexian-totem), in that slot. [Phyrexian Totem](https://scryfall.com/card/dde/20/phyrexian-totem) works well with [Smallpox](https://scryfall.com/card/tsr/139/smallpox) (it doesn't get hit), and provides me a pretty big body to hit with. I also rotate [Conflagrate](https://scryfall.com/card/tsr/160/conflagrate) back into the deck—it was last seen in week 3 (Aeon in Flux). It acts as early removal, and then as a late madness outlet.
 
-In: 4 Phyrexian Totem, 3 Conflagrate
+In: 4 [Phyrexian Totem](https://scryfall.com/card/dde/20/phyrexian-totem), 3 [Conflagrate](https://scryfall.com/card/tsr/160/conflagrate)
 
 **BR Madness 1**
 
@@ -115,37 +115,37 @@ In: 4 Phyrexian Totem, 3 Conflagrate
 
 *(Full decklist with sideboard: `decklist_2_BR_Madness_1.txt`; priced breakdown: `decklist_2_BR_Madness_1_priced.md`)*
 
-Game 1: Aquacadet92 (U/B Leyline of Singularity/Hunted Creatures)
- He gets stuck on two mana, and I beat him down with Keldon Marauders and Phyrexian Totem. I didn't really get an opportunity to try out any of the madness cards.
+Game 1: Aquacadet92 (U/B [Leyline of Singularity](https://scryfall.com/card/gpt/29/leyline-of-singularity)/Hunted Creatures)
+ He gets stuck on two mana, and I beat him down with [Keldon Marauders](https://scryfall.com/card/ema/136/keldon-marauders) and [Phyrexian Totem](https://scryfall.com/card/dde/20/phyrexian-totem). I didn't really get an opportunity to try out any of the madness cards.
  Record: 1-0
 
 Game 2: enema_of_chaos (Orzhov)
- This game was a lot more of a test for the deck. I get out a couple of quick Phyrexian Totems. He Faith's Fetters one, and then drops Teysa with Shadow Lance, Ghost Council of Orzhova, and Mourning Thrull. I Smallpox away the Thrull, force a chump block of the Spirit Token, Smallpox away the Teysa, and then come in with exactly lethal damage with Akroma, Angel of Fury and Phyrexian Totem trampling over his Ghost Council.
+ This game was a lot more of a test for the deck. I get out a couple of quick [Phyrexian Totem](https://scryfall.com/card/dde/20/phyrexian-totem)s. He [Faith's Fetters](https://scryfall.com/card/rvr/18/faiths-fetters) one, and then drops Teysa with [Shadow Lance](https://scryfall.com/card/gpt/14/shadow-lance), [Ghost Council of Orzhova](https://scryfall.com/card/mm2/176/ghost-council-of-orzhova), and [Mourning Thrull](https://scryfall.com/card/rvr/204/mourning-thrull). I [Smallpox](https://scryfall.com/card/tsr/139/smallpox) away the Thrull, force a chump block of the Spirit Token, [Smallpox](https://scryfall.com/card/tsr/139/smallpox) away the Teysa, and then come in with exactly lethal damage with [Akroma, Angel of Fury](https://scryfall.com/card/mkc/146/akroma-angel-of-fury) and [Phyrexian Totem](https://scryfall.com/card/dde/20/phyrexian-totem) trampling over his Ghost Council.
  Record: 2-0
 
-Muck Drubb Count: 1
-Akroma, Angel of Fury Count: 1
+[Muck Drubb](https://scryfall.com/card/tsr/126/muck-drubb) Count: 1
+[Akroma, Angel of Fury](https://scryfall.com/card/mkc/146/akroma-angel-of-fury) Count: 1
 
 Game 3: Sage_GT (U/W Snow)
- He gets a quick three creatures. I Smallpox and Fiery Temper two on turn three, then swing with Phyrexian Totem past his one remaining creature – a Drift of Phantasms. He drops Rimewind Cryomancer, and I Smallpox again, killing his defender and allowing me to drop Reckless Wurm. Stingscourger clears the way for nine points of trample damage the following turn, finishing business.
+ He gets a quick three creatures. I [Smallpox](https://scryfall.com/card/tsr/139/smallpox) and [Fiery Temper](https://scryfall.com/card/inr/154/fiery-temper) two on turn three, then swing with [Phyrexian Totem](https://scryfall.com/card/dde/20/phyrexian-totem) past his one remaining creature – a [Drift of Phantasms](https://scryfall.com/card/rvr/42/drift-of-phantasms). He drops Rimewind Cryomancer, and I [Smallpox](https://scryfall.com/card/tsr/139/smallpox) again, killing his defender and allowing me to drop [Reckless Wurm](https://scryfall.com/card/tsr/181/reckless-wurm). [Stingscourger](https://scryfall.com/card/tsr/192/stingscourger) clears the way for nine points of trample damage the following turn, finishing business.
  Record: 3-0
 
 Game 4: yakyak (U/W Suspend)
- I get Keldon Marauders, hit for five, and then drop a face-down Akroma. Jaya Ballard deals 6 a turn with Fiery Temper (discard the Temper to the Incinerate ability), and this allows me to untap and win with Akroma on turn six.
+ I get [Keldon Marauders](https://scryfall.com/card/ema/136/keldon-marauders), hit for five, and then drop a face-down Akroma. Jaya Ballard deals 6 a turn with [Fiery Temper](https://scryfall.com/card/inr/154/fiery-temper) (discard the Temper to the Incinerate ability), and this allows me to untap and win with Akroma on turn six.
  Record: 4-0
 
-Akroma, Angel of Fury Count: 2 (remember, I only have one in the deck!)
+[Akroma, Angel of Fury](https://scryfall.com/card/mkc/146/akroma-angel-of-fury) Count: 2 (remember, I only have one in the deck!)
 
 Game 5: PTrenkle (Slivers with Duals)
- He drops down Spinneret Sliver, and I answer on turn four with Jaya Ballard. He casts Psionic Sliver, and uses his Spinneret to kill Jaya Ballard. He then proceeds to drop multiple other Slivers, and I draw an overabundance of lands and Phyrexian Totems. 
+ He drops down [Spinneret Sliver](https://scryfall.com/card/tsr/230/spinneret-sliver), and I answer on turn four with Jaya Ballard. He casts Psionic Sliver, and uses his Spinneret to kill Jaya Ballard. He then proceeds to drop multiple other Slivers, and I draw an overabundance of lands and [Phyrexian Totem](https://scryfall.com/card/dde/20/phyrexian-totem)s. 
  Record: 4-1
 
-At this point, I'm leaning towards needing more removal. Pandemonium isn't great in this deck, because I don't have as many large creatures as I did in the previous deck, nor creatures that could recur themselves. Sparkmage Apprentice is also not great removal when it can't be played and replayed multiple times.
+At this point, I'm leaning towards needing more removal. [Pandemonium](https://scryfall.com/card/plst/TPR-149/pandemonium) isn't great in this deck, because I don't have as many large creatures as I did in the previous deck, nor creatures that could recur themselves. [Sparkmage Apprentice](https://scryfall.com/card/ddn/48/sparkmage-apprentice) is also not great removal when it can't be played and replayed multiple times.
 
-In their place, I add in Lightning Axe (which was initially considered as a madness outlet at the beginning) and Strangling Soot. Strangling Soot is reusable removal which can stop early creatures, and it can be discarded to other effects and used from the graveyard thanks to Flashback—making it synergistic with Jaya Ballard, Smallpox, and Lightning Axe.
+In their place, I add in [Lightning Axe](https://scryfall.com/card/inr/162/lightning-axe) (which was initially considered as a madness outlet at the beginning) and [Strangling Soot](https://scryfall.com/card/tsr/140/strangling-soot). [Strangling Soot](https://scryfall.com/card/tsr/140/strangling-soot) is reusable removal which can stop early creatures, and it can be discarded to other effects and used from the graveyard thanks to Flashback—making it synergistic with Jaya Ballard, [Smallpox](https://scryfall.com/card/tsr/139/smallpox), and [Lightning Axe](https://scryfall.com/card/inr/162/lightning-axe).
 
-Out: 3 Pandemonium, 3 Sparkmage Apprentice
- In: 3 Lightning Axe, 3 Strangling Soot
+Out: 3 [Pandemonium](https://scryfall.com/card/plst/TPR-149/pandemonium), 3 [Sparkmage Apprentice](https://scryfall.com/card/ddn/48/sparkmage-apprentice)
+ In: 3 [Lightning Axe](https://scryfall.com/card/inr/162/lightning-axe), 3 [Strangling Soot](https://scryfall.com/card/tsr/140/strangling-soot)
 
 **BR Madness 2**
 
@@ -175,47 +175,47 @@ Out: 3 Pandemonium, 3 Sparkmage Apprentice
 *(Full decklist with sideboard: `decklist_3_BR_Madness_2.txt`; priced breakdown: `decklist_3_BR_Madness_2_priced.md`)*
 
 Game 6: pburkart (G/W Control)
- Talk about irony! Pburkart drops several fat creatures this game, including double Serra Angel, Shambling Strider, and Silklash Spider. I manage to kill all of them with direct damage, including taking out Silklash Spider with Lighting Axe plus Fiery Temper. Conflagrate takes out one Serra Angel, and a flashbacked Conflagrate with Fiery Temper takes out the second.
+ Talk about irony! Pburkart drops several fat creatures this game, including double [Serra Angel](https://scryfall.com/card/m15/273/serra-angel), Shambling Strider, and Silklash Spider. I manage to kill all of them with direct damage, including taking out Silklash Spider with Lighting Axe plus [Fiery Temper](https://scryfall.com/card/inr/154/fiery-temper). [Conflagrate](https://scryfall.com/card/tsr/160/conflagrate) takes out one [Serra Angel](https://scryfall.com/card/m15/273/serra-angel), and a flashbacked [Conflagrate](https://scryfall.com/card/tsr/160/conflagrate) with [Fiery Temper](https://scryfall.com/card/inr/154/fiery-temper) takes out the second.
 
-Unfortunately, when pburkart isn't dropping big creatures, he's dropping all four Faith's Fetters (!) and double Icy Manipulator on the board. Black can't deal with enchantments or artifacts, and red can't deal with enchantments. I also draw double Strangling Soot, which are useless against his huge creatures. Eventually he gets a guy to stick to the board (Blinding Angel), and I lose the game.
+Unfortunately, when pburkart isn't dropping big creatures, he's dropping all four [Faith's Fetters](https://scryfall.com/card/rvr/18/faiths-fetters) (!) and double [Icy Manipulator](https://scryfall.com/card/dmr/225/icy-manipulator) on the board. Black can't deal with enchantments or artifacts, and red can't deal with enchantments. I also draw double [Strangling Soot](https://scryfall.com/card/tsr/140/strangling-soot), which are useless against his huge creatures. Eventually he gets a guy to stick to the board ([Blinding Angel](https://scryfall.com/card/9ed/7/blinding-angel)), and I lose the game.
  Record: 4-2
 
 Game 7: Rhiox (Slivers)
- His first drop is Bonesplitter Sliver, and I answer with Smallpox and Reckless Wurm. He drops another Bonesplitter Sliver and a Fury Sliver to the board, but I kill them both with Lightning Axe and Fiery Temper (madness!), allowing Reckless Wurm to hit five times for the win. 
+ His first drop is [Bonesplitter Sliver](https://scryfall.com/card/cmm/874/bonesplitter-sliver), and I answer with [Smallpox](https://scryfall.com/card/tsr/139/smallpox) and [Reckless Wurm](https://scryfall.com/card/tsr/181/reckless-wurm). He drops another [Bonesplitter Sliver](https://scryfall.com/card/cmm/874/bonesplitter-sliver) and a [Fury Sliver](https://scryfall.com/card/tsr/164/fury-sliver) to the board, but I kill them both with [Lightning Axe](https://scryfall.com/card/inr/162/lightning-axe) and [Fiery Temper](https://scryfall.com/card/inr/154/fiery-temper) (madness!), allowing [Reckless Wurm](https://scryfall.com/card/tsr/181/reckless-wurm) to hit five times for the win. 
  Record: 5-2
 
-Akroma, Angel of Fury
+[![Akroma, Angel of Fury](https://api.scryfall.com/cards/mkc/146?format=image&version=normal)](https://scryfall.com/card/mkc/146/akroma-angel-of-fury)
 
 Game 8: Drahcirone (Mono-Green Aggro)
- Remember my Game 12 against Manxset during Rescue Me? No – let me refresh you – loss taken, due to Mire Boas. In this match, I get revenge on Mire Boa at Drahcirone's expense, as Jaya Ballard takes out three of them, while using Fiery Temper to take out Scryb Ranger. Drahcirone drops Spectral Force, but I deal with the fatty using Lightning Axe plus Fiery Temper. I get Akroma onto the board, and he lands another Spectral Force. The game ends with me winning a damage race by using Jaya to Incinerate Drahcirone at end of turn, discarding Muck Drubb, and pushing through enough damage with the Drubb to Incinerate after the Akroma hit to win exactly.
+ Remember my Game 12 against Manxset during Rescue Me? No – let me refresh you – loss taken, due to [Mire Boa](https://scryfall.com/card/tsr/219/mire-boa)s. In this match, I get revenge on [Mire Boa](https://scryfall.com/card/tsr/219/mire-boa) at Drahcirone's expense, as Jaya Ballard takes out three of them, while using [Fiery Temper](https://scryfall.com/card/inr/154/fiery-temper) to take out [Scryb Ranger](https://scryfall.com/card/tsr/227/scryb-ranger). Drahcirone drops [Spectral Force](https://scryfall.com/card/tsp/217/spectral-force), but I deal with the fatty using [Lightning Axe](https://scryfall.com/card/inr/162/lightning-axe) plus [Fiery Temper](https://scryfall.com/card/inr/154/fiery-temper). I get Akroma onto the board, and he lands another [Spectral Force](https://scryfall.com/card/tsp/217/spectral-force). The game ends with me winning a damage race by using Jaya to Incinerate Drahcirone at end of turn, discarding [Muck Drubb](https://scryfall.com/card/tsr/126/muck-drubb), and pushing through enough damage with the Drubb to [Incinerate](https://scryfall.com/card/jvc/51/incinerate) after the Akroma hit to win exactly.
  Record: 6-2
 
-Akroma, Angel of Fury Count: 3
-Muck Drubb Count: 2
+[Akroma, Angel of Fury](https://scryfall.com/card/mkc/146/akroma-angel-of-fury) Count: 3
+[Muck Drubb](https://scryfall.com/card/tsr/126/muck-drubb) Count: 2
 
 Game 9: Defosses (Slivers)
- I destroy him with Jaya plus Fiery Temper, and then drop Smallpox to kill his Kaervek with Phyrexian Totem on the board. Phyrexian Totem goes all the way from that point.
+ I destroy him with Jaya plus [Fiery Temper](https://scryfall.com/card/inr/154/fiery-temper), and then drop [Smallpox](https://scryfall.com/card/tsr/139/smallpox) to kill his Kaervek with [Phyrexian Totem](https://scryfall.com/card/dde/20/phyrexian-totem) on the board. [Phyrexian Totem](https://scryfall.com/card/dde/20/phyrexian-totem) goes all the way from that point.
  Record: 7-2
 
 Game 10: wrabbit2 (U/B Control)
- One of the benefits of playing Jaya Ballard is that you can randomly hose Blue decks. This is one of those cases—Jaya takes out Shadowmage Infiltrator plus drops Reckless Wurm to the board on turn four, and I drop Muck Drubb on turn five to his Cry of Contrition. I drop him to four by the time he draws Damnation, and by then I have Phyrexian Totem on the board to end the game.
+ One of the benefits of playing Jaya Ballard is that you can randomly hose Blue decks. This is one of those cases—Jaya takes out [Shadowmage Infiltrator](https://scryfall.com/card/otc/240/shadowmage-infiltrator) plus drops [Reckless Wurm](https://scryfall.com/card/tsr/181/reckless-wurm) to the board on turn four, and I drop [Muck Drubb](https://scryfall.com/card/tsr/126/muck-drubb) on turn five to his [Cry of Contrition](https://scryfall.com/card/gpt/46/cry-of-contrition). I drop him to four by the time he draws [Damnation](https://scryfall.com/card/2x2/73/damnation), and by then I have [Phyrexian Totem](https://scryfall.com/card/dde/20/phyrexian-totem) on the board to end the game.
  Record: 8-2
 
-Muck Drubb Count: 3 (Only one in the deck!)
+[Muck Drubb](https://scryfall.com/card/tsr/126/muck-drubb) Count: 3 (Only one in the deck!)
 
 Game 11: Geektanic (R/W/U Control)
- This was a relatively long game. I Smallpox away two Lightning Angel and draw no offense other than Phyrexian Totem—but I suspect Electrolyze and Lightning Helix, and I don't want to lose all my permanents. I bait him over time with Reckless Wurms and Jaya Ballards, and when his hand is down to two cards, I decide to come in with the Totem. He only has one burn spell, and I am emboldened to come in with both Totems, finishing the game quickly. 
+ This was a relatively long game. I [Smallpox](https://scryfall.com/card/tsr/139/smallpox) away two Lightning Angel and draw no offense other than [Phyrexian Totem](https://scryfall.com/card/dde/20/phyrexian-totem)—but I suspect [Electrolyze](https://scryfall.com/card/ima/198/electrolyze) and [Lightning Helix](https://scryfall.com/card/mkm/218/lightning-helix), and I don't want to lose all my permanents. I bait him over time with [Reckless Wurm](https://scryfall.com/card/tsr/181/reckless-wurm)s and Jaya Ballards, and when his hand is down to two cards, I decide to come in with the Totem. He only has one burn spell, and I am emboldened to come in with both Totems, finishing the game quickly. 
  Record: 9-2
 
-Well, I'm not happy with Conflagrate at this point. In order to do 3 points of damage, I need to spend seven mana on the front end. In addition, I don't have many cards in my hand by the time Conflagrate hits the graveyard. This isn't like the blue-red deck where I could end up with twelve cards in my hand thanks to Aeon Chronicler and Fathom Seer—when I use a card, it's gone, and I don't have card drawing in this deck.
+Well, I'm not happy with [Conflagrate](https://scryfall.com/card/tsr/160/conflagrate) at this point. In order to do 3 points of damage, I need to spend seven mana on the front end. In addition, I don't have many cards in my hand by the time [Conflagrate](https://scryfall.com/card/tsr/160/conflagrate) hits the graveyard. This isn't like the blue-red deck where I could end up with twelve cards in my hand thanks to [Aeon Chronicler](https://scryfall.com/card/tsr/51/aeon-chronicler) and [Fathom Seer](https://scryfall.com/card/tsr/68/fathom-seer)—when I use a card, it's gone, and I don't have card drawing in this deck.
 
-I've also drawn Phantasmagorian three times, and each time it sat in my hand until the end of the game, useless. If that's not a sign to cut a card, I don't know what is!
+I've also drawn [Phantasmagorian](https://scryfall.com/card/plc/77/phantasmagorian) three times, and each time it sat in my hand until the end of the game, useless. If that's not a sign to cut a card, I don't know what is!
 
-Out: Phantasmagorian, 3 Conflagrate
+Out: [Phantasmagorian](https://scryfall.com/card/plc/77/phantasmagorian), 3 [Conflagrate](https://scryfall.com/card/tsr/160/conflagrate)
 
-Since I'm playing Phyrexian Totem, it's good to know when I can safely activate my guys against a burn deck—such as in that last game. I add in Psychotic Episodes, and throw in a fourth Jaya Ballard—the absolute MVP so far in this deck—so I have a better chance of drawing one each game. Remember—Jaya can pitch Jaya to Jaya to Incinerate, so drawing two Jayas in a game is never a dead draw. Grandeur *this!*
+Since I'm playing [Phyrexian Totem](https://scryfall.com/card/dde/20/phyrexian-totem), it's good to know when I can safely activate my guys against a burn deck—such as in that last game. I add in [Psychotic Episode](https://scryfall.com/card/tsr/132/psychotic-episode)s, and throw in a fourth Jaya Ballard—the absolute MVP so far in this deck—so I have a better chance of drawing one each game. Remember—Jaya can pitch Jaya to Jaya to Incinerate, so drawing two Jayas in a game is never a dead draw. Grandeur *this!*
 
-In: 3 Psychotic Episode, 1 Jaya Ballard
+In: 3 [Psychotic Episode](https://scryfall.com/card/tsr/132/psychotic-episode), 1 Jaya Ballard
 
 **BR Madness 3**
 
@@ -244,23 +244,23 @@ In: 3 Psychotic Episode, 1 Jaya Ballard
 *(Full decklist with sideboard: `decklist_4_BR_Madness_3.txt`; priced breakdown: `decklist_4_BR_Madness_3_priced.md`)*
 
 Game 12: Forrest Gump (R/W Boros)
- He double-mulligans into a one-land hand, and drops Boros Recruit. I make them go away with Smallpox. I drop a Reckless Wurm, and kill him before he gets another land into play.
+ He double-mulligans into a one-land hand, and drops [Boros Recruit](https://scryfall.com/card/rav/243/boros-recruit). I make them go away with [Smallpox](https://scryfall.com/card/tsr/139/smallpox). I drop a [Reckless Wurm](https://scryfall.com/card/tsr/181/reckless-wurm), and kill him before he gets another land into play.
  Record: 10-2
 
 Game 13: v4p0o0o (G/W Saprolings)
- He has 7 creatures in play by turn four with Scatter the Seeds, Elves, and Fists of Ironwood. I stare at the two Smallpox in my hand and silently curse at myself. I put up a small fight with Stingscourger and Jaya Ballard, but I die long before I get to seven mana to Inferno everything away.
+ He has 7 creatures in play by turn four with [Scatter the Seeds](https://scryfall.com/card/mm2/159/scatter-the-seeds), Elves, and [Fists of Ironwood](https://scryfall.com/card/rvr/139/fists-of-ironwood). I stare at the two [Smallpox](https://scryfall.com/card/tsr/139/smallpox) in my hand and silently curse at myself. I put up a small fight with [Stingscourger](https://scryfall.com/card/tsr/192/stingscourger) and Jaya Ballard, but I die long before I get to seven mana to Inferno everything away.
  Record: 10-3
 
 Game 14: CrankBunny (U/B Control)
- He counters or kills everything I try to cast or put into play, and gains massive card advantage with Phyrexian Arena. I end the game with only lands in play—he ends the game with Consume Spirit.
+ He counters or kills everything I try to cast or put into play, and gains massive card advantage with [Phyrexian Arena](https://scryfall.com/card/fdn/180/phyrexian-arena). I end the game with only lands in play—he ends the game with [Consume Spirit](https://scryfall.com/card/dvd/56/consume-spirit).
  Record: 10-4
 
-So far, I've lost four games. One was against the G/W Fattie deck, two were against weenie hordes (Slivers and Saprolings) and one was against black-blue control. In short, three of my four losses came to creatures. Strangling Soot hasn't been too great, and it can't kill multiple creatures in the same turn (unless I'm at nine mana). Good ol' standby Pyroclasm seems to be the solution here—I would have loved to have had it against v4p0o0o in Game 13!
+So far, I've lost four games. One was against the G/W Fattie deck, two were against weenie hordes (Slivers and Saprolings) and one was against black-blue control. In short, three of my four losses came to creatures. [Strangling Soot](https://scryfall.com/card/tsr/140/strangling-soot) hasn't been too great, and it can't kill multiple creatures in the same turn (unless I'm at nine mana). Good ol' standby [Pyroclasm](https://scryfall.com/card/dsk/149/pyroclasm) seems to be the solution here—I would have loved to have had it against v4p0o0o in Game 13!
 
-I also kick Muck Drubb out of the deck—I haven't redirected a single spell with it yet, and I'd rather try another one-of in the deck. Haakon was the fourth-place vote getter out of five for the "which black-red deck should I build?" vote, but several forum posters pointed out one fact: Haakon has a lot of synergy with Madness! I'm already playing a lot of outlets which let me discard cards (Jaya Ballard, Smallpox), so why not throw in a decent-sized creature that I can only play from my graveyard? I'm not talking about building an entire deck around Haakon (they cost around 3 tickets each on **Magic Online**—Jaya costs 1 for those keeping track, by the way), but it complements the primary madness theme quite well.
+I also kick [Muck Drubb](https://scryfall.com/card/tsr/126/muck-drubb) out of the deck—I haven't redirected a single spell with it yet, and I'd rather try another one-of in the deck. Haakon was the fourth-place vote getter out of five for the "which black-red deck should I build?" vote, but several forum posters pointed out one fact: Haakon has a lot of synergy with Madness! I'm already playing a lot of outlets which let me discard cards (Jaya Ballard, [Smallpox](https://scryfall.com/card/tsr/139/smallpox)), so why not throw in a decent-sized creature that I can only play from my graveyard? I'm not talking about building an entire deck around Haakon (they cost around 3 tickets each on **Magic Online**—Jaya costs 1 for those keeping track, by the way), but it complements the primary madness theme quite well.
 
-Out: 3 Strangling Soot, 1 Muck Drubb
- In: 3 Pyroclasm, 1 Haakon, Stromgald Scourge
+Out: 3 [Strangling Soot](https://scryfall.com/card/tsr/140/strangling-soot), 1 [Muck Drubb](https://scryfall.com/card/tsr/126/muck-drubb)
+ In: 3 [Pyroclasm](https://scryfall.com/card/dsk/149/pyroclasm), 1 [Haakon, Stromgald Scourge](https://scryfall.com/card/moc/252/haakon-stromgald-scourge)
 
 **BR Madness 4**
 
@@ -289,15 +289,15 @@ Out: 3 Strangling Soot, 1 Muck Drubb
 *(Full decklist with sideboard: `decklist_5_BR_Madness_4.txt`; priced breakdown: `decklist_5_BR_Madness_4_priced.md`)*
 
 Game 15: dynamoottori (B/G Saprolings)
- I double-mulligan. Get run over by Saprolings with Life and Limb, stuck at two mana. I would note that a Pyroclasm at any time would have completely wiped out my opponent's side of the board, Life *and* Limb.
+ I double-mulligan. Get run over by Saprolings with Life and Limb, stuck at two mana. I would note that a [Pyroclasm](https://scryfall.com/card/dsk/149/pyroclasm) at any time would have completely wiped out my opponent's side of the board, Life *and* Limb.
  Record: 10-5
 
-I've drawn Psychotic Episodes in several games and never wanted or needed to cast it. Out it goes! In their place, a fourth Pyroclasm (so at least in Game 15, I could have told myself I had a 1/15 chance of drawing one initially, instead of 1/20) and an extra Mountain and Swamp. Land has been tight (but not horribly bad) in some of the games, and so I'd like a little breathing room on land. 25 lands in the deck, with four totems, might be a bit much, but I'd rather err on the side of caution and take some lands out later than have to mulligan again.
+I've drawn [Psychotic Episode](https://scryfall.com/card/tsr/132/psychotic-episode)s in several games and never wanted or needed to cast it. Out it goes! In their place, a fourth [Pyroclasm](https://scryfall.com/card/dsk/149/pyroclasm) (so at least in Game 15, I could have told myself I had a 1/15 chance of drawing one initially, instead of 1/20) and an extra [Mountain](https://scryfall.com/card/msc/858/mountain) and [Swamp](https://scryfall.com/card/msh/291/swamp). Land has been tight (but not horribly bad) in some of the games, and so I'd like a little breathing room on land. 25 lands in the deck, with four totems, might be a bit much, but I'd rather err on the side of caution and take some lands out later than have to mulligan again.
 
-(Plus, Smallpox kills my lands too, right?)
+(Plus, [Smallpox](https://scryfall.com/card/tsr/139/smallpox) kills my lands too, right?)
 
-Out: 3 Psychotic Episode
- In: 1 Mountain, 1 Swamp, 1 Pyroclasm
+Out: 3 [Psychotic Episode](https://scryfall.com/card/tsr/132/psychotic-episode)
+ In: 1 [Mountain](https://scryfall.com/card/msc/858/mountain), 1 [Swamp](https://scryfall.com/card/msh/291/swamp), 1 [Pyroclasm](https://scryfall.com/card/dsk/149/pyroclasm)
 
 **BR Madness 5**
 
@@ -325,15 +325,15 @@ Out: 3 Psychotic Episode
 *(Full decklist with sideboard: `decklist_6_BR_Madness_5.txt`; priced breakdown: `decklist_6_BR_Madness_5_priced.md`)*
 
 Game 16: Leahanne01 (Mono-Black Control)
- I get Haakon early, but he gets Phyrexian Arena, and hits me with double Persecute— once black, and once red. The red one lets me drop Reckless Wurm into play, but he kills the Wurm, kills Haakon five times (Sudden Death, Last Gasp, Cruel Edict) and then beats me to death with Twisted Abomination.
+ I get Haakon early, but he gets [Phyrexian Arena](https://scryfall.com/card/fdn/180/phyrexian-arena), and hits me with double [Persecute](https://scryfall.com/card/9ed/151/persecute)— once black, and once red. The red one lets me drop [Reckless Wurm](https://scryfall.com/card/tsr/181/reckless-wurm) into play, but he kills the Wurm, kills Haakon five times ([Sudden Death](https://scryfall.com/card/tsr/143/sudden-death), [Last Gasp](https://scryfall.com/card/sos/86/last-gasp), [Cruel Edict](https://scryfall.com/card/dvd/48/cruel-edict)) and then beats me to death with [Twisted Abomination](https://scryfall.com/card/cmm/194/twisted-abomination).
  Record: 10-6
 
-I've lost twice now to Phyrexian Arena—and make no mistake, it's the Arena that's beating me, not the cards that go with it! My opponents can outdraw me two-to-one cards a turn, which leaves me playing catch-up the entire game to their removal. I want something that can help me keep up with the Joneses, but Phyrexian Arena itself is quite expensive online.
+I've lost twice now to [Phyrexian Arena](https://scryfall.com/card/fdn/180/phyrexian-arena)—and make no mistake, it's the Arena that's beating me, not the cards that go with it! My opponents can outdraw me two-to-one cards a turn, which leaves me playing catch-up the entire game to their removal. I want something that can help me keep up with the Joneses, but [Phyrexian Arena](https://scryfall.com/card/fdn/180/phyrexian-arena) itself is quite expensive online.
 
-Since I didn't get to be a part of *Future Sight* preview week here on **magicthegathering.com**, I decide to go into the future to get my card advantage. I "borrow" Null Profusion from next week's deck and add it to this one. This isn't an arbitrary choice—with the discount on madness cards, it's possible for me to drop several cards a turn with the Profusion. Plus, I have ways to end the turn with three cards in hand (playing Rakdos Carnarium, Haakon from the graveyard) which will allow me to discard my third card (if it's a Madness card) to Null Profusion itself!
+Since I didn't get to be a part of *Future Sight* preview week here on **magicthegathering.com**, I decide to go into the future to get my card advantage. I "borrow" [Null Profusion](https://scryfall.com/card/plc/89/null-profusion) from next week's deck and add it to this one. This isn't an arbitrary choice—with the discount on madness cards, it's possible for me to drop several cards a turn with the Profusion. Plus, I have ways to end the turn with three cards in hand (playing [Rakdos Carnarium](https://scryfall.com/card/ecc/161/rakdos-carnarium), Haakon from the graveyard) which will allow me to discard my third card (if it's a Madness card) to [Null Profusion](https://scryfall.com/card/plc/89/null-profusion) itself!
 
-Out: 1 Jaya Ballard, 1 Reckless Wurm, 1 Smallpox, 1 Terramorphic Expanse
- In: 4 Null Profusion
+Out: 1 Jaya Ballard, 1 [Reckless Wurm](https://scryfall.com/card/tsr/181/reckless-wurm), 1 [Smallpox](https://scryfall.com/card/tsr/139/smallpox), 1 [Terramorphic Expanse](https://scryfall.com/card/msc/273/terramorphic-expanse)
+ In: 4 [Null Profusion](https://scryfall.com/card/plc/89/null-profusion)
 
 **BR Madness 6**
 
@@ -361,37 +361,37 @@ Out: 1 Jaya Ballard, 1 Reckless Wurm, 1 Smallpox, 1 Terramorphic Expanse
 
 *(Full decklist with sideboard: `decklist_7_BR_Madness_6.txt`; priced breakdown: `decklist_7_BR_Madness_6_priced.md`)*
 
-Game 17: hmfic (Roiling Horror)
- I play abysmally bad **Magic** and lose. This is no shot at hmfic—this is just fact. He drops a Mourning Thrull, and I drop Phyrexian Totem. He swings and suspends Roiling Horror. I then Stingscourger his Thrull (instead of holding it back for his Horror) and tap myself out of red while holding a Lightning Axe. He untaps, plays Tendrils of Corruption during his upkeep to kill my Stingscourger (and gain four life) and hits me with the Horror, making it a 10/10. I burn his Mourning Thrull, Smallpox away his first Horror, but he drops another and decimates me.
+Game 17: hmfic ([Roiling Horror](https://scryfall.com/card/plc/79/roiling-horror))
+ I play abysmally bad **Magic** and lose. This is no shot at hmfic—this is just fact. He drops a [Mourning Thrull](https://scryfall.com/card/rvr/204/mourning-thrull), and I drop [Phyrexian Totem](https://scryfall.com/card/dde/20/phyrexian-totem). He swings and suspends [Roiling Horror](https://scryfall.com/card/plc/79/roiling-horror). I then [Stingscourger](https://scryfall.com/card/tsr/192/stingscourger) his Thrull (instead of holding it back for his Horror) and tap myself out of red while holding a [Lightning Axe](https://scryfall.com/card/inr/162/lightning-axe). He untaps, plays [Tendrils of Corruption](https://scryfall.com/card/tsr/145/tendrils-of-corruption) during his upkeep to kill my [Stingscourger](https://scryfall.com/card/tsr/192/stingscourger) (and gain four life) and hits me with the Horror, making it a 10/10. I burn his [Mourning Thrull](https://scryfall.com/card/rvr/204/mourning-thrull), [Smallpox](https://scryfall.com/card/tsr/139/smallpox) away his first Horror, but he drops another and decimates me.
  Record: 10-7
 
-Fiery Temper
+[![Fiery Temper](https://api.scryfall.com/cards/inr/154?format=image&version=normal)](https://scryfall.com/card/inr/154/fiery-temper)
 
 Game 18: Tika_of_Nothing (Mono-Black Control)
- I get a good mix of Phyrexian Totem, Jaya Ballard, and Fiery Tempers, win. This was a pretty textbook game of how this deck should work—madness enablers, madness cards, and beatdown.
+ I get a good mix of [Phyrexian Totem](https://scryfall.com/card/dde/20/phyrexian-totem), Jaya Ballard, and [Fiery Temper](https://scryfall.com/card/inr/154/fiery-temper)s, win. This was a pretty textbook game of how this deck should work—madness enablers, madness cards, and beatdown.
  Record: 11-7
 
 Game 19: Lawbringer Knight (B/W Knight with Haakon)
- Jaya Ballard and Phyrexian Totem clear the board, with Reckless Wurm and Fiery Tempers abounding.
+ Jaya Ballard and [Phyrexian Totem](https://scryfall.com/card/dde/20/phyrexian-totem) clear the board, with [Reckless Wurm](https://scryfall.com/card/tsr/181/reckless-wurm) and [Fiery Temper](https://scryfall.com/card/inr/154/fiery-temper)s abounding.
  Record: 12-7
 
 Game 20: Wolfgang67 (U/B Control)
- I use Jaya Ballard to kill Imaginary Pets and Drift of Phantasms, discarding Fiery Temper and Haakon. Keldon Marauders hit for five, and Haakon comes back from the grave to finish off Wolfgang67 with Jaya locking the board down.
+ I use Jaya Ballard to kill Imaginary Pets and [Drift of Phantasms](https://scryfall.com/card/rvr/42/drift-of-phantasms), discarding [Fiery Temper](https://scryfall.com/card/inr/154/fiery-temper) and Haakon. [Keldon Marauders](https://scryfall.com/card/ema/136/keldon-marauders) hit for five, and Haakon comes back from the grave to finish off Wolfgang67 with Jaya locking the board down.
  Record: 13-7
 
-While Keldon Marauders have been decent so far, they are essentially a gimped Lava Axe. They can be blocked, they can't be rescued, and I need a more permanent offense so I don't lose one of the few offensive threats in my deck to the passage of time.
+While [Keldon Marauders](https://scryfall.com/card/ema/136/keldon-marauders) have been decent so far, they are essentially a gimped [Lava Axe](https://scryfall.com/card/m19/150/lava-axe). They can be blocked, they can't be rescued, and I need a more permanent offense so I don't lose one of the few offensive threats in my deck to the passage of time.
 
 Haakon, which I have drawn an absurd number of time already (what is it with me drawing all of my one-ofs this week?) has been great. I want more of him, and my fourth Jaya back. What was I thinking when I took the fourth one out of the deck? It's the best card fer crying out loud! Chalk that one up to a brain fart, if you will.
 
-Out: 3 Keldon Marauders
+Out: 3 [Keldon Marauders](https://scryfall.com/card/ema/136/keldon-marauders)
  In: 1 Jaya Ballard, 2 Haakon
 
-Game 21: Wacou (G/B/R Dread Return deck)
- I can't draw a second red for anything, end up discarding with Fiery Temper to having eight cards in hand. I finally draw enough red to cast Jaya Ballard, but he gets Triskelavus—which I kill with Inferno, but he brings it back with Dread Return, and then expends it, flashes back Dread Return to bring it back again, and kills me.
+Game 21: Wacou (G/B/R [Dread Return](https://scryfall.com/card/cmm/153/dread-return) deck)
+ I can't draw a second red for anything, end up discarding with [Fiery Temper](https://scryfall.com/card/inr/154/fiery-temper) to having eight cards in hand. I finally draw enough red to cast Jaya Ballard, but he gets [Triskelavus](https://scryfall.com/card/cm2/226/triskelavus)—which I kill with Inferno, but he brings it back with [Dread Return](https://scryfall.com/card/cmm/153/dread-return), and then expends it, flashes back [Dread Return](https://scryfall.com/card/cmm/153/dread-return) to bring it back again, and kills me.
  Record: 13-8
 
-Out: 1 Swamp
- In: 1 Mountain
+Out: 1 [Swamp](https://scryfall.com/card/msh/291/swamp)
+ In: 1 [Mountain](https://scryfall.com/card/msc/858/mountain)
 
 Just smoothing the mana a little.
 
@@ -421,14 +421,14 @@ Just smoothing the mana a little.
 *(Full decklist with sideboard: `decklist_8_BR_Madness_8.txt`; priced breakdown: `decklist_8_BR_Madness_8_priced.md`)*
 
 Game 22: bconrados (R/W Slivers)
- He gets Sidewinder and Quilled Sliver, puts Griffin Guide on one. I kill that one with Jaya, and then kill the Griffin token plus the other Sliver with Jaya plus Reckless Wurm. I then drop Null Profusion, and play Haakon from my graveyard the next turn. During my cleanup step, I discard double Fiery Temper (6 damage for {R}{R}) and a Pyroclasm. He drops Leonin Skyknight plus Vulshok Morningstar on it. I play Smallpox, kill Haakon, discard another Fiery Temper, redraw from Smallpox and the Temper, and win the game.
+ He gets Sidewinder and [Quilled Sliver](https://scryfall.com/card/tsp/37/quilled-sliver), puts Griffin Guide on one. I kill that one with Jaya, and then kill the Griffin token plus the other Sliver with Jaya plus [Reckless Wurm](https://scryfall.com/card/tsr/181/reckless-wurm). I then drop [Null Profusion](https://scryfall.com/card/plc/89/null-profusion), and play Haakon from my graveyard the next turn. During my cleanup step, I discard double [Fiery Temper](https://scryfall.com/card/inr/154/fiery-temper) (6 damage for {R}{R}) and a [Pyroclasm](https://scryfall.com/card/dsk/149/pyroclasm). He drops Leonin Skyknight plus [Vulshok Morningstar](https://scryfall.com/card/ddi/66/vulshok-morningstar) on it. I play [Smallpox](https://scryfall.com/card/tsr/139/smallpox), kill Haakon, discard another [Fiery Temper](https://scryfall.com/card/inr/154/fiery-temper), redraw from [Smallpox](https://scryfall.com/card/tsr/139/smallpox) and the Temper, and win the game.
  Record: 14-8
 
-Game 23: Joydivision (U/W/R Rescue/Momentary Blink)
- Jaya Ballard keeps the board clear and drops Reckless Wurm to the table. Akroma, Angel of Fury stays back as a wall against Calciderm for a turn and then goes on the offense with Fiery Temper to win the game.
+Game 23: Joydivision (U/W/R Rescue/[Momentary Blink](https://scryfall.com/card/dmr/15/momentary-blink))
+ Jaya Ballard keeps the board clear and drops [Reckless Wurm](https://scryfall.com/card/tsr/181/reckless-wurm) to the table. [Akroma, Angel of Fury](https://scryfall.com/card/mkc/146/akroma-angel-of-fury) stays back as a wall against [Calciderm](https://scryfall.com/card/tsr/11/calciderm) for a turn and then goes on the offense with [Fiery Temper](https://scryfall.com/card/inr/154/fiery-temper) to win the game.
  Record: 15-8
 
-I definitely had a lot of fun with this deck and ended up with quite a little pile of synergy. I'm not sure this is the most absolutely mind-blowingly powerful madness deck that can be built in Standard right now, but the interactions between the madness cards, Jaya, Haakon, Null Profusion, Smallpox, and other cards made it a really tight package. There were combos within combos, and my opponents didn't quite know what to expect or to play around in most of the games.
+I definitely had a lot of fun with this deck and ended up with quite a little pile of synergy. I'm not sure this is the most absolutely mind-blowingly powerful madness deck that can be built in Standard right now, but the interactions between the madness cards, Jaya, Haakon, [Null Profusion](https://scryfall.com/card/plc/89/null-profusion), [Smallpox](https://scryfall.com/card/tsr/139/smallpox), and other cards made it a really tight package. There were combos within combos, and my opponents didn't quite know what to expect or to play around in most of the games.
 
 A poll, if you will: After 10 Decks in 10 Weeks, it's time to add Planar Chaos to my Battle of Wits deck. You decide: With Battle of Wits included. Without Battle of Wits . I dare you! | A poll, if you will: After 10 Decks in 10 Weeks, it's time to add Planar Chaos to my Battle of Wits deck. You decide: With Battle of Wits included. Without Battle of Wits . I dare you! | A poll, if you will: After 10 Decks in 10 Weeks, it's time to add Planar Chaos to my Battle of Wits deck. You decide: | With Battle of Wits included. Without Battle of Wits . I dare you! | With Battle of Wits included. Without Battle of Wits . I dare you!
 A poll, if you will: After 10 Decks in 10 Weeks, it's time to add Planar Chaos to my Battle of Wits deck. You decide: With Battle of Wits included. Without Battle of Wits . I dare you! | A poll, if you will: After 10 Decks in 10 Weeks, it's time to add Planar Chaos to my Battle of Wits deck. You decide: | With Battle of Wits included. Without Battle of Wits . I dare you! | With Battle of Wits included. Without Battle of Wits . I dare you!

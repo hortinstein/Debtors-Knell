@@ -43,45 +43,45 @@ Tribal Wars is the best place to find a zombie deck, and this particular zombie 
 
 ##### Playing The Deck
 
-Patriarch's Bidding
+[![Patriarch's Bidding](https://api.scryfall.com/cards/mh2/275?format=image&version=normal)](https://scryfall.com/card/mh2/275/patriarchs-bidding)
 
-The main engine of this deck is Read the Runes and Patriarch's Bidding. By using these two cards, it should be an easy trick to make a horde of zombies. If one of those zombies happens to be a Noxious Ghoul, well, let's just say about twenty things will go on the stack and all your opponent's creatures will choke to death while you click away.
+The main engine of this deck is [Read the Runes](https://scryfall.com/card/jmp/167/read-the-runes) and [Patriarch's Bidding](https://scryfall.com/card/mh2/275/patriarchs-bidding). By using these two cards, it should be an easy trick to make a horde of zombies. If one of those zombies happens to be a [Noxious Ghoul](https://scryfall.com/card/hop/35/noxious-ghoul), well, let's just say about twenty things will go on the stack and all your opponent's creatures will choke to death while you click away.
 
 One of the tough things to understand about zombie-Bidding is that you need to know, in the eternal words of Mike Flores, who's the beat-down. Since this is a mid-speed deck it can go several ways.
 
-For example, against an Elf deck, you are the control player. You should bide your time and hold down the fort until you can Read the Runes for a bunch, then Bidding for Zombies, which will create a Wrath-their-team effect with a Noxious Ghoul. Afterwards, proceed with the swinging of a large, shambling army.
+For example, against an Elf deck, you are the control player. You should bide your time and hold down the fort until you can [Read the Runes](https://scryfall.com/card/jmp/167/read-the-runes) for a bunch, then Bidding for Zombies, which will create a Wrath-their-team effect with a [Noxious Ghoul](https://scryfall.com/card/hop/35/noxious-ghoul). Afterwards, proceed with the swinging of a large, shambling army.
 
-Against other mid-speed decks (or worse, other Zombie decks that wont let you wrath), you may need to Gempalm Pollute your opponent out (Unholy Grotto is helpful in doing this). Against control decks, be prepared to take initiative and beat with large Soulless Ones and Nantuko Husks.
+Against other mid-speed decks (or worse, other Zombie decks that wont let you wrath), you may need to Gempalm Pollute your opponent out ([Unholy Grotto](https://scryfall.com/card/ons/327/unholy-grotto) is helpful in doing this). Against control decks, be prepared to take initiative and beat with large [Soulless One](https://scryfall.com/card/hop/41/soulless-one)s and [Nantuko Husk](https://scryfall.com/card/ori/109/nantuko-husk)s.
 
-As a general rule, if your opponent is playing a creature deck, you'll want to take the control route and clear the board with your Noxious Ghouls. That much is rather straightforward.
+As a general rule, if your opponent is playing a creature deck, you'll want to take the control route and clear the board with your [Noxious Ghoul](https://scryfall.com/card/hop/35/noxious-ghoul)s. That much is rather straightforward.
 
-If your opponent is playing a counter/Wrath-oriented deck it gets more complicated. Don't overextend -- use your resources cautiously -- you won't be able to bid your legions back into play because Bidding will be a likely counterspell target. Instead, make your opponent deal with your threats one or two at a time, and make sure to apply enough pressure for a 4- or 5-turn clock. Your most valuable resource is Read the Runes, because it lets you use your mana as a threat on your opponent's end step (or in response to Wrath) while gaining a huge card selection advantage. Just keep plugging away with this strategy and try to win before your opponent takes control of the game.
+If your opponent is playing a counter/Wrath-oriented deck it gets more complicated. Don't overextend -- use your resources cautiously -- you won't be able to bid your legions back into play because Bidding will be a likely counterspell target. Instead, make your opponent deal with your threats one or two at a time, and make sure to apply enough pressure for a 4- or 5-turn clock. Your most valuable resource is [Read the Runes](https://scryfall.com/card/jmp/167/read-the-runes), because it lets you use your mana as a threat on your opponent's end step (or in response to Wrath) while gaining a huge card selection advantage. Just keep plugging away with this strategy and try to win before your opponent takes control of the game.
 
 ##### Sideboarding Tips
 
-Graveborn Muse
+[![Graveborn Muse](https://api.scryfall.com/cards/10e/145?format=image&version=normal)](https://scryfall.com/card/10e/145/graveborn-muse)
 
 Try to stick with Zombie-oriented cards. Here are some examples:
 
 **Shepherd of Rot** 
 
-Shepherd of Rot is good against the same decks you want Gempalm Polluter for.
+Shepherd of Rot is good against the same decks you want [Gempalm Polluter](https://scryfall.com/card/lgn/70/gempalm-polluter) for.
 
 **Crypt Creeper** Against annoying flashback/graveyard effects like U-G or Reanimator, Crypt Creeper can remove key cards your opponent wants against your deck.
 
-**Graveborn Muse** 
+**[Graveborn Muse](https://scryfall.com/card/10e/145/graveborn-muse)** 
 
-Graveborn Muse is great against control decks, but be careful about how many zombies you put out. You will need a Husk to sacrifice the Muse if you plan to cast Bidding.
+[Graveborn Muse](https://scryfall.com/card/10e/145/graveborn-muse) is great against control decks, but be careful about how many zombies you put out. You will need a Husk to sacrifice the Muse if you plan to cast Bidding.
 
-Other good sideboard cards are Duress and Cabal Therapy against control, and Smother versus Wild Mongrel decks.
+Other good sideboard cards are [Duress](https://scryfall.com/card/fdn/606/duress) and [Cabal Therapy](https://scryfall.com/card/ema/83/cabal-therapy) against control, and [Smother](https://scryfall.com/card/ddp/57/smother) versus [Wild Mongrel](https://scryfall.com/card/uma/194/wild-mongrel) decks.
 
 ##### Adding More Money To The Deck
 
-Rotlung Reanimator
+[![Rotlung Reanimator](https://api.scryfall.com/cards/ons/164?format=image&version=normal)](https://scryfall.com/card/ons/164/rotlung-reanimator)
 
-If you want to go all out with this deck, I suggest using Rotlung Reanimators and more zombie clerics like Withered Wretch and perhaps maindeck Shepherd of Rot. This gives you better game versus decks with a lot of creature removal and extraordinary game versus Cleric decks...not to mention your Husks go lethal a lot faster. Polluted Deltas and Underground Rivers also help, considering Read the Runes is your only blue card and drawing more than one Island isn't very helpful.
+If you want to go all out with this deck, I suggest using [Rotlung Reanimator](https://scryfall.com/card/ons/164/rotlung-reanimator)s and more zombie clerics like [Withered Wretch](https://scryfall.com/card/hop/45/withered-wretch) and perhaps maindeck Shepherd of Rot. This gives you better game versus decks with a lot of creature removal and extraordinary game versus Cleric decks...not to mention your Husks go lethal a lot faster. Polluted Deltas and [Underground River](https://scryfall.com/card/dsc/321/underground-river)s also help, considering [Read the Runes](https://scryfall.com/card/jmp/167/read-the-runes) is your only blue card and drawing more than one [Island](https://scryfall.com/card/msh/289/island) isn't very helpful.
 
-Overall the deck is a lot of fun. However, beware if you have a computer that locks up -- it can get a little rough when twenty Noxious Ghoul activations go on the stack -- you don't want to time out!
+Overall the deck is a lot of fun. However, beware if you have a computer that locks up -- it can get a little rough when twenty [Noxious Ghoul](https://scryfall.com/card/hop/35/noxious-ghoul) activations go on the stack -- you don't want to time out!
 
 I'm anxious to see what will happen to this archetype once the Scourge set comes out. Will Zombie Beats be the next big thing? Zombie Control? Finding out is half the fun. Just watch your brains -- they are tasty!
 

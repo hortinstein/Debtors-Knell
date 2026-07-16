@@ -6,7 +6,7 @@
 
 ---
 
-Howdy! Welcome back after a week of Memorial Day-induced hiatus. If you need a refresher on where we've been, check out the [first week](https://web.archive.org/web/20090603041706/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/jm100) of my Rat's Nest preconstructed evolution, then check out the [second week](https://web.archive.org/web/20090603041706/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/jm101) to see how the deck has turned away from its black weenie roots (and Umezawa's Jitte) to embrace more of a reanimation flavor. Once you've done all of that, you'll see that I ended up here:
+Howdy! Welcome back after a week of Memorial Day-induced hiatus. If you need a refresher on where we've been, check out the [first week](https://web.archive.org/web/20090603041706/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/jm100) of my Rat's Nest preconstructed evolution, then check out the [second week](https://web.archive.org/web/20090603041706/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/jm101) to see how the deck has turned away from its black weenie roots (and [Umezawa's Jitte](https://scryfall.com/card/bok/163/umezawas-jitte)) to embrace more of a reanimation flavor. Once you've done all of that, you'll see that I ended up here:
 
 **Ratimation v.1.5**
 
@@ -31,49 +31,49 @@ Howdy! Welcome back after a week of Memorial Day-induced hiatus. If you need a r
 
 *(Full decklist with sideboard: `decklist_1_Ratimation_v15.txt`; priced breakdown: `decklist_1_Ratimation_v15_priced.md`)*
 
-Those of you expecting major changes today are in for a disappointment. I won't be adding green for Sakura-Tribe Elder and Eternal Witness, nor will I be dropping the majority of the Rats to make a Slumbering Tora reanimation deck. I will be talking about these options, though.
+Those of you expecting major changes today are in for a disappointment. I won't be adding green for [Sakura-Tribe Elder](https://scryfall.com/card/soc/285/sakura-tribe-elder) and [Eternal Witness](https://scryfall.com/card/cmm/286/eternal-witness), nor will I be dropping the majority of the Rats to make a Slumbering Tora reanimation deck. I will be talking about these options, though.
 
-See, I like the way this current deck plays. The two things that bother me are 1) getting to five mana for Nighteyes the Desecrator in a deck with twenty-four land and no mana-acceleration, and 2) the presence of Nezumi Cutthroat. Since I most recently added a fourth copy of the Cutthroat, this second point may need some explanation.
+See, I like the way this current deck plays. The two things that bother me are 1) getting to five mana for Nighteyes the Desecrator in a deck with twenty-four land and no mana-acceleration, and 2) the presence of [Nezumi Cutthroat](https://scryfall.com/card/a25/99/nezumi-cutthroat). Since I most recently added a fourth copy of the Cutthroat, this second point may need some explanation.
 
 Good, but maybe not appropriate?
 
-Nezumi Cutthroat is good in this deck. It allows me to break through creature stalemates, often sneaks a Throat Slitter into play, and, basically, has won me a lot of games almost single-handedly. What bothers me is that it still supports an aggressive Rat strategy rather than a Ratimation strategy. Taking the Cutthroat out scares me because it feels so smooth to draw one, but every time I'm winning with it I feel a little... you know... dirty.
+[Nezumi Cutthroat](https://scryfall.com/card/a25/99/nezumi-cutthroat) is good in this deck. It allows me to break through creature stalemates, often sneaks a [Throat Slitter](https://scryfall.com/card/pca/37/throat-slitter) into play, and, basically, has won me a lot of games almost single-handedly. What bothers me is that it still supports an aggressive Rat strategy rather than a Ratimation strategy. Taking the Cutthroat out scares me because it feels so smooth to draw one, but every time I'm winning with it I feel a little... you know... dirty.
 
 Anyway, those two things that bother me certainly aren't problems that require major alterations. Instead, let's watch these next five games carefully and keep a keen eye for whether my deck is playing like the Ratimation deck it's supposed to be.
 
 *Game 26: Monogreen Snakes*
 
-Much like my game against Snakes two weeks ago, he had Tangle Asp and a few other blockers while I had Nezumi Cutthroat. Two, actually. I played Ravenous Rats, then Nezumi Bone-Reader to sac my Rats as a way of emptying his hand of scary high-cost Snakes. The result was that my two Cutthroats went the distance while Nekrataal played first-striking defense. The game ended quickly.
+Much like my game against Snakes two weeks ago, he had [Tangle Asp](https://scryfall.com/card/5dn/94/tangle-asp) and a few other blockers while I had [Nezumi Cutthroat](https://scryfall.com/card/a25/99/nezumi-cutthroat). Two, actually. I played [Ravenous Rats](https://scryfall.com/card/gvl/37/ravenous-rats), then [Nezumi Bone-Reader](https://scryfall.com/card/chk/127/nezumi-bone-reader) to sac my Rats as a way of emptying his hand of scary high-cost Snakes. The result was that my two Cutthroats went the distance while Nekrataal played first-striking defense. The game ended quickly.
 
 One-game analysis: All Cutthroat, no Ratimation. Boo.
 
 *Game 27: Monogreen Spirit Aggro*
 
-Nezumi Bone-Reader
+[![Nezumi Bone-Reader](https://api.scryfall.com/cards/chk/127?format=image&version=normal)](https://scryfall.com/card/chk/127/nezumi-bone-reader)
 
-His deck was basically a Stompy deck, with Loam Dweller, Sakura-Tribe Elder, Gnarled Mass, Rootrunner, Kodama's Might, and Strength of Cedars as a finisher. He said it wasn't a *Kamigawa* Block deck, but I don't know what other cards were in there. Anyway, we traded creatures back and forth, my two Chittering Rats and Nezumi Bone-Reader wreaking some havoc on his hand. Double-spliced Might on a Gnarled Mass brought me to four life, but then my opponent ran out of steam. I had a Nekrataal that bounced back to hand for Throat Slitter, appeared again, bounced back to hand for Throat Slitter number two, and appeared a third time. That's a lot of creature elimination, and Nezumi Graverobber was there to keep soulshift shenanigans to a minimum.
+His deck was basically a Stompy deck, with [Loam Dweller](https://scryfall.com/card/bok/134/loam-dweller), [Sakura-Tribe Elder](https://scryfall.com/card/soc/285/sakura-tribe-elder), [Gnarled Mass](https://scryfall.com/card/bok/127/gnarled-mass), [Rootrunner](https://scryfall.com/card/chk/237/rootrunner), [Kodama's Might](https://scryfall.com/card/chk/224/kodamas-might), and [Strength of Cedars](https://scryfall.com/card/chk/245/strength-of-cedars) as a finisher. He said it wasn't a *Kamigawa* Block deck, but I don't know what other cards were in there. Anyway, we traded creatures back and forth, my two [Chittering Rats](https://scryfall.com/card/dst/39/chittering-rats) and [Nezumi Bone-Reader](https://scryfall.com/card/chk/127/nezumi-bone-reader) wreaking some havoc on his hand. Double-spliced Might on a [Gnarled Mass](https://scryfall.com/card/bok/127/gnarled-mass) brought me to four life, but then my opponent ran out of steam. I had a [Nekrataal](https://scryfall.com/card/ema/99/nekrataal) that bounced back to hand for [Throat Slitter](https://scryfall.com/card/pca/37/throat-slitter), appeared again, bounced back to hand for [Throat Slitter](https://scryfall.com/card/pca/37/throat-slitter) number two, and appeared a third time. That's a lot of creature elimination, and [Nezumi Graverobber](https://scryfall.com/card/cm2/71/nezumi-graverobber-nighteyes-the-desecrator) was there to keep soulshift shenanigans to a minimum.
 
 I consider ninjutsu bouncing almost as good as reanimation since it exploits comes-into-play abilities, so that was a satisfying victory. My deck didn't care about weenie rush, concentrating instead on controlling the board and my opponent's hand.
 
 *Game 28: White/Green Equip*
 
-I was looking at an interesting choice on the second turn between Nezumi Graverobber, Nezumi Cutthroat, and Distress. Then, on my opponent's first turn, he used Steelshaper's Gift for Sword of Light and Shadow. Okay then, easy choice. I Distressed his Sword, seeing a sea of land and two Sakura-Tribe Elders. I drew and played a series of Chittering Rats and Ravenous Rats to eat his hand, then used my Nezumi Graverobber to start eating his graveyard. Just for fun, I started returning my Chittering Rats to hand with two different Throat Slitters so that he played the same turn again and again. I won at eighteen life.
+I was looking at an interesting choice on the second turn between [Nezumi Graverobber](https://scryfall.com/card/cm2/71/nezumi-graverobber-nighteyes-the-desecrator), [Nezumi Cutthroat](https://scryfall.com/card/a25/99/nezumi-cutthroat), and [Distress](https://scryfall.com/card/m12/94/distress). Then, on my opponent's first turn, he used Steelshaper's Gift for [Sword of Light and Shadow](https://scryfall.com/card/2xm/298/sword-of-light-and-shadow). Okay then, easy choice. I [Distress](https://scryfall.com/card/m12/94/distress)ed his Sword, seeing a sea of land and two [Sakura-Tribe Elder](https://scryfall.com/card/soc/285/sakura-tribe-elder)s. I drew and played a series of [Chittering Rats](https://scryfall.com/card/dst/39/chittering-rats) and [Ravenous Rats](https://scryfall.com/card/gvl/37/ravenous-rats) to eat his hand, then used my [Nezumi Graverobber](https://scryfall.com/card/cm2/71/nezumi-graverobber-nighteyes-the-desecrator) to start eating his graveyard. Just for fun, I started returning my [Chittering Rats](https://scryfall.com/card/dst/39/chittering-rats) to hand with two different [Throat Slitter](https://scryfall.com/card/pca/37/throat-slitter)s so that he played the same turn again and again. I won at eighteen life.
 
-That's two-to-one winning with comes-into-play abilities. I had two Zombify in hand if he had found a Wrath of God or some such nonsense, which was very comforting.
+That's two-to-one winning with comes-into-play abilities. I had two [Zombify](https://scryfall.com/card/fdn/187/zombify) in hand if he had found a [Wrath of God](https://scryfall.com/card/cmm/70/wrath-of-god) or some such nonsense, which was very comforting.
 
 *Game 29: White/Blue Kaldra*
 
-My opponent was remarkably rude for playing such a cool deck. He used Ethereal Haze and Holy Day to buy him time to set up the pieces of Kaldra, with Fabricate to help his cause. I flipped into Nighteyes the Desecrator right away, then used Chittering Rats and Throat Slitter to deny him a few draws. At six life, he achieved his Kaldra token, but I started my Rat Attack in earnest to dropped him to two with Nezumi Cutthroat on the board, using Zombify on my Chittering Rats to keep up the tempo war. He used Terashi's Grasp on his own (indestructable) equipment to gain four life, then I used Ravenous Rats to get his sole card--Mirror Gallery--out of his hand. He called me lucky and said a bunch of not-very-nice-things as my remaining Rats swarmed in for the win.
+My opponent was remarkably rude for playing such a cool deck. He used [Ethereal Haze](https://scryfall.com/card/chk/9/ethereal-haze) and [Holy Day](https://scryfall.com/card/10e/21/holy-day) to buy him time to set up the pieces of Kaldra, with [Fabricate](https://scryfall.com/card/hop/9/fabricate) to help his cause. I flipped into Nighteyes the Desecrator right away, then used [Chittering Rats](https://scryfall.com/card/dst/39/chittering-rats) and [Throat Slitter](https://scryfall.com/card/pca/37/throat-slitter) to deny him a few draws. At six life, he achieved his Kaldra token, but I started my Rat Attack in earnest to dropped him to two with [Nezumi Cutthroat](https://scryfall.com/card/a25/99/nezumi-cutthroat) on the board, using [Zombify](https://scryfall.com/card/fdn/187/zombify) on my [Chittering Rats](https://scryfall.com/card/dst/39/chittering-rats) to keep up the tempo war. He used [Terashi's Grasp](https://scryfall.com/card/mm2/37/terashis-grasp) on his own (indestructable) equipment to gain four life, then I used [Ravenous Rats](https://scryfall.com/card/gvl/37/ravenous-rats) to get his sole card--Mirror Gallery--out of his hand. He called me lucky and said a bunch of not-very-nice-things as my remaining Rats swarmed in for the win.
 
 That was definitely a win thanks to the Cutthroat, though there was a fair amount of Ratimation shenanigans happening as well. Hmmm...
 
 *Game 30: Green/White Arcbound*
 
-I'm guessing my opponent used green's “add counter” cards like Battlegrowth in conjunction with Arcbound creatures and maybe a trick or two like Test of Faith. I didn't see much of my opponent's deck, though. In fact, I'm not sure I can appreciate how frustrating it must have been for him in this game. His Arcbound Worker and my Nezumi Cutthroat traded attacks, then his Worker and Arcbound Slith stalled against my flipped Nighteyes the Desecrator. Chittering Rats came into play, then died from blocking, then came back to play, then died from blocking, then came back to play, then died from attacking, then came back to play, then bounced to Throat Slitter, then came back to play. My opponent conceded at that point, not wanting to face drawing the same card for something like the sixth turn in a row. Now that's Ratimation at its finest.
+I'm guessing my opponent used green's “add counter” cards like Battlegrowth in conjunction with Arcbound creatures and maybe a trick or two like [Test of Faith](https://scryfall.com/card/mma/33/test-of-faith). I didn't see much of my opponent's deck, though. In fact, I'm not sure I can appreciate how frustrating it must have been for him in this game. His [Arcbound Worker](https://scryfall.com/card/mma/201/arcbound-worker) and my [Nezumi Cutthroat](https://scryfall.com/card/a25/99/nezumi-cutthroat) traded attacks, then his Worker and [Arcbound Slith](https://scryfall.com/card/hop/106/arcbound-slith) stalled against my flipped Nighteyes the Desecrator. [Chittering Rats](https://scryfall.com/card/dst/39/chittering-rats) came into play, then died from blocking, then came back to play, then died from blocking, then came back to play, then died from attacking, then came back to play, then bounced to [Throat Slitter](https://scryfall.com/card/pca/37/throat-slitter), then came back to play. My opponent conceded at that point, not wanting to face drawing the same card for something like the sixth turn in a row. Now that's Ratimation at its finest.
 
-Final analysis: Nezumi Cutthroat is indeed good, but also feels out of place. I should have enough removal against non-black decks without needing an aggressive beater whose only purpose is to be an aggressive beater, right? As a result...
+Final analysis: [Nezumi Cutthroat](https://scryfall.com/card/a25/99/nezumi-cutthroat) is indeed good, but also feels out of place. I should have enough removal against non-black decks without needing an aggressive beater whose only purpose is to be an aggressive beater, right? As a result...
 
-*OUT*: 4 Nezumi Cutthroat
+*OUT*: 4 [Nezumi Cutthroat](https://scryfall.com/card/a25/99/nezumi-cutthroat)
 
 The question isn't why I'm taking out the Cutthroat, which I've pretty much covered to this point, but what to put in instead. First thing's first:
 
@@ -81,15 +81,15 @@ The question isn't why I'm taking out the Cutthroat, which I've pretty much cove
 
 As I said, the deck has no mana acceleration and only twenty-four land. That's a lot of pressure to put on even a mono-colored deck when what it wants to do is reliably reach five mana. In fact, my deck wants *more* than five mana if it can manage it. Normally I would worry that this twenty-fifth land would result in a lot of mana-flooding, except that I'm also adding...
 
-*IN*: 2 Sensei's Divining Top
+*IN*: 2 [Sensei's Divining Top](https://scryfall.com/card/2x2/314/senseis-divining-top)
 
-Sensei's Divining Top
+[![Sensei's Divining Top](https://api.scryfall.com/cards/2x2/314?format=image&version=normal)](https://scryfall.com/card/2x2/314/senseis-divining-top)
 
-My deck has officially crossed the chasm from a fast deck to a slow deck. As a result, I can use an extra mana each turn to mess around with Sensei's Divining Top. The Top should help me smooth out land clumps, help the reliability of reaching five mana, and makes the lone copy of Ink-Eyes less glaring. Finally, it can help me find the lock pieces I need to pull off the Bone-Reader - Nighteyes - Chittering Rats trick more often. I've long held Sensei's Divining Top in high esteem, but this is the first time my preconstructed experiment hasn't led me down a beatdown path.
+My deck has officially crossed the chasm from a fast deck to a slow deck. As a result, I can use an extra mana each turn to mess around with [Sensei's Divining Top](https://scryfall.com/card/2x2/314/senseis-divining-top). The Top should help me smooth out land clumps, help the reliability of reaching five mana, and makes the lone copy of Ink-Eyes less glaring. Finally, it can help me find the lock pieces I need to pull off the Bone-Reader - Nighteyes - [Chittering Rats](https://scryfall.com/card/dst/39/chittering-rats) trick more often. I've long held [Sensei's Divining Top](https://scryfall.com/card/2x2/314/senseis-divining-top) in high esteem, but this is the first time my preconstructed experiment hasn't led me down a beatdown path.
 
-*IN*: 1 Rend Flesh
+*IN*: 1 [Rend Flesh](https://scryfall.com/card/chk/140/rend-flesh)
 
-I'm highly ambivalent about this final slot. I thought about a fourth Zombify, but I think it would too often get stuck in my hand. I seriously considered a fourth Nekrataal, but it's nice to have instant-speed removal sometimes. Rend Flesh also helps battle against a clear weakness of my deck's, which is against other monoblack decks. The hope is that it not only saves me from dying but can also deposit a creature into an opponent's graveyard for Nighteyes or Ink-Eyes reanimation. As you'll see below in the “Adding Money” section, there are a lot of potential rares I could add to my deck instead of two Rend Flesh (my first choice would probably be Solemn Simulacrum here), but Rend Flesh is a solid addition that will probably save my bacon more often than not.
+I'm highly ambivalent about this final slot. I thought about a fourth [Zombify](https://scryfall.com/card/fdn/187/zombify), but I think it would too often get stuck in my hand. I seriously considered a fourth [Nekrataal](https://scryfall.com/card/ema/99/nekrataal), but it's nice to have instant-speed removal sometimes. [Rend Flesh](https://scryfall.com/card/chk/140/rend-flesh) also helps battle against a clear weakness of my deck's, which is against other monoblack decks. The hope is that it not only saves me from dying but can also deposit a creature into an opponent's graveyard for Nighteyes or Ink-Eyes reanimation. As you'll see below in the “Adding Money” section, there are a lot of potential rares I could add to my deck instead of two [Rend Flesh](https://scryfall.com/card/chk/140/rend-flesh) (my first choice would probably be [Solemn Simulacrum](https://scryfall.com/card/msc/215/solemn-simulacrum) here), but [Rend Flesh](https://scryfall.com/card/chk/140/rend-flesh) is a solid addition that will probably save my bacon more often than not.
 
 **Ratimation v.1.6**
 
@@ -114,7 +114,7 @@ I'm highly ambivalent about this final slot. I thought about a fourth Zombify, b
 
 *(Full decklist with sideboard: `decklist_2_Ratimation_v16.txt`; priced breakdown: `decklist_2_Ratimation_v16_priced.md`)*
 
-Ah, it feels good. I've played this deck a lot over the past two weeks, going 27-10 (remember, though, that win-loss records in the Casual Decks room don't mean nearly as much as in the Tournament Practice room). My wins are now much more about Chittering Rats locks and Ratimation than any sort of weenie rush. I've also had an unusual number of ***Magic** Online* players message me to say they've been playing the deck in some incarnation or another and loving it. A success!
+Ah, it feels good. I've played this deck a lot over the past two weeks, going 27-10 (remember, though, that win-loss records in the Casual Decks room don't mean nearly as much as in the Tournament Practice room). My wins are now much more about [Chittering Rats](https://scryfall.com/card/dst/39/chittering-rats) locks and Ratimation than any sort of weenie rush. I've also had an unusual number of ***Magic** Online* players message me to say they've been playing the deck in some incarnation or another and loving it. A success!
 
 Or is it?
 
@@ -128,39 +128,39 @@ So have I failed? On one hand, reanimation has transformed from a minor theme to
 
 ##### Speculative Sideboard Time!
 
-Oblivion Stone
+[![Oblivion Stone](https://api.scryfall.com/cards/ncc/373?format=image&version=normal)](https://scryfall.com/card/ncc/373/oblivion-stone)
 
-If you can afford any number of them, Oblivion Stone is a great addition to this deck's sideboard because right now I'm at the mercy of whatever artifacts and enchantments slip through my discard. I'll assume you don't have access to Oblivion Stone, though, and instead focus on what the deck can do without access to rares. Keep in mind that a) I'm speculating without any real data; b) sideboards are completely dependent on metagames (i.e. what types of decks people in your area tend to play); c) sideboards are for competitive decks, which this is not intended to be; and d) I'm thinking about a sideboard for my Ratimation deck only, not Rat decks, reanimation decks, or mono-black decks in general.
+If you can afford any number of them, [Oblivion Stone](https://scryfall.com/card/ncc/373/oblivion-stone) is a great addition to this deck's sideboard because right now I'm at the mercy of whatever artifacts and enchantments slip through my discard. I'll assume you don't have access to Oblivion Stone, though, and instead focus on what the deck can do without access to rares. Keep in mind that a) I'm speculating without any real data; b) sideboards are completely dependent on metagames (i.e. what types of decks people in your area tend to play); c) sideboards are for competitive decks, which this is not intended to be; and d) I'm thinking about a sideboard for my Ratimation deck only, not Rat decks, reanimation decks, or mono-black decks in general.
 
 Right now I think my deck is sitting somewhere in between a deck that is fast enough to take advantage of slower decks and a control deck able to take advantage of more aggressive, creature-based strategies. As a result, I think the sideboard is a good place to push the deck in one direction or another depending on whether I'm facing a slow or fast deck.
 
-Sideboard: 4 Skullsnatcher
+Sideboard: 4 [Skullsnatcher](https://scryfall.com/card/pca/36/skullsnatcher)
 
-Against slow, controllish decks, the Bone-Readers and Rend Fleshes come out for Skullsnatcher. Not only is Skullsnatcher a quick beater, it's also going to recycle Ravenous Rats and Chittering Rats, two cards that are my key to defeating control decks. As a huge added bonus, Skullsnatcher eats graveyards to prevent Eternal Witness, Myr Retriever, reanimation, and other graveyard-reliant strategies.
+Against slow, controllish decks, the Bone-Readers and [Rend Flesh](https://scryfall.com/card/chk/140/rend-flesh)es come out for [Skullsnatcher](https://scryfall.com/card/pca/36/skullsnatcher). Not only is [Skullsnatcher](https://scryfall.com/card/pca/36/skullsnatcher) a quick beater, it's also going to recycle [Ravenous Rats](https://scryfall.com/card/gvl/37/ravenous-rats) and [Chittering Rats](https://scryfall.com/card/dst/39/chittering-rats), two cards that are my key to defeating control decks. As a huge added bonus, [Skullsnatcher](https://scryfall.com/card/pca/36/skullsnatcher) eats graveyards to prevent [Eternal Witness](https://scryfall.com/card/cmm/286/eternal-witness), [Myr Retriever](https://scryfall.com/card/2xm/277/myr-retriever), reanimation, and other graveyard-reliant strategies.
 
-Mind Sludge
+[![Mind Sludge](https://api.scryfall.com/cards/zen/102?format=image&version=normal)](https://scryfall.com/card/zen/102/mind-sludge)
 
-Sideboard: 3 Mind Sludge
+Sideboard: 3 [Mind Sludge](https://scryfall.com/card/zen/102/mind-sludge)
 
-The particular deck I'm facing will determine which cards come out for Mind Sludge, but usually I think it's going to be Nekrataal. The idea here is that against slower decks my discard and quick weenies are going to be my winning ticket, so I need to drop a few critters, then follow it up with a fifth-turn Mind Sludge. If you have access to Persecute, those could fit into this slot as well.
+The particular deck I'm facing will determine which cards come out for [Mind Sludge](https://scryfall.com/card/zen/102/mind-sludge), but usually I think it's going to be [Nekrataal](https://scryfall.com/card/ema/99/nekrataal). The idea here is that against slower decks my discard and quick weenies are going to be my winning ticket, so I need to drop a few critters, then follow it up with a fifth-turn [Mind Sludge](https://scryfall.com/card/zen/102/mind-sludge). If you have access to [Persecute](https://scryfall.com/card/9ed/151/persecute), those could fit into this slot as well.
 
-Sideboard: 2 Eradicate
+Sideboard: 2 [Eradicate](https://scryfall.com/card/bok/65/eradicate)
 
-I'll use the same logic here as I did in [my last experiment](https://web.archive.org/web/20090603041706/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/jm98): “Eternal Witness is a pain. So is Myr Retriever. So is Keiga, the Tide Star. So is Darksteel Colossus. So is Solemn Simulacrum. So are a lot of creatures, actually. In these cases, Eradicate is my friend.”
+I'll use the same logic here as I did in [my last experiment](https://web.archive.org/web/20090603041706/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/jm98): “[Eternal Witness](https://scryfall.com/card/cmm/286/eternal-witness) is a pain. So is [Myr Retriever](https://scryfall.com/card/2xm/277/myr-retriever). So is [Keiga, the Tide Star](https://scryfall.com/card/tdc/156/keiga-the-tide-star). So is [Darksteel Colossus](https://scryfall.com/card/fdn/671/darksteel-colossus). So is [Solemn Simulacrum](https://scryfall.com/card/msc/215/solemn-simulacrum). So are a lot of creatures, actually. In these cases, [Eradicate](https://scryfall.com/card/bok/65/eradicate) is my friend.”
 
-Sideboard: 3 Echoing Decay
+Sideboard: 3 [Echoing Decay](https://scryfall.com/card/dst/41/echoing-decay)
 
-Against creature-based decks, it's often hard to get my creatures unblocked for Ninjas or to get a Throat Slitter through or to keep useless weenies from chump-blocking my Patron of the Nezumi. This is especially true against the green decks rising in popularity that use Beacon of Creation and/or Sosuke's Summons. I also have a hard time against more aggressive monoblack decks. In all of these cases, Echoing Decay is a cheap, effective form of creature removal.
+Against creature-based decks, it's often hard to get my creatures unblocked for Ninjas or to get a [Throat Slitter](https://scryfall.com/card/pca/37/throat-slitter) through or to keep useless weenies from chump-blocking my [Patron of the Nezumi](https://scryfall.com/card/cm2/72/patron-of-the-nezumi). This is especially true against the green decks rising in popularity that use [Beacon of Creation](https://scryfall.com/card/5dn/82/beacon-of-creation) and/or [Sosuke's Summons](https://scryfall.com/card/bok/145/sosukes-summons). I also have a hard time against more aggressive monoblack decks. In all of these cases, [Echoing Decay](https://scryfall.com/card/dst/41/echoing-decay) is a cheap, effective form of creature removal.
 
-Execute
+[![Execute](https://api.scryfall.com/cards/9ed/128?format=image&version=normal)](https://scryfall.com/card/9ed/128/execute)
 
-Sideboard: 2 Execute
+Sideboard: 2 [Execute](https://scryfall.com/card/9ed/128/execute)
 
-On average, green creatures are more common than white creatures in constructed decks. The reason not to use Slay, though, is that so many of green's creatures--including Sakura-Tribe Elder, Troll Ascetic, and Kodama of the North Tree--are untouchable by spot removal. Instead, I'm using these slots to guard against the *many* White Weenie decks I've been facing online (remember, sideboards are metagame-dependant).
+On average, green creatures are more common than white creatures in constructed decks. The reason not to use [Slay](https://scryfall.com/card/dde/25/slay), though, is that so many of green's creatures--including [Sakura-Tribe Elder](https://scryfall.com/card/soc/285/sakura-tribe-elder), [Troll Ascetic](https://scryfall.com/card/cm2/146/troll-ascetic), and [Kodama of the North Tree](https://scryfall.com/card/chk/222/kodama-of-the-north-tree)--are untouchable by spot removal. Instead, I'm using these slots to guard against the *many* White Weenie decks I've been facing online (remember, sideboards are metagame-dependant).
 
-Sideboard: 1 Nekrataal
+Sideboard: 1 [Nekrataal](https://scryfall.com/card/ema/99/nekrataal)
 
-As I said last time, for decks susceptible to Nekrataal, he is one awesome creature. If a deck has non-black creatures that I can target, Nekrataal is arguably my most effective and potent way of controlling the board.
+As I said last time, for decks susceptible to [Nekrataal](https://scryfall.com/card/ema/99/nekrataal), he is one awesome creature. If a deck has non-black creatures that I can target, [Nekrataal](https://scryfall.com/card/ema/99/nekrataal) is arguably my most effective and potent way of controlling the board.
 
 ##### Adding Money To The Deck
 
@@ -168,19 +168,19 @@ It turns out that there are exactly four hundred and seventy-three thousand rare
 
 *Nezumi Shortfang*
 
-Nezumi Shortfang
+[![Nezumi Shortfang](https://api.scryfall.com/cards/chk/131?format=image&version=normal)](https://scryfall.com/card/chk/131/nezumi-shortfang-stabwhisker-the-odious)
 
-Take version 1.5 of the deck, drop the Cutthroats and add Nezumi Shortfang in their place and you've just upgraded your deck considerably. Another tactic is to use version 1.6 and put Distress in the sideboard. What's great about the Shortfang is that he is good against both control decks (Shortfang mode) and faster decks (Stabwhisker mode). With Ravenous Rats and Chittering Rats in the deck, you are often going to be able to flip into Stabwhisker the Odious, which gives you a huge extra source of damage and a fat body to boot.
+Take version 1.5 of the deck, drop the Cutthroats and add [Nezumi Shortfang](https://scryfall.com/card/chk/131/nezumi-shortfang-stabwhisker-the-odious) in their place and you've just upgraded your deck considerably. Another tactic is to use version 1.6 and put [Distress](https://scryfall.com/card/m12/94/distress) in the sideboard. What's great about the Shortfang is that he is good against both control decks (Shortfang mode) and faster decks (Stabwhisker mode). With [Ravenous Rats](https://scryfall.com/card/gvl/37/ravenous-rats) and [Chittering Rats](https://scryfall.com/card/dst/39/chittering-rats) in the deck, you are often going to be able to flip into Stabwhisker the Odious, which gives you a huge extra source of damage and a fat body to boot.
 
 *Fancy Land*
 
-Right now I'm using twenty-five Swamps. Without cards like Corrupt or Nightmare in the deck, however, there's no reason to limit myself to basic land. Use Blinkmoth Nexus for more offense (and a spiffy ninjutsu target) or Shizo, Death's Storehouse to help out Nighteyes, Ink-Eyes, and Patron of the Nezumi.
+Right now I'm using twenty-five Swamps. Without cards like [Corrupt](https://scryfall.com/card/bro/88/corrupt) or [Nightmare](https://scryfall.com/card/w17/17/nightmare) in the deck, however, there's no reason to limit myself to basic land. Use [Blinkmoth Nexus](https://scryfall.com/card/2xm/311/blinkmoth-nexus) for more offense (and a spiffy ninjutsu target) or [Shizo, Death's Storehouse](https://scryfall.com/card/dmc/233/shizo-deaths-storehouse) to help out Nighteyes, Ink-Eyes, and [Patron of the Nezumi](https://scryfall.com/card/cm2/72/patron-of-the-nezumi).
 
 *Solemn Simulacrum*
 
-Solemn Simulacrum
+[![Solemn Simulacrum](https://api.scryfall.com/cards/msc/215?format=image&version=normal)](https://scryfall.com/card/msc/215/solemn-simulacrum)
 
-I have probably used Solemn Simulacrum in more decklists than any other creature currently available in Standard. I love him, and Nighteyes would too. Solemn Simulacrum helps ramp up the mana to the needed five while also making a terrific reanimation target.
+I have probably used [Solemn Simulacrum](https://scryfall.com/card/msc/215/solemn-simulacrum) in more decklists than any other creature currently available in Standard. I love him, and Nighteyes would too. [Solemn Simulacrum](https://scryfall.com/card/msc/215/solemn-simulacrum) helps ramp up the mana to the needed five while also making a terrific reanimation target.
 
 *More Ink-Eyes*
 
@@ -188,7 +188,7 @@ If I could add another Ink-Eyes or two, I probably would. She is, after all, [th
 
 *Beacon of Unrest*
 
-As several people on the Message Boards have noted, swapping Zombify out for Beacon of Unrest doesn't slow down the deck a huge amount and gives you the ability to retrieve opposing creatures and artifacts. The extra flexibility of Beacon is certainly worth one more black mana.
+As several people on the Message Boards have noted, swapping [Zombify](https://scryfall.com/card/fdn/187/zombify) out for [Beacon of Unrest](https://scryfall.com/card/2xm/77/beacon-of-unrest) doesn't slow down the deck a huge amount and gives you the ability to retrieve opposing creatures and artifacts. The extra flexibility of Beacon is certainly worth one more black mana.
 
 *Grave Pact*
 
@@ -196,53 +196,53 @@ I'm not entirely sure what I would take out for Grave Pact, but with my fairly e
 
 *Fancy Equipment*
 
-I took out Umezawa's Jitte, but two pieces of equipment seem to fit perfectly with my Ratimation deck. One is Sword of Light and Shadow, which not only gives two great abilities to my deck but also gives me some game against opposing mono-black decks. The second is Scythe of the Wretched, which has some directly-into-play reanimation built into it.
+I took out [Umezawa's Jitte](https://scryfall.com/card/bok/163/umezawas-jitte), but two pieces of equipment seem to fit perfectly with my Ratimation deck. One is [Sword of Light and Shadow](https://scryfall.com/card/2xm/298/sword-of-light-and-shadow), which not only gives two great abilities to my deck but also gives me some game against opposing mono-black decks. The second is Scythe of the Wretched, which has some directly-into-play reanimation built into it.
 
 *Marrow-Gnawer*
 
 Marrow-Gnawer
 
-If you love Rats, Marrow-Gnawer not only speeds up your offense, it also gives you a way other than Nezumi Bone-Reader to sacrifice your own creatures. His Rat-creation ability can quickly get out of control with an active Nighteyes, as well. I'm not sure I would put more than one in the deck, but one sounds fun.
+If you love Rats, Marrow-Gnawer not only speeds up your offense, it also gives you a way other than [Nezumi Bone-Reader](https://scryfall.com/card/chk/127/nezumi-bone-reader) to sacrifice your own creatures. His Rat-creation ability can quickly get out of control with an active Nighteyes, as well. I'm not sure I would put more than one in the deck, but one sounds fun.
 
 *More Fatties*
 
-Finally, no reanimation “Adding Money” section would be complete without suggesting that you could find other fatties to drop into your graveyard for reanimation. Kokusho, the Evening Star is the most obvious fattie-addition to the deck, but Triskelion, Duplicant, Nightmare, Fallen Angel, and Phyrexian Plaguelord are all worthy possibilities, not to mention uber-fatties like Darksteel Colossus and Kuro, Pitlord as long as you figure out some way to put them into your graveyard.
+Finally, no reanimation “Adding Money” section would be complete without suggesting that you could find other fatties to drop into your graveyard for reanimation. Kokusho, the Evening Star is the most obvious fattie-addition to the deck, but [Triskelion](https://scryfall.com/card/moc/387/triskelion), [Duplicant](https://scryfall.com/card/cmm/946/duplicant), [Nightmare](https://scryfall.com/card/w17/17/nightmare), Fallen Angel, and Phyrexian Plaguelord are all worthy possibilities, not to mention uber-fatties like [Darksteel Colossus](https://scryfall.com/card/fdn/671/darksteel-colossus) and [Kuro, Pitlord](https://scryfall.com/card/dvd/44/kuro-pitlord) as long as you figure out some way to put them into your graveyard.
 
 ##### Paths Not Taken
 
-For the most part, I'm going to focus on Ratimation variants rather than open up to a wider reanimation theme. The reason is because I think there are a lot of different ways to make a Ratimation deck that are worth considering. If you like Rat's Nest and Nezumi Graverobber but don't feel compelled to follow my lead, maybe one of these options will entice you.
+For the most part, I'm going to focus on Ratimation variants rather than open up to a wider reanimation theme. The reason is because I think there are a lot of different ways to make a Ratimation deck that are worth considering. If you like Rat's Nest and [Nezumi Graverobber](https://scryfall.com/card/cm2/71/nezumi-graverobber-nighteyes-the-desecrator) but don't feel compelled to follow my lead, maybe one of these options will entice you.
 
 *Black/Green Ratimation*
 
-Certainly the most requested direction to take my deck was to add green for Sakura-Tribe Elder and Eternal Witness. These two cards alone amp up the effectiveness of Nighteyes the Desecrator, which may be why I've seen quite a few black/green reanimation decks online. Time of Need can search out your beefy legends. Don't forget that you also have access to Viridian Shaman, Wood Elves, and cards like Elvish Lyrist. Elfimation? It's worth considering.
+Certainly the most requested direction to take my deck was to add green for [Sakura-Tribe Elder](https://scryfall.com/card/soc/285/sakura-tribe-elder) and [Eternal Witness](https://scryfall.com/card/cmm/286/eternal-witness). These two cards alone amp up the effectiveness of Nighteyes the Desecrator, which may be why I've seen quite a few black/green reanimation decks online. [Time of Need](https://scryfall.com/card/chk/247/time-of-need) can search out your beefy legends. Don't forget that you also have access to [Viridian Shaman](https://scryfall.com/card/ddu/25/viridian-shaman), [Wood Elves](https://scryfall.com/card/plst/EXO-130/wood-elves), and cards like Elvish Lyrist. Elfimation? It's worth considering.
 
 *Black/Blue Ratimation*
 
-Gifts Ungiven
+[![Gifts Ungiven](https://api.scryfall.com/cards/2x2/51?format=image&version=normal)](https://scryfall.com/card/2x2/51/gifts-ungiven)
 
-Probably the single best reason to add blue to Ratimation is Gifts Ungiven, which seems cater-made to give a boost to reanimation decks, but Thirst For Knowledge and Thought Courier can perform a similar job. Small fliers like Spiketail Hatchling and Sage Owl are attractive, too, not to mention Trinket Mage and the ability to use either countermagic to protect my creatures or bounce to enhance the comes-into-play nonsense. I think this deck wants to drift into a pure Ninja strategy, but I also think a worthy Ratimation deck is in there somewhere.
+Probably the single best reason to add blue to Ratimation is [Gifts Ungiven](https://scryfall.com/card/2x2/51/gifts-ungiven), which seems cater-made to give a boost to reanimation decks, but [Thirst For Knowledge](https://scryfall.com/card/msh/79/thirst-for-knowledge) and [Thought Courier](https://scryfall.com/card/9ed/104/thought-courier) can perform a similar job. Small fliers like [Spiketail Hatchling](https://scryfall.com/card/10e/111/spiketail-hatchling) and [Sage Owl](https://scryfall.com/card/m10/69/sage-owl) are attractive, too, not to mention [Trinket Mage](https://scryfall.com/card/ddu/41/trinket-mage) and the ability to use either countermagic to protect my creatures or bounce to enhance the comes-into-play nonsense. I think this deck wants to drift into a pure Ninja strategy, but I also think a worthy Ratimation deck is in there somewhere.
 
 *Black/White Ratimation*
 
-Kami of Ancient Law is probably the best reason to splash white in a Ratimation deck, though with an active Nighteyes the Desecrator you also have a soft lock against creature decks with Kami of False Hope. I could also see adding white for Aven Cloudchaser, Angel of Mercy, or Staunch Defenders depending on what types of decks your friends tend to play.
+[Kami of Ancient Law](https://scryfall.com/card/soc/150/kami-of-ancient-law) is probably the best reason to splash white in a Ratimation deck, though with an active Nighteyes the Desecrator you also have a soft lock against creature decks with Kami of False Hope. I could also see adding white for Aven Cloudchaser, Angel of Mercy, or Staunch Defenders depending on what types of decks your friends tend to play.
 
 *Black/Red Ratimation*
 
-At first glance, it doesn't look like red has much to offer Ratimation. After all, its comes-into-play creatures are more likely to hurt you (a la Lava Hounds) than help you. Yet if Umezawa's Jitte or Sword of Fire and Ice truly become ubiquitous in your play group, then it may be worth thinking about Hearth Kami and Frostling as targets for your reanimation, not to mention all of the Shatter-type cards you could use. Shock Troops and Pain Kami sound like fun, too.
+At first glance, it doesn't look like red has much to offer Ratimation. After all, its comes-into-play creatures are more likely to hurt you (a la [Lava Hounds](https://scryfall.com/card/8ed/198/lava-hounds)) than help you. Yet if [Umezawa's Jitte](https://scryfall.com/card/bok/163/umezawas-jitte) or [Sword of Fire and Ice](https://scryfall.com/card/2xm/297/sword-of-fire-and-ice) truly become ubiquitous in your play group, then it may be worth thinking about [Hearth Kami](https://scryfall.com/card/chk/171/hearth-kami) and [Frostling](https://scryfall.com/card/bok/103/frostling) as targets for your reanimation, not to mention all of the [Shatter](https://scryfall.com/card/rix/114/shatter)-type cards you could use. Shock Troops and Pain Kami sound like fun, too.
 
 *Mesmeric Ratimation*
 
 Mesmeric Orb
 
-Several people wrote me to suggest Mesmeric Orb for my deck. I didn't do it because my deck was already starting to accumulate enough rares, but it's true that the Orb can really fuel a reanimation approach. The real question to wrestle with is how you plan on flipping Nezumi Graverobber if your opponent is dumping so many cards in her graveyard. Does Skullsnatcher come back to the main deck? Reito Lantern? On the plus side, Ink-Eyes, Servant of Oni becomes a house in a deck built around Mesmeric Orb.
+Several people wrote me to suggest Mesmeric Orb for my deck. I didn't do it because my deck was already starting to accumulate enough rares, but it's true that the Orb can really fuel a reanimation approach. The real question to wrestle with is how you plan on flipping [Nezumi Graverobber](https://scryfall.com/card/cm2/71/nezumi-graverobber-nighteyes-the-desecrator) if your opponent is dumping so many cards in her graveyard. Does [Skullsnatcher](https://scryfall.com/card/pca/36/skullsnatcher) come back to the main deck? [Reito Lantern](https://scryfall.com/card/cns/202/reito-lantern)? On the plus side, [Ink-Eyes, Servant of Oni](https://scryfall.com/card/pca/33/ink-eyes-servant-of-oni) becomes a house in a deck built around Mesmeric Orb.
 
 *Shirei Ratimation*
 
-The other rare many people requested was Shirei, Shizo's Caretaker. I played two games against Shirei decks with my 1.6 version and in both I stole him from my opponent's graveyard, so I know how much fun this guy can be with Ravenous Rats and Nezumi Bone-Reader. If I was building my deck this way, I would probably drop Patron of the Nezumi and a number of Rats in favor of creatures like Ashen-Skin Zubera, Bottle Gnomes, Maggot Carrier, Leaden Myr, and Triskelion. Splashing green for Sakura-Tribe Elder looks juicy with Shirei, too.
+The other rare many people requested was Shirei, Shizo's Caretaker. I played two games against Shirei decks with my 1.6 version and in both I stole him from my opponent's graveyard, so I know how much fun this guy can be with [Ravenous Rats](https://scryfall.com/card/gvl/37/ravenous-rats) and [Nezumi Bone-Reader](https://scryfall.com/card/chk/127/nezumi-bone-reader). If I was building my deck this way, I would probably drop Patron of the Nezumi and a number of Rats in favor of creatures like [Ashen-Skin Zubera](https://scryfall.com/card/chk/101/ashen-skin-zubera), [Bottle Gnomes](https://scryfall.com/card/cm2/177/bottle-gnomes), Maggot Carrier, [Leaden Myr](https://scryfall.com/card/som/170/leaden-myr), and [Triskelion](https://scryfall.com/card/moc/387/triskelion). Splashing green for [Sakura-Tribe Elder](https://scryfall.com/card/soc/285/sakura-tribe-elder) looks juicy with Shirei, too.
 
 *Non-Rat Reanimation*
 
-As I said, dropping the Rat aspect of the deck and instead focusing solely on reanimation opens up too many doors to discuss here. I've already talked about Mesmeric Orb and Shirei, two cards that may pull the deck away from Rats. Some of the other fun ideas people have thrown my way include reanimating 1) Spirits, with cards like Slumbering Tora, Lifespinner, and Iname, Death Aspect; 2) artifacts, via Bringer of the White Dawn, Second Sunrise, or some black/Atog strategy, and 3) Zombies, using Lord of the Undead and Gravedigger action.
+As I said, dropping the Rat aspect of the deck and instead focusing solely on reanimation opens up too many doors to discuss here. I've already talked about Mesmeric Orb and Shirei, two cards that may pull the deck away from Rats. Some of the other fun ideas people have thrown my way include reanimating 1) Spirits, with cards like Slumbering Tora, [Lifespinner](https://scryfall.com/card/bok/133/lifespinner), and Iname, Death Aspect; 2) artifacts, via [Bringer of the White Dawn](https://scryfall.com/card/5dn/7/bringer-of-the-white-dawn), [Second Sunrise](https://scryfall.com/card/mrd/20/second-sunrise), or some black/[Atog](https://scryfall.com/card/5ed/209/atog) strategy, and 3) Zombies, using Lord of the Undead and [Gravedigger](https://scryfall.com/card/m20/103/gravedigger) action.
 
 The basic message from both the “Adding Money” and “Paths Not Taken” sections is that you have a tremendous number of options when focusing on the intersection of Rats and reanimation. It feels like I've hardly scratched the surface in these three articles! If you've made a deck along these lines that you've playtested and would like to crow about, please post it on the Message Boards so we can all have a look.
 
@@ -256,27 +256,27 @@ That said, it's worth contemplating what *Saviors of Kamigawa* might have to off
 
 Skull Collector
 
-No points for guessing this one. Although he's not a Rat, he is absolutely fantastic with almost all of the creatures currently in the deck. Imagine Ravenous Rats, Nekrataal, or--the kicker--Chittering Rats with Skull Collector on the board. I'm not sure what would come out for him, but Skull Collector might be the one card that convinces me to drop my beloved Patron of the Nezumi and thus dip into non-Rat strategies.
+No points for guessing this one. Although he's not a Rat, he is absolutely fantastic with almost all of the creatures currently in the deck. Imagine [Ravenous Rats](https://scryfall.com/card/gvl/37/ravenous-rats), [Nekrataal](https://scryfall.com/card/ema/99/nekrataal), or--the kicker--[Chittering Rats](https://scryfall.com/card/dst/39/chittering-rats) with Skull Collector on the board. I'm not sure what would come out for him, but Skull Collector might be the one card that convinces me to drop my beloved [Patron of the Nezumi](https://scryfall.com/card/cm2/72/patron-of-the-nezumi) and thus dip into non-Rat strategies.
 
 *Death Denied*
 
-I don't think this replaces Zombify because it is usually going to be so much slower. I could see a copy or two fitting into the deck to supplement Zombify, though. Later in the game, getting three or more creatures back in hand for the price of one card is an awfully juicy proposition for my Ratimation deck.
+I don't think this replaces [Zombify](https://scryfall.com/card/fdn/187/zombify) because it is usually going to be so much slower. I could see a copy or two fitting into the deck to supplement [Zombify](https://scryfall.com/card/fdn/187/zombify), though. Later in the game, getting three or more creatures back in hand for the price of one card is an awfully juicy proposition for my Ratimation deck.
 
 *Footsteps of the Goryo*
 
-The big bummers are that it doesn't give haste to the reanimated creature and that it isn't an instant, so for one more mana I would rather have Zombify. That said, there are many times when bringing Ravenous Rats, Chittering Rats, or Nekrataal back for a turn while I'm waiting for an active Nighteyes the Desecrator makes a lot of sense, especially with Nezumi Bone-Reader on the table. The fact that it's arcane makes splicing a Soulless Revival pretty attractive, too.
+The big bummers are that it doesn't give haste to the reanimated creature and that it isn't an instant, so for one more mana I would rather have [Zombify](https://scryfall.com/card/fdn/187/zombify). That said, there are many times when bringing [Ravenous Rats](https://scryfall.com/card/gvl/37/ravenous-rats), [Chittering Rats](https://scryfall.com/card/dst/39/chittering-rats), or [Nekrataal](https://scryfall.com/card/ema/99/nekrataal) back for a turn while I'm waiting for an active Nighteyes the Desecrator makes a lot of sense, especially with [Nezumi Bone-Reader](https://scryfall.com/card/chk/127/nezumi-bone-reader) on the table. The fact that it's arcane makes splicing a [Soulless Revival](https://scryfall.com/card/chk/144/soulless-revival) pretty attractive, too.
 
 *Kemuri-Onna*
 
-It's not a Rat and it's a heck of a lot more expensive than Ravenous Rats for the same effect. The question is whether the bigger body and the chance of reuse is worth Kemuri-Onna sitting towards the top of my deck's manacurve. I'm guessing it isn't worth the expense since the deck is pretty good at discard already, but it's not a completely crazy idea.
+It's not a Rat and it's a heck of a lot more expensive than [Ravenous Rats](https://scryfall.com/card/gvl/37/ravenous-rats) for the same effect. The question is whether the bigger body and the chance of reuse is worth [Kemuri-Onna](https://scryfall.com/card/sok/76/kemuri-onna) sitting towards the top of my deck's manacurve. I'm guessing it isn't worth the expense since the deck is pretty good at discard already, but it's not a completely crazy idea.
 
 *Measure of Wickedness*
 
 Measure of Wickedness
 
-Measure of Wickedness makes Nezumi Bone-Reader and Marrow-Gnawer look a lot cooler. It probably pulls the deck in a different direction--possibly even the green/black direction with Sakura-Tribe Elder and Eternal Witness--but it makes me smile to think of a Wicked Rat deck.
+Measure of Wickedness makes [Nezumi Bone-Reader](https://scryfall.com/card/chk/127/nezumi-bone-reader) and Marrow-Gnawer look a lot cooler. It probably pulls the deck in a different direction--possibly even the green/black direction with [Sakura-Tribe Elder](https://scryfall.com/card/soc/285/sakura-tribe-elder) and [Eternal Witness](https://scryfall.com/card/cmm/286/eternal-witness)--but it makes me smile to think of a Wicked Rat deck.
 
-For rares, Kagemaro, First to Suffer seems like a great reset button for a deck using Zombify and/or some of the cards I've listed above. Akuta, Born of Ash is a possibility as well, though I can't see my deck wanting to sacrifice its Swamps for a 3/2 body. Of course, almost any deck might maindeck or sideboard Pithing Needle.
+For rares, Kagemaro, First to Suffer seems like a great reset button for a deck using [Zombify](https://scryfall.com/card/fdn/187/zombify) and/or some of the cards I've listed above. Akuta, Born of Ash is a possibility as well, though I can't see my deck wanting to sacrifice its Swamps for a 3/2 body. Of course, almost any deck might maindeck or sideboard [Pithing Needle](https://scryfall.com/card/2x2/312/pithing-needle).
 
 Okay, that's enough speculation for one day. As always, I hope you've enjoyed my preconstructed deck evolution. I haven't even looked at the *Saviors* precon lists yet, but it's going to be a fun time come the end of June.
 
