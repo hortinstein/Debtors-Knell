@@ -1,0 +1,45 @@
+name: Fetch daily card prices
+
+on:
+  schedule:
+    # 09:23 UTC daily - comfortably after GoatBots' 05:30 CET/CEST publish
+    # time and MTGJSON's daily refresh, off the top-of-hour to avoid
+    # GitHub Actions' busiest scheduling minute.
+    - cron: "23 9 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-prices
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python dependencies
+        run: pip install -r scripts/requirements-prices.txt
+
+      - name: Install headless Chromium (for GoatBots' Cloudflare challenge)
+        run: python -m playwright install --with-deps chromium
+
+      - name: Fetch and archive today's prices
+        run: python scripts/fetch_prices.py
+
+      - name: Record today's date
+        run: echo "PRICE_DATE=$(date -u +%Y-%m-%d)" >> "$GITHUB_ENV"
+
+      - name: Commit archived prices
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Archive card prices for ${{ env.PRICE_DATE }}"
+          file_pattern: "prices/**"
