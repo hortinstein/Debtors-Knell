@@ -1,0 +1,27 @@
+# Priced Decklist: decklist_1_Finding_My_Muse_1
+
+*Source: `decklist_1_Finding_My_Muse_1.txt` | Prices: Scryfall bulk data (oracle_cards, USD market price)*
+
+## Main Deck
+
+| Qty | Card | Unit Price | Extended | Scryfall |
+|---:|---|---:|---:|---|
+| 23 | Island <sub>(basic land (nominal $0))</sub> | $0.00 | $0.00 | [link](https://scryfall.com/card/msh/289/island) |
+| 3 | Temporal Adept | $0.40 | $1.20 | [link](https://scryfall.com/card/9ed/102/temporal-adept) |
+| 4 | Annex | $0.32 | $1.28 | [link](https://scryfall.com/card/9ed/59/annex) |
+| 4 | Boomerang | $0.08 | $0.32 | [link](https://scryfall.com/card/5ed/75/boomerang) |
+| 4 | Confiscate | $0.11 | $0.44 | [link](https://scryfall.com/card/fdn/709/confiscate) |
+| 3 | Eternal Dominion | $4.92 | $14.76 | [link](https://scryfall.com/card/sok/36/eternal-dominion) |
+| 3 | Eye of Nowhere | $0.21 | $0.63 | [link](https://scryfall.com/card/chk/59/eye-of-nowhere) |
+| 4 | Muse Vessel | $0.30 | $1.20 | [link](https://scryfall.com/card/dis/163/muse-vessel) |
+| 4 | Remand | $0.31 | $1.24 | [link](https://scryfall.com/card/rvr/59/remand) |
+| 4 | Repeal | $0.16 | $0.64 | [link](https://scryfall.com/card/clu/94/repeal) |
+| 4 | Spectral Searchlight | $0.15 | $0.60 | [link](https://scryfall.com/card/cmm/411/spectral-searchlight) |
+
+**Main Deck total: $22.31**
+
+
+---
+
+**Grand total: $22.31**
+

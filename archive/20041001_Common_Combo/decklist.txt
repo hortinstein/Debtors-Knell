@@ -1,0 +1,18 @@
+13 Forest
+7 Island
+4 Spire Golem
+4 Tangle Golem
+4 Dream's Grip
+4 Opt
+4 Twiddle
+4 Fertile Ground
+4 Harrow
+4 Dawn's Reflection
+4 Rush of Knowledge
+4 Temporal Fissure
+
+Sideboard
+4 AEther Burst
+4 Deconstruct
+4 Moment's Peace
+3 Reclaim
