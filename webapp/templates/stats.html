@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}Card Stats &mdash; Building on a Budget Archive{% endblock %}
+{% block content %}
+<section class="pool-intro">
+  <h1>Card Stats</h1>
+  <p class="muted">
+    {{ total_unique_cards }} distinct cards appear across {{ total_decks }} decks
+    in the archive. Ranked by how many different decks each card shows up in.
+  </p>
+</section>
+
+<section class="stats-top">
+  <h2>Most common cards</h2>
+  <p class="muted stats-note">Basic lands are excluded here (nearly every deck runs them) &mdash; find them in the full table below.</p>
+  <div class="bar-chart">
+    {% for c in top_cards %}
+    <div class="bar-row">
+      <a class="bar-label" href="#card-{{ loop.index }}">{{ c.name }}</a>
+      <div class="bar-track">
+        <div class="bar-fill" style="width: {{ (c.num_decks / max_decks * 100)|round(1) }}%"></div>
+      </div>
+      <span class="bar-value">{{ c.num_decks }} deck{{ "s" if c.num_decks != 1 else "" }}</span>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="stats-table-section">
+  <h2>All cards</h2>
+  <input type="search" id="stats-filter" placeholder="Filter by card name&hellip;" autocomplete="off">
+  <table class="deck-table stats-table" id="stats-table">
+    <thead>
+      <tr>
+        <th class="sortable" data-key="name" data-type="text">Card</th>
+        <th class="sortable" data-key="decks" data-type="num">In # Decks</th>
+        <th class="sortable" data-key="qty" data-type="num">Total copies</th>
+        <th class="sortable" data-key="usd" data-type="num">Unit ($)</th>
+        <th class="sortable" data-key="tix" data-type="num">Unit (tix)</th>
+        <th>Appears in</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for c in card_stats %}
+      <tr id="card-{{ loop.index }}"
+          data-name="{{ c.name|lower }}"
+          data-decks="{{ c.num_decks }}"
+          data-qty="{{ c.total_qty }}"
+          data-usd="{{ c.unit_usd or 0 }}"
+          data-tix="{{ c.unit_tix or 0 }}">
+        <td>{{ c.name }}</td>
+        <td class="col-num">{{ c.num_decks }}</td>
+        <td class="col-num">{{ c.total_qty }}</td>
+        <td class="col-num">{{ "$%.2f"|format(c.unit_usd) if c.unit_usd is not none else "N/A" }}</td>
+        <td class="col-num">{{ "%.2f"|format(c.unit_tix) if c.unit_tix is not none else "N/A" }}</td>
+        <td class="pool-decks-cell">
+          <div class="pool-decks-list pool-decks-list-open">
+            {% for dd in c.decks %}<a href="{{ url_for('deck_detail', folder=dd.folder) }}">{{ dd.title }}{% if dd.label and dd.label != "Decklist" %} ({{ dd.label }}){% endif %}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+          </div>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='table-sort.js') }}"></script>
+<script src="{{ url_for('static', filename='stats.js') }}"></script>
+{% endblock %}

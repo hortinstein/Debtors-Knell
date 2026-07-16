@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block title %}Card Pool Builder &mdash; Building on a Budget Archive{% endblock %}
+{% block content %}
+<section class="pool-intro">
+  <h1>Card Pool Builder</h1>
+  <p class="muted">
+    Pick any decks below and build one combined shopping list of every card
+    needed to assemble all of them at once (quantities are summed across
+    decks, not shared between them).
+  </p>
+</section>
+
+<form method="get" action="{{ url_for('card_pool') }}" id="pool-form">
+  <div class="pool-controls">
+    <input type="search" id="pool-filter" placeholder="Filter by title or author&hellip;" autocomplete="off">
+    <span class="pool-selected-count"><span id="pool-count">{{ selected_ids|length }}</span> deck{{ "s" if selected_ids|length != 1 else "" }} selected</span>
+    <button type="submit" class="pool-build-btn">Build pool</button>
+  </div>
+
+  <table class="deck-table pool-table" id="pool-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th class="sortable" data-key="date" data-type="text">Date</th>
+        <th class="sortable" data-key="title" data-type="text">Deck</th>
+        <th class="sortable" data-key="usd" data-type="num">Physical ($)</th>
+        <th class="sortable" data-key="tix" data-type="num">Digital (tix)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for d in all_decks %}
+      <tr data-date="{{ d.ymd }}" data-title="{{ (d.article_title ~ ' ' ~ d.label)|lower }}" data-usd="{{ d.usd_total }}" data-tix="{{ d.tix_total }}">
+        <td><input type="checkbox" name="deck" value="{{ d.id }}" {{ "checked" if d.id in selected_ids else "" }}></td>
+        <td class="col-date">{{ d.date_str or d.ymd }}</td>
+        <td class="col-title">
+          <a href="{{ url_for('deck_detail', folder=d.folder) }}" target="_blank" rel="noopener">{{ d.article_title }}</a>
+          {% if d.label and d.label != "Decklist" %}<div class="col-author">{{ d.label }}</div>{% endif %}
+        </td>
+        <td class="col-num">${{ "%.2f"|format(d.usd_total) }}</td>
+        <td class="col-num">{{ "%.2f"|format(d.tix_total) }} tix</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</form>
+
+{% if pool_rows is not none %}
+<section class="pool-results">
+  <h2>Combined shopping list &mdash; {{ selected_decks|length }} deck{{ "s" if selected_decks|length != 1 else "" }}</h2>
+  <p class="combined-total">
+    <strong>Grand total to build all selected decks:</strong>
+    ${{ "%.2f"|format(pool_usd_total) }} physical &middot; {{ "%.2f"|format(pool_tix_total) }} tix digital
+    &middot;
+    <a class="download-link" href="{{ url_for('pool_download', deck=selected_decks|map(attribute='id')|list) }}" download>
+      &#8681; Download shopping list (.txt)
+    </a>
+  </p>
+
+  <div class="priced-table">
+  <table>
+    <thead>
+      <tr><th>Qty</th><th>Card</th><th>Unit</th><th>Extended</th><th>Unit (tix)</th><th>Extended (tix)</th><th>Needed in</th></tr>
+    </thead>
+    <tbody>
+      {% for r in pool_rows %}
+      <tr>
+        <td>{{ r.qty }}</td>
+        <td>{{ r.name }}</td>
+        <td>{{ "$%.2f"|format(r.unit_usd) if r.unit_usd is not none else "N/A" }}</td>
+        <td>{{ "$%.2f"|format(r.ext_usd) if r.has_usd else "N/A" }}</td>
+        <td>{{ "%.2f"|format(r.unit_tix) if r.unit_tix is not none else "N/A" }}</td>
+        <td>{{ "%.2f"|format(r.ext_tix) if r.has_tix else "N/A" }}</td>
+        <td class="pool-decks-cell">
+          {{ r.decks|length }} deck{{ "s" if r.decks|length != 1 else "" }}
+          <div class="pool-decks-list">
+            {% for dd in r.decks %}{{ dd.title }}{% if dd.label and dd.label != "Decklist" %} ({{ dd.label }}){% endif %} &times;{{ dd.qty }}{% if not loop.last %}, {% endif %}{% endfor %}
+          </div>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</section>
+{% endif %}
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='table-sort.js') }}"></script>
+<script src="{{ url_for('static', filename='pool.js') }}"></script>
+{% endblock %}
