@@ -225,6 +225,8 @@ body.lightbox-locked { overflow: hidden; }
 
 .deck-block h3 { margin-top: 0; color: var(--accent-2); }
 .deck-source { color: var(--muted); font-size: 0.85rem; margin-top: -0.5rem; }
+.download-link { color: var(--link); font-weight: 600; text-decoration: none; }
+.download-link:hover { text-decoration: underline; }
 
 .priced-table { overflow-x: auto; }
 

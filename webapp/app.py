@@ -19,7 +19,7 @@ import os
 import re
 
 import markdown
-from flask import Flask, abort, render_template, send_from_directory
+from flask import Flask, Response, abort, render_template, send_from_directory
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ARCHIVE_DIR = os.path.join(REPO_ROOT, "archive")
@@ -53,6 +53,66 @@ def _priced_files_for(folder_path):
         glob.glob(os.path.join(folder_path, "decklist*_priced.md")),
         key=_decklist_sort_key,
     )
+
+
+def _raw_decklist_files_for(folder_path):
+    return sorted(
+        (p for p in glob.glob(os.path.join(folder_path, "decklist*.txt"))),
+        key=_decklist_sort_key,
+    )
+
+
+CARD_LINE_RE = re.compile(r"^\d+\s+\S")
+
+
+def build_mtgo_import_text(raw_text):
+    """Turn a scraped decklist*.txt into a file MTGO's plain-text importer
+    can actually parse (qty + card name lines, at most one blank line
+    separating maindeck from sideboard).
+
+    The scraped files carry a few artifacts from the original article HTML
+    that a strict "<qty> <name>" line parser chokes on: a deck-title line
+    before the cards, a literal "Sideboard" label line (redundant - the
+    blank line already marks the split), category sub-headers like "Land:"
+    / "Creatures:" / "Spells:", and (one file) old Mac-style \\r-only line
+    endings that leave the whole decklist as a single line.
+
+    Fix, verified against every decklist*.txt in the archive: drop any
+    non-blank line that isn't "<qty> <name>". If more than one blank-line
+    gap remains after that, it's category dividers (verified by hand: every
+    file with a real sideboard has a literal "Sideboard" line and collapses
+    to exactly one gap once that label is dropped; every multi-gap file has
+    no such label) - collapse those into a single contiguous maindeck.
+    Exactly one remaining gap is a genuine maindeck/sideboard split and is
+    preserved.
+    """
+    text = raw_text.replace("\r\n", "\n").replace("\r", "\n")
+    kept = []
+    for line in text.split("\n"):
+        s = line.strip()
+        if s == "" or CARD_LINE_RE.match(s):
+            kept.append(s)
+    while kept and kept[0] == "":
+        kept.pop(0)
+    while kept and kept[-1] == "":
+        kept.pop()
+
+    gaps = 0
+    prev_blank = False
+    for line in kept:
+        if line == "":
+            if not prev_blank:
+                gaps += 1
+            prev_blank = True
+        else:
+            prev_blank = False
+
+    if gaps <= 1:
+        lines = kept
+    else:
+        lines = [l for l in kept if l != ""]
+
+    return "\n".join(lines) + "\n"
 
 
 def _parse_grand_totals(priced_md_path):
@@ -186,6 +246,31 @@ def screenshot(folder):
     return send_from_directory(folder_path, "screenshot.png")
 
 
+@app.route("/download/<folder>/<filename>")
+def download_decklist(folder, filename):
+    # Validate against the known folder list and that filename names an
+    # actual decklist*.txt in that folder, so this can't be used to read
+    # arbitrary files.
+    article = get_article_by_folder(folder)
+    if article is None:
+        abort(404)
+    folder_path = os.path.join(ARCHIVE_DIR, folder)
+    valid_names = {os.path.basename(p) for p in _raw_decklist_files_for(folder_path)}
+    if filename not in valid_names:
+        abort(404)
+
+    with open(os.path.join(folder_path, filename), encoding="utf-8") as f:
+        raw_text = f.read()
+    mtgo_text = build_mtgo_import_text(raw_text)
+
+    download_name = f"{folder}__{filename}"
+    return Response(
+        mtgo_text,
+        mimetype="text/plain",
+        headers={"Content-Disposition": f'attachment; filename="{download_name}"'},
+    )
+
+
 @app.route("/deck/<folder>")
 def deck_detail(folder):
     article = get_article_by_folder(folder)
@@ -214,9 +299,11 @@ def deck_detail(folder):
         usd, tix = _parse_grand_totals(pf)
         grand_usd += usd
         grand_tix += tix
+        raw_filename = os.path.basename(pf)[: -len("_priced.md")] + ".txt"
         decks.append({
             "label": _deck_label(pf),
             "filename": os.path.basename(pf),
+            "raw_filename": raw_filename,
             "html": markdown.markdown(priced_text, extensions=MD_EXTENSIONS),
             "usd_total": usd,
             "tix_total": tix,

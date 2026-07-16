@@ -31,7 +31,13 @@
   {% for d in decks %}
   <div class="deck-block">
     <h3>{{ d.label }}</h3>
-    <p class="deck-source">Source: <code>{{ d.filename[:-10] }}.txt</code></p>
+    <p class="deck-source">
+      Source: <code>{{ d.filename[:-10] }}.txt</code>
+      &middot;
+      <a class="download-link" href="{{ url_for('download_decklist', folder=article.folder, filename=d.raw_filename) }}" download>
+        &#8681; Download for MTGO import
+      </a>
+    </p>
     <div class="priced-table">
       {{ d.html|safe }}
     </div>
