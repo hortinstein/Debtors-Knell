@@ -24,6 +24,14 @@ from flask import Flask, Response, abort, render_template, request, send_from_di
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ARCHIVE_DIR = os.path.join(REPO_ROOT, "archive")
 MASTER_INDEX_PATH = os.path.join(REPO_ROOT, "scripts", "master_index.json")
+DECK_ARCHETYPES_PATH = os.path.join(REPO_ROOT, "scripts", "deck_archetypes.json")
+
+# Fixed vocabulary, in the order shown in the index-page filter dropdown.
+ARCHETYPE_LIST = [
+    "Aggro", "Midrange", "Control", "Combo", "Tempo", "Ramp", "Burn", "Mill",
+    "Reanimator", "Tribal", "Stax/Prison", "Aristocrats", "Artifact", "Toolbox",
+    "Lifegain", "Discard",
+]
 
 MD_EXTENSIONS = ["tables", "sane_lists", "nl2br"]
 
@@ -225,14 +233,38 @@ def _first_paragraph(article_text, max_len=230):
     return ""
 
 
+_DECK_ARCHETYPES_CACHE = None
+
+
+def get_deck_archetypes():
+    """folder -> {"description": <=30-word strategy summary, "archetypes":
+    [tag, ...]}, curated once per article by reading the article text and
+    decklist (see scripts/deck_archetypes.json). Articles with no decklist
+    aren't covered."""
+    global _DECK_ARCHETYPES_CACHE
+    if _DECK_ARCHETYPES_CACHE is None:
+        if os.path.exists(DECK_ARCHETYPES_PATH):
+            with open(DECK_ARCHETYPES_PATH, encoding="utf-8") as f:
+                _DECK_ARCHETYPES_CACHE = json.load(f)
+        else:
+            _DECK_ARCHETYPES_CACHE = {}
+    return _DECK_ARCHETYPES_CACHE
+
+
 def _load_article_entry(meta):
     folder = meta["folder"]
     folder_path = os.path.join(ARCHIVE_DIR, folder)
     article_path = os.path.join(folder_path, "article.md")
-    description = ""
-    if os.path.exists(article_path):
-        with open(article_path, encoding="utf-8") as f:
-            description = _first_paragraph(f.read())
+
+    archetype_info = get_deck_archetypes().get(folder)
+    archetypes = archetype_info["archetypes"] if archetype_info else []
+    if archetype_info:
+        description = archetype_info["description"]
+    else:
+        description = ""
+        if os.path.exists(article_path):
+            with open(article_path, encoding="utf-8") as f:
+                description = _first_paragraph(f.read())
 
     priced_files = _priced_files_for(folder_path)
     has_decklist = bool(priced_files)
@@ -250,6 +282,7 @@ def _load_article_entry(meta):
         "date_str": meta.get("date_str") or "",
         "ymd": meta.get("ymd") or "",
         "description": description,
+        "archetypes": archetypes,
         "has_decklist": has_decklist,
         "num_decks": len(priced_files),
         "usd_total": usd_total,
@@ -383,6 +416,7 @@ def index():
         articles=articles,
         total_count=len(articles),
         with_decklist_count=with_decklist,
+        archetype_list=ARCHETYPE_LIST,
     )
 
 

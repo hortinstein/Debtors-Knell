@@ -3,6 +3,13 @@
 {% block content %}
 <p class="back-link"><a href="{{ url_for('index') }}">&larr; back to all articles</a></p>
 
+{% if article.archetypes %}
+<div class="archetype-summary">
+  {% for tag in article.archetypes %}<span class="tag-chip">{{ tag }}</span>{% endfor %}
+  {% if article.description %}<p class="archetype-description">{{ article.description }}</p>{% endif %}
+</div>
+{% endif %}
+
 {% if has_screenshot %}
 <figure class="screenshot-frame">
   <img class="screenshot-thumb"
