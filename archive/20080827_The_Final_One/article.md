@@ -23,9 +23,9 @@ Wow! Seriously, doesn't feel like I've been writing the column for that long—m
 
 ##### Column #1: [Discard (This Deck) – Black-Blue Megrim / Discard](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb53)
 
-Megrim
+[![Megrim](https://api.scryfall.com/cards/m10/104?format=image&version=normal)](https://scryfall.com/card/m10/104/megrim)
 
-The first Building on a Budget I wrote was my audition piece, which would appear later in the column, but chronologically this one was published first. This was an interesting effort, but a very bad way to start off the column, because the lesson I taught was that sometimes you have to abandon the central card of your deck (in this case, Megrim and Abyssal Nocturnus) and go with the cards that work better (Debtors' Knell, Hondens). While this is an important lesson, it immediately shattered expectations of my readers, and feedback in the forums was sharply divided between those who agreed with the lesson and those who did not.
+The first Building on a Budget I wrote was my audition piece, which would appear later in the column, but chronologically this one was published first. This was an interesting effort, but a very bad way to start off the column, because the lesson I taught was that sometimes you have to abandon the central card of your deck (in this case, [Megrim](https://scryfall.com/card/m10/104/megrim) and [Abyssal Nocturnus](https://scryfall.com/card/gpt/43/abyssal-nocturnus)) and go with the cards that work better ([Debtors' Knell](https://scryfall.com/card/c21/215/debtors-knell), Hondens). While this is an important lesson, it immediately shattered expectations of my readers, and feedback in the forums was sharply divided between those who agreed with the lesson and those who did not.
 
 Coming into this gig, I knew I would measured against JMS, who had a defining run on Building on a Budget. Whereas JMS was a Johnny/Timmy, I was a Spike/Johnny—I valued winning, but I also wanted to win with my decks. I was also a lot more of a tournament player than JMS (Trivia Question Time: Who won the first public PTQ ever? Answer: Ben Bleiweiss). To answer an often-asked question in the forums and through e-mail: Yes, I do believe that a lot of the records I posted with my decks throughout my run were due to my play skill at **Magic**. I'm not the best ever, but I can hold my own.
 
@@ -51,13 +51,13 @@ One of the struggles I had with my vision of Building on a Budget was the concep
 
 ##### Columns #4 & #5: Exploding Wurms, [Part 1](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb56) and [Part 2](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb57)
 
-This deck was the one where I finally got into the groove of Building on a Budget. This was one of the concepts I had in mind to evolve when I first landed the Building on a Budget column, and I had a blast (literally) using Undying Flames to pop 15 points of Autochthon Wurm damage upside my opponents' heads!
+This deck was the one where I finally got into the groove of Building on a Budget. This was one of the concepts I had in mind to evolve when I first landed the Building on a Budget column, and I had a blast (literally) using [Undying Flames](https://scryfall.com/card/sok/119/undying-flames) to pop 15 points of [Autochthon Wurm](https://scryfall.com/card/rav/191/autochthon-wurm) damage upside my opponents' heads!
 
 ##### Column #6: [I Heart Sky Swallower](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb58)
 
-Sky Swallower
+[![Sky Swallower](https://api.scryfall.com/cards/gpt/34?format=image&version=normal)](https://scryfall.com/card/gpt/34/sky-swallower)
 
-Wherein you will find my first obsession with Battle of Wits, and the results of my first choose-my-build-around-rare pool. Some people loved the deck; others were genuinely disappointed that I built a deck that contained Zur's Weirding. Folks, Sky Swallower plus Zur's Weirding = a way to win with Sky Swallower. It's better than giving your opponent all of your permanents without a net, and Bronze Bombshell is way too obvious a build for this deck.
+Wherein you will find my first obsession with [Battle of Wits](https://scryfall.com/card/m13/44/battle-of-wits), and the results of my first choose-my-build-around-rare pool. Some people loved the deck; others were genuinely disappointed that I built a deck that contained [Zur's Weirding](https://scryfall.com/card/9ed/114/zurs-weirding). Folks, [Sky Swallower](https://scryfall.com/card/gpt/34/sky-swallower) plus [Zur's Weirding](https://scryfall.com/card/9ed/114/zurs-weirding) = a way to win with [Sky Swallower](https://scryfall.com/card/gpt/34/sky-swallower). It's better than giving your opponent all of your permanents without a net, and Bronze Bombshell is way too obvious a build for this deck.
 
 ##### Column #7: [Better Deckbuilding 101: Understanding Tempo with Ghost Dad](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb59)
 
@@ -65,7 +65,7 @@ One of my few columns in which I built a budget version of a proven tournament d
 
 ##### Column #8: [Grand Spree](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb60)
 
-This was my audition piece for Building on a Budget, and also one of my favorite decks I built for Building on a Budget. Mycosynth Lattice plus Shattering Spree: a simple yet effective combo to take out your opponent's entire board.
+This was my audition piece for Building on a Budget, and also one of my favorite decks I built for Building on a Budget. [Mycosynth Lattice](https://scryfall.com/card/bbd/241/mycosynth-lattice) plus [Shattering Spree](https://scryfall.com/card/gpt/75/shattering-spree): a simple yet effective combo to take out your opponent's entire board.
 
 ##### Column #9: [Deckbuilding 101: Five Tips for Better Deckbuilding](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb62)
 
@@ -81,7 +81,7 @@ Good rules to follow, even to this day.
 
 ##### Columns #10 & #11: Izzet Pinball, [Part 1](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb63) and [Part 2](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb64)
 
-First of all, thank you to Yesterdays Fate for the submission of this deck. Second, it was very difficult to run any sort of Deck Doctor challenge, because A) I would get hundreds of submissions and I didn't want to slight anyone's time or efforts in writing to me, and B) by the time I sorted through them all, it would be a few weeks later due to lead time on writing this column, and people were somewhat disconnected from the original idea of a Deck Doctor to begin with. This article ended up being a fan favorite, and the deck itself translates well into modern Standard (note: Cinder Pyromancer and Flame Jab!)
+First of all, thank you to Yesterdays Fate for the submission of this deck. Second, it was very difficult to run any sort of Deck Doctor challenge, because A) I would get hundreds of submissions and I didn't want to slight anyone's time or efforts in writing to me, and B) by the time I sorted through them all, it would be a few weeks later due to lead time on writing this column, and people were somewhat disconnected from the original idea of a Deck Doctor to begin with. This article ended up being a fan favorite, and the deck itself translates well into modern Standard (note: Cinder Pyromancer and [Flame Jab](https://scryfall.com/card/ema/131/flame-jab)!)
 
 ##### Column #12: [Azorius Ascendant: The Prelude](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb55)
 
@@ -89,11 +89,11 @@ Early in the column, I struggled with a way to make reader feedback relevant to 
 
 ##### Column #13: [Battle of Wits, Budget *Dissension* Stylin'](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb66)
 
-Battle of Wits
+[![Battle of Wits](https://api.scryfall.com/cards/m13/44?format=image&version=normal)](https://scryfall.com/card/m13/44/battle-of-wits)
 
-I have to confess; former Sideboard reporter Toby Wachter turned me on to the Battle of Wits deck. If there ever was a medium for playing Battle of Wits, it's **Magic Online**—paradise for a 250-card deck. There's no shuffling involved, and you don't have to carry around a stack of 250 cards, both of which contribute to an enjoyable game experience. My Battle of Wits deck evolved with every new set, and it was the one recurring feature I stuck with until Wizards took Battle of Wits out of *Tenth Edition*.
+I have to confess; former Sideboard reporter Toby Wachter turned me on to the [Battle of Wits](https://scryfall.com/card/m13/44/battle-of-wits) deck. If there ever was a medium for playing [Battle of Wits](https://scryfall.com/card/m13/44/battle-of-wits), it's **Magic Online**—paradise for a 250-card deck. There's no shuffling involved, and you don't have to carry around a stack of 250 cards, both of which contribute to an enjoyable game experience. My [Battle of Wits](https://scryfall.com/card/m13/44/battle-of-wits) deck evolved with every new set, and it was the one recurring feature I stuck with until Wizards took [Battle of Wits](https://scryfall.com/card/m13/44/battle-of-wits) out of *Tenth Edition*.
 
-If I'd never written about Battle of Wits, though I wonder how much money I could have collected from the 3136 of you who picked the "I hate Battle of Wits and will pay Ben not to build a Battle of Wits deck.".
+If I'd never written about [Battle of Wits](https://scryfall.com/card/m13/44/battle-of-wits), though I wonder how much money I could have collected from the 3136 of you who picked the "I hate [Battle of Wits](https://scryfall.com/card/m13/44/battle-of-wits) and will pay Ben not to build a [Battle of Wits](https://scryfall.com/card/m13/44/battle-of-wits) deck.".
 
 My guess is 31.36.
 
@@ -105,7 +105,7 @@ Ben's dirty secret (or not so secret): I really don't like doing theme deck evol
 
 ##### Column #17: [Stealing My Muse](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb70)
 
-Hands down, this ended up being the favorite deck I built for Building on a Budget. It wasn't the most fun to play (or play against), and it wasn't the most powerful, but I took a card (Muse Vessel), built a deck around it, and made it work on my terms. This was the first deck that a large number of people built for themselves, and I was playing against it for weeks afterwards in the casual rooms of **Magic Online**.
+Hands down, this ended up being the favorite deck I built for Building on a Budget. It wasn't the most fun to play (or play against), and it wasn't the most powerful, but I took a card ([Muse Vessel](https://scryfall.com/card/dis/163/muse-vessel)), built a deck around it, and made it work on my terms. This was the first deck that a large number of people built for themselves, and I was playing against it for weeks afterwards in the casual rooms of **Magic Online**.
 
 ##### Columns #18 & #20: Deck Doctor: Sasaya My Dreams, [Part 1](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb71) and [Part 2](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb73)
 
@@ -117,17 +117,17 @@ The third column was an experiment in trying to run the column backwards, so tha
 
 ##### Columns #23, #24 & #25: [Living a Double Life, Part 1](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb77), [Life Support](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb78), and [Eight Mana to Paradise](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb79)
 
-In which I take a [Friday Night **Magic**](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/TCG/Events.aspx?x=dci/wpn/main) deck that I once built, which was decidedly not budget, and try to get it to work as a budget deck, to disastrous results. This was originally a two-part series, but I stubbornly stuck with it for a third part, trying to get the False Cure / Beacon of Immortality combination to work in a winning deck. I should have stopped this after the second part. If anyone ever wants to point to a deck that I didn't do well with, bookmark this three-part series, and enter the Schadenfreude.
+In which I take a [Friday Night **Magic**](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/TCG/Events.aspx?x=dci/wpn/main) deck that I once built, which was decidedly not budget, and try to get it to work as a budget deck, to disastrous results. This was originally a two-part series, but I stubbornly stuck with it for a third part, trying to get the [False Cure](https://scryfall.com/card/ons/146/false-cure) / [Beacon of Immortality](https://scryfall.com/card/10e/10/beacon-of-immortality) combination to work in a winning deck. I should have stopped this after the second part. If anyone ever wants to point to a deck that I didn't do well with, bookmark this three-part series, and enter the Schadenfreude.
 
 ##### Column #26: [Blue Snow Aggro](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb80)
 
-Cancel
+[![Cancel](https://api.scryfall.com/cards/fdn/505?format=image&version=normal)](https://scryfall.com/card/fdn/505/cancel)
 
 OMG, countermagic in the casual room! Throughout my run on the column, I would debate about what should or shouldn't show up in the casual room of **Magic Online**. My personal point of view: as long as it isn't a deck that's been winning GPs and PTQs and PTs, it's fair game. I'm all for facing masses of countermagic, land destruction, burn, or what have not. I'm not for facing a copy of the deck that just won the Pro Tour the weekend before. Again, my opinion, but that's what the tournament practice room is for. However, if you don't want to play against counterspells, and you advertise "no countermagic!", that's fine—but if you don't advertise it ahead of time, just suck it up and play. You might learn a thing or two, like how to beat a counterspell-heavy deck. (Hint: Throw threats at them until something lands.)
 
 ##### Columns #27 & #28: [Battle of Wits, Minus 100 Degrees](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb81) and [Deep Freeze](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb82)
 
-My second Battle of Wits evolution, in which I add *Coldsnap* and go 15-5. I went 6-4 my first go-around with Battle of Wits, so my total Battle of Wits Building on a Budget record is 21-9. Not bad for a 250-card deck that has only four rares (Battle of Wits) and a bunch of budget commons and uncommons.
+My second [Battle of Wits](https://scryfall.com/card/m13/44/battle-of-wits) evolution, in which I add *Coldsnap* and go 15-5. I went 6-4 my first go-around with [Battle of Wits](https://scryfall.com/card/m13/44/battle-of-wits), so my total [Battle of Wits](https://scryfall.com/card/m13/44/battle-of-wits) Building on a Budget record is 21-9. Not bad for a 250-card deck that has only four rares ([Battle of Wits](https://scryfall.com/card/m13/44/battle-of-wits)) and a bunch of budget commons and uncommons.
 
 ##### Column #29: [There Can Only Be Fun: Five-Color Highlander in Standard](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb83)
 
@@ -147,9 +147,9 @@ By the time Halloween came around the next year, I had completely forgotten my n
 
 I had started the BoaB Sidebar a couple of weeks earlier, and it helped clarify the purpose of the column: 30 tickets or less, **Magic Online**, format, etc.
 
-Quick trivia question: Which person have I name-dropped the most during my run on Building on a Budget? If you answered Hurkylme Jenklefors, you're completely wrong. If you said StarCityGames.com employee and 2003 Virginia State Champion Wes Moss, you're completely right. Wes (at the age of 16) was the person who beat John Upton thanks to a particularly fortuitous Persecute (see the article for the story). What's even better about Wes is that really wants to get to know everyone in **Magic**—and he gets on my case when I don't introduce him to people at events.
+Quick trivia question: Which person have I name-dropped the most during my run on Building on a Budget? If you answered Hurkylme Jenklefors, you're completely wrong. If you said StarCityGames.com employee and 2003 Virginia State Champion Wes Moss, you're completely right. Wes (at the age of 16) was the person who beat John Upton thanks to a particularly fortuitous [Persecute](https://scryfall.com/card/9ed/151/persecute) (see the article for the story). What's even better about Wes is that really wants to get to know everyone in **Magic**—and he gets on my case when I don't introduce him to people at events.
 
-So Mark Rosewater contacted SCG about the Timbermare preview card—a card dedicated in part to Marilyn Wakefield, late wife of Jamie Wakefield. I talked for about 10 minutes on the phone with Mark, and we discussed the card, the power level, whether or not Jamie would want to do the preview (of course he did!), and what I thought of the tribute (it was swell). The end of the conversation went like this:
+So Mark Rosewater contacted SCG about the [Timbermare](https://scryfall.com/card/plc/140/timbermare) preview card—a card dedicated in part to Marilyn Wakefield, late wife of Jamie Wakefield. I talked for about 10 minutes on the phone with Mark, and we discussed the card, the power level, whether or not Jamie would want to do the preview (of course he did!), and what I thought of the tribute (it was swell). The end of the conversation went like this:
 
 **Mark:** So Ben, anything else you want to ask?
 **Me:** Well Mark, one thing I wanted to say. Former Virginia State Champion Wes Moss wanted me to say hi to you from him.
@@ -178,7 +178,7 @@ Total | 3656 | 100.0%
 
 ##### Column #34: [Eight-Post](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb90)
 
-25-0. Legions of people building the deck, infesting the casual and competitive rooms for weeks to come. Two PTQ Top 8s. This was the first deck I built that fully took advantage of the 30-ticket budget, and it caused a problem: once the article hit, everyone and their sister started buying up the pieces to this deck. The price of several key cards (Divining Top, Vesuva, Mindslaver, Oblivion Stone) literally doubled and tripled within a day of publication, putting the deck more in the 50-60 ticket range by the end of the week. This was one of the risks of my more popular decks: the more popular the deck, the more risk there was of cards in the deck sharply rising in value immediately after publication of my articles, making some of those cards fall out (or should I say upwards) of the budget range.
+25-0. Legions of people building the deck, infesting the casual and competitive rooms for weeks to come. Two PTQ Top 8s. This was the first deck I built that fully took advantage of the 30-ticket budget, and it caused a problem: once the article hit, everyone and their sister started buying up the pieces to this deck. The price of several key cards (Divining Top, [Vesuva](https://scryfall.com/card/tsr/289/vesuva), [Mindslaver](https://scryfall.com/card/som/176/mindslaver), [Oblivion Stone](https://scryfall.com/card/ncc/373/oblivion-stone)) literally doubled and tripled within a day of publication, putting the deck more in the 50-60 ticket range by the end of the week. This was one of the risks of my more popular decks: the more popular the deck, the more risk there was of cards in the deck sharply rising in value immediately after publication of my articles, making some of those cards fall out (or should I say upwards) of the budget range.
 
 Another question I'm often asked: do I doctor the results of my playtesting at all? The answer is no—the only games I don't include are ones where people concede after the first turn, usually after they've taken a triple-mulligan or some-such. Otherwise, every win and every loss is there for the world to see. 25-0 with Eight-Post was a solid 25-0 (and when I took the deck to the competitive room, I ended up with about a 66% winning percentage overall).
 
@@ -192,11 +192,11 @@ After Pollgate '06, I just had to evolve the Fun with Fungus theme deck! I made 
 
 ##### Column #38: [Battle of Wits, Now with 100% More *Time Spiral*!](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb97)
 
-Battle of Wits went 9-1-1 this time (including the only drawn game in my run of Building on a Budget), to bring my total Battle of Wits record to 30-10-1
+[Battle of Wits](https://scryfall.com/card/m13/44/battle-of-wits) went 9-1-1 this time (including the only drawn game in my run of Building on a Budget), to bring my total [Battle of Wits](https://scryfall.com/card/m13/44/battle-of-wits) record to 30-10-1
 
 ##### Column #39: [Booby Trapped!](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb98)
 
-Bennie Smith: a good man, and lover of the deck involving the dredge cards! Bennie and I talk quite a bit each week, and one of the decks Bennie almost ran at States in 2006 was the Booby Trap / Mishra, Artificer Prodigy deck that ended up in this column. I think Bennie instead opted to run dredge again that year, and went 0-10, in an eight-round tournament. Did I mention that Bennie Smith, like Wes Moss, is also a former Virginia State Champion? Gotta catch 'em all!
+Bennie Smith: a good man, and lover of the deck involving the dredge cards! Bennie and I talk quite a bit each week, and one of the decks Bennie almost ran at States in 2006 was the [Booby Trap](https://scryfall.com/card/9ed/289/booby-trap) / [Mishra, Artificer Prodigy](https://scryfall.com/card/tsp/243/mishra-artificer-prodigy) deck that ended up in this column. I think Bennie instead opted to run dredge again that year, and went 0-10, in an eight-round tournament. Did I mention that Bennie Smith, like Wes Moss, is also a former Virginia State Champion? Gotta catch 'em all!
 
 ##### Column #40 & #41: Back to the Rak, [Part 1](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb99) and [Part 2](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb100)
 
@@ -230,7 +230,7 @@ Now's a good time to say thanks to the people who do the graphic design for **ma
 
 [Fungal Behemoth (G/U)](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb111)**
 
-This was (just about) my one-year anniversary, and I'd tried a lot of different ideas: theme deck evolutions, Deck Doctor clinics, building decks from scratch, budgetizing tournament decks, talking general deckbuilding theory, and acting as a **Magic Online** price guide. The only real recurring feature was my Battle of Wits build, and I wanted to come up with an idea that would put my stamp on Building on a Budget once and for all.
+This was (just about) my one-year anniversary, and I'd tried a lot of different ideas: theme deck evolutions, Deck Doctor clinics, building decks from scratch, budgetizing tournament decks, talking general deckbuilding theory, and acting as a **Magic Online** price guide. The only real recurring feature was my [Battle of Wits](https://scryfall.com/card/m13/44/battle-of-wits) build, and I wanted to come up with an idea that would put my stamp on Building on a Budget once and for all.
 
 I was also still struggling with a way to get reader input integrated into the column. As I mentioned earlier, lead times on the articles meant that I had maybe one to two days after an article was published in order to use any ideas that people posted in the forums, or through e-mail. How could I run polls that were still timely, all while keeping a series of articles going week after week?
 
@@ -240,17 +240,17 @@ I pitched the idea to Scott Johns, and Scott was initially hesitant, but I reall
 
 ##### Column #53: [Battle of Wits con *Planar Chaos*](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb112)
 
-My previous Battle of Wits record: 30-10-1. This go-round: 10-5. Total Battle of Wits record thus far: 40-15-1. Not bad for a 240-card deck, eh?
+My previous [Battle of Wits](https://scryfall.com/card/m13/44/battle-of-wits) record: 30-10-1. This go-round: 10-5. Total [Battle of Wits](https://scryfall.com/card/m13/44/battle-of-wits) record thus far: 40-15-1. Not bad for a 240-card deck, eh?
 
 ##### Column #54: [Little Big Black](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb113)
 
-Based on a Mark Rosewater gunslinging deck, minus the Snow-Covered Swamps.
+Based on a Mark Rosewater gunslinging deck, minus the [Snow-Covered Swamp](https://scryfall.com/card/khm/280/snow-covered-swamp)s.
 
 ##### Column #55: [10 Decks in 10 Weeks: Battle Royale!](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb115)
 
-Fungal Behemoth
+[![Fungal Behemoth](https://api.scryfall.com/cards/plc/128?format=image&version=normal)](https://scryfall.com/card/plc/128/fungal-behemoth)
 
-Wow, did this column take a long, LONG time to write! I played every deck from my 10 Decks in 10 Weeks column, and played them from both sides of the equation at some point. Thanks to Craig Stevenson, Eric Lewandowski, Evan Erwin, Nicholas Sabin, Adam Simpson, Raymond Morse, Morten Batbukt, Dick Curtis, and Brletich for your help with this grueling, reader-demanded exercise. Of all my Building on a Budget columns, this one took the absolute longest to playtest and write, clocking in at some ridiculous total work time (40+ hours). In the end, Fungal Behemoth came out on top!
+Wow, did this column take a long, LONG time to write! I played every deck from my 10 Decks in 10 Weeks column, and played them from both sides of the equation at some point. Thanks to Craig Stevenson, Eric Lewandowski, Evan Erwin, Nicholas Sabin, Adam Simpson, Raymond Morse, Morten Batbukt, Dick Curtis, and Brletich for your help with this grueling, reader-demanded exercise. Of all my Building on a Budget columns, this one took the absolute longest to playtest and write, clocking in at some ridiculous total work time (40+ hours). In the end, [Fungal Behemoth](https://scryfall.com/card/plc/128/fungal-behemoth) came out on top!
 
 ##### Column #56 & #57: Madbent! [Part 1](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb116) and [Part 2](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb117)
 
@@ -262,7 +262,7 @@ Another Bleiweiss innovation! This was Deck Doctor in reverse. Instead of gettin
 
 ##### Column #59 & #60: Jhoira Goes Up, [Part 1](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb119) and [Part 2](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb120)
 
-This was both a theme deck evolution and an interlude before the results of the deck-building contest. As a note, Urzatron decks started running Aeon Chronicler shortly after this as a kill condition, so if you got the Chroniclers while they were budget (half-a-ticket each in this column), you found yourself with a card that was quickly going for the upwards of 5 tickets each within a month after this column ran!
+This was both a theme deck evolution and an interlude before the results of the deck-building contest. As a note, Urzatron decks started running [Aeon Chronicler](https://scryfall.com/card/tsr/51/aeon-chronicler) shortly after this as a kill condition, so if you got the Chroniclers while they were budget (half-a-ticket each in this column), you found yourself with a card that was quickly going for the upwards of 5 tickets each within a month after this column ran!
 
 ##### Columns #61, #62 & #63: The Great Dredge Contest! [Part 1](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb121), [Part 2](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb122), and [Part 3](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb123)
 
@@ -270,7 +270,7 @@ Whenever I ran a build-a-deck contest such as this one, I would read every submi
 
 ##### Columns #64 – #68: Dragon War!
 
-Intet, the Dreamer
+[![Intet, the Dreamer](https://api.scryfall.com/cards/2x2/229?format=image&version=normal)](https://scryfall.com/card/2x2/229/intet-the-dreamer)
 
 [Intet, The Dreamer!](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb124)
 
@@ -282,7 +282,7 @@ Intet, the Dreamer
 
 [Vorosh, the Hunter](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb129)
 
-My ill-fated follow-up to 10 Decks in 10 Weeks. I set up way too many rules for what cards I could use (only mono- and multicolored cards in the Dragon's main color? What was I thinking?) and the Dragons are inherently flawed as build-around cards—once you hit someone with a 6/6 flyer a couple of times, that player is likely dead. Reader response was extremely poor, so I scrapped the original concept (Rule #3: Don't be a slave to your theme!), and just did a natural Dragon evolution for the last couple of parts. Of these decks, four were pretty bad, but the Teneb, the Harvester deck was a lot of fun to play. If you skipped the middle of this series (and believe me, I might have too if I were a reader—not my strongest effort), go back and check out the Teneb deck right now. I'll still be here when you get back.
+My ill-fated follow-up to 10 Decks in 10 Weeks. I set up way too many rules for what cards I could use (only mono- and multicolored cards in the Dragon's main color? What was I thinking?) and the Dragons are inherently flawed as build-around cards—once you hit someone with a 6/6 flyer a couple of times, that player is likely dead. Reader response was extremely poor, so I scrapped the original concept (Rule #3: Don't be a slave to your theme!), and just did a natural Dragon evolution for the last couple of parts. Of these decks, four were pretty bad, but the [Teneb, the Harvester](https://scryfall.com/card/2x2/282/teneb-the-harvester) deck was a lot of fun to play. If you skipped the middle of this series (and believe me, I might have too if I were a reader—not my strongest effort), go back and check out the Teneb deck right now. I'll still be here when you get back.
 
 ##### Column #69: [The Joke's On You!](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb130)
 
@@ -290,7 +290,7 @@ Whereupon I let BoaB run wild, and he calls me a "fleshbag" and a "protein bag" 
 
 ##### Column #70: [Tight Sight '07](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb131)
 
-Brian David-Marshall (Or BDM, as you might know him) really, really liked the Tight Sight deck. Never could get it to work beyond tier 2 or 3, but a lot of us tried to help out on the deck. The concept was neat: get yourself down to just a couple of cards in library with Future Sight out, get infinite mana with Early Harvest, and then Deep Analysis (or Brain Freeze) your opponent to death. Even in the retooling, it felt just one turn slow for the Extended Environment.
+Brian David-Marshall (Or BDM, as you might know him) really, really liked the Tight Sight deck. Never could get it to work beyond tier 2 or 3, but a lot of us tried to help out on the deck. The concept was neat: get yourself down to just a couple of cards in library with [Future Sight](https://scryfall.com/card/mh1/53/future-sight) out, get infinite mana with [Early Harvest](https://scryfall.com/card/9ed/235/early-harvest), and then [Deep Analysis](https://scryfall.com/card/msc/149/deep-analysis) (or [Brain Freeze](https://scryfall.com/card/mb2/24/brain-freeze)) your opponent to death. Even in the retooling, it felt just one turn slow for the Extended Environment.
 
 ##### Column #71: [Tight Sight Wrap Up / Wily Arcanis](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb132)
 
@@ -318,7 +318,7 @@ Here's a little secret that I never came out and said, but really tried to push 
 
 ##### Column #77: [The Joke's Still on You!](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb139)
 
-After I wrote this column, I swore I would never use Momentary Blink again in one of my decks. It's one of the most versatile utility cards ever printed, it's ridiculously fun to play with on a budget (since it's a common), and I didn't want it to be a crutch, given that I built no less than five separate decks that abused the card. I'm just glad that Reveillark quickly went out of the budget range, because otherwise I might have been tempted by the Blink one last time.
+After I wrote this column, I swore I would never use [Momentary Blink](https://scryfall.com/card/dmr/15/momentary-blink) again in one of my decks. It's one of the most versatile utility cards ever printed, it's ridiculously fun to play with on a budget (since it's a common), and I didn't want it to be a crutch, given that I built no less than five separate decks that abused the card. I'm just glad that [Reveillark](https://scryfall.com/card/2x2/26/reveillark) quickly went out of the budget range, because otherwise I might have been tempted by the Blink one last time.
 
 ##### Columns #78, #79 & #80: Deckbuilding Challenge: Hostile Intentions, [Part 1](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb140), [Part 2](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb141) and [Part 3](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb143)
 
@@ -334,13 +334,13 @@ RED BLOW STUFF UP GUD!
 
 ##### Columns #82 & #83: Intruder Alert, [Part 1](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb147) and [Part 2](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb148)
 
-Intruder Alarm
+[![Intruder Alarm](https://api.scryfall.com/cards/8ed/86?format=image&version=normal)](https://scryfall.com/card/8ed/86/intruder-alarm)
 
-Intruder Alarm + mana Elf + Imperious Perfect = infinite Elves. Intruder Alarm + Essence Warden + the previous = infinite life. Intruder Alarm plus Sprout Swarm = eventual infinite creatures. **Magic Online** making you go through each step over and over and over = boring for your opponents, because unlike in real life, you can't just say "make 1,000,000 Saprolings at the end of your turn, and then attack!"
+[Intruder Alarm](https://scryfall.com/card/8ed/86/intruder-alarm) + mana Elf + [Imperious Perfect](https://scryfall.com/card/fdn/719/imperious-perfect) = infinite Elves. [Intruder Alarm](https://scryfall.com/card/8ed/86/intruder-alarm) + [Essence Warden](https://scryfall.com/card/cma/106/essence-warden) + the previous = infinite life. [Intruder Alarm](https://scryfall.com/card/8ed/86/intruder-alarm) plus [Sprout Swarm](https://scryfall.com/card/fut/138/sprout-swarm) = eventual infinite creatures. **Magic Online** making you go through each step over and over and over = boring for your opponents, because unlike in real life, you can't just say "make 1,000,000 Saprolings at the end of your turn, and then attack!"
 
 ##### Column #84: [Fighting the Good Battle (of Wits)](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb149)
 
-In which I port Battle of Wits to Extended and pilot it to a 9-1 record. That brings my final Battle of Wits record to 49-16-1 for my run on Building on a Budget, a 74% winning percentage. I firmly believe that Battle of Wits could win an Extended PTQ if someone had the patience to build it right and play it. It can be just as fast as any other turn-four combo-kill deck currently running around that format.
+In which I port [Battle of Wits](https://scryfall.com/card/m13/44/battle-of-wits) to Extended and pilot it to a 9-1 record. That brings my final [Battle of Wits](https://scryfall.com/card/m13/44/battle-of-wits) record to 49-16-1 for my run on Building on a Budget, a 74% winning percentage. I firmly believe that [Battle of Wits](https://scryfall.com/card/m13/44/battle-of-wits) could win an Extended PTQ if someone had the patience to build it right and play it. It can be just as fast as any other turn-four combo-kill deck currently running around that format.
 
 ##### Column #85: [The Five Lost Tribes of *Morningtide*](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb150)
 
@@ -360,7 +360,7 @@ Kelly Digges, my ever-stalwart editor, is the one who writes the little blurbs y
 
 ##### Column #89: [Thousand-Year Elves](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb154)
 
-To this day, I have yet to track down the original Japanese decklist that this deck was based off of. Thousand-Year Elixirs had the Building on a Budget price jump thanks to this article.
+To this day, I have yet to track down the original Japanese decklist that this deck was based off of. [Thousand-Year Elixir](https://scryfall.com/card/c21/271/thousand-year-elixir)s had the Building on a Budget price jump thanks to this article.
 
 ##### Columns #90 & #91: Silent Killers, [Part 1](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb155) and [Part 2](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb156)
 
@@ -394,13 +394,13 @@ I knew that the following week was going to be Evil Twin Week, and (to toot my o
 
 ##### Column #101: [Evil Phytohydras! (Written by Evil Ben Bleiweiss)](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb166)
 
-So did it work? Heck yeah! Scott and Kelly were really wary about my approach to this column, but I reassured them. "Guys, don't worry. My readers will TOTALLY get the joke, and this will be one of my most popular columns." And you know what? You guys TOTALLY got the joke, and it WAS one of my most popular columns. I used the lowest poll results. I openly insulted the people I was playing against, and you (the reader). I completely ignored playing with a budget, put One with Nothing in the deck, and ended up with a (completely doctored) 10-0 record. But man, it was a blast, because I took everything negative people had to say about the column, and pushed it to such an extreme that people couldn't help but laugh.
+So did it work? Heck yeah! Scott and Kelly were really wary about my approach to this column, but I reassured them. "Guys, don't worry. My readers will TOTALLY get the joke, and this will be one of my most popular columns." And you know what? You guys TOTALLY got the joke, and it WAS one of my most popular columns. I used the lowest poll results. I openly insulted the people I was playing against, and you (the reader). I completely ignored playing with a budget, put [One with Nothing](https://scryfall.com/card/sok/84/one-with-nothing) in the deck, and ended up with a (completely doctored) 10-0 record. But man, it was a blast, because I took everything negative people had to say about the column, and pushed it to such an extreme that people couldn't help but laugh.
 
 As for the poll in this column... I'm afraid you'll have to use your imagination on that one, as my editors refused to post the image on this family-friendly site!
 
 ##### Column #102: [Good Phytohydras!](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb167)
 
-After the Intruder Alarm deck, you'd think I wouldn't play a deck that relies on making infinite anything, would you? Fool me once, shame on you. Fool me twice, shame on my poor hapless opponents who had to sit through 10-20 minute turns!
+After the [Intruder Alarm](https://scryfall.com/card/8ed/86/intruder-alarm) deck, you'd think I wouldn't play a deck that relies on making infinite anything, would you? Fool me once, shame on you. Fool me twice, shame on my poor hapless opponents who had to sit through 10-20 minute turns!
 
 ##### Column #103: [Los Señores Gigantes!](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb168)
 
@@ -408,17 +408,17 @@ Once again, Ben Bleiweiss (that's me!) makes his own personal theme decks, all b
 
 ##### Column #104: [Look Ma, No Creatures!](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb169)
 
-Chandra Nalaar
+[![Chandra Nalaar](https://api.scryfall.com/cards/jvc/34?format=image&version=normal)](https://scryfall.com/card/jvc/34/chandra-nalaar)
 
-Wow, Chandra is SOOOO GOOOD! Why isn't she played in Standard and Block? Every game I drew her, it was a blowout. Also, Boom // Bust was a blowout as well. People are used to throwing down every land they get as they draw them, leaving them with no outs against the big land destruction spell. That's just sloppy **Magic**—don't play your extra lands unless you need to! You never know when you'll need to dodge discard, or have an extra land in a pinch.
+Wow, Chandra is SOOOO GOOOD! Why isn't she played in Standard and Block? Every game I drew her, it was a blowout. Also, [Boom // Bust](https://scryfall.com/card/tsr/156/boom-bust) was a blowout as well. People are used to throwing down every land they get as they draw them, leaving them with no outs against the big land destruction spell. That's just sloppy **Magic**—don't play your extra lands unless you need to! You never know when you'll need to dodge discard, or have an extra land in a pinch.
 
 ##### Column #105: [Big Guys, Big Discounts!](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb170)
 
-Scott, Kelly, and I were fascinated by the results of the poll for this column. I was expecting for everyone to peg me as an (obvious) Spike/Johnny (in that order), so imagine my surprise when I was voted 31% Timmy, 30% Johnny, and 17% Spike! Sure, the column with the vote was a Johnny/Timmy Giant deck, but it shouldn't have influenced the vote that much! Looking back on my run on Building on a Budget (which I've done in this article, yay! See, I really do love lists!), I had an awful lot of Johnny decks. I would never have pegged my readership to view me as a Timmy, but hey, maybe there was some Timmy there. Timmy likes Battle of Wits because it's big and flashy, Johnny likes Battle of Wits because it's a toolbox with near-infinite silver-bullets, and Spike likes Battle of Wits because it posts a 75% win percentage. Hootie hoo!
+Scott, Kelly, and I were fascinated by the results of the poll for this column. I was expecting for everyone to peg me as an (obvious) Spike/Johnny (in that order), so imagine my surprise when I was voted 31% Timmy, 30% Johnny, and 17% Spike! Sure, the column with the vote was a Johnny/Timmy Giant deck, but it shouldn't have influenced the vote that much! Looking back on my run on Building on a Budget (which I've done in this article, yay! See, I really do love lists!), I had an awful lot of Johnny decks. I would never have pegged my readership to view me as a Timmy, but hey, maybe there was some Timmy there. Timmy likes [Battle of Wits](https://scryfall.com/card/m13/44/battle-of-wits) because it's big and flashy, Johnny likes [Battle of Wits](https://scryfall.com/card/m13/44/battle-of-wits) because it's a toolbox with near-infinite silver-bullets, and Spike likes [Battle of Wits](https://scryfall.com/card/m13/44/battle-of-wits) because it posts a 75% win percentage. Hootie hoo!
 
 ##### Column #106: [Counterintelligence](https://web.archive.org/web/20090603041432/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb171)
 
-I knew that my time on the column was coming to an end, and I had been floating the idea of a Power Conduit deck for quite some time. I'm glad that I had the opportunity to get this column written before I stepped down from this site. First you make the Peanuts, *then* you make the peanut butter!
+I knew that my time on the column was coming to an end, and I had been floating the idea of a [Power Conduit](https://scryfall.com/card/ncc/376/power-conduit) deck for quite some time. I'm glad that I had the opportunity to get this column written before I stepped down from this site. First you make the Peanuts, *then* you make the peanut butter!
 
 ##### Column #107 – #111: The Final Five!
 
@@ -438,7 +438,7 @@ I didn't get a single letter of complaint about the decks being off-budget.
 
 Huh.
 
-My favorite evolution was the white deck, because it took off in unexpected directions. It really exemplified my run on the column: teaching people about why certain shades of difference make all the difference (who can forget the game I won because I had Arrest instead of Faith's Fetters?), and showing that even the smallest of cards can win in the mightiest of circumstances (Squire plus Wrap in Vigor? Who'd have thought?) Most of all, it gave me an excuse to once again link an article to itself, and leave people wondering... what white deck? Wasn't that supposed to be this week's column? Did Ben *really* just leave us hanging with one and a half of the Final Five decks completely missing from this site?
+My favorite evolution was the white deck, because it took off in unexpected directions. It really exemplified my run on the column: teaching people about why certain shades of difference make all the difference (who can forget the game I won because I had Arrest instead of [Faith's Fetters](https://scryfall.com/card/rvr/18/faiths-fetters)?), and showing that even the smallest of cards can win in the mightiest of circumstances ([Squire](https://scryfall.com/card/tsb/15/squire) plus [Wrap in Vigor](https://scryfall.com/card/cns/183/wrap-in-vigor)? Who'd have thought?) Most of all, it gave me an excuse to once again link an article to itself, and leave people wondering... what white deck? Wasn't that supposed to be this week's column? Did Ben *really* just leave us hanging with one and a half of the Final Five decks completely missing from this site?
 
 And to that I say: good night, good day, and thank you ever so much for joining me for the past two plus years here at **magicthegathering.com**, as I bid farewell to you, the reader, and the Building on a Budget column. Take care!
 

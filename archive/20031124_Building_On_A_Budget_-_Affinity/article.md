@@ -10,8 +10,8 @@ The time is now-- Mirrodin cards have arrived on the scene and everyone is excit
 
 The key to any Affinity deck is to come out fast and strong--similar to a Beatdown deck. After you spend your cards coming out fast, you'll need to refill with card drawing and do it all over again until your opponent begs for mercy. There are three basic builds of Affinity from what I've seen.
 
-- The first is a basic Atog build. This deck utilizes fast artifacts and Atogs to create a lethal attack very quickly. Some also use Second Sunrise.
-- The second is the Aggro-Control build. This deck tries to play out creatures such as Frogmite and Myr Enforcer for little or no mana, leaving up countermagic mana on the same turn.
+- The first is a basic [Atog](https://scryfall.com/card/5ed/209/atog) build. This deck utilizes fast artifacts and Atogs to create a lethal attack very quickly. Some also use [Second Sunrise](https://scryfall.com/card/mrd/20/second-sunrise).
+- The second is the Aggro-Control build. This deck tries to play out creatures such as [Frogmite](https://scryfall.com/card/mm2/215/frogmite) and [Myr Enforcer](https://scryfall.com/card/mm2/224/myr-enforcer) for little or no mana, leaving up countermagic mana on the same turn.
 - The third deck is fast and explosive--no frills, all beaters. This is the deck I like best, and a budget version is listed below. (Note that the price for this deck is based on predicted costs.)
 
 **Building on a Budget - Affinity**
@@ -41,13 +41,13 @@ The key to any Affinity deck is to come out fast and strong--similar to a Beatdo
 
 This deck has only sixteen creatures, but they come out fast enough to do some serious damage. The best way to play the deck is to get Lightning Greaves on the table--speeding your assault up by an entire turn. This card feels more and more like Fires of Yavimaya every time I play with it. If you liked Fires, you will like Greaves. Your goal with this deck should be to attack with a Myr Enforcer on turn three. Yes, attack with a seven-mana 4/4 on turn three. What? Aren't we talking about Block Constructed here? It is really quite simple when Affinity is involved. Just play out an artifact land turn one alongside an Aether Spellbomb or Welding Jar . On turn two, play another artifact land and cast a Lightning Greaves . On turn three, play yet another artifact land and cast the Enforcer for 3 mana, then slap the Greaves on it and attack!
 
-Attacking with 4/4s on turn three is more than most Goblin decks can hope for, let alone Block decks. Of course, this is the format where on turn four, a Nim Shrieker can easily hit for seven. Add these factors together and you will discover a turn-five kill.
+Attacking with 4/4s on turn three is more than most Goblin decks can hope for, let alone Block decks. Of course, this is the format where on turn four, a [Nim Shrieker](https://scryfall.com/card/mrd/73/nim-shrieker) can easily hit for seven. Add these factors together and you will discover a turn-five kill.
 
-In truth, these draws may be slow because we're building on a budget. If you throw Chrome Mox into the mix...well, all sorts of crazy things become possible. Like turn one Lightning Greaves, turn two hit with Enforcer with a little boost from Welding Jar.
+In truth, these draws may be slow because we're building on a budget. If you throw Chrome Mox into the mix...well, all sorts of crazy things become possible. Like turn one [Lightning Greaves](https://scryfall.com/card/msc/202/lightning-greaves), turn two hit with Enforcer with a little boost from [Welding Jar](https://scryfall.com/card/2xm/307/welding-jar).
 
 *Mirrodin* Block Constructed is going to be a crazy and fun format, folks.
 
-The deck is simple to play--no real tricks besides Aether Spellbomb. Many times you'll find it necessary to fend off an assault by holding back Myr Enforcer until you can win with your fliers. An interesting addition to this deck would be Skeleton Shard, since you can basically bring back and play your 4/4s for {B}.
+The deck is simple to play--no real tricks besides [Aether Spellbomb](https://scryfall.com/card/jmp/456/aether-spellbomb). Many times you'll find it necessary to fend off an assault by holding back [Myr Enforcer](https://scryfall.com/card/mm2/224/myr-enforcer) until you can win with your fliers. An interesting addition to this deck would be [Skeleton Shard](https://scryfall.com/card/hop/127/skeleton-shard), since you can basically bring back and play your 4/4s for {B}.
 
 ##### Adding Money To The Deck
 

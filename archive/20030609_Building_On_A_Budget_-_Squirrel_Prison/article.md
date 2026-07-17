@@ -33,11 +33,11 @@ For those of you who have been reading all about Tribal for the past few weeks, 
 
 *(Full decklist with sideboard: `decklist.txt`; priced breakdown: `decklist_priced.md`)*
 
-A good start will have you playing an elf, casting Quiet Speculation for two Deep Analysis and a Moment's Peace, then building your mana base while fogging and drawing cards until you can lock up the game.
+A good start will have you playing an elf, casting [Quiet Speculation](https://scryfall.com/card/ema/68/quiet-speculation) for two [Deep Analysis](https://scryfall.com/card/msc/149/deep-analysis) and a [Moment's Peace](https://scryfall.com/card/ody/251/moments-peace), then building your mana base while fogging and drawing cards until you can lock up the game.
 
-Be careful about getting yourself fog-locked. This means that you are forced to use your mana playing Moment's Peace every turn to keep from losing the game. Fogging every turn isn't a problem if you have extra mana available to play other spelss. When you're using all your mana, all you're doing is delaying the inevitable.
+Be careful about getting yourself fog-locked. This means that you are forced to use your mana playing [Moment's Peace](https://scryfall.com/card/ody/251/moments-peace) every turn to keep from losing the game. Fogging every turn isn't a problem if you have extra mana available to play other spelss. When you're using all your mana, all you're doing is delaying the inevitable.
 
-Try to get a Squirrel Nest on the table early -- it will let you chump block your opponent's Wild Mongrels, Rootwallas, and Roar of the Wurm tokens. Don't play Moment's Peace unless you have to, or unless you will need to use all of your mana on the next turn and fear losing shortly afterwards.
+Try to get a [Squirrel Nest](https://scryfall.com/card/dmr/177/squirrel-nest) on the table early -- it will let you chump block your opponent's [Wild Mongrel](https://scryfall.com/card/uma/194/wild-mongrel)s, Rootwallas, and [Roar of the Wurm](https://scryfall.com/card/dds/49/roar-of-the-wurm) tokens. Don't play [Moment's Peace](https://scryfall.com/card/ody/251/moments-peace) unless you have to, or unless you will need to use all of your mana on the next turn and fear losing shortly afterwards.
 
 ##### Tips On Playing The Deck
 
@@ -45,33 +45,33 @@ It's ok to go to low life against non-burn decks. Deep Analysis away! Sometimes 
 
 ##### Sideboarding
 
-**Roar of the Wurm/Ray of Revelation**
+**[Roar of the Wurm](https://scryfall.com/card/dds/49/roar-of-the-wurm)/[Ray of Revelation](https://scryfall.com/card/dka/17/ray-of-revelation)**
 
- Adding Roar of the Wurm will help against Red-Green and Elves. Since these decks have problems dealing with fatties, it's convenient that you can fetch Roars out with your Speculations. The same goes for Ray of Revelation against Wake or Slide.
+ Adding [Roar of the Wurm](https://scryfall.com/card/dds/49/roar-of-the-wurm) will help against Red-Green and Elves. Since these decks have problems dealing with fatties, it's convenient that you can fetch Roars out with your Speculations. The same goes for [Ray of Revelation](https://scryfall.com/card/dka/17/ray-of-revelation) against Wake or Slide.
 
-**Memory Lapse** 
+**[Memory Lapse](https://scryfall.com/card/ema/60/memory-lapse)** 
 
- Against Control you will probably want to have more countermagic -- probably Memory Lapses. This will help you get your Opposition into play and cut your opponent's mana supply. If you can do that, it's much easier to get a Nest into play (tap your opponent's land at the end of his or her turn, and the rest during your first main phase).
+ Against Control you will probably want to have more countermagic -- probably [Memory Lapse](https://scryfall.com/card/ema/60/memory-lapse)s. This will help you get your [Opposition](https://scryfall.com/card/dmr/62/opposition) into play and cut your opponent's mana supply. If you can do that, it's much easier to get a Nest into play (tap your opponent's land at the end of his or her turn, and the rest during your first main phase).
 
-**Krosan Reclamation** 
+**[Krosan Reclamation](https://scryfall.com/card/jud/122/krosan-reclamation)** 
 
-Krosan Reclamation can help you against decks that try to proactively Quiet Speculation for Ray of Revelation (insurance against your lock). This means your opponent would have to draw them, giving you time to build up a handful of countermagic.
+[Krosan Reclamation](https://scryfall.com/card/jud/122/krosan-reclamation) can help you against decks that try to proactively [Quiet Speculation](https://scryfall.com/card/ema/68/quiet-speculation) for [Ray of Revelation](https://scryfall.com/card/dka/17/ray-of-revelation) (insurance against your lock). This means your opponent would have to draw them, giving you time to build up a handful of countermagic.
 
-**Biorhythm** 
+**[Biorhythm](https://scryfall.com/card/9ed/231/biorhythm)** 
 
- It may sound strange, but some sort of life gain card may be in order to help save you from burn. There are lots of options available, but I think Biorhythm would be the most fun, considering you should have a bunch of creatures and it would also let you end the game quickly so you won't lose in the long run if you can't find a Static Orb.
+ It may sound strange, but some sort of life gain card may be in order to help save you from burn. There are lots of options available, but I think [Biorhythm](https://scryfall.com/card/9ed/231/biorhythm) would be the most fun, considering you should have a bunch of creatures and it would also let you end the game quickly so you won't lose in the long run if you can't find a [Static Orb](https://scryfall.com/card/7ed/319/static-orb).
 
 Adding Money To The Deck This deck certainly wants Circular Logic s -- I would have them in over Syncopate except that they shot up to an obscene price shortly after I started writing this column. I would also consider adding a fourth Opposition to the deck. It's not essential, but it increases the odds of getting the Llanowar Elves / Squirrel Nest / Opposition draw. Obviously, adding Birds of Paradise also increases the chance of the perfect opening hand -- fixing your mana and giving you more Icy Manipulator s.
 
 ##### Alternative Builds
 
-Another interesting way to build this deck is going black and blue -- adding a lot of Duresses, Cabal Therapies, and Mesmeric Fiends. This gives you a stronger game versus Control, but also makes it hard to create enough creatures for your Opposition to be effective. It still doesn't really solve the Ray of Revelation issue, either.
+Another interesting way to build this deck is going black and blue -- adding a lot of [Duress](https://scryfall.com/card/fdn/606/duress)es, Cabal Therapies, and Mesmeric Fiends. This gives you a stronger game versus Control, but also makes it hard to create enough creatures for your [Opposition](https://scryfall.com/card/dmr/62/opposition) to be effective. It still doesn't really solve the [Ray of Revelation](https://scryfall.com/card/dka/17/ray-of-revelation) issue, either.
 
-An effective but more expensive alternative to this deck is to play it Beatdown style. Use cards like Wild Mongrel and Call of the Herd to round out your creature base. After all, you'll be hard pressed to find more lethal Icy Manipulators!
+An effective but more expensive alternative to this deck is to play it Beatdown style. Use cards like [Wild Mongrel](https://scryfall.com/card/uma/194/wild-mongrel) and Call of the Herd to round out your creature base. After all, you'll be hard pressed to find more lethal [Icy Manipulator](https://scryfall.com/card/dmr/225/icy-manipulator)s!
 
 ##### Conclusion
 
-Squirrel Prison is a fun and competitive deck that will teach you a lot about the **Magic** game. I strongly recommend it to players who have their roots in decks that try to lock the game up. It's a powerful deck that you can squeak by for under 30 tickets, although it is hard. Consider it an investment in Circular Logics and Birds, which you will use for a long time to come.
+Squirrel Prison is a fun and competitive deck that will teach you a lot about the **Magic** game. I strongly recommend it to players who have their roots in decks that try to lock the game up. It's a powerful deck that you can squeak by for under 30 tickets, although it is hard. Consider it an investment in [Circular Logic](https://scryfall.com/card/dmr/42/circular-logic)s and Birds, which you will use for a long time to come.
 
 Until next time, may X equal 20.
 

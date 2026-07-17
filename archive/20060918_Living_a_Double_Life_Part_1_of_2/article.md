@@ -39,52 +39,52 @@ Greetings hew-mans. I am BoaB, former robotic slave of the writer of this silly 
 
 *(Full decklist with sideboard: `decklist_1_BoaB.txt`; priced breakdown: `decklist_1_BoaB_priced.md`)*
 
-> *Does this look budget to you? I count twenty-four rares, most of which cost the same as recharging my diamond-encrusted batteries. One Wrath of God sells for ten to twelve tickets. Hew-mans, bow now before your new idol. BoaB has spoken!*
+> *Does this look budget to you? I count twenty-four rares, most of which cost the same as recharging my diamond-encrusted batteries. One [Wrath of God](https://scryfall.com/card/cmm/70/wrath-of-god) sells for ten to twelve tickets. Hew-mans, bow now before your new idol. BoaB has spoken!*
 
 Yes, yes, it's true. I confess – every now and then I feel the urge to pick up a deck that might not be anywhere near the definition of budget. This particular deck was one that I did indeed play at several Friday Night **Magic** events at the StarCityGames.com store, back when Standard ran from *Mirrodin* through *Betrayers of Kamigawa*. It wasn't *the* most competitive Standard deck, but it was a lot of fun to play.
 
-Here's the 411 – the goal of the deck is to pad your life total by using Pulse of the Fields and Beacon of Immortality. Pristine Angel plays both offense and defense – it is capable of stopping most creatures that were Standard legal at the time. Journeyer's Kite acts as a mana-fixer, a card-drawing mechanism, a shuffling mechanism for Sensei's Divining Top, and a way to thin lands out of the deck for Goblin Charbelcher. Wayfarer's Bauble provides early acceleration and late shuffling/deck thinning. The control suite of Wrath of God, Terror, Shining Shoal and Goblin Charbelcher take out creatures on the board, while Cranial Extraction takes out threats from your opponent's deck (this deck hated facing Hokori!). The win conditions? They number three:
+Here's the 411 – the goal of the deck is to pad your life total by using [Pulse of the Fields](https://scryfall.com/card/dst/11/pulse-of-the-fields) and [Beacon of Immortality](https://scryfall.com/card/10e/10/beacon-of-immortality). [Pristine Angel](https://scryfall.com/card/c19/70/pristine-angel) plays both offense and defense – it is capable of stopping most creatures that were Standard legal at the time. [Journeyer's Kite](https://scryfall.com/card/ddi/65/journeyers-kite) acts as a mana-fixer, a card-drawing mechanism, a shuffling mechanism for [Sensei's Divining Top](https://scryfall.com/card/2x2/314/senseis-divining-top), and a way to thin lands out of the deck for [Goblin Charbelcher](https://scryfall.com/card/ddt/57/goblin-charbelcher). [Wayfarer's Bauble](https://scryfall.com/card/tdc/335/wayfarers-bauble) provides early acceleration and late shuffling/deck thinning. The control suite of [Wrath of God](https://scryfall.com/card/cmm/70/wrath-of-god), [Terror](https://scryfall.com/card/dmr/103/terror), [Shining Shoal](https://scryfall.com/card/bok/21/shining-shoal) and [Goblin Charbelcher](https://scryfall.com/card/ddt/57/goblin-charbelcher) take out creatures on the board, while [Cranial Extraction](https://scryfall.com/card/chk/105/cranial-extraction) takes out threats from your opponent's deck (this deck hated facing Hokori!). The win conditions? They number three:
 
-1. Kill the opponent with Pristine Angel.
-2. Thin the deck of lands, and kill your opponent in one-two activations of Goblin Charbelcher.
-3. Deck the opponent by casting Beacon of Immortality over and over and over again.
+1. Kill the opponent with [Pristine Angel](https://scryfall.com/card/c19/70/pristine-angel).
+2. Thin the deck of lands, and kill your opponent in one-two activations of [Goblin Charbelcher](https://scryfall.com/card/ddt/57/goblin-charbelcher).
+3. Deck the opponent by casting [Beacon of Immortality](https://scryfall.com/card/10e/10/beacon-of-immortality) over and over and over again.
 
-It was not uncommon for me to reach a life total in the millions with this deck. I would often reach a board position where I had two Journeyer's Kites and a Sensei's Divining Top on the board, and would be able to see nine possible cards a turn with the Top – allowing me to easily dig for one of the three Beacons every turn of the game.
+It was not uncommon for me to reach a life total in the millions with this deck. I would often reach a board position where I had two [Journeyer's Kite](https://scryfall.com/card/ddi/65/journeyers-kite)s and a [Sensei's Divining Top](https://scryfall.com/card/2x2/314/senseis-divining-top) on the board, and would be able to see nine possible cards a turn with the Top – allowing me to easily dig for one of the three Beacons every turn of the game.
 
 There's one problem with using this deck as the focus of a budget deck build – there is no way that this deck fits any definition of budget, as-is. I checked, and the total price of building the original version of this deck clocks in at well over one-hundred tickets. Given that the absolute limit for the decks in this column is thirty tickets, heavy modification needs to be made to get the deck to work as a budget build.
 
 Which, as you may have guessed, I'm totally up for trying to do.
 
-The part of this deck that I found the most fun was casting Beacon of Immortality over and over again. The second most fun aspect of the deck was activating Goblin Charbelcher to do over twenty points of damage in one shot. If you reveal no lands on a Charbelcher activation, you do damage equal to the total number of cards in your deck – plus, if your opponent somehow survives, you get to reorder the cards in your library in any manner you wish! Those were the two key points I wanted to keep in the deck. That means any other high-dollar cards which don't further these goals are outta here!
+The part of this deck that I found the most fun was casting [Beacon of Immortality](https://scryfall.com/card/10e/10/beacon-of-immortality) over and over again. The second most fun aspect of the deck was activating [Goblin Charbelcher](https://scryfall.com/card/ddt/57/goblin-charbelcher) to do over twenty points of damage in one shot. If you reveal no lands on a Charbelcher activation, you do damage equal to the total number of cards in your deck – plus, if your opponent somehow survives, you get to reorder the cards in your library in any manner you wish! Those were the two key points I wanted to keep in the deck. That means any other high-dollar cards which don't further these goals are outta here!
 
 Too much bling
 
-Wrath of God? Sheeyah, right!
-Cranial Extraction? See ya! Wouldn't want to be ya!
-Shining Shoal? Sorry man, you're a-goin' back to Ghost Dad.
-Pristine Angel? Gigged by the Royal Assassin when she tapped to attack.
+[Wrath of God](https://scryfall.com/card/cmm/70/wrath-of-god)? Sheeyah, right!
+[Cranial Extraction](https://scryfall.com/card/chk/105/cranial-extraction)? See ya! Wouldn't want to be ya!
+[Shining Shoal](https://scryfall.com/card/bok/21/shining-shoal)? Sorry man, you're a-goin' back to Ghost Dad.
+[Pristine Angel](https://scryfall.com/card/c19/70/pristine-angel)? Gigged by the Royal Assassin when she tapped to attack.
 
-What's this leave? A core of a deck, built around Pulse of the Fields (2 tickets each), Beacon of Immortality (5 tickets each), Goblin Charbelcher (2 tickets a piece), Journeyer's Kite (two for 1 ticket), Sensei's Divining Top (1 ticket each), and a bunch of commons. In order for the deck not to just roll over and die, I need to add a lot of control elements – but they can't be too pricy, because the deck is already getting close to the 30 ticket mark.
+What's this leave? A core of a deck, built around [Pulse of the Fields](https://scryfall.com/card/dst/11/pulse-of-the-fields) (2 tickets each), [Beacon of Immortality](https://scryfall.com/card/10e/10/beacon-of-immortality) (5 tickets each), [Goblin Charbelcher](https://scryfall.com/card/ddt/57/goblin-charbelcher) (2 tickets a piece), [Journeyer's Kite](https://scryfall.com/card/ddi/65/journeyers-kite) (two for 1 ticket), [Sensei's Divining Top](https://scryfall.com/card/2x2/314/senseis-divining-top) (1 ticket each), and a bunch of commons. In order for the deck not to just roll over and die, I need to add a lot of control elements – but they can't be too pricy, because the deck is already getting close to the 30 ticket mark.
 
-My replacement for Pristine Angel is Descendant of Kiyomaro. The Descendant works as a third way to gain life, and will often be 3/5 due to the card-conservation elements in the deck. Pulse of the Fields often will stay in my hand even after being cast, and Journeyer's Kite allows me to get ahead of my opponent on hand-count. It can block most creatures, and it can swing for a hefty three a turn – not bad for a three mana investment. (1 ticket each).
+My replacement for [Pristine Angel](https://scryfall.com/card/c19/70/pristine-angel) is [Descendant of Kiyomaro](https://scryfall.com/card/sok/7/descendant-of-kiyomaro). The Descendant works as a third way to gain life, and will often be 3/5 due to the card-conservation elements in the deck. [Pulse of the Fields](https://scryfall.com/card/dst/11/pulse-of-the-fields) often will stay in my hand even after being cast, and [Journeyer's Kite](https://scryfall.com/card/ddi/65/journeyers-kite) allows me to get ahead of my opponent on hand-count. It can block most creatures, and it can swing for a hefty three a turn – not bad for a three mana investment. (1 ticket each).
 
-Instead of Cranial Extraction (which affects the hand, deck and library), I opted to go for some efficient hand-destruction spells. Often times getting rid of a threat proactively is better than having to deal with a problem reactively. Since this deck would now be fit for Extended instead of Standard, I have access to Duress, which is one of the most efficient discard spells ever printed. To complement Duress, I also added in Castigates – there are some cards I just want to see completely gone from the match. (Duress: two for 1 ticket).
+Instead of [Cranial Extraction](https://scryfall.com/card/chk/105/cranial-extraction) (which affects the hand, deck and library), I opted to go for some efficient hand-destruction spells. Often times getting rid of a threat proactively is better than having to deal with a problem reactively. Since this deck would now be fit for Extended instead of Standard, I have access to [Duress](https://scryfall.com/card/fdn/606/duress), which is one of the most efficient discard spells ever printed. To complement [Duress](https://scryfall.com/card/fdn/606/duress), I also added in [Castigate](https://scryfall.com/card/gpt/106/castigate)s – there are some cards I just want to see completely gone from the match. ([Duress](https://scryfall.com/card/fdn/606/duress): two for 1 ticket).
 
-I had several budget choices for replacements for Wrath of God, including Kirtar's Wrath (3 tickets each), Final Judgment (2 tickets each), and Myojin of Cleansing Fire (two for 1 ticket). However, I decided in the end to expand the count of Mountains and Swamps in the deck, and decrease the number of Plains. This gave me access to smaller-scale mass-removal, such as Pyroclasm and Infest. In the end, I went with the old standby of Pyroclasm, as it takes only a single Red mana in its mana cost (as opposed to two Black for Infest or Hideous Laughter). (Pyroclasm: Two for 1 ticket.)
+I had several budget choices for replacements for [Wrath of God](https://scryfall.com/card/cmm/70/wrath-of-god), including [Kirtar's Wrath](https://scryfall.com/card/cmm/35/kirtars-wrath) (3 tickets each), Final Judgment (2 tickets each), and [Myojin of Cleansing Fire](https://scryfall.com/card/chk/35/myojin-of-cleansing-fire) (two for 1 ticket). However, I decided in the end to expand the count of Mountains and Swamps in the deck, and decrease the number of Plains. This gave me access to smaller-scale mass-removal, such as [Pyroclasm](https://scryfall.com/card/dsk/149/pyroclasm) and [Infest](https://scryfall.com/card/clu/114/infest). In the end, I went with the old standby of [Pyroclasm](https://scryfall.com/card/dsk/149/pyroclasm), as it takes only a single Red mana in its mana cost (as opposed to two Black for [Infest](https://scryfall.com/card/clu/114/infest) or [Hideous Laughter](https://scryfall.com/card/chk/115/hideous-laughter)). ([Pyroclasm](https://scryfall.com/card/dsk/149/pyroclasm): Two for 1 ticket.)
 
-The last additions were the mana-fixer Coldsteel Heart (four for 1 ticket) and a new kill condition – Rain of Gore. Unfortunately, I didn't closely read Rain of Gore closely, and assumed it worked just like False Cure.
+The last additions were the mana-fixer [Coldsteel Heart](https://scryfall.com/card/2x2/301/coldsteel-heart) (four for 1 ticket) and a new kill condition – Rain of Gore. Unfortunately, I didn't closely read Rain of Gore closely, and assumed it worked just like [False Cure](https://scryfall.com/card/ons/146/false-cure).
 
-See the difference? False Cure affects all life gained over the course of a turn, whereas Rain of Gore only affects life gained by *sources you control*. This is key here, because the intent of this build was to set up a win condition of Beacon of Immortality and Rain of Gore. I won't get into all of the technical mumbo-jumbo, but in short, if you cast False Cure and follow it up with a Beacon of Immortality, the net result is your opponent losing life equal to their life total – i.e., instant death. Not so with Rain of Gore, as I found out in…
+See the difference? [False Cure](https://scryfall.com/card/ons/146/false-cure) affects all life gained over the course of a turn, whereas Rain of Gore only affects life gained by *sources you control*. This is key here, because the intent of this build was to set up a win condition of [Beacon of Immortality](https://scryfall.com/card/10e/10/beacon-of-immortality) and Rain of Gore. I won't get into all of the technical mumbo-jumbo, but in short, if you cast [False Cure](https://scryfall.com/card/ons/146/false-cure) and follow it up with a [Beacon of Immortality](https://scryfall.com/card/10e/10/beacon-of-immortality), the net result is your opponent losing life equal to their life total – i.e., instant death. Not so with Rain of Gore, as I found out in…
 
-**Game 1: ksnethen (Eternal Dominion)**
+**Game 1: ksnethen ([Eternal Dominion](https://scryfall.com/card/sok/36/eternal-dominion))**
 
 Okay, just a warning about my deck – if it wins, it takes a loooong time to play. This is not a deck to pick up if you want to duel and run. I'm not talking ten minute games – I'm talking games that regularly run 30-50 minutes *each*. This was one such game.
 
-Ksnethen was playing an Eternal Dominion deck, with Ghost-Lit Raiders and Ghost-Lit Warders to use as pseudo-spells once the Epic ability was in play. I manage to take out a couple of his Dominions with discard spells before he hits ten mana, but he eventually draws a third late-game and begins yanking Sensei's Divining Tops and Descendant of Kiyomaros out of my deck.
+Ksnethen was playing an [Eternal Dominion](https://scryfall.com/card/sok/36/eternal-dominion) deck, with [Ghost-Lit Raider](https://scryfall.com/card/sok/99/ghost-lit-raider)s and Ghost-Lit Warders to use as pseudo-spells once the Epic ability was in play. I manage to take out a couple of his Dominions with discard spells before he hits ten mana, but he eventually draws a third late-game and begins yanking [Sensei's Divining Top](https://scryfall.com/card/2x2/314/senseis-divining-top)s and [Descendant of Kiyomaro](https://scryfall.com/card/sok/7/descendant-of-kiyomaro)s out of my deck.
 
 I have a good life cushion, but Ksnethen counters one of my Beacon of Immortalities, and leaves me with only one left in my deck. Slowly, his Descendants begin chipping away at my life total. We reach a game position as follows:
 
-Rain of Gore is on the board. I've Duressed Ksnethen and seen his hand – two each of his Ghost-Lit creatures. I'm at two life, and he has two Descendant of Kiyomaro on the board. I have Beacon of Immortality in my hand, and I've just gotten enough mana in play to cast Beacon of Immortality, plus pay eight life for his two Ghost-Lit Warders.
+Rain of Gore is on the board. I've [Duress](https://scryfall.com/card/fdn/606/duress)ed Ksnethen and seen his hand – two each of his Ghost-Lit creatures. I'm at two life, and he has two [Descendant of Kiyomaro](https://scryfall.com/card/sok/7/descendant-of-kiyomaro) on the board. I have [Beacon of Immortality](https://scryfall.com/card/10e/10/beacon-of-immortality) in my hand, and I've just gotten enough mana in play to cast [Beacon of Immortality](https://scryfall.com/card/10e/10/beacon-of-immortality), plus pay eight life for his two Ghost-Lit Warders.
 
 We go through the motions, and I end up targeting him with my last Beacon. He says gg…and then gains twelve life. It's at this point that both he and I realize that Rain of Gore only worries about sources of lifegain *you* control, and so my Beacon (which targets him) is worthless as a kill condition.
 
@@ -92,7 +92,7 @@ And that, my friends, was a forty-minute lesson.
 
 *Record: 0-1*
 
-I swap out Rain of Gore for Goblin Charbelcher as the kill condition, which leaves the deck looking as follows:
+I swap out Rain of Gore for [Goblin Charbelcher](https://scryfall.com/card/ddt/57/goblin-charbelcher) as the kill condition, which leaves the deck looking as follows:
 
 **Double Life 2**
 
@@ -118,25 +118,25 @@ I swap out Rain of Gore for Goblin Charbelcher as the kill condition, which leav
 
 *(Full decklist with sideboard: `decklist_2_Double_Life_2.txt`; priced breakdown: `decklist_2_Double_Life_2_priced.md`)*
 
-The only change between Double Life 1 and Double Life 2 was swapping a single Rain of Gore for a single Goblin Charbelcher. The cost of this deck? Exactly thirty tickets – the first time I've come even close to the upper-limit of a budget deck in this column. The balancing act here is finding how to swap in and out cards as-needed without going over budget.
+The only change between Double Life 1 and Double Life 2 was swapping a single Rain of Gore for a single [Goblin Charbelcher](https://scryfall.com/card/ddt/57/goblin-charbelcher). The cost of this deck? Exactly thirty tickets – the first time I've come even close to the upper-limit of a budget deck in this column. The balancing act here is finding how to swap in and out cards as-needed without going over budget.
 
 Darksteel Forge
 
 **Game 2: Sirrpriz (Sunburst Control)**
 
-This game also went on for over thirty minutes. Sirrpriz was playing a Sunburst deck, complete with Clearwater Goblet, Planar Portal, Energy Chamber, and other nastiness. I get to a quick 1000 life, but Sirrpriz drops Darksteel Forge, and then follows it with two Doubling Seasons. Nuisance Engine follows, and I end up facing down the following scenario:
+This game also went on for over thirty minutes. Sirrpriz was playing a Sunburst deck, complete with [Clearwater Goblet](https://scryfall.com/card/5dn/109/clearwater-goblet), Planar Portal, [Energy Chamber](https://scryfall.com/card/ddf/64/energy-chamber), and other nastiness. I get to a quick 1000 life, but Sirrpriz drops Darksteel Forge, and then follows it with two [Doubling Season](https://scryfall.com/card/fdn/216/doubling-season)s. [Nuisance Engine](https://scryfall.com/card/hop/121/nuisance-engine) follows, and I end up facing down the following scenario:
 
-- Sirrpriz is gaining ten life a turn from his two Clearwater Goblets.
-- He can create four tokens a turn using Nuisance Engine.
-- Energy Chamber gives any one of those tokens +4/+4, and he's got two Energy Chambers in play.
+- Sirrpriz is gaining ten life a turn from his two [Clearwater Goblet](https://scryfall.com/card/5dn/109/clearwater-goblet)s.
+- He can create four tokens a turn using [Nuisance Engine](https://scryfall.com/card/hop/121/nuisance-engine).
+- [Energy Chamber](https://scryfall.com/card/ddf/64/energy-chamber) gives any one of those tokens +4/+4, and he's got two [Energy Chamber](https://scryfall.com/card/ddf/64/energy-chamber)s in play.
 - Darksteel Forge makes all of his guys indestructible.
-- If he really wanted, he could get those Clearwater Goblets up to +4 counters a turn as well.
+- If he really wanted, he could get those [Clearwater Goblet](https://scryfall.com/card/5dn/109/clearwater-goblet)s up to +4 counters a turn as well.
 
-Goblin Charbelcher can't deliver a kill at this point, especially since he can tutor up any answer he needs for it with his active Planar Portal each turn. Even though I have over 1,000 life, it is inevitable that at some point, Sirrpriz will win the game with a horde of 4/5 Pest tokens. Since this game has already gone on for half-an-hour, I concede.
+[Goblin Charbelcher](https://scryfall.com/card/ddt/57/goblin-charbelcher) can't deliver a kill at this point, especially since he can tutor up any answer he needs for it with his active Planar Portal each turn. Even though I have over 1,000 life, it is inevitable that at some point, Sirrpriz will win the game with a horde of 4/5 Pest tokens. Since this game has already gone on for half-an-hour, I concede.
 
 *Record: 0-2*
 
-For the third version, I add in a couple of more win conditions (False Cure and Storm Herd – each 1/2 a ticket each) and take out a copy of Descendant of Kiyomaro and Coldsteel Heart. One bystander watching the second game suggested Storm Herd, and I figured “why not?” It'd be fun to create 1,000+ Pegasus tokens.
+For the third version, I add in a couple of more win conditions ([False Cure](https://scryfall.com/card/ons/146/false-cure) and [Storm Herd](https://scryfall.com/card/khc/33/storm-herd) – each 1/2 a ticket each) and take out a copy of [Descendant of Kiyomaro](https://scryfall.com/card/sok/7/descendant-of-kiyomaro) and [Coldsteel Heart](https://scryfall.com/card/2x2/301/coldsteel-heart). One bystander watching the second game suggested [Storm Herd](https://scryfall.com/card/khc/33/storm-herd), and I figured “why not?” It'd be fun to create 1,000+ Pegasus tokens.
 
 **Double Life 3**
 
@@ -164,21 +164,21 @@ For the third version, I add in a couple of more win conditions (False Cure and 
 
 *(Full decklist with sideboard: `decklist_3_Double_Life_3.txt`; priced breakdown: `decklist_3_Double_Life_3_priced.md`)*
 
-**Game 3: TopdeckDan (Temporal Adept/Chittering Rats/Agonizing Memories deck)**
+**Game 3: TopdeckDan ([Temporal Adept](https://scryfall.com/card/9ed/102/temporal-adept)/[Chittering Rats](https://scryfall.com/card/dst/39/chittering-rats)/Agonizing Memories deck)**
 
-Another long game. TopdeckDan is playing an interesting deck based upon putting cards back into your hand, and then returning them to the top of your deck via Agonizing Memories and Chittering Rats. I know the best way to play against these decks – hold nothing back, and play every card as you draw them. Unfortunately, I get to nine mana, and then draw Storm Herd. This allows TopdeckDan to put Storm Herd back on top of my deck for five consecutive turns – including him bouncing a land with Boomerang twice, and then hitting me with Agonizing Memories. I end the game locked underneath Temporal Adept, with a pair of Chittering Rats pounding on my bloated corpse.
+Another long game. TopdeckDan is playing an interesting deck based upon putting cards back into your hand, and then returning them to the top of your deck via Agonizing Memories and [Chittering Rats](https://scryfall.com/card/dst/39/chittering-rats). I know the best way to play against these decks – hold nothing back, and play every card as you draw them. Unfortunately, I get to nine mana, and then draw [Storm Herd](https://scryfall.com/card/khc/33/storm-herd). This allows TopdeckDan to put [Storm Herd](https://scryfall.com/card/khc/33/storm-herd) back on top of my deck for five consecutive turns – including him bouncing a land with [Boomerang](https://scryfall.com/card/5ed/75/boomerang) twice, and then hitting me with Agonizing Memories. I end the game locked underneath [Temporal Adept](https://scryfall.com/card/9ed/102/temporal-adept), with a pair of [Chittering Rats](https://scryfall.com/card/dst/39/chittering-rats) pounding on my bloated corpse.
 
 *Record: 0-3*
 
-Reito Lantern
+[![Reito Lantern](https://api.scryfall.com/cards/cns/202?format=image&version=normal)](https://scryfall.com/card/cns/202/reito-lantern)
 
-It's time to address the reasons I've lost. With Journeyer's Kite and Sensei's Divining Top, I can run cards as one-of and two-of that normally would require three-to-four-of, because I will be able to see a lot of cards over the course of a game. I want to be able to recycle some of these spells, so I need a way to recur my graveyard into my library. I decide on Reito Lantern as the card to fill this slot (Cost: 0 – you can get these thrown in with any uncommon lots that you buy 12-36 for a ticket).
+It's time to address the reasons I've lost. With [Journeyer's Kite](https://scryfall.com/card/ddi/65/journeyers-kite) and [Sensei's Divining Top](https://scryfall.com/card/2x2/314/senseis-divining-top), I can run cards as one-of and two-of that normally would require three-to-four-of, because I will be able to see a lot of cards over the course of a game. I want to be able to recycle some of these spells, so I need a way to recur my graveyard into my library. I decide on [Reito Lantern](https://scryfall.com/card/cns/202/reito-lantern) as the card to fill this slot (Cost: 0 – you can get these thrown in with any uncommon lots that you buy 12-36 for a ticket).
 
-In addition, I am vulnerable to spells. I don't have any countermagic, so once someone casts an instant, sorcery, or permanent, I am at their mercy. For instance, once Darksteel Forge hit the board, that was it for me – I couldn't Pyroclasm away anything for the rest of the game.
+In addition, I am vulnerable to spells. I don't have any countermagic, so once someone casts an instant, sorcery, or permanent, I am at their mercy. For instance, once Darksteel Forge hit the board, that was it for me – I couldn't [Pyroclasm](https://scryfall.com/card/dsk/149/pyroclasm) away anything for the rest of the game.
 
-What's more proactive than discard? How about removing cards from your opponent's library entirely! Enter Hide // Seek. Seek lets me remove threats before they hit (and works like Cranial Extraction did in the original, non-budget build), plus Hide allows me to have a functional Naturalize/Disenchant in my main deck. (Two for 3 tickets).
+What's more proactive than discard? How about removing cards from your opponent's library entirely! Enter [Hide // Seek](https://scryfall.com/card/dis/151/hide-seek). Seek lets me remove threats before they hit (and works like [Cranial Extraction](https://scryfall.com/card/chk/105/cranial-extraction) did in the original, non-budget build), plus Hide allows me to have a functional [Naturalize](https://scryfall.com/card/m19/190/naturalize)/Disenchant in my main deck. (Two for 3 tickets).
 
-Since the cost of my deck has increased by six tickets, I need to take six tickets worth of cards out. I lost one Pulse of the Fields (2 tickets), the four Castigates (.5 tickets), and the Goblin Charbelcher (2 tickets). I add back in the one Coldsteel Heart I took out last build, as it won't push me over thirty tickets.
+Since the cost of my deck has increased by six tickets, I need to take six tickets worth of cards out. I lost one [Pulse of the Fields](https://scryfall.com/card/dst/11/pulse-of-the-fields) (2 tickets), the four [Castigate](https://scryfall.com/card/gpt/106/castigate)s (.5 tickets), and the [Goblin Charbelcher](https://scryfall.com/card/ddt/57/goblin-charbelcher) (2 tickets). I add back in the one [Coldsteel Heart](https://scryfall.com/card/2x2/301/coldsteel-heart) I took out last build, as it won't push me over thirty tickets.
 
 **Double Life 4**
 
@@ -205,9 +205,9 @@ Since the cost of my deck has increased by six tickets, I need to take six ticke
 
 *(Full decklist with sideboard: `decklist_4_Double_Life_4.txt`; priced breakdown: `decklist_4_Double_Life_4_priced.md`)*
 
-**Game 4: Dexeo (Evolution Vat/Triskelion)**
+**Game 4: Dexeo (Evolution Vat/[Triskelion](https://scryfall.com/card/moc/387/triskelion))**
 
-Another long game, and one in which Dexeo gets down Evolution Vat and Triskelion, with plenty of Golgari Rot Farms and Islands with which to pump Triskelion to absurd heights. I survive the first assault by drawing Hide // Seek at twenty-one life, while his Triskelion has twenty counters (thanks Pulse of the Fields!), but I die to the second Triskelion he draws.
+Another long game, and one in which Dexeo gets down Evolution Vat and [Triskelion](https://scryfall.com/card/moc/387/triskelion), with plenty of [Golgari Rot Farm](https://scryfall.com/card/ecc/151/golgari-rot-farm)s and Islands with which to pump [Triskelion](https://scryfall.com/card/moc/387/triskelion) to absurd heights. I survive the first assault by drawing [Hide // Seek](https://scryfall.com/card/dis/151/hide-seek) at twenty-one life, while his [Triskelion](https://scryfall.com/card/moc/387/triskelion) has twenty counters (thanks [Pulse of the Fields](https://scryfall.com/card/dst/11/pulse-of-the-fields)!), but I die to the second [Triskelion](https://scryfall.com/card/moc/387/triskelion) he draws.
 
 *Record: 0-4*
 
@@ -215,13 +215,13 @@ Firecat Blitz
 
 **Game 5: Beertime (Rites of Initiatian/Firecat Blitz)**
 
-I cast first turn Sensei's Divining Top, second turn Journeyer's Kite, third turn Descendant of Kiyomaro, and swing on turn four for two. On Beertime's fifth turn, he taps five Red into his mana pool, casts Firecat Blitz for zero, Flashes it back for five, and then casts Rites of Initiation for three. He discards three cards to make his five guys into 4/1 haste creatures, and kills me in a single blow.
+I cast first turn [Sensei's Divining Top](https://scryfall.com/card/2x2/314/senseis-divining-top), second turn [Journeyer's Kite](https://scryfall.com/card/ddi/65/journeyers-kite), third turn [Descendant of Kiyomaro](https://scryfall.com/card/sok/7/descendant-of-kiyomaro), and swing on turn four for two. On Beertime's fifth turn, he taps five Red into his mana pool, casts Firecat Blitz for zero, Flashes it back for five, and then casts [Rites of Initiation](https://scryfall.com/card/plst/ODY-217/rites-of-initiation) for three. He discards three cards to make his five guys into 4/1 haste creatures, and kills me in a single blow.
 
 *Record: 0-5*
 
 **Game 6-8: jol64 (145 card Elves deck)**
 
-Jol64 is running a 145 card Elf/Beast hybrid deck, built around Wirewood Savage, Totem Speaker, Wellwisher, and Well of Knowledge. Long story short, I only win one of three games, as I don't have nearly enough removal to handle a quick rush of creatures.
+Jol64 is running a 145 card Elf/Beast hybrid deck, built around [Wirewood Savage](https://scryfall.com/card/gvl/6/wirewood-savage), Totem Speaker, [Wellwisher](https://scryfall.com/card/cma/166/wellwisher), and Well of Knowledge. Long story short, I only win one of three games, as I don't have nearly enough removal to handle a quick rush of creatures.
 
 *Record: 1-7*
 
@@ -229,4 +229,4 @@ This is, by far, the worst finish I've ever posted with a deck for this column. 
 
 > **Rule #3**: [Focus your goals, but don't be a slave to your theme](https://web.archive.org/web/20090603042526/https://www.wizards.com/Magic/Magazine/Article.aspx?x=mtgcom/daily/bb62)
 
-Man, when I took a step back and looked at my deck, my goals were anything but focused. I want my win to be Beacon of Immortality plus False Cure, but I've strayed far from the path. Come back next week, as I deconstruct exactly what went wrong with Double Life, and reconstruct it from the ground up.
+Man, when I took a step back and looked at my deck, my goals were anything but focused. I want my win to be [Beacon of Immortality](https://scryfall.com/card/10e/10/beacon-of-immortality) plus [False Cure](https://scryfall.com/card/ons/146/false-cure), but I've strayed far from the path. Come back next week, as I deconstruct exactly what went wrong with Double Life, and reconstruct it from the ground up.

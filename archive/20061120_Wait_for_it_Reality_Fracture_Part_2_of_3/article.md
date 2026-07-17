@@ -70,11 +70,11 @@ Anyhow, enough of that - let's get to the meat of this week's article.
 
 *(Full decklist with sideboard: `decklist_1_Reality_Fracture_2.txt`; priced breakdown: `decklist_1_Reality_Fracture_2_priced.md`)*
 
-When last we left off, I had just fixed the mana configuration of the deck and added in some Jhoira's Timebugs. I'm still unsure about how the deck plays out, since my last few games were marred by inconsistent mana draws. Before I make any huge cuts to the core of the deck, I want to get a better feel of how Storm and Suspend work, hand in hand.
+When last we left off, I had just fixed the mana configuration of the deck and added in some [Jhoira's Timebug](https://scryfall.com/card/tsr/269/jhoiras-timebug)s. I'm still unsure about how the deck plays out, since my last few games were marred by inconsistent mana draws. Before I make any huge cuts to the core of the deck, I want to get a better feel of how Storm and Suspend work, hand in hand.
 
 **Game 1: Weeell (Slivers)**
 
-Turn 1, I suspend Keldon Halberdier. I then suspend Rift Bolt on turn four, and he drops link, stuck at three mana. I would have had an Empty the Warrens for six on the next turn.
+Turn 1, I suspend [Keldon Halberdier](https://scryfall.com/card/tsr/173/keldon-halberdier). I then suspend [Rift Bolt](https://scryfall.com/card/2x2/122/rift-bolt) on turn four, and he drops link, stuck at three mana. I would have had an [Empty the Warrens](https://scryfall.com/card/dmr/118/empty-the-warrens) for six on the next turn.
 
 Record: 1-0
 
@@ -82,41 +82,41 @@ Record: 1-0
 
 Turn 1: Suspend Halberdier
 
-Turn 2: Jhoira's Timebug
+Turn 2: [Jhoira's Timebug](https://scryfall.com/card/tsr/269/jhoiras-timebug)
 
-Turn 3: Suspend Errant Ephemeron
+Turn 3: Suspend [Errant Ephemeron](https://scryfall.com/card/tsr/66/errant-ephemeron)
 
-Turn 4: Suspend Riftwing Cloudskate
+Turn 4: Suspend [Riftwing Cloudskate](https://scryfall.com/card/tsr/82/riftwing-cloudskate)
 
-I time it so my Halberdier and Errant Ephemeron come into play on the same turn. He casts Funeral Charm on my Halberdier, and I respond by using Timebug on the Cloudskate, to try to get it into play. He in turn responds with Sudden Death, killing my Ephemeron. I do get to save my Halberdier, but that good play saves him 8 points of damage on one turn.
+I time it so my Halberdier and [Errant Ephemeron](https://scryfall.com/card/tsr/66/errant-ephemeron) come into play on the same turn. He casts [Funeral Charm](https://scryfall.com/card/tsb/44/funeral-charm) on my Halberdier, and I respond by using Timebug on the Cloudskate, to try to get it into play. He in turn responds with [Sudden Death](https://scryfall.com/card/tsr/143/sudden-death), killing my Ephemeron. I do get to save my Halberdier, but that good play saves him 8 points of damage on one turn.
 
-Mack_Nasty then drops two Phyrexian Arenas and draws a billion creature kill spells. The game ends on back-to-back-to-back turns of Consume Spirit thrown straight at my nugget.
+Mack_Nasty then drops two [Phyrexian Arena](https://scryfall.com/card/fdn/180/phyrexian-arena)s and draws a billion creature kill spells. The game ends on back-to-back-to-back turns of [Consume Spirit](https://scryfall.com/card/dvd/56/consume-spirit) thrown straight at my nugget.
 
 Record: 1-1
 
 **Game 3: TheMeek666 (5-Color Highlander Toolbox)**
 
-I get him to 10 with Suspend guys, but he kills them with Mortify and Wrecking Ball. I set up a turn where I go Rift Bolt, Clockspin it, then Grapeshot twice (once for three and once for four) for exactly the win.
+I get him to 10 with Suspend guys, but he kills them with [Mortify](https://scryfall.com/card/fdn/662/mortify) and [Wrecking Ball](https://scryfall.com/card/cma/198/wrecking-ball). I set up a turn where I go [Rift Bolt](https://scryfall.com/card/2x2/122/rift-bolt), Clockspin it, then [Grapeshot](https://scryfall.com/card/msc/803/grapeshot) twice (once for three and once for four) for exactly the win.
 
 Record: 2-1
 
 **Game 4: LordSanada (U/R Izzet)**
 
-He gets Gelectrode, burns me with some *Ninth Edition* burn spells, and then gets Wee Dragonauts. He has one big turn where he gets me down to 7 thanks to double sorcery/triple ping/double Dragonauts. I unsuspend Errant Ephemeron(he went up in the air on turn three), and it gets hit by Cancel. That allows me to Grapeshot for three
+He gets [Gelectrode](https://scryfall.com/card/ddj/5/gelectrode), burns me with some *Ninth Edition* burn spells, and then gets Wee Dragonauts. He has one big turn where he gets me down to 7 thanks to double sorcery/triple ping/double Dragonauts. I unsuspend [Errant Ephemeron](https://scryfall.com/card/tsr/66/errant-ephemeron)(he went up in the air on turn three), and it gets hit by [Cancel](https://scryfall.com/card/fdn/505/cancel). That allows me to [Grapeshot](https://scryfall.com/card/msc/803/grapeshot) for three
 
-(killing his flyer) and then Ignite Memories for four, hitting 13 points worth of damage in his hand. Unfortunately, one of those cards in his hand is Blaze, and he Blazes me out of the game on the next turn.
+(killing his flyer) and then [Ignite Memories](https://scryfall.com/card/tsp/164/ignite-memories) for four, hitting 13 points worth of damage in his hand. Unfortunately, one of those cards in his hand is [Blaze](https://scryfall.com/card/bbd/167/blaze), and he [Blaze](https://scryfall.com/card/bbd/167/blaze)s me out of the game on the next turn.
 
 Record: 2-2
 
 **Game 5: Jhestyr (White Weenie)**
 
-He drops a couple of smaller guys, including Soul Warden, and I firm down the board with Giant Oyster...that is, until he drops Witch Hunter! I don't get burn, and he bounces my Oyster off the board. He then drops Celestial Crusader and starts swinging. I cast Riftwing Cloudskate to get his bouncer off the board, but he gets Mouth of Ronom and kills my guy right back.
+He drops a couple of smaller guys, including Soul Warden, and I firm down the board with [Giant Oyster](https://scryfall.com/card/tsb/22/giant-oyster)...that is, until he drops Witch Hunter! I don't get burn, and he bounces my Oyster off the board. He then drops [Celestial Crusader](https://scryfall.com/card/tsr/13/celestial-crusader) and starts swinging. I cast [Riftwing Cloudskate](https://scryfall.com/card/tsr/82/riftwing-cloudskate) to get his bouncer off the board, but he gets Mouth of Ronom and kills my guy right back.
 
-I then suspend both the Halberdier and Ephemeron on one turn, but he drops Opal Gargoyle, and things look grim indeed. Both my guys hit the board, and I swing for 4 (the Halberdier dies). I then burn Whispers of the Muse, cast Coal Stoker, and hit him with an Ignite Memories for five. His hand: Proper Burial. This does 20 damage to him...but he's at 27 life thanks to the Soul Warden, and I only did 24 damage in this one turn. I lose on the counterattack.
+I then suspend both the Halberdier and Ephemeron on one turn, but he drops Opal Gargoyle, and things look grim indeed. Both my guys hit the board, and I swing for 4 (the Halberdier dies). I then burn [Whispers of the Muse](https://scryfall.com/card/wc98/rb103/whispers-of-the-muse), cast [Coal Stoker](https://scryfall.com/card/dmr/114/coal-stoker), and hit him with an [Ignite Memories](https://scryfall.com/card/tsp/164/ignite-memories) for five. His hand: Proper Burial. This does 20 damage to him...but he's at 27 life thanks to the Soul Warden, and I only did 24 damage in this one turn. I lose on the counterattack.
 
 Record: 2-3
 
-Well, I may have lost that last game, but I was definitely impressed with Ignite Memories. Around this time, the 3rd place deck from the Iwate Standard Championships (piloted by Seitarou Miura) is brought to my attention:
+Well, I may have lost that last game, but I was definitely impressed with [Ignite Memories](https://scryfall.com/card/tsp/164/ignite-memories). Around this time, the 3rd place deck from the Iwate Standard Championships (piloted by Seitarou Miura) is brought to my attention:
 
 **Seitarou Miura**
 
@@ -160,9 +160,9 @@ Total | 6307 | 100.0%
 
 Aaaaannnd...the readers are in a dead heat between Suspend versus Storm, so let's aim for that in this article, and in the last part of this evolution as well.
 
-Out go Giant Oysters, since they were not really part of the voted build of the deck. Claws of Gix are gone as well - one astute reader wrote about using Claws of Gix plus Repeal to spend one mana to up your Storm count by three and draw a card, but I'll revisit that idea in the future - for now, I just want to get a good idea of how the better cards in this deck work.
+Out go [Giant Oyster](https://scryfall.com/card/tsb/22/giant-oyster)s, since they were not really part of the voted build of the deck. [Claws of Gix](https://scryfall.com/card/tsb/107/claws-of-gix) are gone as well - one astute reader wrote about using [Claws of Gix](https://scryfall.com/card/tsb/107/claws-of-gix) plus [Repeal](https://scryfall.com/card/clu/94/repeal) to spend one mana to up your Storm count by three and draw a card, but I'll revisit that idea in the future - for now, I just want to get a good idea of how the better cards in this deck work.
 
-Speaking of better cards, Errant Ephemeron is definitely better in this deck than Viscerid Deepwalker. I swap them straight out three-for-three, and put in three Rift Bolt and a Serrated Arrows (just a good card in general) for the recently departed.
+Speaking of better cards, [Errant Ephemeron](https://scryfall.com/card/tsr/66/errant-ephemeron) is definitely better in this deck than [Viscerid Deepwalker](https://scryfall.com/card/tsp/91/viscerid-deepwalker). I swap them straight out three-for-three, and put in three [Rift Bolt](https://scryfall.com/card/2x2/122/rift-bolt) and a [Serrated Arrows](https://scryfall.com/card/gvl/20/serrated-arrows) (just a good card in general) for the recently departed.
 
 **Reality Fracture 3**
 
@@ -193,9 +193,9 @@ Speaking of better cards, Errant Ephemeron is definitely better in this deck tha
 
 *(Full decklist with sideboard: `decklist_3_Reality_Fracture_3.txt`; priced breakdown: `decklist_3_Reality_Fracture_3_priced.md`)*
 
-Out: 2 Claws of Gix, 2 Giant Oyster, 3 Viscerid Deepwalker
+Out: 2 [Claws of Gix](https://scryfall.com/card/tsb/107/claws-of-gix), 2 [Giant Oyster](https://scryfall.com/card/tsb/22/giant-oyster), 3 [Viscerid Deepwalker](https://scryfall.com/card/tsp/91/viscerid-deepwalker)
 
-In: 3 Errant Ephemeron, 3 Rift Bolt, 1 Serrated Arrows
+In: 3 [Errant Ephemeron](https://scryfall.com/card/tsr/66/errant-ephemeron), 3 [Rift Bolt](https://scryfall.com/card/2x2/122/rift-bolt), 1 [Serrated Arrows](https://scryfall.com/card/gvl/20/serrated-arrows)
 
 **Game 6: [Name Withheld] (Solar Flare)**
 
@@ -210,26 +210,26 @@ Ben is going a little balder right about now due to pain and anguish. I never re
 
 **Game 7: Saffiron (R/G Aggro)**
 
-He casts double Magus of the Scroll, and I suspend Errant Ephemeron on turn two, and Keldon Halberdier on turn three. He drops Mogg War Marshal and swings with his team. I Clockspin Errant Ephemeron into play on turn five, then cast Grapeshot for three, killing his team. The Ephemeron is joined shortly thereafter by a Halberdier, and Rift Bolt seals the game for me.
+He casts double Magus of the Scroll, and I suspend [Errant Ephemeron](https://scryfall.com/card/tsr/66/errant-ephemeron) on turn two, and [Keldon Halberdier](https://scryfall.com/card/tsr/173/keldon-halberdier) on turn three. He drops [Mogg War Marshal](https://scryfall.com/card/plst/DMR-131/mogg-war-marshal) and swings with his team. I Clockspin [Errant Ephemeron](https://scryfall.com/card/tsr/66/errant-ephemeron) into play on turn five, then cast [Grapeshot](https://scryfall.com/card/msc/803/grapeshot) for three, killing his team. The Ephemeron is joined shortly thereafter by a Halberdier, and [Rift Bolt](https://scryfall.com/card/2x2/122/rift-bolt) seals the game for me.
 
 Record: 3-4
 
 **Game 8: Manxset (R/G/W burn)**
 
-He gets turn-two Gruul Guildmage, turn-three Moldervine Cloak, turn-four Ronom Unicorn plus Mistral Charger. I suspend Ephemeron on turn three, kill the Charger on turn four with Serrated Arrows, and then die to Char on turn five. I'm definitely going to have to look into a way to stop a weenie rush - maybe the old standby of Pyroclasm?
+He gets turn-two [Gruul Guildmage](https://scryfall.com/card/rvr/189/gruul-guildmage), turn-three [Moldervine Cloak](https://scryfall.com/card/rvr/150/moldervine-cloak), turn-four [Ronom Unicorn](https://scryfall.com/card/afc/71/ronom-unicorn) plus [Mistral Charger](https://scryfall.com/card/rvr/24/mistral-charger). I suspend Ephemeron on turn three, kill the Charger on turn four with [Serrated Arrows](https://scryfall.com/card/gvl/20/serrated-arrows), and then die to [Char](https://scryfall.com/card/rav/117/char) on turn five. I'm definitely going to have to look into a way to stop a weenie rush - maybe the old standby of [Pyroclasm](https://scryfall.com/card/dsk/149/pyroclasm)?
 
 Record: 3-5
 
 **Game 9: Alabaster Dragon (Mono-Black Madness)**
 
-I get Jhoira's Timebug, and use it to drop a turn-three Pardic Dragon. I get in a swing for 7 before he kills it with Nightshade Assassin. I then suspend double Errant Ephemeron, and he responds with Trespasser il-Vec on his turn. One-toughness creatures don't last long against this deck, and I use Coal Stoker plus Grapeshot to kill his team. On the next turn, both of my flyers come into play, I swing for 11, and then I Ignite Memories into a handful of his four-to-six cost spells, bringing Alabaster Dragon well into the negatives.
+I get [Jhoira's Timebug](https://scryfall.com/card/tsr/269/jhoiras-timebug), and use it to drop a turn-three [Pardic Dragon](https://scryfall.com/card/mma/124/pardic-dragon). I get in a swing for 7 before he kills it with [Nightshade Assassin](https://scryfall.com/card/tsr/128/nightshade-assassin). I then suspend double [Errant Ephemeron](https://scryfall.com/card/tsr/66/errant-ephemeron), and he responds with Trespasser il-Vec on his turn. One-toughness creatures don't last long against this deck, and I use [Coal Stoker](https://scryfall.com/card/dmr/114/coal-stoker) plus [Grapeshot](https://scryfall.com/card/msc/803/grapeshot) to kill his team. On the next turn, both of my flyers come into play, I swing for 11, and then I [Ignite Memories](https://scryfall.com/card/tsp/164/ignite-memories) into a handful of his four-to-six cost spells, bringing Alabaster Dragon well into the negatives.
 
 Record: 4-5
 
 **Game 10: Pondash (W/R Mid-Range)**
 
-He drops Zhalfirin Commander, and I suspend Deep-Sea Kraken on turn three and Errant Ephemeron plus Keldon Halberdiers on turn four. He attacks for three, and I suspend triple Rift Bolt on turn five. I have to use two of them to take out his Commander, but I aim the third at his head (taking him to 17) and then cast Ignite Memories for four, hitting Icy Manipulator, Icy Manipulator, Faith's Fetters and Cloudchaser Kestrel (15 damage). If I had sent either of the other Rift Bolts directly at Pondash, I would have killed him outright in one turn! As it stands, he's unable to deal with my other guys as they unsuspend, and I have no trouble dealing the last two damage to win.
+He drops [Zhalfirin Commander](https://scryfall.com/card/ddg/13/zhalfirin-commander), and I suspend [Deep-Sea Kraken](https://scryfall.com/card/dds/3/deep-sea-kraken) on turn three and [Errant Ephemeron](https://scryfall.com/card/tsr/66/errant-ephemeron) plus [Keldon Halberdier](https://scryfall.com/card/tsr/173/keldon-halberdier)s on turn four. He attacks for three, and I suspend triple [Rift Bolt](https://scryfall.com/card/2x2/122/rift-bolt) on turn five. I have to use two of them to take out his Commander, but I aim the third at his head (taking him to 17) and then cast [Ignite Memories](https://scryfall.com/card/tsp/164/ignite-memories) for four, hitting [Icy Manipulator](https://scryfall.com/card/dmr/225/icy-manipulator), [Icy Manipulator](https://scryfall.com/card/dmr/225/icy-manipulator), [Faith's Fetters](https://scryfall.com/card/rvr/18/faiths-fetters) and [Cloudchaser Kestrel](https://scryfall.com/card/tsp/10/cloudchaser-kestrel) (15 damage). If I had sent either of the other [Rift Bolt](https://scryfall.com/card/2x2/122/rift-bolt)s directly at Pondash, I would have killed him outright in one turn! As it stands, he's unable to deal with my other guys as they unsuspend, and I have no trouble dealing the last two damage to win.
 
 Record: 5-5
 
-So far, I've been outrageously happy with Ignite Memories, combined with burn and the efficient suspend creatures in this deck. In the last Reality Fracture build article, you'll see me take the deck in that direction - combining efficient suspend cards with the storm cards you know and love. See you then!
+So far, I've been outrageously happy with [Ignite Memories](https://scryfall.com/card/tsp/164/ignite-memories), combined with burn and the efficient suspend creatures in this deck. In the last Reality Fracture build article, you'll see me take the deck in that direction - combining efficient suspend cards with the storm cards you know and love. See you then!

@@ -134,6 +134,43 @@ main {
 
 .col-tags { max-width: 12em; }
 
+/* ---------- mana-color pips ---------- */
+
+.color-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.9rem;
+}
+
+.mana-pip-btn {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 999px;
+  line-height: 0;
+}
+
+.mana-pip-btn .mana-pip { box-shadow: 0 0 0 1px var(--border); border-radius: 50%; }
+.mana-pip-btn:hover .mana-pip { box-shadow: 0 0 0 2px var(--accent-2); }
+.mana-pip-btn.active .mana-pip { box-shadow: 0 0 0 2px var(--accent); transform: scale(1.12); }
+
+/* Official Magic: the Gathering mana symbols, hotlinked from Scryfall's
+   symbology set (https://svgs.scryfall.io/card-symbols/<W|U|B|R|G|C>.svg). */
+.mana-pip {
+  display: inline-block;
+  width: 1.3em;
+  height: 1.3em;
+  vertical-align: -0.22em;
+  border-radius: 50%;
+  margin: 0 0.06em;
+  transition: transform 0.1s;
+}
+
+.col-colors { white-space: nowrap; }
+
 .deck-table {
   width: 100%;
   border-collapse: collapse;
@@ -185,6 +222,16 @@ main {
 .col-date { white-space: nowrap; font-size: 0.85rem; color: var(--muted); }
 .col-title a { color: var(--link); font-weight: 600; text-decoration: none; }
 .col-title a:hover { text-decoration: underline; }
+.col-title-inner { display: flex; align-items: flex-start; gap: 0.6rem; }
+.deck-thumb {
+  flex: none;
+  width: 64px;
+  height: 46px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--row-alt);
+}
 .col-author { font-size: 0.78rem; color: var(--muted); font-weight: normal; }
 .col-desc { font-size: 0.88rem; color: #444; max-width: 34em; }
 .col-num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
@@ -286,6 +333,17 @@ body.lightbox-locked { overflow: hidden; }
 .article-body h5, .article-body h6 { color: var(--accent-2); }
 .article-body a { color: var(--link); }
 .article-body hr { border: none; border-top: 1px solid var(--border); margin: 1.2rem 0; }
+
+.article-body p img {
+  display: block;
+  width: 160px;
+  max-width: 100%;
+  height: auto;
+  margin: 0.4rem 0 0.8rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+}
 
 .decklists h2 { color: var(--accent); }
 

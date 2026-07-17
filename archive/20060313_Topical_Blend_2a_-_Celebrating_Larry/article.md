@@ -212,7 +212,7 @@ For those of you who read Building On A Budget, you'll remember that last week I
 
 In honor of rogue tendencies, then, it's time to pick the two topics I don't think Mark will ever realistically cover. That's right: I'm focusing on the *bottom* of each poll. Does that make me a bottom feeder? Wait. Don't answer that.
 
-Cards that change controller whenever something specific happens (as with, e.g., Fractured Loyalty)” received exactly two votes, and “Snack Foods” pulled in one. If you're the lone person who happened to have voted for Snack Foods, please speak up on the Message Boards. Since I don't know who you are, I'm going to dub you Lawrence, although on second thought I think I'll call you Larry. Today's for you, Larry.
+Cards that change controller whenever something specific happens (as with, e.g., [Fractured Loyalty](https://scryfall.com/card/mrd/93/fractured-loyalty))” received exactly two votes, and “Snack Foods” pulled in one. If you're the lone person who happened to have voted for Snack Foods, please speak up on the Message Boards. Since I don't know who you are, I'm going to dub you Lawrence, although on second thought I think I'll call you Larry. Today's for you, Larry.
 
 What do you get when Change-Controller Cards meet Snack Foods?
 

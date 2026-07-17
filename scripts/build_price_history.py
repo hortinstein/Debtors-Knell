@@ -232,29 +232,31 @@ def collect_priced_files(only=None):
     return priced_files
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--only", nargs="*", default=None, help="only process these folder names")
-    ap.add_argument("--force", action="store_true")
-    ap.add_argument("--limit", type=int, default=None)
-    args = ap.parse_args()
+def build_price_histories(only=None, force=False, limit=None, quiet=False):
+    """Build/refresh the decklist*_price_history.json sidecars. These are
+    generated (gitignored) files, not checked in -- rebuilt here on webapp
+    startup (force=False: only fill in whatever's missing) and after every
+    daily price fetch (force=True: yesterday's sidecars are now missing a
+    day, see scripts/fetch_prices.py). Returns the number of sidecars written.
+    """
+    _log = log if not quiet else (lambda msg: None)
 
-    priced_files = collect_priced_files(only=args.only)
-    if args.limit:
-        priced_files = priced_files[: args.limit]
+    priced_files = collect_priced_files(only=only)
+    if limit:
+        priced_files = priced_files[:limit]
 
     pending = []
     for pf in priced_files:
         out_path = pf[: -len("_priced.md")] + "_price_history.json"
-        if os.path.exists(out_path) and not args.force:
+        if os.path.exists(out_path) and not force:
             continue
         pending.append((pf, out_path))
 
     if not pending:
-        log("Nothing to do (all sidecars already exist; use --force to rebuild).")
-        return
+        _log("Nothing to do (all sidecars already exist; use force=True to rebuild).")
+        return 0
 
-    log(f"{len(pending)} decklists need a price-history sidecar.")
+    _log(f"{len(pending)} decklists need a price-history sidecar.")
 
     definitions = load_latest_card_definitions()
     name_index = build_name_index(definitions)
@@ -280,10 +282,10 @@ def main():
                 unmatched.append(name)
         parsed[pf] = (resolved, unmatched)
 
-    log(f"Resolved GoatBots ids for cards; {len(relevant_ids):,} distinct ids needed. "
-        "Scanning daily price archives (this reads every archived day once)...")
+    _log(f"Resolved GoatBots ids for cards; {len(relevant_ids):,} distinct ids needed. "
+         "Scanning daily price archives (this reads every archived day once)...")
     prices_by_date = load_relevant_prices(relevant_ids)
-    log(f"Loaded prices for {len(prices_by_date):,} archived days.")
+    _log(f"Loaded prices for {len(prices_by_date):,} archived days.")
 
     dates_sorted = sorted(prices_by_date.keys())
 
@@ -325,12 +327,22 @@ def main():
             json.dump(out, f, indent=1)
         written += 1
 
-    log(f"Wrote {written} price-history sidecars.")
+    _log(f"Wrote {written} price-history sidecars.")
+    return written
 
 
 def _today():
     import datetime
     return datetime.date.today().isoformat()
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--only", nargs="*", default=None, help="only process these folder names")
+    ap.add_argument("--force", action="store_true")
+    ap.add_argument("--limit", type=int, default=None)
+    args = ap.parse_args()
+    build_price_histories(only=args.only, force=args.force, limit=args.limit)
 
 
 if __name__ == "__main__":

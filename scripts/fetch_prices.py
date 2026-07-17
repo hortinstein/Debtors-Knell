@@ -194,6 +194,19 @@ def main():
         except Exception as e:
             log(f"GoatBots yearly-archive backfill check FAILED (non-fatal): {e}")
 
+    # Regenerate the per-deck price-history sidecars now that a new day of
+    # price data has landed (they're gitignored/generated -- see
+    # build_price_history.py -- so this is the only place they get refreshed
+    # with today's data point; force=True since every existing sidecar is
+    # now missing today's day).
+    try:
+        import build_price_history
+        log("Rebuilding deck price-history sidecars from freshly fetched price data...")
+        written = build_price_history.build_price_histories(force=True)
+        log(f"Rebuilt {written} price-history sidecar(s).")
+    except Exception as e:
+        log(f"Price-history rebuild FAILED (non-fatal): {e}")
+
     if not goatbots_ok:
         sys.exit(1)
     log("Done.")

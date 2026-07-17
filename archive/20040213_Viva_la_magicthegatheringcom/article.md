@@ -26,7 +26,7 @@ The title of this week's column is not only to denote the life of the new websit
 
 The Life deck is basically a Cleric deck with an infinite life combo built in. This deck can be used for Standard or Tribal play. The infinite life combo involves these three cards:
 
-So, when you equip one of your creatures with Lightning Greaves, you must target the creature. If it is a Cleric, your Daru Spiritualist will give it +0/+2. If you move the Lightning Greaves back and forth between your guys and your Daru Spiritualist one trillion times, you will end up with a Daru Spiritualist with about two trillion toughness.
+So, when you equip one of your creatures with [Lightning Greaves](https://scryfall.com/card/msc/202/lightning-greaves), you must target the creature. If it is a Cleric, your [Daru Spiritualist](https://scryfall.com/card/scg/5/daru-spiritualist) will give it +0/+2. If you move the [Lightning Greaves](https://scryfall.com/card/msc/202/lightning-greaves) back and forth between your guys and your [Daru Spiritualist](https://scryfall.com/card/scg/5/daru-spiritualist) one trillion times, you will end up with a [Daru Spiritualist](https://scryfall.com/card/scg/5/daru-spiritualist) with about two trillion toughness.
 
 …that is when you sacrifice him to the Sanctum to can two trillion and one life.
 
@@ -60,35 +60,35 @@ The question that you have to ask yourself while playing this deck is: What do I
 
 *(Full decklist with sideboard: `decklist.txt`; priced breakdown: `decklist_priced.md`)*
 
-This deck has three other cool things going for it besides the infinite life combo. The first of which is the Scion of Darkness and Dark Supplicants. While normally using your Dark Supplicant to sacrifice three Clerics and searching up the Scion is not great, when you have a Lightning Greaves it can actually be quite devastating. The turn 3 surprise Scion attack can be enough to put many decks under pressure.
+This deck has three other cool things going for it besides the infinite life combo. The first of which is the [Scion of Darkness](https://scryfall.com/card/2x2/86/scion-of-darkness) and [Dark Supplicant](https://scryfall.com/card/lgn/64/dark-supplicant)s. While normally using your [Dark Supplicant](https://scryfall.com/card/lgn/64/dark-supplicant) to sacrifice three Clerics and searching up the Scion is not great, when you have a [Lightning Greaves](https://scryfall.com/card/msc/202/lightning-greaves) it can actually be quite devastating. The turn 3 surprise Scion attack can be enough to put many decks under pressure.
 
-Weathered Wayfarer
+[![Weathered Wayfarer](https://api.scryfall.com/cards/2x2/34?format=image&version=normal)](https://scryfall.com/card/2x2/34/weathered-wayfarer)
 
-The next cool part about the deck is the Weathered Wayfarer. While I was hesitant to add this rare to the deck, since it ups the total cost, I thought it was worthwhile because it helps you get your combo piece (Starlit Sanctum) and can get you cards by fetching up cycling lands and then cycling them away. It also helps fix your mana a little, while giving you an extra body to sacrifice to the Dark Supplicant.
+The next cool part about the deck is the [Weathered Wayfarer](https://scryfall.com/card/2x2/34/weathered-wayfarer). While I was hesitant to add this rare to the deck, since it ups the total cost, I thought it was worthwhile because it helps you get your combo piece ([Starlit Sanctum](https://scryfall.com/card/clb/917/starlit-sanctum)) and can get you cards by fetching up cycling lands and then cycling them away. It also helps fix your mana a little, while giving you an extra body to sacrifice to the [Dark Supplicant](https://scryfall.com/card/lgn/64/dark-supplicant).
 
-The last cool part about the deck is the Rotlung Reanimator. This card is absolutely fantastic with clerics, especially when you sacrifice three to the Dark Supplicant. You will often upgrade your 1/1's into 2/2's. He also makes you much more resilient to Wrath of God. While you don't absolutely need the Rotlungs to make the deck work, I would try to get them – be wary, they are undoubtedly the most expensive part of the deck, making up about two thirds of the cost.
+The last cool part about the deck is the [Rotlung Reanimator](https://scryfall.com/card/ons/164/rotlung-reanimator). This card is absolutely fantastic with clerics, especially when you sacrifice three to the [Dark Supplicant](https://scryfall.com/card/lgn/64/dark-supplicant). You will often upgrade your 1/1's into 2/2's. He also makes you much more resilient to [Wrath of God](https://scryfall.com/card/cmm/70/wrath-of-god). While you don't absolutely need the Rotlungs to make the deck work, I would try to get them – be wary, they are undoubtedly the most expensive part of the deck, making up about two thirds of the cost.
 
-Your only real removal spell is Cruel Revival – so use them wisely! You don't want to burn them all and then find yourself starting down a Platinum Angel…when you have infinite life and they have an unkillable Platinum Angel….well lets just say you went to the bathroom before the match began.
+Your only real removal spell is [Cruel Revival](https://scryfall.com/card/gnt/28/cruel-revival) – so use them wisely! You don't want to burn them all and then find yourself starting down a [Platinum Angel](https://scryfall.com/card/cn2/214/platinum-angel)…when you have infinite life and they have an unkillable [Platinum Angel](https://scryfall.com/card/cn2/214/platinum-angel)….well lets just say you went to the bathroom before the match began.
 
 ##### Tips on playing the Deck
 
-- Unholy Grotto You can use your Wayfarer to fetch up the one Unholy Grottto to retrieve a Rotlung or a Withered Wretch from your graveyard. Note that the Grotto will make sure that you do not lose to decking – this can be an issue in infinite life games.
-- Sometimes it is better to play the Headhunter Morphed, but usually he is better face up, especially if you can cast it on turn 2 against control decks.
-- Keep the greaves on your most vulnerable creatures or the biggest targets – Rotlung Reanimator and Daru Spiritualist come to mind. Keeping your Scion safe is also advisable.
+- [![Unholy Grotto](https://api.scryfall.com/cards/ons/327?format=image&version=normal)](https://scryfall.com/card/ons/327/unholy-grotto) You can use your Wayfarer to fetch up the one Unholy Grottto to retrieve a Rotlung or a [Withered Wretch](https://scryfall.com/card/hop/45/withered-wretch) from your graveyard. Note that the Grotto will make sure that you do not lose to decking – this can be an issue in infinite life games.
+- Sometimes it is better to play the [Headhunter](https://scryfall.com/card/ons/156/headhunter) Morphed, but usually he is better face up, especially if you can cast it on turn 2 against control decks.
+- Keep the greaves on your most vulnerable creatures or the biggest targets – [Rotlung Reanimator](https://scryfall.com/card/ons/164/rotlung-reanimator) and [Daru Spiritualist](https://scryfall.com/card/scg/5/daru-spiritualist) come to mind. Keeping your Scion safe is also advisable.
 - Use your judgment when deciding whether to play the 'land game' with your Wayfarer. This used to come up with Land Tax. Basically both players refuse to play lands because the opponent doesn't want you to use the Wayfarer. This might be a good idea if your hand is sub-par, because it gives you time to draw into better cards. Also, if you have things to cast with the amount of land you have out you can apply pressure, forcing them to drop lands. Be careful though – they might not be withholding land – they might just be mana screwed and you are just wasting your chance to punish them for it.
-- Foothill Guide gives you slight Morph diversity, meaning that you can attack with it and they will want to block it because it might be Headhunter. Keep this in mind when attacking. Its main purpose is to stop Goblin Piledrivers and to be useful with Supplicant and Rotlung.
+- [Foothill Guide](https://scryfall.com/card/ons/29/foothill-guide) gives you slight Morph diversity, meaning that you can attack with it and they will want to block it because it might be [Headhunter](https://scryfall.com/card/ons/156/headhunter). Keep this in mind when attacking. Its main purpose is to stop Goblin Piledrivers and to be useful with Supplicant and Rotlung.
 
 ##### Adding Money to the Deck
 
-Murderous Betrayal
+[![Murderous Betrayal](https://api.scryfall.com/cards/8ed/147?format=image&version=normal)](https://scryfall.com/card/8ed/147/murderous-betrayal)
 
-One rare that I was really tempted to put in the deck was Murderous Betrayal. Not only does it solve the problem of not having enough creature kill, but how often can you say that you payed a trillion life to kill a Skirk Prospector? I mean – he was just too threatening! You might want to try adding more expensive creature kill effects like Akroma's Vengeance or Wrath of God, but it really isn't that needed.
+One rare that I was really tempted to put in the deck was [Murderous Betrayal](https://scryfall.com/card/8ed/147/murderous-betrayal). Not only does it solve the problem of not having enough creature kill, but how often can you say that you payed a trillion life to kill a [Skirk Prospector](https://scryfall.com/card/dmr/137/skirk-prospector)? I mean – he was just too threatening! You might want to try adding more expensive creature kill effects like Akroma's Vengeance or [Wrath of God](https://scryfall.com/card/cmm/70/wrath-of-god), but it really isn't that needed.
 
-The thing that this deck really wants is a good card versus the control decks – you might want to have Decrees of Justice or Eternal Dragons to make control matchups a bit better. While you can gain infinite life – they are happy to deck you with Mindslaver (it will get around your Grotto plan). So make sure you try and kill them before it comes to that…you will have plenty of time to break through if you save your Wretches for their Dragons.
+The thing that this deck really wants is a good card versus the control decks – you might want to have Decrees of Justice or Eternal Dragons to make control matchups a bit better. While you can gain infinite life – they are happy to deck you with [Mindslaver](https://scryfall.com/card/som/176/mindslaver) (it will get around your Grotto plan). So make sure you try and kill them before it comes to that…you will have plenty of time to break through if you save your Wretches for their Dragons.
 
-If you add Glowriders to the deck, you can play for the shortgame and try to beatdown – if you sideboard in 4 Cabal Interrogators to go along with your 4 Headhunters, you will find that the control decks may struggle to stop your beats, especially if you have these guys backed by a Rotlung Reanimator.
+If you add Glowriders to the deck, you can play for the shortgame and try to beatdown – if you sideboard in 4 [Cabal Interrogator](https://scryfall.com/card/scg/57/cabal-interrogator)s to go along with your 4 [Headhunter](https://scryfall.com/card/ons/156/headhunter)s, you will find that the control decks may struggle to stop your beats, especially if you have these guys backed by a [Rotlung Reanimator](https://scryfall.com/card/ons/164/rotlung-reanimator).
 
-Overall, this deck gives me a warm and fuzzy feeling inside, and I think it will do the same for you the first time you gain infinite life and then attack with a Scion of Darkness the very next turn.
+Overall, this deck gives me a warm and fuzzy feeling inside, and I think it will do the same for you the first time you gain infinite life and then attack with a [Scion of Darkness](https://scryfall.com/card/2x2/86/scion-of-darkness) the very next turn.
 
 Until next time, tap to prevent 1.
 

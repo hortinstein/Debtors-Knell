@@ -182,6 +182,85 @@ def norm_key_noaccent_nopunct(s):
     return s
 
 
+CARD_LINK_RE = re.compile(r"scryfall\.com/card/([^/?#]+)/([^/?#]+)/")
+
+
+def scryfall_image_url(page_uri):
+    """Turn a scryfall.com/card/<set>/<number>/<slug> page link into a
+    hotlinkable card-image URL via Scryfall's API image redirect -- the same
+    URL pattern webapp/static/card-preview.js uses for its hover preview."""
+    m = CARD_LINK_RE.search(page_uri or "")
+    if not m:
+        return None
+    set_code, number = m.group(1), m.group(2)
+    return f"https://api.scryfall.com/cards/{set_code}/{number}?format=image&version=normal"
+
+
+SUB_NOTE_RE = re.compile(r"<sub>\((.*)\)</sub>\s*$")
+SUB_STRIP_RE = re.compile(r"\s*<sub>.*</sub>\s*$")
+FUZZY_NOTE_RE = re.compile(r"->\s*(.+)$")
+NAME_URI_ROW_RE = re.compile(
+    r"^\|\s*(\d+)\s*\|\s*(.+?)\s*\|\s*(?:\$[\d,.]+|N/A)\s*\|\s*(?:\$[\d,.]+|N/A)\s*\|\s*"
+    r"(?:[\d.]+|N/A)\s*\|\s*(?:[\d.]+|N/A)\s*\|\s*\[link\]\(([^)]+)\)\s*\|\s*$"
+)
+
+
+def _canonical_name_from_priced_cell(name_cell):
+    """Same resolution webapp/app.py's _canonical_card_name does: a priced
+    table's Card cell may carry a trailing '<sub>(matched via fuzzy(97) ->
+    Real Name)</sub>' annotation -- prefer that real, fuzzy-matched name."""
+    sub_m = SUB_NOTE_RE.search(name_cell)
+    base_name = SUB_STRIP_RE.sub("", name_cell).strip()
+    if sub_m:
+        fm = FUZZY_NOTE_RE.search(sub_m.group(1))
+        if fm:
+            return fm.group(1).strip()
+    return base_name
+
+
+class CardImageIndex:
+    """A card-name -> Scryfall page URI lookup built entirely from the
+    archive's own already-generated decklist*_priced.md files -- no Scryfall
+    bulk-data download (and thus no network access) required. Used to turn
+    prose card mentions and inline card-image callouts in article.md back
+    into real, hoverable/imaged Scryfall links, the way the original
+    wizards.com articles showed a card's image via a JS popup or an inline
+    <img> for virtually every card name they mentioned."""
+
+    def __init__(self, archive_dir):
+        self.by_exact = {}
+        self.by_noapos = {}
+        self.by_stripped = {}
+        for path in glob.glob(os.path.join(archive_dir, "*", "decklist*_priced.md")):
+            with open(path, encoding="utf-8") as f:
+                for line in f:
+                    m = NAME_URI_ROW_RE.match(line.rstrip("\n"))
+                    if not m:
+                        continue
+                    uri = m.group(3)
+                    if not uri or "scryfall.com/search" in uri:
+                        continue  # unmatched-card placeholder, not a real card page
+                    name = _canonical_name_from_priced_cell(m.group(2))
+                    self.by_exact.setdefault(norm_key(name), uri)
+                    self.by_noapos.setdefault(norm_key_noapos(name), uri)
+                    self.by_stripped.setdefault(norm_key_noaccent_nopunct(name), uri)
+
+    def lookup_uri(self, raw_name):
+        name = norm_basic(raw_name).strip().strip(".")
+        if not name:
+            return None
+        k = norm_key(name)
+        if k in self.by_exact:
+            return self.by_exact[k]
+        ka = norm_key_noapos(name)
+        if ka in self.by_noapos:
+            return self.by_noapos[ka]
+        ks = norm_key_noaccent_nopunct(name)
+        if ks in self.by_stripped:
+            return self.by_stripped[ks]
+        return None
+
+
 class CardIndex:
     def __init__(self, bulk_path, min_price_index=None, min_tix_index=None):
         with open(bulk_path, encoding="utf-8") as f:
@@ -570,7 +649,10 @@ INLINE_WRAP = {
 }
 
 
-def render_inline(node):
+CARD_WINDOW_HREF_RE = re.compile(r"^javascript:autoCardWindow2?\(")
+
+
+def render_inline(node, img_index=None):
     """Render an inline node (and descendants) to markdown text, no block breaks."""
     if isinstance(node, Comment):
         return ""  # HTML comments (some articles have stray commented-out drafts) are not content
@@ -597,17 +679,49 @@ def render_inline(node):
         sym = mana_symbol(alt)
         if sym:
             return sym
+        # The original articles show a real card image (200x285, the site's
+        # standard inline card-image size) for cards called out by name, most
+        # often in "vs." sideboarding suggestions. Restore that image instead
+        # of degrading it to bare alt text, resolving the printing via the
+        # archive's own already-priced decklists (see CardImageIndex). Only
+        # images at that exact size are treated as card art -- other images
+        # (author photo, banners, icons) keep the old alt-text-or-nothing
+        # fallback below.
+        if node.get("width") == "200" and node.get("height") == "285":
+            card_name = alt
+            if not card_name:
+                src = node.get("src") or ""
+                base = os.path.basename(src).rsplit(".", 1)[0]
+                card_name = base.replace("_", " ").replace("%20", " ")
+            elif "_" in card_name and " " not in card_name:
+                card_name = card_name.replace("_", " ")
+            if card_name and img_index is not None:
+                page_uri = img_index.lookup_uri(card_name)
+                img_uri = scryfall_image_url(page_uri) if page_uri else None
+                if img_uri:
+                    return f"[![{card_name}]({img_uri})]({page_uri})"
+            return card_name
         if "_" in alt and " " not in alt:
             alt = alt.replace("_", " ")  # filename-derived alt text, e.g. "Patron_of_the_Nezumi"
         return alt
     if name == "a":
-        raw = "".join(render_inline(c) for c in node.children)
+        raw = "".join(render_inline(c, img_index) for c in node.children)
         if not raw.strip():
             return ""
         lead = " " if raw[0].isspace() else ""
         trail = " " if raw[-1].isspace() else ""
         text = raw.strip()
         href = node.get("href", "") or ""
+        if CARD_WINDOW_HREF_RE.match(href):
+            # The original articles pop up a card's image on hover for
+            # basically every card name mentioned in the prose (a JS
+            # autoCardWindow() call). Recover that as a real Scryfall link --
+            # webapp/static/card-preview.js already shows a hover image for
+            # any such link, site-wide.
+            page_uri = img_index.lookup_uri(text) if img_index is not None else None
+            if page_uri:
+                return f"{lead}[{text}]({page_uri}){trail}"
+            return f"{lead}{text}{trail}"
         if href.startswith("javascript:") or not href:
             return f"{lead}{text}{trail}"
         # resolve wayback-relative links to absolute wayback urls; keep as-is otherwise
@@ -615,7 +729,7 @@ def render_inline(node):
             href = "https://web.archive.org" + href
         return f"{lead}[{text}]({href}){trail}"
     if name in INLINE_WRAP:
-        raw = "".join(render_inline(c) for c in node.children)
+        raw = "".join(render_inline(c, img_index) for c in node.children)
         if not raw.strip():
             return ""
         # preserve boundary whitespace *outside* the markers -- markdown
@@ -630,7 +744,7 @@ def render_inline(node):
     if name == "card" and node.get("cardname"):
         return f"{node.get('quantity','').strip()} {node.get('cardname','').strip()}".strip()
     # generic passthrough (span, nobr, font, big, autocard, sup, strike, u, small, etc.)
-    return "".join(render_inline(c) for c in node.children)
+    return "".join(render_inline(c, img_index) for c in node.children)
 
 
 BLOCK_LEVEL_NAMES = {
@@ -653,7 +767,7 @@ def is_block_child(c):
     return c.name in BLOCK_LEVEL_NAMES
 
 
-def render_mixed(children, decklist_files, deck_counter):
+def render_mixed(children, decklist_files, deck_counter, img_index=None):
     """Walk a sequence of sibling nodes, buffering inline content into a
     paragraph block and flushing whenever a nested block-level element is
     encountered, so that e.g. <p>text<div class="deck">...</div>more</p>
@@ -675,16 +789,16 @@ def render_mixed(children, decklist_files, deck_counter):
             continue
         if is_block_child(c):
             flush()
-            blocks.extend(block_to_markdown(c, decklist_files, deck_counter))
+            blocks.extend(block_to_markdown(c, decklist_files, deck_counter, img_index=img_index))
         elif isinstance(c, NavigableString):
             buffer.append(str(c))
         elif isinstance(c, Tag):
-            buffer.append(render_inline(c))
+            buffer.append(render_inline(c, img_index))
     flush()
     return blocks
 
 
-def block_to_markdown(node, decklist_files, deck_counter, depth=0):
+def block_to_markdown(node, decklist_files, deck_counter, depth=0, img_index=None):
     """Render a block-level node to a list of markdown block strings."""
     blocks = []
     if isinstance(node, Comment):
@@ -711,7 +825,7 @@ def block_to_markdown(node, decklist_files, deck_counter, depth=0):
         return blocks
 
     if name in ("h1", "h2", "h3", "h4", "h5", "h6"):
-        text = "".join(render_inline(c) for c in node.children).strip()
+        text = "".join(render_inline(c, img_index) for c in node.children).strip()
         text = re.sub(r"\s+", " ", text)
         if text:
             level = min(int(name[1]) + 2, 6)  # article body headers start at ###
@@ -719,10 +833,10 @@ def block_to_markdown(node, decklist_files, deck_counter, depth=0):
         return blocks
 
     if name == "p":
-        return render_mixed(node.children, decklist_files, deck_counter)
+        return render_mixed(node.children, decklist_files, deck_counter, img_index=img_index)
 
     if name == "blockquote":
-        sub_blocks = render_mixed(node.children, decklist_files, deck_counter)
+        sub_blocks = render_mixed(node.children, decklist_files, deck_counter, img_index=img_index)
         inner = "\n\n".join(sub_blocks)
         if inner:
             quoted = "\n".join(f"> {ln}" if ln.strip() else ">" for ln in inner.splitlines())
@@ -732,7 +846,7 @@ def block_to_markdown(node, decklist_files, deck_counter, depth=0):
     if name in ("ul", "ol"):
         items = []
         for i, li in enumerate(node.find_all("li", recursive=False), start=1):
-            text = "".join(render_inline(c) for c in li.children).strip()
+            text = "".join(render_inline(c, img_index) for c in li.children).strip()
             text = re.sub(r"\s+", " ", text)
             if text:
                 prefix = f"{i}." if name == "ol" else "-"
@@ -759,13 +873,13 @@ def block_to_markdown(node, decklist_files, deck_counter, depth=0):
 
     # generic container (div, span-as-block, etc.): buffer+flush its children
     # too, since plain text and block tags can be siblings here as well.
-    blocks.extend(render_mixed(node.children, decklist_files, deck_counter))
+    blocks.extend(render_mixed(node.children, decklist_files, deck_counter, img_index=img_index))
     return blocks
 
 
-def html_body_to_markdown(article_content, decklist_files):
+def html_body_to_markdown(article_content, decklist_files, img_index=None):
     deck_counter = [1]
-    blocks = render_mixed(article_content.children, decklist_files, deck_counter)
+    blocks = render_mixed(article_content.children, decklist_files, deck_counter, img_index=img_index)
     # collapse excess blank lines
     text = "\n\n".join(b for b in blocks if b.strip())
     text = re.sub(r"\n{3,}", "\n\n", text)
@@ -780,7 +894,7 @@ def pretty_date(ymd):
         return ymd
 
 
-def build_article_md(folder_path, folder_name, force=False):
+def build_article_md(folder_path, folder_name, force=False, img_index=None):
     out_path = os.path.join(folder_path, "article.md")
     if os.path.exists(out_path) and not force:
         return False
@@ -835,7 +949,7 @@ def build_article_md(folder_path, folder_name, force=False):
     if article_content is None:
         body_md = "*(Could not locate article body in source.html.)*\n"
     else:
-        body_md = html_body_to_markdown(article_content, decklist_files)
+        body_md = html_body_to_markdown(article_content, decklist_files, img_index=img_index)
         if not body_md.strip():
             body_md = (
                 "*(The archived page for this article has no body content -- "
@@ -877,6 +991,12 @@ def main():
     if args.limit:
         folders = folders[: args.limit]
 
+    img_index = None
+    if not args.skip_md:
+        print("Building card-image index from already-priced decklists (no network needed)...", flush=True)
+        img_index = CardImageIndex(ARCHIVE_DIR)
+        print(f"Indexed {len(img_index.by_exact)} card names for image/link lookup.", flush=True)
+
     index = None
     if not args.skip_price:
         bulk_path = ensure_bulk_data(refresh=args.refresh_bulk)
@@ -917,7 +1037,7 @@ def main():
 
         if not args.skip_md:
             try:
-                if build_article_md(folder_path, folder, force=args.force_md):
+                if build_article_md(folder_path, folder, force=args.force_md, img_index=img_index):
                     md_created += 1
             except Exception as e:
                 print(f"[article.md ERROR] {folder}: {e}", file=sys.stderr)

@@ -18,32 +18,32 @@ Welcome back to part two of two of the Fun With Fungus theme deck evolution! Whe
 
 (For a more in-depth look at these problems, please go back and read last week’s article!)
 
-Golgari Rot Farm Fixing the mana base was easy enough. Because this is a black/green deck, I went back to the dream budget-land block (Ravnica Block) and grabbed a playset of Golgari Rot Farm. These bounce lands serve to both smooth the colors and amounts of land in my land base. They tap for black and green, and they also allow me to get three mana out of two lands.
+Golgari Rot Farm Fixing the mana base was easy enough. Because this is a black/green deck, I went back to the dream budget-land block (Ravnica Block) and grabbed a playset of [Golgari Rot Farm](https://scryfall.com/card/ecc/151/golgari-rot-farm). These bounce lands serve to both smooth the colors and amounts of land in my land base. They tap for black and green, and they also allow me to get three mana out of two lands.
 
-To make room for the Rot Farms, I took out three Swamps and a Forest, because the deck is primarily green with a touch of black. It was harder to make the first few changes to strengthen the win conditions in the deck. I wanted to gradually change the composition of the deck, rather than gutting out all the cards at once that I didn’t think would work. Sure, I wasn’t high on Pendelhaven Elder, but I could see how it might be good in a deck full of 1/1 creatures. This was less so for Claws of Gix, Wormwood Dryad (more on her later!), and Dread Return. Thus, my first four non-land cuts were easy: the aforementioned three cards didn’t really have a place in the deck, and Assassinate is the weakest of the creature-kill cards in the deck.
+To make room for the Rot Farms, I took out three Swamps and a Forest, because the deck is primarily green with a touch of black. It was harder to make the first few changes to strengthen the win conditions in the deck. I wanted to gradually change the composition of the deck, rather than gutting out all the cards at once that I didn’t think would work. Sure, I wasn’t high on [Pendelhaven Elder](https://scryfall.com/card/tsr/222/pendelhaven-elder), but I could see how it might be good in a deck full of 1/1 creatures. This was less so for [Claws of Gix](https://scryfall.com/card/tsb/107/claws-of-gix), [Wormwood Dryad](https://scryfall.com/card/tsp/233/wormwood-dryad) (more on her later!), and [Dread Return](https://scryfall.com/card/cmm/153/dread-return). Thus, my first four non-land cuts were easy: the aforementioned three cards didn’t really have a place in the deck, and [Assassinate](https://scryfall.com/card/tsr/101/assassinate) is the weakest of the creature-kill cards in the deck.
 
-To buff up the Thallids and Saprolings, I decided to add in a pair of Thelon of Havenwood. He is probably the most important card in a Thallid deck, and I considered going up to three copies. Why is he so good? Because he turns all of your Thallids into immediate threats, and he is a decent-sized body in and of-himself at the two mana slot.
+To buff up the Thallids and Saprolings, I decided to add in a pair of [Thelon of Havenwood](https://scryfall.com/card/tsr/238/thelon-of-havenwood). He is probably the most important card in a Thallid deck, and I considered going up to three copies. Why is he so good? Because he turns all of your Thallids into immediate threats, and he is a decent-sized body in and of-himself at the two mana slot.
 
 Last week I gave you a sequence of plays to explain why the Thallid/Saproling mechanic was weak. This time around, let’s see how Thelon changes this paradigm by himself.
 
-Thelon of Havenwood Turn 1: Thallid (1/1) 
- Turn 2: Deathspore Thallid (1/1), attack with a 1/1
- Turn 3: Thelon of Havenwood, attack with a 3/3 and a 2/2.
+Thelon of Havenwood Turn 1: [Thallid](https://scryfall.com/card/mma/167/thallid) (1/1) 
+ Turn 2: [Deathspore Thallid](https://scryfall.com/card/tsr/109/deathspore-thallid) (1/1), attack with a 1/1
+ Turn 3: [Thelon of Havenwood](https://scryfall.com/card/tsr/238/thelon-of-havenwood), attack with a 3/3 and a 2/2.
  Turn 4: Sporesower Thallid (4/4), Attack with a 4/4, a 3/3, and a 2/2.
  Turn 5: Attack with a 6/6, two 5/5’s and a 2/2.
 
- With Thallid Germinator instead of Thelon, here’s how those turns would look:
- Turn 1: Thallid (1/1)
- Turn 2: Deathspore Thallid (1/1), attack with a 1/1
+ With [Thallid Germinator](https://scryfall.com/card/tsr/236/thallid-germinator) instead of Thelon, here’s how those turns would look:
+ Turn 1: [Thallid](https://scryfall.com/card/mma/167/thallid) (1/1)
+ Turn 2: [Deathspore Thallid](https://scryfall.com/card/tsr/109/deathspore-thallid) (1/1), attack with a 1/1
  Turn 3: Thallid Germinator (2/2), attack with two 1/1’s.
- Turn 4: Sporesower Thallid, attack with a 2/2 and two 1/1’s. (Make a Saproling at end of turn)
+ Turn 4: [Sporesower Thallid](https://scryfall.com/card/tsr/231/sporesower-thallid), attack with a 2/2 and two 1/1’s. (Make a Saproling at end of turn)
  Turn 5: Attack with a 4/4, a 2/2, and three 1/1’s.
 
 Without Thelon, you’re ideally dealing 18 damage on turn five (16 from creatures, plus two from sacrificing Saprolings to Thallid Germinator). With the same scenario, substituting Thelon for Thallid Germinator, you’re dealing 34 damage – nearly twice as much!
 
-I also upped the Thallid count to four so I could more consistently have a first-turn play. Here’s the changes to the deck and how it looked as I made my way back into the casual trenches of Magic Online:
+I also upped the [Thallid](https://scryfall.com/card/mma/167/thallid) count to four so I could more consistently have a first-turn play. Here’s the changes to the deck and how it looked as I made my way back into the casual trenches of Magic Online:
 
-Out: Claws of Gix, Dread Return, Wormwood Dryad, Assassinate, 3 Swamp, 1 Forest In: 4 Golgari Rot Farm, 2 Thallid, 2 Thelon of Havenwood
+Out: [Claws of Gix](https://scryfall.com/card/tsb/107/claws-of-gix), [Dread Return](https://scryfall.com/card/cmm/153/dread-return), [Wormwood Dryad](https://scryfall.com/card/tsp/233/wormwood-dryad), [Assassinate](https://scryfall.com/card/tsr/101/assassinate), 3 Swamp, 1 Forest In: 4 [Golgari Rot Farm](https://scryfall.com/card/ecc/151/golgari-rot-farm), 2 [Thallid](https://scryfall.com/card/mma/167/thallid), 2 [Thelon of Havenwood](https://scryfall.com/card/tsr/238/thelon-of-havenwood)
 
 **Fun with Fungus, v1**
 
@@ -77,26 +77,26 @@ Out: Claws of Gix, Dread Return, Wormwood Dryad, Assassinate, 3 Swamp, 1 Forest 
 *(Full decklist with sideboard: `decklist_1_Fun_with_Fungus_v1.txt`; priced breakdown: `decklist_1_Fun_with_Fungus_v1_priced.md`)*
 
 **Game 1: Andy44 (B/U Discard)**
- Andy44 sticks with a one-Swamp hand and plays out The Rack. I drop a Sprout token, and he casts Cry of Contrition, haunting my fungus. I drop Sporesower Thallid, and it is met with a Cruel Edict. I sacrifice my token and discard a land, attack for 4, and play Pendelhaven Elder. He casts another Cruel Edict, and away goes my 1/1. On my turn, I enchant Sporesower Thallid with Verdant Embrace, and swing for seven. I get a Saproling on his turn, but he has a third Cruel Edict plus a Smallpox to take out my entire offense. Thankfully, he’s out of creature kill. Herd Gnarr followed by Thelon finishes him off. Losing one of his lands to Smallpox when he was already mana-shy didn’t help. 
+ Andy44 sticks with a one-Swamp hand and plays out [The Rack](https://scryfall.com/card/tsb/113/the-rack). I drop a [Sprout](https://scryfall.com/card/tsp/221/sprout) token, and he casts [Cry of Contrition](https://scryfall.com/card/gpt/46/cry-of-contrition), haunting my fungus. I drop [Sporesower Thallid](https://scryfall.com/card/tsr/231/sporesower-thallid), and it is met with a [Cruel Edict](https://scryfall.com/card/dvd/48/cruel-edict). I sacrifice my token and discard a land, attack for 4, and play [Pendelhaven Elder](https://scryfall.com/card/tsr/222/pendelhaven-elder). He casts another [Cruel Edict](https://scryfall.com/card/dvd/48/cruel-edict), and away goes my 1/1. On my turn, I enchant [Sporesower Thallid](https://scryfall.com/card/tsr/231/sporesower-thallid) with [Verdant Embrace](https://scryfall.com/card/afc/173/verdant-embrace), and swing for seven. I get a Saproling on his turn, but he has a third [Cruel Edict](https://scryfall.com/card/dvd/48/cruel-edict) plus a [Smallpox](https://scryfall.com/card/tsr/139/smallpox) to take out my entire offense. Thankfully, he’s out of creature kill. [Herd Gnarr](https://scryfall.com/card/tsp/200/herd-gnarr) followed by Thelon finishes him off. Losing one of his lands to Smallpox when he was already mana-shy didn’t help. 
 Record: 1-0
 
 **Game 2: Manxset (G/R Slash and Burn)**
- He drops Llanowar Elves, Trained Armadons and Rootwallas. I don’t have any creature kill early or a way to stop a turn-two 3/3 creature, and I get low enough to be burned out before I can mount an offense.
+ He drops [Llanowar Elves](https://scryfall.com/card/fdn/227/llanowar-elves), Trained Armadons and Rootwallas. I don’t have any creature kill early or a way to stop a turn-two 3/3 creature, and I get low enough to be burned out before I can mount an offense.
  Record: 1-1
 
 Conflagrate**Game 3: Niino (U/R Conflagrate)**
- Twin Izzet Guildmages come down, and three consecutive Conflagrates make sure that none of my Saprolings or Thallids stay on the board. To finish me off, Niino plays Fathom Seer (face down), morphs it, and then flashes back Conflagrate for the win. 
+ Twin [Izzet Guildmage](https://scryfall.com/card/rvr/191/izzet-guildmage)s come down, and three consecutive [Conflagrate](https://scryfall.com/card/tsr/160/conflagrate)s make sure that none of my Saprolings or Thallids stay on the board. To finish me off, Niino plays [Fathom Seer](https://scryfall.com/card/tsr/68/fathom-seer) (face down), morphs it, and then flashes back [Conflagrate](https://scryfall.com/card/tsr/160/conflagrate) for the win. 
  Record: 1-2
 
 Usually I’ll go 5 games before making changes when evolving a theme deck, but my losses in games two and three were really disheartening. I still couldn’t get enough creatures to stabilize the board or mount an effective offense, so it was time for changes yet again.
 
-In theory, Strength in Numbers seems like it would work well in this deck. However, unless you get more than three creatures, it’s almost strictly worse than Giant Growth or Might of Old Krosa, or Moldervine Cloak. This deck is having problems getting enough creatures to attack with. I don’t want to run cards that rely on having more of something I’m already short on! Out go the Strength in Numbers.
+In theory, [Strength in Numbers](https://scryfall.com/card/tsr/233/strength-in-numbers) seems like it would work well in this deck. However, unless you get more than three creatures, it’s almost strictly worse than Giant Growth or [Might of Old Krosa](https://scryfall.com/card/2x2/153/might-of-old-krosa), or [Moldervine Cloak](https://scryfall.com/card/rvr/150/moldervine-cloak). This deck is having problems getting enough creatures to attack with. I don’t want to run cards that rely on having more of something I’m already short on! Out go the Strength in Numbers.
 
-In addition, Pendelhaven Elder has been a 2/3 blocker when drawn, but hasn’t worked well to pump the (nearly non-existant) offense. Savage Thallid has either sat in my hand or immediately died when played against most decks – two toughness for a five-mana creature is brutal. Last, I took out Feebleness – again, I want more creatures, and less kill.
+In addition, Pendelhaven Elder has been a 2/3 blocker when drawn, but hasn’t worked well to pump the (nearly non-existant) offense. [Savage Thallid](https://scryfall.com/card/tsp/213/savage-thallid) has either sat in my hand or immediately died when played against most decks – two toughness for a five-mana creature is brutal. Last, I took out [Feebleness](https://scryfall.com/card/tsr/116/feebleness) – again, I want more creatures, and less kill.
 
-Thelonite HermitThe first two additions are pretty self-explaining. I added in two Sporesower Thallid (4 mana for a 4/4 is extremely solid – see Loxodon Hierarch) and a fourth Deathspore Thallid (reusable creature kill that, for all intents and purposes, you can consider a one-for-one trade with Feebleness). The last addition is to add my first block of new rares to the deck: Thelonite Hermit.
+Thelonite HermitThe first two additions are pretty self-explaining. I added in two [Sporesower Thallid](https://scryfall.com/card/tsr/231/sporesower-thallid) (4 mana for a 4/4 is extremely solid – see [Loxodon Hierarch](https://scryfall.com/card/ddh/15/loxodon-hierarch)) and a fourth [Deathspore Thallid](https://scryfall.com/card/tsr/109/deathspore-thallid) (reusable creature kill that, for all intents and purposes, you can consider a one-for-one trade with [Feebleness](https://scryfall.com/card/tsr/116/feebleness)). The last addition is to add my first block of new rares to the deck: [Thelonite Hermit](https://scryfall.com/card/mkc/188/thelonite-hermit).
 
-Thelonite Hermit is a throwback to Deranged Hermit back from Urza’s Legacy – but instead of echo and Squirrels, you get morph and Saprolings. In this deck, this is key. First, you already have a bunch of Saproling generation outlets, so Thelonite Hermit acts as a Glorious Anthem (or Gaea’s Anthem, for those who attended the *Planar Chaos* prerelease this past weekend!) for your fungus. These Saprolings also can be used as a mini-Giant Growth (Thallid Germinator) or as a mini-Enfeeblement (Deathspore Thallid). Of course, let’s not forget that turning up Thelonite Hermit deposits four 2/2 creatures onto the board all at once!
+Thelonite Hermit is a throwback to Deranged Hermit back from Urza’s Legacy – but instead of echo and Squirrels, you get morph and Saprolings. In this deck, this is key. First, you already have a bunch of Saproling generation outlets, so Thelonite Hermit acts as a [Glorious Anthem](https://scryfall.com/card/m21/21/glorious-anthem) (or Gaea’s Anthem, for those who attended the *Planar Chaos* prerelease this past weekend!) for your fungus. These Saprolings also can be used as a mini-Giant Growth (Thallid Germinator) or as a mini-Enfeeblement (Deathspore Thallid). Of course, let’s not forget that turning up Thelonite Hermit deposits four 2/2 creatures onto the board all at once!
 
 Out: 2 Pendelhaven Elder, 2 Strength in Numbers, 1 Feebleness, 2 Savage Thallid In: 2 Sporesower Thallid, 4 Thelonite Hermit, 1 Deathspore Thallid
 
@@ -129,28 +129,28 @@ Out: 2 Pendelhaven Elder, 2 Strength in Numbers, 1 Feebleness, 2 Savage Thallid 
 *(Full decklist with sideboard: `decklist_2_Fun_with_Fungus_v2.txt`; priced breakdown: `decklist_2_Fun_with_Fungus_v2_priced.md`)*
 
 **Game 4: Defender642 (U/G Simic)**
- He gets Simic Guildmage, Wood Elves, Vigean Hydropon, and Assault Zeppelid. The (grafted) Zeppelid trades with my Sporesower Thallid, and that gives me time to play and morph Thelonite Hermit. On the turn that my Saprolings become able to attack, I play and morph a *second* Hermit, and attack with four 3/3’s and a bunch of smaller Thallids. He lasts a turn before succumbing to my horde.
+ He gets [Simic Guildmage](https://scryfall.com/card/rvr/223/simic-guildmage), [Wood Elves](https://scryfall.com/card/plst/EXO-130/wood-elves), Vigean Hydropon, and Assault Zeppelid. The (grafted) Zeppelid trades with my Sporesower Thallid, and that gives me time to play and morph Thelonite Hermit. On the turn that my Saprolings become able to attack, I play and morph a *second* Hermit, and attack with four 3/3’s and a bunch of smaller Thallids. He lasts a turn before succumbing to my horde.
  Record: 2-2
 
 **Game 5: Patryk12 (Saproling Mirorr Match)**
- He gets Thelon of Havenwood, but I get Sporesower Thallid and put Verdant Embrace on it. He only gets Shell-Dwellers and a Thallid Germinator, which doesn’t stand up to my ever-growing Sporesower. Herd Gnarr plus Thelonite Hermit seal the deal.
+ He gets Thelon of Havenwood, but I get [Sporesower Thallid](https://scryfall.com/card/tsr/231/sporesower-thallid) and put Verdant Embrace on it. He only gets Shell-Dwellers and a Thallid Germinator, which doesn’t stand up to my ever-growing Sporesower. [Herd Gnarr](https://scryfall.com/card/tsp/200/herd-gnarr) plus [Thelonite Hermit](https://scryfall.com/card/mkc/188/thelonite-hermit) seal the deal.
  Record: 3-2
 
 **Game 6: Vcclima (Mono-Black Control)**
- He gets an early Phyrexian Arena. I get turn-one Thallid, turn-two Golgari Rot Farm, turn 3 Thelon of Havenwood. He Smallpoxes, and I opt to get rid of Thelon, because the only other offensive card in my hand is Thelonite Hermit. He suspends Curse of the Cabal, and I play Sporesower Thallid, sacrificing the Saproling off of my Thallid to keep his suspended card from resolving. He plays Gauntlet of Power, but I am able to kill him with my creatures before he untaps.
+ He gets an early [Phyrexian Arena](https://scryfall.com/card/fdn/180/phyrexian-arena). I get turn-one [Thallid](https://scryfall.com/card/mma/167/thallid), turn-two [Golgari Rot Farm](https://scryfall.com/card/ecc/151/golgari-rot-farm), turn 3 [Thelon of Havenwood](https://scryfall.com/card/tsr/238/thelon-of-havenwood). He [Smallpox](https://scryfall.com/card/tsr/139/smallpox)es, and I opt to get rid of Thelon, because the only other offensive card in my hand is [Thelonite Hermit](https://scryfall.com/card/mkc/188/thelonite-hermit). He suspends Curse of the Cabal, and I play [Sporesower Thallid](https://scryfall.com/card/tsr/231/sporesower-thallid), sacrificing the Saproling off of my [Thallid](https://scryfall.com/card/mma/167/thallid) to keep his suspended card from resolving. He plays [Gauntlet of Power](https://scryfall.com/card/dmr/223/gauntlet-of-power), but I am able to kill him with my creatures before he untaps.
  Record: 4-2
 
 Draining Whelk**Game 7: Sanhedrin (G/W/U Momentary Blink)**
- He Draining Whelks my Sporesower Thallid and then drops Loxodon Hierarch. I get Deathspore Thallid plus Thelon of Havenwood. I attempt to drop another Sporesower Thallid, but he casts Momentary Blink on his Draining Whelk, countering my second Sporesower! He attacks me down to 1 and passes the turn. I draw Sudden Death and pass the turn. He attacks for lethal damage, but I block his Hierarch with a Saproling token, sacrifice it to Deathspore Thallid before damage is on the stack to make his Whelk 4/4, and then Sudden Death it through his ready-to-be-flashed Momentary Blink. Suddenly the tide has turned – I drop multiple Thallids and Shell-Dwellers, which are pumped quickly through Thelon’s second ability (removing dead guys from my yard). The turn before I’m going to kill him, he draws Triskelavus and kills me. What a heartbreaker! 
+ He [Draining Whelk](https://scryfall.com/card/tsr/62/draining-whelk)s my [Sporesower Thallid](https://scryfall.com/card/tsr/231/sporesower-thallid) and then drops [Loxodon Hierarch](https://scryfall.com/card/ddh/15/loxodon-hierarch). I get [Deathspore Thallid](https://scryfall.com/card/tsr/109/deathspore-thallid) plus [Thelon of Havenwood](https://scryfall.com/card/tsr/238/thelon-of-havenwood). I attempt to drop another [Sporesower Thallid](https://scryfall.com/card/tsr/231/sporesower-thallid), but he casts [Momentary Blink](https://scryfall.com/card/dmr/15/momentary-blink) on his [Draining Whelk](https://scryfall.com/card/tsr/62/draining-whelk), countering my second Sporesower! He attacks me down to 1 and passes the turn. I draw [Sudden Death](https://scryfall.com/card/tsr/143/sudden-death) and pass the turn. He attacks for lethal damage, but I block his Hierarch with a Saproling token, sacrifice it to [Deathspore Thallid](https://scryfall.com/card/tsr/109/deathspore-thallid) before damage is on the stack to make his Whelk 4/4, and then Sudden Death it through his ready-to-be-flashed Momentary Blink. Suddenly the tide has turned – I drop multiple Thallids and Shell-Dwellers, which are pumped quickly through Thelon’s second ability (removing dead guys from my yard). The turn before I’m going to kill him, he draws Triskelavus and kills me. What a heartbreaker! 
  Record: 4-3
 
-The deck is starting to perform a lot better, but it could be faster. I’m playing green, and if there’s something green can do, it’s accelerate mana development! To this effect, I add in four Elves of Deep Shadow. A lot of the time, I would play Llanowar Elves in this slot, but Elves of Deep Shadow give me access to my off-color mana. I feel this is more important than saving myself a couple of points of damage a game, since I have a minimal number of black sources, but a plethora of green.
+The deck is starting to perform a lot better, but it could be faster. I’m playing green, and if there’s something green can do, it’s accelerate mana development! To this effect, I add in four [Elves of Deep Shadow](https://scryfall.com/card/ddj/47/elves-of-deep-shadow). A lot of the time, I would play [Llanowar Elves](https://scryfall.com/card/fdn/227/llanowar-elves) in this slot, but [Elves of Deep Shadow](https://scryfall.com/card/ddj/47/elves-of-deep-shadow) give me access to my off-color mana. I feel this is more important than saving myself a couple of points of damage a game, since I have a minimal number of black sources, but a plethora of green.
 
-Although Sudden Death has (nearly) won me two games over the past two articles, the double-black mana cost has been brutal to deal with. I’ve held it in my hand with only one Swamp on the board in multiple games. I don’t want to run the deck without any (non-Deathspore Thallid) creature kill, so I propose a swap: 3 Putrefy straight in for 2 Sudden Death and the Krosan Grip. Although I respect the power of the split second mechanic (the less choices you give your opponent, the better your chances of winning – but I’ll talk about this in a later column!), I’d rather have the versatility of Putrefy in this particular deck. I’m tending toward the short end of removal in favor of a creature rush, and so Putrefy doubles as creature and artifact kill.
+Although [Sudden Death](https://scryfall.com/card/tsr/143/sudden-death) has (nearly) won me two games over the past two articles, the double-black mana cost has been brutal to deal with. I’ve held it in my hand with only one [Swamp](https://scryfall.com/card/msh/291/swamp) on the board in multiple games. I don’t want to run the deck without any (non-[Deathspore Thallid](https://scryfall.com/card/tsr/109/deathspore-thallid)) creature kill, so I propose a swap: 3 [Putrefy](https://scryfall.com/card/ecc/131/putrefy) straight in for 2 [Sudden Death](https://scryfall.com/card/tsr/143/sudden-death) and the [Krosan Grip](https://scryfall.com/card/c21/198/krosan-grip). Although I respect the power of the split second mechanic (the less choices you give your opponent, the better your chances of winning – but I’ll talk about this in a later column!), I’d rather have the versatility of [Putrefy](https://scryfall.com/card/ecc/131/putrefy) in this particular deck. I’m tending toward the short end of removal in favor of a creature rush, and so [Putrefy](https://scryfall.com/card/ecc/131/putrefy) doubles as creature and artifact kill.
 
-Herd GnarrThe last change I make is to add in a third Herd Gnarr. I debated long and hard about whether this slot belonged to Nantuko Husk or Herd Gnarr, because they are inversely proportional to one another. In the end, I decided that Herd Gnarr had slightly more synergy with the deck – I could morph Thelonite Hermit on turn three, cast Herd Gnarr turn four, and then attack for ten on turn five. With Nantuko Husk, I’d have to play the Husk first, then the Hermit, and then sacrifice all four Saprolings to get the same effect. Also, this deck has heavier green than black. If two similar cards proposed themselves, I would tend towards the green version, rather than the black one.
+Herd GnarrThe last change I make is to add in a third [Herd Gnarr](https://scryfall.com/card/tsp/200/herd-gnarr). I debated long and hard about whether this slot belonged to Nantuko Husk or Herd Gnarr, because they are inversely proportional to one another. In the end, I decided that Herd Gnarr had slightly more synergy with the deck – I could morph Thelonite Hermit on turn three, cast Herd Gnarr turn four, and then attack for ten on turn five. With [Nantuko Husk](https://scryfall.com/card/ori/109/nantuko-husk), I’d have to play the Husk first, then the Hermit, and then sacrifice all four Saprolings to get the same effect. Also, this deck has heavier green than black. If two similar cards proposed themselves, I would tend towards the green version, rather than the black one.
 
-To make room for these cards, I took out the Might of Old Krosa, the 2 Fallen Ideals, and the 2 Sprouts. The Elves are a better one-drop than the Sprouts, Might of Old Krosa belongs in a different green deck (one that trades away resources for a quick kill rather than building up resources for a mid-range kill), and I’ve never had a point in a game where Fallen Ideal would be able to break a stalemate.
+To make room for these cards, I took out the [Might of Old Krosa](https://scryfall.com/card/2x2/153/might-of-old-krosa), the 2 Fallen Ideals, and the 2 Sprouts. The Elves are a better one-drop than the Sprouts, Might of Old Krosa belongs in a different green deck (one that trades away resources for a quick kill rather than building up resources for a mid-range kill), and I’ve never had a point in a game where Fallen Ideal would be able to break a stalemate.
 
 Out: Krosan Grip, Might of Old Krosa, 2 Sudden Death, 2 Fallen Ideal, 2 Sprout In: 4 Elves of Deep Shadow, 3 Putrefy, 1 Herd Gnarr
 
@@ -179,25 +179,25 @@ Out: Krosan Grip, Might of Old Krosa, 2 Sudden Death, 2 Fallen Ideal, 2 Sprout I
 
 *(Full decklist with sideboard: `decklist_3_Fun_with_Fungus_v3.txt`; priced breakdown: `decklist_3_Fun_with_Fungus_v3_priced.md`)*
 
-You’ll notice that the deck now has a lot of synergy! Thelon builds up your Thallids. Thallid Germinator and Deathspore Thallid recycle your Thallids as tools for your other creatures. Thelonite Hermit provides an offense or fodder for your Germinators and Deathspores. Herd Gnarr turns all of your Saprolings (or hard-cast spells) into +2/+2 boosts. The deck is starting to hum!
+You’ll notice that the deck now has a lot of synergy! Thelon builds up your Thallids. [Thallid Germinator](https://scryfall.com/card/tsr/236/thallid-germinator) and [Deathspore Thallid](https://scryfall.com/card/tsr/109/deathspore-thallid) recycle your Thallids as tools for your other creatures. [Thelonite Hermit](https://scryfall.com/card/mkc/188/thelonite-hermit) provides an offense or fodder for your Germinators and Deathspores. [Herd Gnarr](https://scryfall.com/card/tsp/200/herd-gnarr) turns all of your Saprolings (or hard-cast spells) into +2/+2 boosts. The deck is starting to hum!
 
 **Game 8: David T Fuller (Mono-Green)**
- I get turn-one Thallid, turn-two Deathspore Thallid and kill his Scryb Ranger on turn four to break on through. He plays Unyaro Bees, which I have to kill with double Putrefy thanks to his Avoid Fate. I drop Herd Gnarr and drop random guys to make it large enough to kill him quickly.
+ I get turn-one [Thallid](https://scryfall.com/card/mma/167/thallid), turn-two [Deathspore Thallid](https://scryfall.com/card/tsr/109/deathspore-thallid) and kill his [Scryb Ranger](https://scryfall.com/card/tsr/227/scryb-ranger) on turn four to break on through. He plays Unyaro Bees, which I have to kill with double [Putrefy](https://scryfall.com/card/ecc/131/putrefy) thanks to his [Avoid Fate](https://scryfall.com/card/tsb/73/avoid-fate). I drop [Herd Gnarr](https://scryfall.com/card/tsp/200/herd-gnarr) and drop random guys to make it large enough to kill him quickly.
  Record: 5-3
 
 **Game 9: Mnoss (G/R Creatures and Burn)**
- This is similar to Manxset’s deck from earlier, except it’s even more tuned. He drops Trained Armadon with Blanchwood Armor and parleys that into a 3/3 Scab-Clan Mauler. I get Thallid Shell-Dweller, stop his 3/3, and get knocked down to 5 while building up enough for Saprolings. He drops double Armadon, but I get down Deathspore Thallid and triple Thallid Shell-Dweller. This allows me to stop his 3/3s while chump-blocking his now-8/8 Armored Armadon with Saproling tokens. I drop a morphed Thelonite Hermit, which cleans out his entire attacking team when it is flipped up. After the dust clears, I am left with an army of Thallids and a bunch of dead Saprolings. He is left only with his Armadon, but I drop Thelon and start going on the offense. He does not last long, unable to get through my wall of Fungus.
+ This is similar to Manxset’s deck from earlier, except it’s even more tuned. He drops Trained Armadon with [Blanchwood Armor](https://scryfall.com/card/fdn/213/blanchwood-armor) and parleys that into a 3/3 [Scab-Clan Mauler](https://scryfall.com/card/rvr/219/scab-clan-mauler). I get [Thallid Shell-Dweller](https://scryfall.com/card/tsr/237/thallid-shell-dweller), stop his 3/3, and get knocked down to 5 while building up enough for Saprolings. He drops double Armadon, but I get down [Deathspore Thallid](https://scryfall.com/card/tsr/109/deathspore-thallid) and triple [Thallid Shell-Dweller](https://scryfall.com/card/tsr/237/thallid-shell-dweller). This allows me to stop his 3/3s while chump-blocking his now-8/8 Armored Armadon with Saproling tokens. I drop a morphed [Thelonite Hermit](https://scryfall.com/card/mkc/188/thelonite-hermit), which cleans out his entire attacking team when it is flipped up. After the dust clears, I am left with an army of Thallids and a bunch of dead Saprolings. He is left only with his Armadon, but I drop Thelon and start going on the offense. He does not last long, unable to get through my wall of Fungus.
 Record: 6-3
 
 **Game 10: Baus74 (R/G Burn)**
  And, conversely to the last game, I get run over quickly and burned out.
  Record: 6-4
 
-Ok, one last set of changes for this week. I’m starting to draw too many lands, so it’s time to cut them back. Out goes a Forest and a Swamp, and in place I add a Pendelhaven (which can double as a creature pump spell). Thallid Germinator is a nice trick, but I think only two are fine for this deck, since I now have another pump spell that doubles as a land. I also take out Verdant Embrace, because I have another pump spell that is going to work well in this deck.
+Ok, one last set of changes for this week. I’m starting to draw too many lands, so it’s time to cut them back. Out goes a Forest and a Swamp, and in place I add a [Pendelhaven](https://scryfall.com/card/a25/244/pendelhaven) (which can double as a creature pump spell). Thallid Germinator is a nice trick, but I think only two are fine for this deck, since I now have another pump spell that doubles as a land. I also take out [Verdant Embrace](https://scryfall.com/card/afc/173/verdant-embrace), because I have another pump spell that is going to work well in this deck.
 
 Coat of Arms Coat of Arms.
 
-When I started the feature to price out the budget cards on Magic Online in my [Buying on a Budget](https://web.archive.org/web/20090603042011/https://www.wizards.com/default.asp?x=mtgcom/daily/bb94) column, imagine my surprise when I found that Coat of Arms was going for around 2.5-3 tickets each. Ten tickets for a playset? That’s budget for a card that is notoriously *the* prototypical expensive casual card. I checked both the buyer and seller room on Magic Online right before I submitted this article (just to be sure I had the price right, and that it hadn’t changed in two weeks), and indeed – Coat of Arms was buying for two tickets and selling for three. If you like playing Tribal decks, I’d suggest picking them up now while they’re at a low!
+When I started the feature to price out the budget cards on Magic Online in my [Buying on a Budget](https://web.archive.org/web/20090603042011/https://www.wizards.com/default.asp?x=mtgcom/daily/bb94) column, imagine my surprise when I found that [Coat of Arms](https://scryfall.com/card/dds/58/coat-of-arms) was going for around 2.5-3 tickets each. Ten tickets for a playset? That’s budget for a card that is notoriously *the* prototypical expensive casual card. I checked both the buyer and seller room on Magic Online right before I submitted this article (just to be sure I had the price right, and that it hadn’t changed in two weeks), and indeed – [Coat of Arms](https://scryfall.com/card/dds/58/coat-of-arms) was buying for two tickets and selling for three. If you like playing Tribal decks, I’d suggest picking them up now while they’re at a low!
 
 Out: Forest, Swamp, Verdant Embrace, Thallid Germinator In: Pendelhaven, 3 Coat of Arms
 
@@ -227,23 +227,23 @@ Out: Forest, Swamp, Verdant Embrace, Thallid Germinator In: Pendelhaven, 3 Coat 
 *(Full decklist with sideboard: `decklist_4_Fun_with_Fungus_v4.txt`; priced breakdown: `decklist_4_Fun_with_Fungus_v4_priced.md`)*
 
 **Game 11: Soliduck (Mono-Green Aggro)**
- He gets Allosaurus Rider, Pit Skulk and Moldervine Cloak. I Putrefy the Pit Skulk and chump-block his Allosaurus Rider with Saprolings, and then drop Thelon of Havenwood plus Coat of Arms. After a bit of a stalemate, my guys eventually grow to sizes like 13/13 and 15/15, and get through his now-twin Allosaurus Riders.
+ He gets Allosaurus Rider, Pit Skulk and [Moldervine Cloak](https://scryfall.com/card/rvr/150/moldervine-cloak). I [Putrefy](https://scryfall.com/card/ecc/131/putrefy) the Pit Skulk and chump-block his Allosaurus Rider with Saprolings, and then drop [Thelon of Havenwood](https://scryfall.com/card/tsr/238/thelon-of-havenwood) plus [Coat of Arms](https://scryfall.com/card/dds/58/coat-of-arms). After a bit of a stalemate, my guys eventually grow to sizes like 13/13 and 15/15, and get through his now-twin Allosaurus Riders.
  Record: 7-4
 
 **Game 12: Blue Lightning (Rakdos, based on [my build](https://web.archive.org/web/20090603042011/https://www.wizards.com/default.asp?x=mtgcom/daily/bb76))**
- He gets an early Jagged Poppet, drops Rakdos Pit Dragon, Delirium Skeins most of the cards out of my hand to give his guys Hellbent, and swings in to knock me to 3. My game goes as follows: Thallid Germinator turn three, Morphed Thelonite Hermit turn four, turn Thelonite Hermit face-up on turn five, and drop Coat of Arms and attack for 20 on turn six!
+ He gets an early [Jagged Poppet](https://scryfall.com/card/dis/115/jagged-poppet), drops [Rakdos Pit Dragon](https://scryfall.com/card/rvr/120/rakdos-pit-dragon), [Delirium Skeins](https://scryfall.com/card/mm3/65/delirium-skeins) most of the cards out of my hand to give his guys Hellbent, and swings in to knock me to 3. My game goes as follows: [Thallid Germinator](https://scryfall.com/card/tsr/236/thallid-germinator) turn three, Morphed [Thelonite Hermit](https://scryfall.com/card/mkc/188/thelonite-hermit) turn four, turn [Thelonite Hermit](https://scryfall.com/card/mkc/188/thelonite-hermit) face-up on turn five, and drop [Coat of Arms](https://scryfall.com/card/dds/58/coat-of-arms) and attack for 20 on turn six!
 
 Thelonite Hermit: Makes four 2/2 creatures that each give each other +3/+3 under Coat of Arms. How dirty!
  Record: 8-4
 
 **Game 13: Hewittjb (U/B Control)**
- I get triple Elves of Deep Shadow and a couple of Thallids, drop Coat of Arms, and run him over with 3/3s.
+ I get triple [Elves of Deep Shadow](https://scryfall.com/card/ddj/47/elves-of-deep-shadow) and a couple of Thallids, drop [Coat of Arms](https://scryfall.com/card/dds/58/coat-of-arms), and run him over with 3/3s.
  Record: 9-4
 
 Saffi Eriksdotter**Game 14: Magical_Fish (Project X)**
- This is the French deck from Worlds that can gain infinite life with Saffi Eriksdotter, Soul Warden, and Crypt Champion. Quickly, let me explain how it works: You get Soul Warden on the board, play Saffi, and then play Crypt Champion without paying Red mana (this is key). This will trigger Crypt Champion’s two triggers – that it will return a three-mana-or-less guy to play, and that it will die. You then sacrifice Saffi to make Crypt Champion come back into play once it dies, and use Crypt Champion to bring back Saffi. Each time this happens, you gain 2 life from Soul Warden – and you can repeat this cycle as many times as you’d like!
+ This is the French deck from Worlds that can gain infinite life with [Saffi Eriksdotter](https://scryfall.com/card/tsr/260/saffi-eriksdotter), Soul Warden, and [Crypt Champion](https://scryfall.com/card/dis/40/crypt-champion). Quickly, let me explain how it works: You get Soul Warden on the board, play Saffi, and then play Crypt Champion without paying Red mana (this is key). This will trigger Crypt Champion’s two triggers – that it will return a three-mana-or-less guy to play, and that it will die. You then sacrifice Saffi to make Crypt Champion come back into play once it dies, and use Crypt Champion to bring back Saffi. Each time this happens, you gain 2 life from Soul Warden – and you can repeat this cycle as many times as you’d like!
 
-In short, though, he gets triple Soul Warden and Saffi, but can’t draw the Crypt Champion or a Chord of Calling to go get it. I drop 5+ early Thallids and make a bunch of Saprolings, bringing him to 57 life. I then drop Deathspore Thallid, and kill his entire team. Although he is at 57 life, I get Thelonite Hermit and then drop Coat of Arms (he casts Harmonic Sliver to kill my Coat, so I don’t get to attack with these enhanced guys twice) but I drop a second Thelonite Hermit. Thanks to the massive army of 3/3 creatures and that one turn of Coat of Arms beats, I knock him down from 57 to zero in three swings.
+In short, though, he gets triple Soul Warden and Saffi, but can’t draw the Crypt Champion or a [Chord of Calling](https://scryfall.com/card/rvr/134/chord-of-calling) to go get it. I drop 5+ early Thallids and make a bunch of Saprolings, bringing him to 57 life. I then drop Deathspore Thallid, and kill his entire team. Although he is at 57 life, I get Thelonite Hermit and then drop Coat of Arms (he casts [Harmonic Sliver](https://scryfall.com/card/cmm/924/harmonic-sliver) to kill my Coat, so I don’t get to attack with these enhanced guys twice) but I drop a second Thelonite Hermit. Thanks to the massive army of 3/3 creatures and that one turn of Coat of Arms beats, I knock him down from 57 to zero in three swings.
  Record: 10-4
 
 Dragonstorm**Game 15: jarrod_j (Winning Dragonstorm Deck from Worlds)**
@@ -252,13 +252,13 @@ Dragonstorm**Game 15: jarrod_j (Winning Dragonstorm Deck from Worlds)**
 Jarrod_j: im weak spirited and mean...THERE I SAID IT!!! HAPY THAT YOU"VE BROKWN MY SPIRITI TO LIVE???!!!
  Record: 10-5
 
-All in all, I think I accomplished my goal. The deck stayed focused on Thallids and Saprolings but ended up having the potential to win both a short and long game. It has explosive draws and costs around 20 tickets to build on Magic Online (although I expect the price of both Thelonite Hermit and Coat of Arms to rise the day this article hits – pick them up fast, while they are cheap!). Other people wrote in suggesting playing white (for more Saproling generation) or blue (for Paradox Haze) or Doubling Season in this deck, but I felt Coat of Arms was better, because it can immediately turn a board position into a win from a stall/loss – Doubling Season doesn’t do anything for a full turn after it’s dropped. All of these other ideas have merits, but in the end I was happy with the results of my testing.
+All in all, I think I accomplished my goal. The deck stayed focused on Thallids and Saprolings but ended up having the potential to win both a short and long game. It has explosive draws and costs around 20 tickets to build on Magic Online (although I expect the price of both Thelonite Hermit and Coat of Arms to rise the day this article hits – pick them up fast, while they are cheap!). Other people wrote in suggesting playing white (for more Saproling generation) or blue (for Paradox Haze) or [Doubling Season](https://scryfall.com/card/fdn/216/doubling-season) in this deck, but I felt Coat of Arms was better, because it can immediately turn a board position into a win from a stall/loss – Doubling Season doesn’t do anything for a full turn after it’s dropped. All of these other ideas have merits, but in the end I was happy with the results of my testing.
 
 We’re not done yet! This week’s column has not one, but two bonus sections! And, goodness gracious, here they come now! I am filled with the warmth of a thousand exclamation points!
 
 **Why Had the Dryad?**
 
-In [last week’s column](default.asp?x=mtgcom/daily/bb95), I asked people to send in their explanations about why Wormwood Dryad was in the Fun with Fungus theme deck. I expected a few answers, but I was deluged by hundreds! After sorting through each and every one, the judges at the Bleiweiss Institute of Greater Humordom and Pageantry (ie: me, myself, and I) pared the list down to a Top 8! In alphabetical order by first name, here are the top 8 reasons why Wormwood Dryad was in the Fun with Fungus theme deck!
+In [last week’s column](default.asp?x=mtgcom/daily/bb95), I asked people to send in their explanations about why Wormwood Dryad was in the Fun with Fungus theme deck. I expected a few answers, but I was deluged by hundreds! After sorting through each and every one, the judges at the Bleiweiss Institute of Greater Humordom and Pageantry (ie: me, myself, and I) pared the list down to a Top 8! In alphabetical order by first name, here are the top 8 reasons why [Wormwood Dryad](https://scryfall.com/card/tsp/233/wormwood-dryad) was in the Fun with Fungus theme deck!
 
 Ben: Wormwood Dryad was included in the deck to combo with Magus of the Mirror, reducing your opponent's life total to one. Unfortunately, the Magus (whose Spanish name is "Mago del espejo") was cut from the decklist in a last-minute bid to get Mark Gottlieb to stop looking at himself in the mirror.
 
@@ -274,7 +274,7 @@ Be*n Says: I would say something here, but it would lead to pain and ruin at the
 
 Jonas: Wormwood Dryad is in the deck to give Claws of Gix good self-esteem.
 
-Be*n Says: Little known fact – before Fun with Fungus, Claws of Gix attended therapy groups twice a week.*
+Be*n Says: Little known fact – before Fun with Fungus, [Claws of Gix](https://scryfall.com/card/tsb/107/claws-of-gix) attended therapy groups twice a week.*
 
 Kyle: I know exactly why Wormwood Dryad was included in the deck! Once you put Verdant Embrace on it, you can sacrifice it to a Claws of Gix, but respond to the sacrifice with a Krosan Grip. Then you attack. During your second main phase, you Assassinate it, because you just realized that it doesn't belong in the deck, but then Dread Return it to have a blocker. You wonder why you made it live again, and Feebleness it.
 
@@ -308,85 +308,85 @@ As a special feature over the next few weeks, I’m going to be going set by set
 This week’s set? Dissension! I’ll list the cards by color and note whether they are Essential or Specialized. All cards on this list cost two tickets or less. For a primer on how to find the best prices using Magic Online, please refer to my [Buying on a Budget](mtgcom/daily/bb94) article. Most of the commons and uncommons on this list can get gotten at 16-for-a-ticket and 8-for-a-ticket, respectively. Most of the rares are either 2-for-a-ticket, 1 ticket, or 2 tickets each. If a card costs more than 2 tickets, it is not included on this list (such as Voidslime or Simic Sky Swallower, which are about 2.5 tickets each). Happy bargain hunting!
 
 **White**
-Azorius Herald
-Condemn
-Proclamation of Rebirth
+[Azorius Herald](https://scryfall.com/card/c13/6/azorius-herald)
+[Condemn](https://scryfall.com/card/rvr/14/condemn)
+[Proclamation of Rebirth](https://scryfall.com/card/dis/15/proclamation-of-rebirth)
 
 **Blue**
 
-Court Hussar
-Cytoplast Manipulator
+[Court Hussar](https://scryfall.com/card/a25/51/court-hussar)
+[Cytoplast Manipulator](https://scryfall.com/card/dis/23/cytoplast-manipulator)
 Skyscribing
-Spell Snare
-Tidespout Tyrant
+[Spell Snare](https://scryfall.com/card/ecl/71/spell-snare)
+[Tidespout Tyrant](https://scryfall.com/card/rvr/63/tidespout-tyrant)
 
 **Black**
 
-Crypt Champion
-Delirium Skeins
-Infernal Tutor
-Seal of Doom
+[Crypt Champion](https://scryfall.com/card/dis/40/crypt-champion)
+[Delirium Skeins](https://scryfall.com/card/mm3/65/delirium-skeins)
+[Infernal Tutor](https://scryfall.com/card/rvr/78/infernal-tutor)
+[Seal of Doom](https://scryfall.com/card/mm3/83/seal-of-doom)
 
 **Red**
 
-Ignorant Bliss
-Psychotic Fury
-Seal of Fire
+[Ignorant Bliss](https://scryfall.com/card/dis/64/ignorant-bliss)
+[Psychotic Fury](https://scryfall.com/card/dis/68/psychotic-fury)
+[Seal of Fire](https://scryfall.com/card/jvc/50/seal-of-fire)
 
 **Green**
 
-Cytoplast Root-Kin
-Indrik Stomphowler
-Loaming Shaman
-Patagia Viper
-Utopia Sprawl
+[Cytoplast Root-Kin](https://scryfall.com/card/mm2/143/cytoplast-root-kin)
+[Indrik Stomphowler](https://scryfall.com/card/ncc/297/indrik-stomphowler)
+[Loaming Shaman](https://scryfall.com/card/rvr/149/loaming-shaman)
+[Patagia Viper](https://scryfall.com/card/c15/197/patagia-viper)
+[Utopia Sprawl](https://scryfall.com/card/rvr/159/utopia-sprawl)
 
 **Artifact**
 
-Azorius Signet
-Muse Vessel
-Rakdos Signet
-Simic Signet
+[Azorius Signet](https://scryfall.com/card/tdc/312/azorius-signet)
+[Muse Vessel](https://scryfall.com/card/dis/163/muse-vessel)
+[Rakdos Signet](https://scryfall.com/card/dsc/250/rakdos-signet)
+[Simic Signet](https://scryfall.com/card/dsc/252/simic-signet)
 
 **Gold**
 
 Assault Zeppelid
 Avatar of Discord
-Azorius First-Wing
-Azorius Guildmage
-Coiling Oracle
-Cytoshape
+[Azorius First-Wing](https://scryfall.com/card/dis/105/azorius-first-wing)
+[Azorius Guildmage](https://scryfall.com/card/rvr/165/azorius-guildmage)
+[Coiling Oracle](https://scryfall.com/card/rvr/172/coiling-oracle)
+[Cytoshape](https://scryfall.com/card/dis/108/cytoshape)
 Dovescape
-Gobhobbler Rats
+[Gobhobbler Rats](https://scryfall.com/card/rvr/185/gobhobbler-rats)
 Grand Arbiter Augustin IV (2 Tickets each – all other rares from this week are 1 ticket or less!)
-Hellhole Rats
-Jagged Poppet
+[Hellhole Rats](https://scryfall.com/card/dis/113/hellhole-rats)
+[Jagged Poppet](https://scryfall.com/card/dis/115/jagged-poppet)
 Overrule
-Plaxcaster Frogling
+[Plaxcaster Frogling](https://scryfall.com/card/c21/226/plaxcaster-frogling)
 Pride of the Clouds
-Rakdos Augermage
-Rakdos Guildmage
-Simic Guildmage
-Sky Hussar
-Trygon Predator
+[Rakdos Augermage](https://scryfall.com/card/dis/127/rakdos-augermage)
+[Rakdos Guildmage](https://scryfall.com/card/rvr/214/rakdos-guildmage)
+[Simic Guildmage](https://scryfall.com/card/rvr/223/simic-guildmage)
+[Sky Hussar](https://scryfall.com/card/rvr/224/sky-hussar)
+[Trygon Predator](https://scryfall.com/card/fdn/667/trygon-predator)
 Windreaver
-Wrecking Ball
+[Wrecking Ball](https://scryfall.com/card/cma/198/wrecking-ball)
 
 **Split Cards**
 
-Crime/Punishment
-Hide/Seek
-Hit/Run
+[Crime/Punishment](https://scryfall.com/card/dis/150/crime-punishment)
+[Hide/Seek](https://scryfall.com/card/dis/151/hide-seek)
+[Hit/Run](https://scryfall.com/card/dis/152/hit-run)
 Odds/Ends
-Rise/Fall
-Supply/Demand
+[Rise/Fall](https://scryfall.com/card/ddh/73/rise-fall)
+[Supply/Demand](https://scryfall.com/card/dis/157/supply-demand)
 
 **Land**
-Azorius Chancery
-Ghost Quarter
+[Azorius Chancery](https://scryfall.com/card/dsc/261/azorius-chancery)
+[Ghost Quarter](https://scryfall.com/card/cm2/253/ghost-quarter)
 Pillar of the Paruns
-Rakdos Carnarium
-Simic Growth Chamber
+[Rakdos Carnarium](https://scryfall.com/card/ecc/161/rakdos-carnarium)
+[Simic Growth Chamber](https://scryfall.com/card/dsc/298/simic-growth-chamber)
 
  Let’s end the column with a couple of poll results, shall we?
 

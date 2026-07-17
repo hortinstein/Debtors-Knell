@@ -12,11 +12,11 @@ As a budget player, when you walk into your local store do you shy away from tho
 
 No more!
 
-What about those guys with enough rare lands in their deck to supply a booster draft? Do you cower from the guys with pockets stuffed with Arcbound Ravagers and Birds of Paradise?
+What about those guys with enough rare lands in their deck to supply a booster draft? Do you cower from the guys with pockets stuffed with Arcbound Ravagers and [Birds of Paradise](https://scryfall.com/card/msc/170/birds-of-paradise)?
 
 No longer!
 
-It is time to level the playing field. Fear the gold expansion symbol no longer. Budget players unite and look to the ‘Un' for the answer. Start enjoying the simple life of attacking with Goblin Striker all over again.
+It is time to level the playing field. Fear the gold expansion symbol no longer. Budget players unite and look to the ‘Un' for the answer. Start enjoying the simple life of attacking with [Goblin Striker](https://scryfall.com/card/mrd/94/goblin-striker) all over again.
 
 Behold!
 
@@ -53,30 +53,30 @@ Thus I present to you the Retro-goodness of the Un-Budget deck!
 
 *(Full decklist with sideboard: `decklist.txt`; priced breakdown: `decklist_priced.md`)*
 
-This deck is a mean one! Many people have never experienced the sadistic glee that is using cards like Desolation and Army Ants. The plan is to spend the first few turns casting little men to beat down with while you spend the later turns blowing up mana! Since the deck is retro style, you get some really cool guys to work with; Jackal Pup, Shadow Guildmage, and Mogg Fanatic at one mana, and Blind Creeper arrives as the heavy cavalry at two mana. All the creatures above two mana are dedicated to blowing up lands (Army Ants and Avalanche Riders).
+This deck is a mean one! Many people have never experienced the sadistic glee that is using cards like [Desolation](https://scryfall.com/card/vis/58/desolation) and [Army Ants](https://scryfall.com/card/vis/126/army-ants). The plan is to spend the first few turns casting little men to beat down with while you spend the later turns blowing up mana! Since the deck is retro style, you get some really cool guys to work with; [Jackal Pup](https://scryfall.com/card/a25/139/jackal-pup), [Shadow Guildmage](https://scryfall.com/card/tsb/46/shadow-guildmage), and [Mogg Fanatic](https://scryfall.com/card/ema/138/mogg-fanatic) at one mana, and [Blind Creeper](https://scryfall.com/card/5dn/42/blind-creeper) arrives as the heavy cavalry at two mana. All the creatures above two mana are dedicated to blowing up lands ([Army Ants](https://scryfall.com/card/vis/126/army-ants) and [Avalanche Riders](https://scryfall.com/card/tsb/55/avalanche-riders)).
 
-This deck has 14 cards that destroy lands, and that is not including the Rare-B-Gone (take that Mr. Fancy Mana)! Also, 8 of these cards (Army Ants and Desolation) can destroy multiple lands. The symmetrical effect of those cards is fine, since you will have already cast your attackers before you start blowing lands up. This means you will be prepared for the mana shortage in the mid game while your opponent struggles to keep up.
+This deck has 14 cards that destroy lands, and that is not including the Rare-B-Gone (take that Mr. Fancy Mana)! Also, 8 of these cards ([Army Ants](https://scryfall.com/card/vis/126/army-ants) and [Desolation](https://scryfall.com/card/vis/58/desolation)) can destroy multiple lands. The symmetrical effect of those cards is fine, since you will have already cast your attackers before you start blowing lands up. This means you will be prepared for the mana shortage in the mid game while your opponent struggles to keep up.
 
 ##### Tips on Playing the Deck
 
-- Desolations stack up. That means if you have two out, people will have to sacrifice two lands at the end of the turn instead of one.
-- Target non-Rare lands when possible. This way Rare-B-Gone can clean house on all of those Blinkmoth Nexi, City of Brass, or Tundras that your opponent might have.
-- Try to get Army Ants running as soon as possible - it is one of the feature cards in the deck.
+- [Desolation](https://scryfall.com/card/vis/58/desolation)s stack up. That means if you have two out, people will have to sacrifice two lands at the end of the turn instead of one.
+- Target non-Rare lands when possible. This way Rare-B-Gone can clean house on all of those Blinkmoth Nexi, [City of Brass](https://scryfall.com/card/tmc/62/city-of-brass), or Tundras that your opponent might have.
+- Try to get [Army Ants](https://scryfall.com/card/vis/126/army-ants) running as soon as possible - it is one of the feature cards in the deck.
 - Try to play against people with lots of rares! This is very important if you want to bash them over the head with your Un-power!
-- Have a lot of fun! Sure, your opponent will be grumpy when they have no lands, but your Jackal Puppy will be very happy!
+- Have a lot of fun! Sure, your opponent will be grumpy when they have no lands, but your [Jackal Pup](https://scryfall.com/card/a25/139/jackal-pup)py will be very happy!
 
 ##### Adding Money to the Deck
 
-One way you can have even more fun is by adding cards with ambiguous rarity. There are many cards in **Magic** that have been reprinted at different rarity levels. Sengir Vampire is a good example. Though the *Unhinged* FAQ doesn't come out until next week, I'm guessing you could probably play with the uncommon version from the old basic set and have it survive Rare-B-Gone, while the *Torment* version would die (since it's rare). Other great cards to do this with are Strip Mine from the basic set and Underworld Dreams from *Legends*. You could also go for adding cards that look like they should be rare, such as Sinkhole or Library of Alexandria. Yes Library of Alexandria. It is an uncommon. Go figure? Needless to say, if you play Rare-B-Gone in Vintage, you will have lots of fun conversations about what cards are actually rare, regardless of how much they cost.
+One way you can have even more fun is by adding cards with ambiguous rarity. There are many cards in **Magic** that have been reprinted at different rarity levels. [Sengir Vampire](https://scryfall.com/card/jmp/275/sengir-vampire) is a good example. Though the *Unhinged* FAQ doesn't come out until next week, I'm guessing you could probably play with the uncommon version from the old basic set and have it survive Rare-B-Gone, while the *Torment* version would die (since it's rare). Other great cards to do this with are [Strip Mine](https://scryfall.com/card/ptc/bl363/strip-mine) from the basic set and [Underworld Dreams](https://scryfall.com/card/thb/121/underworld-dreams) from *Legends*. You could also go for adding cards that look like they should be rare, such as Sinkhole or Library of Alexandria. Yes Library of Alexandria. It is an uncommon. Go figure? Needless to say, if you play Rare-B-Gone in Vintage, you will have lots of fun conversations about what cards are actually rare, regardless of how much they cost.
 
 Other interesting Rare to Unrare cards:
 
-Shatterstorm (rare in *Antiquities*)
-Pyroclasm (Rare in *Portal*)
-Hurricane (eventually made rare)
-Sengir Vampire
-Serra Angel
-City of Brass (originally an uncommon in *Arabian Nights*)
+[Shatterstorm](https://scryfall.com/card/10e/229/shatterstorm) (rare in *Antiquities*)
+[Pyroclasm](https://scryfall.com/card/dsk/149/pyroclasm) (Rare in *Portal*)
+[Hurricane](https://scryfall.com/card/10e/270/hurricane) (eventually made rare)
+[Sengir Vampire](https://scryfall.com/card/jmp/275/sengir-vampire)
+[Serra Angel](https://scryfall.com/card/m15/273/serra-angel)
+[City of Brass](https://scryfall.com/card/tmc/62/city-of-brass) (originally an uncommon in *Arabian Nights*)
 Dwarven Pony (just kidding! Dwarven Pony always was a rare. Can you imagine the consequences of making this guy uncommon?)
 
 Until next time, hoard those flowers!

@@ -32,18 +32,18 @@ This week I've decided to look at the lighter side of Block Constructed, with a 
 
 *(Full decklist with sideboard: `decklist.txt`; priced breakdown: `decklist_priced.md`)*
 
-The heart of this deck is 4 Misguided Rage, 4 Lay Waste, and 4 Ark of Blight, followed up by Decree of Annihilation. A Misguided Rage on turn three is about equal to Stone Rain in OnBC, and the Ark can be as fast with a second turn investment. Lay Waste is a good follow up spell to keep your opponent's land count down and it cycles just in case you draw it late when you don't want it.
+The heart of this deck is 4 [Misguided Rage](https://scryfall.com/card/scg/99/misguided-rage), 4 [Lay Waste](https://scryfall.com/card/ons/216/lay-waste), and 4 [Ark of Blight](https://scryfall.com/card/scg/140/ark-of-blight), followed up by [Decree of Annihilation](https://scryfall.com/card/scg/85/decree-of-annihilation). A Misguided Rage on turn three is about equal to [Stone Rain](https://scryfall.com/card/9ed/221/stone-rain) in OnBC, and the Ark can be as fast with a second turn investment. Lay Waste is a good follow up spell to keep your opponent's land count down and it cycles just in case you draw it late when you don't want it.
 
-The mana acceleration consists of Wirewood Elf, Goblin Clearcutter, Elvish Aberration, and Temple of the False God. With these cards you will hopefully be able to cast Biorhythm by turn six, if not sooner. The Goblin Clearcutter is your most powerful accelerator, allowing you to cast Biorhythm on the fifth turn (fourth turn if you have a Wirewood Elf to accelerate the Clearcutter out). This may not always be the right play, but many times this will flat-out win since your opponent often has no creatures in play.
+The mana acceleration consists of [Wirewood Elf](https://scryfall.com/card/ons/301/wirewood-elf), [Goblin Clearcutter](https://scryfall.com/card/lgn/96/goblin-clearcutter), [Elvish Aberration](https://scryfall.com/card/dmr/156/elvish-aberration), and [Temple of the False God](https://scryfall.com/card/soc/416/temple-of-the-false-god). With these cards you will hopefully be able to cast [Biorhythm](https://scryfall.com/card/9ed/231/biorhythm) by turn six, if not sooner. The Goblin Clearcutter is your most powerful accelerator, allowing you to cast Biorhythm on the fifth turn (fourth turn if you have a Wirewood Elf to accelerate the Clearcutter out). This may not always be the right play, but many times this will flat-out win since your opponent often has no creatures in play.
 
-The other big thing this deck does is cycle Decree of Annihilation rather early. This is also a big play when you have a Clearcutter out, since you can most likely attack with it for several turns while your opponent is trying to stabilize mana again.
+The other big thing this deck does is cycle [Decree of Annihilation](https://scryfall.com/card/scg/85/decree-of-annihilation) rather early. This is also a big play when you have a Clearcutter out, since you can most likely attack with it for several turns while your opponent is trying to stabilize mana again.
 
 ---
 
 ##### Tips On Playing The Deck
 
-- Don't use your Biorhythm until you're sure you'll win. Decree of Justice in response is occassionally a concern, but it probably won't be a factor because of all the landkill.
-- If your opponent has creatures out and is attacking, your best bet is to get him or her to alpha strike you--leaving nothing back to block. Drop Biorhythm and attack back for the win.
+- Don't use your [Biorhythm](https://scryfall.com/card/9ed/231/biorhythm) until you're sure you'll win. Decree of Justice in response is occassionally a concern, but it probably won't be a factor because of all the landkill.
+- If your opponent has creatures out and is attacking, your best bet is to get him or her to alpha strike you--leaving nothing back to block. Drop [Biorhythm](https://scryfall.com/card/9ed/231/biorhythm) and attack back for the win.
 
 ---
 
@@ -51,7 +51,7 @@ The other big thing this deck does is cycle Decree of Annihilation rather early.
 
 If you really enjoy playing this deck then you might want to make it a little better. There are three cards in particular that can do the trick.
 
-The first and most obvious is Wooded Foothills. It's important to choose the best type of mana you want access to--especially with the Clearcutter.
+The first and most obvious is [Wooded Foothills](https://scryfall.com/card/mh3/236/wooded-foothills). It's important to choose the best type of mana you want access to--especially with the Clearcutter.
 
 The next card I would add is Form of the Dragon. This card fits so nicely into this deck! With all the mana acceleration, getting a Form out is a piece of cake. As an added bonus, this gives you a wonderful enchantment to keep if you cast Decree.
 

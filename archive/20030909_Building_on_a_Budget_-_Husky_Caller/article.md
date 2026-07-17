@@ -34,23 +34,23 @@ Ok, so the name of this deck may not be the best, but it certainly fits in with 
 
 *(Full decklist with sideboard: `decklist.txt`; priced breakdown: `decklist_priced.md`)*
 
-The bread-and-butter of this deck is Wirewood Herald. The Herald gives you access to your Timberwatch Elves or Callers of the Claw as needed. If a fatty is what you're hankering for, then fetch Elvish Aberration. Whenever you have a Herald out, your opponent will find it very difficult to Wrath you when you have three mana open, since you will just fetch a Caller and wreck with it.
+The bread-and-butter of this deck is [Wirewood Herald](https://scryfall.com/card/evg/16/wirewood-herald). The Herald gives you access to your Timberwatch Elves or Callers of the Claw as needed. If a fatty is what you're hankering for, then fetch [Elvish Aberration](https://scryfall.com/card/dmr/156/elvish-aberration). Whenever you have a Herald out, your opponent will find it very difficult to Wrath you when you have three mana open, since you will just fetch a Caller and wreck with it.
 
 This is an interesting aggro-control mix but, unlike last week's deck , this is filled with threats. With Timberwatch Elves and Wirewood Lodge s along with the Husk / Caller combo, sometimes the theme of this deck is "guess how much damage I'm attacking for this turn." To illustrate the combo to those of you who are not familiar with it, let's say you have five creatures in play: a Nantuko Husk , a Wirewood Herald , and three other creatures. By sacrificing your four other creatures to Nantuko Husk, fetching a Caller of the Claw with the Herald, and sacrificing the Caller while its ability is on the stack, you'll end up with a 10/10 Husk and five 2/2 bear tokens. By sacrificing the bears you can get the Husk up to 20/20--that's what I call a big bug! However, if you have access to two Callers (the above scenario with one in hand or two Wirewood Herald s in play), you only need two creatures other than Nantuko Husk in play. Going from three critters on the table to a 26/26 Husk isn't bad, right?
 
-Many times you won't have to deal a full 20 damage, so fewer creatures will be needed. If you want to experiment more with Caller of the Claw, you can add Wirewood Symbiote to the deck. It was in the original build and has a lot of synergy with the Timberwatches and Callers. However, it leaves the deck with too few Elves and you'd probably have to take out some of the game breakers to add them.
+Many times you won't have to deal a full 20 damage, so fewer creatures will be needed. If you want to experiment more with [Caller of the Claw](https://scryfall.com/card/c15/177/caller-of-the-claw), you can add [Wirewood Symbiote](https://scryfall.com/card/mh3/288/wirewood-symbiote) to the deck. It was in the original build and has a lot of synergy with the Timberwatches and Callers. However, it leaves the deck with too few Elves and you'd probably have to take out some of the game breakers to add them.
 
-Speaking of the game breakers, I turn your attention to Head Games and Biorhythm. I believe these cards are ridiculously good in *Onslaught* Block format right now. There's so much slow control going around that Head Games plus a little bit of beatdown backup spells doom for many decks. Biorhythm, while funny and unconventional, can be a real nightmare for many of the decks that either rarely have a creature in play, or have few creatures in play at best. Temple of the False God, Wirewood Elf, Birchlore Rangers, and Elvish Aberration all make casting the Biorhythm in a timely manner possible.
+Speaking of the game breakers, I turn your attention to [Head Games](https://scryfall.com/card/10e/148/head-games) and [Biorhythm](https://scryfall.com/card/9ed/231/biorhythm). I believe these cards are ridiculously good in *Onslaught* Block format right now. There's so much slow control going around that Head Games plus a little bit of beatdown backup spells doom for many decks. Biorhythm, while funny and unconventional, can be a real nightmare for many of the decks that either rarely have a creature in play, or have few creatures in play at best. [Temple of the False God](https://scryfall.com/card/soc/416/temple-of-the-false-god), [Wirewood Elf](https://scryfall.com/card/ons/301/wirewood-elf), [Birchlore Rangers](https://scryfall.com/card/ons/248/birchlore-rangers), and [Elvish Aberration](https://scryfall.com/card/dmr/156/elvish-aberration) all make casting the Biorhythm in a timely manner possible.
 
 ---
 
 ##### Tips On Playing The Deck
 
-- Watch out for Wing Shards on your Husk If you suspect your opponent is packing Shards, I recommend playing some Head Games before attacking.
-- Try not to trade your creatures one-for-one until you can drop a Caller of the Claw.
+- Watch out for Wing Shards on your Husk If you suspect your opponent is packing Shards, I recommend playing some [Head Games](https://scryfall.com/card/10e/148/head-games) before attacking.
+- Try not to trade your creatures one-for-one until you can drop a [Caller of the Claw](https://scryfall.com/card/c15/177/caller-of-the-claw).
 - Try to avoid mulliganing with this deck. Many times your initial hand won't look so good, but will come together within a few cards. As long as you have decent stuff to do, keep the hand.
-- Remember that your Wirewood Lodge can untap any Elf, not just Timberwatch. This can be useful with Elvish Aberration, since it actually makes an extra mana.
-- Don't feel obligated to protect your Stonewood Invokers--they're decent in the late game, but expendable. You could even play Elvish Warriors instead if you felt so inclined.
+- Remember that your [Wirewood Lodge](https://scryfall.com/card/evg/27/wirewood-lodge) can untap any Elf, not just Timberwatch. This can be useful with [Elvish Aberration](https://scryfall.com/card/dmr/156/elvish-aberration), since it actually makes an extra mana.
+- Don't feel obligated to protect your [Stonewood Invoker](https://scryfall.com/card/dmr/178/stonewood-invoker)s--they're decent in the late game, but expendable. You could even play Elvish Warriors instead if you felt so inclined.
 
 ---
 

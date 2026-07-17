@@ -12,7 +12,7 @@ Maybe Mons's Goblin Raiders started it all, but maybe not. The world may never k
 
 When people think about goblins, they think red. In a way, goblins are the most "red" **Magic** creature type. Sure, dragons are usually red, but with goblins there isn't even a question.
 
-So you may find it strange that the goblin deck I present to you is not one, but two colors. Recently black has been edging in on goblin territory with cards like Festering Goblin, Goblin Turncoat, and Cabal Slaver. Why is this? Are goblins becoming more evil? I doubt it. More likely that the abilities involved and the tribal themes warranted it.
+So you may find it strange that the goblin deck I present to you is not one, but two colors. Recently black has been edging in on goblin territory with cards like [Festering Goblin](https://scryfall.com/card/dmr/85/festering-goblin), [Goblin Turncoat](https://scryfall.com/card/dmr/87/goblin-turncoat), and [Cabal Slaver](https://scryfall.com/card/ons/131/cabal-slaver). Why is this? Are goblins becoming more evil? I doubt it. More likely that the abilities involved and the tribal themes warranted it.
 
 At any rate, this Goblin deck is a lot of fun (as if there was ever a Goblin deck that wasn't).
 
@@ -39,13 +39,13 @@ At any rate, this Goblin deck is a lot of fun (as if there was ever a Goblin dec
 
 *(Full decklist with sideboard: `decklist.txt`; priced breakdown: `decklist_priced.md`)*
 
-There are many good goblins that could have made the cut but did not -- foremost being Festering Goblin. While it would seem that Festering Goblin is really good in this deck, the opposite can also be true. If your opponent has no creatures in play on turn 2 while you have a Festering Goblin and another goblin, then one damage will probably end up killing both, since the Festering Goblin has nothing else to target. Other goblins that could fit easily into the deck are Raging Goblin and Goblin Raider. Both of these are fine choices, but I decided to go with the utility beaters instead of the pure beat-down machines.
+There are many good goblins that could have made the cut but did not -- foremost being [Festering Goblin](https://scryfall.com/card/dmr/85/festering-goblin). While it would seem that Festering Goblin is really good in this deck, the opposite can also be true. If your opponent has no creatures in play on turn 2 while you have a Festering Goblin and another goblin, then one damage will probably end up killing both, since the Festering Goblin has nothing else to target. Other goblins that could fit easily into the deck are [Raging Goblin](https://scryfall.com/card/m10/153/raging-goblin) and Goblin Raider. Both of these are fine choices, but I decided to go with the utility beaters instead of the pure beat-down machines.
 
-Gratuitous Violence is one of my favorite cards in Limited. It's also rather good in this deck, doubling all of your shooting power (double-damage Sharpshooter is insane) and letting you race with ease since all of your creatures may have fear. Furnace of Rath was always fun, and Gratuitous Violence never backfires on you. However, it may be a little hard to get into play without adding some Bloodstained Mires or Sulfurous Springs to the deck.
+[Gratuitous Violence](https://scryfall.com/card/fdn/715/gratuitous-violence) is one of my favorite cards in Limited. It's also rather good in this deck, doubling all of your shooting power (double-damage Sharpshooter is insane) and letting you race with ease since all of your creatures may have fear. [Furnace of Rath](https://scryfall.com/card/hop/55/furnace-of-rath) was always fun, and Gratuitous Violence never backfires on you. However, it may be a little hard to get into play without adding some [Bloodstained Mire](https://scryfall.com/card/mh3/216/bloodstained-mire)s or [Sulfurous Springs](https://scryfall.com/card/eoc/185/sulfurous-springs) to the deck.
 
 ##### Playing The Deck
 
-The key interactions of this deck are Cover of Darkness with Cabal Slaver and goblins. This will let you swing on turn 3 with a feared Goblin Taskmaster that will make your opponent discard, or it will let you swing on turn 4 for 2 cards (which is about the same).
+The key interactions of this deck are [Cover of Darkness](https://scryfall.com/card/ons/133/cover-of-darkness) with [Cabal Slaver](https://scryfall.com/card/ons/131/cabal-slaver) and goblins. This will let you swing on turn 3 with a feared [Goblin Taskmaster](https://scryfall.com/card/ons/210/goblin-taskmaster) that will make your opponent discard, or it will let you swing on turn 4 for 2 cards (which is about the same).
 
 Other cool interactions involve Goblin Sharpshooter and anything . Sharpshooter is cool and useful no matter what the game situation. And while Goblin Sharpshooter works well with many of the cards in the deck, note that it has an interesting interaction with both Goblin Sledder and Goblin Turncoat . I think many games can be won simply on the merit of the Sharpshooter, assuming you use it correctly. On the note of shooting things with goblins, Sparksmith naturally makes an appearance alongside Skirk Marauder and Skirk Commando . Normally, I wouldn't include Skirk Commando in any sort of Constructed deck, but its interaction with Cover of Darkness is rather cool. If you don't like Commandos, you can replace them with Volcanic Hammer s.
 
@@ -57,9 +57,9 @@ While I post sideboard options for many of my Tribal Wars decks (even though the
 
 **Ball to the Wall Piledriver Build:**
 
- Pretty much add four Piledrivers, ditch the Slavers, and pack the deck full of little goblins. The nice thing about Cover of Darkness is it allows all of your creatures to swing every turn without dying. Reckless Charge may also be a good addition to this build, as is Goblin Goon.
+ Pretty much add four Piledrivers, ditch the Slavers, and pack the deck full of little goblins. The nice thing about [Cover of Darkness](https://scryfall.com/card/ons/133/cover-of-darkness) is it allows all of your creatures to swing every turn without dying. [Reckless Charge](https://scryfall.com/card/mh1/144/reckless-charge) may also be a good addition to this build, as is Goblin Goon.
 
-Goblin King
+[![Goblin King](https://api.scryfall.com/cards/10e/207?format=image&version=normal)](https://scryfall.com/card/10e/207/goblin-king)
 
 **Hail to the King (Goblins, Old-School Style):**
 
@@ -67,7 +67,7 @@ Goblin King
 
 **Digging for Gold:**
 
- Let's go Prospecting! While Skirk Prospector may just be an overachieving Blood Pet, it still works as an underachieving accelerator. It can help get the other red staples, dragons, into play rather quickly. If you are more of a dragon person, perhaps Prospecting out Rorix is just the thing for you. Besides getting a dragon into play, it gives you another card that has interaction with Sharpshooter.
+ Let's go Prospecting! While [Skirk Prospector](https://scryfall.com/card/dmr/137/skirk-prospector) may just be an overachieving Blood Pet, it still works as an underachieving accelerator. It can help get the other red staples, dragons, into play rather quickly. If you are more of a dragon person, perhaps Prospecting out Rorix is just the thing for you. Besides getting a dragon into play, it gives you another card that has interaction with Sharpshooter.
 
 That's about all I can say for Goblins. Just make sure to treat your Sharpshooters right, or they may turn on you!
 
