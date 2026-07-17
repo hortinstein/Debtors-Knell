@@ -13,14 +13,17 @@ Run:
     python3 app.py
     # or: flask --app app run
 """
+import functools
 import glob
+import io
 import json
 import os
 import re
 import sys
 
 import markdown
-from flask import Flask, Response, abort, render_template, request, send_from_directory
+from flask import Flask, Response, abort, render_template
+from PIL import Image
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ARCHIVE_DIR = os.path.join(REPO_ROOT, "archive")
@@ -457,13 +460,6 @@ def get_all_decks():
     return _ALL_DECKS_CACHE
 
 
-def get_deck_by_id(did):
-    for d in get_all_decks():
-        if d["id"] == did:
-            return d
-    return None
-
-
 _CARD_STATS_CACHE = None
 
 
@@ -527,7 +523,20 @@ def index():
     )
 
 
-@app.route("/screenshot/<folder>")
+@functools.lru_cache(maxsize=None)
+def _screenshot_jpeg_bytes(folder_path):
+    """The archived screenshots are full-page lossless PNGs (~1-2MB each,
+    ~600MB total across the archive) of a "click to view the original page"
+    thumbnail -- nowhere near needing lossless fidelity. Re-encoding to JPEG
+    here (rather than serving the PNG as-is) keeps the frozen static site
+    (staticsite/freeze.py) well under GitHub Pages' ~1GB site-size budget."""
+    with Image.open(os.path.join(folder_path, "screenshot.png")) as im:
+        buf = io.BytesIO()
+        im.convert("RGB").save(buf, format="JPEG", quality=82, optimize=True)
+        return buf.getvalue()
+
+
+@app.route("/screenshot/<folder>/screenshot.jpg")
 def screenshot(folder):
     # Validate against the known folder list (not just os.path checks) so a
     # crafted folder value can't be used to walk outside archive/.
@@ -536,7 +545,7 @@ def screenshot(folder):
     folder_path = os.path.join(ARCHIVE_DIR, folder)
     if not os.path.exists(os.path.join(folder_path, "screenshot.png")):
         abort(404)
-    return send_from_directory(folder_path, "screenshot.png")
+    return Response(_screenshot_jpeg_bytes(folder_path), mimetype="image/jpeg")
 
 
 @app.route("/download/<folder>/<filename>")
@@ -564,7 +573,7 @@ def download_decklist(folder, filename):
     )
 
 
-@app.route("/deck/<folder>")
+@app.route("/deck/<folder>/")
 def deck_detail(folder):
     article = get_article_by_folder(folder)
     if article is None:
@@ -614,118 +623,47 @@ def deck_detail(folder):
     )
 
 
-POOL_MODES = {"sum", "shared"}
-
-
-def _aggregate_card_pool(selected_decks, mode="sum"):
-    """Combine the card rows of several priced decklists into one shopping
-    list.
-
-    mode="sum": total copies needed to build ALL of the selected decks at
-    the same time (no assumption that cards can be shared/reused between
-    decks) -- each deck's need for a card adds to the pile.
-
-    mode="shared": you only ever have one of the selected decks assembled
-    at a time and re-use/reshuffle the same physical cards into whichever
-    deck you're building next, so you only need as many copies of a card
-    as its single hungriest deck requires -- the max, not the sum.
-    """
-    # First pass: per-deck total qty of each card (a card can appear in
-    # both the Main Deck and Sideboard tables of the same deck; those need
-    # to be combined into one "how many of this card does this deck need"
-    # figure before comparing/summing across decks).
-    per_deck_qty = []
-    unit_price = {}
-    deck_meta = []
-    for d in selected_decks:
-        qty_by_name = {}
-        for r in parse_priced_card_rows(d["priced_path"]):
-            qty_by_name[r["name"]] = qty_by_name.get(r["name"], 0) + r["qty"]
-            pu, pt = unit_price.get(r["name"], (None, None))
-            if pu is None and r["unit_usd"] is not None:
-                pu = r["unit_usd"]
-            if pt is None and r["unit_tix"] is not None:
-                pt = r["unit_tix"]
-            unit_price[r["name"]] = (pu, pt)
-        per_deck_qty.append(qty_by_name)
-        deck_meta.append(d)
-
+def _pool_card_rows_for_deck(priced_path):
+    """Per-deck combined (Main Deck + Sideboard) qty for each card, with the
+    first non-null unit price found -- the per-deck "how many of this card
+    does this deck need" figure that the card-pool builder's client-side JS
+    (static/pool.js) sums or maxes across whichever decks the user selects."""
     by_name = {}
-    for d, qty_by_name in zip(deck_meta, per_deck_qty):
-        for name, qty in qty_by_name.items():
-            entry = by_name.setdefault(name, {
-                "name": name, "sum_qty": 0, "max_qty": 0, "decks": [],
-            })
-            entry["sum_qty"] += qty
-            entry["max_qty"] = max(entry["max_qty"], qty)
-            entry["decks"].append({
-                "id": d["id"], "title": d["article_title"], "label": d["label"], "qty": qty,
-            })
-
-    rows = list(by_name.values())
-    for r in rows:
-        unit_usd, unit_tix = unit_price.get(r["name"], (None, None))
-        r["unit_usd"] = unit_usd
-        r["unit_tix"] = unit_tix
-        needed = r["max_qty"] if mode == "shared" else r["sum_qty"]
-        r["qty"] = needed
-        r["ext_usd"] = needed * unit_usd if unit_usd is not None else None
-        r["ext_tix"] = needed * unit_tix if unit_tix is not None else None
-        r["has_usd"] = r["ext_usd"] is not None
-        r["has_tix"] = r["ext_tix"] is not None
-    rows.sort(key=lambda c: c["name"].lower())
-    return rows
+    order = []
+    for r in parse_priced_card_rows(priced_path):
+        entry = by_name.get(r["name"])
+        if entry is None:
+            entry = {"name": r["name"], "qty": 0, "unit_usd": None, "unit_tix": None}
+            by_name[r["name"]] = entry
+            order.append(r["name"])
+        entry["qty"] += r["qty"]
+        if entry["unit_usd"] is None and r["unit_usd"] is not None:
+            entry["unit_usd"] = r["unit_usd"]
+        if entry["unit_tix"] is None and r["unit_tix"] is not None:
+            entry["unit_tix"] = r["unit_tix"]
+    return [by_name[name] for name in order]
 
 
-@app.route("/pool")
+@app.route("/pool/")
 def card_pool():
-    all_decks = get_all_decks()
-    requested_ids = request.args.getlist("deck")
-    selected_decks = [d for did in requested_ids if (d := get_deck_by_id(did)) is not None]
-    mode = request.args.get("mode", "sum")
-    if mode not in POOL_MODES:
-        mode = "sum"
-
-    pool_rows = None
-    pool_usd_total = pool_tix_total = 0.0
-    if selected_decks:
-        pool_rows = _aggregate_card_pool(selected_decks, mode=mode)
-        pool_usd_total = sum(r["ext_usd"] for r in pool_rows if r["has_usd"])
-        pool_tix_total = sum(r["ext_tix"] for r in pool_rows if r["has_tix"])
-
-    return render_template(
-        "pool.html",
-        all_decks=all_decks,
-        selected_ids={d["id"] for d in selected_decks},
-        selected_decks=selected_decks,
-        pool_rows=pool_rows,
-        pool_usd_total=pool_usd_total,
-        pool_tix_total=pool_tix_total,
-        pool_mode=mode,
-    )
+    return render_template("pool.html", all_decks=get_all_decks())
 
 
-@app.route("/pool/download")
-def pool_download():
-    requested_ids = request.args.getlist("deck")
-    selected_decks = [d for did in requested_ids if (d := get_deck_by_id(did)) is not None]
-    if not selected_decks:
-        abort(404)
-    mode = request.args.get("mode", "sum")
-    if mode not in POOL_MODES:
-        mode = "sum"
-
-    pool_rows = _aggregate_card_pool(selected_decks, mode=mode)
-    lines = [f"{r['qty']} {r['name']}" for r in pool_rows]
-    text = "\n".join(lines) + "\n"
-    return Response(
-        text,
-        mimetype="text/plain",
-        headers={"Content-Disposition": 'attachment; filename="card_pool.txt"'},
-    )
+@app.route("/pool-data.json")
+def pool_data():
+    """Every deck's per-card pool data as JSON, for static/pool.js to
+    aggregate entirely client-side (arbitrary deck-selection combinations
+    aren't something a static site build can pre-render one page per)."""
+    decks = [{
+        "id": d["id"],
+        "title": d["article_title"],
+        "label": d["label"],
+        "cards": _pool_card_rows_for_deck(d["priced_path"]),
+    } for d in get_all_decks()]
+    return Response(json.dumps(decks), mimetype="application/json")
 
 
-@app.route("/stats")
+@app.route("/stats/")
 def stats():
     card_stats = get_card_stats()
     # Basic lands are in nearly every deck by definition and would otherwise

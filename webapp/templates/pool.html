@@ -9,15 +9,15 @@
   </p>
 </section>
 
-<form method="get" action="{{ url_for('card_pool') }}" id="pool-form">
+<form id="pool-form" data-pool-data-url="{{ url_for('pool_data') }}">
   <div class="pool-controls">
     <input type="search" id="pool-filter" placeholder="Filter by title or author&hellip;" autocomplete="off">
     <button type="button" id="pool-select-all" class="pool-link-btn">Select all</button>
     <button type="button" id="pool-select-none" class="pool-link-btn">Clear</button>
-    <span class="pool-selected-count"><span id="pool-count">{{ selected_ids|length }}</span> deck{{ "s" if selected_ids|length != 1 else "" }} selected</span>
+    <span class="pool-selected-count"><span id="pool-count">0</span> decks selected</span>
     <span class="pool-mode-toggle" role="group" aria-label="Pool mode">
-      <label><input type="radio" name="mode" value="sum" {{ "checked" if pool_mode != "shared" else "" }}> Build all at once</label>
-      <label><input type="radio" name="mode" value="shared" {{ "checked" if pool_mode == "shared" else "" }}> Share cards between decks</label>
+      <label><input type="radio" name="mode" value="sum" checked> Build all at once</label>
+      <label><input type="radio" name="mode" value="shared"> Share cards between decks</label>
     </span>
     <button type="submit" class="pool-build-btn">Build pool</button>
   </div>
@@ -35,7 +35,7 @@
     <tbody>
       {% for d in all_decks %}
       <tr data-date="{{ d.ymd }}" data-title="{{ (d.article_title ~ ' ' ~ d.label)|lower }}" data-usd="{{ d.usd_total }}" data-tix="{{ d.tix_total }}">
-        <td><input type="checkbox" name="deck" value="{{ d.id }}" {{ "checked" if d.id in selected_ids else "" }}></td>
+        <td><input type="checkbox" name="deck" value="{{ d.id }}"></td>
         <td class="col-date">{{ d.date_str or d.ymd }}</td>
         <td class="col-title">
           <a href="{{ url_for('deck_detail', folder=d.folder) }}" target="_blank" rel="noopener">{{ d.article_title }}</a>
@@ -49,55 +49,7 @@
   </table>
 </form>
 
-{% if pool_rows is not none %}
-<section class="pool-results">
-  <h2>Combined shopping list &mdash; {{ selected_decks|length }} deck{{ "s" if selected_decks|length != 1 else "" }}</h2>
-  <p class="muted pool-mode-note">
-    {% if pool_mode == "shared" %}
-      Shared-pool mode: quantities are the <em>most</em> any single selected deck needs of a
-      card, on the assumption you only build one deck at a time and reshuffle the same cards
-      into the next one.
-    {% else %}
-      Build-all-at-once mode: quantities are <em>summed</em> across every selected deck, on the
-      assumption you want them all assembled simultaneously with no cards shared between them.
-    {% endif %}
-  </p>
-  <p class="combined-total">
-    <strong>Grand total:</strong>
-    ${{ pool_usd_total|money }} physical &middot; {{ pool_tix_total|money }} tix digital
-    &middot;
-    <a class="download-link" href="{{ url_for('pool_download', deck=selected_decks|map(attribute='id')|list, mode=pool_mode) }}" download>
-      &#8681; Download shopping list (.txt)
-    </a>
-  </p>
-
-  <div class="priced-table">
-  <table>
-    <thead>
-      <tr><th>Qty</th><th>Card</th><th>Unit</th><th>Extended</th><th>Unit (tix)</th><th>Extended (tix)</th><th>Needed in</th></tr>
-    </thead>
-    <tbody>
-      {% for r in pool_rows %}
-      <tr>
-        <td>{{ r.qty }}</td>
-        <td>{{ r.name }}</td>
-        <td>{{ "$%.2f"|format(r.unit_usd) if r.unit_usd is not none else "N/A" }}</td>
-        <td>{{ "$%.2f"|format(r.ext_usd) if r.has_usd else "N/A" }}</td>
-        <td>{{ "%.2f"|format(r.unit_tix) if r.unit_tix is not none else "N/A" }}</td>
-        <td>{{ "%.2f"|format(r.ext_tix) if r.has_tix else "N/A" }}</td>
-        <td class="pool-decks-cell">
-          {{ r.decks|length }} deck{{ "s" if r.decks|length != 1 else "" }}
-          <div class="pool-decks-list">
-            {% for dd in r.decks %}{{ dd.title }}{% if dd.label and dd.label != "Decklist" %} ({{ dd.label }}){% endif %} &times;{{ dd.qty }}{% if not loop.last %}, {% endif %}{% endfor %}
-          </div>
-        </td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-  </div>
-</section>
-{% endif %}
+<section class="pool-results" id="pool-results" hidden></section>
 {% endblock %}
 {% block scripts %}
 <script src="{{ url_for('static', filename='table-sort.js') }}"></script>

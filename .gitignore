@@ -7,3 +7,7 @@ scripts/cache/
 # Rebuilt automatically on webapp startup and after every price-data fetch
 # (scripts/fetch_prices.py) -- not checked in.
 archive/*/decklist*_price_history.json
+
+# Local Frozen-Flask output (staticsite/freeze.py). GitHub Actions builds and
+# deploys this straight to Pages -- it's never committed.
+staticsite/build/
