@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: fetch-prices
@@ -39,7 +40,19 @@ jobs:
         run: echo "PRICE_DATE=$(date -u +%Y-%m-%d)" >> "$GITHUB_ENV"
 
       - name: Commit archived prices
+        id: commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Archive card prices for ${{ env.PRICE_DATE }}"
           file_pattern: "prices/**"
+
+      # The auto-commit above is pushed with the workflow's GITHUB_TOKEN, and
+      # GitHub suppresses push-triggered workflows for such pushes -- so the
+      # deploy-pages.yml "on: push: paths: prices/**" trigger never fires for
+      # it. workflow_dispatch created via the API is the documented exception,
+      # so kick the Pages rebuild explicitly whenever new prices landed.
+      - name: Rebuild GitHub Pages with the new prices
+        if: steps.commit.outputs.changes_detected == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy-pages.yml --ref main --repo "$GITHUB_REPOSITORY"

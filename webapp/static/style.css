@@ -20,7 +20,15 @@ body {
   background: var(--bg);
   color: var(--fg);
   line-height: 1.5;
+  /* Never let wide content (the index deck table) stretch the page wider
+     than the viewport -- that left the header banner covering only the
+     first screenful on phones. clip (not hidden) keeps the sticky table
+     header working. Anything wider scrolls inside .table-scroll instead. */
+  max-width: 100%;
+  overflow-x: clip;
 }
+
+.table-scroll { max-width: 100%; }
 
 .site-header {
   background: var(--header-bg);
@@ -263,7 +271,12 @@ main {
   border-radius: 6px;
   padding: 1.5rem 2rem;
   margin-bottom: 2rem;
+  /* Archived articles contain long unbroken URLs; without this they
+     stretch the page past the viewport on phones. */
+  overflow-wrap: break-word;
 }
+
+.article-body a { overflow-wrap: anywhere; }
 
 .screenshot-frame {
   margin: 0 0 1.5rem;
@@ -625,6 +638,36 @@ body.lightbox-locked { overflow: hidden; }
   width: 244px;
   height: auto;
   display: none;
+}
+
+/* ---------- small screens ---------- */
+
+@media (max-width: 700px) {
+  .site-header { padding: 0.85rem 1rem; }
+  .site-title { font-size: 1.15rem; }
+  /* Stack banner contents: title / subtitle / nav, each on its own line. */
+  .site-sub { flex-basis: 100%; }
+  .site-nav { margin-left: 0; flex-basis: 100%; }
+
+  main { padding: 0.9rem 0.75rem 2.5rem; }
+
+  /* The index deck table can't fit 7 columns on a phone. Drop the two
+     widest, purely-descriptive columns and let the rest breathe; if it's
+     still wider than the screen it scrolls inside its own container
+     instead of stretching the whole page. */
+  .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .deck-table .col-desc, .deck-table .col-tags, #deck-table .col-colors,
+  #deck-table th:nth-child(3), #deck-table th:nth-child(4),
+  #deck-table th:nth-child(5) { display: none; }
+  .deck-table th, .deck-table td { padding: 0.45rem 0.4rem; font-size: 0.85rem; }
+  .col-date { white-space: normal; }
+  .col-num { white-space: normal; }
+  .deck-table thead th { white-space: normal; }
+  .deck-thumb { display: none; }
+
+  .article-body { padding: 1rem; }
+  .deck-block { padding: 0.9rem 1rem; }
+  .screenshot-thumb { max-width: 100%; }
 }
 
 @media (prefers-color-scheme: dark) {

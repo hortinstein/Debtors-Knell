@@ -27,6 +27,7 @@
   <button type="button" class="archetype-chip archetype-clear" id="color-clear">Clear</button>
 </div>
 
+<div class="table-scroll">
 <table class="deck-table" id="deck-table">
   <thead>
     <tr>
@@ -82,6 +83,7 @@
     {% endfor %}
   </tbody>
 </table>
+</div>
 {% endblock %}
 {% block scripts %}
 <script src="{{ url_for('static', filename='table-sort.js') }}"></script>
