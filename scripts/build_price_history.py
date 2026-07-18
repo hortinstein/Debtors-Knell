@@ -4,24 +4,29 @@ Build per-deck historical price series for the "Building on a Budget" archive.
 
 Digital (MTGO tix): genuine multi-year daily history, built from GoatBots'
 yearly bulk archives (prices/goatbots_yearly_archive/<year>/<date>.txt.gz,
-card id -> tix price) joined against the id -> card name mapping in the most
-recent prices/daily/<date>/goatbots/card-definitions.zip. Where a name maps
-to several GoatBots ids (different sets/foil versions -- GoatBots and
-Scryfall don't share set-code conventions, e.g. Scryfall's "hop" vs
+card id -> tix price) extended day-by-day with the snapshots the daily fetch
+archives (prices/daily/<fetch-date>/goatbots/price-history.zip, whose inner
+filename carries the date the prices are actually for -- GoatBots publishes
+about two days behind). Both are joined against the id -> card name mapping
+in the most recent prices/daily/<date>/goatbots/card-definitions.zip. Where
+a name maps to several GoatBots ids (different sets/foil versions -- GoatBots
+and Scryfall don't share set-code conventions, e.g. Scryfall's "hop" vs
 GoatBots' "PC1" for the same Planechase set, so the two can't reliably be
 cross-referenced to "the same printing"), the median price across matched
 printings for that day is used, to avoid both the near-zero bulk-reprint
 floor and any single-printing spike.
 
-Physical (paper USD): this project only started archiving a daily snapshot
-(prices/daily/<date>/mtgjson/AllPricesToday.json.bz2) on 2026-07-16, and that
-snapshot is keyed by MTGJSON uuid with no locally-available name mapping, so
-it isn't joined here. Per research/PRICE_DATA_SOURCES.md, no source has real
-day-by-day paper history for these 2003-2009 decks anyway. Instead, the one
-genuine data point available -- the deck's current Scryfall-sourced grand
-total, already computed in decklist*_priced.md -- is recorded as a single-day
-series. Re-running this script on later dates (once paper-price name-mapping
-is available) can extend it; the JSON shape already supports more points.
+Physical (paper USD): per research/PRICE_DATA_SOURCES.md no source has real
+day-by-day paper history for these 2003-2009 decks, so this is a
+"start the clock now" series: one point per archived daily MTGJSON snapshot
+(prices/daily/<fetch-date>/mtgjson/AllPricesToday.json.bz2, archiving began
+2026-07-16), joined by card name via prices/mtgjson/uuid_to_name.json.gz
+(built by scripts/build_mtgjson_uuid_map.py in the fetch workflow). Median
+across matched printings per day, USD retail, providers preferred in
+PAPER_PROVIDER_PREFERENCE order; basic lands excluded (as in the tix
+series). If the uuid map isn't available yet, falls back to the deck's
+current Scryfall-sourced grand total from decklist*_priced.md as a
+single-day series.
 
 Output: one JSON sidecar per priced decklist, next to it in the same archive
 folder, e.g. archive/<folder>/decklist_price_history.json (or
@@ -156,6 +161,9 @@ def resolve_ids_for_name(raw_name, name_index):
 # Daily tix price files (id -> price), across all yearly archives
 # ---------------------------------------------------------------------------
 
+DAILY_GOATBOTS_INNER_RE = re.compile(r"price-history-(\d{4}-\d{2}-\d{2})\.txt$")
+
+
 def iter_price_days():
     """Yields (date_str, path) for every archived GoatBots daily price file,
     sorted chronologically."""
@@ -163,6 +171,27 @@ def iter_price_days():
         for path in sorted(glob.glob(os.path.join(year_dir, "*.txt.gz"))):
             date_str = os.path.basename(path)[: -len(".txt.gz")]
             yield date_str, path
+
+
+def iter_daily_goatbots_days():
+    """Yields (price_date_str, zip_path, member) for each daily-fetched
+    GoatBots snapshot (prices/daily/<fetch-date>/goatbots/price-history.zip).
+    The zip's inner filename carries the date the prices are actually for
+    (GoatBots publishes ~2 days behind the fetch date), so that -- not the
+    fetch-directory date -- is the series date."""
+    for day_dir in sorted(glob.glob(os.path.join(DAILY_DIR, "*"))):
+        zpath = os.path.join(day_dir, "goatbots", "price-history.zip")
+        if not os.path.exists(zpath):
+            continue
+        try:
+            with zipfile.ZipFile(zpath) as z:
+                names = z.namelist()
+        except zipfile.BadZipFile:
+            continue
+        for member in names:
+            m = DAILY_GOATBOTS_INNER_RE.search(member)
+            if m:
+                yield m.group(1), zpath, member
 
 
 def load_relevant_prices(relevant_ids):
@@ -176,6 +205,95 @@ def load_relevant_prices(relevant_ids):
         filtered = {cid: price for cid, price in day_prices.items() if cid in relevant_ids}
         if filtered:
             by_date[date_str] = filtered
+    # The yearly bulk archives end whenever GoatBots last published one; the
+    # daily fetches carry the series forward from there (overlapping dates
+    # keep the yearly-archive copy -- same data either way).
+    for date_str, zpath, member in iter_daily_goatbots_days():
+        if date_str in by_date:
+            continue
+        with zipfile.ZipFile(zpath) as z:
+            with z.open(member) as f:
+                day_prices = json.load(f)
+        filtered = {cid: price for cid, price in day_prices.items() if cid in relevant_ids}
+        if filtered:
+            by_date[date_str] = filtered
+    return by_date
+
+
+# ---------------------------------------------------------------------------
+# Daily paper (USD) snapshots: MTGJSON AllPricesToday, joined by uuid -> name
+# ---------------------------------------------------------------------------
+
+UUID_MAP_PATH = os.path.join(PRICES_DIR, "mtgjson", "uuid_to_name.json.gz")
+
+# USD retail providers, most representative first (mirrors the reasoning for
+# the tix median: prefer the market this archive's grand totals came from).
+PAPER_PROVIDER_PREFERENCE = ["tcgplayer", "cardkingdom", "manapool", "cardsphere"]
+
+
+def load_uuid_name_index():
+    """name -> set-of-uuids indexes (same three-level normalization as the
+    GoatBots index) from prices/mtgjson/uuid_to_name.json.gz, or None if the
+    map hasn't been built yet (see scripts/build_mtgjson_uuid_map.py).
+    Split/double-faced cards are indexed under the full "A // B" name and
+    each face name, since decklists cite the front face."""
+    if not os.path.exists(UUID_MAP_PATH):
+        return None
+    with gzip.open(UUID_MAP_PATH, "rt", encoding="utf-8") as f:
+        names = json.load(f)["names"]
+    definitions = {}
+    for uuid, name in names.items():
+        definitions[uuid] = {"name": name}
+    by_exact, by_noapos, by_stripped = build_name_index(definitions)
+    for uuid, name in names.items():
+        if " // " in name:
+            for face in name.split(" // "):
+                by_exact.setdefault(norm_key(face), set()).add(uuid)
+                by_noapos.setdefault(norm_key_noapos(face), set()).add(uuid)
+                by_stripped.setdefault(norm_key_noaccent_nopunct(face), set()).add(uuid)
+    return by_exact, by_noapos, by_stripped
+
+
+def _usd_price_for_uuid(entry):
+    """One representative USD retail price from an AllPricesToday per-uuid
+    entry (single-day snapshot: each provider's retail dict holds one dated
+    value). Non-foil preferred; foil-only printings still count."""
+    paper = entry.get("paper") or {}
+    for provider in PAPER_PROVIDER_PREFERENCE:
+        p = paper.get(provider)
+        if not p or p.get("currency") != "USD":
+            continue
+        retail = p.get("retail") or {}
+        for finish in ("normal", "foil"):
+            dated = retail.get(finish) or {}
+            if dated:
+                return dated[max(dated)]
+    return None
+
+
+def load_relevant_usd_prices(relevant_uuids):
+    """Returns {price_date_str: {uuid: usd}} across every archived MTGJSON
+    daily snapshot. The snapshot's meta.date (the day the prices are for,
+    one day behind the fetch date) is the series date; if two fetches carry
+    the same price date, the later fetch wins."""
+    by_date = {}
+    for day_dir in sorted(glob.glob(os.path.join(DAILY_DIR, "*"))):
+        path = os.path.join(day_dir, "mtgjson", "AllPricesToday.json.bz2")
+        if not os.path.exists(path):
+            continue
+        with bz2.open(path, "rt", encoding="utf-8") as f:
+            snapshot = json.load(f)
+        date_str = (snapshot.get("meta") or {}).get("date") or os.path.basename(day_dir)
+        day = {}
+        for uuid in relevant_uuids:
+            entry = snapshot.get("data", {}).get(uuid)
+            if not entry:
+                continue
+            price = _usd_price_for_uuid(entry)
+            if price is not None:
+                day[uuid] = price
+        if day:
+            by_date[date_str] = day
     return by_date
 
 
@@ -260,62 +378,85 @@ def build_price_histories(only=None, force=False, limit=None, quiet=False):
 
     definitions = load_latest_card_definitions()
     name_index = build_name_index(definitions)
+    uuid_index = load_uuid_name_index()
+    if uuid_index is None:
+        _log("No prices/mtgjson/uuid_to_name.json.gz yet -- physical (USD) "
+             "series will fall back to the single current grand-total point.")
 
-    # First pass: parse every pending decklist's rows, resolve GoatBots ids,
-    # and collect the full set of ids we'll need prices for.
+    # First pass: parse every pending decklist's rows, resolve GoatBots ids
+    # (tix) and MTGJSON uuids (USD), and collect the full sets of ids we'll
+    # need prices for.
     parsed = {}  # priced_md_path -> (rows_with_ids, unmatched_names)
     relevant_ids = set()
+    relevant_uuids = set()
     for pf, out_path in pending:
         rows = parse_priced_rows(pf)
         resolved = []
         unmatched = []
         for qty, name, is_basic in rows:
             if is_basic or norm_key(name) in BASIC_LANDS:
-                resolved.append((qty, None))
+                resolved.append((qty, None, None))
                 continue
             ids = resolve_ids_for_name(name, name_index)
+            uuids = resolve_ids_for_name(name, uuid_index) if uuid_index else None
             if ids:
                 relevant_ids.update(ids)
-                resolved.append((qty, ids))
             else:
-                resolved.append((qty, None))
                 unmatched.append(name)
+            if uuids:
+                relevant_uuids.update(uuids)
+            resolved.append((qty, ids, uuids))
         parsed[pf] = (resolved, unmatched)
 
     _log(f"Resolved GoatBots ids for cards; {len(relevant_ids):,} distinct ids needed. "
          "Scanning daily price archives (this reads every archived day once)...")
     prices_by_date = load_relevant_prices(relevant_ids)
-    _log(f"Loaded prices for {len(prices_by_date):,} archived days.")
+    _log(f"Loaded tix prices for {len(prices_by_date):,} archived days.")
+
+    usd_by_date = {}
+    if relevant_uuids:
+        usd_by_date = load_relevant_usd_prices(relevant_uuids)
+        _log(f"Loaded USD prices for {len(usd_by_date):,} archived days.")
 
     dates_sorted = sorted(prices_by_date.keys())
+    usd_dates_sorted = sorted(usd_by_date.keys())
+
+    def daily_total(day_prices, resolved, id_slot):
+        """Sum of qty x median-matched-printing price for one archived day;
+        None when nothing in the deck matched that day. The median across a
+        name's printings is used because the cheapest is usually a long-tail
+        bulk reprint that understates what the card actually costs to
+        acquire, while a single printing can spike."""
+        total = 0.0
+        any_priced = False
+        for row in resolved:
+            qty, ids = row[0], row[id_slot]
+            if ids is None:
+                continue
+            candidates = [day_prices[i] for i in ids if i in day_prices]
+            if not candidates:
+                continue
+            total += qty * statistics.median(candidates)
+            any_priced = True
+        return round(total, 2) if any_priced else None
 
     written = 0
     for pf, out_path in pending:
         resolved, unmatched = parsed[pf]
         tix_series = []
         for date_str in dates_sorted:
-            day_prices = prices_by_date[date_str]
-            total = 0.0
-            any_priced = False
-            for qty, ids in resolved:
-                if ids is None:
-                    continue
-                candidates = [day_prices[i] for i in ids if i in day_prices]
-                if not candidates:
-                    continue
-                # A card name can map to many GoatBots ids (every set/foil
-                # printing ever released digitally), and the cheapest of
-                # those is usually a long-tail bulk reprint that understates
-                # what the card actually costs to acquire. The median across
-                # matched printings is a steadier, more representative price
-                # than either extreme.
-                total += qty * statistics.median(candidates)
-                any_priced = True
-            if any_priced:
-                tix_series.append([date_str, round(total, 2)])
+            total = daily_total(prices_by_date[date_str], resolved, 1)
+            if total is not None:
+                tix_series.append([date_str, total])
 
-        usd_total = parse_grand_total_usd(pf)
-        usd_series = [[_today(), usd_total]] if usd_total is not None else []
+        usd_series = []
+        for date_str in usd_dates_sorted:
+            total = daily_total(usd_by_date[date_str], resolved, 2)
+            if total is not None:
+                usd_series.append([date_str, total])
+        if not usd_series:
+            usd_total = parse_grand_total_usd(pf)
+            usd_series = [[_today(), usd_total]] if usd_total is not None else []
 
         out = {
             "generated": _today(),

@@ -36,6 +36,13 @@ jobs:
       - name: Fetch and archive today's prices
         run: python scripts/fetch_prices.py
 
+      # uuid -> card-name map that lets build_price_history.py join the
+      # archived MTGJSON snapshots into per-deck USD series. No-op unless the
+      # map is missing or a month old; committed below with the rest of
+      # prices/.
+      - name: Refresh MTGJSON uuid-to-name map
+        run: python scripts/build_mtgjson_uuid_map.py
+
       - name: Record today's date
         run: echo "PRICE_DATE=$(date -u +%Y-%m-%d)" >> "$GITHUB_ENV"
 
