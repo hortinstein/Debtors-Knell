@@ -207,13 +207,21 @@
       nameEl.appendChild(link);
       main.appendChild(nameEl);
 
+      // A market can carry a series without a start/end summary (the card
+      // was only ranked in the other market); read the latest price off the
+      // series in that case.
+      function latest(mk) {
+        if (!mk) return null;
+        if (mk.end != null) return mk.end;
+        return mk.series && mk.series.length ? mk.series[mk.series.length - 1][1] : null;
+      }
       var subBits = [];
-      if (card.paper) subBits.push("Paper " + fmtMoney(card.paper.end, "paper"));
-      if (card.tix) subBits.push("MTGO " + fmtMoney(card.tix.end, "tix"));
+      if (latest(card.paper) != null) subBits.push("Paper " + fmtMoney(latest(card.paper), "paper"));
+      if (latest(card.tix) != null) subBits.push("MTGO " + fmtMoney(latest(card.tix), "tix"));
       main.appendChild(el("div", "mover-sub", subBits.join(" · ")));
 
       var metric = el("div", "mover-metric " + (m && m.change >= 0 ? "gain" : "loss"));
-      if (m) {
+      if (m && m.end != null && m.change != null) {
         metric.appendChild(el("div", "mover-metric-price", fmtMoney(m.end, state.market)));
         metric.appendChild(el("div", "mover-metric-change", fmtChange(m, state.market)));
         metric.appendChild(el("div", "mover-metric-label",

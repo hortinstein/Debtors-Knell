@@ -808,6 +808,9 @@ body.movers-modal-open { overflow: hidden; }
   justify-content: center;
   padding: 1.2rem;
 }
+/* display:flex above would otherwise override the hidden attribute's
+   display:none, leaving an invisible click-blocking backdrop. */
+.movers-modal-backdrop[hidden] { display: none; }
 
 .movers-modal {
   position: relative;
