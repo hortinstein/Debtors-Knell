@@ -15,6 +15,7 @@ Run:
 """
 import functools
 import glob
+import hashlib
 import io
 import json
 import os
@@ -85,6 +86,29 @@ SCRYFALL_CARD_LINK_RE = re.compile(r"scryfall\.com/card/([^/?#]+)/([^/?#]+)/")
 
 app = Flask(__name__)
 app.jinja_env.filters["money"] = lambda v: f"{v:,.2f}"
+
+
+@functools.lru_cache(maxsize=None)
+def _static_file_hash(filename):
+    path = os.path.join(app.static_folder, filename)
+    if not os.path.exists(path):
+        return None
+    with open(path, "rb") as f:
+        return hashlib.md5(f.read()).hexdigest()[:8]
+
+
+@app.url_defaults
+def _cache_bust_static(endpoint, values):
+    """Append a content-hash ?v= to every static asset URL so browsers (and
+    the GitHub Pages CDN) re-fetch stylesheets/JS whenever their content
+    changes, instead of serving a stale cached copy against newer HTML --
+    exactly what broke the movers page's first deploy. The query string
+    doesn't affect which frozen file Frozen-Flask writes, only the URL the
+    pages reference."""
+    if endpoint == "static" and "filename" in values:
+        h = _static_file_hash(values["filename"])
+        if h:
+            values["v"] = h
 
 
 def _parse_money(s):

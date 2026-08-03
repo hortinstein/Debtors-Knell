@@ -54,8 +54,15 @@
   // ------------------------------------------------------------------
   function drawSparkline(canvas, series, market) {
     var dpr = window.devicePixelRatio || 1;
-    var W = canvas.clientWidth || 260;
-    var H = canvas.clientHeight || 74;
+    // Cap the CSS size and pin it via inline style before setting the
+    // backing-store size: if the stylesheet ever fails to apply (e.g. a
+    // stale cached style.css), clientWidth/Height would otherwise reflect
+    // the previous draw's dpr-scaled backing store and the canvas would
+    // balloon on every redraw.
+    var W = Math.min(canvas.clientWidth || 260, 640);
+    var H = 74;
+    canvas.style.height = H + "px";
+    canvas.style.maxWidth = "100%";
     canvas.width = W * dpr;
     canvas.height = H * dpr;
     var ctx = canvas.getContext("2d");
