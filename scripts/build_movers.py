@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """
 Build the weekly "Price Movers" dataset: the biggest paper (USD) and MTGO
-(tix) price changes across the whole card universe over the last week of
-archived snapshots.
+(tix) price changes over the last week of archived snapshots, among the
+cards actually played in the archive's decklists (the same card pool the
+rest of the site tracks -- every nonbasic card in any
+archive/*/decklist*_priced.md).
 
 Sources (both already archived daily by scripts/fetch_prices.py):
 
@@ -51,7 +53,11 @@ import json
 import os
 import re
 import statistics
+import sys
 import zipfile
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import build_price_history as bph
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PRICES_DIR = os.path.join(REPO_ROOT, "prices")
@@ -78,6 +84,47 @@ DAILY_GOATBOTS_INNER_RE = re.compile(r"price-history-(\d{4}-\d{2}-\d{2})\.txt$")
 
 def log(msg):
     print(msg, flush=True)
+
+
+# ---------------------------------------------------------------------------
+# The deck card pool: every nonbasic card in any priced decklist
+# ---------------------------------------------------------------------------
+
+def deck_pool_name_keys():
+    """Three normalized-name sets (exact / no-apostrophe / accent-and-
+    punctuation-stripped, mirroring build_price_history.py's matching
+    levels) covering every nonbasic card played anywhere in the archive.
+    Movers are restricted to this pool -- the point of the page is what the
+    archive's decks are doing, not the whole Magic market."""
+    exact, noapos, stripped = set(), set(), set()
+    count = 0
+    for pf in bph.collect_priced_files():
+        for qty, name, is_basic in bph.parse_priced_rows(pf):
+            if is_basic or bph.norm_key(name) in bph.BASIC_LANDS:
+                continue
+            exact.add(bph.norm_key(name))
+            noapos.add(bph.norm_key_noapos(name))
+            stripped.add(bph.norm_key_noaccent_nopunct(name))
+            count += 1
+    log(f"Deck card pool: {len(exact):,} distinct nonbasic names "
+        f"across {count:,} decklist rows.")
+    return exact, noapos, stripped
+
+
+def in_deck_pool(name, pool_keys):
+    """Whether a price-source card name matches the deck pool at any
+    normalization level. Split/double-faced names ("A // B") also match on
+    either face, since decklists cite the front face."""
+    exact, noapos, stripped = pool_keys
+    candidates = [name]
+    if " // " in name:
+        candidates.extend(name.split(" // "))
+    for c in candidates:
+        if (bph.norm_key(c) in exact
+                or bph.norm_key_noapos(c) in noapos
+                or bph.norm_key_noaccent_nopunct(c) in stripped):
+            return True
+    return False
 
 
 # ---------------------------------------------------------------------------
@@ -353,8 +400,15 @@ def main():
                     help="rebuild a movers file for every archived price day")
     args = ap.parse_args()
 
+    pool_keys = deck_pool_name_keys()
     id_to_name = load_goatbots_names()
+    id_to_name = {cid: n for cid, n in id_to_name.items()
+                  if in_deck_pool(n, pool_keys)}
+    log(f"  {len(id_to_name):,} GoatBots printings are in the deck pool.")
     uuid_to_name = load_uuid_to_name()
+    uuid_to_name = {u: n for u, n in uuid_to_name.items()
+                    if in_deck_pool(n, pool_keys)}
+    log(f"  {len(uuid_to_name):,} MTGJSON printings are in the deck pool.")
     tix_sources = goatbots_day_sources()
     mtgjson_by_fetch = mtgjson_day_sources()
 
