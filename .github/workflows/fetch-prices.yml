@@ -43,6 +43,13 @@ jobs:
       - name: Refresh MTGJSON uuid-to-name map
         run: python scripts/build_mtgjson_uuid_map.py
 
+      # Weekly top-20 movers dataset (paper + MTGO) for the /movers/ page.
+      # One dated JSON per price day under prices/movers/ -- each daily run
+      # adds a new file, and none are ever deleted, so the page's archive of
+      # old days keeps growing. Committed below via the prices/** pattern.
+      - name: Build weekly price-movers dataset
+        run: python scripts/build_movers.py
+
       - name: Record today's date
         run: echo "PRICE_DATE=$(date -u +%Y-%m-%d)" >> "$GITHUB_ENV"
 

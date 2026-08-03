@@ -30,6 +30,7 @@ ARCHIVE_DIR = os.path.join(REPO_ROOT, "archive")
 SCRIPTS_DIR = os.path.join(REPO_ROOT, "scripts")
 MASTER_INDEX_PATH = os.path.join(REPO_ROOT, "scripts", "master_index.json")
 DECK_ARCHETYPES_PATH = os.path.join(REPO_ROOT, "scripts", "deck_archetypes.json")
+MOVERS_DIR = os.path.join(REPO_ROOT, "prices", "movers")
 
 
 def _ensure_price_histories():
@@ -661,6 +662,60 @@ def pool_data():
         "cards": _pool_card_rows_for_deck(d["priced_path"]),
     } for d in get_all_decks()]
     return Response(json.dumps(decks), mimetype="application/json")
+
+
+MOVER_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+
+def get_mover_dates():
+    """Every archived weekly-movers day (prices/movers/<date>.json, one per
+    price day, written by scripts/build_movers.py in the daily fetch
+    workflow), sorted chronologically. Not cached: the daily fetch adds a
+    new file while a long-running dev server keeps serving."""
+    if not os.path.isdir(MOVERS_DIR):
+        return []
+    return sorted(
+        f[: -len(".json")] for f in os.listdir(MOVERS_DIR)
+        if f.endswith(".json") and MOVER_DATE_RE.match(f[: -len(".json")])
+    )
+
+
+def _render_movers(date, dates):
+    with open(os.path.join(MOVERS_DIR, f"{date}.json"), encoding="utf-8") as f:
+        data = json.load(f)
+    idx = dates.index(date)
+    return render_template(
+        "movers.html",
+        data=data,
+        date=date,
+        dates=dates,
+        prev_date=dates[idx - 1] if idx > 0 else None,
+        next_date=dates[idx + 1] if idx < len(dates) - 1 else None,
+        is_latest=(idx == len(dates) - 1),
+    )
+
+
+@app.route("/movers/")
+def movers():
+    """Latest weekly price movers (also the archive's entry point)."""
+    dates = get_mover_dates()
+    if not dates:
+        # No prices/movers/*.json yet (fresh fork, or build_movers.py hasn't
+        # run) -- serve a stub instead of a 404 so the nav link and the
+        # static freeze both stay intact.
+        return render_template("base.html") + (
+            "<!-- no movers data: run scripts/build_movers.py -->"
+        )
+    return _render_movers(dates[-1], dates)
+
+
+@app.route("/movers/<date>/")
+def movers_detail(date):
+    """One archived day of the weekly price movers."""
+    dates = get_mover_dates()
+    if date not in dates:
+        abort(404)
+    return _render_movers(date, dates)
 
 
 @app.route("/stats/")
