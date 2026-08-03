@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %}Price Movers &mdash; {{ date }} &mdash; Building on a Budget Archive{% endblock %}
+{% block content %}
+
+<div class="movers-head">
+  <h1>Weekly Price Movers</h1>
+  <button type="button" class="movers-about-btn" id="movers-about-btn">What is this page?</button>
+</div>
+
+<p class="movers-summary">
+  The 20 biggest paper (USD) and MTGO (tix) price moves across all of Magic
+  over the trailing week, as of <strong>{{ date }}</strong>.
+  Paper prices from MTGJSON's daily snapshots, digital prices from GoatBots
+  &mdash; median across printings per day.
+</p>
+
+<div class="movers-datenav">
+  {% if prev_date %}
+    <a class="movers-datenav-link" href="{{ url_for('movers_detail', date=prev_date) }}">&larr; {{ prev_date }}</a>
+  {% else %}
+    <span class="movers-datenav-link disabled">&larr; older</span>
+  {% endif %}
+  <label class="movers-datenav-select-label">Archived day:
+    <select id="movers-date-select">
+      {% for d in dates|reverse %}
+        <option value="{{ url_for('movers_detail', date=d) }}" {% if d == date %}selected{% endif %}>{{ d }}{% if loop.first %} (latest){% endif %}</option>
+      {% endfor %}
+    </select>
+  </label>
+  {% if next_date %}
+    <a class="movers-datenav-link" href="{{ url_for('movers_detail', date=next_date) }}">{{ next_date }} &rarr;</a>
+  {% else %}
+    <span class="movers-datenav-link disabled">newer &rarr;</span>
+  {% endif %}
+  {% if not is_latest %}
+    <a class="movers-datenav-link latest" href="{{ url_for('movers') }}">Jump to latest</a>
+  {% endif %}
+</div>
+
+<div class="movers-controls">
+  <div class="movers-toggle" role="group" aria-label="Market">
+    <span class="movers-toggle-label">Market:</span>
+    <button type="button" class="toggle-btn active" data-market="paper">Paper (USD)</button>
+    <button type="button" class="toggle-btn" data-market="tix">MTGO (tix)</button>
+  </div>
+  <div class="movers-toggle" role="group" aria-label="Ranking">
+    <span class="movers-toggle-label">Top 20 by:</span>
+    <button type="button" class="toggle-btn active" data-metric="pct">% change</button>
+    <button type="button" class="toggle-btn" data-metric="abs">$ / tix change</button>
+  </div>
+</div>
+
+<p class="movers-note" id="movers-view-note"></p>
+
+<ol class="movers-list" id="movers-list"></ol>
+
+<div class="movers-modal-backdrop" id="movers-modal" hidden>
+  <div class="movers-modal" role="dialog" aria-modal="true" aria-labelledby="movers-modal-title">
+    <button type="button" class="movers-modal-close" id="movers-modal-close" aria-label="Close">&times;</button>
+    <img class="movers-modal-card" alt="Debtors' Knell card"
+         src="https://api.scryfall.com/cards/named?exact=Debtors%27%20Knell&amp;format=image&amp;version=normal">
+    <div class="movers-modal-text">
+      <h2 id="movers-modal-title">Debtors' Knell</h2>
+      <p class="movers-modal-flavor"><em>"At the beginning of your upkeep, return a creature card from
+        a graveyard to the battlefield under your control."</em></p>
+      <p>Like its namesake card, this page brings things back from the past:
+        every day the archive's price-fetch workflow snapshots the entire
+        Magic card market &mdash; <strong>paper prices</strong> (USD, via
+        MTGJSON) and <strong>MTGO prices</strong> (tix, via GoatBots) &mdash;
+        and this page shows the <strong>20 biggest movers of the trailing
+        week</strong>: gainers in green, losers in red, each with a card
+        image and week-long charts for both markets.</p>
+      <p>Rank the top 20 by <strong>percentage change</strong> or by
+        <strong>absolute price movement</strong>, switch between the paper
+        and MTGO markets, and use the date picker to ring the knell on any
+        archived day &mdash; every day's report is kept forever.</p>
+      <button type="button" class="movers-modal-go" id="movers-modal-go">Show me the movers</button>
+    </div>
+  </div>
+</div>
+
+<script type="application/json" id="movers-data">{{ data|tojson }}</script>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='movers.js') }}"></script>
+{% endblock %}

@@ -56,6 +56,15 @@ def build(destination):
             yield {"folder": article["folder"]}
 
     @freezer.register_generator
+    def movers_detail():
+        # One frozen page per archived movers day (prices/movers/<date>.json,
+        # written daily by scripts/build_movers.py in the fetch workflow), so
+        # users can browse back through old days; /movers/ itself (the latest
+        # day) is discovered via the nav link like any static route.
+        for date in webapp_app.get_mover_dates():
+            yield {"date": date}
+
+    @freezer.register_generator
     def download_decklist():
         for article in webapp_app.get_articles():
             folder_path = os.path.join(webapp_app.ARCHIVE_DIR, article["folder"])
