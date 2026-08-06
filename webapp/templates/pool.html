@@ -7,11 +7,23 @@
     Pick any decks below and build one combined shopping list of every card
     needed to assemble them.
   </p>
+  <p class="muted">
+    {{ budget_count }} of the {{ budget_count + reference_count }} decklists are budget builds
+    from the column itself. The other {{ reference_count }} are lists the articles only quote for
+    comparison &mdash; tournament decks, reader submissions, preconstructed decks and explicitly
+    non-budget builds &mdash; and they are the reason cards no budget deck ever ran (Black Lotus,
+    the Moxen, dual lands) can turn up in a pool. They're hidden by default.
+  </p>
 </section>
 
 <form id="pool-form" data-pool-data-url="{{ url_for('pool_data') }}">
   <div class="pool-controls">
     <input type="search" id="pool-filter" placeholder="Filter by title or author&hellip;" autocomplete="off">
+    <span class="pool-role-toggle" role="group" aria-label="Which decklists to show">
+      <label><input type="radio" name="role-filter" value="budget" checked> Budget builds</label>
+      <label><input type="radio" name="role-filter" value="reference"> Reference lists</label>
+      <label><input type="radio" name="role-filter" value="all"> All</label>
+    </span>
     <button type="button" id="pool-select-all" class="pool-link-btn">Select all</button>
     <button type="button" id="pool-select-none" class="pool-link-btn">Clear</button>
     <span class="pool-selected-count"><span id="pool-count">0</span> decks selected</span>
@@ -28,19 +40,21 @@
         <th></th>
         <th class="sortable" data-key="date" data-type="text">Date</th>
         <th class="sortable" data-key="title" data-type="text">Deck</th>
+        <th class="sortable" data-key="role" data-type="text">Kind</th>
         <th class="sortable" data-key="usd" data-type="num">Physical ($)</th>
         <th class="sortable" data-key="tix" data-type="num">Digital (tix)</th>
       </tr>
     </thead>
     <tbody>
       {% for d in all_decks %}
-      <tr data-date="{{ d.ymd }}" data-title="{{ (d.article_title ~ ' ' ~ d.label)|lower }}" data-usd="{{ d.usd_total }}" data-tix="{{ d.tix_total }}">
+      <tr data-date="{{ d.ymd }}" data-title="{{ (d.article_title ~ ' ' ~ d.label)|lower }}" data-role="{{ d.role }}" data-usd="{{ d.usd_total }}" data-tix="{{ d.tix_total }}">
         <td><input type="checkbox" name="deck" value="{{ d.id }}"></td>
         <td class="col-date">{{ d.date_str or d.ymd }}</td>
         <td class="col-title">
           <a href="{{ url_for('deck_detail', folder=d.folder) }}" target="_blank" rel="noopener">{{ d.article_title }}</a>
-          {% if d.label and d.label != "Decklist" %}<div class="col-author">{{ d.label }}</div>{% endif %}
+          {% if d.show_label or d.subtitle %}<div class="col-author">{% if d.show_label %}{{ d.label }}{% endif %}{% if d.show_label and d.subtitle %} &middot; {% endif %}{{ d.subtitle }}</div>{% endif %}
         </td>
+        <td><span class="role-chip role-{{ d.role }}">{{ d.role_label }}</span></td>
         <td class="col-num">${{ "%.2f"|format(d.usd_total) }}</td>
         <td class="col-num">{{ "%.2f"|format(d.tix_total) }} tix</td>
       </tr>

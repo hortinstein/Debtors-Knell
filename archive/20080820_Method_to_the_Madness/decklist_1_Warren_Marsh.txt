@@ -3,6 +3,12 @@
 4 Shivan Oasis
 4 Shivan Reef
 4 Yavimaya Coast
+4 Blurred Mongoose
+3 Flametongue Kavu
+4 Gaea's Skyfolk
+4 Kavu Titan
+4 Mystic Snake
+4 Penumbra Bobcat
 3 Exclude
 3 Fire // Ice
 3 Prophetic Bolt

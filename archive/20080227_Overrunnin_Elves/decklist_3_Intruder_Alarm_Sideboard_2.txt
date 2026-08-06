@@ -1,6 +1,12 @@
 4 Dryad Arbor
 12 Forest
 8 Island
+3 Boreal Druid
+4 Essence Warden
+4 Imperious Perfect
+4 Llanowar Elves
+3 Merfolk Looter
+3 Thought Courier
 4 Intruder Alarm
 4 Remand
 4 Sprout Swarm

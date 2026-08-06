@@ -935,3 +935,103 @@ body.movers-modal-open { overflow: hidden; }
   .deck-row:hover { background: #33291b; }
   .combined-total { background: #2c2418; }
 }
+
+/* ---------- filter status readout (index page) ---------- */
+
+.filter-status {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0.2rem 0 0.8rem;
+}
+.filter-status-empty { color: var(--loss); font-weight: 600; }
+
+/* ---------- win/loss columns ---------- */
+
+.col-record { font-variant-numeric: tabular-nums; }
+.col-wins { color: var(--gain); font-weight: 600; }
+.col-losses { color: var(--loss); font-weight: 600; }
+
+.record-chip {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.12rem 0.55rem;
+  margin: 0.1rem 0.2rem 0.1rem 0;
+  border-radius: 999px;
+  background: var(--gain-bg);
+  border: 1px solid var(--gain);
+  color: var(--gain);
+  white-space: nowrap;
+}
+
+/* ---------- deck roles ---------- */
+/* Which decklists are the column's own budget builds and which are lists an
+   article only quotes -- see scripts/build_deck_meta.py. */
+
+.role-chip {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--row-alt);
+  color: var(--muted);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.role-chip.role-budget {
+  border-color: var(--gain);
+  background: var(--gain-bg);
+  color: var(--gain);
+}
+.role-chip.role-pro,
+.role-chip.role-reader,
+.role-chip.role-precon,
+.role-chip.role-nonbudget {
+  border-color: var(--accent-2);
+  background: #f6ece2;
+  color: var(--accent);
+}
+
+.deck-block:not(.deck-block-budget) {
+  border-left: 3px solid var(--accent-2);
+  padding-left: 0.9rem;
+}
+
+.deck-subtitle {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: -0.3rem 0 0.3rem;
+}
+
+.pool-role-toggle,
+.stats-scope-toggle {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  font-size: 0.85rem;
+  color: var(--fg);
+}
+.pool-role-toggle label,
+.stats-scope-toggle label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+}
+.stats-scope-toggle { margin: 0.4rem 0 0.8rem; }
+
+.deck-ref-reference { font-style: italic; opacity: 0.85; }
+.deck-ref-more { color: var(--muted); font-style: italic; }
+
+.deck-warning {
+  background: var(--loss-bg);
+  border: 1px solid var(--loss);
+  border-radius: 4px;
+  color: var(--loss);
+  font-size: 0.85rem;
+  padding: 0.5rem 0.7rem;
+  margin: 0.3rem 0 0.6rem;
+}
+.deck-warning code { font-size: 0.95em; }

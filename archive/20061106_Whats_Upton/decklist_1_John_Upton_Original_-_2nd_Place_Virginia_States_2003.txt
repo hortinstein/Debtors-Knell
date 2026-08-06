@@ -5,6 +5,11 @@
 5 Mountain
 5 Swamp
 3 Vault of Whispers
+2 Bottle Gnomes
+4 Disciple of the Vault
+2 Goblin Replica
+4 Solemn Simulacrum
+1 Visara the Dreadful
 1 Hammer of Bogardan
 2 Oblivion Stone
 3 Persecute

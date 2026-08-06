@@ -3,7 +3,11 @@
 {% block content %}
 <section class="index-summary">
   <p>{{ total_count }} articles archived &middot; {{ with_decklist_count }} with priced decklists
-     &middot; {{ total_count - with_decklist_count }} non-deck / trading articles</p>
+     &middot; {{ total_count - with_decklist_count }} non-deck / trading articles
+     &middot; {{ with_record_count }} with a win/loss record</p>
+  <p class="muted stats-note">W/L come from the cumulative &ldquo;Record: W&ndash;L&rdquo; markers
+     in an article's game log &mdash; the furthest point its log reaches. Articles with no
+     game log show &mdash;.</p>
 </section>
 
 <div class="archetype-filter" id="archetype-filter" role="group" aria-label="Filter by archetype">
@@ -27,6 +31,10 @@
   <button type="button" class="archetype-chip archetype-clear" id="color-clear">Clear</button>
 </div>
 
+<p class="filter-status" id="filter-status" data-total="{{ total_count }}">
+  Showing all {{ total_count }} articles.
+</p>
+
 <div class="table-scroll">
 <table class="deck-table" id="deck-table">
   <thead>
@@ -38,6 +46,8 @@
       <th>Colors</th>
       <th class="sortable" data-key="usd" data-type="num">Physical ($)</th>
       <th class="sortable" data-key="tix" data-type="num">Digital (tix)</th>
+      <th class="sortable" data-key="wins" data-type="num" title="Games won in the article's game log">W</th>
+      <th class="sortable" data-key="losses" data-type="num" title="Games lost in the article's game log">L</th>
     </tr>
   </thead>
   <tbody>
@@ -48,8 +58,9 @@
         data-title="{{ a.title|lower }}"
         data-usd="{{ a.usd_total }}"
         data-tix="{{ a.tix_total }}"
+        {% if a.record %}data-wins="{{ a.record.wins }}" data-losses="{{ a.record.losses }}"{% endif %}
         data-archetypes="{{ a.archetypes|join(',') }}"
-        data-colors="{{ a.colors|join(',') if a.colors else 'C' }}">
+        data-colors="{{ a.colors|join(',') if a.colors else ('C' if a.has_decklist else '') }}">
       <td class="col-date">{{ a.date_str or a.ymd }}</td>
       <td class="col-title">
         <div class="col-title-inner">
@@ -77,7 +88,15 @@
       <td class="col-num">${{ "%.2f"|format(a.usd_total) }}</td>
       <td class="col-num">{{ "%.2f"|format(a.tix_total) }} tix</td>
       {% else %}
-      <td class="col-num muted" colspan="2">no decklist</td>
+      <td class="col-num muted">no decklist</td>
+      <td class="col-num muted">&mdash;</td>
+      {% endif %}
+      {% if a.record %}
+      <td class="col-num col-record col-wins">{{ a.record.wins }}</td>
+      <td class="col-num col-record col-losses">{{ a.record.losses }}</td>
+      {% else %}
+      <td class="col-num muted">&mdash;</td>
+      <td class="col-num muted">&mdash;</td>
       {% endif %}
     </tr>
     {% endfor %}

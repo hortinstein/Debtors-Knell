@@ -1,6 +1,11 @@
 2 Ghost Quarter
 18 Swamp
 1 Urborg, Tomb of Yawgmoth
+4 Dark Confidant
+2 Garza's Assassin
+4 Mindlash Sliver
+4 Ravenous Rats
+3 Stromgald Crusader
 3 Call to the Netherworld
 2 Cruel Edict
 4 Cry of Contrition

@@ -9,6 +9,11 @@
 4 Snow-Covered Plains
 1 Tree of Tales
 1 Vault of Whispers
+4 Blind Hunter
+4 Leonin Squire
+3 Man-o'-War
+4 Mulldrifter
+4 Trinket Mage
 3 Ancient Grudge
 1 Bonesplitter
 4 Chromatic Sphere

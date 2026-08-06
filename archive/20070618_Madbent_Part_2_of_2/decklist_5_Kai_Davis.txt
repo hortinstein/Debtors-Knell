@@ -6,6 +6,10 @@
 2 Snow-Covered Swamp
 2 Sulfurous Springs
 1 Urborg, Tomb of Yawgmoth
+4 Dark Confidant
+3 Gathan Raiders
+4 Rakdos Augermage
+4 Withered Wretch
 3 Demonfire
 3 Hit // Run
 4 Rift Bolt

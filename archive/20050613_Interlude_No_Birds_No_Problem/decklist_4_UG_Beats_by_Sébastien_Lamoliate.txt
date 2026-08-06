@@ -1,5 +1,12 @@
 13 Forest
 9 Island
+4 Birds of Paradise
+4 Eternal Witness
+4 Sakura-Tribe Elder
+2 Solemn Simulacrum
+3 Thieving Magpie
+4 Troll Ascetic
+3 Viridian Zealot
 3 Condescend
 4 Echoing Truth
 2 Sword of Fire and Ice

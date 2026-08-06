@@ -47,7 +47,17 @@ def fetch(url, retries=4, timeout=60):
 
 
 def parse_cell_cards(td):
-    """Parse a <td> of the maindeck cardgroup table into [(qty, name), ...]."""
+    """Parse a <td> of the maindeck cardgroup table into [(qty, name), ...].
+
+    A cell is "<qty> <a>Card Name</a><br>" repeated, with an <hr> plus a
+    <span class="decktotals">22 lands</span> subtotal between card groups.
+    Some pages put each group (lands / creatures / spells) in its own <td>;
+    others run all three down a single <td> separated by those <hr>s -- so
+    stopping at the first <hr> silently truncates the latter to just its
+    first group. Skip the rule instead (the subtotal itself is inside a
+    <span>, never bare text, so it can't be mistaken for a card quantity),
+    and drop any dangling quantity so a subtotal can't attach to the first
+    card of the next group."""
     cards = []
     pending_qty = None
     for node in td.children:
@@ -61,7 +71,7 @@ def parse_cell_cards(td):
                 cards.append((pending_qty, name))
                 pending_qty = None
         elif getattr(node, "name", None) == "hr":
-            break
+            pending_qty = None
     return cards
 
 

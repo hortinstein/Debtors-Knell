@@ -7,6 +7,14 @@
 1 Plains
 1 Swamp
 4 Tendo Ice Bridge
+4 Birds of Paradise
+1 Bringer of the Blue Dawn
+1 Duplicant
+3 Etched Oracle
+4 Eternal Witness
+1 Meloku the Clouded Mirror
+4 Sakura-Tribe Elder
+1 Viridian Shaman
 1 Clearwater Goblet
 3 Condescend
 1 Cranial Extraction

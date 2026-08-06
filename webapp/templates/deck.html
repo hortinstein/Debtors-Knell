@@ -3,9 +3,15 @@
 {% block content %}
 <p class="back-link"><a href="{{ url_for('index') }}">&larr; back to all articles</a></p>
 
-{% if article.archetypes %}
+{% if article.archetypes or article.record %}
 <div class="archetype-summary">
   {% for tag in article.archetypes %}<span class="tag-chip">{{ tag }}</span>{% endfor %}
+  {% if article.record %}
+  <span class="record-chip" title="From the cumulative &quot;Record: W-L&quot; markers in this article's game log">
+    {{ article.record.wins }}&ndash;{{ article.record.losses }}
+    ({{ (100 * article.record.wins / (article.record.wins + article.record.losses))|round|int }}% wins)
+  </span>
+  {% endif %}
   {% if article.description %}<p class="archetype-description">{{ article.description }}</p>{% endif %}
 </div>
 {% endif %}
@@ -28,16 +34,33 @@
 <section class="decklists">
   <h2>Priced Decklist{{ "s" if decks|length > 1 else "" }}</h2>
 
-  {% if decks|length > 1 %}
+  {% if num_budget_decks > 1 %}
   <div class="combined-total">
-    <strong>Combined total across {{ decks|length }} decks:</strong>
+    <strong>Combined total across {{ num_budget_decks }} budget deck{{ "s" if num_budget_decks != 1 else "" }}:</strong>
     ${{ "%.2f"|format(grand_usd) }} physical &middot; {{ "%.2f"|format(grand_tix) }} tix digital
+    {% if decks|length > num_budget_decks %}
+    <div class="muted">
+      Excludes {{ decks|length - num_budget_decks }} list{{ "s" if decks|length - num_budget_decks != 1 else "" }}
+      this article only quotes for comparison.
+    </div>
+    {% endif %}
   </div>
   {% endif %}
 
   {% for d in decks %}
-  <div class="deck-block">
-    <h3>{{ d.label }}</h3>
+  <div class="deck-block deck-block-{{ d.role }}">
+    <h3>
+      {{ d.label }}
+      {% if d.role != "budget" %}<span class="role-chip role-{{ d.role }}">{{ d.role_label }}</span>{% endif %}
+    </h3>
+    {% if d.subtitle %}<p class="deck-subtitle">{{ d.subtitle }}</p>{% endif %}
+    {% if d.unpriced_cards %}
+    <p class="deck-warning">
+      The priced table below is missing {{ d.unpriced_cards }} card{{ "s" if d.unpriced_cards != 1 else "" }}
+      that the decklist has, so its totals are low. The MTGO download is complete;
+      re-run <code>scripts/build_markdown_and_prices.py --force-price</code> to refresh the pricing.
+    </p>
+    {% endif %}
     <p class="deck-source">
       Source: <code>{{ d.filename[:-10] }}.txt</code>
       &middot;

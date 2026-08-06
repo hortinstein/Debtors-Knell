@@ -25,8 +25,12 @@
     var currentDir = 1;
 
     function rowValue(row, key, type) {
-      var v = row.getAttribute("data-" + key) || "";
-      if (type === "num") return parseFloat(v) || 0;
+      var v = row.getAttribute("data-" + key);
+      if (v === null || v === "") return null;
+      if (type === "num") {
+        var n = parseFloat(v);
+        return isNaN(n) ? null : n;
+      }
       return v;
     }
 
@@ -35,6 +39,12 @@
       rows.sort(function (a, b) {
         var va = rowValue(a, key, type);
         var vb = rowValue(b, key, type);
+        // Rows with no value for this column (an article with no game log,
+        // say) sink to the bottom either way round, rather than filling the
+        // top of an ascending sort with blanks.
+        if (va === null && vb === null) return 0;
+        if (va === null) return 1;
+        if (vb === null) return -1;
         if (va < vb) return -1 * dir;
         if (va > vb) return 1 * dir;
         return 0;

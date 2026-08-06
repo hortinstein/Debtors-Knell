@@ -3,6 +3,14 @@
 3 Mountain
 12 Plains
 3 Springjack Pasture
+4 Burrenton Forge-Tender
+4 Cloudgoat Ranger
+2 Furystoke Giant
+3 Hearthfire Hobgoblin
+4 Kitchen Finks
+4 Knight of Meadowgrain
+4 Sigiled Paladin
+4 Springjack Shepherd
 4 Glory of Warfare
 1 Rise of the Hobgoblins
 4 Goatnapper

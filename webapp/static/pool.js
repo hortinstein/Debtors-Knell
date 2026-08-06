@@ -27,20 +27,54 @@
       restoreFromLocation();
     });
 
-  if (filterInput) {
-    filterInput.addEventListener("input", function () {
-      var q = filterInput.value.trim().toLowerCase();
-      rows.forEach(function (row) {
-        var title = row.getAttribute("data-title") || "";
-        row.style.display = !q || title.indexOf(q) !== -1 ? "" : "none";
-      });
+  // "budget" (the default) is the column's own budget builds; "reference" is
+  // the tournament / reader / preconstructed / non-budget lists the articles
+  // only quote, which is where cards that were never in a budget deck come
+  // from. See scripts/build_deck_meta.py for how each list is classified.
+  function currentRoleFilter() {
+    var checked = form.querySelector('input[name="role-filter"]:checked');
+    return checked ? checked.value : "budget";
+  }
+
+  function roleMatches(row, mode) {
+    if (mode === "all") return true;
+    var isBudget = row.getAttribute("data-role") === "budget";
+    return mode === "budget" ? isBudget : !isBudget;
+  }
+
+  // Hidden rows stay checked in the DOM but are excluded everywhere a
+  // selection is read, so switching the role filter can't silently drag a
+  // reference list into the shopping list you just built.
+  function visibleRows() {
+    return rows.filter(function (row) { return row.style.display !== "none"; });
+  }
+
+  function applyRowFilters() {
+    var q = filterInput ? filterInput.value.trim().toLowerCase() : "";
+    var mode = currentRoleFilter();
+    rows.forEach(function (row) {
+      var title = row.getAttribute("data-title") || "";
+      var ok = (!q || title.indexOf(q) !== -1) && roleMatches(row, mode);
+      row.style.display = ok ? "" : "none";
     });
+    updateCount();
+  }
+
+  if (filterInput) filterInput.addEventListener("input", applyRowFilters);
+  Array.prototype.forEach.call(
+    form.querySelectorAll('input[name="role-filter"]'),
+    function (input) { input.addEventListener("change", applyRowFilters); }
+  );
+
+  function selectedCheckboxes() {
+    return visibleRows()
+      .map(function (row) { return row.querySelector('input[type="checkbox"]'); })
+      .filter(function (cb) { return cb && cb.checked; });
   }
 
   function updateCount() {
     if (!countEl) return;
-    var n = table.querySelectorAll('input[type="checkbox"]:checked').length;
-    countEl.textContent = n;
+    countEl.textContent = selectedCheckboxes().length;
   }
 
   table.addEventListener("change", function (evt) {
@@ -49,7 +83,11 @@
 
   if (selectAllBtn) {
     selectAllBtn.addEventListener("click", function () {
-      checkboxes.forEach(function (cb) { cb.checked = true; });
+      // "Select all" means all the decks you can currently see, not all 820.
+      visibleRows().forEach(function (row) {
+        var cb = row.querySelector('input[type="checkbox"]');
+        if (cb) cb.checked = true;
+      });
       updateCount();
     });
   }
@@ -61,7 +99,7 @@
   }
 
   function selectedIds() {
-    return checkboxes.filter(function (cb) { return cb.checked; }).map(function (cb) { return cb.value; });
+    return selectedCheckboxes().map(function (cb) { return cb.value; });
   }
 
   function currentMode() {
@@ -198,6 +236,8 @@
     var params = new URLSearchParams();
     ids.forEach(function (id) { params.append("deck", id); });
     if (mode !== "sum") params.set("mode", mode);
+    var roles = currentRoleFilter();
+    if (roles !== "budget") params.set("roles", roles);
     var qs = params.toString();
     window.history.replaceState(null, "", window.location.pathname + (qs ? "?" + qs : ""));
   }
@@ -214,17 +254,38 @@
     build();
   });
 
+  // Apply the default role filter straight away; restoreFromLocation() runs
+  // it again once /pool-data.json has landed and it can tell whether a shared
+  // link needs the view widened.
+  applyRowFilters();
+
   function restoreFromLocation() {
     var params = new URLSearchParams(window.location.search);
     var ids = params.getAll("deck");
-    if (!ids.length) return;
+    if (!ids.length) {
+      applyRowFilters();
+      return;
+    }
     var mode = params.get("mode") === "shared" ? "shared" : "sum";
     var idSet = {};
     ids.forEach(function (id) { idSet[id] = true; });
     checkboxes.forEach(function (cb) { cb.checked = !!idSet[cb.value]; });
     var modeInput = form.querySelector('input[name="mode"][value="' + mode + '"]');
     if (modeInput) modeInput.checked = true;
-    updateCount();
-    renderResults(ids, mode);
+
+    // A shared link can name reference lists, which the default "budget
+    // builds" view hides -- widen the view rather than silently dropping
+    // decks the link asked for.
+    var roleParam = params.get("roles");
+    if (!roleParam && ids.some(function (id) {
+      return poolDataById[id] && poolDataById[id].role !== "budget";
+    })) {
+      roleParam = "all";
+    }
+    var roleInput = form.querySelector('input[name="role-filter"][value="' + (roleParam || "budget") + '"]');
+    if (roleInput) roleInput.checked = true;
+
+    applyRowFilters();
+    renderResults(selectedIds(), mode);
   }
 })();

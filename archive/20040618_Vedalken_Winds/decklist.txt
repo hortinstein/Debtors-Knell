@@ -2,6 +2,12 @@
 4 Seat of the Synod
 7 Swamp
 4 Vault of Whispers
+3 Chittering Rats
+4 Frogmite
+3 Nekrataal
+4 Ornithopter
+4 Silver Myr
+4 Vedalken Archmage
 4 Pulse of the Grid
 4 Talisman of Dominance
 4 Thoughtcast

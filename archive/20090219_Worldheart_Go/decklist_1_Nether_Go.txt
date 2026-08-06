@@ -2,6 +2,7 @@
 4 Salt Marsh
 2 Swamp
 4 Underground River
+3 Nether Spirit
 4 Accumulated Knowledge
 4 Counterspell
 1 Dominate
