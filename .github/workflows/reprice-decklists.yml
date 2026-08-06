@@ -113,6 +113,10 @@ jobs:
                   print(e.get("type"), "keys:", sorted(e))
                   print("   ", json.dumps(e)[:400])
           PY
+          # The bulk files are downloaded gzipped and inflated in place, so
+          # default_cards alone needs room for the compressed and inflated
+          # copy at once. Worth a line in the log if a run ever dies on space.
+          df -h /
 
       # build_priced_decklists() skips any decklist that already has a
       # _priced.md unless --force-price, and --force-price is folder-wide.

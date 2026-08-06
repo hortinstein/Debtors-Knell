@@ -21,9 +21,11 @@ Dependencies: beautifulsoup4, requests, rapidfuzz (pip install rapidfuzz),
 """
 import argparse
 import glob
+import gzip
 import json
 import os
 import re
+import shutil
 import sys
 import unicodedata
 
@@ -145,9 +147,62 @@ def _resolve_bulk_url(bulk_type):
     )
 
 
+GZIP_MAGIC = b"\x1f\x8b"
+
+
+def _normalize_bulk_file(path, bulk_type):
+    """Leave `path` holding plain JSON, inflating it first if it's gzipped.
+
+    Scryfall stores the bulk files compressed -- the manifest says so, with
+    "content_encoding": "gzip". Served with a matching Content-Encoding
+    header, requests inflates them transparently on the way in; handed over
+    as a plain .gz object, which is what the file redirect does, it does not,
+    and the compressed bytes land on disk under a .json name. Sniffing the
+    magic number rather than trusting headers covers both, and can't
+    double-inflate something requests already decoded.
+
+    Inflating here (rather than at the read end) keeps both consumers --
+    json.load for oracle_cards, ijson streaming for the much larger
+    default_cards -- working on a plain file as they always have."""
+    if not os.path.exists(path):
+        return
+
+    def starts_gzipped():
+        with open(path, "rb") as f:
+            return f.read(2) == GZIP_MAGIC
+
+    # A loop, not a single check: a server that gzip-encodes an already
+    # gzipped object leaves two layers, and requests only strips the one it
+    # was told about. Bounded so a pathological file can't spin.
+    for _ in range(3):
+        if not starts_gzipped():
+            break
+        print(f"{bulk_type} arrived gzipped; inflating {path}", flush=True)
+        tmp_path = path + ".inflating"
+        try:
+            with gzip.open(path, "rb") as src, open(tmp_path, "wb") as dst:
+                shutil.copyfileobj(src, dst, 1 << 20)
+        except Exception:
+            if os.path.exists(tmp_path):
+                os.remove(tmp_path)
+            raise
+        os.replace(tmp_path, path)
+
+    with open(path, "rb") as f:
+        head = f.read(64).lstrip()
+    if not head.startswith((b"[", b"{")):
+        raise RuntimeError(
+            f"Scryfall {bulk_type} bulk file at {path} isn't JSON after "
+            f"decoding -- starts with {head[:24]!r}."
+        )
+
+
 def _download_bulk(bulk_type, dest_path, refresh=False):
     os.makedirs(CACHE_DIR, exist_ok=True)
     if os.path.exists(dest_path) and not refresh:
+        # An older run may have cached this still-compressed; fix it in place
+        # rather than making the caller re-download.
+        _normalize_bulk_file(dest_path, bulk_type)
         return dest_path
     url, entry = _resolve_bulk_url(bulk_type)
     size = entry.get("size")
@@ -160,6 +215,7 @@ def _download_bulk(bulk_type, dest_path, refresh=False):
             for chunk in resp.iter_content(chunk_size=1 << 20):
                 f.write(chunk)
     os.replace(tmp_path, dest_path)
+    _normalize_bulk_file(dest_path, bulk_type)
     print("Bulk data cached at", dest_path, flush=True)
     return dest_path
 
