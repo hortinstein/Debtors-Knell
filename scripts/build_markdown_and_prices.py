@@ -228,6 +228,51 @@ def ensure_default_bulk_data(refresh=False):
     return _download_bulk("default_cards", DEFAULT_BULK_PATH, refresh=refresh)
 
 
+def _bulk_top_level_shape(path):
+    """"array" if a bulk file is one big JSON array, "values" if it's a
+    stream of concatenated / newline-delimited JSON objects. Scryfall shipped
+    a bare array for years and then stopped; sniffing rather than assuming
+    means either keeps working, and a future switch back needs no change."""
+    with open(path, "rb") as f:
+        head = f.read(4096).lstrip()
+    return "array" if head.startswith(b"[") else "values"
+
+
+def iter_bulk_cards(path):
+    """Yield every record in a Scryfall bulk file, whichever top-level shape
+    it has. Streams via ijson where available -- default_cards is far too big
+    to hold in memory -- and falls back to the stdlib otherwise, since
+    CardIndex has to work without ijson installed.
+
+    Records that aren't cards (a leading metadata object, say) come through
+    as-is; both callers skip anything without a "name"."""
+    shape = _bulk_top_level_shape(path)
+    print(f"Reading {os.path.basename(path)} as a JSON {shape} stream", flush=True)
+
+    if HAVE_IJSON:
+        with open(path, "rb") as f:
+            if shape == "array":
+                yield from ijson.items(f, "item")
+            else:
+                yield from ijson.items(f, "", multiple_values=True)
+        return
+
+    with open(path, encoding="utf-8") as f:
+        text = f.read()
+    if shape == "array":
+        yield from json.loads(text)
+        return
+    decoder = json.JSONDecoder()
+    idx, end = 0, len(text)
+    while idx < end:
+        while idx < end and text[idx].isspace():
+            idx += 1
+        if idx >= end:
+            break
+        obj, idx = decoder.raw_decode(text, idx)
+        yield obj
+
+
 def build_min_price_index(default_bulk_path):
     """Stream default_cards (every printing of every card) without holding
     the whole ~550MB / 500k-object file in memory, and keep only the cheapest
@@ -239,42 +284,41 @@ def build_min_price_index(default_bulk_path):
     -- physical or digital -- from some other printing."""
     best = {}
     best_tix = {}
-    with open(default_bulk_path, "rb") as f:
-        for card in ijson.items(f, "item"):
-            name = card.get("name")
-            if not name or card.get("layout") in NON_CARD_LAYOUTS:
-                continue
-            prices = card.get("prices") or {}
-            uri = (card.get("scryfall_uri") or "").split("?")[0]
-            names = [name]
-            if " // " in name:
-                names.extend(p.strip() for p in name.split(" // ") if p.strip())
+    for card in iter_bulk_cards(default_bulk_path):
+        name = card.get("name")
+        if not name or card.get("layout") in NON_CARD_LAYOUTS:
+            continue
+        prices = card.get("prices") or {}
+        uri = (card.get("scryfall_uri") or "").split("?")[0]
+        names = [name]
+        if " // " in name:
+            names.extend(p.strip() for p in name.split(" // ") if p.strip())
 
-            usd = prices.get("usd")
-            if usd is not None:
-                try:
-                    usd = float(usd)
-                except (TypeError, ValueError):
-                    usd = None
-            if usd is not None:
-                for n in names:
-                    k = norm_key(n)
-                    cur = best.get(k)
-                    if cur is None or usd < cur[0]:
-                        best[k] = (usd, uri)
+        usd = prices.get("usd")
+        if usd is not None:
+            try:
+                usd = float(usd)
+            except (TypeError, ValueError):
+                usd = None
+        if usd is not None:
+            for n in names:
+                k = norm_key(n)
+                cur = best.get(k)
+                if cur is None or usd < cur[0]:
+                    best[k] = (usd, uri)
 
-            tix = prices.get("tix")
-            if tix is not None:
-                try:
-                    tix = float(tix)
-                except (TypeError, ValueError):
-                    tix = None
-            if tix is not None:
-                for n in names:
-                    k = norm_key(n)
-                    cur = best_tix.get(k)
-                    if cur is None or tix < cur[0]:
-                        best_tix[k] = (tix, uri)
+        tix = prices.get("tix")
+        if tix is not None:
+            try:
+                tix = float(tix)
+            except (TypeError, ValueError):
+                tix = None
+        if tix is not None:
+            for n in names:
+                k = norm_key(n)
+                cur = best_tix.get(k)
+                if cur is None or tix < cur[0]:
+                    best_tix[k] = (tix, uri)
     return best, best_tix
 
 
@@ -385,8 +429,10 @@ class CardImageIndex:
 
 class CardIndex:
     def __init__(self, bulk_path, min_price_index=None, min_tix_index=None):
-        with open(bulk_path, encoding="utf-8") as f:
-            data = json.load(f)
+        # Not json.load: oracle_cards has the same two possible top-level
+        # shapes as default_cards, and a bare json.load on a stream of
+        # concatenated objects fails with "Extra data".
+        data = iter_bulk_cards(bulk_path)
         self.min_price_index = min_price_index or {}
         self.min_tix_index = min_tix_index or {}
         self.by_exact = {}
