@@ -76,17 +76,83 @@ SCRYFALL_HEADERS = {
 }
 
 
+BULK_MANIFEST_URL = "https://api.scryfall.com/bulk-data"
+
+# Keys a Scryfall bulk_data object has been seen to carry the file URL under.
+# "download_uri" is the documented one; the others are cheap insurance.
+_DOWNLOAD_URL_KEYS = ("download_uri", "download_url", "file_uri", "url")
+
+
+def _bulk_file_url(entry):
+    for key in _DOWNLOAD_URL_KEYS:
+        value = entry.get(key)
+        if isinstance(value, str) and value.startswith("http"):
+            return value
+    return None
+
+
+def _resolve_bulk_url(bulk_type):
+    """The downloadable file URL for a Scryfall bulk-data type.
+
+    Tries, in order: the file URL on the /bulk-data list entry; the same on
+    the entry's own object, fetched via its "uri" self-link (a list endpoint
+    that starts returning summary objects would show up exactly this way);
+    and finally the documented ?format=file redirect on the single-object
+    endpoint, which needs no manifest field at all. Raises with the entry's
+    actual keys if all three miss, so the next run diagnoses itself rather
+    than just repeating a KeyError."""
+    print("Fetching Scryfall bulk-data manifest...", flush=True)
+    r = requests.get(BULK_MANIFEST_URL, timeout=30, headers=SCRYFALL_HEADERS)
+    r.raise_for_status()
+    manifest = r.json()
+
+    entries = manifest.get("data") or []
+    entry = next((item for item in entries if item.get("type") == bulk_type), None)
+    if entry is None:
+        available = sorted(str(item.get("type")) for item in entries)
+        raise RuntimeError(
+            f"Scryfall's bulk-data manifest has no {bulk_type!r} entry. "
+            f"Types offered: {available}"
+        )
+
+    url = _bulk_file_url(entry)
+    if url:
+        return url, entry
+
+    self_uri = entry.get("uri")
+    if isinstance(self_uri, str) and self_uri.startswith("http"):
+        print(f"Manifest entry carries no file URL; fetching {self_uri}", flush=True)
+        r2 = requests.get(self_uri, timeout=30, headers=SCRYFALL_HEADERS)
+        r2.raise_for_status()
+        full = r2.json()
+        url = _bulk_file_url(full)
+        if url:
+            return url, full
+
+    slug = bulk_type.replace("_", "-")
+    fallback = f"{BULK_MANIFEST_URL}/{slug}?format=file"
+    print(f"Still no file URL; falling back to {fallback}", flush=True)
+    probe = requests.head(fallback, timeout=30, headers=SCRYFALL_HEADERS, allow_redirects=True)
+    if probe.ok:
+        return fallback, entry
+
+    raise RuntimeError(
+        f"Could not find a download URL for Scryfall bulk type {bulk_type!r}. "
+        f"Tried keys {_DOWNLOAD_URL_KEYS} on the manifest entry and on its "
+        f"self-link, then {fallback} (HTTP {probe.status_code}).\n"
+        f"Manifest entry keys: {sorted(entry)}\n"
+        f"Manifest entry: {json.dumps(entry)[:800]}"
+    )
+
+
 def _download_bulk(bulk_type, dest_path, refresh=False):
     os.makedirs(CACHE_DIR, exist_ok=True)
     if os.path.exists(dest_path) and not refresh:
         return dest_path
-    print("Fetching Scryfall bulk-data manifest...", flush=True)
-    r = requests.get("https://api.scryfall.com/bulk-data", timeout=30, headers=SCRYFALL_HEADERS)
-    r.raise_for_status()
-    manifest = r.json()
-    entry = next(item for item in manifest["data"] if item["type"] == bulk_type)
-    url = entry["download_uri"]
-    print(f"Downloading {bulk_type} bulk file ({entry['size']/1e6:.1f} MB) from {url}", flush=True)
+    url, entry = _resolve_bulk_url(bulk_type)
+    size = entry.get("size")
+    size_note = f" ({size / 1e6:.1f} MB)" if isinstance(size, (int, float)) else ""
+    print(f"Downloading {bulk_type} bulk file{size_note} from {url}", flush=True)
     with requests.get(url, stream=True, timeout=180, headers=SCRYFALL_HEADERS) as resp:
         resp.raise_for_status()
         tmp_path = dest_path + ".tmp"

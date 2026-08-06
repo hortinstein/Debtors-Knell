@@ -92,6 +92,28 @@ jobs:
         if: steps.stale.outputs.nothing_to_do == 'false' && inputs.dry_run
         run: echo "::notice::Dry run - would reprice ${{ steps.stale.outputs.folders }}"
 
+      # Purely diagnostic, and never fatal. Scryfall's /bulk-data list
+      # endpoint stopped carrying "download_uri" on its entries at some
+      # point, which is what broke the first run of this workflow;
+      # _resolve_bulk_url() now copes with several shapes, but printing the
+      # entries' actual keys means a future change is one log away from being
+      # understood instead of one round-trip.
+      - name: Probe the Scryfall bulk-data manifest
+        if: steps.stale.outputs.nothing_to_do == 'false'
+        run: |
+          curl -sS --max-time 30 \
+            -H 'User-Agent: DebtorsKnellArchiveBot/1.0 (+https://github.com/; archive pricing script)' \
+            -H 'Accept: application/json' \
+            https://api.scryfall.com/bulk-data > /tmp/bulk-manifest.json || true
+          python3 - <<'PY' || echo "::warning::bulk-data manifest probe failed (diagnostic only)"
+          import json
+          m = json.load(open("/tmp/bulk-manifest.json"))
+          for e in m.get("data", []):
+              if e.get("type") in ("oracle_cards", "default_cards"):
+                  print(e.get("type"), "keys:", sorted(e))
+                  print("   ", json.dumps(e)[:400])
+          PY
+
       # build_priced_decklists() skips any decklist that already has a
       # _priced.md unless --force-price, and --force-price is folder-wide.
       # Deleting exactly the stale files and running without it reprices
