@@ -1,0 +1,136 @@
+name: Reprice stale decklists
+
+# Manual only. Regenerates the decklist*_priced.md files that have fallen
+# behind the decklist*.txt beside them -- currently the 50 decklists that
+# scripts/repair_truncated_decklists.py recovered cards for after the
+# parse_cell_cards() <hr> truncation fix, whose priced tables still account
+# for fewer cards than their decklists hold.
+#
+# Repricing needs a Scryfall bulk download, which is why it isn't part of
+# deploy-pages.yml (which has no network step at all) or fetch-prices.yml
+# (which collects daily GoatBots/MTGJSON price points and only commits
+# prices/**).
+#
+# Safe to dispatch at any time, in any order:
+#   * It decides what to reprice by asking
+#     scripts/find_stale_priced_decklists.py, not from a hardcoded list. On a
+#     commit where nothing is stale -- dispatched before the repair lands, or
+#     a second time after a run already succeeded -- it finds nothing,
+#     commits nothing and exits green.
+#   * It only regenerates the stale files. Decklists that are already correct
+#     keep the prices they were built with, so the diff stays scoped to what
+#     was actually broken.
+#   * It re-runs the staleness check afterwards and fails *before* committing
+#     if anything is still short, so a partial pricing run can't be committed.
+#   * Nothing is committed until the very last step, so any earlier failure
+#     leaves the branch exactly as it was. If fetch-prices.yml happens to
+#     land a commit while this is running, the push is rejected and the job
+#     goes red having changed nothing -- just dispatch it again.
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Only report what would be repriced; change and commit nothing"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: reprice-decklists
+  cancel-in-progress: false
+
+jobs:
+  reprice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      # Dispatching from the Actions UI pins the run to the ref's commit at
+      # queue time; start from whatever is actually on the branch now so the
+      # push at the end is a fast-forward.
+      - name: Sync to the branch head
+        run: |
+          git fetch origin "${{ github.ref_name }}"
+          git reset --hard FETCH_HEAD
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # rapidfuzz and ijson are optional imports in
+      # build_markdown_and_prices.py, but the archive was built with both:
+      # without rapidfuzz the near-miss card names the articles typo'd stop
+      # resolving ("Vithian Renegade" -> "Vithian Renegades"), and without
+      # ijson cards whose oracle_cards representative printing carries no USD
+      # price come out as N/A. Missing either would regress the regenerated
+      # files, so install them explicitly.
+      - name: Install dependencies
+        run: pip install -r scripts/requirements-prices.txt beautifulsoup4 rapidfuzz ijson
+
+      - name: Find stale priced decklists
+        id: stale
+        run: |
+          python3 scripts/find_stale_priced_decklists.py
+          folders="$(python3 scripts/find_stale_priced_decklists.py --folders | tr '\n' ' ')"
+          echo "folders=${folders}" >> "$GITHUB_OUTPUT"
+          if [ -z "${folders// /}" ]; then
+            echo "nothing_to_do=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "nothing_to_do=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Nothing to do
+        if: steps.stale.outputs.nothing_to_do == 'true'
+        run: echo "::notice::Every priced decklist is already up to date with its decklist.txt."
+
+      - name: Dry run summary
+        if: steps.stale.outputs.nothing_to_do == 'false' && inputs.dry_run
+        run: echo "::notice::Dry run - would reprice ${{ steps.stale.outputs.folders }}"
+
+      # build_priced_decklists() skips any decklist that already has a
+      # _priced.md unless --force-price, and --force-price is folder-wide.
+      # Deleting exactly the stale files and running without it reprices
+      # those and leaves their healthy siblings alone.
+      - name: Delete the stale priced files
+        if: steps.stale.outputs.nothing_to_do == 'false' && !inputs.dry_run
+        run: |
+          python3 scripts/find_stale_priced_decklists.py --paths > /tmp/stale-paths.txt
+          cat /tmp/stale-paths.txt
+          xargs -r -d '\n' rm -- < /tmp/stale-paths.txt
+
+      - name: Reprice
+        if: steps.stale.outputs.nothing_to_do == 'false' && !inputs.dry_run
+        run: |
+          python3 scripts/build_markdown_and_prices.py --skip-md \
+            --only ${{ steps.stale.outputs.folders }}
+
+      - name: Verify nothing is still stale
+        if: steps.stale.outputs.nothing_to_do == 'false' && !inputs.dry_run
+        run: |
+          python3 scripts/find_stale_priced_decklists.py
+          if [ -n "$(python3 scripts/find_stale_priced_decklists.py --folders)" ]; then
+            echo "::error::Repricing left decklists short of their decklist.txt - not committing."
+            exit 1
+          fi
+
+      - name: Commit the repriced decklists
+        id: commit
+        if: steps.stale.outputs.nothing_to_do == 'false' && !inputs.dry_run
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Reprice decklists repaired by the deck-cell truncation fix"
+          file_pattern: "archive/*/decklist*_priced.md"
+
+      # Same reason as fetch-prices.yml: a push made with the workflow's
+      # GITHUB_TOKEN doesn't fire deploy-pages.yml's push trigger, so ask for
+      # the rebuild explicitly.
+      - name: Rebuild GitHub Pages with the repriced decklists
+        if: steps.commit.outputs.changes_detected == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy-pages.yml --ref main --repo "$GITHUB_REPOSITORY"

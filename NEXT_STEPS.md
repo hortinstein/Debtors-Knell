@@ -69,14 +69,31 @@ those `decklist*.txt` files from the already-archived `source.html` (no network
 needed). What has **not** run is the reprice — `decklist*_priced.md` is built by
 a separate script that needs a Scryfall bulk download, so those 50 priced tables
 are still missing the recovered cards and their totals are low. The deck pages
-say so inline until it's done. From somewhere with access to `api.scryfall.com`:
+say so inline until it's done.
+
+The fix is the **Reprice stale decklists** workflow
+(`.github/workflows/reprice-decklists.yml`) — dispatch it manually from the
+Actions tab once this is on `main`. It works out which decklists are stale via
+`scripts/find_stale_priced_decklists.py`, regenerates only those, and is a
+green no-op if there's nothing to do.
+
+To do it by hand instead, from somewhere with access to `api.scryfall.com`:
 
 ```bash
-python3 scripts/build_markdown_and_prices.py --skip-md --force-price
+pip install -r scripts/requirements-prices.txt beautifulsoup4 rapidfuzz ijson
+python3 scripts/find_stale_priced_decklists.py --paths | xargs -r -d '\n' rm --
+python3 scripts/build_markdown_and_prices.py --skip-md \
+    --only $(python3 scripts/find_stale_priced_decklists.py --folders | tr '\n' ' ')
+python3 scripts/find_stale_priced_decklists.py   # should report nothing stale
 ```
 
-(`scripts/repair_truncated_decklists.py --dry-run` reprints the affected folder
-list if you'd rather scope it with `--only`.)
+Deleting the stale files and running *without* `--force-price` matters:
+`--force-price` is folder-wide, so it would also reprice the 55 healthy
+decklists that share those 35 folders. Two knock-on effects clear themselves up
+once this has run — the per-deck price-history charts
+(`build_price_history.py`, rebuilt with `force=True` by the next
+`fetch_prices.py` run) and the /movers/ card pool (`build_movers.py`), both of
+which read the priced files.
 
 ## Not yet done
 - Final tally/spot-check of the screenshot retry pass results
