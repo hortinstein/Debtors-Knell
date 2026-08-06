@@ -2,6 +2,11 @@
 7 Forest
 9 Island
 4 Shivan Oasis
+4 Elvish Archers
+3 Flametongue Kavu
+4 Gaea's Skyfolk
+4 Mystic Snake
+3 Penumbra Bobcat
 4 Counterspell
 2 Fact or Fiction
 4 Fire // Ice

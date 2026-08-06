@@ -57,6 +57,44 @@ print('wrote', scrape.LOG_PATH)
 - **16 NO_DECKLIST** — genuinely no `<div class="deck">` block in the source (trading/strategy articles, "unplugged" retrospectives, etc.) — verified not a parser bug, spot-checked several.
 - **~235 PARTIAL** — mostly genuine: many older/round-robin-era articles simply never published a sideboard list in the source HTML (verified by grepping source.html for "sideboard" and finding zero hits). A smaller number may be real parser misses worth spot-checking if you want higher accuracy.
 
+## Outstanding: reprice the repaired decklists
+`scripts/scrape.py`'s `parse_cell_cards()` used to stop at the first `<hr>` in a
+deck cell. On pages that run every card group (lands / creatures / spells) down
+a single `<td>` separated by those subtotal rules, that kept only the first
+group — 50 decklists across 35 articles were saved short, from 3 cards missing
+up to "Expensive Wurms!" being saved as its six lands and nothing else.
+
+The parser is fixed, and `scripts/repair_truncated_decklists.py` has re-extracted
+those `decklist*.txt` files from the already-archived `source.html` (no network
+needed). What has **not** run is the reprice — `decklist*_priced.md` is built by
+a separate script that needs a Scryfall bulk download, so those 50 priced tables
+are still missing the recovered cards and their totals are low. The deck pages
+say so inline until it's done.
+
+The fix is the **Reprice stale decklists** workflow
+(`.github/workflows/reprice-decklists.yml`) — dispatch it manually from the
+Actions tab once this is on `main`. It works out which decklists are stale via
+`scripts/find_stale_priced_decklists.py`, regenerates only those, and is a
+green no-op if there's nothing to do.
+
+To do it by hand instead, from somewhere with access to `api.scryfall.com`:
+
+```bash
+pip install -r scripts/requirements-prices.txt beautifulsoup4 rapidfuzz ijson
+python3 scripts/find_stale_priced_decklists.py --paths | xargs -r -d '\n' rm --
+python3 scripts/build_markdown_and_prices.py --skip-md \
+    --only $(python3 scripts/find_stale_priced_decklists.py --folders | tr '\n' ' ')
+python3 scripts/find_stale_priced_decklists.py   # should report nothing stale
+```
+
+Deleting the stale files and running *without* `--force-price` matters:
+`--force-price` is folder-wide, so it would also reprice the 55 healthy
+decklists that share those 35 folders. Two knock-on effects clear themselves up
+once this has run — the per-deck price-history charts
+(`build_price_history.py`, rebuilt with `force=True` by the next
+`fetch_prices.py` run) and the /movers/ card pool (`build_movers.py`), both of
+which read the priced files.
+
 ## Not yet done
 - Final tally/spot-check of the screenshot retry pass results
 - Optional: re-attempt the 7 FAILED articles

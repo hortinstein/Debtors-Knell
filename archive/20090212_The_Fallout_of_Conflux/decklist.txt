@@ -2,6 +2,10 @@
 10 Mountain
 7 Swamp
 4 Terramorphic Expanse
+4 Ashenmoor Gouger
+4 Hellspark Elemental
+4 Shambling Remains
+4 Siege-Gang Commander
 4 Blightning
 4 Flame Javelin
 4 Incinerate

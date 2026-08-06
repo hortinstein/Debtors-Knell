@@ -4,6 +4,12 @@
 1 Plains
 2 Vivid Crag
 2 Vivid Grove
+4 Bosk Banneret
+4 Flamekin Harbinger
+4 Leaf-Crowned Elder
+4 Rage Forger
+4 Tattermunge Witch
+4 Wolf-Skull Shaman
 4 Incinerate
 4 Naya Charm
 4 Oblivion Ring

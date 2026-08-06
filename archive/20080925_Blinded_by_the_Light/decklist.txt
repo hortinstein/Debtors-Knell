@@ -1,4 +1,13 @@
 22 Plains
+4 Burrenton Forge-Tender
+4 Goldmeadow Harrier
+4 Hearthfire Hobgoblin
+2 Kitchen Finks
+4 Knight of Meadowgrain
+4 Knight of the Holy Nimbus
+4 Mosquito Guard
+4 Soltari Priest
+4 Wilt-Leaf Cavaliers
 4 Light from Within
 4 Unmake
 2 Kitchen Finks

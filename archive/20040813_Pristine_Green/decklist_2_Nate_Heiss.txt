@@ -2,6 +2,11 @@
 8 Island
 4 Mirrodin's Core
 4 Plains
+2 Duplicant
+4 Eternal Witness
+4 Pristine Angel
+4 Solemn Simulacrum
+4 Viridian Shaman
 3 Echoing Truth
 2 Oxidize
 2 Rude Awakening

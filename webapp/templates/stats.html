@@ -4,9 +4,20 @@
 <section class="pool-intro">
   <h1>Card Stats</h1>
   <p class="muted">
-    {{ total_unique_cards }} distinct cards appear across {{ total_decks }} decks
+    {{ total_unique_cards }} distinct cards appear across {{ total_decks }} decklists
     in the archive. Ranked by how many different decks each card shows up in.
   </p>
+  <p class="muted">
+    Only {{ budget_decks }} of those decklists are budget builds from the column itself; the rest
+    are lists the articles quote for comparison (tournament decks, reader submissions,
+    preconstructed decks, explicitly non-budget builds). {{ reference_only_cards }} cards appear
+    <em>only</em> in those quoted lists and never in a budget deck.
+  </p>
+  <div class="stats-scope-toggle" role="group" aria-label="Which decklists to count">
+    <label><input type="radio" name="stats-scope" value="budget" checked> Budget builds only</label>
+    <label><input type="radio" name="stats-scope" value="all"> Count every decklist</label>
+    <label><input type="radio" name="stats-scope" value="reference"> Reference lists only</label>
+  </div>
 </section>
 
 <section class="stats-top">
@@ -15,11 +26,11 @@
   <div class="bar-chart">
     {% for c in top_cards %}
     <div class="bar-row">
-      <a class="bar-label" href="#card-{{ loop.index }}">{{ c.name }}</a>
+      <a class="bar-label" href="#card-{{ c.slug }}">{{ c.name }}</a>
       <div class="bar-track">
-        <div class="bar-fill" style="width: {{ (c.num_decks / max_decks * 100)|round(1) }}%"></div>
+        <div class="bar-fill" style="width: {{ (c.num_budget_decks / max_decks * 100)|round(1) }}%"></div>
       </div>
-      <span class="bar-value">{{ c.num_decks }} deck{{ "s" if c.num_decks != 1 else "" }}</span>
+      <span class="bar-value">{{ c.num_budget_decks }} budget deck{{ "s" if c.num_budget_decks != 1 else "" }}</span>
     </div>
     {% endfor %}
   </div>
@@ -41,20 +52,28 @@
     </thead>
     <tbody>
       {% for c in card_stats %}
-      <tr id="card-{{ loop.index }}"
+      <tr id="card-{{ c.slug }}"
           data-name="{{ c.name|lower }}"
-          data-decks="{{ c.num_decks }}"
-          data-qty="{{ c.total_qty }}"
+          data-decks="{{ c.num_budget_decks }}"
+          data-decks-budget="{{ c.num_budget_decks }}"
+          data-decks-reference="{{ c.num_reference_decks }}"
+          data-decks-all="{{ c.num_decks }}"
+          data-qty="{{ c.budget_qty }}"
+          data-qty-budget="{{ c.budget_qty }}"
+          data-qty-reference="{{ c.total_qty - c.budget_qty }}"
+          data-qty-all="{{ c.total_qty }}"
           data-usd="{{ c.unit_usd or 0 }}"
           data-tix="{{ c.unit_tix or 0 }}">
         <td>{{ c.name }}</td>
-        <td class="col-num">{{ c.num_decks }}</td>
-        <td class="col-num">{{ c.total_qty }}</td>
+        <td class="col-num col-decks">{{ c.num_budget_decks }}</td>
+        <td class="col-num col-qty">{{ c.budget_qty }}</td>
         <td class="col-num">{{ "$%.2f"|format(c.unit_usd) if c.unit_usd is not none else "N/A" }}</td>
         <td class="col-num">{{ "%.2f"|format(c.unit_tix) if c.unit_tix is not none else "N/A" }}</td>
         <td class="pool-decks-cell">
           <div class="pool-decks-list pool-decks-list-open">
-            {% for dd in c.decks %}<a href="{{ url_for('deck_detail', folder=dd.folder) }}">{{ dd.title }}{% if dd.label and dd.label != "Decklist" %} ({{ dd.label }}){% endif %}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+            {# Capped: the basic lands alone appear in 300+ decklists, and
+               rendering every link for every card put the page past 4 MB. #}
+            {% for dd in c.decks[:deck_link_limit] %}<a class="deck-ref deck-ref-{{ 'budget' if dd.role == 'budget' else 'reference' }}" href="{{ url_for('deck_detail', folder=dd.folder) }}">{{ dd.title }}{% if dd.label %} ({{ dd.label }}){% endif %}</a>{% if not loop.last %}<span class="deck-ref-sep">, </span>{% endif %}{% endfor %}{% if c.decks|length > deck_link_limit %}<span class="deck-ref-more"> and {{ c.decks|length - deck_link_limit }} more</span>{% endif %}
           </div>
         </td>
       </tr>

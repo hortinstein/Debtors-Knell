@@ -9,6 +9,13 @@
 2 Vivid Creek
 1 Wooded Bastion
 1 Yavimaya Coast
+4 Bloom Tender
+3 Glen Elendra Archmage
+4 Mistmeadow Witch
+4 Mulldrifter
+4 Reveillark
+2 Seedborn Muse
+2 Sower of Temptation
 3 Condemn
 4 Cryptic Command
 4 Mind Stone

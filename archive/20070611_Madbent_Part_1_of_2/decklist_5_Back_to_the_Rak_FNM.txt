@@ -1,5 +1,11 @@
 11 Mountain
 11 Swamp
+2 Crypt Champion
+3 Greater Gargadon
+4 Jagged Poppet
+2 Jaya Ballard, Task Mage
+4 Rakdos Guildmage
+4 Shadow Guildmage
 3 Bottled Cloister
 4 Phyrexian Totem
 4 Rakdos Signet

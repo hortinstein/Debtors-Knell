@@ -1,6 +1,13 @@
 16 Forest
 1 Pendelhaven
 3 Treetop Village
+4 Boggart Ram-Gang
+4 Boreal Druid
+4 Bramblewood Paragon
+4 Imperious Perfect
+4 Llanowar Elves
+4 Nettle Sentinel
+4 Wren's Run Vanquisher
 4 Giantbaiting
 4 Hunting Triad
 3 Obsidian Battle-Axe

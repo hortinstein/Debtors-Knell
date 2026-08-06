@@ -1,5 +1,12 @@
 20 Forest
 1 Mountain
+4 Birds of Paradise
+4 Eternal Witness
+3 Solemn Simulacrum
+1 Viridian Shaman
+1 Wirewood Herald
+3 Wirewood Symbiote
+4 Wood Elves
 4 Beacon of Creation
 3 Blasting Station
 4 Fecundity

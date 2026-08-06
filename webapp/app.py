@@ -30,6 +30,7 @@ ARCHIVE_DIR = os.path.join(REPO_ROOT, "archive")
 SCRIPTS_DIR = os.path.join(REPO_ROOT, "scripts")
 MASTER_INDEX_PATH = os.path.join(REPO_ROOT, "scripts", "master_index.json")
 DECK_ARCHETYPES_PATH = os.path.join(REPO_ROOT, "scripts", "deck_archetypes.json")
+DECK_META_PATH = os.path.join(REPO_ROOT, "scripts", "deck_meta.json")
 MOVERS_DIR = os.path.join(REPO_ROOT, "prices", "movers")
 
 
@@ -58,6 +59,22 @@ ARCHETYPE_LIST = [
     "Reanimator", "Tribal", "Stax/Prison", "Aristocrats", "Artifact", "Toolbox",
     "Lifegain", "Discard",
 ]
+
+# A decklist's role, from scripts/build_deck_meta.py: "budget" is one of the
+# column's own budget builds, everything else is a list the article only
+# quotes for comparison (a tournament deck, a reader submission, the
+# preconstructed deck it starts from, an explicitly non-budget build). The
+# card pool and card stats pages default to budget builds alone so cards that
+# were never in a budget deck -- Black Lotus, the Moxen, dual lands -- don't
+# turn up in a shopping list.
+ROLE_BUDGET = "budget"
+ROLE_LABELS = {
+    "budget": "Budget build",
+    "pro": "Tournament list",
+    "reader": "Reader submission",
+    "precon": "Preconstructed deck",
+    "nonbudget": "Non-budget build",
+}
 
 # WUBRG order, used both for sorting a deck's color list and for the
 # filter-bar pip order on the index page.
@@ -222,6 +239,30 @@ def _priced_files_for(folder_path):
     )
 
 
+def _deck_entries_for(folder, drop_duplicates=True):
+    """Every priced decklist in an article, in page order, annotated with the
+    metadata scripts/build_deck_meta.py recovered: real title, subtitle,
+    role, and whether it is a byte-identical repeat of an earlier decklist in
+    the same article (a couple of articles reprint last week's deck as a
+    recap, and the scraper saved it twice)."""
+    entries = []
+    for pf in _priced_files_for(os.path.join(ARCHIVE_DIR, folder)):
+        meta = _deck_meta_for(folder, pf)
+        role = meta.get("role") or ROLE_BUDGET
+        duplicate_of = meta.get("duplicate_of")
+        if drop_duplicates and duplicate_of:
+            continue
+        entries.append({
+            "priced_path": pf,
+            "label": meta.get("title") or _label_from_filename(pf),
+            "subtitle": meta.get("subtitle") or "",
+            "role": role,
+            "role_label": ROLE_LABELS.get(role, role),
+            "duplicate_of": duplicate_of,
+        })
+    return entries
+
+
 def _price_history_for(priced_md_path):
     """Load the sidecar decklist*_price_history.json for a priced decklist,
     if the build_price_history.py script has been run for it."""
@@ -292,6 +333,23 @@ def build_mtgo_import_text(raw_text):
     return "\n".join(lines) + "\n"
 
 
+def _raw_card_count(raw_txt_path):
+    """Total copies in a scraped decklist*.txt, or None if it isn't there."""
+    if not os.path.exists(raw_txt_path):
+        return None
+    total = 0
+    with open(raw_txt_path, encoding="utf-8") as f:
+        for line in f.read().replace("\r\n", "\n").replace("\r", "\n").split("\n"):
+            m = re.match(r"^(\d+)\s+\S", line.strip())
+            if m:
+                total += int(m.group(1))
+    return total
+
+
+def _priced_card_count(priced_md_path):
+    return sum(r["qty"] for r in parse_priced_card_rows(priced_md_path))
+
+
 def _parse_grand_totals(priced_md_path):
     """Pull the physical (USD) and digital (tix) grand totals out of a
     decklist*_priced.md file's trailing summary lines."""
@@ -308,9 +366,44 @@ def _parse_grand_totals(priced_md_path):
     return usd, tix
 
 
-def _deck_label(priced_md_path):
-    """Derive a human-friendly deck name from a priced-decklist filename,
-    e.g. decklist_1_Nether_Go_priced.md -> 'Nether Go'."""
+_DECK_META_CACHE = None
+
+
+def get_deck_meta():
+    """folder -> {"record": {...}, "decks": [{"file", "title", "subtitle",
+    "role", "duplicate_of"}, ...]}, built by scripts/build_deck_meta.py from
+    the archived source.html and article text. Missing entries are fine --
+    everything that reads this falls back to filename-derived values."""
+    global _DECK_META_CACHE
+    if _DECK_META_CACHE is None:
+        if os.path.exists(DECK_META_PATH):
+            with open(DECK_META_PATH, encoding="utf-8") as f:
+                _DECK_META_CACHE = json.load(f)
+        else:
+            _DECK_META_CACHE = {}
+    return _DECK_META_CACHE
+
+
+def _raw_filename_for(priced_md_path):
+    """decklist_1_Nether_Go_priced.md -> decklist_1_Nether_Go.txt, the key
+    scripts/deck_meta.json uses for a decklist."""
+    return os.path.basename(priced_md_path)[: -len("_priced.md")] + ".txt"
+
+
+def _deck_meta_for(folder, priced_md_path):
+    raw_filename = _raw_filename_for(priced_md_path)
+    for d in get_deck_meta().get(folder, {}).get("decks", []):
+        if d["file"] == raw_filename:
+            return d
+    return {}
+
+
+def _label_from_filename(priced_md_path):
+    """Fallback deck name derived from a priced-decklist filename, e.g.
+    decklist_1_Nether_Go_priced.md -> 'Nether Go'. Lossy -- the filenames
+    were slugified at scrape time, so punctuation is gone ('Ninjutsu v.1.0'
+    became 'Ninjutsu_v10') -- which is why _deck_entries_for prefers the real
+    title recovered into scripts/deck_meta.json."""
     base = os.path.basename(priced_md_path)
     base = base[: -len("_priced.md")]
     base = re.sub(r"^decklist(?:_\d+)?_?", "", base)
@@ -373,8 +466,15 @@ def _load_article_entry(meta):
             with open(article_path, encoding="utf-8") as f:
                 description = _first_paragraph(f.read())
 
-    priced_files = _priced_files_for(folder_path)
-    has_decklist = bool(priced_files)
+    all_entries = _deck_entries_for(folder)
+    # Prices, colors and the thumbnail describe the article's own budget
+    # builds. Folding in a quoted Pro Tour or vintage list would put dual
+    # lands in the color identity and, in one case, a $3,000 Black Lotus in
+    # the "how much does this week's deck cost" column.
+    budget_entries = [e for e in all_entries if e["role"] == ROLE_BUDGET]
+    priced_entries = budget_entries or all_entries
+    priced_files = [e["priced_path"] for e in priced_entries]
+
     usd_total = 0.0
     tix_total = 0.0
     for pf in priced_files:
@@ -395,10 +495,12 @@ def _load_article_entry(meta):
         "archetypes": archetypes,
         "colors": colors,
         "thumbnail": thumbnail,
-        "has_decklist": has_decklist,
-        "num_decks": len(priced_files),
+        "has_decklist": bool(all_entries),
+        "num_decks": len(priced_entries),
+        "num_reference_decks": len(all_entries) - len(budget_entries),
         "usd_total": usd_total,
         "tix_total": tix_total,
+        "record": get_deck_meta().get(folder, {}).get("record"),
     }
 
 
@@ -425,6 +527,22 @@ def get_article_by_folder(folder):
     return None
 
 
+_COLUMN_PREFIX_RE = re.compile(r"^buildingonabudget")
+
+
+def _label_adds_nothing(article_title, label):
+    """True when a decklist's own title just restates the article's, which is
+    the norm for a single-deck article ("Building on a Budget - ElfBall" ->
+    "Building on a Budget - Elf-Ball"). Lists it apart from the article --
+    "Wild Pair 2.0", "Expensive Wurms!" -- are what a deck label is for."""
+    def norm(s):
+        return _COLUMN_PREFIX_RE.sub("", re.sub(r"[^a-z0-9]+", "", s.lower()))
+    a, b = norm(article_title), norm(label)
+    if not b:
+        return True
+    return a == b or a in b or b in a
+
+
 def deck_id(folder, priced_md_path):
     """Stable id for one individual priced decklist, e.g.
     '20090527_Shamans_Trounce_2009::decklist'."""
@@ -443,18 +561,23 @@ def get_all_decks():
     if _ALL_DECKS_CACHE is None:
         decks = []
         for article in get_articles():
-            folder_path = os.path.join(ARCHIVE_DIR, article["folder"])
-            for pf in _priced_files_for(folder_path):
+            for entry in _deck_entries_for(article["folder"]):
+                pf = entry["priced_path"]
+                usd, tix = _parse_grand_totals(pf)
                 decks.append({
                     "id": deck_id(article["folder"], pf),
                     "folder": article["folder"],
                     "priced_path": pf,
                     "article_title": article["title"],
-                    "label": _deck_label(pf),
+                    "label": entry["label"],
+                    "show_label": not _label_adds_nothing(article["title"], entry["label"]),
+                    "subtitle": entry["subtitle"],
+                    "role": entry["role"],
+                    "role_label": entry["role_label"],
                     "date_str": article["date_str"],
                     "ymd": article["ymd"],
-                    "usd_total": _parse_grand_totals(pf)[0],
-                    "tix_total": _parse_grand_totals(pf)[1],
+                    "usd_total": usd,
+                    "tix_total": tix,
                 })
         decks.sort(key=lambda d: (d["ymd"], d["article_title"], d["label"]))
         _ALL_DECKS_CACHE = decks
@@ -467,41 +590,70 @@ _CARD_STATS_CACHE = None
 def get_card_stats():
     """Aggregate every card across every deck in the archive: which decks
     it appears in, how many copies total, and how many distinct decks
-    (the "how common is this card" ranking)."""
+    (the "how common is this card" ranking).
+
+    Counts are split by deck role: num_budget_decks covers the column's own
+    budget builds, num_reference_decks the tournament/reader/precon/non-budget
+    lists the articles only quote."""
     global _CARD_STATS_CACHE
     if _CARD_STATS_CACHE is None:
         by_name = {}
         for d in get_all_decks():
-            rows = parse_priced_card_rows(d["priced_path"])
-            seen_in_this_deck = set()
-            for r in rows:
+            is_budget = d["role"] == ROLE_BUDGET
+            # A card can have two rows in one decklist (main deck and
+            # sideboard); its copies add up but it is still one deck.
+            counted_here = set()
+            for r in parse_priced_card_rows(d["priced_path"]):
                 name = r["name"]
                 entry = by_name.setdefault(name, {
                     "name": name,
                     "is_basic_land": name.lower() in BASIC_LANDS,
                     "total_qty": 0,
+                    "budget_qty": 0,
                     "num_decks": 0,
+                    "num_budget_decks": 0,
+                    "num_reference_decks": 0,
                     "unit_usd": None,
                     "unit_tix": None,
                     "decks": [],
                 })
                 entry["total_qty"] += r["qty"]
+                if is_budget:
+                    entry["budget_qty"] += r["qty"]
                 if entry["unit_usd"] is None and r["unit_usd"] is not None:
                     entry["unit_usd"] = r["unit_usd"]
                 if entry["unit_tix"] is None and r["unit_tix"] is not None:
                     entry["unit_tix"] = r["unit_tix"]
-                if d["id"] not in seen_in_this_deck:
-                    seen_in_this_deck.add(d["id"])
+                if name not in counted_here:
+                    counted_here.add(name)
                     entry["num_decks"] += 1
+                    if is_budget:
+                        entry["num_budget_decks"] += 1
+                    else:
+                        entry["num_reference_decks"] += 1
                     entry["decks"].append({
                         "id": d["id"],
                         "folder": d["folder"],
                         "title": d["article_title"],
-                        "label": d["label"],
+                        "label": d["label"] if d["show_label"] else "",
+                        "role": d["role"],
                         "qty": r["qty"],
                     })
         stats = list(by_name.values())
-        stats.sort(key=lambda c: (-c["num_decks"], -c["total_qty"], c["name"].lower()))
+        stats.sort(key=lambda c: (-c["num_budget_decks"], -c["num_decks"],
+                                  -c["total_qty"], c["name"].lower()))
+        # A name-derived anchor id, so the "most common cards" chart can link
+        # to a card's row in the full table. (Row-number ids don't work: the
+        # chart is ranked over nonbasic cards only, so its Nth bar is not the
+        # table's Nth row.) Numbered on collision, which non-ASCII names can
+        # cause -- "AEther Burst" and "Æther Burst" both slugify to
+        # "aether-burst".
+        slug_counts = {}
+        for c in stats:
+            slug = re.sub(r"[^a-z0-9]+", "-", c["name"].lower()).strip("-") or "card"
+            n = slug_counts.get(slug, 0) + 1
+            slug_counts[slug] = n
+            c["slug"] = slug if n == 1 else f"{slug}-{n}"
         _CARD_STATS_CACHE = stats
     return _CARD_STATS_CACHE
 
@@ -519,6 +671,7 @@ def index():
         articles=articles,
         total_count=len(articles),
         with_decklist_count=with_decklist,
+        with_record_count=sum(1 for a in articles if a["record"]),
         archetype_list=ARCHETYPE_LIST,
         color_list=list(COLOR_ORDER),
     )
@@ -591,7 +744,8 @@ def deck_detail(folder):
     decks = []
     grand_usd = 0.0
     grand_tix = 0.0
-    for pf in _priced_files_for(folder_path):
+    for entry in _deck_entries_for(folder):
+        pf = entry["priced_path"]
         with open(pf, encoding="utf-8") as f:
             priced_text = f.read()
         # Drop the file's own "# Priced Decklist: <raw_filename>" heading and
@@ -600,13 +754,27 @@ def deck_detail(folder):
         priced_text = re.sub(r"^# Priced Decklist:.*\n\n?", "", priced_text)
         priced_text = re.sub(r"^\*Source:.*\*\n\n?", "", priced_text)
         usd, tix = _parse_grand_totals(pf)
-        grand_usd += usd
-        grand_tix += tix
-        raw_filename = os.path.basename(pf)[: -len("_priced.md")] + ".txt"
+        # The combined total is what it costs to build this week's decks, so
+        # it counts the budget builds only -- see _load_article_entry.
+        if entry["role"] == ROLE_BUDGET:
+            grand_usd += usd
+            grand_tix += tix
+        # decklist*.txt and decklist*_priced.md are built by separate scripts,
+        # and repricing needs a Scryfall bulk download -- so after
+        # scripts/repair_truncated_decklists.py recovers cards the scraper
+        # had dropped, the priced table lags the decklist until
+        # scripts/build_markdown_and_prices.py --force-price is re-run. Say
+        # so rather than quietly showing a total for a partial deck.
+        raw_count = _raw_card_count(os.path.join(folder_path, _raw_filename_for(pf)))
+        priced_count = _priced_card_count(pf)
         decks.append({
-            "label": _deck_label(pf),
+            "label": entry["label"],
+            "subtitle": entry["subtitle"],
+            "role": entry["role"],
+            "role_label": entry["role_label"],
+            "unpriced_cards": (raw_count - priced_count) if raw_count and raw_count > priced_count else 0,
             "filename": os.path.basename(pf),
-            "raw_filename": raw_filename,
+            "raw_filename": _raw_filename_for(pf),
             "html": markdown.markdown(priced_text, extensions=MD_EXTENSIONS),
             "usd_total": usd,
             "tix_total": tix,
@@ -618,6 +786,7 @@ def deck_detail(folder):
         article=article,
         article_html=article_html,
         decks=decks,
+        num_budget_decks=sum(1 for d in decks if d["role"] == ROLE_BUDGET),
         grand_usd=grand_usd,
         grand_tix=grand_tix,
         has_screenshot=has_screenshot,
@@ -647,7 +816,13 @@ def _pool_card_rows_for_deck(priced_path):
 
 @app.route("/pool/")
 def card_pool():
-    return render_template("pool.html", all_decks=get_all_decks())
+    all_decks = get_all_decks()
+    return render_template(
+        "pool.html",
+        all_decks=all_decks,
+        budget_count=sum(1 for d in all_decks if d["role"] == ROLE_BUDGET),
+        reference_count=sum(1 for d in all_decks if d["role"] != ROLE_BUDGET),
+    )
 
 
 @app.route("/pool-data.json")
@@ -659,6 +834,7 @@ def pool_data():
         "id": d["id"],
         "title": d["article_title"],
         "label": d["label"],
+        "role": d["role"],
         "cards": _pool_card_rows_for_deck(d["priced_path"]),
     } for d in get_all_decks()]
     return Response(json.dumps(decks), mimetype="application/json")
@@ -726,14 +902,18 @@ def stats():
     # interesting; the full sortable table below still includes them.
     nonbasic = [c for c in card_stats if not c["is_basic_land"]]
     top_cards = nonbasic[:20]
-    max_decks = top_cards[0]["num_decks"] if top_cards else 1
+    max_decks = top_cards[0]["num_budget_decks"] if top_cards else 1
+    all_decks = get_all_decks()
     return render_template(
         "stats.html",
         card_stats=card_stats,
         top_cards=top_cards,
-        max_decks=max_decks,
+        max_decks=max_decks or 1,
         total_unique_cards=len(card_stats),
-        total_decks=len(get_all_decks()),
+        reference_only_cards=sum(1 for c in card_stats if c["num_budget_decks"] == 0),
+        total_decks=len(all_decks),
+        budget_decks=sum(1 for d in all_decks if d["role"] == ROLE_BUDGET),
+        deck_link_limit=25,
     )
 
 

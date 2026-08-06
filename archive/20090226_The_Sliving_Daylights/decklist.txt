@@ -1,6 +1,12 @@
 9 Forest
 11 Plains
 2 Tranquil Thicket
+4 Muscle Sliver
+4 Plated Sliver
+4 Sidewinder Sliver
+4 Sinew Sliver
+4 Spinneret Sliver
+4 Virulent Sliver
 3 Holy Light
 3 Prismatic Strands
 4 Temporal Isolation

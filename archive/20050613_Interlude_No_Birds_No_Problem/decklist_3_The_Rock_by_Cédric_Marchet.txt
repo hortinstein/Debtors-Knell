@@ -2,6 +2,12 @@
 1 Okina, Temple to the Grandfathers
 1 Shizo, Death's Storehouse
 8 Swamp
+4 Birds of Paradise
+4 Eternal Witness
+4 Kokusho, the Evening Star
+4 Sakura-Tribe Elder
+4 Viridian Shaman
+3 Wood Elves
 3 Death Cloud
 3 Kodama's Reach
 3 Plow Under

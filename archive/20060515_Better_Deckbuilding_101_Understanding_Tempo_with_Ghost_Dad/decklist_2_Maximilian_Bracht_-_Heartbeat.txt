@@ -2,6 +2,9 @@
 10 Island
 1 Mountain
 1 Swamp
+4 Drift of Phantasms
+1 Maga, Traitor to Mortals
+4 Sakura-Tribe Elder
 1 Boomerang
 1 Compulsive Research
 4 Early Harvest

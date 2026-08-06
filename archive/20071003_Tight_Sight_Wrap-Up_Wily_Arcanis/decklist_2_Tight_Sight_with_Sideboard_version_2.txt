@@ -1,5 +1,7 @@
 9 Forest
 12 Island
+2 Golgari Grave-Troll
+3 Sakura-Tribe Elder
 1 Brain Freeze
 4 Careful Study
 4 Counterbalance

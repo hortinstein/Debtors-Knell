@@ -4,6 +4,11 @@
 6 Swamp
 2 Vivid Creek
 4 Vivid Marsh
+3 Glen Elendra Archmage
+4 Mulldrifter
+4 River Kelpie
+4 Sedraxis Specter
+4 Shriekmaw
 4 Cancel
 4 Makeshift Mannequin
 3 Raven's Crime

@@ -3,6 +3,7 @@
 8 Island
 5 Plains
 5 Swamp
+4 Razormane Masticore
 3 Broken Ambitions
 4 Cancel
 4 Condemn

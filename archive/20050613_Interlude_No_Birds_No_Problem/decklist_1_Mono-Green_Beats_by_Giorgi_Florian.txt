@@ -1,6 +1,14 @@
 20 Forest
 1 Okina, Temple to the Grandfathers
 1 Swamp
+4 Birds of Paradise
+1 Dosan the Falling Leaf
+3 Eternal Witness
+1 Fangren Firstborn
+2 Iwamori of the Open Fist
+4 Sakura-Tribe Elder
+4 Troll Ascetic
+4 Viridian Zealot
 4 Beacon of Creation
 2 Kodama's Reach
 1 Rude Awakening

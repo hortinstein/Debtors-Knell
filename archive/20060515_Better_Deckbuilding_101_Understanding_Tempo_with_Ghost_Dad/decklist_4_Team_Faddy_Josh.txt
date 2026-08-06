@@ -5,6 +5,13 @@
 1 Shizo, Death's Storehouse
 5 Swamp
 1 Tomb of Urami
+4 Dark Confidant
+3 Descendant of Kiyomaro
+4 Ghost Council of Orzhova
+3 Kami of Ancient Law
+3 Plagued Rusalka
+4 Tallowisp
+4 Thief of Hope
 3 Pillory of the Sleepless
 4 Shining Shoal
 4 Sickening Shoal

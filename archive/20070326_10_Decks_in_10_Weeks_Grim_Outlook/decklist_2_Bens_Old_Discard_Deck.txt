@@ -2,6 +2,10 @@
 2 Mountain
 3 Strip Mine
 7 Swamp
+2 Atog
+4 Hypnotic Specter
+3 Orcish Spy
+4 Sengir Vampire
 4 Animate Dead
 1 Black Lotus
 4 Dark Ritual

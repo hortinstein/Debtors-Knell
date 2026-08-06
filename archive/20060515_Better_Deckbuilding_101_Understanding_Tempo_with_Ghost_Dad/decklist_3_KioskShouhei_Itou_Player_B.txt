@@ -5,6 +5,11 @@
 4 Swamp
 4 Underground River
 4 Watery Grave
+1 Ink-Eyes, Servant of Oni
+3 Jushi Apprentice
+1 Keiga, the Tide Star
+2 Kokusho, the Evening Star
+1 Meloku the Clouded Mirror
 3 Cruel Edict
 3 Disembowel
 4 Hinder
