@@ -769,7 +769,11 @@
     "subtitle": "",
     "title": "The Warrior's Call"
    }
-  ]
+  ],
+  "rerun": {
+   "kind": "Holiday rerun",
+   "of": "20041119_The_Warriors_Call"
+  }
  },
  "20041203_Building_on_a_Budget_Sleighty_Fox": {
   "decks": [
@@ -809,7 +813,11 @@
     "subtitle": "",
     "title": "Fates Entwined"
    }
-  ]
+  ],
+  "rerun": {
+   "kind": "Reprint",
+   "of": "20040827_Fates_Entwined"
+  }
  },
  "20041231_Common_Combo": {
   "decks": [
@@ -819,7 +827,11 @@
     "subtitle": "",
     "title": ""
    }
-  ]
+  ],
+  "rerun": {
+   "kind": "Reprint",
+   "of": "20041001_Common_Combo"
+  }
  },
  "20050107_Rats_Without_Honor": {
   "decks": [
@@ -1237,7 +1249,11 @@
     "subtitle": "",
     "title": "Ratimation v.1.5"
    }
-  ]
+  ],
+  "rerun": {
+   "kind": "Holiday rerun",
+   "of": "20050523_Rats_Nest_Jitte_Versus_The_Queen"
+  }
  },
  "20050606_Rats_Nest_The_Many_Flavors_of_Rat": {
   "decks": [
@@ -1377,7 +1393,11 @@
     "subtitle": "",
     "title": "Ratimation v.1.6"
    }
-  ]
+  ],
+  "rerun": {
+   "kind": "Holiday rerun",
+   "of": "20050627_Interlude_BOAB_Smackdown"
+  }
  },
  "20050711_Spirit_Flames_Of_Kannushi_and_Garami": {
   "decks": [
@@ -1575,7 +1595,11 @@
     "subtitle": "",
     "title": "Thief of Time"
    }
-  ]
+  ],
+  "rerun": {
+   "kind": "Holiday rerun",
+   "of": "20050829_Interlude_Investing_in_Real_Estate"
+  }
  },
  "20050912_DeadAflame_A_Home_For_Zombify": {
   "decks": [
@@ -1853,7 +1877,11 @@
     "subtitle": "",
     "title": "JMS' Mirage Preconstructed deck!"
    }
-  ]
+  ],
+  "rerun": {
+   "kind": "Retrospective",
+   "of": "20051010_Interlude_My_Mirage_Precon_Part_2"
+  }
  },
  "20051226_Interlude_BOAB_Smackdown": {
   "decks": [
@@ -1881,7 +1909,11 @@
     "subtitle": "",
     "title": "Ratimation v.1.6"
    }
-  ]
+  ],
+  "rerun": {
+   "kind": "Retrospective",
+   "of": "20050627_Interlude_BOAB_Smackdown"
+  }
  },
  "20060102_Interlude_Investing_in_Real_Estate": {
   "decks": [
@@ -1891,7 +1923,11 @@
     "subtitle": "",
     "title": "Thief of Time"
    }
-  ]
+  ],
+  "rerun": {
+   "kind": "Retrospective",
+   "of": "20050829_Interlude_Investing_in_Real_Estate"
+  }
  },
  "20060109_Interlude_The_Budget_House_Dimir": {
   "decks": [
@@ -2451,6 +2487,10 @@
    "losses": 6,
    "markers": 25,
    "wins": 19
+  },
+  "rerun": {
+   "kind": "Holiday rerun",
+   "of": "20060522_Grand_Spree"
   }
  },
  "20060605_Deckbuilding_101_Five_Tips_for_Better_Deckbuilding": {
@@ -2856,6 +2896,10 @@
    "losses": 4,
    "markers": 14,
    "wins": 10
+  },
+  "rerun": {
+   "kind": "Holiday rerun",
+   "of": "20060828_Wrecking_with_Rakdos_Part_2_of_3"
   }
  },
  "20060911_Wrecking_With_Rakdos_Part_3_of_3_-_Rakdos_Control": {
@@ -3338,7 +3382,11 @@
     "subtitle": "",
     "title": "DiabloWong"
    }
-  ]
+  ],
+  "rerun": {
+   "kind": "Retrospective",
+   "of": "20060605_Deckbuilding_101_Five_Tips_for_Better_Deckbuilding"
+  }
  },
  "20061225_Stealing_My_Muse": {
   "decks": [
@@ -3360,7 +3408,11 @@
     "subtitle": "",
     "title": "Finding My Muse 3"
    }
-  ]
+  ],
+  "rerun": {
+   "kind": "Retrospective",
+   "of": "20060731_Stealing_My_Muse"
+  }
  },
  "20070101_Eight-Post": {
   "decks": [
@@ -3375,6 +3427,10 @@
    "losses": 0,
    "markers": 25,
    "wins": 25
+  },
+  "rerun": {
+   "kind": "Retrospective",
+   "of": "20061211_Eight-Post"
   }
  },
  "20070115_Fun_With_Fungus_Part_1": {
@@ -4174,6 +4230,10 @@
    "losses": 4,
    "markers": 15,
    "wins": 11
+  },
+  "rerun": {
+   "kind": "Holiday rerun",
+   "of": "20070521_Little_Big_Black"
   }
  },
  "20070604_10_Decks_in_10_Weeks_Battle_Royale": {
@@ -4631,6 +4691,10 @@
    "losses": 4,
    "markers": 13,
    "wins": 6
+  },
+  "rerun": {
+   "kind": "Holiday rerun",
+   "of": "20070827_Dragon_War_Oros_the_Avenger"
   }
  },
  "20070910_Dragon_War_Vorosh_the_Hunter": {
@@ -4818,6 +4882,10 @@
    "losses": 5,
    "markers": 18,
    "wins": 13
+  },
+  "rerun": {
+   "kind": "Rerun",
+   "of": "20071010_That_Wily_Arcanis"
   }
  },
  "20071024_BoaB_Unplugged_Kithkin_Militia": {
@@ -5086,7 +5154,11 @@
     "subtitle": "",
     "title": "Rallius's Braid of Fire"
    }
-  ]
+  ],
+  "rerun": {
+   "kind": "Rerun",
+   "of": "20071205_Hostile_Intentions_Part_2_of_3"
+  }
  },
  "20071219_Hostile_Intentions_Part_3_of_3": {
   "decks": [
@@ -5158,6 +5230,10 @@
    "losses": 8,
    "markers": 20,
    "wins": 12
+  },
+  "rerun": {
+   "kind": "Year-end retrospective",
+   "of": "20070507_10_Decks_in_10_Weeks_Fungal_Behemoth_UG"
   }
  },
  "20080102_Kithkin_Militia_Strategy_Session_Part_2_of_2": {
@@ -5186,7 +5262,11 @@
     "subtitle": "",
     "title": "The Terror Deck"
    }
-  ]
+  ],
+  "rerun": {
+   "kind": "Retrospective",
+   "of": "20071114_Kithkin_Militia_Strategy_Session_Part_2_of_2"
+  }
  },
  "20080109_Classically_Red": {
   "decks": [
@@ -5697,6 +5777,10 @@
    "losses": 0,
    "markers": 9,
    "wins": 10
+  },
+  "rerun": {
+   "kind": "Rerun",
+   "of": "20080521_Evil_Phytohydras"
   }
  },
  "20080604_Good_Phytohydras": {
@@ -6217,7 +6301,11 @@
     "subtitle": "Standard",
     "title": "Cunning Reanimator"
    }
-  ]
+  ],
+  "rerun": {
+   "kind": "Holiday rerun",
+   "of": "20081120_Cunning_Reanimator"
+  }
  },
  "20081204_Delicious_Turkey_Day_Concoction": {
   "decks": [
@@ -6289,7 +6377,11 @@
     "subtitle": "Standard",
     "title": "Changeling Zoo (With Sideboard)"
    }
-  ]
+  ],
+  "rerun": {
+   "kind": "Rerun",
+   "of": "20081211_The_Crucible"
+  }
  },
  "20081225_Dear_Giantbaiting": {
   "decks": [
@@ -6305,7 +6397,11 @@
     "subtitle": "Standard",
     "title": "Dating Baiting (Second Date)"
    }
-  ]
+  ],
+  "rerun": {
+   "kind": "Rerun",
+   "of": "20080918_Dear_Giantbaiting"
+  }
  },
  "20090101_Sprouting_Souls": {
   "decks": [
@@ -6315,7 +6411,11 @@
     "subtitle": "Standard",
     "title": "Sprouting Souls"
    }
-  ]
+  ],
+  "rerun": {
+   "kind": "Rerun",
+   "of": "20081016_Sprouting_Souls"
+  }
  },
  "20090108_Common_Enemies": {
   "decks": [

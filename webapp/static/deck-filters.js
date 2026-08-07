@@ -7,6 +7,10 @@
 // each extra chip return *more* rows than the one before, which reads as the
 // filter being broken rather than as a deliberate widening.) The two groups
 // combine the same way, so a row must satisfy every active chip at once.
+//
+// Reruns -- the articles the column reprinted -- are held out of the table
+// and the count unless the "show reruns" box is ticked, so the same deck
+// doesn't appear twice.
 (function () {
   "use strict";
 
@@ -28,8 +32,19 @@
   var colorClear = document.getElementById("color-clear");
   var activeColors = new Set();
 
+  // The column reprinted 25 of its articles as holiday reruns and year-end
+  // retrospectives. They're real, separately published pages, but showing
+  // them alongside the originals means the same deck appears in the table
+  // twice -- so they're out of the count and out of the table unless asked
+  // for. See scripts/build_deck_meta.py.
+  var showRerunsToggle = document.getElementById("show-reruns");
+  var originalRows = rows.filter(function (r) { return !r.getAttribute("data-rerun"); });
+
   var statusEl = document.getElementById("filter-status");
-  var totalCount = statusEl ? parseInt(statusEl.getAttribute("data-total"), 10) : rows.length;
+
+  function showingReruns() {
+    return !!(showRerunsToggle && showRerunsToggle.checked);
+  }
 
   function rowValues(row, attr) {
     return new Set((row.getAttribute("data-" + attr) || "").split(",").filter(Boolean));
@@ -51,21 +66,25 @@
   }
 
   function applyFilter() {
+    var withReruns = showingReruns();
+    var total = withReruns ? rows.length : originalRows.length;
+    var noun = withReruns ? " articles" : " original articles";
     var shown = 0;
     rows.forEach(function (row) {
-      var ok = hasAll(rowValues(row, "archetypes"), activeArchetypes) &&
+      var ok = (withReruns || !row.getAttribute("data-rerun")) &&
+               hasAll(rowValues(row, "archetypes"), activeArchetypes) &&
                hasAll(rowValues(row, "colors"), activeColors);
       row.style.display = ok ? "" : "none";
       if (ok) shown++;
     });
     if (!statusEl) return;
     if (!activeArchetypes.size && !activeColors.size) {
-      statusEl.textContent = "Showing all " + totalCount + " articles.";
+      statusEl.textContent = "Showing all " + total + noun + ".";
       statusEl.classList.remove("filter-status-empty");
       return;
     }
-    statusEl.textContent = "Showing " + shown + " of " + totalCount +
-      " articles matching " + describe() + ".";
+    statusEl.textContent = "Showing " + shown + " of " + total + noun +
+      " matching " + describe() + ".";
     statusEl.classList.toggle("filter-status-empty", shown === 0);
   }
 
@@ -100,6 +119,10 @@
     });
   });
 
+  if (showRerunsToggle) {
+    showRerunsToggle.addEventListener("change", applyFilter);
+  }
+
   if (colorClear) {
     colorClear.addEventListener("click", function () {
       activeColors.clear();
@@ -107,4 +130,6 @@
       applyFilter();
     });
   }
+
+  applyFilter();
 })();

@@ -456,10 +456,16 @@ def _load_article_entry(meta):
     folder_path = os.path.join(ARCHIVE_DIR, folder)
     article_path = os.path.join(folder_path, "article.md")
 
+    rerun = get_deck_meta().get(folder, {}).get("rerun")
     archetype_info = get_deck_archetypes().get(folder)
     archetypes = archetype_info["archetypes"] if archetype_info else []
     if archetype_info:
         description = archetype_info["description"]
+        # The curated description opens with the marker the rerun flag was
+        # derived from ("(Holiday rerun) ..."); the badge says that now, so
+        # drop it rather than printing it twice.
+        if rerun:
+            description = re.sub(r"^\([^)]*\)\s*", "", description)
     else:
         description = ""
         if os.path.exists(article_path):
@@ -475,12 +481,13 @@ def _load_article_entry(meta):
     priced_entries = budget_entries or all_entries
     priced_files = [e["priced_path"] for e in priced_entries]
 
-    usd_total = 0.0
-    tix_total = 0.0
-    for pf in priced_files:
-        usd, tix = _parse_grand_totals(pf)
-        usd_total += usd
-        tix_total += tix
+    # The index quotes the article's *first* decklist, not the sum of all of
+    # them. Many articles iterate one deck over three or four versions, and
+    # summing those answered a question nobody asked ("what would every
+    # revision cost at once?") while making an article look several times
+    # more expensive than the deck it was actually about.
+    first_deck = priced_entries[0] if priced_entries else None
+    usd_total, tix_total = _parse_grand_totals(first_deck["priced_path"]) if first_deck else (0.0, 0.0)
     colors = _colors_for_priced_files(priced_files)
     title = meta.get("title") or folder
     thumbnail = _thumbnail_for_article(title, priced_files) if priced_files else None
@@ -497,7 +504,9 @@ def _load_article_entry(meta):
         "thumbnail": thumbnail,
         "has_decklist": bool(all_entries),
         "num_decks": len(priced_entries),
+        "first_deck_label": first_deck["label"] if first_deck else "",
         "num_reference_decks": len(all_entries) - len(budget_entries),
+        "rerun": rerun,
         "usd_total": usd_total,
         "tix_total": tix_total,
         "record": get_deck_meta().get(folder, {}).get("record"),
@@ -561,6 +570,12 @@ def get_all_decks():
     if _ALL_DECKS_CACHE is None:
         decks = []
         for article in get_articles():
+            # A rerun reprints an earlier article's decks verbatim. Its own
+            # page still shows them, but listing them again here would put the
+            # same deck in the card pool twice and make one deck count as two
+            # in the card stats.
+            if article["rerun"]:
+                continue
             for entry in _deck_entries_for(article["folder"]):
                 pf = entry["priced_path"]
                 usd, tix = _parse_grand_totals(pf)
@@ -666,12 +681,16 @@ def get_card_stats():
 def index():
     articles = get_articles()
     with_decklist = sum(1 for a in articles if a["has_decklist"])
+    rerun_count = sum(1 for a in articles if a["rerun"])
     return render_template(
         "index.html",
         articles=articles,
         total_count=len(articles),
         with_decklist_count=with_decklist,
         with_record_count=sum(1 for a in articles if a["record"]),
+        rerun_count=rerun_count,
+        original_count=len(articles) - rerun_count,
+        titles_by_folder={a["folder"]: a["title"] for a in articles},
         archetype_list=ARCHETYPE_LIST,
         color_list=list(COLOR_ORDER),
     )
@@ -892,6 +911,14 @@ def movers_detail(date):
     if date not in dates:
         abort(404)
     return _render_movers(date, dates)
+
+
+@app.route("/themes/")
+def themes():
+    """Theme picker and per-variable editor. Entirely client-side -- the
+    choice and any tweaks live in localStorage (see webapp/static/theme.js),
+    which is what lets it work in the frozen static build too."""
+    return render_template("themes.html")
 
 
 @app.route("/stats/")

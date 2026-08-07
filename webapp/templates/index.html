@@ -2,9 +2,17 @@
 {% block title %}Building on a Budget Archive{% endblock %}
 {% block content %}
 <section class="index-summary">
-  <p>{{ total_count }} articles archived &middot; {{ with_decklist_count }} with priced decklists
-     &middot; {{ total_count - with_decklist_count }} non-deck / trading articles
+  <p>{{ total_count }} articles archived &middot; {{ original_count }} original
+     &middot; {{ rerun_count }} reruns &amp; reprints
+     &middot; {{ with_decklist_count }} with priced decklists
      &middot; {{ with_record_count }} with a win/loss record</p>
+  <p class="muted stats-note">Prices are for each article's <em>first</em> decklist. Articles that
+     iterate one deck over several versions are marked &ldquo;1st of N&rdquo; &mdash; open the
+     article for the rest.</p>
+  <p class="muted stats-note">The column reprinted {{ rerun_count }} of its articles &mdash; holiday
+     reruns and year-end retrospectives. Each is a separate page on wizards.com with its own
+     framing text, so the archive keeps both, but they're hidden here by default and left out of
+     the card pool and card stats so one deck isn't counted twice.</p>
   <p class="muted stats-note">W/L come from the cumulative &ldquo;Record: W&ndash;L&rdquo; markers
      in an article's game log &mdash; the furthest point its log reaches. Articles with no
      game log show &mdash;.</p>
@@ -31,8 +39,12 @@
   <button type="button" class="archetype-chip archetype-clear" id="color-clear">Clear</button>
 </div>
 
-<p class="filter-status" id="filter-status" data-total="{{ total_count }}">
-  Showing all {{ total_count }} articles.
+<div class="rerun-toggle">
+  <label><input type="checkbox" id="show-reruns"> Show the {{ rerun_count }} reruns &amp; reprints</label>
+</div>
+
+<p class="filter-status" id="filter-status" data-total="{{ original_count }}">
+  Showing all {{ original_count }} original articles.
 </p>
 
 <div class="table-scroll">
@@ -44,7 +56,7 @@
       <th>Description</th>
       <th>Archetypes</th>
       <th>Colors</th>
-      <th class="sortable" data-key="usd" data-type="num">Physical ($)</th>
+      <th class="sortable" data-key="usd" data-type="num" title="Price of the article's first decklist">Physical ($)</th>
       <th class="sortable" data-key="tix" data-type="num">Digital (tix)</th>
       <th class="sortable" data-key="wins" data-type="num" title="Games won in the article's game log">W</th>
       <th class="sortable" data-key="losses" data-type="num" title="Games lost in the article's game log">L</th>
@@ -52,13 +64,14 @@
   </thead>
   <tbody>
     {% for a in articles %}
-    <tr class="deck-row"
+    <tr class="deck-row{{ ' rerun-row' if a.rerun }}"
         data-href="{{ url_for('deck_detail', folder=a.folder) }}"
         data-date="{{ a.ymd }}"
         data-title="{{ a.title|lower }}"
         data-usd="{{ a.usd_total }}"
         data-tix="{{ a.tix_total }}"
         {% if a.record %}data-wins="{{ a.record.wins }}" data-losses="{{ a.record.losses }}"{% endif %}
+        {% if a.rerun %}data-rerun="1"{% endif %}
         data-archetypes="{{ a.archetypes|join(',') }}"
         data-colors="{{ a.colors|join(',') if a.colors else ('C' if a.has_decklist else '') }}">
       <td class="col-date">{{ a.date_str or a.ymd }}</td>
@@ -69,7 +82,11 @@
           {% endif %}
           <div>
             <a href="{{ url_for('deck_detail', folder=a.folder) }}">{{ a.title }}</a>
+            {% if a.rerun %}<span class="rerun-chip">{{ a.rerun.kind }}</span>{% endif %}
             {% if a.author %}<div class="col-author">by {{ a.author }}</div>{% endif %}
+            {% if a.rerun and a.rerun.of %}
+            <div class="col-author">of <a href="{{ url_for('deck_detail', folder=a.rerun.of) }}">{{ titles_by_folder.get(a.rerun.of, a.rerun.of) }}</a></div>
+            {% endif %}
           </div>
         </div>
       </td>
@@ -85,7 +102,9 @@
         {% endif %}
       </td>
       {% if a.has_decklist %}
-      <td class="col-num">${{ "%.2f"|format(a.usd_total) }}</td>
+      <td class="col-num">${{ "%.2f"|format(a.usd_total) }}
+        {% if a.num_decks > 1 %}<div class="col-note" title="{{ a.first_deck_label }} &mdash; the first of {{ a.num_decks }} decklists in this article">1st of {{ a.num_decks }}</div>{% endif %}
+      </td>
       <td class="col-num">{{ "%.2f"|format(a.tix_total) }} tix</td>
       {% else %}
       <td class="col-num muted">no decklist</td>
