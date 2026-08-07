@@ -6,6 +6,9 @@
      &middot; {{ rerun_count }} reruns &amp; reprints
      &middot; {{ with_decklist_count }} with priced decklists
      &middot; {{ with_record_count }} with a win/loss record</p>
+  <p class="muted stats-note">Prices are for each article's <em>first</em> decklist. Articles that
+     iterate one deck over several versions are marked &ldquo;1st of N&rdquo; &mdash; open the
+     article for the rest.</p>
   <p class="muted stats-note">The column reprinted {{ rerun_count }} of its articles &mdash; holiday
      reruns and year-end retrospectives. Each is a separate page on wizards.com with its own
      framing text, so the archive keeps both, but they're hidden here by default and left out of
@@ -53,7 +56,7 @@
       <th>Description</th>
       <th>Archetypes</th>
       <th>Colors</th>
-      <th class="sortable" data-key="usd" data-type="num">Physical ($)</th>
+      <th class="sortable" data-key="usd" data-type="num" title="Price of the article's first decklist">Physical ($)</th>
       <th class="sortable" data-key="tix" data-type="num">Digital (tix)</th>
       <th class="sortable" data-key="wins" data-type="num" title="Games won in the article's game log">W</th>
       <th class="sortable" data-key="losses" data-type="num" title="Games lost in the article's game log">L</th>
@@ -99,7 +102,9 @@
         {% endif %}
       </td>
       {% if a.has_decklist %}
-      <td class="col-num">${{ "%.2f"|format(a.usd_total) }}</td>
+      <td class="col-num">${{ "%.2f"|format(a.usd_total) }}
+        {% if a.num_decks > 1 %}<div class="col-note" title="{{ a.first_deck_label }} &mdash; the first of {{ a.num_decks }} decklists in this article">1st of {{ a.num_decks }}</div>{% endif %}
+      </td>
       <td class="col-num">{{ "%.2f"|format(a.tix_total) }} tix</td>
       {% else %}
       <td class="col-num muted">no decklist</td>

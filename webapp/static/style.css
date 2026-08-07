@@ -14,14 +14,24 @@
   --gain-bg: #e8f3ea;
   --loss: #b0393f;
   --loss-bg: #f9ebeb;
+  --site-sub: #cbb89a;
+  --row-hover: #ecdfc9;
+  --desc-fg: #444;
+  --total-bg: #f4ead6;
+  --chip-ref-bg: #f6ece2;
+  --font-body: "Iowan Old Style", "Palatino Linotype", Georgia, "Times New Roman", serif;
+  --font-ui: var(--font-body);
+  --radius: 6px;
+  --paper-texture: none;
 }
 
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: "Iowan Old Style", "Palatino Linotype", Georgia, "Times New Roman", serif;
+  font-family: var(--font-body);
   background: var(--bg);
+  background-image: var(--paper-texture);
   color: var(--fg);
   line-height: 1.5;
   /* Never let wide content (the index deck table) stretch the page wider
@@ -53,7 +63,7 @@ body {
 }
 
 .site-sub {
-  color: #cbb89a;
+  color: var(--site-sub);
   font-size: 0.85rem;
 }
 
@@ -229,7 +239,7 @@ main {
 .deck-table tbody tr:nth-child(even) { background: var(--row-alt); }
 
 .deck-row { transition: background 0.1s; }
-.deck-row:hover { background: #ecdfc9; cursor: pointer; }
+.deck-row:hover { background: var(--row-hover); cursor: pointer; }
 
 .col-date { white-space: nowrap; font-size: 0.85rem; color: var(--muted); }
 .col-title a { color: var(--link); font-weight: 600; text-decoration: none; }
@@ -245,7 +255,7 @@ main {
   background: var(--row-alt);
 }
 .col-author { font-size: 0.78rem; color: var(--muted); font-weight: normal; }
-.col-desc { font-size: 0.88rem; color: #444; max-width: 34em; }
+.col-desc { font-size: 0.88rem; color: var(--desc-fg); max-width: 34em; }
 .col-num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .col-num.muted { color: var(--muted); font-style: italic; font-size: 0.85rem; text-align: center; }
 
@@ -365,7 +375,7 @@ body.lightbox-locked { overflow: hidden; }
 .decklists h2 { color: var(--accent); }
 
 .combined-total {
-  background: #f4ead6;
+  background: var(--total-bg);
   border: 1px solid var(--border);
   border-radius: 6px;
   padding: 0.7rem 1rem;
@@ -915,7 +925,9 @@ body.movers-modal-open { overflow: hidden; }
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]),
+  :root[data-theme="modern"] {
+    color-scheme: dark;
     --bg: #1c1712;
     --fg: #ece5d8;
     --muted: #a89a86;
@@ -931,9 +943,12 @@ body.movers-modal-open { overflow: hidden; }
     --gain-bg: #1f2e22;
     --loss: #e8797e;
     --loss-bg: #33201f;
+    --site-sub: #b3a189;
+    --row-hover: #33291b;
+    --desc-fg: #cfc5b4;
+    --total-bg: #2c2418;
+    --chip-ref-bg: #2e2418;
   }
-  .deck-row:hover { background: #33291b; }
-  .combined-total { background: #2c2418; }
 }
 
 /* ---------- filter status readout (index page) ---------- */
@@ -990,7 +1005,7 @@ body.movers-modal-open { overflow: hidden; }
 .role-chip.role-precon,
 .role-chip.role-nonbudget {
   border-color: var(--accent-2);
-  background: #f6ece2;
+  background: var(--chip-ref-bg);
   color: var(--accent);
 }
 
@@ -1073,3 +1088,209 @@ body.movers-modal-open { overflow: hidden; }
   margin-bottom: 1rem;
 }
 .rerun-banner a { color: var(--link); }
+.col-note { font-size: 0.72rem; color: var(--muted); font-weight: normal; font-style: italic; }
+
+/* ===========================================================================
+   Themes
+   ===========================================================================
+   Every colour and the type stack live in the custom properties declared on
+   :root at the top of this file, so a theme is nothing but a block that
+   overrides them. webapp/static/theme.js stamps data-theme on <html>, and a
+   small inline script in base.html does it before first paint so switching
+   never flashes the previous palette.
+
+   "modern" is the default and is the only theme that follows the OS light/
+   dark preference (see the prefers-color-scheme block above) -- picking any
+   other theme is an explicit choice and stays put.
+
+   The tweak page at /themes/ writes per-variable overrides into
+   localStorage; theme.js replays them as inline style properties on <html>,
+   which beat these blocks without editing this file. */
+
+/* Ledger -- an accounts book left in a dry attic: rag-paper ground, iron-gall
+   ink, faded red ruling. The texture is two repeating gradients (feint
+   horizontal rules plus a single vertical margin line), so it stays a
+   self-contained stylesheet with no image to load. */
+:root[data-theme="ledger"] {
+  color-scheme: light;
+  --bg: #efe4cb;
+  --fg: #33261a;
+  --muted: #7d6a51;
+  --accent: #7a3212;
+  --accent-2: #96522a;
+  --border: #c9b491;
+  --row-alt: #e7d9bb;
+  --link: #8c3a14;
+  --card-bg: #f6eeda;
+  --header-bg: #3d2a17;
+  --header-fg: #f2e6cb;
+  --gain: #3f6b33;
+  --gain-bg: #e0e6cd;
+  --loss: #97362f;
+  --loss-bg: #f0dcd2;
+  --site-sub: #cbb083;
+  --row-hover: #ddcaa4;
+  --desc-fg: #4a3927;
+  --total-bg: #e6d5ae;
+  --chip-ref-bg: #e8d8b6;
+  --font-body: "Iowan Old Style", "Hoefler Text", "Palatino Linotype", Palatino, Georgia, serif;
+  --radius: 2px;
+  --paper-texture:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 27px,
+      rgba(122, 50, 18, 0.10) 27px,
+      rgba(122, 50, 18, 0.10) 28px
+    ),
+    linear-gradient(to right, transparent 0 3.25rem, rgba(151, 54, 47, 0.20) 3.25rem 3.3rem, transparent 3.3rem);
+}
+:root[data-theme="ledger"] .article-body,
+:root[data-theme="ledger"] .deck-block,
+:root[data-theme="ledger"] .priced-table table { box-shadow: none; }
+:root[data-theme="ledger"] .site-header { border-bottom: 3px double var(--accent-2); }
+:root[data-theme="ledger"] .deck-table th { letter-spacing: 0.04em; text-transform: uppercase; font-size: 0.78rem; }
+
+/* Foolscap -- the same old-book idea gone pale and cold, like a foxed
+   flyleaf. No ruling; the texture is a faint mottle. */
+:root[data-theme="foolscap"] {
+  color-scheme: light;
+  --bg: #f2efe4;
+  --fg: #2f2f2a;
+  --muted: #6f6d61;
+  --accent: #5a4632;
+  --accent-2: #7a6244;
+  --border: #d5cfbc;
+  --row-alt: #eae6d8;
+  --link: #6b543a;
+  --card-bg: #faf8f0;
+  --header-bg: #33302a;
+  --header-fg: #efeade;
+  --gain: #46703f;
+  --gain-bg: #e5ecdd;
+  --loss: #9a4740;
+  --loss-bg: #f2e3df;
+  --site-sub: #b8b0a0;
+  --row-hover: #e2dcc8;
+  --desc-fg: #4d4b42;
+  --total-bg: #e8e3d2;
+  --chip-ref-bg: #ece7d8;
+  --font-body: "Hoefler Text", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --radius: 3px;
+  --paper-texture:
+    radial-gradient(circle at 18% 32%, rgba(120, 98, 68, 0.05) 0 42px, transparent 42px),
+    radial-gradient(circle at 76% 68%, rgba(120, 98, 68, 0.045) 0 58px, transparent 58px);
+}
+
+/* Midnight -- dark whatever the OS says, for reading at 2am. */
+:root[data-theme="midnight"] {
+  color-scheme: dark;
+  --bg: #14110d;
+  --fg: #ece5d8;
+  --muted: #a2937d;
+  --accent: #e0a15c;
+  --accent-2: #d99248;
+  --border: #453829;
+  --row-alt: #1e1a14;
+  --link: #f0b877;
+  --card-bg: #1e1a14;
+  --header-bg: #0c0906;
+  --header-fg: #f0e6d6;
+  --gain: #6dbb7d;
+  --gain-bg: #1c2a20;
+  --loss: #e8797e;
+  --loss-bg: #2f1e1d;
+  --site-sub: #a8967c;
+  --row-hover: #2c2418;
+  --desc-fg: #cfc5b4;
+  --total-bg: #241d14;
+  --chip-ref-bg: #292116;
+  --radius: 6px;
+  --paper-texture: none;
+}
+
+/* ---------- the switcher itself ---------- */
+
+.theme-switch {
+  position: fixed;
+  right: 0;
+  top: 40%;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.5rem 0.45rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-right: none;
+  border-radius: var(--radius) 0 0 var(--radius);
+  box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.16);
+  font-family: var(--font-ui);
+}
+.theme-switch-label {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 0.1rem;
+}
+.theme-swatch {
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+}
+.theme-swatch:hover { transform: scale(1.12); }
+.theme-swatch.active { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-2); }
+.theme-switch-more {
+  font-size: 0.62rem;
+  text-align: center;
+  color: var(--link);
+  text-decoration: none;
+  margin-top: 0.15rem;
+}
+.theme-switch-more:hover { text-decoration: underline; }
+
+@media (max-width: 900px) {
+  .theme-switch { top: auto; bottom: 0; right: 0.5rem; flex-direction: row; align-items: center;
+                  border-right: 1px solid var(--border); border-bottom: none;
+                  border-radius: var(--radius) var(--radius) 0 0; }
+  .theme-switch-label { display: none; }
+}
+
+/* ---------- /themes/ tweak page ---------- */
+
+.theme-cards { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1rem 0 1.6rem; }
+.theme-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.8rem 1rem;
+  background: var(--card-bg);
+  min-width: 15rem;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-ui);
+  color: var(--fg);
+}
+.theme-card.active { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-2); }
+.theme-card h3 { margin: 0 0 0.2rem; font-size: 1rem; }
+.theme-card p { margin: 0 0 0.5rem; font-size: 0.82rem; color: var(--muted); }
+.theme-card-strip { display: flex; height: 1.4rem; border-radius: 3px; overflow: hidden; border: 1px solid var(--border); }
+.theme-card-strip span { flex: 1; }
+
+.var-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: 0.5rem 1.2rem; }
+.var-row { display: flex; align-items: center; gap: 0.5rem; font-size: 0.83rem; }
+.var-row label { flex: 1; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.76rem; }
+.var-row input[type="color"] { width: 2.1rem; height: 1.6rem; padding: 0; border: 1px solid var(--border); background: none; cursor: pointer; }
+.var-row input[type="text"] { width: 6.2rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.74rem;
+                              border: 1px solid var(--border); background: var(--bg); color: var(--fg); padding: 0.15rem 0.3rem; border-radius: 3px; }
+.var-row.dirty label { color: var(--accent); font-weight: 700; }
+
+.theme-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; margin: 1rem 0; }
+.theme-preview { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; background: var(--card-bg); margin-top: 1rem; }
+.theme-css { width: 100%; min-height: 12rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.75rem;
+             border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg); color: var(--fg); padding: 0.6rem; }

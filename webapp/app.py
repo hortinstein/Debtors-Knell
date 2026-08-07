@@ -481,12 +481,13 @@ def _load_article_entry(meta):
     priced_entries = budget_entries or all_entries
     priced_files = [e["priced_path"] for e in priced_entries]
 
-    usd_total = 0.0
-    tix_total = 0.0
-    for pf in priced_files:
-        usd, tix = _parse_grand_totals(pf)
-        usd_total += usd
-        tix_total += tix
+    # The index quotes the article's *first* decklist, not the sum of all of
+    # them. Many articles iterate one deck over three or four versions, and
+    # summing those answered a question nobody asked ("what would every
+    # revision cost at once?") while making an article look several times
+    # more expensive than the deck it was actually about.
+    first_deck = priced_entries[0] if priced_entries else None
+    usd_total, tix_total = _parse_grand_totals(first_deck["priced_path"]) if first_deck else (0.0, 0.0)
     colors = _colors_for_priced_files(priced_files)
     title = meta.get("title") or folder
     thumbnail = _thumbnail_for_article(title, priced_files) if priced_files else None
@@ -503,6 +504,7 @@ def _load_article_entry(meta):
         "thumbnail": thumbnail,
         "has_decklist": bool(all_entries),
         "num_decks": len(priced_entries),
+        "first_deck_label": first_deck["label"] if first_deck else "",
         "num_reference_decks": len(all_entries) - len(budget_entries),
         "rerun": rerun,
         "usd_total": usd_total,
@@ -909,6 +911,14 @@ def movers_detail(date):
     if date not in dates:
         abort(404)
     return _render_movers(date, dates)
+
+
+@app.route("/themes/")
+def themes():
+    """Theme picker and per-variable editor. Entirely client-side -- the
+    choice and any tweaks live in localStorage (see webapp/static/theme.js),
+    which is what lets it work in the frozen static build too."""
+    return render_template("themes.html")
 
 
 @app.route("/stats/")

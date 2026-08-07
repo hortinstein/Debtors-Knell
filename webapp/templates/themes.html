@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}Theme &mdash; Building on a Budget Archive{% endblock %}
+{% block content %}
+<section class="pool-intro" id="theme-editor">
+  <h1>Theme</h1>
+  <p class="muted">
+    Pick a look for the whole site. The choice is remembered in this browser and applies to every
+    page &mdash; nothing is sent anywhere. The swatch rail on the right edge switches between these
+    without coming back here.
+  </p>
+</section>
+
+<section>
+  <h2>Presets</h2>
+  <div class="theme-cards" id="theme-cards"></div>
+</section>
+
+<section>
+  <h2>Tweak</h2>
+  <p class="muted">
+    Every colour below is a CSS custom property the whole stylesheet reads. Change one and the page
+    updates as you type; the result is saved on top of whichever preset is selected, and marked in
+    <strong>bold</strong> where it differs from that preset's own value.
+  </p>
+
+  <div class="theme-actions">
+    <button type="button" class="pool-build-btn" id="theme-reset">Reset tweaks to the preset</button>
+    <button type="button" class="pool-link-btn" id="theme-copy">Copy as CSS</button>
+    <span class="muted" id="theme-status"></span>
+  </div>
+
+  <div class="var-grid" id="var-grid"></div>
+
+  <div class="theme-actions">
+    <label class="muted" for="theme-css">CSS for the current tweaks &mdash; paste into
+      <code>webapp/static/style.css</code> to make them a real preset:</label>
+  </div>
+  <textarea class="theme-css" id="theme-css" readonly spellcheck="false"></textarea>
+</section>
+
+<section class="theme-preview">
+  <h2>Preview</h2>
+  <p>Body text, a <a href="https://scryfall.com/card/tsp/157/fury-sliver">card link</a>, and
+     <span class="muted">muted supporting text</span>.</p>
+  <p>
+    <span class="tag-chip">Aggro</span>
+    <span class="tag-chip">Combo</span>
+    <span class="role-chip role-budget">Budget build</span>
+    <span class="role-chip role-pro">Tournament list</span>
+    <span class="rerun-chip">Holiday rerun</span>
+    <span class="record-chip">12&ndash;2 (86% wins)</span>
+  </p>
+  <div class="table-scroll">
+    <table class="deck-table">
+      <thead>
+        <tr><th>Date</th><th>Title</th><th>Physical ($)</th><th>W</th><th>L</th></tr>
+      </thead>
+      <tbody>
+        <tr class="deck-row"><td class="col-date">Monday, Dec 11, 2006</td>
+            <td class="col-title">Eight-Post</td>
+            <td class="col-num">$254.81</td>
+            <td class="col-num col-record col-wins">25</td>
+            <td class="col-num col-record col-losses">0</td></tr>
+        <tr class="deck-row"><td class="col-date">Monday, May 1, 2006</td>
+            <td class="col-title">Exploding Wurms! (Part 2)</td>
+            <td class="col-num">$249.78</td>
+            <td class="col-num col-record col-wins">6</td>
+            <td class="col-num col-record col-losses">2</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="combined-total"><strong>Combined total across 4 budget decks:</strong>
+    $850.93 physical &middot; 23.20 tix digital</div>
+  <p class="deck-warning">A warning, for when something needs saying.</p>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='themes-page.js') }}"></script>
+{% endblock %}
