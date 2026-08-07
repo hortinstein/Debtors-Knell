@@ -3,6 +3,15 @@
 {% block content %}
 <p class="back-link"><a href="{{ url_for('index') }}">&larr; back to all articles</a></p>
 
+{% if article.rerun %}
+<p class="rerun-banner">
+  <span class="rerun-chip">{{ article.rerun.kind }}</span>
+  The column republished this article{% if article.rerun.of %}; it reprints the decks from
+  <a href="{{ url_for('deck_detail', folder=article.rerun.of) }}">the original</a>{% endif %}.
+  Its decks are counted once, under the original, in the card pool and card stats.
+</p>
+{% endif %}
+
 {% if article.archetypes or article.record %}
 <div class="archetype-summary">
   {% for tag in article.archetypes %}<span class="tag-chip">{{ tag }}</span>{% endfor %}

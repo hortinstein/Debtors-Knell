@@ -456,10 +456,16 @@ def _load_article_entry(meta):
     folder_path = os.path.join(ARCHIVE_DIR, folder)
     article_path = os.path.join(folder_path, "article.md")
 
+    rerun = get_deck_meta().get(folder, {}).get("rerun")
     archetype_info = get_deck_archetypes().get(folder)
     archetypes = archetype_info["archetypes"] if archetype_info else []
     if archetype_info:
         description = archetype_info["description"]
+        # The curated description opens with the marker the rerun flag was
+        # derived from ("(Holiday rerun) ..."); the badge says that now, so
+        # drop it rather than printing it twice.
+        if rerun:
+            description = re.sub(r"^\([^)]*\)\s*", "", description)
     else:
         description = ""
         if os.path.exists(article_path):
@@ -498,6 +504,7 @@ def _load_article_entry(meta):
         "has_decklist": bool(all_entries),
         "num_decks": len(priced_entries),
         "num_reference_decks": len(all_entries) - len(budget_entries),
+        "rerun": rerun,
         "usd_total": usd_total,
         "tix_total": tix_total,
         "record": get_deck_meta().get(folder, {}).get("record"),
@@ -561,6 +568,12 @@ def get_all_decks():
     if _ALL_DECKS_CACHE is None:
         decks = []
         for article in get_articles():
+            # A rerun reprints an earlier article's decks verbatim. Its own
+            # page still shows them, but listing them again here would put the
+            # same deck in the card pool twice and make one deck count as two
+            # in the card stats.
+            if article["rerun"]:
+                continue
             for entry in _deck_entries_for(article["folder"]):
                 pf = entry["priced_path"]
                 usd, tix = _parse_grand_totals(pf)
@@ -666,12 +679,16 @@ def get_card_stats():
 def index():
     articles = get_articles()
     with_decklist = sum(1 for a in articles if a["has_decklist"])
+    rerun_count = sum(1 for a in articles if a["rerun"])
     return render_template(
         "index.html",
         articles=articles,
         total_count=len(articles),
         with_decklist_count=with_decklist,
         with_record_count=sum(1 for a in articles if a["record"]),
+        rerun_count=rerun_count,
+        original_count=len(articles) - rerun_count,
+        titles_by_folder={a["folder"]: a["title"] for a in articles},
         archetype_list=ARCHETYPE_LIST,
         color_list=list(COLOR_ORDER),
     )

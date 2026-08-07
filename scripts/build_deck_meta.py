@@ -22,6 +22,11 @@ from the decklist files themselves:
     last week's deck a second time as a recap, and the scraper saved it
     under two filenames, which double-counted it in the article's combined
     total and listed it twice in the card pool.
+  * whether the article is one the column reran or reprinted, and which
+    earlier article it repeats. 25 of the 317 are holiday reruns and
+    year-end retrospectives; each is a separate page on wizards.com with its
+    own slug and framing text, but they put the same deck in the index
+    twice, in the card pool twice, and count as two decks in the card stats.
   * the article's overall win/loss record, parsed from the "*Record: W-L*"
     markers the game logs carry.
 
@@ -41,6 +46,8 @@ from bs4 import BeautifulSoup
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ARCHIVE_DIR = os.path.join(REPO_ROOT, "archive")
 OUT_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "deck_meta.json")
+DECK_ARCHETYPES_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "deck_archetypes.json")
+MASTER_INDEX_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "master_index.json")
 
 DECK_NUM_RE = re.compile(r"decklist_(\d+)_")
 CARD_LINE_RE = re.compile(r"^\d+\s+\S")
@@ -190,15 +197,98 @@ def card_fingerprint(decklist_path):
     return hashlib.md5("\n".join(cards).encode("utf-8")).hexdigest()
 
 
+# ---------------------------------------------------------------------------
+# Reruns
+# ---------------------------------------------------------------------------
+# The column reprinted 26 of its articles -- holiday reruns, year-end
+# retrospectives, a couple of straight repeats a week apart. Every one is a
+# genuinely separate page on wizards.com with its own slug and its own framing
+# text, so the scrape is right to hold both; but they make the same deck show
+# up twice in the index, twice in the card pool, and count as two decks in the
+# card stats.
+#
+# The curated descriptions in deck_archetypes.json already open with a marker
+# on exactly these ("(Rerun)", "(Holiday rerun)", "(Retrospective)",
+# "(Reprint)", "(Year-end retrospective)"), and that is the authority for
+# *whether* an article is a repeat. Decklist identity alone isn't: 20051003
+# Interlude: My Mirage Precon (Part 1) reprints the previous week's Dead World
+# list inside an otherwise entirely new article. Identity is used only to work
+# out *which* earlier article a rerun is a repeat of.
+RERUN_MARKER_RE = re.compile(
+    r"^\((rerun|holiday rerun|retrospective|reprint|year-end retrospective)\)",
+    re.I,
+)
+
+
+def _load_json(path):
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def decklist_set_fingerprint(folder_path):
+    """One hash covering every decklist in an article, order-independent, so
+    two articles printing the same decks match however they're filed."""
+    hashes = sorted(card_fingerprint(p) for p in raw_decklists_for(folder_path))
+    if not hashes:
+        return None
+    return hashlib.md5("|".join(hashes).encode("utf-8")).hexdigest()
+
+
+def find_reruns():
+    """folder -> {"kind": "Holiday rerun", "of": <original folder>} for every
+    article the column reprinted. "of" is omitted if no earlier article with
+    the same decklists can be found."""
+    archetypes = _load_json(DECK_ARCHETYPES_PATH)
+    index = _load_json(MASTER_INDEX_PATH) or []
+    ymd = {e["folder"]: e.get("ymd", "") for e in index}
+
+    by_decks = {}
+    for folder in sorted(os.listdir(ARCHIVE_DIR)):
+        folder_path = os.path.join(ARCHIVE_DIR, folder)
+        if not os.path.isdir(folder_path):
+            continue
+        fp = decklist_set_fingerprint(folder_path)
+        if fp:
+            by_decks.setdefault(fp, []).append(folder)
+
+    reruns = {}
+    warnings = []
+    for folder, info in archetypes.items():
+        m = RERUN_MARKER_RE.match(info.get("description", ""))
+        if not m:
+            continue
+        kind = m.group(1)
+        kind = kind[0].upper() + kind[1:].lower()
+        entry = {"kind": kind}
+
+        fp = decklist_set_fingerprint(os.path.join(ARCHIVE_DIR, folder))
+        siblings = [f for f in by_decks.get(fp, []) if f != folder] if fp else []
+        earlier = sorted((f for f in siblings if ymd.get(f, "") < ymd.get(folder, "")),
+                         key=lambda f: ymd.get(f, ""))
+        if earlier:
+            entry["of"] = earlier[0]
+        else:
+            warnings.append(
+                f"{folder}: marked {kind!r} but no earlier article shares its "
+                f"decklists -- recorded without a link to the original"
+            )
+        reruns[folder] = entry
+    return reruns, warnings
+
+
 def build_meta(quiet=False):
     meta = {}
-    warnings = []
+    reruns, warnings = find_reruns()
     for folder in sorted(os.listdir(ARCHIVE_DIR)):
         folder_path = os.path.join(ARCHIVE_DIR, folder)
         if not os.path.isdir(folder_path):
             continue
 
         entry = {}
+        if folder in reruns:
+            entry["rerun"] = reruns[folder]
 
         article_path = os.path.join(folder_path, "article.md")
         if os.path.exists(article_path):
@@ -264,6 +354,7 @@ def main():
     print(f"  {len(meta)} articles, {len(decks)} decklists")
     print(f"  roles: " + ", ".join(f"{k}={v}" for k, v in sorted(roles.items())))
     print(f"  duplicates: {sum(1 for d in decks if d.get('duplicate_of'))}")
+    print(f"  reruns/reprints: {sum(1 for e in meta.values() if 'rerun' in e)}")
     print(f"  articles with a win/loss record: {sum(1 for e in meta.values() if 'record' in e)}")
 
 

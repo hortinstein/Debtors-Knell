@@ -1035,3 +1035,41 @@ body.movers-modal-open { overflow: hidden; }
   margin: 0.3rem 0 0.6rem;
 }
 .deck-warning code { font-size: 0.95em; }
+
+/* ---------- reruns & reprints ---------- */
+/* Articles the column republished. Real, separately published pages, so the
+   archive keeps them -- but hidden from the index by default and counted
+   once (under the original) in the card pool and card stats. */
+
+.rerun-chip {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.08rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--row-alt);
+  color: var(--muted);
+  white-space: nowrap;
+  vertical-align: middle;
+  margin-left: 0.35rem;
+}
+
+.rerun-toggle {
+  font-size: 0.85rem;
+  margin: 0.4rem 0 0.2rem;
+}
+.rerun-toggle label { display: inline-flex; align-items: center; gap: 0.35rem; cursor: pointer; }
+
+.deck-table tr.rerun-row { opacity: 0.82; }
+
+.rerun-banner {
+  background: var(--row-alt);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+.rerun-banner a { color: var(--link); }
