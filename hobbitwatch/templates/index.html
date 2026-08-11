@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hobbit Watch &mdash; {{ set_code }} card prices</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="site-header">
+  <a class="site-title" href="{{ url_for('index') }}">Hobbit Watch</a>
+  <span class="site-sub">Daily paper &amp; MTGO prices for all {{ cards|length }} cards in the new Hobbit set ({{ set_code }})</span>
+</header>
+
+<main>
+<section class="intro">
+  <p>
+    Every card in <strong>{{ set_code }}</strong>, priced from this repo's own daily
+    archive: <strong>physical</strong> prices in USD from MTGJSON's daily
+    snapshots ({{ usd_day_count }} archived day{{ '' if usd_day_count == 1 else 's' }}),
+    <strong>digital</strong> prices in MTGO tix from GoatBots
+    (latest day: {{ latest_tix_date }}). Both change columns measure the move
+    since that card's <em>first</em> archived data point &mdash; this set is new,
+    so the clock started when it did.
+  </p>
+  <p class="muted">
+    {{ digital_count }} of {{ cards|length }} cards have digital prices;
+    {{ paper_count }} have physical prices. Paper coverage is thin for now:
+    MTGJSON's price snapshots are keyed by an id with no card name attached, and
+    the name map this repo keeps for them refreshes monthly, so a set this new is
+    only partly in it &mdash; the rest fill in on the next refresh with no change
+    to this page. Physical prices are per card name (median across matched
+    printings), digital prices are per printing.
+    Dataset built {{ generated }}.
+  </p>
+</section>
+
+<div class="filters">
+  <label class="search-label">
+    <span>Search by title</span>
+    <input type="search" id="search" placeholder="e.g. Smaug, Bilbo, Ring&hellip;" autocomplete="off">
+  </label>
+
+  <div class="chip-row" role="group" aria-label="Filter by rarity">
+    <span class="chip-row-label">Rarity:</span>
+    {% for r in rarities %}
+    <button type="button" class="chip rarity-chip" data-rarity="{{ r }}">{{ r }}</button>
+    {% endfor %}
+  </div>
+
+  <div class="chip-row" role="group" aria-label="Filter by movement">
+    <span class="chip-row-label">Movement:</span>
+    <button type="button" class="chip move-chip active" data-move="all">All</button>
+    <button type="button" class="chip move-chip" data-move="up">Gainers</button>
+    <button type="button" class="chip move-chip" data-move="down">Losers</button>
+    <span class="chip-row-label">in</span>
+    <button type="button" class="chip market-chip active" data-market="tix">Digital</button>
+    <button type="button" class="chip market-chip" data-market="usd">Physical</button>
+  </div>
+
+  <label class="check-label"><input type="checkbox" id="paper-only"> Only cards with a physical price</label>
+  <button type="button" class="chip chip-clear" id="clear-filters">Clear filters</button>
+</div>
+
+<p class="filter-status" id="filter-status" data-total="{{ cards|length }}">Showing all {{ cards|length }} cards.</p>
+
+<div class="table-scroll">
+<table class="card-table" id="card-table">
+  <thead>
+    <tr>
+      <th class="sortable" data-key="number" data-type="num">#</th>
+      <th class="sortable" data-key="name" data-type="text">Card</th>
+      <th class="sortable" data-key="rarity" data-type="text">Rarity</th>
+      <th class="sortable num" data-key="usd" data-type="num" title="Latest archived USD price (median across matched printings)">Physical ($)</th>
+      <th class="sortable num" data-key="usd_pct" data-type="num" title="Change since the first archived USD data point">&Delta; since first</th>
+      <th class="sortable num" data-key="tix" data-type="num" title="Latest archived MTGO price for this printing">Digital (tix)</th>
+      <th class="sortable num" data-key="tix_pct" data-type="num" title="Change since the first archived tix data point">&Delta; since first</th>
+      <th class="sortable num" data-key="versions" data-type="num" title="Other MTGO printings of the same card">Versions</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for c in cards %}
+    <tr class="card-row" tabindex="0" role="button"
+        data-slug="{{ c.slug }}"
+        data-name="{{ c.name|lower }}"
+        data-rarity="{{ c.rarity }}"
+        data-number="{{ c.number }}"
+        data-usd="{{ c.usd if c.usd is not none else '' }}"
+        data-usd-pct="{{ c.usd_pct if c.usd_pct is not none else '' }}"
+        data-tix="{{ c.tix if c.tix is not none else '' }}"
+        data-tix-pct="{{ c.tix_pct if c.tix_pct is not none else '' }}"
+        data-versions="{{ c.versions_total }}"
+        aria-label="Open price detail for {{ c.name }}">
+      <td class="num muted">{{ c.number }}</td>
+      <td class="col-name">{{ c.name }}</td>
+      <td><span class="rarity rarity-{{ c.rarity|lower }}">{{ c.rarity }}</span></td>
+      <td class="num">{% if c.usd is not none %}${{ c.usd|money }}{% else %}<span class="muted">&mdash;</span>{% endif %}</td>
+      <td class="num {{ 'gain' if c.usd_change and c.usd_change > 0 else ('loss' if c.usd_change and c.usd_change < 0 else '') }}"
+          {% if c.usd_first_date %}title="First archived on {{ c.usd_first_date }} at ${{ c.usd_first|money }} ({{ c.usd_days }} days)"{% endif %}>
+        {% if c.usd_change is not none %}
+          {{ c.usd_change|signed_usd }}{% if c.usd_pct is not none %}<span class="pct">{{ '+' if c.usd_pct > 0 else '' }}{{ c.usd_pct }}%</span>{% endif %}
+        {% else %}<span class="muted">&mdash;</span>{% endif %}
+      </td>
+      <td class="num">{% if c.tix is not none %}{{ c.tix|money }}{% else %}<span class="muted">&mdash;</span>{% endif %}</td>
+      <td class="num {{ 'gain' if c.tix_change and c.tix_change > 0 else ('loss' if c.tix_change and c.tix_change < 0 else '') }}"
+          {% if c.tix_first_date %}title="First archived on {{ c.tix_first_date }} at {{ c.tix_first|money }} tix ({{ c.tix_days }} days)"{% endif %}>
+        {% if c.tix_change is not none %}
+          {{ c.tix_change|signed_tix }}{% if c.tix_pct is not none %}<span class="pct">{{ '+' if c.tix_pct > 0 else '' }}{{ c.tix_pct }}%</span>{% endif %}
+        {% else %}<span class="muted">&mdash;</span>{% endif %}
+      </td>
+      <td class="num muted">{{ c.versions_total if c.versions_total else '&mdash;'|safe }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+</main>
+
+<div class="modal-backdrop" id="card-modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button type="button" class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+    <div class="modal-body" id="modal-body">
+      <p class="modal-loading">Loading&hellip;</p>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>Physical prices from MTGJSON's daily snapshots, digital prices from GoatBots,
+     both archived daily in this repo (<code>prices/</code>). Card art served by
+     Scryfall. Not affiliated with Wizards of the Coast.</p>
+</footer>
+
+<script src="{{ url_for('static', filename='hobbit.js') }}"></script>
+</body>
+</html>

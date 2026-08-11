@@ -11,3 +11,7 @@ archive/*/decklist*_price_history.json
 # Local Frozen-Flask output (staticsite/freeze.py). GitHub Actions builds and
 # deploys this straight to Pages -- it's never committed.
 staticsite/build/
+
+# Hobbit Watch's derived dataset (hobbitwatch/build_dataset.py), rebuilt from
+# prices/ whenever it's missing or a newer price day has landed.
+hobbitwatch/data/
