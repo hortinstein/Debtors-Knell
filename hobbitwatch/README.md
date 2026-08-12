@@ -11,10 +11,11 @@ templates, static files and routes. The main site is about the 2003–2009
 ## What it shows
 
 * Every card in the set, in one searchable, sortable table.
-* **Physical** price (USD, from MTGJSON's daily snapshots) and **digital**
-  price (MTGO tix, from GoatBots), plus the **change since that card's first
-  archived data point** in each market — the set is new, so the clock started
-  when the archive first saw it.
+* **Physical** price (USD, current per-printing price from Scryfall, with
+  day-by-day history from MTGJSON's archived snapshots) and **digital** price
+  (MTGO tix, from GoatBots), plus the **change since that card's first archived
+  data point** in each market — the set is new, so the clock started when the
+  archive first saw it.
 * Filters: search by title, rarity chips, gainers/losers in either market, and
   "only cards with a physical price". Every column sorts.
 * Click (or press Enter on) a row for a modal with the card's **art**, a
@@ -22,9 +23,10 @@ templates, static files and routes. The main site is about the 2003–2009
   printing of the same card** — each with its own art, current tix price,
   change, and a spark line of its recent history.
 
-Card art comes from Scryfall image URLs built in the browser (the same
-no-API-call trick `../webapp/static/card-preview.js` uses); a set code Scryfall
-doesn't recognize falls back to a lookup by exact card name.
+Card art is the real per-printing image from the checked-in Scryfall snapshot;
+where that's missing it falls back to a Scryfall image URL built in the browser
+by exact card name (the same no-API-call trick
+`../webapp/static/card-preview.js` uses).
 
 ## Run it
 
@@ -46,9 +48,10 @@ rebuilt from the archive). It reads:
 
 | Source | Used for |
 | --- | --- |
-| `../prices/daily/<date>/goatbots/card-definitions.zip` | the set's card list (name, rarity, collector number) and every other printing sharing a card's name |
+| `../prices/daily/<date>/goatbots/card-definitions.zip` | the set's card list (name, rarity, collector number) and every MTGO printing sharing a card's name |
 | `../prices/goatbots_yearly_archive/<year>/<date>.txt.gz` and `../prices/daily/<date>/goatbots/price-history.zip` | digital (tix) history, **per printing** |
 | `../prices/daily/<date>/mtgjson/AllPricesToday.json.bz2` joined via `../prices/mtgjson/uuid_to_name.json.gz` | physical (USD) history, **per card name** |
+| `scryfall/hob_prints.json.gz` (checked in, from `fetch_scryfall.py`) | current physical price **per printing**, card art, and every printing of a card including paper-only ones |
 
 It reuses the archive readers in `../scripts/build_price_history.py` rather
 than re-implementing them, and follows the same conventions as the rest of the
@@ -64,19 +67,36 @@ python3 build_dataset.py --max-versions 8  # fewer "other versions" per card
 python3 build_dataset.py --force           # rebuild even if up to date
 ```
 
+## Refreshing the network-sourced data
+
+Neither Scryfall nor MTGJSON is reachable from a sandboxed dev container, so
+both fetches run in CI: **`.github/workflows/hobbit-data.yml`** fetches the
+Scryfall snapshot and forces a refresh of `prices/mtgjson/uuid_to_name.json.gz`
+(the daily price workflow only refreshes that map monthly, which would leave a
+new set unpriced in paper for weeks), then commits both back to the branch. It
+runs on push to this branch, weekly on Sundays, and on manual dispatch.
+
+Where Scryfall *is* reachable, the fetch is just:
+
+```bash
+python3 hobbitwatch/fetch_scryfall.py     # → hobbitwatch/scryfall/hob_prints.json.gz
+python3 scripts/build_mtgjson_uuid_map.py --force
+python3 hobbitwatch/build_dataset.py --force
+```
+
 ## Known coverage limits
 
 * **Digital history starts 2026-08-04** — that's the first day GoatBots listed
   the set. Nothing earlier exists to chart.
-* **Physical prices are thin for now.** MTGJSON's price snapshots are keyed by
-  uuid with no name attached, and the uuid → name map this repo keeps
-  (`scripts/build_mtgjson_uuid_map.py`) refreshes monthly, so only the part of
-  the set already in that map (16 of 193 cards at the time of writing) has a
-  USD series. The rest fill in automatically at the next refresh — no change to
-  this app needed. Cards with no paper data show a dash and say so in the modal.
-* **Physical prices are per card name, not per printing**, for the same reason:
-  there is no set information in the price snapshots. Digital prices *are* per
-  printing, which is why the "other versions" grid prices are tix.
+* **The two physical numbers come from different sources**, deliberately. The
+  current price is Scryfall's, per printing. The change-since-first is measured
+  on MTGJSON's archived daily series, which is per *card name* (median across
+  matched printings) because MTGJSON's price snapshots carry no set information
+  — only a uuid, resolved through this repo's uuid → name map. A card can
+  therefore have a current price but no change yet; the page marks Scryfall-
+  sourced prices and says so in the modal.
+* **Digital prices are per printing**, which is why the "other versions" grid
+  can chart each printing's own tix history.
 
 ## Routes
 
