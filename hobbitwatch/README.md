@@ -88,15 +88,19 @@ python3 hobbitwatch/build_dataset.py --force
 
 * **Digital history starts 2026-08-04** — that's the first day GoatBots listed
   the set. Nothing earlier exists to chart.
-* **The two physical numbers come from different sources**, deliberately. The
-  current price is Scryfall's, per printing. The change-since-first is measured
-  on MTGJSON's archived daily series, which is per *card name* (median across
-  matched printings) because MTGJSON's price snapshots carry no set information
-  — only a uuid, resolved through this repo's uuid → name map. A card can
-  therefore have a current price but no change yet; the page marks Scryfall-
-  sourced prices and says so in the modal.
-* **Digital prices are per printing**, which is why the "other versions" grid
-  can chart each printing's own tix history.
+* **Prices are per printing on both sides.** MTGJSON's price snapshots carry
+  only a uuid, so `scripts/build_mtgjson_uuid_map.py` records each uuid's set
+  code and collector number alongside its name, and the dataset joins a card to
+  its *own* printing. That matters here: every mythic in this set ships as a
+  base printing plus extended-art and serialized variants, and a median across
+  all of them priced Smaug's $31 base printing at $61. Cards the map can't
+  place fall back to the name-level median, and each card records which basis
+  it used (`usd_basis`).
+* **The early data is preorder pricing, not market noise.** The set released
+  2026-08-14 and paper archiving began 2026-07-15, so the first weeks of the
+  physical series are preorder speculation collapsing — several mythics show
+  -60% to -90% since their first archived day. That's what the data says; the
+  page doesn't smooth it.
 
 ## Routes
 

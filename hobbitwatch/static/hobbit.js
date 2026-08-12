@@ -238,7 +238,9 @@
     var prices = [];
     if (v.usd !== null && v.usd !== undefined) {
       prices.push('<span class="version-usd">' + money(v.usd, "usd") +
-                  (v.usd_finish === "usd_foil" ? " foil" : "") + "</span>");
+                  (v.usd_finish === "usd_foil" ? " foil" : "") +
+                  (v.usd_stats && v.usd_stats.change !== null
+                    ? " " + deltaHtml(v.usd_stats, "usd") : "") + "</span>");
     }
     var tixNow = v.tix_stats.last !== null ? v.tix_stats.last : v.scry_tix;
     if (tixNow !== null && tixNow !== undefined) {
@@ -285,8 +287,8 @@
     if (!versions.length) {
       versionsSection =
         '<div class="versions-block"><h3>Other versions</h3>' +
-        '<p class="versions-note">No other MTGO printing of this card exists yet &mdash; ' +
-        "it's new to " + escapeHtml(card.set) + ".</p></div>";
+        '<p class="versions-note">No other printing of this card exists yet &mdash; ' +
+        "it's new to " + escapeHtml(card.set_name || card.set) + ".</p></div>";
     } else {
       var hidden = card.versions_total - versions.length;
       versionsSection =
@@ -294,23 +296,29 @@
         '<p class="versions-note">' + card.versions_total + " other MTGO printing" +
         (card.versions_total === 1 ? "" : "s") + " of this card" +
         (hidden > 0 ? ", the " + versions.length + " most expensive shown" : "") +
-        ". Prices are that printing's own digital (tix) price; the spark line is its " +
-        "recent history.</p>" +
+        ". Each price is that printing's own &mdash; paper first, then MTGO where " +
+        "the printing exists there; the spark line is its recent tix history.</p>" +
         '<div class="versions-grid">' +
         versions.map(function (v) { return versionHtml(card, v); }).join("") +
         "</div></div>";
     }
 
-    var usdNote = card.usd.length
-      ? "Physical history is MTGJSON's archived daily snapshots &mdash; the median " +
-        "USD retail across every matched printing of this card name." +
-        (card.scry_usd !== null && card.scry_usd !== undefined
-          ? " Scryfall's current price for this printing: " + money(card.scry_usd, "usd") +
-            (card.scry_usd_foil ? " (" + money(card.scry_usd_foil, "usd") + " foil)" : "") + "."
-          : "")
-      : "The physical price is Scryfall's current one for this printing. No archived " +
-        "MTGJSON history for this card yet, so there's nothing to chart or measure a " +
-        "change against &mdash; that starts once this repo's uuid &rarr; name map covers it.";
+    var usdNote;
+    if (card.usd.length) {
+      usdNote = card.usd_basis === "printing"
+        ? "Physical history is MTGJSON's archived daily snapshots for this exact printing."
+        : "Physical history is MTGJSON's archived daily snapshots, as a median across " +
+          "every printing of this card name &mdash; the exact printing couldn't be " +
+          "identified in the uuid map.";
+      if (card.scry_usd !== null && card.scry_usd !== undefined) {
+        usdNote += " Scryfall's current price: " + money(card.scry_usd, "usd") +
+          (card.scry_usd_foil ? " (" + money(card.scry_usd_foil, "usd") + " foil)" : "") + ".";
+      }
+    } else {
+      usdNote = "The physical price is Scryfall's current one for this printing. " +
+        "No archived MTGJSON history for it yet, so there's nothing to chart or " +
+        "measure a change against.";
+    }
 
     var sub = [card.set_name || card.set,
                card.number ? "#" + card.number : "",

@@ -16,22 +16,22 @@
 <section class="intro">
   <p>
     Every card in <strong>{{ set_code }}</strong>. <strong>Physical</strong> prices in
-    USD come from Scryfall{% if scryfall_generated %} (fetched {{ scryfall_generated }}){% endif %},
-    with day-by-day history from MTGJSON's archived snapshots
-    ({{ usd_day_count }} archived day{{ '' if usd_day_count == 1 else 's' }});
-    <strong>digital</strong> prices in MTGO tix come from GoatBots
-    (latest day: {{ latest_tix_date }}). Both change columns measure the move
-    since that card's <em>first</em> archived data point &mdash; this set is new,
-    so the clock started when it did.
+    USD come from MTGJSON's archived daily snapshots
+    ({{ usd_day_count }} archived day{{ '' if usd_day_count == 1 else 's' }}), matched
+    to each card's exact printing; <strong>digital</strong> prices in MTGO tix come
+    from GoatBots (latest day: {{ latest_tix_date }}). Card art, the printings list
+    and a live paper price per printing come from Scryfall{% if scryfall_generated %},
+    fetched {{ scryfall_generated }}{% endif %}. Both change columns measure the move
+    since that card's <em>first</em> archived data point &mdash; this set is new, so the
+    clock started when it did.
   </p>
   <p class="muted">
-    {{ digital_count }} of {{ cards|length }} cards have a digital price,
-    {{ paper_count }} a physical one, and {{ paper_series_count }} enough archived
-    days for a physical <em>change</em>. The two physical numbers come from
-    different places on purpose: the current price is per printing from Scryfall,
-    while the change is measured on MTGJSON's archived series, which is per card
-    name (median across matched printings) and only covers cards already in this
-    repo's uuid&nbsp;&rarr;&nbsp;name map. Dataset built {{ generated }}.
+    {{ digital_count }} of {{ cards|length }} cards have a digital price;
+    {{ paper_count }} have a physical one, {{ paper_series_count }} with enough archived
+    days to show a change. Prices are per <em>printing</em> on both sides: the base
+    printing is priced as itself, not averaged with its extended-art and serialized
+    variants &mdash; those appear as separate versions when you open a card.
+    Dataset built {{ generated }}.
   </p>
 </section>
 
