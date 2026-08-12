@@ -265,12 +265,25 @@
     galaxyfoil: "galaxy foil", textured: "textured", halofoil: "halo foil",
     boosterfun: "booster fun", promo: "promo", prerelease: "prerelease",
     stepandcompleat: "step-and-compleat", concept: "concept art",
-    fullart: "full art", inverted: "inverted", raisedfoil: "raised foil"
+    fullart: "full art", inverted: "inverted", raisedfoil: "raised foil",
+    silverfoil: "silver foil", boxtopper: "box topper", scroll: "scroll frame",
+    datestamped: "date-stamped", starterdeck: "starter deck", bundle: "bundle",
+    headliner: "headliner", ripplefoil: "ripple foil", gilded: "gilded"
+  };
+
+  // Scryfall's lists mix collector treatments with frame effects that just
+  // restate the card's type, plus one tag every card in a Universes Beyond
+  // release carries. Those say nothing about which printing this is.
+  var TREATMENT_NOISE = {
+    universesbeyond: 1, legendary: 1, enchantment: 1, vehicle: 1, miracle: 1,
+    devoid: 1, nyxtouched: 1, snow: 1, draft: 1, companion: 1, tombstone: 1
   };
 
   function treatmentText(v) {
     var seen = {};
-    return (v.treatments || []).map(function (t) {
+    return (v.treatments || []).filter(function (t) {
+      return !TREATMENT_NOISE[t];
+    }).map(function (t) {
       return TREATMENT_LABELS[t] || t.replace(/([a-z])([A-Z])/g, "$1 $2");
     }).filter(function (label) {
       if (seen[label]) return false;

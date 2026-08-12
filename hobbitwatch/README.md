@@ -116,11 +116,37 @@ python3 hobbitwatch/build_dataset.py --force
 * **`HOC` has no archived tix history** — it isn't in the GoatBots MTGO
   catalogue. Where Scryfall reports a current tix price for one of its cards,
   the modal shows it and labels it as Scryfall's.
-* **Not included:** `THOB`, the 15-printing token set (`--include-tokens` to
-  fetch it). Also checked and correctly excluded: the `SPG` Special Guests
-  batch that sits near `HOB` in GoatBots' id range — the price archive shows
-  those 20 cards a week before `HOB` appeared, so they belong to an earlier
-  release.
+## What this release actually contains
+
+Scryfall knows exactly three sets for The Hobbit, and the snapshot records all
+of them with an `included` flag so this isn't a matter of trust:
+
+| Set | Name | Type | Printings | In the page |
+| --- | --- | --- | --- | --- |
+| `HOB` | The Hobbit | expansion | 321 | ✅ 193 cards |
+| `HOC` | The Hobbit Eternal | eternal | 158 | ✅ 117 cards |
+| `THOB` | The Hobbit Tokens | token | 15 | ❌ skipped (`--include-tokens`) |
+
+There is **no separate art-series or book-cover set** for this release. The
+special treatments all live inside those two sets as extra printings, and every
+one of them is in the dataset — as its own row where it's a distinct card, or
+in the versions grid with art and price where it's another printing of one:
+
+| Treatment | Printings |
+| --- | --- |
+| inverted | 143 |
+| showcase | 131 |
+| surge foil | 120 |
+| extended art | 73 |
+| bundle / headliner / box topper | 2 / 1 / 2 |
+
+Treatments are labelled in the versions grid, so a variant reads as "box
+topper" or "extended art" rather than being an unexplained second row at ten
+times the price.
+
+Also checked and correctly excluded: the `SPG` Special Guests batch that sits
+near `HOB` in GoatBots' id range — the price archive shows those 20 cards a
+week before `HOB` appeared, so they belong to an earlier release.
 
 ## Routes
 
