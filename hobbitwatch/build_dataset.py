@@ -54,6 +54,7 @@ Usage:
     python3 build_dataset.py --force
 """
 import argparse
+import collections
 import datetime
 import glob
 import json
@@ -226,6 +227,64 @@ def change_stats(series):
 # Scryfall printings: art, current per-printing paper prices, paper-only sets
 # ---------------------------------------------------------------------------
 
+def subjects_from_scryfall(scryfall, definitions):
+    """One subject per (card, set-in-this-release) from the Scryfall snapshot:
+    the rows the page lists.
+
+    The universe has to come from *paper*, not from GoatBots: the Commander
+    decks (HOC) never appear on MTGO, so a GoatBots-driven card list can't
+    see them at all -- which is exactly how 117 cards went missing from the
+    first version of this page. GoatBots is now only a source of tix prices,
+    attached where a printing happens to exist on MTGO.
+
+    Each subject: {set, name, primary, variants, printings}, where `primary`
+    is the base printing (lowest collector number in that set) and `variants`
+    are that set's other printings of the same card -- extended art,
+    borderless, serialized.
+    """
+    default_set = (scryfall.get("set_code") or "").upper()
+    subjects = []
+    for name, entry in sorted(scryfall.get("cards", {}).items()):
+        in_sets = entry.get("in_sets") or {}
+        if not in_sets and entry.get("set_printings"):
+            # Snapshot from before this fetched more than one set per release.
+            in_sets = {default_set: entry["set_printings"]}
+        for set_code, printings in sorted(in_sets.items()):
+            if not printings:
+                continue
+            ordered = sorted(printings, key=lambda p: (p.get("image") is None,
+                                                       _collector_key(p.get("number"))))
+            subjects.append({
+                "set": set_code,
+                "name": name,
+                "primary": ordered[0],
+                "variants": ordered[1:],
+                "printings": entry.get("printings") or list(printings),
+            })
+    return subjects
+
+
+def subjects_from_goatbots(definitions, set_code):
+    """Fallback universe when there's no Scryfall snapshot yet: the MTGO
+    catalogue for one set. Loses paper-only products, but keeps a fresh
+    checkout working before CI has fetched anything."""
+    subjects = []
+    for cid, meta in definitions.items():
+        if (meta.get("cardset") or "").upper() != set_code.upper():
+            continue
+        subjects.append({
+            "set": set_code.upper(),
+            "name": meta["name"],
+            "primary": {"set": set_code.upper(), "number": meta.get("version") or "",
+                        "rarity": meta.get("rarity") or "", "set_name": "",
+                        "released": "", "image": None, "image_small": None,
+                        "scryfall_uri": "", "usd": None, "usd_foil": None, "tix": None},
+            "variants": [],
+            "printings": [],
+        })
+    return subjects
+
+
 def scryfall_name_index(scry_cards):
     """{normalized name: card entry}, indexed under the full name and under
     each face of a double-faced card. GoatBots names a two-faced card by its
@@ -377,55 +436,59 @@ def load_usd_series(targets, quiet=False):
 def build(set_code=SET_CODE, window_days=WINDOW_DAYS, max_versions=MAX_VERSIONS,
           out_path=OUT_PATH, quiet=False):
     definitions = bph.load_latest_card_definitions()
-
-    set_cards = {cid: meta for cid, meta in definitions.items()
-                 if (meta.get("cardset") or "").upper() == set_code.upper()}
-    if not set_cards:
-        raise SystemExit(
-            f"No cards with cardset {set_code!r} in the latest GoatBots "
-            "card-definitions snapshot.")
-    log(f"{len(set_cards)} {set_code} printing(s) in the card definitions.", quiet)
-
     name_index = bph.build_name_index(definitions)
-
-    # Every printing of every HOB card, anywhere in the MTGO catalogue.
-    ids_by_name = {}
-    for cid, meta in set_cards.items():
-        name = meta["name"]
-        if name in ids_by_name:
-            ids_by_name[name]["set_ids"].add(cid)
-            continue
-        all_ids = bph.resolve_ids_for_name(name, name_index) or {cid}
-        ids_by_name[name] = {"set_ids": {cid}, "all_ids": set(all_ids)}
 
     latest_date, latest_day = load_latest_tix_day(quiet)
     scryfall = load_scryfall(quiet=quiet)
-    scry_cards = (scryfall or {}).get("cards", {})
-    scry_index = scryfall_name_index(scry_cards)
     printing_index = load_uuid_printing_index(quiet)
     uuid_name_index = bph.load_uuid_name_index()
     if uuid_name_index is None:
         log("No prices/mtgjson/uuid_to_name.json.gz yet -- no physical prices.", quiet)
+
+    # The card list comes from paper, not from MTGO. The Commander decks
+    # (HOC) exist only on paper, so a GoatBots-driven universe silently drops
+    # all 117 of their cards; GoatBots is a price source here, not a census.
+    if scryfall:
+        subjects = subjects_from_scryfall(scryfall, definitions)
+        set_codes = scryfall.get("set_codes") or [set_code.upper()]
+        set_meta = scryfall.get("sets") or {}
+    else:
+        subjects = subjects_from_goatbots(definitions, set_code)
+        set_codes = [set_code.upper()]
+        set_meta = {}
+        log("No Scryfall snapshot -- falling back to the MTGO catalogue for "
+            f"{set_code} alone (paper-only products will be missing).", quiet)
+    if not subjects:
+        raise SystemExit(f"No cards found for {set_code!r}.")
+    per_set = collections.Counter(s["set"] for s in subjects)
+    log(f"{len(subjects)} card(s) across {len(set_codes)} set(s): "
+        + ", ".join(f"{code} {per_set[code]}" for code in sorted(per_set)), quiet)
 
     # Each card's other versions, from both catalogues: Scryfall knows every
     # printing (paper included, with art and a current price), GoatBots knows
     # the MTGO ones (with our tix history). Rank by what a version is worth --
     # paper price first, then tix -- and keep the top few, so "Island"
     # contributes a handful of versions instead of seven hundred.
-    relevant_ids = set(set_cards)
-    version_plans = {}
-    for name, entry in ids_by_name.items():
-        gb_by_set = goatbots_ids_by_set(entry["all_ids"], definitions)
-        set_gb_ids = entry["set_ids"]
-        scry = lookup_scryfall(name, scry_index) or {}
-        printings = scry.get("printings") or scry.get("set_printings") or []
-        primary = choose_primary(printings, set_code, definitions[min(set_gb_ids)].get("version"))
+    relevant_ids = set()
+    for subj in subjects:
+        key = (subj["set"], subj["name"])
+        all_ids = bph.resolve_ids_for_name(subj["name"], name_index) or set()
+        gb_by_set = goatbots_ids_by_set(all_ids, definitions)
+        set_gb_ids = set(gb_by_set.get(subj["set"], []))
+        subj["gb_set_ids"] = set_gb_ids
+        primary = subj["primary"]
 
         candidates = []
         covered_sets = set()
-        for p in printings:
-            if primary is not None and p.get("id") == primary.get("id"):
-                continue
+        # This set's other printings first (extended art, borderless,
+        # serialized), then every other printing of the same card anywhere.
+        others = list(subj["variants"])
+        seen = {p.get("id") for p in others} | {primary.get("id")}
+        for p in subj["printings"]:
+            if p.get("id") not in seen:
+                others.append(p)
+                seen.add(p.get("id"))
+        for p in others:
             code = (p.get("set") or "").upper()
             covered_sets.add(code)
             gb_ids = [i for i in gb_by_set.get(code, []) if i not in set_gb_ids]
@@ -448,14 +511,14 @@ def build(set_code=SET_CODE, window_days=WINDOW_DAYS, max_versions=MAX_VERSIONS,
                 "usd_nonfoil": p.get("usd"),
                 "usd_foil": p.get("usd_foil"),
                 "scry_tix": p.get("tix"),
-                "same_set": code == set_code.upper(),
+                "same_set": code == subj["set"],
                 "_gb_ids": gb_ids,
             })
 
         # MTGO printings Scryfall has no counterpart for (GoatBots' promo and
         # MTGO-only buckets); keep them, they still have real tix history.
         for code, gb_ids in gb_by_set.items():
-            if code == set_code.upper() or code in covered_sets:
+            if code == subj["set"] or code in covered_sets:
                 continue
             ids = [i for i in gb_ids if i not in set_gb_ids]
             if not ids:
@@ -490,15 +553,11 @@ def build(set_code=SET_CODE, window_days=WINDOW_DAYS, max_versions=MAX_VERSIONS,
             return (not v["same_set"], -(v["usd"] or 0), -tix_now, v["key"])
 
         candidates.sort(key=rank)
-        kept = candidates[:max_versions]
-        for v in kept:
+        subj["kept_versions"] = candidates[:max_versions]
+        subj["versions_total"] = len(candidates)
+        relevant_ids.update(set_gb_ids)
+        for v in subj["kept_versions"]:
             relevant_ids.update(v["_gb_ids"])
-        version_plans[name] = {
-            "kept": kept,
-            "total": len(candidates),
-            "primary": primary,
-            "set_printings": scry.get("set_printings") or [],
-        }
     log(f"{len(relevant_ids):,} distinct printing(s) need a digital price series.", quiet)
 
     tix_by_date = load_tix_window(relevant_ids, window_days, quiet)
@@ -510,19 +569,20 @@ def build(set_code=SET_CODE, window_days=WINDOW_DAYS, max_versions=MAX_VERSIONS,
     # printing has done in paper, not just in tix.
     usd_targets = {}
     usd_basis = {}
-    for name, plan in version_plans.items():
-        uuids = printing_uuids(plan["primary"], printing_index)
+    for subj in subjects:
+        key = (subj["set"], subj["name"])
+        uuids = printing_uuids(subj["primary"], printing_index)
         basis = "printing"
         if not uuids and uuid_name_index is not None:
-            uuids = bph.resolve_ids_for_name(name, uuid_name_index) or set()
+            uuids = bph.resolve_ids_for_name(subj["name"], uuid_name_index) or set()
             basis = "name" if uuids else None
         if uuids:
-            usd_targets[("card", name)] = uuids
-        usd_basis[name] = basis if uuids else None
-        for v in plan["kept"]:
+            usd_targets[("card",) + key] = uuids
+        usd_basis[key] = basis if uuids else None
+        for v in subj["kept_versions"]:
             vuuids = printing_uuids(v, printing_index)
             if vuuids:
-                usd_targets[("ver", name, v["key"])] = vuuids
+                usd_targets[("ver",) + key + (v["key"],)] = vuuids
 
     by_printing = sum(1 for b in usd_basis.values() if b == "printing")
     by_name = sum(1 for b in usd_basis.values() if b == "name")
@@ -534,19 +594,18 @@ def build(set_code=SET_CODE, window_days=WINDOW_DAYS, max_versions=MAX_VERSIONS,
 
     cards = []
     slugs = {}
-    for cid, meta in sorted(set_cards.items(), key=lambda kv: _number_key(kv[1])):
-        name = meta["name"]
-        entry = ids_by_name[name]
-        plan = version_plans[name]
-        primary = plan["primary"]
+    for subj in sorted(subjects, key=lambda s: (s["set"], _collector_key(s["primary"].get("number")))):
+        name = subj["name"]
+        key = (subj["set"], name)
+        primary = subj["primary"]
 
-        tix_series = series_for_ids(tix_by_date, entry["set_ids"])
-        usd_series = usd_series_by_target.get(("card", name), [])
+        tix_series = series_for_ids(tix_by_date, subj["gb_set_ids"])
+        usd_series = usd_series_by_target.get(("card",) + key, [])
 
         versions = []
-        for v in plan["kept"]:
+        for v in subj["kept_versions"]:
             vseries = series_for_ids(tix_by_date, v["_gb_ids"]) if v["_gb_ids"] else []
-            vusd = usd_series_by_target.get(("ver", name, v["key"]), [])
+            vusd = usd_series_by_target.get(("ver",) + key + (v["key"],), [])
             record = {k: val for k, val in v.items() if k != "_gb_ids"}
             record["tix"] = vseries[-VERSION_SERIES_POINTS:]
             record["tix_stats"] = change_stats(vseries)
@@ -558,7 +617,7 @@ def build(set_code=SET_CODE, window_days=WINDOW_DAYS, max_versions=MAX_VERSIONS,
         # current paper price for cards whose MTGJSON history hasn't started.
         scry_usd, scry_usd_finish = paper_price(primary) if primary else (None, None)
         if scry_usd is None:
-            for p in plan["set_printings"]:
+            for p in subj["variants"]:
                 scry_usd, scry_usd_finish = paper_price(p)
                 if scry_usd is not None:
                     break
@@ -574,20 +633,21 @@ def build(set_code=SET_CODE, window_days=WINDOW_DAYS, max_versions=MAX_VERSIONS,
             usd_current, usd_source = None, None
 
         slug = slugify(name)
-        if slug in slugs:  # names are unique within a set, but be safe
-            slug = f"{slug}-{cid}"
+        if slug in slugs:  # a card reprinted in a sibling product of the same
+            slug = f"{subj['set'].lower()}-{slug}"  # release appears once per set
         slugs[slug] = name
 
         cards.append({
-            "id": cid,
+            "id": sorted(subj["gb_set_ids"])[0] if subj["gb_set_ids"] else primary.get("id"),
             "slug": slug,
             "name": name,
-            "set": meta.get("cardset") or set_code,
-            "scryfall_set": scryfall_set_for(meta.get("cardset") or set_code),
-            "rarity": (primary or {}).get("rarity") or meta.get("rarity") or "",
-            "number": (primary or {}).get("number") or meta.get("version") or "",
-            "set_name": (primary or {}).get("set_name") or "",
+            "set": subj["set"],
+            "scryfall_set": subj["set"].lower(),
+            "rarity": (primary or {}).get("rarity") or "",
+            "number": (primary or {}).get("number") or "",
+            "set_name": (primary or {}).get("set_name") or set_meta.get(subj["set"], {}).get("name", ""),
             "released": (primary or {}).get("released") or "",
+            "on_mtgo": bool(subj["gb_set_ids"]),
             "art": (primary or {}).get("image"),
             "art_small": (primary or {}).get("image_small"),
             "scryfall_uri": (primary or {}).get("scryfall_uri") or "",
@@ -596,19 +656,21 @@ def build(set_code=SET_CODE, window_days=WINDOW_DAYS, max_versions=MAX_VERSIONS,
             "scry_tix": (primary or {}).get("tix"),
             "usd": usd_series,
             "usd_stats": change_stats(usd_series),
-            "usd_basis": usd_basis.get(name),
+            "usd_basis": usd_basis.get(key),
             "scry_usd": scry_usd,
             "scry_usd_finish": scry_usd_finish,
             "scry_usd_foil": (primary or {}).get("usd_foil"),
             "usd_current": usd_current,
             "usd_source": usd_source,
             "versions": versions,
-            "versions_total": plan["total"],
+            "versions_total": subj["versions_total"],
         })
 
     payload = {
         "generated": datetime.date.today().isoformat(),
         "set_code": set_code.upper(),
+        "set_codes": sorted(set(c["set"] for c in cards)),
+        "sets": set_meta,
         "window_days": window_days,
         "latest_tix_date": latest_date,
         "usd_day_count": usd_day_count,

@@ -16,8 +16,9 @@
   var rarityChips = document.querySelectorAll(".rarity-chip");
   var moveChips = document.querySelectorAll(".move-chip");
   var marketChips = document.querySelectorAll(".market-chip");
+  var setChips = document.querySelectorAll(".set-chip");
 
-  var state = { q: "", rarities: [], move: "all", market: "tix", paperOnly: false };
+  var state = { q: "", rarities: [], sets: [], move: "all", market: "tix", paperOnly: false };
 
   // ------------------------------------------------------------- filtering
 
@@ -29,6 +30,7 @@
   function matches(row) {
     if (state.q && row.dataset.name.indexOf(state.q) === -1) return false;
     if (state.rarities.length && state.rarities.indexOf(row.dataset.rarity) === -1) return false;
+    if (state.sets.length && state.sets.indexOf(row.dataset.set) === -1) return false;
     if (state.paperOnly && num(row, "usd") === null) return false;
     if (state.move !== "all") {
       var pct = num(row, state.market === "usd" ? "usdPct" : "tixPct");
@@ -49,6 +51,7 @@
     var total = statusEl.dataset.total;
     var bits = [];
     if (state.q) bits.push('matching "' + state.q + '"');
+    if (state.sets.length) bits.push("in " + state.sets.join(" / "));
     if (state.rarities.length) bits.push(state.rarities.join(" / ").toLowerCase());
     if (state.paperOnly) bits.push("with a physical price");
     if (state.move !== "all") {
@@ -65,13 +68,22 @@
     applyFilters();
   });
 
+  function toggleChip(chip, list, value) {
+    var i = list.indexOf(value);
+    if (i === -1) { list.push(value); chip.classList.add("active"); }
+    else { list.splice(i, 1); chip.classList.remove("active"); }
+    applyFilters();
+  }
+
   rarityChips.forEach(function (chip) {
     chip.addEventListener("click", function () {
-      var r = chip.dataset.rarity;
-      var i = state.rarities.indexOf(r);
-      if (i === -1) { state.rarities.push(r); chip.classList.add("active"); }
-      else { state.rarities.splice(i, 1); chip.classList.remove("active"); }
-      applyFilters();
+      toggleChip(chip, state.rarities, chip.dataset.rarity);
+    });
+  });
+
+  setChips.forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      toggleChip(chip, state.sets, chip.dataset.set);
     });
   });
 
@@ -101,10 +113,11 @@
   });
 
   clearBtn.addEventListener("click", function () {
-    state = { q: "", rarities: [], move: "all", market: "tix", paperOnly: false };
+    state = { q: "", rarities: [], sets: [], move: "all", market: "tix", paperOnly: false };
     searchInput.value = "";
     paperOnly.checked = false;
     rarityChips.forEach(function (c) { c.classList.remove("active"); });
+    setChips.forEach(function (c) { c.classList.remove("active"); });
     moveChips.forEach(function (c) { c.classList.toggle("active", c.dataset.move === "all"); });
     marketChips.forEach(function (c) { c.classList.toggle("active", c.dataset.market === "tix"); });
     applyFilters();
@@ -113,7 +126,7 @@
   // --------------------------------------------------------------- sorting
 
   var SORT_KEYS = {
-    number: "number", name: "name", rarity: "rarity", usd: "usd",
+    number: "number", name: "name", rarity: "rarity", set: "set", usd: "usd",
     usd_pct: "usdPct", tix: "tix", tix_pct: "tixPct", versions: "versions"
   };
   var RARITY_RANK = { Mythic: 4, Rare: 3, Uncommon: 2, Common: 1 };

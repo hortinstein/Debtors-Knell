@@ -96,7 +96,9 @@ def _summary(card):
         "rarity": card["rarity"],
         "number": card["number"],
         "set": card["set"],
+        "set_name": card.get("set_name") or "",
         "scryfall_set": card["scryfall_set"],
+        "on_mtgo": card.get("on_mtgo", True),
         "art_small": card.get("art_small"),
         "usd_current": card.get("usd_current"),
         "usd_source": card.get("usd_source"),
@@ -122,10 +124,26 @@ def index():
     data = _load_dataset()
     cards = [_summary(c) for c in data["cards"]]
     rarities = [r for r in RARITY_ORDER if any(c["rarity"] == r for c in cards)]
+    # One chip per product in the release (main set, Commander decks, ...),
+    # with the set's proper name for the label where we have it.
+    set_meta = data.get("sets") or {}
+    sets = []
+    for code in data.get("set_codes") or sorted({c["set"] for c in cards}):
+        count = sum(1 for c in cards if c["set"] == code)
+        if not count:
+            continue
+        sets.append({
+            "code": code,
+            "name": set_meta.get(code, {}).get("name")
+                    or next((c["set_name"] for c in cards if c["set"] == code and c["set_name"]), code),
+            "count": count,
+            "on_mtgo": any(c["on_mtgo"] for c in cards if c["set"] == code),
+        })
     return render_template(
         "index.html",
         cards=cards,
         rarities=rarities,
+        sets=sets,
         set_code=data["set_code"],
         generated=data["generated"],
         latest_tix_date=data["latest_tix_date"],

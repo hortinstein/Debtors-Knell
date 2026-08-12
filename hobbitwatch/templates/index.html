@@ -25,6 +25,12 @@
     since that card's <em>first</em> archived data point &mdash; this set is new, so the
     clock started when it did.
   </p>
+  {% if sets|length > 1 %}
+  <p class="muted">
+    This release is more than one product:
+    {% for s in sets %}<strong>{{ s.code }}</strong> {{ s.name }} ({{ s.count }} cards{% if not s.on_mtgo %}, paper only &mdash; not on MTGO, so no tix price{% endif %}){% if not loop.last %}; {% endif %}{% endfor %}.
+  </p>
+  {% endif %}
   <p class="muted">
     {{ digital_count }} of {{ cards|length }} cards have a digital price;
     {{ paper_count }} have a physical one, {{ paper_series_count }} with enough archived
@@ -40,6 +46,18 @@
     <span>Search by title</span>
     <input type="search" id="search" placeholder="e.g. Smaug, Bilbo, Ring&hellip;" autocomplete="off">
   </label>
+
+  {% if sets|length > 1 %}
+  <div class="chip-row" role="group" aria-label="Filter by product">
+    <span class="chip-row-label">Product:</span>
+    {% for s in sets %}
+    <button type="button" class="chip set-chip" data-set="{{ s.code }}"
+            title="{{ s.name }} &mdash; {{ s.count }} cards{{ '' if s.on_mtgo else ', paper only (not on MTGO)' }}">
+      {{ s.code }} <span class="chip-count">{{ s.count }}</span>
+    </button>
+    {% endfor %}
+  </div>
+  {% endif %}
 
   <div class="chip-row" role="group" aria-label="Filter by rarity">
     <span class="chip-row-label">Rarity:</span>
@@ -70,6 +88,7 @@
     <tr>
       <th class="sortable" data-key="number" data-type="num">#</th>
       <th class="sortable" data-key="name" data-type="text">Card</th>
+      <th class="sortable" data-key="set" data-type="text">Set</th>
       <th class="sortable" data-key="rarity" data-type="text">Rarity</th>
       <th class="sortable num" data-key="usd" data-type="num" title="Latest archived USD price (median across matched printings)">Physical ($)</th>
       <th class="sortable num" data-key="usd_pct" data-type="num" title="Change since the first archived USD data point">&Delta; since first</th>
@@ -84,6 +103,7 @@
         data-slug="{{ c.slug }}"
         data-name="{{ c.name|lower }}"
         data-rarity="{{ c.rarity }}"
+        data-set="{{ c.set }}"
         data-number="{{ c.number }}"
         data-usd="{{ c.usd_current if c.usd_current is not none else '' }}"
         data-usd-pct="{{ c.usd_pct if c.usd_pct is not none else '' }}"
@@ -96,6 +116,7 @@
         {% if c.art_small %}<img class="row-thumb" src="{{ c.art_small }}" alt="" loading="lazy">{% endif %}
         <span>{{ c.name }}</span>
       </td>
+      <td><span class="set-tag" title="{{ c.set_name or c.set }}{{ '' if c.on_mtgo else ' — paper only, not on MTGO' }}">{{ c.set }}</span></td>
       <td><span class="rarity rarity-{{ c.rarity|lower }}">{{ c.rarity }}</span></td>
       <td class="num"
           {% if c.usd_source %}title="{{ 'Latest archived MTGJSON snapshot' if c.usd_source == 'mtgjson' else 'Current Scryfall price for this printing' }}"{% endif %}>
