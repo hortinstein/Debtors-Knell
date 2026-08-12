@@ -97,6 +97,9 @@ def _summary(card):
         "number": card["number"],
         "set": card["set"],
         "scryfall_set": card["scryfall_set"],
+        "art_small": card.get("art_small"),
+        "usd_current": card.get("usd_current"),
+        "usd_source": card.get("usd_source"),
         "usd": usd["last"],
         "usd_change": usd["change"],
         "usd_pct": usd["pct"],
@@ -127,7 +130,9 @@ def index():
         generated=data["generated"],
         latest_tix_date=data["latest_tix_date"],
         usd_day_count=data["usd_day_count"],
-        paper_count=sum(1 for c in cards if c["usd"] is not None),
+        scryfall_generated=(data.get("scryfall_generated") or "")[:10],
+        paper_count=sum(1 for c in cards if c["usd_current"] is not None),
+        paper_series_count=sum(1 for c in cards if c["usd"] is not None),
         digital_count=sum(1 for c in cards if c["tix"] is not None),
     )
 

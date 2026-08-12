@@ -1,0 +1,72 @@
+name: Refresh Hobbit Watch source data
+
+# Pulls the two things hobbitwatch/ needs from the network and commits them
+# back to this branch:
+#
+#   prices/mtgjson/uuid_to_name.json.gz   forced refresh, so the archived
+#       MTGJSON price snapshots can be joined to a brand-new set's card names
+#       (the daily workflow only refreshes it monthly, which leaves a new set
+#       mostly unpriced until the refresh happens to come round)
+#   hobbitwatch/scryfall/hob_prints.json.gz   current paper prices and real
+#       card art for every printing of every Hobbit card
+#
+# Runs on push to the feature branch (a push-triggered workflow runs from the
+# branch's own copy, so it works before this file is on the default branch),
+# and weekly thereafter to keep the Scryfall prices current.
+
+on:
+  push:
+    branches:
+      - claude/hobbit-cards-price-tracker-q5j2re
+    paths:
+      - "hobbitwatch/**"
+      - ".github/workflows/hobbit-data.yml"
+  schedule:
+    # Sundays, well clear of the daily 09:23 UTC price fetch.
+    - cron: "40 11 * * 0"
+  workflow_dispatch:
+    inputs:
+      force_uuid_map:
+        description: "Force the MTGJSON uuid -> name map refresh"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hobbit-data-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python dependencies
+        run: pip install requests
+
+      # AllIdentifiers is a few hundred MB before it's distilled down to
+      # {uuid: name}; this is the same script the daily price workflow runs,
+      # just without waiting for its monthly no-op window to expire.
+      - name: Refresh MTGJSON uuid-to-name map
+        if: github.event_name != 'workflow_dispatch' || inputs.force_uuid_map
+        run: python scripts/build_mtgjson_uuid_map.py --force
+
+      - name: Fetch Hobbit set from Scryfall
+        run: python hobbitwatch/fetch_scryfall.py
+
+      - name: Show what changed
+        run: git status --short
+
+      - name: Commit refreshed data
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Refresh Hobbit Watch source data (MTGJSON name map + Scryfall prints)"
+          file_pattern: "prices/mtgjson/uuid_to_name.json.gz hobbitwatch/scryfall/*.json.gz"

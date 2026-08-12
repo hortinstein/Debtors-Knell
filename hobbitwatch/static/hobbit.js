@@ -161,11 +161,22 @@
   var lastFocused = null;
   var cache = {};
 
+  // Art comes from the checked-in Scryfall snapshot when we have it (an exact
+  // per-printing image URL); otherwise fall back to Scryfall's image API,
+  // which resolves a card by exact name with no JSON call in between.
   function scryfallArt(name, set, size) {
     var url = "https://api.scryfall.com/cards/named?exact=" + encodeURIComponent(name) +
               "&format=image&version=" + (size || "normal");
     if (set) url += "&set=" + encodeURIComponent(set);
     return url;
+  }
+
+  function artFor(name, printing, size) {
+    if (printing) {
+      var direct = size === "small" ? printing.image_small : printing.image;
+      if (direct) return direct;
+    }
+    return scryfallArt(name, printing ? printing.scryfall_set : null, size);
   }
 
   function fallbackArt(img, name) {
@@ -195,32 +206,71 @@
     return '<span class="' + cls + '">' + sign + money(stats.change, market) + pct + "</span>";
   }
 
-  function priceBox(title, stats, market) {
+  // `current` is the live Scryfall price for this printing, used as the
+  // headline figure when our archive has no series for the card yet.
+  function priceBox(title, stats, market, current) {
     var cls = stats.change > 0 ? " gain-box" : (stats.change < 0 ? " loss-box" : "");
+    var headline = stats.last;
+    var fromScryfall = false;
+    if (headline === null && current !== null && current !== undefined) {
+      headline = current;
+      fromScryfall = true;
+    }
     var since = stats.first_date
       ? "since " + stats.first_date + " (" + money(stats.first, market) + ", " +
         stats.days + " day" + (stats.days === 1 ? "" : "s") + ")"
-      : "no archived data yet";
+      : (fromScryfall ? "Scryfall, current — no archived history yet"
+                      : "no archived data yet");
     return '<div class="price-box' + (stats.change === null ? "" : cls) + '">' +
       "<h3>" + title + "</h3>" +
-      '<div class="value">' + money(stats.last, market) + "</div>" +
+      '<div class="value">' + money(headline, market) + "</div>" +
       '<div class="delta">' + deltaHtml(stats, market) + "</div>" +
       '<span class="since">' + since + "</span></div>";
   }
 
   function versionHtml(card, v) {
-    var img = scryfallArt(card.name, v.scryfall_set, "small");
-    var meta = [v.rarity, v.number ? "#" + v.number : "", v.foil ? "foil" : ""]
+    var img = artFor(card.name, v, "small");
+    var meta = [v.set_name || v.set, v.number ? "#" + v.number : "",
+                v.released ? v.released.slice(0, 4) : "", v.digital ? "MTGO" : ""]
       .filter(Boolean).join(" · ");
-    return '<div class="version-card">' +
-      '<img loading="lazy" alt="' + escapeHtml(card.name) + " (" + escapeHtml(v.set) + ')"' +
-      ' data-size="small" data-card-name="' + escapeHtml(card.name) + '" src="' + img + '">' +
-      '<div class="version-set">' + escapeHtml(v.set) + "</div>" +
+    // Paper price where the printing has one, digital where our archive does;
+    // a printing can legitimately have either, both, or neither.
+    var prices = [];
+    if (v.usd !== null && v.usd !== undefined) {
+      prices.push('<span class="version-usd">' + money(v.usd, "usd") +
+                  (v.usd_finish === "usd_foil" ? " foil" : "") + "</span>");
+    }
+    var tixNow = v.tix_stats.last !== null ? v.tix_stats.last : v.scry_tix;
+    if (tixNow !== null && tixNow !== undefined) {
+      prices.push('<span class="version-tix">' + money(tixNow, "tix") +
+                  (v.tix_stats.change !== null ? " " + deltaHtml(v.tix_stats, "tix") : "") +
+                  "</span>");
+    }
+    if (!prices.length) prices.push('<span class="muted">no price</span>');
+
+    var title = escapeHtml(card.name) + " (" + escapeHtml(v.set_name || v.set) + ")";
+    var art = '<img loading="lazy" alt="' + title + '" data-size="small"' +
+      ' data-card-name="' + escapeHtml(card.name) + '"' +
+      ' data-set="' + escapeHtml(v.scryfall_set || "") + '" src="' + img + '">';
+    if (v.scryfall_uri) {
+      art = '<a href="' + escapeHtml(v.scryfall_uri) + '" target="_blank" rel="noopener">' +
+            art + "</a>";
+    }
+    return '<div class="version-card' + (v.same_set ? " version-same-set" : "") + '">' +
+      art +
+      '<div class="version-set">' + escapeHtml(v.set) +
+      (v.same_set ? ' <span class="version-badge">this set</span>' : "") + "</div>" +
       '<div class="version-meta">' + escapeHtml(meta) + "</div>" +
-      '<div class="version-price">' + money(v.tix_stats.last, "tix") + " " +
-      deltaHtml(v.tix_stats, "tix") + "</div>" +
-      '<canvas class="version-spark" data-id="' + v.id + '"></canvas>' +
+      '<div class="version-price">' + prices.join('<br>') + "</div>" +
+      '<canvas class="version-spark" data-key="' + escapeHtml(v.key) + '"></canvas>' +
       "</div>";
+  }
+
+  // Version keys are "SET-collectornumber" (or "gb-<id>"), and collector
+  // numbers carry stars and letters -- escape before using one in a selector.
+  function cssEscape(s) {
+    if (window.CSS && CSS.escape) return CSS.escape(s);
+    return String(s).replace(/["\\\]]/g, "\\$&");
   }
 
   function escapeHtml(s) {
@@ -252,23 +302,37 @@
     }
 
     var usdNote = card.usd.length
-      ? "Physical prices are the median USD retail across every matched printing of this card name."
-      : "No physical (USD) price archived for this card yet &mdash; MTGJSON's price " +
-        "snapshots are keyed by an id whose name map hasn't caught up with this set. " +
-        "It fills in on the next monthly refresh.";
+      ? "Physical history is MTGJSON's archived daily snapshots &mdash; the median " +
+        "USD retail across every matched printing of this card name." +
+        (card.scry_usd !== null && card.scry_usd !== undefined
+          ? " Scryfall's current price for this printing: " + money(card.scry_usd, "usd") +
+            (card.scry_usd_foil ? " (" + money(card.scry_usd_foil, "usd") + " foil)" : "") + "."
+          : "")
+      : "The physical price is Scryfall's current one for this printing. No archived " +
+        "MTGJSON history for this card yet, so there's nothing to chart or measure a " +
+        "change against &mdash; that starts once this repo's uuid &rarr; name map covers it.";
+
+    var sub = [card.set_name || card.set,
+               card.number ? "#" + card.number : "",
+               card.rarity,
+               card.released ? "released " + card.released : ""].filter(Boolean).join(" · ");
 
     modalBody.innerHTML =
       '<div class="modal-head">' +
       '<img class="modal-art" data-size="normal" data-card-name="' + escapeHtml(card.name) + '"' +
-      ' alt="' + escapeHtml(card.name) + '" src="' + scryfallArt(card.name, card.scryfall_set) + '">' +
+      ' data-set="' + escapeHtml(card.scryfall_set || "") + '"' +
+      ' alt="' + escapeHtml(card.name) + '" src="' +
+      (card.art || scryfallArt(card.name, card.scryfall_set)) + '">' +
       '<div class="modal-head-text">' +
-      '<h2 id="modal-title">' + escapeHtml(card.name) + "</h2>" +
-      '<p class="modal-sub">' + escapeHtml(card.set) +
-      (card.number ? " #" + escapeHtml(card.number) : "") + " · " +
-      escapeHtml(card.rarity) + "</p>" +
+      '<h2 id="modal-title">' +
+      (card.scryfall_uri
+        ? '<a href="' + escapeHtml(card.scryfall_uri) + '" target="_blank" rel="noopener">' +
+          escapeHtml(card.name) + "</a>"
+        : escapeHtml(card.name)) + "</h2>" +
+      '<p class="modal-sub">' + escapeHtml(sub) + "</p>" +
       '<div class="price-grid">' +
-      priceBox("Physical (USD)", card.usd_stats, "usd") +
-      priceBox("Digital (tix)", card.tix_stats, "tix") +
+      priceBox("Physical (USD)", card.usd_stats, "usd", card.scry_usd) +
+      priceBox("Digital (tix)", card.tix_stats, "tix", card.scry_tix) +
       "</div>" +
       '<p class="chart-note">' + usdNote + "</p>" +
       "</div></div>" +
@@ -290,7 +354,7 @@
 
     setupChart(card);
     versions.forEach(function (v) {
-      var canvas = modalBody.querySelector('canvas[data-id="' + v.id + '"]');
+      var canvas = modalBody.querySelector('canvas[data-key="' + cssEscape(v.key) + '"]');
       if (canvas) drawSparkline(canvas, v.tix);
     });
   }

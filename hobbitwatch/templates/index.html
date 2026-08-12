@@ -15,23 +15,23 @@
 <main>
 <section class="intro">
   <p>
-    Every card in <strong>{{ set_code }}</strong>, priced from this repo's own daily
-    archive: <strong>physical</strong> prices in USD from MTGJSON's daily
-    snapshots ({{ usd_day_count }} archived day{{ '' if usd_day_count == 1 else 's' }}),
-    <strong>digital</strong> prices in MTGO tix from GoatBots
+    Every card in <strong>{{ set_code }}</strong>. <strong>Physical</strong> prices in
+    USD come from Scryfall{% if scryfall_generated %} (fetched {{ scryfall_generated }}){% endif %},
+    with day-by-day history from MTGJSON's archived snapshots
+    ({{ usd_day_count }} archived day{{ '' if usd_day_count == 1 else 's' }});
+    <strong>digital</strong> prices in MTGO tix come from GoatBots
     (latest day: {{ latest_tix_date }}). Both change columns measure the move
     since that card's <em>first</em> archived data point &mdash; this set is new,
     so the clock started when it did.
   </p>
   <p class="muted">
-    {{ digital_count }} of {{ cards|length }} cards have digital prices;
-    {{ paper_count }} have physical prices. Paper coverage is thin for now:
-    MTGJSON's price snapshots are keyed by an id with no card name attached, and
-    the name map this repo keeps for them refreshes monthly, so a set this new is
-    only partly in it &mdash; the rest fill in on the next refresh with no change
-    to this page. Physical prices are per card name (median across matched
-    printings), digital prices are per printing.
-    Dataset built {{ generated }}.
+    {{ digital_count }} of {{ cards|length }} cards have a digital price,
+    {{ paper_count }} a physical one, and {{ paper_series_count }} enough archived
+    days for a physical <em>change</em>. The two physical numbers come from
+    different places on purpose: the current price is per printing from Scryfall,
+    while the change is measured on MTGJSON's archived series, which is per card
+    name (median across matched printings) and only covers cards already in this
+    repo's uuid&nbsp;&rarr;&nbsp;name map. Dataset built {{ generated }}.
   </p>
 </section>
 
@@ -85,16 +85,22 @@
         data-name="{{ c.name|lower }}"
         data-rarity="{{ c.rarity }}"
         data-number="{{ c.number }}"
-        data-usd="{{ c.usd if c.usd is not none else '' }}"
+        data-usd="{{ c.usd_current if c.usd_current is not none else '' }}"
         data-usd-pct="{{ c.usd_pct if c.usd_pct is not none else '' }}"
         data-tix="{{ c.tix if c.tix is not none else '' }}"
         data-tix-pct="{{ c.tix_pct if c.tix_pct is not none else '' }}"
         data-versions="{{ c.versions_total }}"
         aria-label="Open price detail for {{ c.name }}">
       <td class="num muted">{{ c.number }}</td>
-      <td class="col-name">{{ c.name }}</td>
+      <td class="col-name">
+        {% if c.art_small %}<img class="row-thumb" src="{{ c.art_small }}" alt="" loading="lazy">{% endif %}
+        <span>{{ c.name }}</span>
+      </td>
       <td><span class="rarity rarity-{{ c.rarity|lower }}">{{ c.rarity }}</span></td>
-      <td class="num">{% if c.usd is not none %}${{ c.usd|money }}{% else %}<span class="muted">&mdash;</span>{% endif %}</td>
+      <td class="num"
+          {% if c.usd_source %}title="{{ 'Latest archived MTGJSON snapshot' if c.usd_source == 'mtgjson' else 'Current Scryfall price for this printing' }}"{% endif %}>
+        {% if c.usd_current is not none %}${{ c.usd_current|money }}{% if c.usd_source == 'scryfall' %}<span class="src">S</span>{% endif %}{% else %}<span class="muted">&mdash;</span>{% endif %}
+      </td>
       <td class="num {{ 'gain' if c.usd_change and c.usd_change > 0 else ('loss' if c.usd_change and c.usd_change < 0 else '') }}"
           {% if c.usd_first_date %}title="First archived on {{ c.usd_first_date }} at ${{ c.usd_first|money }} ({{ c.usd_days }} days)"{% endif %}>
         {% if c.usd_change is not none %}
