@@ -21,9 +21,14 @@ derived dataset) -- it's small, it changes only when Scryfall's prices do,
 and committing it means the app has real art and paper prices even where
 there's no network access to Scryfall.
 
-Scryfall's API guidelines ask for a descriptive User-Agent, an explicit
-Accept header, and 50-100ms between requests; this waits 120ms and retries
-politely on 429.
+Politeness matters here and the first version of this script got it wrong: it
+asked Scryfall for each card's printings separately (193 searches) and was
+rate-limited a quarter of the way through. It now does the whole job in two
+paginated searches -- `set:hob` for the set itself, and `in:hob unique:prints`
+for every printing of every card that appears in the set -- which is a few
+dozen requests instead of a few hundred. On top of that: a descriptive
+User-Agent, an explicit Accept header, 250ms between requests (Scryfall asks
+for 50-100ms), Retry-After honoured, and a long backoff on 429.
 
 Run from CI (.github/workflows/hobbit-data.yml) or by hand:
     python3 hobbitwatch/fetch_scryfall.py
@@ -44,41 +49,77 @@ OUT_PATH = os.path.join(HERE, "scryfall", "hob_prints.json.gz")
 SEARCH_URL = "https://api.scryfall.com/cards/search"
 SET_CODE = "hob"
 
-REQUEST_DELAY = 0.12  # Scryfall asks for 50-100ms between calls; be generous.
+REQUEST_DELAY = 0.25  # Scryfall asks for 50-100ms between calls; be generous.
 HEADERS = {
     "User-Agent": "DebtorsKnell-HobbitWatch/1.0 (github.com/hortinstein/Debtors-Knell)",
     "Accept": "application/json",
 }
+
+# A 429 means we've already been impolite, so back off in seconds, not
+# milliseconds, and give it several chances before giving up.
+RATE_LIMIT_BACKOFF = [5, 10, 20, 40, 60]
+
+# Every printing of a card, for a set containing basic lands, runs to several
+# hundred entries (there are ~800 Islands). Keep the most valuable ones -- the
+# page only ever shows a couple of dozen -- so the committed snapshot stays
+# small. The set's own printings are always kept.
+MAX_PRINTINGS_PER_CARD = 40
 
 
 def log(msg):
     print(msg, flush=True)
 
 
-def get(url, params=None, tries=4):
-    """One rate-limited GET, retrying on 429 and transient 5xx."""
-    for attempt in range(tries):
+def get(url, params=None):
+    """One rate-limited GET, backing off properly on 429 and transient 5xx."""
+    for attempt in range(len(RATE_LIMIT_BACKOFF) + 1):
         time.sleep(REQUEST_DELAY)
         r = requests.get(url, params=params, headers=HEADERS, timeout=60)
         if r.status_code == 429 or r.status_code >= 500:
-            wait = 2 ** attempt
-            log(f"  {r.status_code} from Scryfall, retrying in {wait}s...")
+            if attempt >= len(RATE_LIMIT_BACKOFF):
+                break
+            wait = RATE_LIMIT_BACKOFF[attempt]
+            retry_after = r.headers.get("Retry-After")
+            if retry_after:
+                try:
+                    wait = max(wait, int(retry_after))
+                except ValueError:
+                    pass
+            log(f"  {r.status_code} from Scryfall, waiting {wait}s before retrying...")
             time.sleep(wait)
             continue
         r.raise_for_status()
         return r.json()
-    raise SystemExit(f"Scryfall kept failing for {url}")
+    raise SystemExit(f"Scryfall kept rate-limiting {url}; giving up.")
 
 
-def paginate(url, params=None):
+def paginate(url, params=None, label=""):
     """Every card across a paginated Scryfall search."""
     page = get(url, params)
+    fetched = 0
     while True:
         for card in page.get("data", []):
+            fetched += 1
             yield card
         if not page.get("has_more"):
+            if label:
+                log(f"  {label}: {fetched} card(s) over "
+                    f"{-(-fetched // 175)} page(s).")
             return
         page = get(page["next_page"])
+
+
+def search(query, unique="prints", label=""):
+    """A whole paginated search, tolerating Scryfall's 404 for 'no cards
+    matched' (an empty result is data, not an error)."""
+    try:
+        return list(paginate(SEARCH_URL, {"q": query, "unique": unique,
+                                          "order": "released"}, label=label))
+    except requests.HTTPError as e:
+        if e.response is not None and e.response.status_code == 404:
+            log(f"  no cards matched {query!r}")
+            return []
+        raise
 
 
 def image_urls(card):
@@ -128,14 +169,30 @@ def printing_record(card):
     }
 
 
+def _print_sort_key(p, set_code):
+    """Which printings to keep when a card has more than we need: the set's
+    own first, then the most valuable, then the most recent."""
+    usd, _ = paper_price(p)
+    return (p["set"] != set_code.upper(), -(usd or 0), p.get("released") or "")
+
+
+def paper_price(printing):
+    for key in ("usd", "usd_foil", "usd_etched"):
+        value = printing.get(key)
+        if value is not None:
+            return value, key
+    return None, None
+
+
 def build(set_code=SET_CODE, out_path=OUT_PATH):
     log(f"Fetching set:{set_code} from Scryfall...")
-    set_cards = list(paginate(SEARCH_URL, {"q": f"set:{set_code}", "unique": "prints",
-                                           "order": "set"}))
+    set_cards = search(f"set:{set_code}", label=f"set:{set_code}")
+    if not set_cards:
+        raise SystemExit(f"Scryfall has no cards in set {set_code!r}.")
     log(f"{len(set_cards)} printing(s) in {set_code.upper()}.")
 
     cards = {}
-    seen_oracle = {}
+    oracle_to_name = {}
     for card in set_cards:
         name = card.get("name") or ""
         oracle_id = card.get("oracle_id") or ""
@@ -147,21 +204,35 @@ def build(set_code=SET_CODE, out_path=OUT_PATH):
         })
         entry["set_printings"].append(printing_record(card))
         if oracle_id:
-            seen_oracle[oracle_id] = (name, card.get("prints_search_uri"))
+            oracle_to_name[oracle_id] = name
 
-    log(f"{len(cards)} distinct card(s); fetching every printing of each "
-        f"(~{len(seen_oracle) * REQUEST_DELAY:.0f}s of rate-limited calls)...")
-    for i, (oracle_id, (name, prints_uri)) in enumerate(sorted(seen_oracle.items()), 1):
-        if not prints_uri:
+    # One search for every printing of every card that appears in the set,
+    # rather than one search per card. `in:<set>` selects cards *printed in*
+    # that set; `unique=prints` then returns each of their printings.
+    log(f"{len(cards)} distinct card(s); fetching every printing of each in one "
+        f"search (in:{set_code} unique:prints)...")
+    all_prints = search(f"in:{set_code}", label=f"in:{set_code}")
+    if not all_prints:
+        log("  in: search returned nothing -- keeping the set's own printings only.")
+
+    grouped = {}
+    for card in all_prints:
+        name = oracle_to_name.get(card.get("oracle_id") or "") or card.get("name") or ""
+        if name not in cards:
             continue
-        try:
-            prints = list(paginate(prints_uri))
-        except requests.HTTPError as e:
-            log(f"  [{i}/{len(seen_oracle)}] {name}: {e} -- skipping")
-            continue
-        cards[name]["printings"] = [printing_record(p) for p in prints]
-        if i % 25 == 0:
-            log(f"  [{i}/{len(seen_oracle)}] {name}")
+        grouped.setdefault(name, []).append(printing_record(card))
+
+    trimmed = 0
+    for name, entry in cards.items():
+        prints = grouped.get(name) or list(entry["set_printings"])
+        if len(prints) > MAX_PRINTINGS_PER_CARD:
+            trimmed += 1
+            prints = sorted(prints, key=lambda p: _print_sort_key(p, set_code))
+            prints = prints[:MAX_PRINTINGS_PER_CARD]
+        entry["printings"] = prints
+    if trimmed:
+        log(f"  {trimmed} card(s) had more than {MAX_PRINTINGS_PER_CARD} printings; "
+            "kept the set's own plus the most valuable.")
 
     payload = {
         "generated": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),

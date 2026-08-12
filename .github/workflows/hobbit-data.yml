@@ -63,9 +63,14 @@ jobs:
         run: python hobbitwatch/fetch_scryfall.py
 
       - name: Show what changed
+        if: always()
         run: git status --short
 
+      # always(), so a failure in one fetch doesn't throw away the other's
+      # work -- the map refresh alone is worth committing. The job still
+      # reports the failure.
       - name: Commit refreshed data
+        if: always()
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Refresh Hobbit Watch source data (MTGJSON name map + Scryfall prints)"
