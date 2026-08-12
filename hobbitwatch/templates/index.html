@@ -28,7 +28,7 @@
   {% if sets|length > 1 %}
   <p class="muted">
     This release is more than one product:
-    {% for s in sets %}<strong>{{ s.code }}</strong> {{ s.name }} ({{ s.count }} cards{% if not s.on_mtgo %}, paper only &mdash; not on MTGO, so no tix price{% endif %}){% if not loop.last %}; {% endif %}{% endfor %}.
+    {% for s in sets %}<strong>{{ s.code }}</strong> {{ s.name }} ({{ s.count }} cards{% if not s.on_mtgo %}, absent from the MTGO catalogue &mdash; so no archived tix history, only whatever current tix price Scryfall reports{% endif %}){% if not loop.last %}; {% endif %}{% endfor %}.
   </p>
   {% endif %}
   <p class="muted">
@@ -74,6 +74,15 @@
     <span class="chip-row-label">in</span>
     <button type="button" class="chip market-chip active" data-market="tix">Digital</button>
     <button type="button" class="chip market-chip" data-market="usd">Physical</button>
+  </div>
+
+  <div class="chip-row" role="group" aria-label="Sort">
+    <span class="chip-row-label">Sort:</span>
+    <button type="button" class="chip sort-chip active" data-sort="number" data-dir="asc">Set order</button>
+    <button type="button" class="chip sort-chip" data-sort="usd" data-dir="desc">Physical price</button>
+    <button type="button" class="chip sort-chip" data-sort="tix" data-dir="desc">Digital price</button>
+    <button type="button" class="chip sort-chip" data-sort="usd_pct" data-dir="desc">Biggest paper move</button>
+    <button type="button" class="chip sort-chip" data-sort="tix_pct" data-dir="desc">Biggest MTGO move</button>
   </div>
 
   <label class="check-label"><input type="checkbox" id="paper-only"> Only cards with a physical price</label>

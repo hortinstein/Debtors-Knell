@@ -1,8 +1,15 @@
 # Hobbit Watch
 
-A small, standalone Flask app for tracking prices of the **new Hobbit cards**
-(GoatBots set code `HOB`), built entirely on the price archive this repo
-already collects daily (`../prices/`, see `../prices/README.md`).
+A small, standalone Flask app for tracking prices of the **new Hobbit cards** —
+both products of the release: `HOB` (The Hobbit, 193 cards) and `HOC` (The
+Hobbit Eternal, 117 cards). It's built on the price archive this repo already
+collects daily (`../prices/`, see `../prices/README.md`), plus a checked-in
+Scryfall snapshot for art and per-printing paper prices.
+
+The card list comes from **paper**, not from MTGO. That distinction matters:
+`HOC` has no MTGO printings at all, so a GoatBots-driven card list misses all
+117 of its cards — including the most valuable ones in the release. GoatBots is
+a source of tix prices here, not a census.
 
 It is deliberately separate from `../webapp` — different folder, its own
 templates, static files and routes. The main site is about the 2003–2009
@@ -101,6 +108,19 @@ python3 hobbitwatch/build_dataset.py --force
   physical series are preorder speculation collapsing — several mythics show
   -60% to -90% since their first archived day. That's what the data says; the
   page doesn't smooth it.
+* **40 of the 117 `HOC` cards have no paper price.** They're the deck-filler
+  reprints (collector numbers 161+); neither MTGJSON nor Scryfall lists a USD
+  retail price for those specific printings yet. All 40 *are* in the uuid map,
+  so they'll price themselves as soon as a vendor lists them. They show a dash
+  meanwhile.
+* **`HOC` has no archived tix history** — it isn't in the GoatBots MTGO
+  catalogue. Where Scryfall reports a current tix price for one of its cards,
+  the modal shows it and labels it as Scryfall's.
+* **Not included:** `THOB`, the 15-printing token set (`--include-tokens` to
+  fetch it). Also checked and correctly excluded: the `SPG` Special Guests
+  batch that sits near `HOB` in GoatBots' id range — the price archive shows
+  those 20 cards a week before `HOB` appeared, so they belong to an earlier
+  release.
 
 ## Routes
 

@@ -129,40 +129,56 @@
     number: "number", name: "name", rarity: "rarity", set: "set", usd: "usd",
     usd_pct: "usdPct", tix: "tix", tix_pct: "tixPct", versions: "versions"
   };
+  var TEXT_SORTS = { name: true, set: true };
   var RARITY_RANK = { Mythic: 4, Rare: 3, Uncommon: 2, Common: 1 };
+  var sortChips = document.querySelectorAll(".sort-chip");
+
+  function sortBy(key, desc) {
+    var dataKey = SORT_KEYS[key];
+    var sorted = rows.slice().sort(function (a, b) {
+      var va, vb;
+      if (key === "rarity") {
+        va = RARITY_RANK[a.dataset.rarity] || 0;
+        vb = RARITY_RANK[b.dataset.rarity] || 0;
+      } else if (TEXT_SORTS[key]) {
+        va = a.dataset[dataKey] || "";
+        vb = b.dataset[dataKey] || "";
+        return desc ? vb.localeCompare(va) : va.localeCompare(vb);
+      } else {
+        va = parseFloat(a.dataset[dataKey]);
+        vb = parseFloat(b.dataset[dataKey]);
+        // Cards with no price in this market always sort last, either way --
+        // an unpriced card isn't "cheapest", it's unknown.
+        if (isNaN(va) && isNaN(vb)) return 0;
+        if (isNaN(va)) return 1;
+        if (isNaN(vb)) return -1;
+      }
+      return desc ? vb - va : va - vb;
+    });
+    var body = table.tBodies[0];
+    sorted.forEach(function (r) { body.appendChild(r); });
+    rows = sorted;
+
+    // Keep the header arrows and the sort chips showing the same thing.
+    table.querySelectorAll("th").forEach(function (o) {
+      o.classList.remove("sorted-asc", "sorted-desc");
+    });
+    var th = table.querySelector('th[data-key="' + key + '"]');
+    if (th) th.classList.add(desc ? "sorted-desc" : "sorted-asc");
+    sortChips.forEach(function (c) {
+      c.classList.toggle("active", c.dataset.sort === key);
+    });
+  }
 
   table.querySelectorAll("th.sortable").forEach(function (th) {
     th.addEventListener("click", function () {
-      var key = SORT_KEYS[th.dataset.key];
-      var desc = !th.classList.contains("sorted-desc");
-      table.querySelectorAll("th").forEach(function (o) {
-        o.classList.remove("sorted-asc", "sorted-desc");
-      });
-      th.classList.add(desc ? "sorted-desc" : "sorted-asc");
+      sortBy(th.dataset.key, !th.classList.contains("sorted-desc"));
+    });
+  });
 
-      var isNum = th.dataset.type === "num";
-      var sorted = rows.slice().sort(function (a, b) {
-        var va, vb;
-        if (th.dataset.key === "rarity") {
-          va = RARITY_RANK[a.dataset.rarity] || 0;
-          vb = RARITY_RANK[b.dataset.rarity] || 0;
-        } else if (isNum) {
-          va = parseFloat(a.dataset[key]);
-          vb = parseFloat(b.dataset[key]);
-          // Cards with no price in this market always sort last, either way.
-          if (isNaN(va) && isNaN(vb)) return 0;
-          if (isNaN(va)) return 1;
-          if (isNaN(vb)) return -1;
-        } else {
-          va = a.dataset[key] || "";
-          vb = b.dataset[key] || "";
-          return desc ? vb.localeCompare(va) : va.localeCompare(vb);
-        }
-        return desc ? vb - va : va - vb;
-      });
-      var body = table.tBodies[0];
-      sorted.forEach(function (r) { body.appendChild(r); });
-      rows = sorted;
+  sortChips.forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      sortBy(chip.dataset.sort, chip.dataset.dir === "desc");
     });
   });
 
@@ -241,11 +257,34 @@
       '<span class="since">' + since + "</span></div>";
   }
 
+  // Scryfall names treatments in slug form ("bookcover", "extendedart");
+  // spell out the ones a reader would recognize on sight.
+  var TREATMENT_LABELS = {
+    bookcover: "book cover", extendedart: "extended art", showcase: "showcase",
+    borderless: "borderless", serialized: "serialized", surgefoil: "surge foil",
+    galaxyfoil: "galaxy foil", textured: "textured", halofoil: "halo foil",
+    boosterfun: "booster fun", promo: "promo", prerelease: "prerelease",
+    stepandcompleat: "step-and-compleat", concept: "concept art",
+    fullart: "full art", inverted: "inverted", raisedfoil: "raised foil"
+  };
+
+  function treatmentText(v) {
+    var seen = {};
+    return (v.treatments || []).map(function (t) {
+      return TREATMENT_LABELS[t] || t.replace(/([a-z])([A-Z])/g, "$1 $2");
+    }).filter(function (label) {
+      if (seen[label]) return false;
+      seen[label] = true;
+      return true;
+    }).join(", ");
+  }
+
   function versionHtml(card, v) {
     var img = artFor(card.name, v, "small");
     var meta = [v.set_name || v.set, v.number ? "#" + v.number : "",
                 v.released ? v.released.slice(0, 4) : "", v.digital ? "MTGO" : ""]
       .filter(Boolean).join(" · ");
+    var treatment = treatmentText(v);
     // Paper price where the printing has one, digital where our archive does;
     // a printing can legitimately have either, both, or neither.
     var prices = [];
@@ -275,6 +314,7 @@
       art +
       '<div class="version-set">' + escapeHtml(v.set) +
       (v.same_set ? ' <span class="version-badge">this set</span>' : "") + "</div>" +
+      (treatment ? '<div class="version-treatment">' + escapeHtml(treatment) + "</div>" : "") +
       '<div class="version-meta">' + escapeHtml(meta) + "</div>" +
       '<div class="version-price">' + prices.join('<br>') + "</div>" +
       '<canvas class="version-spark" data-key="' + escapeHtml(v.key) + '"></canvas>' +

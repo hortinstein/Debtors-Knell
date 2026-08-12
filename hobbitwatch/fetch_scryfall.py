@@ -56,9 +56,16 @@ SET_CODE = "hob"
 # top-level set with no parent link, so it's named here explicitly.
 EXTRA_SETS = ["hoc"]
 
-# Token sets (THOB and friends) are printings of things that aren't cards
-# anyone tracks a price for; skip them unless asked.
-SKIP_SET_TYPES = {"token", "memorabilia", "minigame"}
+# Tokens are printings of things nobody tracks a price for. Art series and
+# other "memorabilia" sets -- book covers, box toppers -- *are* tracked and
+# sold, so they stay in; excluding them was silently dropping real cards.
+SKIP_SET_TYPES = {"token", "minigame"}
+
+# Scryfall marks special treatments on the printing rather than in its name.
+# Carrying them through means a variant can be labelled ("book cover",
+# "borderless", "serialized") instead of being an unexplained second row at
+# ten times the price.
+TREATMENT_KEYS = ("promo_types", "frame_effects")
 
 REQUEST_DELAY = 0.25  # Scryfall asks for 50-100ms between calls; be generous.
 HEADERS = {
@@ -169,6 +176,9 @@ def printing_record(card):
         "digital": bool(card.get("digital")),
         "finishes": card.get("finishes") or [],
         "promo": bool(card.get("promo")),
+        "treatments": sorted({t for key in TREATMENT_KEYS for t in (card.get(key) or [])}),
+        "border": card.get("border_color") or "",
+        "full_art": bool(card.get("full_art")),
         "image": normal,
         "image_small": small,
         "scryfall_uri": card.get("scryfall_uri") or "",
@@ -219,17 +229,23 @@ def discover_sets(set_code, extra_sets=EXTRA_SETS, include_tokens=False):
         if s is None:
             log(f"  Scryfall has no set {code!r}; skipping")
             continue
-        if not include_tokens and s.get("set_type") in SKIP_SET_TYPES:
-            log(f"  skipping {code} ({s.get('set_type')}, {s.get('card_count')} cards)")
-            continue
-        chosen.append(code)
+        skipped = not include_tokens and s.get("set_type") in SKIP_SET_TYPES
+        # Every discovered set is recorded, included or not, so what the page
+        # covers (and what it deliberately leaves out) is visible in the data
+        # instead of buried in a CI log.
         meta[code.upper()] = {
             "name": s.get("name") or "",
             "set_type": s.get("set_type") or "",
             "released": s.get("released_at") or "",
             "card_count": s.get("card_count"),
             "parent": (s.get("parent_set_code") or "").upper(),
+            "included": not skipped,
         }
+        if skipped:
+            log(f"  skipping {code}: {s.get('name')} "
+                f"({s.get('set_type')}, {s.get('card_count')} cards)")
+            continue
+        chosen.append(code)
         log(f"  including {code}: {s.get('name')} "
             f"({s.get('set_type')}, {s.get('card_count')} cards)")
     return chosen, meta

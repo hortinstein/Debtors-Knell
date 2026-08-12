@@ -358,6 +358,19 @@ def _collector_key(number):
     return (int(m.group(1)) if m else 10 ** 9, str(number or ""))
 
 
+def resolve_goatbots_ids(name, name_index):
+    """Every GoatBots id for a card, trying the full name and each face.
+
+    Names now arrive from Scryfall, which writes a double-faced card as
+    "Front // Back" where GoatBots lists only "Front" -- so a straight lookup
+    silently loses the tix history of every two-faced card in the set."""
+    ids = set(bph.resolve_ids_for_name(name, name_index) or ())
+    if " // " in name:
+        for face in name.split(" // "):
+            ids.update(bph.resolve_ids_for_name(face.strip(), name_index) or ())
+    return ids
+
+
 def goatbots_ids_by_set(all_ids, definitions):
     """{SET: [goatbots id, ...]} for one card's printings, so a Scryfall
     printing can pick up the tix series of the MTGO printing from the same
@@ -472,7 +485,7 @@ def build(set_code=SET_CODE, window_days=WINDOW_DAYS, max_versions=MAX_VERSIONS,
     relevant_ids = set()
     for subj in subjects:
         key = (subj["set"], subj["name"])
-        all_ids = bph.resolve_ids_for_name(subj["name"], name_index) or set()
+        all_ids = resolve_goatbots_ids(subj["name"], name_index)
         gb_by_set = goatbots_ids_by_set(all_ids, definitions)
         set_gb_ids = set(gb_by_set.get(subj["set"], []))
         subj["gb_set_ids"] = set_gb_ids
@@ -502,6 +515,7 @@ def build(set_code=SET_CODE, window_days=WINDOW_DAYS, max_versions=MAX_VERSIONS,
                 "released": p.get("released") or "",
                 "digital": bool(p.get("digital")),
                 "promo": bool(p.get("promo")),
+                "treatments": p.get("treatments") or [],
                 "image": p.get("image"),
                 "image_small": p.get("image_small"),
                 "scryfall_uri": p.get("scryfall_uri") or "",
@@ -533,6 +547,7 @@ def build(set_code=SET_CODE, window_days=WINDOW_DAYS, max_versions=MAX_VERSIONS,
                 "released": "",
                 "digital": True,
                 "promo": False,
+                "treatments": [],
                 "image": None,
                 "image_small": None,
                 "scryfall_uri": "",
@@ -647,6 +662,7 @@ def build(set_code=SET_CODE, window_days=WINDOW_DAYS, max_versions=MAX_VERSIONS,
             "number": (primary or {}).get("number") or "",
             "set_name": (primary or {}).get("set_name") or set_meta.get(subj["set"], {}).get("name", ""),
             "released": (primary or {}).get("released") or "",
+            "treatments": (primary or {}).get("treatments") or [],
             "on_mtgo": bool(subj["gb_set_ids"]),
             "art": (primary or {}).get("image"),
             "art_small": (primary or {}).get("image_small"),
