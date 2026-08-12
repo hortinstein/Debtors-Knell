@@ -1,12 +1,21 @@
 #!/usr/bin/env python3
-"""Build/refresh prices/mtgjson/uuid_to_name.json.gz: MTGJSON uuid -> card name.
+"""Build/refresh prices/mtgjson/uuid_to_name.json.gz: MTGJSON uuid -> card
+name, plus uuid -> printing (set code and collector number).
 
 The daily-archived MTGJSON price snapshots (prices/daily/<date>/mtgjson/
 AllPricesToday.json.bz2) are keyed by MTGJSON uuid with no name attached, so
 they can't be joined to decklists without a mapping. This script downloads
-MTGJSON's AllIdentifiers file once and distills it down to just {uuid: name}
-(a few MB gzipped), which scripts/build_price_history.py then uses to turn
-those archived snapshots into per-deck physical (USD) price series.
+MTGJSON's AllIdentifiers file once and distills it down to {uuid: name} and
+{uuid: "SET|number"} (a few MB gzipped), which scripts/build_price_history.py
+then uses to turn those archived snapshots into per-deck physical (USD)
+price series.
+
+The `printings` section is what lets a caller price one *specific* printing
+instead of taking the median across every printing that shares a name --
+hobbitwatch/build_dataset.py uses it so a new set's base printing isn't
+priced as an average of itself and its $200 serialized variant. Treat it as
+optional: maps built before it existed carry only `names`, and readers fall
+back to name-level matching.
 
 Run from .github/workflows/fetch-prices.yml after each fetch; it exits
 immediately unless the map is missing or older than REFRESH_DAYS (new sets
@@ -40,12 +49,18 @@ def log(msg):
 
 
 def existing_map_age_days():
+    """Age of the current map in days, or None if it's missing, unreadable, or
+    predates the `printings` section (a map without it can't price a single
+    printing, so it's due for a rebuild whatever its age)."""
     if not os.path.exists(MAP_PATH):
         return None
     try:
         with gzip.open(MAP_PATH, "rt", encoding="utf-8") as f:
-            generated = json.load(f).get("generated")
-        return (datetime.date.today() - datetime.date.fromisoformat(generated)).days
+            payload = json.load(f)
+        if not payload.get("printings"):
+            return None
+        return (datetime.date.today()
+                - datetime.date.fromisoformat(payload.get("generated"))).days
     except Exception:
         return None  # unreadable/legacy file: rebuild
 
@@ -73,14 +88,24 @@ def build(force=False):
         os.unlink(tmp_path)
 
     names = {}
+    printings = {}
     for uuid, card in data.items():
         name = card.get("name")
         if name:
             names[uuid] = name
-    log(f"Extracted {len(names):,} uuid -> name entries.")
+        set_code = card.get("setCode")
+        number = card.get("number")
+        if set_code and number is not None:
+            printings[uuid] = f"{set_code}|{number}"
+    log(f"Extracted {len(names):,} uuid -> name and {len(printings):,} "
+        "uuid -> printing entries.")
 
     os.makedirs(os.path.dirname(MAP_PATH), exist_ok=True)
-    payload = {"generated": datetime.date.today().isoformat(), "names": names}
+    payload = {
+        "generated": datetime.date.today().isoformat(),
+        "names": names,
+        "printings": printings,
+    }
     with gzip.open(MAP_PATH, "wt", encoding="utf-8") as f:
         json.dump(payload, f, separators=(",", ":"))
     log(f"Wrote {MAP_PATH} ({os.path.getsize(MAP_PATH) / 1e6:.1f} MB).")

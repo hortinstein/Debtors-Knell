@@ -226,6 +226,34 @@ def change_stats(series):
 # Scryfall printings: art, current per-printing paper prices, paper-only sets
 # ---------------------------------------------------------------------------
 
+def scryfall_name_index(scry_cards):
+    """{normalized name: card entry}, indexed under the full name and under
+    each face of a double-faced card. GoatBots names a two-faced card by its
+    front face ("Bofur, Reliable Guardian") where Scryfall uses the full
+    "Front // Back", so an exact-string lookup misses every one of them."""
+    index = {}
+
+    def put(key, entry):
+        index.setdefault(bph.norm_key(key), entry)
+        index.setdefault(bph.norm_key_noapos(key), entry)
+        index.setdefault(bph.norm_key_noaccent_nopunct(key), entry)
+
+    for name, entry in scry_cards.items():
+        put(name, entry)
+        if " // " in name:
+            for face in name.split(" // "):
+                put(face, entry)
+    return index
+
+
+def lookup_scryfall(name, index):
+    for key in (bph.norm_key(name), bph.norm_key_noapos(name),
+                bph.norm_key_noaccent_nopunct(name)):
+        if key in index:
+            return index[key]
+    return None
+
+
 def load_scryfall(path=SCRYFALL_PATH, quiet=False):
     """The checked-in Scryfall snapshot (fetch_scryfall.py), or None. Keyed by
     card name, each entry holding the set's own printing(s) plus every other
@@ -286,36 +314,59 @@ def goatbots_ids_by_set(all_ids, definitions):
 # Physical (USD) prices, joined by card name through the MTGJSON uuid map
 # ---------------------------------------------------------------------------
 
-def load_usd_by_name(names, quiet=False):
-    """{card_name: [[date, usd], ...]} -- median USD retail across every
-    matched printing per archived day. Returns ({}, 0) when the uuid map
-    hasn't been built yet."""
-    uuid_index = bph.load_uuid_name_index()
-    if uuid_index is None:
-        log("No prices/mtgjson/uuid_to_name.json.gz yet -- no physical prices.", quiet)
-        return {}, 0
+def load_uuid_printing_index(quiet=False):
+    """{(SET, number): [uuid, ...]} from the uuid map's `printings` section
+    (scripts/build_mtgjson_uuid_map.py), or None for maps built before that
+    section existed. This is what makes the physical series *per printing*
+    instead of a median across everything sharing a name -- which matters
+    enormously for a new set, where the same card exists as a $30 base
+    printing and a $200 serialized variant."""
+    if not os.path.exists(bph.UUID_MAP_PATH):
+        return None
+    import gzip
+    with gzip.open(bph.UUID_MAP_PATH, "rt", encoding="utf-8") as f:
+        payload = json.load(f)
+    printings = payload.get("printings")
+    if not printings:
+        log("The MTGJSON uuid map has no `printings` section (built before it "
+            "was added) -- physical prices fall back to name-level medians.", quiet)
+        return None
+    index = {}
+    for uuid, ident in printings.items():
+        code, _, number = ident.partition("|")
+        index.setdefault((code.upper(), number.lower()), []).append(uuid)
+    return index
 
-    uuids_by_name = {}
+
+def printing_uuids(printing, printing_index):
+    """The MTGJSON uuid(s) for one Scryfall printing, matched on set code and
+    collector number (MTGJSON and Scryfall agree on both)."""
+    if not printing or not printing_index:
+        return set()
+    key = ((printing.get("set") or "").upper(), str(printing.get("number") or "").lower())
+    return set(printing_index.get(key, ()))
+
+
+def load_usd_series(targets, quiet=False):
+    """targets: {key: set-of-uuids}. Returns ({key: [[date, usd], ...]},
+    day_count) -- one series per target, median across its uuids per archived
+    day (a single printing usually has exactly one)."""
     relevant = set()
-    for name in names:
-        uuids = bph.resolve_ids_for_name(name, uuid_index)
-        if uuids:
-            uuids_by_name[name] = uuids
-            relevant.update(uuids)
-    log(f"{len(uuids_by_name)}/{len(names)} card name(s) matched in the MTGJSON "
-        f"uuid map ({len(relevant):,} printings).", quiet)
+    for uuids in targets.values():
+        relevant.update(uuids)
     if not relevant:
         return {}, 0
 
-    log("Reading archived MTGJSON snapshots (a few seconds per day)...", quiet)
+    log(f"Reading archived MTGJSON snapshots for {len(relevant):,} printing(s) "
+        "(a few seconds per archived day)...", quiet)
     usd_by_date = bph.load_relevant_usd_prices(relevant)
     log(f"Loaded physical prices for {len(usd_by_date)} archived day(s).", quiet)
 
     out = {}
-    for name, uuids in uuids_by_name.items():
+    for key, uuids in targets.items():
         series = series_for_ids(usd_by_date, uuids)
         if series:
-            out[name] = series
+            out[key] = series
     return out, len(usd_by_date)
 
 
@@ -350,6 +401,11 @@ def build(set_code=SET_CODE, window_days=WINDOW_DAYS, max_versions=MAX_VERSIONS,
     latest_date, latest_day = load_latest_tix_day(quiet)
     scryfall = load_scryfall(quiet=quiet)
     scry_cards = (scryfall or {}).get("cards", {})
+    scry_index = scryfall_name_index(scry_cards)
+    printing_index = load_uuid_printing_index(quiet)
+    uuid_name_index = bph.load_uuid_name_index()
+    if uuid_name_index is None:
+        log("No prices/mtgjson/uuid_to_name.json.gz yet -- no physical prices.", quiet)
 
     # Each card's other versions, from both catalogues: Scryfall knows every
     # printing (paper included, with art and a current price), GoatBots knows
@@ -361,7 +417,7 @@ def build(set_code=SET_CODE, window_days=WINDOW_DAYS, max_versions=MAX_VERSIONS,
     for name, entry in ids_by_name.items():
         gb_by_set = goatbots_ids_by_set(entry["all_ids"], definitions)
         set_gb_ids = entry["set_ids"]
-        scry = scry_cards.get(name) or {}
+        scry = lookup_scryfall(name, scry_index) or {}
         printings = scry.get("printings") or scry.get("set_printings") or []
         primary = choose_primary(printings, set_code, definitions[min(set_gb_ids)].get("version"))
 
@@ -448,7 +504,33 @@ def build(set_code=SET_CODE, window_days=WINDOW_DAYS, max_versions=MAX_VERSIONS,
     tix_by_date = load_tix_window(relevant_ids, window_days, quiet)
     log(f"Loaded digital prices for {len(tix_by_date)} archived day(s).", quiet)
 
-    usd_by_name, usd_day_count = load_usd_by_name(sorted(ids_by_name), quiet)
+    # Physical targets: the exact printing where the uuid map can identify it,
+    # the card name (median across its printings) where it can't. Versions get
+    # their own per-printing series too, so the modal can show what each
+    # printing has done in paper, not just in tix.
+    usd_targets = {}
+    usd_basis = {}
+    for name, plan in version_plans.items():
+        uuids = printing_uuids(plan["primary"], printing_index)
+        basis = "printing"
+        if not uuids and uuid_name_index is not None:
+            uuids = bph.resolve_ids_for_name(name, uuid_name_index) or set()
+            basis = "name" if uuids else None
+        if uuids:
+            usd_targets[("card", name)] = uuids
+        usd_basis[name] = basis if uuids else None
+        for v in plan["kept"]:
+            vuuids = printing_uuids(v, printing_index)
+            if vuuids:
+                usd_targets[("ver", name, v["key"])] = vuuids
+
+    by_printing = sum(1 for b in usd_basis.values() if b == "printing")
+    by_name = sum(1 for b in usd_basis.values() if b == "name")
+    log(f"Physical price basis: {by_printing} card(s) matched to their exact "
+        f"printing, {by_name} to a card name, "
+        f"{len(usd_basis) - by_printing - by_name} unmatched.", quiet)
+
+    usd_series_by_target, usd_day_count = load_usd_series(usd_targets, quiet)
 
     cards = []
     slugs = {}
@@ -459,14 +541,17 @@ def build(set_code=SET_CODE, window_days=WINDOW_DAYS, max_versions=MAX_VERSIONS,
         primary = plan["primary"]
 
         tix_series = series_for_ids(tix_by_date, entry["set_ids"])
-        usd_series = usd_by_name.get(name, [])
+        usd_series = usd_series_by_target.get(("card", name), [])
 
         versions = []
         for v in plan["kept"]:
             vseries = series_for_ids(tix_by_date, v["_gb_ids"]) if v["_gb_ids"] else []
+            vusd = usd_series_by_target.get(("ver", name, v["key"]), [])
             record = {k: val for k, val in v.items() if k != "_gb_ids"}
             record["tix"] = vseries[-VERSION_SERIES_POINTS:]
             record["tix_stats"] = change_stats(vseries)
+            record["usd_series"] = vusd[-VERSION_SERIES_POINTS:]
+            record["usd_stats"] = change_stats(vusd)
             versions.append(record)
 
         # The set's own printing, as Scryfall shows it: real art, and a
@@ -511,6 +596,7 @@ def build(set_code=SET_CODE, window_days=WINDOW_DAYS, max_versions=MAX_VERSIONS,
             "scry_tix": (primary or {}).get("tix"),
             "usd": usd_series,
             "usd_stats": change_stats(usd_series),
+            "usd_basis": usd_basis.get(name),
             "scry_usd": scry_usd,
             "scry_usd_finish": scry_usd_finish,
             "scry_usd_foil": (primary or {}).get("usd_foil"),
