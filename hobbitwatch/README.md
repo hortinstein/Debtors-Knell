@@ -83,6 +83,31 @@ python3 build_dataset.py --max-versions 8  # fewer "other versions" per card
 python3 build_dataset.py --force           # rebuild even if up to date
 ```
 
+## Keeping the price archive in sync with main
+
+This app lives on a feature branch, but `../prices/` is archived daily on
+`main` (`.github/workflows/fetch-prices.yml`). Pulling that archive in is a
+plain `git merge origin/main` with one recurring wrinkle: `main` rebuilds
+`prices/mtgjson/uuid_to_name.json.gz` on its own (much rarer) monthly
+schedule using whatever version of `scripts/build_mtgjson_uuid_map.py` is on
+`main` at the time, and this branch has carried a newer version of that
+script since it added per-printing pricing (a `printings` section the older
+script doesn't write) -- so a plain merge can silently overwrite the richer
+map with a `printings`-less one from `main` and quietly fall physical prices
+back to per-name medians.
+
+```bash
+python3 hobbitwatch/update_prices.py
+```
+
+Fetches `origin/main`, merges it into the current branch, and — if that's the
+*only* thing that conflicts — resolves `uuid_to_name.json.gz` by keeping
+whichever side's copy has a `printings` section (falling back to the newer
+`generated` date if both or neither do), commits the merge, and rebuilds
+`data/hobbit_cards.json`. Any other conflict aborts the merge and leaves the
+tree untouched rather than guessing. Requires a clean working tree and a
+branch other than `main`.
+
 ## Refreshing the network-sourced data
 
 Neither Scryfall nor MTGJSON is reachable from a sandboxed dev container, so
