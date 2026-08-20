@@ -85,6 +85,49 @@ def card_by_slug(slug):
     return None
 
 
+def _treatment_row(card, v):
+    """One other printing of this same card *within this release* (extended
+    art, showcase, borderless, serialized...) -- shaped like `_summary()` so
+    it can share a row template, but priced as that exact printing rather
+    than the card's primary one. Optional extra rows the table can unfold
+    next to a card's primary row when "show all treatments" is on."""
+    usd_stats, tix_stats = v["usd_stats"], v["tix_stats"]
+    tix_current = tix_stats["last"] if tix_stats["last"] is not None else v.get("scry_tix")
+    return {
+        "slug": card["slug"],
+        "key": v["key"],
+        "name": card["name"],
+        "rarity": v.get("rarity") or card["rarity"],
+        "number": v.get("number") or "",
+        "set": card["set"],
+        "set_name": card.get("set_name") or "",
+        "scryfall_set": v.get("scryfall_set") or card["scryfall_set"],
+        "on_mtgo": tix_current is not None or tix_stats["days"] > 0,
+        "art_small": v.get("image_small") or card.get("art_small"),
+        "treatments": v.get("treatments") or [],
+        # Always this printing's current Scryfall price, not the archived
+        # last -- same headline the modal's version cards already show.
+        "usd_current": v.get("usd"),
+        "usd_source": "scryfall" if v.get("usd") is not None else None,
+        "usd_change": usd_stats["change"],
+        "usd_pct": usd_stats["pct"],
+        "usd_first": usd_stats["first"],
+        "usd_first_date": usd_stats["first_date"],
+        "usd_days": usd_stats["days"],
+        "tix": tix_current,
+        "tix_change": tix_stats["change"],
+        "tix_pct": tix_stats["pct"],
+        "tix_first": tix_stats["first"],
+        "tix_first_date": tix_stats["first_date"],
+        "tix_days": tix_stats["days"],
+        # A treatment is just another printing of the same card, so it shares
+        # the card's own pick-order standing rather than having its own.
+        "ds_rating": card.get("ds_rating"),
+        "ut_tier": card.get("ut_tier"),
+        "ut_rank": card.get("ut_rank"),
+    }
+
+
 def _summary(card):
     """The index table's view of a card: current prices, the change since the
     card's first archived data point in each market, and how many other
@@ -116,6 +159,14 @@ def _summary(card):
         "tix_days": tix["days"],
         "versions_total": card["versions_total"],
         "versions_shown": len(card["versions"]),
+        # Other printings of this card in the *same* set -- extended art,
+        # showcase, serialized -- for the "show all treatments" row toggle.
+        "other_treatments": [_treatment_row(card, v) for v in card["versions"] if v.get("same_set")],
+        # External pick-order rankings (fetch_pick_order.py): Draftsim's 0-5
+        # limited rating and Untapped.gg's sealed tier, for the pool page.
+        "ds_rating": card.get("ds_rating"),
+        "ut_tier": card.get("ut_tier"),
+        "ut_rank": card.get("ut_rank"),
     }
 
 
@@ -149,6 +200,7 @@ def index():
         latest_tix_date=data["latest_tix_date"],
         usd_day_count=data["usd_day_count"],
         scryfall_generated=(data.get("scryfall_generated") or "")[:10],
+        pick_order_generated=(data.get("pick_order_generated") or "")[:10],
         paper_count=sum(1 for c in cards if c["usd_current"] is not None),
         paper_series_count=sum(1 for c in cards if c["usd"] is not None),
         digital_count=sum(1 for c in cards if c["tix"] is not None),

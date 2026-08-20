@@ -29,6 +29,14 @@ templates, static files and routes. The main site is about the 2003–2009
   **price chart** with a digital/physical toggle, and **every other MTGO
   printing of the same card** — each with its own art, current tix price,
   change, and a spark line of its recent history.
+* **Rating** and **Pick order** columns: Draftsim's 0–5 limited rating and
+  Untapped.gg's sealed pick-order tier (A+ down to F), scraped by
+  `fetch_pick_order.py` — see below.
+* **My pool**: paste a sealed pool or draft export (MTGO/Arena format, one
+  card per line) into the panel above the table. It's matched client-side
+  against the cards already on the page — no server round trip — and narrows
+  the table to just what you have, sorted best pick order first, so you can
+  see what to keep.
 
 Card art is the real per-printing image from the checked-in Scryfall snapshot;
 where that's missing it falls back to a Scryfall image URL built in the browser
@@ -59,6 +67,7 @@ rebuilt from the archive). It reads:
 | `../prices/goatbots_yearly_archive/<year>/<date>.txt.gz` and `../prices/daily/<date>/goatbots/price-history.zip` | digital (tix) history, **per printing** |
 | `../prices/daily/<date>/mtgjson/AllPricesToday.json.bz2` joined via `../prices/mtgjson/uuid_to_name.json.gz` | physical (USD) history, **per card name** |
 | `scryfall/hob_prints.json.gz` (checked in, from `fetch_scryfall.py`) | current physical price **per printing**, card art, and every printing of a card including paper-only ones |
+| `pickorder/hob_pick_order.json.gz` (checked in, from `fetch_pick_order.py`) | Draftsim's limited rating and Untapped.gg's sealed pick-order tier, matched by card name |
 
 It reuses the archive readers in `../scripts/build_price_history.py` rather
 than re-implementing them, and follows the same conventions as the rest of the
@@ -77,19 +86,32 @@ python3 build_dataset.py --force           # rebuild even if up to date
 ## Refreshing the network-sourced data
 
 Neither Scryfall nor MTGJSON is reachable from a sandboxed dev container, so
-both fetches run in CI: **`.github/workflows/hobbit-data.yml`** fetches the
-Scryfall snapshot and forces a refresh of `prices/mtgjson/uuid_to_name.json.gz`
-(the daily price workflow only refreshes that map monthly, which would leave a
-new set unpriced in paper for weeks), then commits both back to the branch. It
-runs on push to this branch, weekly on Sundays, and on manual dispatch.
+all these fetches run in CI: **`.github/workflows/hobbit-data.yml`** fetches
+the Scryfall snapshot, the pick-order rankings, and forces a refresh of
+`prices/mtgjson/uuid_to_name.json.gz` (the daily price workflow only refreshes
+that map monthly, which would leave a new set unpriced in paper for weeks),
+then commits all of it back to the branch. It runs on push to this branch,
+weekly on Sundays, and on manual dispatch.
 
-Where Scryfall *is* reachable, the fetch is just:
+Where the sites *are* reachable, the fetch is just:
 
 ```bash
 python3 hobbitwatch/fetch_scryfall.py     # → hobbitwatch/scryfall/hob_prints.json.gz
+python3 hobbitwatch/fetch_pick_order.py   # → hobbitwatch/pickorder/hob_pick_order.json.gz
 python3 scripts/build_mtgjson_uuid_map.py --force
 python3 hobbitwatch/build_dataset.py --force
 ```
+
+`fetch_pick_order.py` scrapes two pages rather than calling a documented API
+(neither site publishes one for this data): Draftsim's ratings table is a
+tab-separated block inlined in its React bundle's JS, found by locating the
+bundle's own `"data/HOB.txt" -> <variable>` mapping rather than a hardcoded
+variable name (the minifier renames it every build); Untapped.gg's tier grid
+is plain server-rendered HTML, no bundle-diving needed. Both are third-party
+internals outside this repo's control and can drift — the script raises a
+specific error per parse step instead of silently writing a partial ranking,
+and a source that fails keeps its last successful snapshot rather than
+disappearing from the page.
 
 ## Known coverage limits
 
@@ -116,6 +138,11 @@ python3 hobbitwatch/build_dataset.py --force
 * **`HOC` has no archived tix history** — it isn't in the GoatBots MTGO
   catalogue. Where Scryfall reports a current tix price for one of its cards,
   the modal shows it and labels it as Scryfall's.
+* **Pick-order rankings only cover `HOB`** — Draftsim and Untapped.gg rate the
+  set you draft or open in sealed, not `HOC`'s Commander-deck reprints, so
+  those cards show a dash in the Rating/Pick order columns. Within `HOB`,
+  Untapped.gg doesn't rate the basic lands either (188 of 193 cards ranked);
+  Draftsim rates all 193.
 ## What this release actually contains
 
 Scryfall knows exactly three sets for The Hobbit, and the snapshot records all

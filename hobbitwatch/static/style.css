@@ -112,6 +112,65 @@ main { padding: 1.2rem 1.5rem 3rem; max-width: 1180px; margin: 0 auto; }
 
 .filter-status { font-size: 0.85rem; color: var(--muted); margin: 0.4rem 0 0.8rem; }
 
+/* ------------------------------------------------------------------- pool */
+
+.pool-panel {
+  margin: 0.8rem 0;
+  padding: 0.8rem 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.pool-panel summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.pool-panel p { margin: 0.5rem 0; max-width: 68ch; }
+.pool-panel textarea {
+  width: 100%;
+  font: 0.85rem/1.4 ui-monospace, "SFMono-Regular", Consolas, monospace;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--fg);
+  resize: vertical;
+}
+.pool-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; margin-top: 0.6rem; }
+.pool-status { min-height: 1.1em; margin: 0.5rem 0 0; }
+
+/* A pool-matched row's quantity badge, appended after the card name. */
+.pool-qty {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--gain-bg);
+  border-radius: 999px;
+  padding: 0.05rem 0.4rem;
+  margin-left: 0.15rem;
+}
+.card-row.in-pool { box-shadow: inset 3px 0 0 var(--accent); }
+
+/* Untapped.gg sealed pick-order tier badge -- green through red, worst (F)
+   quietest since it's the common case in the lower half of any set. */
+.tier-badge {
+  display: inline-block;
+  min-width: 1.8em;
+  text-align: center;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.05rem 0.4rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+.tier-ap, .tier-a  { background: #e8f3ea; border-color: #9dc9a8; color: #1f5e30; }
+.tier-am            { background: #eef4e2; border-color: #b7cf9e; color: #3a5c1f; }
+.tier-b             { background: #f7f0d8; border-color: #d9c477; color: #7d6512; }
+.tier-c             { background: #fbe9dd; border-color: #e0a273; color: #9a4c12; }
+.tier-d             { background: #f9ebeb; border-color: #dba2a2; color: #8a3131; }
+.tier-f             { background: #f0efec; border-color: #cdc8bd; color: #6b6b6b; }
+
 /* ------------------------------------------------------------------ table */
 
 .table-scroll { max-width: 100%; overflow-x: auto; }
@@ -153,6 +212,13 @@ main { padding: 1.2rem 1.5rem 3rem; max-width: 1180px; margin: 0 auto; }
   background: var(--chip-bg);
   flex: none;
 }
+
+/* A card's other in-set printings (extended art, showcase...), unfolded
+   under it when "show all treatments" is on -- same row shape, quieter. */
+.treatment-row { background: var(--row-alt); }
+.treatment-row .row-thumb { width: 26px; }
+.treatment-row .col-name span:first-of-type { font-weight: 400; }
+.treatment-label { font-size: 0.82rem; font-style: italic; }
 
 .set-tag {
   font-size: 0.74rem;

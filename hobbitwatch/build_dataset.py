@@ -71,6 +71,7 @@ SCRIPTS_DIR = os.path.join(REPO_ROOT, "scripts")
 DATA_DIR = os.path.join(HERE, "data")
 OUT_PATH = os.path.join(DATA_DIR, "hobbit_cards.json")
 SCRYFALL_PATH = os.path.join(HERE, "scryfall", "hob_prints.json.gz")
+PICK_ORDER_PATH = os.path.join(HERE, "pickorder", "hob_pick_order.json.gz")
 
 # The price-archive readers (GoatBots definitions, the daily/yearly price
 # iterators, the MTGJSON uuid map and its USD-provider preference) already
@@ -329,6 +330,69 @@ def load_scryfall(path=SCRYFALL_PATH, quiet=False):
     return payload
 
 
+# ---------------------------------------------------------------------------
+# Pick-order rankings (fetch_pick_order.py): Draftsim's 0-5 rating and
+# Untapped.gg's sealed tier, for the pool page's "how good is this" column.
+# ---------------------------------------------------------------------------
+
+def load_pick_order(path=PICK_ORDER_PATH, quiet=False):
+    """{"draftsim": {name: {...}}, "untapped": {name: {...}}} indexed at three
+    normalization strengths each, same shape as the GoatBots name index --
+    Draftsim and Untapped.gg both rate a double-faced card under its front
+    face alone, same as GoatBots."""
+    if not os.path.exists(path):
+        log("No pickorder/hob_pick_order.json.gz -- building without pick-order "
+            "rankings (run fetch_pick_order.py where the ranking sites are "
+            "reachable).", quiet)
+        return None
+    import gzip
+    with gzip.open(path, "rt", encoding="utf-8") as f:
+        payload = json.load(f)
+
+    def build_index(cards):
+        index = {}
+        for name, entry in (cards or {}).items():
+            for key in (bph.norm_key(name), bph.norm_key_noapos(name),
+                        bph.norm_key_noaccent_nopunct(name)):
+                index.setdefault(key, entry)
+        return index
+
+    indexes = {}
+    for source in ("draftsim", "untapped"):
+        indexes[source] = build_index((payload.get(source) or {}).get("cards"))
+    log(f"Loaded pick-order rankings: draftsim {len((payload.get('draftsim') or {}).get('cards') or {})}, "
+        f"untapped.gg {len((payload.get('untapped') or {}).get('cards') or {})}, "
+        f"fetched {payload.get('generated', '?')}.", quiet)
+    return indexes
+
+
+def _pick_order_generated(path=PICK_ORDER_PATH):
+    if not os.path.exists(path):
+        return None
+    import gzip
+    with gzip.open(path, "rt", encoding="utf-8") as f:
+        return json.load(f).get("generated")
+
+
+def lookup_pick_order(name, indexes):
+    """A card's entry from each source, trying the full name then each face
+    of a double-faced card ("Front // Back" -> "Front") -- the ranking sites
+    only rate the front."""
+    if not indexes:
+        return None, None
+    names = [name] + (name.split(" // ") if " // " in name else [])
+
+    def find(index):
+        for n in names:
+            for key in (bph.norm_key(n), bph.norm_key_noapos(n),
+                        bph.norm_key_noaccent_nopunct(n)):
+                if key in index:
+                    return index[key]
+        return None
+
+    return find(indexes["draftsim"]), find(indexes["untapped"])
+
+
 def paper_price(printing):
     """One representative current USD price for a printing, and which finish
     it came from -- non-foil first, since that's what a price column means."""
@@ -453,6 +517,7 @@ def build(set_code=SET_CODE, window_days=WINDOW_DAYS, max_versions=MAX_VERSIONS,
 
     latest_date, latest_day = load_latest_tix_day(quiet)
     scryfall = load_scryfall(quiet=quiet)
+    pick_order_index = load_pick_order(quiet=quiet)
     printing_index = load_uuid_printing_index(quiet)
     uuid_name_index = bph.load_uuid_name_index()
     if uuid_name_index is None:
@@ -652,6 +717,8 @@ def build(set_code=SET_CODE, window_days=WINDOW_DAYS, max_versions=MAX_VERSIONS,
             slug = f"{subj['set'].lower()}-{slug}"  # release appears once per set
         slugs[slug] = name
 
+        ds_entry, ut_entry = lookup_pick_order(name, pick_order_index)
+
         cards.append({
             "id": sorted(subj["gb_set_ids"])[0] if subj["gb_set_ids"] else primary.get("id"),
             "slug": slug,
@@ -680,6 +747,11 @@ def build(set_code=SET_CODE, window_days=WINDOW_DAYS, max_versions=MAX_VERSIONS,
             "usd_source": usd_source,
             "versions": versions,
             "versions_total": subj["versions_total"],
+            "ds_rating": (ds_entry or {}).get("rating"),
+            "ds_rank": (ds_entry or {}).get("rank"),
+            "ds_tags": (ds_entry or {}).get("tags") or [],
+            "ut_tier": (ut_entry or {}).get("tier"),
+            "ut_rank": (ut_entry or {}).get("rank"),
         })
 
     payload = {
@@ -691,6 +763,7 @@ def build(set_code=SET_CODE, window_days=WINDOW_DAYS, max_versions=MAX_VERSIONS,
         "latest_tix_date": latest_date,
         "usd_day_count": usd_day_count,
         "scryfall_generated": (scryfall or {}).get("generated"),
+        "pick_order_generated": _pick_order_generated(),
         "cards": cards,
     }
 

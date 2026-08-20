@@ -1,7 +1,7 @@
 name: Refresh Hobbit Watch source data
 
-# Pulls the two things hobbitwatch/ needs from the network and commits them
-# back to this branch:
+# Pulls the things hobbitwatch/ needs from the network and commits them back
+# to this branch:
 #
 #   prices/mtgjson/uuid_to_name.json.gz   forced refresh, so the archived
 #       MTGJSON price snapshots can be joined to a brand-new set's card names
@@ -9,10 +9,14 @@ name: Refresh Hobbit Watch source data
 #       mostly unpriced until the refresh happens to come round)
 #   hobbitwatch/scryfall/hob_prints.json.gz   current paper prices and real
 #       card art for every printing of every Hobbit card
+#   hobbitwatch/pickorder/hob_pick_order.json.gz   Draftsim's limited rating
+#       and Untapped.gg's sealed pick-order tier for every card, for the pool
+#       page (fetch_pick_order.py)
 #
 # Runs on push to the feature branch (a push-triggered workflow runs from the
 # branch's own copy, so it works before this file is on the default branch),
-# and weekly thereafter to keep the Scryfall prices current.
+# and weekly thereafter to keep the Scryfall prices and pick-order rankings
+# current.
 
 on:
   push:
@@ -62,16 +66,23 @@ jobs:
       - name: Fetch Hobbit set from Scryfall
         run: python hobbitwatch/fetch_scryfall.py
 
+      # Best-effort: Draftsim and Untapped.gg are scraped (neither publishes
+      # an API for this), so their page/bundle layout can drift. A failure
+      # here logs a warning and keeps the last successful snapshot rather
+      # than failing the job -- Scryfall's fetch above still needs to land.
+      - name: Fetch pick-order rankings (Draftsim + Untapped.gg)
+        run: python hobbitwatch/fetch_pick_order.py
+
       - name: Show what changed
         if: always()
         run: git status --short
 
-      # always(), so a failure in one fetch doesn't throw away the other's
+      # always(), so a failure in one fetch doesn't throw away the others'
       # work -- the map refresh alone is worth committing. The job still
       # reports the failure.
       - name: Commit refreshed data
         if: always()
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Refresh Hobbit Watch source data (MTGJSON name map + Scryfall prints)"
-          file_pattern: "prices/mtgjson/uuid_to_name.json.gz hobbitwatch/scryfall/*.json.gz"
+          commit_message: "Refresh Hobbit Watch source data (MTGJSON name map + Scryfall prints + pick order)"
+          file_pattern: "prices/mtgjson/uuid_to_name.json.gz hobbitwatch/scryfall/*.json.gz hobbitwatch/pickorder/*.json.gz"

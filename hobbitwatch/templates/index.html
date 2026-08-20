@@ -23,7 +23,9 @@
     and a live paper price per printing come from Scryfall{% if scryfall_generated %},
     fetched {{ scryfall_generated }}{% endif %}. Both change columns measure the move
     since that card's <em>first</em> archived data point &mdash; this set is new, so the
-    clock started when it did.
+    clock started when it did. <strong>Rating</strong> and <strong>Pick order</strong>
+    are Draftsim's 0&ndash;5 limited rating and Untapped.gg's sealed tier (A+ down to
+    F){% if pick_order_generated %}, fetched {{ pick_order_generated }}{% endif %}.
   </p>
   {% if sets|length > 1 %}
   <p class="muted">
@@ -83,14 +85,88 @@
     <button type="button" class="chip sort-chip" data-sort="tix" data-dir="desc">Digital price</button>
     <button type="button" class="chip sort-chip" data-sort="usd_pct" data-dir="desc">Biggest paper move</button>
     <button type="button" class="chip sort-chip" data-sort="tix_pct" data-dir="desc">Biggest MTGO move</button>
+    <button type="button" class="chip sort-chip" data-sort="pick_order" data-dir="asc">Best pick order</button>
+    <button type="button" class="chip sort-chip" data-sort="ds_rating" data-dir="desc">Highest rating</button>
   </div>
 
   <label class="check-label"><input type="checkbox" id="paper-only"> Only cards with a physical price</label>
+  <label class="check-label"><input type="checkbox" id="show-treatments"> Show all treatments (extended art, showcase, etc.)</label>
   <button type="button" class="chip chip-clear" id="clear-filters">Clear filters</button>
 </div>
 
+<details class="pool-panel">
+  <summary>My pool / draft export</summary>
+  <p class="muted">
+    Paste a sealed pool or draft export &mdash; MTGO/Arena format
+    (<code>4 Beorn the Fierce</code>, one per line; Arena's
+    <code>(HOB) 123</code> set/number suffix is fine too). We'll match it
+    against the table below and show your pool with each card's Draftsim
+    rating and Untapped.gg pick-order tier, so you can see what to keep.
+  </p>
+  <textarea id="pool-input" rows="8" spellcheck="false"
+            placeholder="4 Beorn the Fierce&#10;2 An Unexpected Party&#10;1 Smaug the Magnificent&#10;&hellip;"></textarea>
+  <div class="pool-actions">
+    <button type="button" class="chip" id="pool-load">Load pool</button>
+    <button type="button" class="chip chip-clear" id="pool-clear">Clear pool</button>
+    <label class="check-label"><input type="checkbox" id="pool-only"> Show only my pool</label>
+  </div>
+  <p class="pool-status muted" id="pool-status"></p>
+</details>
+
 <p class="filter-status" id="filter-status" data-total="{{ cards|length }}">Showing all {{ cards|length }} cards.</p>
 
+{% macro card_row(row, slug, is_treatment=False) %}
+    <tr class="card-row{{ ' treatment-row' if is_treatment else '' }}"{{ ' hidden' if is_treatment else '' }} tabindex="0" role="button"
+        data-slug="{{ slug }}"
+        data-name="{{ row.name|lower }}"
+        data-rarity="{{ row.rarity }}"
+        data-set="{{ row.set }}"
+        data-number="{{ row.number }}"
+        data-usd="{{ row.usd_current if row.usd_current is not none else '' }}"
+        data-usd-pct="{{ row.usd_pct if row.usd_pct is not none else '' }}"
+        data-tix="{{ row.tix if row.tix is not none else '' }}"
+        data-tix-pct="{{ row.tix_pct if row.tix_pct is not none else '' }}"
+        data-ds-rating="{{ row.ds_rating if row.ds_rating is not none else '' }}"
+        data-ut-tier="{{ row.ut_tier or '' }}"
+        data-ut-rank="{{ row.ut_rank if row.ut_rank is not none else '' }}"
+        {% if not is_treatment %}data-versions="{{ row.versions_total }}"{% endif %}
+        {% if is_treatment %}data-treatment="1"{% endif %}
+        aria-label="Open price detail for {{ row.name }}{% if is_treatment %} ({{ row.set }} #{{ row.number }}){% endif %}">
+      <td class="num muted">{{ row.number }}</td>
+      <td class="col-name">
+        {% if row.art_small %}<img class="row-thumb" src="{{ row.art_small }}" alt="" loading="lazy">{% endif %}
+        <span>{{ row.name }}</span>
+        {% if is_treatment %}<span class="treatment-label muted" data-treatments="{{ row.treatments|join(',') }}"></span>{% endif %}
+      </td>
+      <td><span class="set-tag" title="{{ row.set_name or row.set }}{{ '' if row.on_mtgo else ' — paper only, not on MTGO' }}">{{ row.set }}</span></td>
+      <td><span class="rarity rarity-{{ row.rarity|lower }}">{{ row.rarity }}</span></td>
+      <td class="num"
+          {% if row.usd_source %}title="{{ 'Latest archived MTGJSON snapshot' if row.usd_source == 'mtgjson' else 'Current Scryfall price for this printing' }}"{% endif %}>
+        {% if row.usd_current is not none %}${{ row.usd_current|money }}{% if row.usd_source == 'scryfall' %}<span class="src">S</span>{% endif %}{% else %}<span class="muted">&mdash;</span>{% endif %}
+      </td>
+      <td class="num {{ 'gain' if row.usd_change and row.usd_change > 0 else ('loss' if row.usd_change and row.usd_change < 0 else '') }}"
+          {% if row.usd_first_date %}title="First archived on {{ row.usd_first_date }} at ${{ row.usd_first|money }} ({{ row.usd_days }} days)"{% endif %}>
+        {% if row.usd_change is not none %}
+          {{ row.usd_change|signed_usd }}{% if row.usd_pct is not none %}<span class="pct">{{ '+' if row.usd_pct > 0 else '' }}{{ row.usd_pct }}%</span>{% endif %}
+        {% else %}<span class="muted">&mdash;</span>{% endif %}
+      </td>
+      <td class="num">{% if row.tix is not none %}{{ row.tix|money }}{% else %}<span class="muted">&mdash;</span>{% endif %}</td>
+      <td class="num {{ 'gain' if row.tix_change and row.tix_change > 0 else ('loss' if row.tix_change and row.tix_change < 0 else '') }}"
+          {% if row.tix_first_date %}title="First archived on {{ row.tix_first_date }} at {{ row.tix_first|money }} tix ({{ row.tix_days }} days)"{% endif %}>
+        {% if row.tix_change is not none %}
+          {{ row.tix_change|signed_tix }}{% if row.tix_pct is not none %}<span class="pct">{{ '+' if row.tix_pct > 0 else '' }}{{ row.tix_pct }}%</span>{% endif %}
+        {% else %}<span class="muted">&mdash;</span>{% endif %}
+      </td>
+      <td class="num muted">{% if is_treatment %}&mdash;{% else %}{{ row.versions_total if row.versions_total else '&mdash;'|safe }}{% endif %}</td>
+      <td class="num" title="Draftsim limited rating (0&ndash;5, higher is better)">
+        {% if row.ds_rating is not none %}{{ '%.1f'|format(row.ds_rating) }}{% else %}<span class="muted">&mdash;</span>{% endif %}
+      </td>
+      <td title="Untapped.gg sealed pick-order tier{% if row.ut_rank is not none %} (rank {{ row.ut_rank }} of 188){% endif %}">
+        {% if row.ut_tier %}<span class="tier-badge tier-{{ row.ut_tier|lower|replace('+', 'p')|replace('-', 'm') }}">{{ row.ut_tier }}</span>
+        {% else %}<span class="muted">&mdash;</span>{% endif %}
+      </td>
+    </tr>
+{% endmacro %}
 <div class="table-scroll">
 <table class="card-table" id="card-table">
   <thead>
@@ -104,48 +180,16 @@
       <th class="sortable num" data-key="tix" data-type="num" title="Latest archived MTGO price for this printing">Digital (tix)</th>
       <th class="sortable num" data-key="tix_pct" data-type="num" title="Change since the first archived tix data point">&Delta; since first</th>
       <th class="sortable num" data-key="versions" data-type="num" title="Other MTGO printings of the same card">Versions</th>
+      <th class="sortable num" data-key="ds_rating" data-type="num" title="Draftsim's limited rating, 0&ndash;5">Rating</th>
+      <th class="sortable num" data-key="pick_order" data-type="num" title="Untapped.gg's sealed pick-order tier">Pick order</th>
     </tr>
   </thead>
   <tbody>
   {% for c in cards %}
-    <tr class="card-row" tabindex="0" role="button"
-        data-slug="{{ c.slug }}"
-        data-name="{{ c.name|lower }}"
-        data-rarity="{{ c.rarity }}"
-        data-set="{{ c.set }}"
-        data-number="{{ c.number }}"
-        data-usd="{{ c.usd_current if c.usd_current is not none else '' }}"
-        data-usd-pct="{{ c.usd_pct if c.usd_pct is not none else '' }}"
-        data-tix="{{ c.tix if c.tix is not none else '' }}"
-        data-tix-pct="{{ c.tix_pct if c.tix_pct is not none else '' }}"
-        data-versions="{{ c.versions_total }}"
-        aria-label="Open price detail for {{ c.name }}">
-      <td class="num muted">{{ c.number }}</td>
-      <td class="col-name">
-        {% if c.art_small %}<img class="row-thumb" src="{{ c.art_small }}" alt="" loading="lazy">{% endif %}
-        <span>{{ c.name }}</span>
-      </td>
-      <td><span class="set-tag" title="{{ c.set_name or c.set }}{{ '' if c.on_mtgo else ' — paper only, not on MTGO' }}">{{ c.set }}</span></td>
-      <td><span class="rarity rarity-{{ c.rarity|lower }}">{{ c.rarity }}</span></td>
-      <td class="num"
-          {% if c.usd_source %}title="{{ 'Latest archived MTGJSON snapshot' if c.usd_source == 'mtgjson' else 'Current Scryfall price for this printing' }}"{% endif %}>
-        {% if c.usd_current is not none %}${{ c.usd_current|money }}{% if c.usd_source == 'scryfall' %}<span class="src">S</span>{% endif %}{% else %}<span class="muted">&mdash;</span>{% endif %}
-      </td>
-      <td class="num {{ 'gain' if c.usd_change and c.usd_change > 0 else ('loss' if c.usd_change and c.usd_change < 0 else '') }}"
-          {% if c.usd_first_date %}title="First archived on {{ c.usd_first_date }} at ${{ c.usd_first|money }} ({{ c.usd_days }} days)"{% endif %}>
-        {% if c.usd_change is not none %}
-          {{ c.usd_change|signed_usd }}{% if c.usd_pct is not none %}<span class="pct">{{ '+' if c.usd_pct > 0 else '' }}{{ c.usd_pct }}%</span>{% endif %}
-        {% else %}<span class="muted">&mdash;</span>{% endif %}
-      </td>
-      <td class="num">{% if c.tix is not none %}{{ c.tix|money }}{% else %}<span class="muted">&mdash;</span>{% endif %}</td>
-      <td class="num {{ 'gain' if c.tix_change and c.tix_change > 0 else ('loss' if c.tix_change and c.tix_change < 0 else '') }}"
-          {% if c.tix_first_date %}title="First archived on {{ c.tix_first_date }} at {{ c.tix_first|money }} tix ({{ c.tix_days }} days)"{% endif %}>
-        {% if c.tix_change is not none %}
-          {{ c.tix_change|signed_tix }}{% if c.tix_pct is not none %}<span class="pct">{{ '+' if c.tix_pct > 0 else '' }}{{ c.tix_pct }}%</span>{% endif %}
-        {% else %}<span class="muted">&mdash;</span>{% endif %}
-      </td>
-      <td class="num muted">{{ c.versions_total if c.versions_total else '&mdash;'|safe }}</td>
-    </tr>
+    {{ card_row(c, c.slug) }}
+    {% for t in c.other_treatments %}
+      {{ card_row(t, c.slug, is_treatment=True) }}
+    {% endfor %}
   {% endfor %}
   </tbody>
 </table>

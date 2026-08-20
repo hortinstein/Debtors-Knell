@@ -12,13 +12,14 @@
   var searchInput = document.getElementById("search");
   var statusEl = document.getElementById("filter-status");
   var paperOnly = document.getElementById("paper-only");
+  var showTreatments = document.getElementById("show-treatments");
   var clearBtn = document.getElementById("clear-filters");
   var rarityChips = document.querySelectorAll(".rarity-chip");
   var moveChips = document.querySelectorAll(".move-chip");
   var marketChips = document.querySelectorAll(".market-chip");
   var setChips = document.querySelectorAll(".set-chip");
 
-  var state = { q: "", rarities: [], sets: [], move: "all", market: "tix", paperOnly: false };
+  var state = { q: "", rarities: [], sets: [], move: "all", market: "tix", paperOnly: false, showTreatments: false, poolOnly: false };
 
   // ------------------------------------------------------------- filtering
 
@@ -28,10 +29,12 @@
   }
 
   function matches(row) {
+    if (row.dataset.treatment === "1" && !state.showTreatments) return false;
     if (state.q && row.dataset.name.indexOf(state.q) === -1) return false;
     if (state.rarities.length && state.rarities.indexOf(row.dataset.rarity) === -1) return false;
     if (state.sets.length && state.sets.indexOf(row.dataset.set) === -1) return false;
     if (state.paperOnly && num(row, "usd") === null) return false;
+    if (state.poolOnly && row.dataset.inPool !== "1") return false;
     if (state.move !== "all") {
       var pct = num(row, state.market === "usd" ? "usdPct" : "tixPct");
       if (pct === null || pct === 0) return false;
@@ -46,7 +49,9 @@
     rows.forEach(function (row) {
       var ok = matches(row);
       row.hidden = !ok;
-      if (ok) shown++;
+      // The status line counts cards, not rows -- a treatment row shown
+      // alongside its card's primary row isn't a second card.
+      if (ok && row.dataset.treatment !== "1") shown++;
     });
     var total = statusEl.dataset.total;
     var bits = [];
@@ -54,6 +59,7 @@
     if (state.sets.length) bits.push("in " + state.sets.join(" / "));
     if (state.rarities.length) bits.push(state.rarities.join(" / ").toLowerCase());
     if (state.paperOnly) bits.push("with a physical price");
+    if (state.poolOnly) bits.push("in your pool");
     if (state.move !== "all") {
       bits.push((state.move === "up" ? "gaining" : "losing") +
                 " in " + (state.market === "usd" ? "paper" : "MTGO"));
@@ -112,8 +118,17 @@
     applyFilters();
   });
 
+  showTreatments.addEventListener("change", function () {
+    state.showTreatments = showTreatments.checked;
+    applyFilters();
+  });
+
   clearBtn.addEventListener("click", function () {
-    state = { q: "", rarities: [], sets: [], move: "all", market: "tix", paperOnly: false };
+    // Deliberately leaves showTreatments and the pool alone -- neither is a
+    // filter you'd expect "clear filters" to touch: one's a display density
+    // choice, the other took a paste to set up and has its own Clear pool.
+    state = { q: "", rarities: [], sets: [], move: "all", market: "tix", paperOnly: false,
+              showTreatments: state.showTreatments, poolOnly: state.poolOnly };
     searchInput.value = "";
     paperOnly.checked = false;
     rarityChips.forEach(function (c) { c.classList.remove("active"); });
@@ -123,11 +138,160 @@
     applyFilters();
   });
 
+  // ------------------------------------------------------------------ pool
+  //
+  // A pasted sealed/draft export, matched client-side against the table
+  // already on the page -- no server round-trip, same as every other filter
+  // here. Matching goes through three normalization strengths (exact, no
+  // apostrophes, accents-and-punctuation stripped) so "Dain Ironfoot" or
+  // curly-quoted "Chief Warg's Company" from an export still finds the row,
+  // and a double-faced card indexes under its front face too since that's
+  // what MTGO/Arena exports actually name it.
+
+  var poolInput = document.getElementById("pool-input");
+  var poolLoadBtn = document.getElementById("pool-load");
+  var poolClearBtn = document.getElementById("pool-clear");
+  var poolOnly = document.getElementById("pool-only");
+  var poolStatusEl = document.getElementById("pool-status");
+  var poolBadges = [];
+
+  function stripAccents(s) {
+    return s.normalize ? s.normalize("NFD").replace(/[\u0300-\u036f]/g, "") : s;
+  }
+  function normKey(s) {
+    return s.trim().replace(/[’‘`]/g, "'").replace(/[“”]/g, '"')
+      .replace(/\s+/g, " ").toLowerCase();
+  }
+  function normKeyNoApos(s) { return normKey(s).replace(/'/g, "").replace(/,/g, ""); }
+  function normKeyStripped(s) { return stripAccents(normKey(s)).replace(/[^a-z0-9]+/g, ""); }
+
+  function addToIndex(map, key, row) {
+    if (!key) return;
+    if (!map[key]) map[key] = [];
+    if (map[key].indexOf(row) === -1) map[key].push(row);
+  }
+
+  // Built once from the primary (non-treatment) rows -- a treatment is the
+  // same card under a different printing, not a separate pool entry.
+  var poolIndex = { exact: {}, noapos: {}, stripped: {} };
+  rows.forEach(function (row) {
+    if (row.dataset.treatment === "1") return;
+    var names = [row.dataset.name];
+    if (row.dataset.name.indexOf(" // ") !== -1) {
+      row.dataset.name.split(" // ").forEach(function (face) { names.push(face.trim()); });
+    }
+    names.forEach(function (n) {
+      addToIndex(poolIndex.exact, normKey(n), row);
+      addToIndex(poolIndex.noapos, normKeyNoApos(n), row);
+      addToIndex(poolIndex.stripped, normKeyStripped(n), row);
+    });
+  });
+
+  function lookupPoolRows(name) {
+    var keys = [normKey(name), normKeyNoApos(name), normKeyStripped(name)];
+    var maps = [poolIndex.exact, poolIndex.noapos, poolIndex.stripped];
+    for (var i = 0; i < keys.length; i++) {
+      if (maps[i][keys[i]]) return maps[i][keys[i]];
+    }
+    return null;
+  }
+
+  // Tolerant of MTGO ("4 Card Name"), Arena ("4 Card Name (HOB) 123") and
+  // plain one-per-line exports; skips the section headers Arena/MTGO exports
+  // carry ("Deck", "Sideboard") and blank/comment lines.
+  function parsePoolText(text) {
+    var entries = [];
+    text.split(/\r?\n/).forEach(function (line) {
+      line = line.trim();
+      if (!line || line.charAt(0) === "#") return;
+      if (/^(deck|sideboard|maybeboard|companion|commander)s?:?$/i.test(line)) return;
+      var name = line;
+      var qty = 1;
+      var qtyMatch = line.match(/^(\d+)\s*x?\s+(.+)$/i);
+      if (qtyMatch) { qty = parseInt(qtyMatch[1], 10) || 1; name = qtyMatch[2]; }
+      name = name.replace(/\s*[([][A-Za-z0-9]{2,6}[)\]]\s*[A-Za-z0-9-]*\s*$/, "").trim();
+      if (!name) return;
+      entries.push({ qty: qty, name: name });
+    });
+    return entries;
+  }
+
+  function clearPoolMarks() {
+    poolBadges.forEach(function (b) { b.remove(); });
+    poolBadges = [];
+    rows.forEach(function (row) {
+      row.classList.remove("in-pool");
+      delete row.dataset.inPool;
+      delete row.dataset.poolQty;
+    });
+  }
+
+  function loadPool() {
+    var entries = parsePoolText(poolInput.value);
+    clearPoolMarks();
+    var matchedEntries = 0, unmatchedEntries = 0, totalQty = 0;
+    entries.forEach(function (entry) {
+      var found = lookupPoolRows(entry.name);
+      if (!found) { unmatchedEntries++; return; }
+      matchedEntries++;
+      totalQty += entry.qty;
+      found.forEach(function (row) {
+        row.dataset.poolQty = String((parseInt(row.dataset.poolQty || "0", 10)) + entry.qty);
+        row.dataset.inPool = "1";
+        row.classList.add("in-pool");
+      });
+    });
+    rows.forEach(function (row) {
+      if (row.dataset.inPool !== "1") return;
+      var badge = document.createElement("span");
+      badge.className = "pool-qty";
+      badge.textContent = "×" + row.dataset.poolQty;
+      row.querySelector(".col-name").appendChild(badge);
+      poolBadges.push(badge);
+    });
+
+    if (!entries.length) {
+      poolStatusEl.textContent = "";
+    } else if (!matchedEntries) {
+      poolStatusEl.textContent = "None of those lines matched a card in this set.";
+    } else {
+      poolStatusEl.textContent = "Loaded " + totalQty + " card" + (totalQty === 1 ? "" : "s") +
+        " (" + matchedEntries + " unique) from your pool" +
+        (unmatchedEntries
+          ? "; " + unmatchedEntries + " line" + (unmatchedEntries === 1 ? "" : "s") +
+            " didn't match a card in this set."
+          : ".");
+      // The whole point is "what do I have and how good is it" -- land the
+      // user straight on that view instead of making them flip two switches.
+      poolOnly.checked = true;
+      state.poolOnly = true;
+      sortBy("pick_order", false);
+    }
+    applyFilters();
+  }
+
+  poolLoadBtn.addEventListener("click", loadPool);
+
+  poolClearBtn.addEventListener("click", function () {
+    clearPoolMarks();
+    poolInput.value = "";
+    poolStatusEl.textContent = "";
+    poolOnly.checked = false;
+    state.poolOnly = false;
+    applyFilters();
+  });
+
+  poolOnly.addEventListener("change", function () {
+    state.poolOnly = poolOnly.checked;
+    applyFilters();
+  });
+
   // --------------------------------------------------------------- sorting
 
   var SORT_KEYS = {
     number: "number", name: "name", rarity: "rarity", set: "set", usd: "usd",
-    usd_pct: "usdPct", tix: "tix", tix_pct: "tixPct", versions: "versions"
+    usd_pct: "usdPct", tix: "tix", tix_pct: "tixPct", versions: "versions",
+    ds_rating: "dsRating", pick_order: "utRank"
   };
   var TEXT_SORTS = { name: true, set: true };
   var RARITY_RANK = { Mythic: 4, Rare: 3, Uncommon: 2, Common: 1 };
@@ -671,6 +835,16 @@
   });
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && !modal.hidden) closeModal();
+  });
+
+  // Treatment rows carry their raw Scryfall treatment slugs in a data
+  // attribute; label them with the same wording the modal's version cards
+  // use, once, up front -- these rows are hidden until the toggle is on, so
+  // there's no flash of the raw slug form.
+  document.querySelectorAll(".treatment-label[data-treatments]").forEach(function (el) {
+    var list = el.dataset.treatments ? el.dataset.treatments.split(",") : [];
+    var text = treatmentText({ treatments: list });
+    el.textContent = "(" + (text || "alternate printing") + ")";
   });
 
   applyFilters();
