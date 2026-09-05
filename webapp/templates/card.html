@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}{{ card.name }} &mdash; Building on a Budget Archive{% endblock %}
+{% block content %}
+<p class="back-link"><a href="{{ url_for('stats') }}">&larr; back to card stats</a></p>
+
+{# The same content webapp/static/card-modal.js shows in place when a card
+   name is clicked. This page is where those links point, so it is what opens
+   without JavaScript, in a new tab, or from a shared link. #}
+<section class="card-page">
+  <img class="card-page-image" src="{{ card.image }}" alt="{{ card.name }}" loading="lazy">
+
+  <div class="card-page-body">
+    <h1>{{ card.name }}</h1>
+    {% if card.names|length > 1 %}
+    <p class="muted card-page-aka">Also spelled {{ card.names[1:]|join(", ") }} in the archive.</p>
+    {% endif %}
+
+    <p class="card-page-prices">
+      <span>{{ "$%.2f"|format(card.unit_usd) if card.unit_usd is not none else "N/A" }} physical</span>
+      <span>{{ "%.2f tix"|format(card.unit_tix) if card.unit_tix is not none else "N/A" }} digital</span>
+      {% if card.scryfall %}
+      <a class="card-page-scryfall" href="{{ card.scryfall }}" target="_blank" rel="noopener">View on Scryfall &rarr;</a>
+      {% endif %}
+    </p>
+
+    <p class="card-page-counts">
+      Appears in <strong>{{ card.num_decks }}</strong> decklist{{ "s" if card.num_decks != 1 else "" }}
+      ({{ card.num_budget_decks }} budget build{{ "s" if card.num_budget_decks != 1 else "" }}),
+      <strong>{{ card.total_qty }}</strong> cop{{ "ies" if card.total_qty != 1 else "y" }} in total.
+    </p>
+
+    <div class="price-chart" data-subject="card">
+      <div class="price-chart-header">
+        <span class="price-chart-title">Price history</span>
+        <div class="price-chart-toggle" role="group" aria-label="Currency">
+          <button type="button" class="toggle-btn active" data-series="tix">Digital (tix)</button>
+          <button type="button" class="toggle-btn" data-series="usd">Physical ($)</button>
+        </div>
+      </div>
+      <div class="price-chart-canvas-wrap">
+        <canvas class="price-chart-canvas"></canvas>
+        <div class="price-chart-tooltip">
+          <div class="pc-tt-value"></div>
+          <div class="pc-tt-date"></div>
+        </div>
+      </div>
+      <p class="price-chart-note"></p>
+      <script type="application/json" class="price-chart-data">{{ card.history|tojson }}</script>
+    </div>
+  </div>
+</section>
+
+<section class="card-decks">
+  <h2>In these decklists</h2>
+  <table class="deck-table card-decks-table">
+    <thead>
+      <tr><th>Date</th><th>Deck</th><th>Kind</th><th class="col-num">Copies</th></tr>
+    </thead>
+    <tbody>
+      {% for d in card.decks %}
+      <tr>
+        <td class="col-date">{{ d.date }}</td>
+        <td class="col-title">
+          {# url_for, not d.url: the JSON's deck URLs are written relative to
+             the JSON file, and this page is not it. Frozen-Flask rewrites
+             url_for calls made from a template for the frozen site. #}
+          <a href="{{ url_for('deck_detail', folder=d.folder) }}">{{ d.title }}</a>
+          {% if d.label %}<div class="col-author">{{ d.label }}</div>{% endif %}
+        </td>
+        <td><span class="role-chip role-{{ d.role }}">{{ d.role_label }}</span></td>
+        <td class="col-num">{{ d.qty }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}

@@ -20,9 +20,12 @@ import json
 import os
 import re
 import sys
+import unicodedata
+from urllib.parse import quote
 
 import markdown
-from flask import Flask, Response, abort, render_template
+from flask import Flask, Response, abort, render_template, url_for
+from markupsafe import Markup, escape
 from PIL import Image
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -51,7 +54,24 @@ def _ensure_price_histories():
         print(f"[startup] price-history build skipped: {e}", flush=True)
 
 
+def _ensure_card_histories():
+    """prices/card_history.json.gz is the per-card equivalent of those
+    sidecars (see scripts/build_card_history.py) -- what the card pages and
+    the card modal chart. Also generated and gitignored, and built here when
+    it's missing so a fresh checkout/deploy has it without a manual step; the
+    daily price fetch rebuilds it in full."""
+    sys.path.insert(0, SCRIPTS_DIR)
+    try:
+        import build_card_history
+        cards = build_card_history.build_card_histories(force=False, quiet=True)
+        if cards:
+            print(f"[startup] built per-card price history for {cards:,} cards", flush=True)
+    except Exception as e:
+        print(f"[startup] card price-history build skipped: {e}", flush=True)
+
+
 _ensure_price_histories()
+_ensure_card_histories()
 
 # Fixed vocabulary, in the order shown in the index-page filter dropdown.
 ARCHETYPE_LIST = [
@@ -102,6 +122,33 @@ SCRYFALL_CARD_LINK_RE = re.compile(r"scryfall\.com/card/([^/?#]+)/([^/?#]+)/")
 
 app = Flask(__name__)
 app.jinja_env.filters["money"] = lambda v: f"{v:,.2f}"
+
+# Google Analytics 4 measurement ID ("G-XXXXXXXXXX"), read from the
+# environment so nothing site-specific is checked in: the GitHub Pages build
+# passes the repository's GA_MEASUREMENT_ID variable through to the freeze
+# (see .github/workflows/deploy-pages.yml), which bakes the tag into every
+# frozen page. Unset -- a local dev run, or a fork that hasn't configured one
+# -- and base.html emits no tracking snippet at all.
+#
+# Anything that isn't a plain measurement ID is ignored rather than injected
+# into the page's <script> tags.
+GA_ID_RE = re.compile(r"^[A-Za-z0-9_-]{1,32}$")
+GA_MEASUREMENT_ID = os.environ.get("GA_MEASUREMENT_ID", "").strip()
+if GA_MEASUREMENT_ID and not GA_ID_RE.match(GA_MEASUREMENT_ID):
+    print(f"[startup] ignoring malformed GA_MEASUREMENT_ID {GA_MEASUREMENT_ID!r}", flush=True)
+    GA_MEASUREMENT_ID = ""
+
+
+@app.context_processor
+def inject_analytics():
+    return {"ga_measurement_id": GA_MEASUREMENT_ID}
+
+
+@app.context_processor
+def inject_card_link():
+    # Templates render card names through this so every one of them is a link
+    # to the card's page (and so opens the card modal) -- see card_link_html.
+    return {"card_link": card_link_html}
 
 
 def _parse_money(s):
@@ -630,6 +677,7 @@ def get_card_stats():
                     "num_reference_decks": 0,
                     "unit_usd": None,
                     "unit_tix": None,
+                    "uri": None,
                     "decks": [],
                 })
                 entry["total_qty"] += r["qty"]
@@ -639,6 +687,8 @@ def get_card_stats():
                     entry["unit_usd"] = r["unit_usd"]
                 if entry["unit_tix"] is None and r["unit_tix"] is not None:
                     entry["unit_tix"] = r["unit_tix"]
+                if entry["uri"] is None and r["uri"]:
+                    entry["uri"] = r["uri"]
                 if name not in counted_here:
                     counted_here.add(name)
                     entry["num_decks"] += 1
@@ -652,6 +702,9 @@ def get_card_stats():
                         "title": d["article_title"],
                         "label": d["label"] if d["show_label"] else "",
                         "role": d["role"],
+                        "role_label": d["role_label"],
+                        "date_str": d["date_str"],
+                        "ymd": d["ymd"],
                         "qty": r["qty"],
                     })
         stats = list(by_name.values())
@@ -671,6 +724,213 @@ def get_card_stats():
             c["slug"] = slug if n == 1 else f"{slug}-{n}"
         _CARD_STATS_CACHE = stats
     return _CARD_STATS_CACHE
+
+
+# ---------------------------------------------------------------------------
+# The card index: one entry per card, behind /card/<slug>/ and its modal
+# ---------------------------------------------------------------------------
+
+def card_slug(name):
+    """A card's URL slug, derived from its name alone so the browser can work
+    one out for a name it only knows as text (see webapp/static/card-modal.js,
+    which mirrors this) rather than needing a lookup table shipped to it.
+
+    Accents and the AE ligature fold to ASCII, which also merges the two
+    spellings of the same card the archive's articles disagree about --
+    "AEther Spellbomb" and "Aether Spellbomb" are one card and get one page."""
+    folded = name.replace("\u00c6", "AE").replace("\u00e6", "ae")
+    folded = unicodedata.normalize("NFKD", folded)
+    folded = "".join(c for c in folded if not unicodedata.combining(c))
+    return re.sub(r"[^a-z0-9]+", "-", folded.lower()).strip("-") or "card"
+
+
+_CARD_INDEX_CACHE = None
+
+
+def get_card_index():
+    """slug -> one card, merging any card-stats rows that share a slug (the
+    alternate spellings card_slug() folds together). Deck appearances are
+    pooled and re-sorted by date, so the card page reads as one history of
+    where the card turns up in the column."""
+    global _CARD_INDEX_CACHE
+    if _CARD_INDEX_CACHE is None:
+        index = {}
+        for c in get_card_stats():
+            slug = card_slug(c["name"])
+            entry = index.get(slug)
+            if entry is None:
+                entry = {
+                    "slug": slug,
+                    "name": c["name"],
+                    "names": [],
+                    "is_basic_land": c["is_basic_land"],
+                    "total_qty": 0,
+                    "budget_qty": 0,
+                    "num_decks": 0,
+                    "num_budget_decks": 0,
+                    "unit_usd": None,
+                    "unit_tix": None,
+                    "uri": None,
+                    "decks": [],
+                }
+                index[slug] = entry
+            entry["names"].append(c["name"])
+            entry["total_qty"] += c["total_qty"]
+            entry["budget_qty"] += c["budget_qty"]
+            entry["num_decks"] += c["num_decks"]
+            entry["num_budget_decks"] += c["num_budget_decks"]
+            if entry["unit_usd"] is None:
+                entry["unit_usd"] = c["unit_usd"]
+            if entry["unit_tix"] is None:
+                entry["unit_tix"] = c["unit_tix"]
+            if entry["uri"] is None:
+                entry["uri"] = c["uri"]
+            entry["decks"].extend(c["decks"])
+        for entry in index.values():
+            entry["decks"].sort(key=lambda d: (d["ymd"], d["title"], d["label"]))
+        _CARD_INDEX_CACHE = index
+    return _CARD_INDEX_CACHE
+
+
+_CARD_HISTORY_CACHE = None
+
+
+def get_card_histories():
+    """prices/card_history.json.gz, loaded once. An empty dict when the file
+    hasn't been built (scripts/build_card_history.py) -- the card pages then
+    simply say they have no price history rather than failing."""
+    global _CARD_HISTORY_CACHE
+    if _CARD_HISTORY_CACHE is None:
+        sys.path.insert(0, SCRIPTS_DIR)
+        try:
+            import build_card_history
+            _CARD_HISTORY_CACHE = build_card_history.load_card_histories() or {}
+        except Exception as e:
+            print(f"[cards] no per-card price history: {e}", flush=True)
+            _CARD_HISTORY_CACHE = {}
+    return _CARD_HISTORY_CACHE
+
+
+def _history_for_card(entry):
+    """The card's tix and USD price series as [[date, value], ...] pairs --
+    the same shape the per-deck sidecars use, so the card page and the card
+    modal can be drawn by the chart the deck pages already use
+    (static/price-chart.js).
+
+    prices/card_history.json.gz stores the values aligned to one shared date
+    axis per market, with a null on days that card had no price; those days
+    are dropped here. Merged spellings are tried in turn, since only the one
+    the price sources recognize carries data."""
+    data = get_card_histories()
+    cards = data.get("cards") or {}
+
+    def pairs(dates, values):
+        return [[d, v] for d, v in zip(dates, values) if v is not None]
+
+    tix, usd = [], []
+    for name in entry["names"]:
+        c = cards.get(name) or {}
+        if not tix:
+            tix = pairs(data.get("tix_dates") or [], c.get("tix") or [])
+        if not usd:
+            usd = pairs(data.get("usd_dates") or [], c.get("usd") or [])
+    return {"tix": tix, "usd": usd}
+
+
+def _card_image_url(entry, version="normal"):
+    """The card image for the modal and the card page. The Scryfall page link
+    the priced table already carries names an exact printing; a card the
+    pricing pass never linked falls back to Scryfall's fuzzy name lookup."""
+    url = _scryfall_image_url(entry["uri"], version=version)
+    if url:
+        return url
+    return ("https://api.scryfall.com/cards/named?fuzzy=" + quote(entry["name"])
+            + f"&format=image&version={version}")
+
+
+def card_payload(entry):
+    """Everything the card page and the card modal show, as plain JSON-able
+    data.
+
+    Each deck carries its folder and a URL written relative to
+    /card/<slug>.json -- the file the modal fetches this from, which is what
+    the modal resolves it against (see card-modal.js). Relative because the
+    frozen site can be served from a GitHub Pages project subpath, where a
+    root-relative "/deck/..." would miss; and written by hand because
+    Frozen-Flask only rewrites the url_for calls made from templates, not the
+    ones made here. The card page builds its own links from the folder."""
+    return {
+        "slug": entry["slug"],
+        "name": entry["name"],
+        "names": entry["names"],
+        "image": _card_image_url(entry),
+        "scryfall": entry["uri"],
+        "is_basic_land": entry["is_basic_land"],
+        "unit_usd": entry["unit_usd"],
+        "unit_tix": entry["unit_tix"],
+        "total_qty": entry["total_qty"],
+        "budget_qty": entry["budget_qty"],
+        "num_decks": entry["num_decks"],
+        "num_budget_decks": entry["num_budget_decks"],
+        "history": _history_for_card(entry),
+        "decks": [{
+            "title": d["title"],
+            "label": d["label"],
+            "role": d["role"],
+            "role_label": d["role_label"],
+            "date": d["date_str"] or d["ymd"],
+            "qty": d["qty"],
+            "folder": d["folder"],
+            "url": f"../deck/{quote(d['folder'])}/",
+        } for d in entry["decks"]],
+    }
+
+
+def card_link_html(name, display=None):
+    """The site-wide card link: an <a> to the card's page that
+    static/card-modal.js opens as a modal instead of navigating, and that
+    static/card-preview.js still shows the Scryfall hover image for."""
+    text = escape(display if display is not None else name)
+    entry = get_card_index().get(card_slug(name))
+    if entry is None:
+        return Markup(text)
+    attrs = [
+        'class="card-link"',
+        f'href="{escape(url_for("card_detail", slug=entry["slug"]))}"',
+        f'data-card="{escape(entry["name"])}"',
+    ]
+    if entry["uri"]:
+        # The printing the priced table linked, so card-preview.js can still
+        # show the Scryfall hover image over a name that now links here.
+        attrs.append(f'data-scryfall="{escape(entry["uri"])}"')
+    return Markup(f'<a {" ".join(attrs)}>{text}</a>')
+
+
+def link_priced_card_names(priced_text):
+    """Turn the Card column of a decklist*_priced.md table into card links,
+    before the markdown is rendered.
+
+    The cell keeps whatever the article spelled the card (and the
+    "<sub>(matched via fuzzy...)</sub>" note explaining a correction), but the
+    link points at the corrected card's page -- one page per card, however
+    many ways the column typed its name over six years. The Scryfall column
+    is left alone: it is what the hover preview reads."""
+    out = []
+    for line in priced_text.split("\n"):
+        m = PRICE_ROW_RE.match(line)
+        if not m:
+            out.append(line)
+            continue
+        name_cell = m.group(2)
+        sub_m = re.search(r"\s*<sub>.*</sub>\s*$", name_cell)
+        display = name_cell[: sub_m.start()] if sub_m else name_cell
+        annotation = name_cell[sub_m.start():] if sub_m else ""
+        # str(): card_link_html hands back Markup, which would escape the
+        # <sub> annotation being concatenated onto it -- but this is markdown
+        # source being assembled, not a template's output.
+        linked = str(card_link_html(_canonical_card_name(name_cell), display=display.strip()))
+        out.append(line[: m.start(2)] + linked + annotation + line[m.end(2):])
+    return "\n".join(out)
 
 
 # ---------------------------------------------------------------------------
@@ -772,6 +1032,7 @@ def deck_detail(folder):
         # the filename, and repeating the underscored raw title looks noisy.
         priced_text = re.sub(r"^# Priced Decklist:.*\n\n?", "", priced_text)
         priced_text = re.sub(r"^\*Source:.*\*\n\n?", "", priced_text)
+        priced_text = link_priced_card_names(priced_text)
         usd, tix = _parse_grand_totals(pf)
         # The combined total is what it costs to build this week's decks, so
         # it counts the budget builds only -- see _load_article_entry.
@@ -911,6 +1172,28 @@ def movers_detail(date):
     if date not in dates:
         abort(404)
     return _render_movers(date, dates)
+
+
+@app.route("/card/<slug>/")
+def card_detail(slug):
+    """One card: its picture, its price history, and every decklist in the
+    archive that runs it. Card names across the site link here, and
+    static/card-modal.js opens this same content as a modal without leaving
+    the page -- this page is what that link falls back to (and what a shared
+    link opens)."""
+    entry = get_card_index().get(slug)
+    if entry is None:
+        abort(404)
+    return render_template("card.html", card=card_payload(entry))
+
+
+@app.route("/card/<slug>.json")
+def card_data(slug):
+    """The same card as JSON, for the modal to fetch."""
+    entry = get_card_index().get(slug)
+    if entry is None:
+        abort(404)
+    return Response(json.dumps(card_payload(entry)), mimetype="application/json")
 
 
 @app.route("/themes/")

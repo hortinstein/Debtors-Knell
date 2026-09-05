@@ -207,6 +207,17 @@ def main():
     except Exception as e:
         log(f"Price-history rebuild FAILED (non-fatal): {e}")
 
+    # And the per-card equivalent behind the card pages and the card modal
+    # (prices/card_history.json.gz), generated and gitignored for the same
+    # reasons and now a day out of date for the same reason.
+    try:
+        import build_card_history
+        log("Rebuilding per-card price history from freshly fetched price data...")
+        cards = build_card_history.build_card_histories(force=True)
+        log(f"Rebuilt price history for {cards:,} cards.")
+    except Exception as e:
+        log(f"Card price-history rebuild FAILED (non-fatal): {e}")
+
     if not goatbots_ok:
         sys.exit(1)
     log("Done.")

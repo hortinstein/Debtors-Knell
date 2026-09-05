@@ -1,12 +1,11 @@
-// Per-deck historical price chart, digital (tix) / physical (USD) toggle.
-// Vanilla canvas line chart, no external dependencies. Data comes from a
-// sibling <script type="application/json"> tag holding
-// {tix: [[date, value], ...], usd: [[date, value], ...], unmatched_cards: [...]}.
+// Historical price chart, digital (tix) / physical (USD) toggle -- used for a
+// whole decklist's cost on the deck pages and for a single card on the card
+// pages and in the card modal. Vanilla canvas line chart, no external
+// dependencies. Data comes from a sibling <script type="application/json"> tag
+// holding {tix: [[date, value], ...], usd: [[date, value], ...],
+// unmatched_cards: [...]}.
 (function () {
   "use strict";
-
-  var blocks = document.querySelectorAll(".price-chart");
-  if (!blocks.length) return;
 
   function cssVar(name) {
     return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
@@ -65,7 +64,8 @@
       if (!pts.length) {
         ctx.fillStyle = muted;
         ctx.font = "13px sans-serif";
-        ctx.fillText("No price history available for this deck.", 8, cssHeight / 2);
+        ctx.fillText("No price history available for this " +
+          (block.dataset.subject || "deck") + ".", 8, cssHeight / 2);
         if (noteEl) noteEl.textContent = "";
         return;
       }
@@ -210,12 +210,27 @@
       });
     });
 
-    window.addEventListener("resize", draw);
-    if (window.matchMedia) {
-      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", draw);
+    // A modal's chart (static/card-modal.js) is thrown away when the modal
+    // closes, so these listeners drop themselves once their canvas is gone
+    // rather than piling up one set per card looked at.
+    var darkQuery = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+    function redraw() {
+      if (!document.contains(canvas)) {
+        window.removeEventListener("resize", redraw);
+        if (darkQuery) darkQuery.removeEventListener("change", redraw);
+        return;
+      }
+      draw();
     }
+    window.addEventListener("resize", redraw);
+    if (darkQuery) darkQuery.addEventListener("change", redraw);
     draw();
   }
 
-  blocks.forEach(initChart);
+  document.querySelectorAll(".price-chart").forEach(initChart);
+
+  // The card modal (static/card-modal.js) builds the same .price-chart markup
+  // on the fly for whichever card was clicked, so it needs to start a chart
+  // after page load rather than only at it.
+  window.initPriceChart = initChart;
 })();

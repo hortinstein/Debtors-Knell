@@ -200,10 +200,15 @@
 
       var main = el("div", "mover-main");
       var nameEl = el("div", "mover-name");
-      var link = el("a", null, name);
-      link.href = scryfallSearch(name);
-      link.target = "_blank";
-      link.rel = "noopener";
+      // Card names are card links across the site: this one opens the card
+      // modal (static/card-modal.js) with the card's picture, full price
+      // history and every decklist it is in. The dataset names every card
+      // exactly as the archive's decklists do (see deck_pool_name in
+      // scripts/build_movers.py), so the slug always resolves; Scryfall is
+      // one click further on, inside the modal.
+      var link = el("a", "card-link", name);
+      link.href = window.cardLinks ? window.cardLinks.url(name) : scryfallSearch(name);
+      link.setAttribute("data-card", name);
       nameEl.appendChild(link);
       main.appendChild(nameEl);
 

@@ -39,7 +39,14 @@ jobs:
           pip install -r webapp/requirements.txt
           pip install -r staticsite/requirements.txt
 
+      # GA_MEASUREMENT_ID is the Google Analytics 4 measurement ID
+      # ("G-XXXXXXXXXX"). Set it as a repository variable (Settings ->
+      # Secrets and variables -> Actions -> Variables), or as a secret of the
+      # same name if you'd rather keep it out of the Actions logs. Leave both
+      # unset and the frozen pages carry no analytics snippet at all.
       - name: Freeze static site
+        env:
+          GA_MEASUREMENT_ID: ${{ vars.GA_MEASUREMENT_ID || secrets.GA_MEASUREMENT_ID }}
         run: python3 staticsite/freeze.py staticsite/build
 
       - uses: actions/configure-pages@v5

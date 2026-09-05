@@ -7,10 +7,11 @@ static site deployable to GitHub Pages -- see
 Every route in the live app is either:
   - fully static (/, /stats, /pool, /pool-data.json) -- frozen with no
     variables, exactly as Frozen-Flask discovers it, or
-  - one static file per (folder[, filename]) combination (/deck/<folder>,
-    /screenshot/<folder>, /download/<folder>/<filename>) -- the generators
-    below enumerate every real combination so Frozen-Flask doesn't have to
-    guess them from crawled links.
+  - one static file per (folder[, filename]) or per card (/deck/<folder>,
+    /screenshot/<folder>, /download/<folder>/<filename>, /card/<slug>/ and
+    its /card/<slug>.json) -- the generators below enumerate every real
+    combination so Frozen-Flask doesn't have to guess them from crawled
+    links.
 
 The one route Frozen-Flask genuinely can't pre-render is the card-pool
 builder's deck-selection logic: /pool takes an arbitrary combination of
@@ -63,6 +64,21 @@ def build(destination):
         # day) is discovered via the nav link like any static route.
         for date in webapp_app.get_mover_dates():
             yield {"date": date}
+
+    @freezer.register_generator
+    def card_detail():
+        # One page per card in the archive (webapp/app.py's card index), the
+        # target of every card-name link on the site.
+        for slug in webapp_app.get_card_index():
+            yield {"slug": slug}
+
+    @freezer.register_generator
+    def card_data():
+        # ...and the JSON beside it that the card modal fetches, which is the
+        # one thing on the site a static build has to serve as data rather
+        # than as a page.
+        for slug in webapp_app.get_card_index():
+            yield {"slug": slug}
 
     @freezer.register_generator
     def download_decklist():
