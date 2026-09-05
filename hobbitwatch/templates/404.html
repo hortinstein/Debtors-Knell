@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Not found &mdash; Hobbit Watch</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="site-header">
+  <a class="site-title" href="{{ url_for('index') }}">Hobbit Watch</a>
+</header>
+<main>
+  <section class="intro">
+    <h1>Not found</h1>
+    <p>No such card. <a href="{{ url_for('index') }}">Back to the set list</a>.</p>
+  </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,231 @@
+#!/usr/bin/env python3
+"""
+Hobbit Watch -- a small Flask app for tracking prices of the new Hobbit (HOB)
+cards, built on the same daily price archive as the main "Building on a
+Budget" webapp (../prices, see ../prices/README.md).
+
+Deliberately a separate app in its own folder: it shares no routes, templates
+or static files with ../webapp, and reads only the price archive plus
+scripts/build_price_history.py's archive readers (via build_dataset.py). The
+main site is about 2003-2009 decklists; this one is about one brand-new set.
+
+Pages:
+    /                       searchable, sortable table of every HOB card with
+                            its physical (USD) and digital (tix) price and the
+                            change since the first archived data point; click
+                            a row for a chart, art, and the card's other
+                            printings
+    /api/cards.json         the whole dataset
+    /api/card/<slug>.json   one card (what the modal fetches)
+
+Run:
+    cd hobbitwatch
+    pip install -r requirements.txt
+    python3 app.py            # http://127.0.0.1:5001
+
+The first start builds data/hobbit_cards.json from the price archive, which
+takes a couple of minutes (most of it decompressing the archived MTGJSON
+snapshots); after that it's instant, and it rebuilds itself whenever a newer
+day of prices lands in ../prices.
+"""
+import json
+import os
+
+from flask import Flask, abort, jsonify, render_template
+
+import build_dataset
+
+DATA_PATH = build_dataset.OUT_PATH
+
+RARITY_ORDER = ["Mythic", "Rare", "Uncommon", "Common"]
+
+app = Flask(__name__)
+
+
+def _signed(value, unit):
+    """'+$1.20' / '-$1.20' / '+0.35 tix' -- the sign belongs in front of the
+    currency, not between it and the digits."""
+    sign = "+" if value > 0 else ("-" if value < 0 else "")
+    amount = f"{abs(value):,.2f}"
+    return f"{sign}${amount}" if unit == "usd" else f"{sign}{amount}"
+
+
+app.jinja_env.filters["money"] = lambda v: f"{v:,.2f}"
+app.jinja_env.filters["signed_usd"] = lambda v: _signed(v, "usd")
+app.jinja_env.filters["signed_tix"] = lambda v: _signed(v, "tix")
+
+_dataset = None
+
+
+def _load_dataset(rebuild_if_stale=True):
+    """The dataset is derived, gitignored data (build_dataset.py). Build it on
+    demand so a fresh checkout just works, and rebuild when a newer price day
+    has been fetched since it was last built."""
+    global _dataset
+    if _dataset is not None:
+        return _dataset
+    if rebuild_if_stale and build_dataset.dataset_is_stale(DATA_PATH):
+        print("[startup] building data/hobbit_cards.json from the price archive "
+              "(a couple of minutes on a cold start)...", flush=True)
+        _dataset = build_dataset.build(out_path=DATA_PATH)
+        return _dataset
+    with open(DATA_PATH, encoding="utf-8") as f:
+        _dataset = json.load(f)
+    return _dataset
+
+
+def get_cards():
+    return _load_dataset()["cards"]
+
+
+def card_by_slug(slug):
+    for card in get_cards():
+        if card["slug"] == slug:
+            return card
+    return None
+
+
+def _treatment_row(card, v):
+    """One other printing of this same card *within this release* (extended
+    art, showcase, borderless, serialized...) -- shaped like `_summary()` so
+    it can share a row template, but priced as that exact printing rather
+    than the card's primary one. Optional extra rows the table can unfold
+    next to a card's primary row when "show all treatments" is on."""
+    usd_stats, tix_stats = v["usd_stats"], v["tix_stats"]
+    tix_current = tix_stats["last"] if tix_stats["last"] is not None else v.get("scry_tix")
+    return {
+        "slug": card["slug"],
+        "key": v["key"],
+        "name": card["name"],
+        "rarity": v.get("rarity") or card["rarity"],
+        "number": v.get("number") or "",
+        "set": card["set"],
+        "set_name": card.get("set_name") or "",
+        "scryfall_set": v.get("scryfall_set") or card["scryfall_set"],
+        "on_mtgo": tix_current is not None or tix_stats["days"] > 0,
+        "art_small": v.get("image_small") or card.get("art_small"),
+        "treatments": v.get("treatments") or [],
+        # Always this printing's current Scryfall price, not the archived
+        # last -- same headline the modal's version cards already show.
+        "usd_current": v.get("usd"),
+        "usd_source": "scryfall" if v.get("usd") is not None else None,
+        "usd_change": usd_stats["change"],
+        "usd_pct": usd_stats["pct"],
+        "usd_first": usd_stats["first"],
+        "usd_first_date": usd_stats["first_date"],
+        "usd_days": usd_stats["days"],
+        "tix": tix_current,
+        "tix_change": tix_stats["change"],
+        "tix_pct": tix_stats["pct"],
+        "tix_first": tix_stats["first"],
+        "tix_first_date": tix_stats["first_date"],
+        "tix_days": tix_stats["days"],
+        # A treatment is just another printing of the same card, so it shares
+        # the card's own pick-order standing rather than having its own.
+        "ds_rating": card.get("ds_rating"),
+        "ut_tier": card.get("ut_tier"),
+        "ut_rank": card.get("ut_rank"),
+    }
+
+
+def _summary(card):
+    """The index table's view of a card: current prices, the change since the
+    card's first archived data point in each market, and how many other
+    printings the modal has to show. No series -- those are fetched per card."""
+    tix, usd = card["tix_stats"], card["usd_stats"]
+    return {
+        "slug": card["slug"],
+        "name": card["name"],
+        "rarity": card["rarity"],
+        "number": card["number"],
+        "set": card["set"],
+        "set_name": card.get("set_name") or "",
+        "scryfall_set": card["scryfall_set"],
+        "on_mtgo": card.get("on_mtgo", True),
+        "art_small": card.get("art_small"),
+        "usd_current": card.get("usd_current"),
+        "usd_source": card.get("usd_source"),
+        "usd": usd["last"],
+        "usd_change": usd["change"],
+        "usd_pct": usd["pct"],
+        "usd_first": usd["first"],
+        "usd_first_date": usd["first_date"],
+        "usd_days": usd["days"],
+        "tix": tix["last"],
+        "tix_change": tix["change"],
+        "tix_pct": tix["pct"],
+        "tix_first": tix["first"],
+        "tix_first_date": tix["first_date"],
+        "tix_days": tix["days"],
+        "versions_total": card["versions_total"],
+        "versions_shown": len(card["versions"]),
+        # Other printings of this card in the *same* set -- extended art,
+        # showcase, serialized -- for the "show all treatments" row toggle.
+        "other_treatments": [_treatment_row(card, v) for v in card["versions"] if v.get("same_set")],
+        # External pick-order rankings (fetch_pick_order.py): Draftsim's 0-5
+        # limited rating and Untapped.gg's sealed tier, for the pool page.
+        "ds_rating": card.get("ds_rating"),
+        "ut_tier": card.get("ut_tier"),
+        "ut_rank": card.get("ut_rank"),
+    }
+
+
+@app.route("/")
+def index():
+    data = _load_dataset()
+    cards = [_summary(c) for c in data["cards"]]
+    rarities = [r for r in RARITY_ORDER if any(c["rarity"] == r for c in cards)]
+    # One chip per product in the release (main set, Commander decks, ...),
+    # with the set's proper name for the label where we have it.
+    set_meta = data.get("sets") or {}
+    sets = []
+    for code in data.get("set_codes") or sorted({c["set"] for c in cards}):
+        count = sum(1 for c in cards if c["set"] == code)
+        if not count:
+            continue
+        sets.append({
+            "code": code,
+            "name": set_meta.get(code, {}).get("name")
+                    or next((c["set_name"] for c in cards if c["set"] == code and c["set_name"]), code),
+            "count": count,
+            "on_mtgo": any(c["on_mtgo"] for c in cards if c["set"] == code),
+        })
+    return render_template(
+        "index.html",
+        cards=cards,
+        rarities=rarities,
+        sets=sets,
+        set_code=data["set_code"],
+        generated=data["generated"],
+        latest_tix_date=data["latest_tix_date"],
+        usd_day_count=data["usd_day_count"],
+        scryfall_generated=(data.get("scryfall_generated") or "")[:10],
+        pick_order_generated=(data.get("pick_order_generated") or "")[:10],
+        paper_count=sum(1 for c in cards if c["usd_current"] is not None),
+        paper_series_count=sum(1 for c in cards if c["usd"] is not None),
+        digital_count=sum(1 for c in cards if c["tix"] is not None),
+    )
+
+
+@app.route("/api/cards.json")
+def api_cards():
+    return jsonify(_load_dataset())
+
+
+@app.route("/api/card/<slug>.json")
+def api_card(slug):
+    card = card_by_slug(slug)
+    if card is None:
+        abort(404)
+    return jsonify(card)
+
+
+@app.errorhandler(404)
+def not_found(_e):
+    return render_template("404.html"), 404
+
+
+if __name__ == "__main__":
+    _load_dataset()
+    port = int(os.environ.get("PORT", "5001"))
+    app.run(debug=bool(os.environ.get("FLASK_DEBUG")), port=port)
