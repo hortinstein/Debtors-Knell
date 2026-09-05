@@ -113,6 +113,16 @@
     });
   }
 
+  // Card names in the shopping list link to the card's page, which
+  // static/card-modal.js opens as a modal in place -- same as every other
+  // card name on the site. The URL is worked out from the name (see
+  // cardLinks.slug there), since this table is built in the browser.
+  function cardLinkHtml(name) {
+    if (!window.cardLinks) return escapeHtml(name);
+    return '<a class="card-link" href="' + escapeHtml(window.cardLinks.url(name)) +
+      '" data-card="' + escapeHtml(name) + '">' + escapeHtml(name) + "</a>";
+  }
+
   function money(v) {
     return v.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   }
@@ -205,7 +215,7 @@
       return (
         "<tr>" +
         "<td>" + r.qty + "</td>" +
-        "<td>" + escapeHtml(r.name) + "</td>" +
+        "<td>" + cardLinkHtml(r.name) + "</td>" +
         "<td>" + (r.unitUsd !== null ? "$" + money(r.unitUsd) : "N/A") + "</td>" +
         "<td>" + (r.extUsd !== null ? "$" + money(r.extUsd) : "N/A") + "</td>" +
         "<td>" + (r.unitTix !== null ? money(r.unitTix) : "N/A") + "</td>" +

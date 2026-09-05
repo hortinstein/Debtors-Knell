@@ -14,3 +14,24 @@ Please add a log.md to keep track of the status of each deck scraped.
 ==================
 
 I would not like to make a flask application that aggregates all of this data 
+
+## Site configuration
+
+### Google Analytics
+
+The webapp and the frozen GitHub Pages build both read the Google Analytics 4
+measurement ID from the `GA_MEASUREMENT_ID` environment variable. When it is
+unset (a local dev run, or a fork that hasn't configured one) no analytics
+snippet and no request to Google go into the pages at all.
+
+Locally:
+
+```bash
+GA_MEASUREMENT_ID=G-XXXXXXXXXX python3 webapp/app.py
+```
+
+For GitHub Pages, set it once under **Settings -> Secrets and variables ->
+Actions -> Variables** as a repository variable named `GA_MEASUREMENT_ID`
+(a secret of the same name also works, if you'd rather it stay out of the
+Actions logs). `.github/workflows/deploy-pages.yml` passes it to
+`staticsite/freeze.py`, which bakes the tag into every frozen page.

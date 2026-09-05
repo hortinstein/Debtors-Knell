@@ -8,6 +8,11 @@ scripts/cache/
 # (scripts/fetch_prices.py) -- not checked in.
 archive/*/decklist*_price_history.json
 
+# Calculated per-card price history (scripts/build_card_history.py), what the
+# card pages and the card modal chart. Same deal: rebuilt on webapp startup
+# when missing and after every price fetch, not checked in.
+prices/card_history.json.gz
+
 # Local Frozen-Flask output (staticsite/freeze.py). GitHub Actions builds and
 # deploys this straight to Pages -- it's never committed.
 staticsite/build/

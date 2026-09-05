@@ -2,9 +2,11 @@
 """
 Build the weekly "Price Movers" dataset: the biggest paper (USD) and MTGO
 (tix) price changes over the last week of archived snapshots, among the
-cards actually played in the archive's decklists (the same card pool the
-rest of the site tracks -- every nonbasic card in any
-archive/*/decklist*_priced.md).
+cards actually played in the archive's budget builds (the same card pool the
+rest of the site tracks -- every nonbasic card in an
+archive/*/decklist*_priced.md whose scripts/deck_meta.json role is "budget",
+so the expensive cards the articles only quote for comparison, the Moxen and
+Black Lotus among them, stay out of the rankings).
 
 Sources (both already archived daily by scripts/fetch_prices.py):
 
@@ -65,6 +67,7 @@ DAILY_DIR = os.path.join(PRICES_DIR, "daily")
 YEARLY_DIR = os.path.join(PRICES_DIR, "goatbots_yearly_archive")
 UUID_MAP_PATH = os.path.join(PRICES_DIR, "mtgjson", "uuid_to_name.json.gz")
 MOVERS_DIR = os.path.join(PRICES_DIR, "movers")
+MOVER_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 WINDOW_DAYS = 7
 TOP_N = 20
@@ -87,44 +90,90 @@ def log(msg):
 
 
 # ---------------------------------------------------------------------------
-# The deck card pool: every nonbasic card in any priced decklist
+# The deck card pool: every nonbasic card in a budget build
 # ---------------------------------------------------------------------------
 
-def deck_pool_name_keys():
-    """Three normalized-name sets (exact / no-apostrophe / accent-and-
-    punctuation-stripped, mirroring build_price_history.py's matching
-    levels) covering every nonbasic card played anywhere in the archive.
-    Movers are restricted to this pool -- the point of the page is what the
-    archive's decks are doing, not the whole Magic market."""
-    exact, noapos, stripped = set(), set(), set()
-    count = 0
+DECK_META_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "deck_meta.json")
+ROLE_BUDGET = "budget"
+
+
+def budget_priced_files():
+    """Only the priced decklists that are the column's own budget builds.
+
+    Most articles also quote a list for comparison -- a tournament deck, a
+    reader submission, the preconstructed deck the build starts from -- and
+    scripts/build_deck_meta.py records that as the decklist's role. Those
+    lists are where Black Lotus, the Moxen and the dual lands come from:
+    cards the column never actually built with, but which dominate any
+    ranking of price movement because they are the most expensive and most
+    volatile cards in the game. The card pool, card stats and this page all
+    stick to the budget builds for the same reason.
+
+    A decklist with no role recorded counts as a budget build, matching
+    webapp/app.py's default."""
+    try:
+        with open(DECK_META_PATH, encoding="utf-8") as f:
+            deck_meta = json.load(f)
+    except OSError:
+        log(f"No {DECK_META_PATH} -- treating every decklist as a budget build.")
+        deck_meta = {}
+
+    kept = []
     for pf in bph.collect_priced_files():
+        folder = os.path.basename(os.path.dirname(pf))
+        raw_filename = os.path.basename(pf)[: -len("_priced.md")] + ".txt"
+        role = ROLE_BUDGET
+        for d in deck_meta.get(folder, {}).get("decks", []):
+            if d.get("file") == raw_filename:
+                role = d.get("role") or ROLE_BUDGET
+                break
+        if role == ROLE_BUDGET:
+            kept.append(pf)
+    return kept
+
+
+def deck_pool_name_keys():
+    """Three normalized-name -> archive-spelling maps (exact / no-apostrophe /
+    accent-and-punctuation-stripped, mirroring build_price_history.py's
+    matching levels) covering every nonbasic card played in a budget build
+    anywhere in the archive. Movers are restricted to this pool -- the point
+    of the page is what the archive's decks are doing, not the whole Magic
+    market.
+
+    The mapped-to spelling is the archive's own, which is what
+    deck_pool_name() below hands back: a price source's name for a card can
+    differ from the decklists' ("Boom // Bust" for a decklist's "Boom"), and
+    the page links each mover to its card page on this site."""
+    exact, noapos, stripped = {}, {}, {}
+    count = 0
+    for pf in budget_priced_files():
         for qty, name, is_basic in bph.parse_priced_rows(pf):
             if is_basic or bph.norm_key(name) in bph.BASIC_LANDS:
                 continue
-            exact.add(bph.norm_key(name))
-            noapos.add(bph.norm_key_noapos(name))
-            stripped.add(bph.norm_key_noaccent_nopunct(name))
+            exact.setdefault(bph.norm_key(name), name)
+            noapos.setdefault(bph.norm_key_noapos(name), name)
+            stripped.setdefault(bph.norm_key_noaccent_nopunct(name), name)
             count += 1
     log(f"Deck card pool: {len(exact):,} distinct nonbasic names "
-        f"across {count:,} decklist rows.")
+        f"across {count:,} budget-decklist rows.")
     return exact, noapos, stripped
 
 
-def in_deck_pool(name, pool_keys):
-    """Whether a price-source card name matches the deck pool at any
-    normalization level. Split/double-faced names ("A // B") also match on
-    either face, since decklists cite the front face."""
+def deck_pool_name(name, pool_keys):
+    """The archive's own spelling of a price-source card name, or None when
+    no budget build plays that card. Split/double-faced names ("A // B") also
+    match on either face, since decklists cite the front face."""
     exact, noapos, stripped = pool_keys
     candidates = [name]
     if " // " in name:
         candidates.extend(name.split(" // "))
     for c in candidates:
-        if (bph.norm_key(c) in exact
-                or bph.norm_key_noapos(c) in noapos
-                or bph.norm_key_noaccent_nopunct(c) in stripped):
-            return True
-    return False
+        for key, table in ((bph.norm_key(c), exact),
+                           (bph.norm_key_noapos(c), noapos),
+                           (bph.norm_key_noaccent_nopunct(c), stripped)):
+            if key in table:
+                return table[key]
+    return None
 
 
 # ---------------------------------------------------------------------------
@@ -398,21 +447,45 @@ def main():
                     help="end date (YYYY-MM-DD) instead of the latest available")
     ap.add_argument("--all", action="store_true",
                     help="rebuild a movers file for every archived price day")
+    ap.add_argument("--rebuild-existing", action="store_true",
+                    help="rebuild only the days prices/movers/ already has a "
+                         "file for (what to run after changing the card pool)")
     args = ap.parse_args()
 
     pool_keys = deck_pool_name_keys()
-    id_to_name = load_goatbots_names()
-    id_to_name = {cid: n for cid, n in id_to_name.items()
-                  if in_deck_pool(n, pool_keys)}
+    # Printings outside the pool drop out here, and the ones that stay are
+    # renamed to the archive's spelling: every card in the output is then
+    # named exactly as the rest of the site names it, which is what lets the
+    # page link a mover straight to its card page.
+    id_to_name = {cid: pool_name
+                  for cid, n in load_goatbots_names().items()
+                  if (pool_name := deck_pool_name(n, pool_keys))}
     log(f"  {len(id_to_name):,} GoatBots printings are in the deck pool.")
-    uuid_to_name = load_uuid_to_name()
-    uuid_to_name = {u: n for u, n in uuid_to_name.items()
-                    if in_deck_pool(n, pool_keys)}
+    uuid_to_name = {u: pool_name
+                    for u, n in load_uuid_to_name().items()
+                    if (pool_name := deck_pool_name(n, pool_keys))}
     log(f"  {len(uuid_to_name):,} MTGJSON printings are in the deck pool.")
     tix_sources = goatbots_day_sources()
     mtgjson_by_fetch = mtgjson_day_sources()
 
-    if args.all:
+    if args.rebuild_existing:
+        # The card pool decides which cards a day's rankings can contain, so
+        # changing it (see budget_priced_files) leaves every archived day
+        # ranking cards it no longer should. This redoes exactly the days
+        # already published -- unlike --all, which would also mint a file for
+        # every archived price day back to 2023.
+        existing = sorted(
+            f[: -len(".json")] for f in os.listdir(MOVERS_DIR)
+            if f.endswith(".json") and MOVER_DATE_RE.match(f[: -len(".json")])
+        ) if os.path.isdir(MOVERS_DIR) else []
+        log(f"Rebuilding {len(existing)} archived movers day(s).")
+        for end_date in existing:
+            log(f"=== {end_date} ===")
+            build_movers_for_end_date(
+                tix_sources, id_to_name, uuid_to_name, mtgjson_by_fetch,
+                end_date=end_date,
+            )
+    elif args.all:
         # Every date that has data in either market and at least one earlier
         # day inside its window.
         all_dates = sorted(set(tix_sources) | {

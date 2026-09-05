@@ -1,8 +1,9 @@
 // Site-wide card-image hover preview for Scryfall card links.
 //
-// Whenever the cursor is over an <a> whose href matches
-// scryfall.com/card/<set>/<number>/<slug> -- or anywhere on a table row that
-// contains one, which is how the priced decklists are laid out -- show a
+// Whenever the cursor is over an element naming a Scryfall printing --
+// an <a> whose href matches scryfall.com/card/<set>/<number>/<slug>, a card
+// link carrying one in data-scryfall, or anywhere on a table row that
+// contains either, which is how the priced decklists are laid out -- show a
 // floating card image near the cursor by rewriting that URL directly into a
 // Scryfall image API URL: no JSON fetch, no external libraries.
 (function () {
@@ -15,11 +16,24 @@
   preview.alt = "";
   document.body.appendChild(preview);
 
+  // The Scryfall card URL an element stands for: its own href, or -- for the
+  // card links card-modal.js opens (whose href is the card's page on this
+  // site) -- the printing recorded in data-scryfall. That attribute is what
+  // keeps the hover preview working on pages like Card Stats, where a card
+  // name is the only thing on the row.
+  function scryfallUrlFor(el) {
+    if (el.dataset && el.dataset.scryfall && CARD_LINK_RE.test(el.dataset.scryfall)) {
+      return el.dataset.scryfall;
+    }
+    if (el.tagName === "A" && el.href && CARD_LINK_RE.test(el.href)) {
+      return el.href;
+    }
+    return null;
+  }
+
   function ancestorCardLink(el) {
     while (el && el.nodeType === 1 && el !== document.body) {
-      if (el.tagName === "A" && el.href && CARD_LINK_RE.test(el.href)) {
-        return el;
-      }
+      if (scryfallUrlFor(el)) return el;
       el = el.parentElement;
     }
     return null;
@@ -39,9 +53,14 @@
     if (link) return { zone: link, link: link };
     var row = el.closest ? el.closest("tr") : null;
     if (row) {
-      var rowLink = row.querySelector("a[href]");
-      if (rowLink && CARD_LINK_RE.test(rowLink.href)) {
-        return { zone: row, link: rowLink };
+      // Every link in the row, not just the first: since the Card column
+      // became a link to the card's own page, the row's first link is no
+      // longer the Scryfall one.
+      var candidates = row.querySelectorAll("a[href], [data-scryfall]");
+      for (var i = 0; i < candidates.length; i++) {
+        if (scryfallUrlFor(candidates[i])) {
+          return { zone: row, link: candidates[i] };
+        }
       }
     }
     return null;
@@ -64,7 +83,9 @@
   document.addEventListener("mouseover", function (evt) {
     var target = hoverTarget(evt.target);
     if (!target) return;
-    var m = target.link.href.match(CARD_LINK_RE);
+    var url = scryfallUrlFor(target.link);
+    if (!url) return;
+    var m = url.match(CARD_LINK_RE);
     if (!m) return;
     activeZone = target.zone;
     var set = m[1];

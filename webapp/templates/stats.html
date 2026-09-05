@@ -27,7 +27,10 @@
   <div class="bar-chart">
     {% for c in top_cards %}
     <div class="bar-row">
-      <a class="bar-label" href="#card-{{ c.slug }}">{{ c.name }}</a>
+      {# A card name is a card link everywhere on the site, this chart
+         included -- the modal it opens says more about the card than the
+         table row this used to jump to. #}
+      <span class="bar-label">{{ card_link(c.name) }}</span>
       <div class="bar-track">
         <div class="bar-fill" style="width: {{ (c.num_budget_decks / max_decks * 100)|round(1) }}%"></div>
       </div>
@@ -65,7 +68,7 @@
           data-qty-all="{{ c.total_qty }}"
           data-usd="{{ c.unit_usd or 0 }}"
           data-tix="{{ c.unit_tix or 0 }}">
-        <td>{{ c.name }}</td>
+        <td>{{ card_link(c.name) }}</td>
         <td class="col-num col-decks">{{ c.num_budget_decks }}</td>
         <td class="col-num col-qty">{{ c.budget_qty }}</td>
         <td class="col-num">{{ "$%.2f"|format(c.unit_usd) if c.unit_usd is not none else "N/A" }}</td>
