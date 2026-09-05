@@ -78,7 +78,20 @@
       <td class="col-title">
         <div class="col-title-inner">
           {% if a.thumbnail %}
+          {# The thumbnail is one specific card's art (see
+             _thumbnail_for_article), and the only card this page names at
+             all -- so it links to that card like a card name anywhere else,
+             opening the same modal. card_url is None for the rare card with
+             no page of its own, and the art then shows unlinked. #}
+          {% set thumb_card_url = card_url(a.thumbnail_card) if a.thumbnail_card else None %}
+          {% if thumb_card_url %}
+          <a class="card-link deck-thumb-link" href="{{ thumb_card_url }}"
+             data-card="{{ a.thumbnail_card }}" title="{{ a.thumbnail_card }}">
+            <img class="deck-thumb" src="{{ a.thumbnail }}" alt="{{ a.thumbnail_card }}" loading="lazy">
+          </a>
+          {% else %}
           <img class="deck-thumb" src="{{ a.thumbnail }}" alt="" loading="lazy">
+          {% endif %}
           {% endif %}
           <div>
             <a href="{{ url_for('deck_detail', folder=a.folder) }}">{{ a.title }}</a>

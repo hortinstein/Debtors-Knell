@@ -19,7 +19,22 @@
   // site is at a domain root or under a GitHub Pages project subpath.
   var script = document.currentScript;
   var CARD_BASE = script ? new URL("../card/", script.src).href : "/card/";
-  var CARD_PATH_RE = /\/card\/([^/?#]+)\/?$/;
+
+  // The three shapes a card-page URL takes: /card/<slug>/ as the live app
+  // serves it, /card/<slug> bare, and /card/<slug>/index.html, which is what
+  // the frozen build's own links point at (Frozen-Flask writes files, and
+  // links straight to them). All three sit beside /card/<slug>.json.
+  var CARD_PATH_RE = /\/card\/([^/?#]+?)(?:\/(?:index\.html)?)?$/;
+
+  function cardPathSlug(pathname) {
+    var m = pathname.match(CARD_PATH_RE);
+    return m ? m[1] : null;
+  }
+
+  function cardJsonUrl(url) {
+    var path = url.pathname.replace(/\/index\.html$/, "").replace(/\/$/, "");
+    return url.origin + path + ".json";
+  }
 
   // Mirrors card_slug() in webapp/app.py, so a script rendering card names
   // client-side (movers.js, pool.js) can link them without a lookup table.
@@ -180,8 +195,9 @@
     closeBtn.addEventListener("click", close);
     modal.appendChild(closeBtn);
     var body = el("div", "card-modal-body");
-    var name = decodeURIComponent((pageUrl.match(CARD_PATH_RE) || [])[1] || "this card")
-      .replace(/-/g, " ");
+    var name = decodeURIComponent(
+      cardPathSlug(new URL(pageUrl, window.location.href).pathname) || "this card"
+    ).replace(/-/g, " ");
     body.appendChild(el("h2", "card-modal-title", "No card page for " + name));
     body.appendChild(el("p", "card-modal-counts",
       "No decklist in the archive names this card, so there is nothing to show for it here."));
@@ -198,7 +214,7 @@
   }
 
   function open(pageUrl, name) {
-    var jsonUrl = pageUrl.replace(/\/$/, "") + ".json";
+    var jsonUrl = cardJsonUrl(new URL(pageUrl, window.location.href));
     lastFocused = document.activeElement;
     // The link carries the card's name (data-card), so the modal can say what
     // it is opening while the fetch is in flight.
@@ -252,7 +268,7 @@
     // Same-origin only: an article body could well link somewhere external
     // whose path happens to end in /card/<something>/.
     if (url.origin !== window.location.origin) return;
-    if (!CARD_PATH_RE.test(url.pathname)) return;
+    if (!cardPathSlug(url.pathname)) return;
     evt.preventDefault();
     open(link.href, link.dataset.card || link.textContent.trim());
   });
