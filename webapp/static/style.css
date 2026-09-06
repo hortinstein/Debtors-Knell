@@ -245,6 +245,9 @@ main {
 .col-title a { color: var(--link); font-weight: 600; text-decoration: none; }
 .col-title a:hover { text-decoration: underline; }
 .col-title-inner { display: flex; align-items: flex-start; gap: 0.6rem; }
+/* The thumbnail is wrapped in a card link on the index page, so the anchor
+   is what the row's flex layout sees. */
+.deck-thumb-link { flex: none; display: block; line-height: 0; }
 .deck-thumb {
   flex: none;
   width: 64px;
@@ -917,7 +920,7 @@ body.movers-modal-open { overflow: hidden; }
   .col-date { white-space: normal; }
   .col-num { white-space: normal; }
   .deck-table thead th { white-space: normal; }
-  .deck-thumb { display: none; }
+  .deck-thumb, .deck-thumb-link { display: none; }
 
   .article-body { padding: 1rem; }
   .deck-block { padding: 0.9rem 1rem; }

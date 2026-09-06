@@ -148,7 +148,7 @@ def inject_analytics():
 def inject_card_link():
     # Templates render card names through this so every one of them is a link
     # to the card's page (and so opens the card modal) -- see card_link_html.
-    return {"card_link": card_link_html}
+    return {"card_link": card_link_html, "card_url": card_url_for_name}
 
 
 def _parse_money(s):
@@ -235,8 +235,11 @@ def _thumbnail_for_article(title, priced_files):
     tribal, "ElfBall" is Elf tribal combo -- but plenty of titles, like
     "Squirrel Prison" or "You-Con-Du-It", aren't literal card names at all).
     Falls back to the single most expensive nonbasic card in the deck, a
-    reasonable proxy for "the deck's signature card." Returns None if the
-    deck has no priced nonbasic cards."""
+    reasonable proxy for "the deck's signature card."
+
+    Returns (image_url, card_name) -- the name so the index page can link the
+    thumbnail to that card, which is the only card the index names at all --
+    or (None, None) if the deck has no priced nonbasic cards."""
     by_name = {}
     for pf in priced_files:
         for r in parse_priced_card_rows(pf):
@@ -245,7 +248,7 @@ def _thumbnail_for_article(title, priced_files):
                 continue
             by_name.setdefault(key, r)
     if not by_name:
-        return None
+        return None, None
 
     title_lower = title.lower()
     best_match = None
@@ -262,7 +265,7 @@ def _thumbnail_for_article(title, priced_files):
         priced = [r for r in by_name.values() if r["unit_usd"] is not None]
         chosen = max(priced, key=lambda r: r["unit_usd"]) if priced else next(iter(by_name.values()))
 
-    return _scryfall_image_url(chosen["uri"], version="art_crop")
+    return _scryfall_image_url(chosen["uri"], version="art_crop"), chosen["name"]
 
 
 # ---------------------------------------------------------------------------
@@ -537,7 +540,9 @@ def _load_article_entry(meta):
     usd_total, tix_total = _parse_grand_totals(first_deck["priced_path"]) if first_deck else (0.0, 0.0)
     colors = _colors_for_priced_files(priced_files)
     title = meta.get("title") or folder
-    thumbnail = _thumbnail_for_article(title, priced_files) if priced_files else None
+    thumbnail, thumbnail_card = (
+        _thumbnail_for_article(title, priced_files) if priced_files else (None, None)
+    )
 
     return {
         "folder": folder,
@@ -549,6 +554,7 @@ def _load_article_entry(meta):
         "archetypes": archetypes,
         "colors": colors,
         "thumbnail": thumbnail,
+        "thumbnail_card": thumbnail_card,
         "has_decklist": bool(all_entries),
         "num_decks": len(priced_entries),
         "first_deck_label": first_deck["label"] if first_deck else "",
@@ -886,6 +892,26 @@ def card_payload(entry):
     }
 
 
+def page_url_for(endpoint, **values):
+    """url_for as the build being served sees it.
+
+    Frozen-Flask turns URLs relative by swapping the url_for that *templates*
+    call (its patch_url_for), which does nothing for a URL built in Python
+    like the card links below -- those came out as "/card/<slug>/" and missed
+    every time the frozen site was served from a GitHub Pages project
+    subpath. Going through the Jinja global picks that swap up during a
+    freeze and is plain flask.url_for the rest of the time."""
+    return app.jinja_env.globals.get("url_for", url_for)(endpoint, **values)
+
+
+def card_url_for_name(name):
+    """The card page for a card name, or None when the archive has no page
+    for it. Templates use this where the thing being linked is not the name
+    itself -- the index page's card-art thumbnail."""
+    entry = get_card_index().get(card_slug(name))
+    return page_url_for("card_detail", slug=entry["slug"]) if entry else None
+
+
 def card_link_html(name, display=None):
     """The site-wide card link: an <a> to the card's page that
     static/card-modal.js opens as a modal instead of navigating, and that
@@ -896,7 +922,7 @@ def card_link_html(name, display=None):
         return Markup(text)
     attrs = [
         'class="card-link"',
-        f'href="{escape(url_for("card_detail", slug=entry["slug"]))}"',
+        f'href="{escape(page_url_for("card_detail", slug=entry["slug"]))}"',
         f'data-card="{escape(entry["name"])}"',
     ]
     if entry["uri"]:
